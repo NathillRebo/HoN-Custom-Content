@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DrunkenMaster_Ult_Boost"
+
+	icon=""
+	passiveeffect="effects/boost.effect"
+	
+	ishidden="true"
+	
+	effecttype=""
+>
+
+	<modifier key="iamsheeped" modpriority="1000" passiveeffect=""/>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>	
+	
+	<altavatar key="Hero_DrunkenMaster.Alt2" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt3" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>	
+	
+	<altavatar key="Hero_DrunkenMaster.Alt4" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt5" modpriority="90"
+		passiveeffect="alt5/effects/boost.effect"
+	/>	
+
+	<altavatar key="Hero_DrunkenMaster.Alt6" modpriority="90"
+		passiveeffect="alt6/effects/boost.effect"
+	/>	
+	
+	<altavatar key="Hero_DrunkenMaster.Alt7" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>		
+	
+	<altavatar key="Hero_DrunkenMaster.Alt8" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>		
+	
+	<altavatar key="Hero_DrunkenMaster.Alt9" modpriority="90"
+		passiveeffect="alt9/effects/boost.effect"
+	/>		
+	
+	<altavatar key="Hero_DrunkenMaster.Alt10" modpriority="90"
+		passiveeffect="alt10/effects/boost.effect"
+	/>	
+	
+</state>

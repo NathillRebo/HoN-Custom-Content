@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bephelgor1"
+
+	icon="icon.tga"
+	
+	statuseffecttooltip="State_Bephelgor_Ability1_Snare"
+	anim="ability_3"
+	casttime="100"
+	castactiontime="0"
+	casteffect="effects/cast.effect"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	targetradius="400"
+	targetmaterial=""
+	casteffecttype=""
+
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+	
+	manacost="100,110,120,130"
+	cooldowntime="12000"
+>
+	<onimpact>
+		<spawnaffector name="Affector_Bephelgor_Ability1" target="source_entity" />
+		<applystate name="State_Bephelgor_Ability1" target="source_entity" duration="3000" />
+	</onimpact>
+	
+	<altavatar key="Hero_Bephelgor.Alt3"
+		casteffect="effects/cast_alt3.effect"
+		icon="../alt3/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Bephelgor.Alt4"
+		icon="../alt4/ability_01/icon.tga"
+		casteffect="../alt4/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Bephelgor.Alt5"
+		casteffect="effects/cast_alt5.effect"
+	/>
+</ability>

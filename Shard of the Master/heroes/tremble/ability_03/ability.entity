@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tremble3"
+	
+	icon="icon.tga"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	statuseffecttooltip=""
+
+	actiontype="passive"
+
+	passiveeffect=""
+>
+	<onupgrade>
+		<!-- Level E for controllable pet for Staff of the Master -->
+		<hasmodifier name="ult_boost" entity="source_entity">
+			<areaofeffect
+				radius="9999"
+				center="source_position"
+				targetselection="all"
+				targetscheme="my_other_Shudder_units"
+				ignoreinvulnerable="true"
+			>
+				<entitytype type="Pet_Tremble_Ability4_Controllable">
+					<pushability name="Ability_TremblePet3" source="target_entity" />
+					<setvar0 a="level" b="1" op="sub" />
+					<setlevel value="var0" entity="stack_entity" />
+				</entitytype>
+			</areaofeffect>
+		</hasmodifier>
+	</onupgrade>
+	
+	<onattackimpact />
+	
+	<onattackpreimpact>
+		<cantarget targetscheme="enemy_objects" effecttype="Physical">
+			<applystate name="State_Tremble_Ability3" duration="3000" />
+		</cantarget>
+	</onattackpreimpact>
+	
+	<onimpact/>
+
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		actiontype="target_self"
+		frontqueue="true"
+		inheritmovement="true"
+		noninterrupting="true"
+		nobreakchannel="true"
+		noresponse="true"
+		noshuffle="true"
+		manacost="0"
+		cooldowntime="30000"
+		anim=""
+		casttime="0"
+		castactiontime="0"
+		targetradius="300"
+	>
+		<onimpact>
+			<areaofeffect
+				center="source_entity"
+				radius="300"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<applystate name="State_Tremble_Ability3" duration="3000" />
+				<damage effecttype="Physical" amount="105"/>
+			</areaofeffect>
+			<playeffect effect="../../pestilence/ability_02/effects/area.effect" target="target_position" source="target_position" occlude="true" />			
+		</onimpact>
+	</modifier>
+</ability>

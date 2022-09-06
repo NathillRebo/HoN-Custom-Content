@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Salomon3"
+	
+	icon="icon.tga"	
+	anim="ability_3"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	targetscheme="Cthulhuphant_Hookem"
+	casteffecttype="Transmute"
+	
+	manacost="0"
+	cooldowntime="60000"
+	
+	range="600"
+	showareacast="true"
+	
+	modifierkey="Salomon_Gold1,Salomon_Gold2,Salomon_Gold3,Salomon_Gold4"
+>
+
+	<onkill>
+		<targettype type="illusion" target="source_entity">
+			<!-- Only illusions owned by Salomon can get the bonus gold -->
+			<entitytype type="Hero_Salomon" target="source_owner_entity">
+				<cantarget targetscheme="enemy_nonhero_nonboss_units">
+					<givegold amount="4,8,12,16" target="source_entity" />
+				</cantarget>
+			</entitytype>
+		</targettype>
+		<else>
+			<cantarget targetscheme="enemy_nonhero_nonboss_units">
+				<givegold amount="4,8,12,16" target="source_entity" />
+			</cantarget>
+		</else>		
+	</onkill>
+	
+	<onimpact>
+		<kill target="target_entity" />
+		<givegold amount="40,70,100,130" target="source_entity" />
+		
+		<!-- VFX -->		
+		<hasavatarkey name="Hero_Salomon.Alt6">
+			<playeffect effect="../alt6/ability_03/effects/convert.effect" source="target_entity" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Salomon.Alt7">
+				<playeffect effect="../alt7/ability_03/effects/convert.effect" source="target_entity" occlude="true" />
+			</hasavatarkey>
+			<else>
+			<playeffect effect="/items/recipes/alchemists_bones/convert.effect" source="target_entity" occlude="true" />
+		</else>		
+		</else>		
+		<spawnprojectile name="Projectile_Ability_Salomon3" source="target_entity" target="source_entity" noresponse="true" />		
+		<playanim name="ability_3" target="source_entity" />
+	</onimpact>	
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		strengthpercharge="1"
+	>
+		<onframe>
+			<setcharges a="source_gold" b="0.005" op="mult"/>
+			<compare a="source_gold" b="3000" op="ge">
+				<setvar1 a="frametime" b="750" op="mult" />
+				<reducecooldown duration="var1" />
+			</compare>
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_Salomon.Alt4"
+		casteffect="../alt4/ability_03/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Salomon.Alt5"
+		casteffect="../alt5/ability_03/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Salomon.set_ascension"
+		casteffect="/heroes/salomon/set_ascension/ability_03/effects/cast.effect"
+	/>
+	
+</ability>

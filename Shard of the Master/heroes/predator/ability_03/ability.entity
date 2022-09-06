@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Predator3"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	passiveeffect="effects/state.effect"
+	actiontype="passive"
+>
+	<onattackimpact effectdescription="true" >
+		<!-- Boolean flag logic -->
+		<setaccumulator value="0" />
+		
+		<!-- Hero Level <= 3 && target is a neutral creep. If this check passes true, no effect -->
+		<compare a="source_level" source="source_entity" b="3" op="lt">
+			<targettype type="neutral" target="target_entity">
+				<setaccumulator value="1" />
+			</targettype>
+		</compare>
+		
+		<compare a="accumulator" b="0" op="eq">
+			<targettype type="Boss" />
+			<else>
+				<targettype type="building" />
+				<else>
+					<targettype type="Courier" />
+					<else>
+						<setvar0 a="target_health" />
+						<setvar0 a="0.02,0.04,0.06,0.08" b="var0" op="mult" />
+						<targettype type="illusion" target="source_entity" >
+							<heal target="source_entity" a="var0" b="0.33" op="mult" />
+							<damage effecttype="Physical" amount="0.33" b="var0" op="mult" nonlethal="true"/>
+						</targettype>
+						<else>
+							<heal target="source_entity" a="var0" />
+							<damage effecttype="Physical" amount="1" b="var0" op="mult" nonlethal="true"/>
+						</else>
+					</else>
+				</else>
+			</else>
+			
+			<!-- VFX -->
+			<hasavatarkey name="Hero_Predator.Alt7">
+				<playeffect effect="../alt7/ability_03/effects/state_onattack.effect" target="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Predator.Alt8">
+					<playeffect effect="../alt8/ability_03/effects/state_onattack.effect" target="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Predator.Alt12">
+						<hasmodifier name="predator_ability_4">
+							<playeffect effect="../alt12/ability_03/effects/state_onattack_ability4.effect" target="source_entity" />
+						</hasmodifier>
+						<else>
+							<playeffect effect="../alt12/ability_03/effects/state_onattack.effect" target="source_entity" />
+						</else>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Predator.Alt13">
+							<playeffect effect="../alt13/ability_03/effects/state_onattack.effect" target="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Predator.Alt14">
+								<playeffect effect="../alt14/ability_03/effects/state_onattack.effect" target="source_entity" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/state_onattack.effect" target="source_entity" />
+							</else>	
+						</else>
+					</else>
+				</else>
+			</else>
+		</compare>
+	</onattackimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onindirectkill propagatetoillusions="false" >
+			<targettype type="alive" target="source_entity">
+				<targettype type="hero">
+					<targettype type="enemy">
+						<targettype type="illusion" />
+						<else>               
+							<targettype type="mimic" />
+							<else> 
+								<targettype type="self" />
+								<else>
+									<targettype type="heropet" />
+									<else>
+										<dispel type="StatusDebuff" />
+										<applystate name="State_Predator_Shard" duration="8000" target="source_entity"/>
+									</else>
+								</else>
+							</else>
+						</else>
+					</targettype>
+				</targettype>
+			</targettype>
+		</onindirectkill>
+		
+		<onkill propagatetoillusions="false" >
+			<targettype type="alive" target="source_entity">
+				<targettype type="hero">
+					<targettype type="enemy">
+						<targettype type="illusion" />
+						<else>               
+							<targettype type="mimic" />
+							<else> 
+								<targettype type="self" />
+								<else>
+									<targettype type="heropet" />
+									<else>
+										<dispel type="StatusDebuff" />
+										<applystate name="State_Predator_Shard" duration="8000" target="source_entity" />
+									</else>
+								</else>
+							</else>
+						</else>
+					</targettype>
+				</targettype>
+			</targettype>
+		</onkill>
+		
+		<onassist propagatetoillusions="false" >
+			<targettype type="alive" target="source_entity">
+				<targettype type="hero">
+					<targettype type="enemy">
+						<targettype type="illusion" />
+						<else>                
+							<targettype type="self" />
+							<else>
+								<targettype type="heropet" />
+								<else>
+									<dispel type="StatusDebuff" />
+									<applystate name="State_Predator_Shard" duration="8000" target="source_entity" />
+								</else>
+							</else>
+						</else>
+					</targettype>
+				</targettype>
+			</targettype>
+		</onassist>
+	</modifier>
+	
+	<altavatar key="Hero_Predator.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt12" modpriority="1"
+		passiveeffect="../alt12/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt13" modpriority="1"
+		passiveeffect="../alt13/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Predator.Alt14" modpriority="1"
+		passiveeffect="../alt14/ability_03/effects/state.effect"
+	/>
+	
+</ability>

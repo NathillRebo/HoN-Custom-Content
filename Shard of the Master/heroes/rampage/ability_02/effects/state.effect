@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="level up">
+
+<definitions>
+	<particlesystem name="system0" space="world">
+		
+		<billboard					
+			size="50"
+			position="0 0 70"
+			bone="_bone_overhead"
+			life="700"
+			loop="1"
+			material="/shared/effects/materials/restrained.material"
+			color="1 1 1"
+			startalpha="1"			
+			midalpha=".4"
+			endalpha="1"		
+		>
+		</billboard>
+		
+		<groundsprite
+			material="/shared/effects/materials/attack_speed_aura.material"
+			startsize="35"
+			midsize="55"
+			endsize="35"
+			startcolor=".25 0 0"
+			midcolor=".25 0 0"
+			endcolor=".25 0 0"
+			life="1000"
+			loop="true"
+
+		/>
+
+	</particlesystem>
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Artillery_Ability2"
+
+	lifetime="1500"
+	useexactlifetime="true"
+	gravity="5000"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+	
+	dynamicprecache="effects/impact.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<areaofeffect
+			radius="400"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			source="source_entity"
+			center="target_position"
+		>
+			<applystate name="State_Artillery_Ability2" target="target_entity" duration="4000" />
+			<damage effecttype="Magic" amount="100,140,180,220" />
+		
+			<hasmodifier entity="source_entity" name="Artillery_Bunker_On">
+				<applystate name="State_Artillery_Ability3_Slow" duration="3000" />
+			</hasmodifier>
+			
+			<hasmodifier name="shardofthemaster_boost">
+				<distance source="target_entity" target="source_entity" />
+				<setparam a="result" b="1.2" op="div" />
+				<applystate name="State_Stunned" duration="param" />
+			</hasmodifier>
+		</areaofeffect>
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_position" target="" occlude="true" />
+	</onimpact>
+	
+	<altavatar key="Hero_Artillery.Alt4"
+		traileffect="/heroes/artillery/alt4/ability_02/effects/trail.effect"		
+	/>
+	
+	<altavatar key="Hero_Artillery.Alt5"
+		traileffect="/heroes/artillery/alt5/ability_02/effects/trail.effect"
+		dynamicprecache="../alt5/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt5/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Artillery.Alt6"
+		traileffect="/heroes/artillery/alt6/ability_02/effects/trail.effect"
+		dynamicprecache="../alt6/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt6/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Artillery.Alt7"
+		traileffect="/heroes/artillery/alt7/ability_02/effects/trail.effect"
+		dynamicprecache="../alt7/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt7/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Artillery.Alt8"
+		traileffect="/heroes/artillery/alt8/ability_02/effects/trail.effect"
+		dynamicprecache="../alt8/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt8/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Artillery.Alt9"
+		traileffect="/heroes/artillery/alt9/ability_02/effects/trail.effect"
+		dynamicprecache="../alt9/ability_02/effects/impact.effect"		
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt9/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Artillery.Alt10"
+		traileffect="/heroes/artillery/alt9/ability_02/effects/trail.effect"
+		dynamicprecache="../alt9/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt9/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Artillery.Alt11"
+		traileffect="/heroes/artillery/alt11/ability_02/effects/trail.effect"
+		dynamicprecache="../alt11/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt11/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Artillery.set_ascension"
+		traileffect="/heroes/artillery/set_ascension/ability_02/effects/trail.effect"
+		dynamicprecache="../set_ascension/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../set_ascension/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+
+	<altavatar key="Hero_Artillery.Alt12"
+		traileffect="/heroes/artillery/alt12/ability_02/effects/trail.effect"
+		dynamicprecache="../alt12/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt12/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+</projectile>

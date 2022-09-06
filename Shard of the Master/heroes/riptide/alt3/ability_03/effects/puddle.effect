@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+			<sound
+			    soundloop="true"
+				randomloop="true"
+				fadein="1000"
+				fadeout="500"
+			    norestart="true"
+				channel="87746"
+				linearfalloff="true" 
+				falloffstart="1200"
+				falloffend="1300"
+				volume="1"
+				sample="../sounds/loop_lapping.wav"
+			/>
+			<groundsprite
+				life="500"
+				material="/shared/effects/materials/water_puddle_norefract.material"
+				size="350"
+				color=".05"
+				startalpha="0"
+				endalpha=".75"
+			/>
+			
+			<groundsprite
+				delay="500"
+				expirelife="500"
+				material="/shared/effects/materials/water_puddle_norefract.material"
+				size="300"
+				color=".05"
+				startalpha=".75"
+				endalpha="0"
+			/>
+<!--			
+			<groundsprite				
+				alpha=".75"
+				scale="7.35"
+				expirelife="500"			
+				material="/shared/effects/materials/ground_crater.material"			
+			/>
+
+			<simpleemitter
+				offsetradial="350"
+				count="75"			
+			>
+				<particle minyaw="-360" maxyaw="360">
+					<groundsprite				
+						alpha=".10"
+						color=".5"
+						scale="1"
+						expirelife="500"			
+						material="/shared/effects/materials/sand_groun.material"			
+					/>
+				</particle>
+			</simpleemitter>
+	-->		
+			<orbiteremitter
+				timenudge="500"
+				spawnrate="50"
+				exprelife="250"
+				particlelife="5000"
+				speed=".05"
+				drag="0.02"
+				origin="0 0 0"
+				offset="10 10 240"
+				direction="0 0 1"
+				cylindrical="true"
+				position="0 0 0"
+				gravity="10"
+				material="/shared/effects/materials/petal_blend.material"
+			>				
+				<template name="petal_particle">
+					<particle
+						minsize="4"
+						maxsize="10"
+						startalpha="0"
+						midalpha="2"
+						endalpha="0"
+						color="{color}"
+					/>
+				</template>
+				<instance name="petal_particle" color=".8 .2 .8" />
+				<instance name="petal_particle" color=".8 .2 .2" />
+				<instance name="petal_particle" color=".2 .8 .6" />
+				<instance name="petal_particle" color=".8 .6 .2" />
+			</orbiteremitter>
+<!--			
+			<simpleemitter
+				offsetradial="350"
+				count="15"			
+			>
+				<particle minyaw="-360" maxyaw="360">
+					<groundsprite				
+						alpha=".25"
+						color=".5"
+						scale="1"
+						expirelife="500"							
+						material="/shared/effects/materials/bigger_cracks.material"			
+					/>
+				</particle>
+			</simpleemitter>
+		
+			<groundsprite
+				delay="500"
+				life="2000"
+				expirelife="500"
+				loop="true"
+				material="/shared/effects/materials/refract_ripple.material"
+				startparam="0"
+				endparam="0.2"
+				startsize="0"
+				endsize="450"
+				color="1"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+			/>
+-->	
+			<terrainemitter
+				position="0 0 0"
+				spawnrate="11111"
+				count="2"
+				gravity="0"			
+				offsetsphere="80 80 0"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				speed="0"
+				directionalspace="global"
+				inheritvelocity="0"
+				depthbias="-20"
+			>
+				<particle
+					maxyaw="360"
+					minscale="4.5"
+					maxscale="5.25"
+				>
+					<billboard
+						maxroll="360"
+						minlife="1200"
+						maxlife="2000"
+						loop="true"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						delay="600"
+						material="/shared/effects/materials/whitewater_02.material"	
+						expirelife="600"
+						startcolor="0"
+						midcolor=".05 .125 .15"
+						endcolor="0"
+						minstartscale=".65"
+						maxstartscale="1"
+						minendscale="1"
+						maxendscale="1.2"
+						depthbias="-2"
+						size="100"
+					/>
+
+				</particle>
+			</terrainemitter>
+			
+			<template name="wave">
+				<simpleemitter
+					spawnrate="1"
+					particlelife="2500"
+					speed="100.0"
+					minangle="0"
+					maxangle="10"
+					direction="{direction}"
+					position="0 0 0"
+					timenudge="500"
+				>
+					<particle
+					 turn="true"
+					>
+						<billboard
+							life="2500"
+							material="/shared/effects/materials/wave.material"
+							startcolor="0"
+							midcolor=".1"
+							endcolor="0"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+							param=".012"
+							startsize="250"
+							endsize="400"
+							yaw="180"
+							roll="90"
+							directionalspace="local"
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+							mindelay="100"
+							maxdelay="500"
+							depthbias="-100"
+						/>
+
+				</particle>
+
+			</simpleemitter>
+		</template>	
+		
+		<instance name="wave" direction="1 0 0"/>
+		<instance name="wave" direction="-1 0 0"/>
+		<instance name="wave" direction="0 1 0"/>
+		<instance name="wave" direction="0 -1 0"/>
+		
+		<billboard
+			lockup="true"
+			pitch="90"
+			depthbias="-20"
+			material="/shared/effects/materials/corona_ground.material"
+			scale="13"
+			color=".1 .1 .25"
+		/>
+<!--		
+		<groundsprite				
+			alpha=".5"
+			scale="6"
+			expirelife="500"	
+			color="0 0 .1"
+			material="/shared/effects/materials/corona_07_ground.material"			
+		/>
+	-->	
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />		
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

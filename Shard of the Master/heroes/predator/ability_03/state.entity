@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Predator_Shard"
+
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	strength="20"
+	agility="20"
+	movespeedmultiplier="0.35"
+	
+	modifierkey="activation_modifier"
+>
+</state>

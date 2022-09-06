@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_DiseasedRider3"
+
+	icon="icon.tga"
+	
+	anim="ability_3"
+	casttime="1100"
+	castactiontime="400"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	targetscheme="npc_ally_creeps,npc_ally_creeps,npc_ally_creeps,PlagueRider_Extinguish"
+	casteffecttype="Magic Transmute"
+
+	manacost="0"
+	cooldowntime="45000,40000,35000,30000"
+	
+	range="400"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+>
+	<onimpact>
+		<!-- Actual ability logic -->
+		<setvar0 a="target_health" b="0.2,0.4,0.6,0.8" op="mult"/> 
+		<givemana target="source_entity" amount="var0" />
+		<popup name="bonus_mana" a="var0" source="source_entity" target="source_entity" />		
+		<kill target="target_entity" source="source_entity" />
+		
+		<!-- Only art past this point -->
+		<hasavatarkey name="Hero_DiseasedRider.Alt2">
+			<playeffect effect="../alt2/ability_03/effects/target.effect" target="target_entity" source="target_entity" />
+			<playeffect effect="effects/impact.effect" target="source_entity" source="target_entity" />
+			<playeffect effect="effects/self.effect" target="source_entity" source="source_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_DiseasedRider.Alt4">
+				<playeffect effect="../alt4/ability_03/effects/target.effect" target="target_entity" source="target_entity" />
+				<playeffect effect="../alt4/ability_03/effects/impact.effect" target="source_entity" source="target_entity" />
+				<playeffect effect="effects/self.effect" target="source_entity" source="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_DiseasedRider.Alt5">
+					<playeffect effect="../alt5/ability_03/effects/impact.effect" target="source_entity" source="target_entity" />
+					<playeffect effect="effects/self.effect" target="source_entity" source="source_entity" />
+					<playeffect effect="effects/target.effect" target="target_entity" source="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_DiseasedRider.Alt6">
+						<playeffect effect="../alt6/ability_03/effects/target.effect" target="target_entity" source="target_entity" />
+						<playeffect effect="../alt6/ability_03/effects/impact.effect" target="source_entity" source="target_entity" />
+						<playeffect effect="effects/self.effect" target="source_entity" source="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_DiseasedRider.Alt7">
+							<playeffect effect="../alt7/ability_03/effects/target.effect" target="target_entity" source="target_entity" />
+							<playeffect effect="../alt7/ability_03/effects/impact.effect" target="source_entity" source="target_entity" />
+							<playeffect effect="../alt7/ability_03/effects/self.effect" target="source_entity" source="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_DiseasedRider.Alt8">
+								<playeffect effect="../alt8/ability_03/effects/target.effect" target="target_entity" source="target_entity" />
+								<playeffect effect="../alt8/ability_03/effects/impact.effect" target="source_entity" source="target_entity" />
+								<playeffect effect="../alt8/ability_03/effects/self.effect" target="source_entity" source="source_entity" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/target.effect" target="target_entity" source="target_entity" />
+								<playeffect effect="effects/impact.effect" target="source_entity" source="target_entity" />
+								<playeffect effect="effects/self.effect" target="source_entity" source="source_entity" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onimpact>
+			<!-- Actual ability logic -->
+			<setvar0 a="target_health" b="0.2,0.4,0.6,0.8" op="mult"/> 
+			<givemana target="source_entity" amount="var0" />
+			<popup name="bonus_mana" a="var0" source="source_entity" target="source_entity" />		
+			<kill target="target_entity" source="source_entity" />
+			
+			<applystate name="State_DiseasedRider_Ability3_Buff" target="source_entity" duration="30000" />
+			
+			<!-- Only art past this point -->
+			<hasavatarkey name="Hero_DiseasedRider.Alt2">
+				<playeffect effect="../alt2/ability_03/effects/target.effect" target="target_entity" source="target_entity" />
+				<playeffect effect="effects/impact.effect" target="source_entity" source="target_entity" />
+				<playeffect effect="effects/self.effect" target="source_entity" source="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_DiseasedRider.Alt4">
+					<playeffect effect="../alt4/ability_03/effects/target.effect" target="target_entity" source="target_entity" />
+					<playeffect effect="../alt4/ability_03/effects/impact.effect" target="source_entity" source="target_entity" />
+					<playeffect effect="effects/self.effect" target="source_entity" source="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_DiseasedRider.Alt5">
+						<playeffect effect="../alt5/ability_03/effects/impact.effect" target="source_entity" source="target_entity" />
+						<playeffect effect="effects/self.effect" target="source_entity" source="source_entity" />
+						<playeffect effect="effects/target.effect" target="target_entity" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_DiseasedRider.Alt6">
+							<playeffect effect="../alt6/ability_03/effects/target.effect" target="target_entity" source="target_entity" />
+							<playeffect effect="../alt6/ability_03/effects/impact.effect" target="source_entity" source="target_entity" />
+							<playeffect effect="effects/self.effect" target="source_entity" source="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_DiseasedRider.Alt7">
+								<playeffect effect="../alt7/ability_03/effects/target.effect" target="target_entity" source="target_entity" />
+								<playeffect effect="../alt7/ability_03/effects/impact.effect" target="source_entity" source="target_entity" />
+								<playeffect effect="../alt7/ability_03/effects/self.effect" target="source_entity" source="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_DiseasedRider.Alt8">
+									<playeffect effect="../alt8/ability_03/effects/target.effect" target="target_entity" source="target_entity" />
+									<playeffect effect="../alt8/ability_03/effects/impact.effect" target="source_entity" source="target_entity" />
+									<playeffect effect="../alt8/ability_03/effects/self.effect" target="source_entity" source="source_entity" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="effects/target.effect" target="target_entity" source="target_entity" />
+									<playeffect effect="effects/impact.effect" target="source_entity" source="target_entity" />
+									<playeffect effect="effects/self.effect" target="source_entity" source="source_entity" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_DiseasedRider.Alt5" modpriority="1"
+		icon="../alt5/ability_03/icon.tga"	
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt6" modpriority="1"
+		icon="../alt6/ability_03/icon.tga"	
+	/>
+</ability>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ShadowBlade_Ability2_Morph"
+
+	icon="icon.tga"
+	passiveeffect=""
+	displaylevel="true"
+	propagatetoillusions="true"
+	
+	movespeed="25,30,35,40"
+	agility="4,8,12,16"
+
+	modifierkey="ShadowBlade_W_Form"
+	
+	effecttype=""
+>
+	
+	<onframe />
+	
+	<oninflict>
+		<expirestate name="State_ShadowBlade_Ability1_Morph" target="source_entity" />
+		<expirestate name="State_ShadowBlade_Ability3_Morph" target="source_entity" />
+	</oninflict>
+	
+	<onexpired>
+		<playeffect effect="" source="source_entity" target="" />
+	</onexpired>
+	
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		maxmovespeed="175"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt" modpriority="1"
+	>
+		<onframe />
+		
+		<oninflict>
+			<expirestate name="State_ShadowBlade_Ability1_Morph" target="source_entity" />
+			<expirestate name="State_ShadowBlade_Ability3_Morph" target="source_entity" />
+		</oninflict>
+		
+		<onexpired>
+			<playeffect effect="" source="source_entity" target="" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_ShadowBlade.Alt3" modpriority="1"
+	>
+		<onframe />
+	
+		<oninflict>
+			<expirestate name="State_ShadowBlade_Ability1_Morph" target="source_entity" />
+			<expirestate name="State_ShadowBlade_Ability3_Morph" target="source_entity" />
+			
+			<hasmodifier name="Shroud_Set_Bonus">
+				<setactivemodifierkey name="shadoww_Alt3_shroud_effect" />
+			</hasmodifier>
+		</oninflict>
+		
+		<onexpired>
+			<playeffect effect="" source="source_entity" target="" />
+		</onexpired>
+	
+		<modifier key="shadoww_Alt3_shroud_effect" modpriority="100"
+			modifierkey2="shadoww_Alt3_shroud"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_ShadowBlade.Alt4" modpriority="1"
+	>
+		<onframe />
+	
+		<oninflict>
+			<expirestate name="State_ShadowBlade_Ability1_Morph" target="source_entity" />
+			<expirestate name="State_ShadowBlade_Ability3_Morph" target="source_entity" />
+		</oninflict>
+		
+		<onexpired>
+			<playeffect effect="" source="source_entity" target="" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_ShadowBlade.Alt7" modpriority="1"
+	    icon="/heroes/shadowblade/alt7/ability_02/icon.tga"
+	>
+		<onframe />
+	
+		<oninflict>
+			<expirestate name="State_ShadowBlade_Ability1_Morph" target="source_entity" />
+			<expirestate name="State_ShadowBlade_Ability3_Morph" target="source_entity" />
+		</oninflict>
+		
+		<onexpired>
+			<playeffect effect="" source="source_entity" target="" />
+		</onexpired>
+	</altavatar>
+</state>

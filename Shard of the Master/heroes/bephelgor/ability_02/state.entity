@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bephelgor_Ability2"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	silenced="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	impactinterval="500"
+
+	negativeeffect="silenced"
+>
+	<onimpact>
+		<targettype type="hero" target="this_owner_entity">
+			<hasmodifier entity="source_entity" name="Balphagore_ult_notready" >
+				<pushability source="source_entity" name="Ability_Bephelgor4" />
+				<reducecooldown entity="stack_entity" duration="1000" />	
+			</hasmodifier>
+			<else>
+				<pushability source="source_entity" name="Ability_Bephelgor4" />
+				<addcharges entity="stack_entity" count="1" />
+				<starttimer duration="30000" entity="stack_entity" />
+				<expirestate name="State_Bephelgor_Ability4_Removecharges" target="source_entity" />
+			</else>
+		</targettype>
+	</onimpact>
+
+	<onframe>
+		<damage effecttype="Magic DOT" amount="40,50,60,70" b="frametime" op="mult"  />
+	</onframe>
+	
+	<ondeath>
+		<expire />
+	</ondeath>
+	
+	<onexpired>
+		<compare a="dispelled" b="0" op="eq">
+			<areaofeffect
+				radius="300"
+				targetselection="all"
+				targetscheme="organic_enemy_units"
+				effecttype="Magic"
+				source="this_inflictor_entity"
+			>
+				<compare a="target_entity" b="proxy_entity" op="eq" />
+				<else>
+					<applystate name="State_Bephelgor_Ability2_Secondary" proxy="this_owner_entity" duration="2000,2500,3000,3500" pushentity="true" />
+					<setactivemodifierkey name="balph_W_normal" entity="stack_entity" />
+				</else>
+			</areaofeffect>
+			<expirestate target="source_entity" name="State_Bephelgor_Ability2_Self" />
+		</compare>
+	</onexpired>
+	
+	<modifier key="balph_W_normal" modpriority="101">
+	
+	</modifier>
+	
+	<modifier key="balph_R_sotm" modpriority="100">
+		<onimpact />
+		
+		<onexpired>
+			<compare a="dispelled" b="0" op="eq">
+				<areaofeffect
+					radius="300"
+					targetselection="all"
+					targetscheme="organic_enemy_units"
+					effecttype="Magic"
+					source="this_inflictor_entity"
+				>
+					<compare a="target_entity" b="proxy_entity" op="eq" />
+					<else>
+						<applystate name="State_Bephelgor_Ability2_Secondary" proxy="this_owner_entity" duration="1500" pushentity="true" />
+						<setactivemodifierkey name="balph_R_sotm" entity="stack_entity" />
+					</else>
+				</areaofeffect>
+				<expirestate target="source_entity" name="State_Bephelgor_Ability2_Self" />
+			</compare>
+		</onexpired>
+	</modifier>
+	
+	<altavatar key="Hero_Bephelgor.Alt3" modpriority="1"
+		passiveeffect="effects/state_alt3.effect"
+	>
+
+	</altavatar>
+	
+	<altavatar key="Hero_Bephelgor.Alt4" modpriority="1"
+		icon="../alt4/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Bephelgor.Alt5" modpriority="1"
+		passiveeffect="effects/state_alt5.effect"
+	/>
+	
+</state>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<modifier name="PARTYTIME!"
+			life="800"
+			loop="true"
+			startcolor="1.8 .8 1.8"
+			midcolor="1.5"
+			endcolor="1.8 .8 1.8"
+		/>
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+			<template name="eyeglow">
+				<billboard
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot.material"
+					position="0 .7 .3"
+					color="1 0 1"
+					size="4"
+				/>
+			</template>
+			
+			<instance name="eyeglow" bone="_bone_lefteye" />			
+			<instance name="eyeglow" bone="_bone_righteye" />
+			
+<!--			
+			<template name="rainbow trail">
+				<twopointtrailemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					
+					spawnrate="80"
+					particlelife="800"
+					texpostime="800"
+					material="/shared/effects/materials/rainbowtrail.material"
+					texposscale="0.0"
+					texstretchscale="1.0"
+				>
+					<particle
+						startsize="85"
+						endsize="20"
+						color="1 1 1"
+					/>
+				</twopointtrailemitter>
+			</template>
+			
+			<instance name="rainbow trail" bone_a="Box04" bone_b="Bip01 L Clavicle" />
+			<instance name="rainbow trail" bone_a="Box05" bone_b="Bip01 R Clavicle" />
+-->			
+			<!--Rainbow trail-->
+			<!--
+			<model
+				bone="_bone_center"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				anim="idle"
+				scale="1.75"
+			>
+				<twopointtrailemitter
+					bone_a="_bone_fx_01"
+					bone_b="_bone_fx_06"
+					spawnrate="40"
+					particlelife="1750"
+					texpostime="1750"
+					material="/shared/effects/materials/rainbowtrail.material"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					directionalspace="local"
+				>
+					<particle
+						startcolor="0 0 0"
+						midcolor=".4"
+						midcolorpos="0.2"
+						endcolor="0 0 0"
+					/>
+				</twopointtrailemitter>
+			</model>
+			<twopointtrailemitter
+				bone_a="Box04"
+				bone_b="Box05"
+				spawnrate="40"
+				particlelife="1750"
+				texpostime="1750"
+				material="/shared/effects/materials/rainbowtrail.material"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				directionalspace="local"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".5"
+					midcolorpos="0.2"
+					endcolor="0 0 0"
+				/>
+			</twopointtrailemitter>
+			-->
+			
+			<!--Rainbow Absorption-->
+			<!--
+			<trailemitter
+				bone="Scene Root"
+				position="0 0 50"
+				
+				spawnrate="30"
+				particlelife="1000"
+				texpostime="1000"
+				speed="10"
+				material="/shared/effects/materials/rainbowtrail.material"
+				texposscale="0.0"
+				texstretchscale="1.0"
+			>
+				<particle
+					startsize="300"
+					endsize="10"
+					startcolor="0 0 0"
+					midcolor=".035"
+					endcolor="0 0 0"
+					stickiness=".9"
+				/>
+			</trailemitter>
+			-->
+			
+			<!--Zephyr Trail-->
+<!--			<simpleemitter
+				bone="Scene Root"
+				spawnrate="8"
+				particlelife="2000"
+				position="0 -10 0"
+			>
+				<particle>
+					<model
+						model="../model.mdf"
+						anim="walk_1"
+						life="2000"
+						startcolor="4 .4 4"
+						midcolor="2 2 2"
+						endcolor="4 .4 4"
+						startalpha="0.2"
+						endalpha="0"
+						startscale=".9"
+						endscale=".2"
+					/>
+				</particle>
+			</simpleemitter>
+-->
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" modifier="PARTYTIME!"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

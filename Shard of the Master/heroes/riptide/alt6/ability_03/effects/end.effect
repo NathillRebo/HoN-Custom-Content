@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale=".75">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".5"
+				sample="/heroes/riptide/ability_03/sounds/end_%.wav"
+			/>
+
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0"
+				midcolor="1 1 1.5"
+				endcolor="0"
+				material="/shared/effects/materials/shell4.material"
+				startalpha="0"
+				endalpha="1"
+				startsize="1.15"
+				endsize="1.05"
+				life="1000"
+			/>
+
+			<simpleemitter
+				depthbias="-30"
+				life="500"
+				minparticlelife="750"				
+				maxparticlelife="1300"				
+				spawnrate="5000"
+				count="50"
+				minspeed="0"
+				maxspeed="3000"
+				gravity="30"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="30"
+				drag="0.025"
+				material="/shared/effects/materials/whitewater_02.material"
+				offsetsphere="25 25 50"
+				position="0 0 20"
+				collide="1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="40"
+					endsize="150"
+					startcolor="0"
+					midcolor=".5 .5 .6"					
+					endcolor="0"				
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale=".25"
+					maxscale=".7"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				depthbias="-30"
+				life="500"
+				minparticlelife="750"				
+				maxparticlelife="1300"				
+				spawnrate="5000"
+				count="50"
+				minspeed="0"
+				maxspeed="3000"
+				gravity="30"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="30"
+				drag="0.025"
+				material="/shared/effects/materials/phantom_white.material"
+				offsetsphere="25 25 50"
+				position="0 0 20"
+				collide="1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startsize="40"
+					endsize="150"
+					startwidth="80"
+					endwidth="300"
+					startcolor="0"
+					midcolor="1"					
+					endcolor="0"				
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale=".25"
+					maxscale=".7"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				depthbias="-30"
+				life="500"
+				minparticlelife="1500"				
+				maxparticlelife="1750"				
+				spawnrate="5000"
+				count="5"
+				minspeed="350"
+				maxspeed="600"
+				gravity="30"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="10"
+				material="/shared/effects/materials/mistletoe_1.material"
+				offsetsphere="25 25 50"
+				position="0 0 20"
+			>
+				<particle 
+					minangle="-15"
+					maxangle="15"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startsize="40"
+					endsize="150"
+					color="1"									
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale=".25"
+					maxscale=".5"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="800"
+				startcolor=".5 .5 .6"
+				midcolor=".5"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="100"
+				endsize="300"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+			
+			<billboard
+				delay="50"
+				life="700"
+				material="/shared/effects/materials/outsplash_blend.material"
+				position="0 0 15"
+				depthbias="-30"
+				startcolor="1 1 1"
+				endcolor="1 1 1"
+				startsize="105"
+				endsize="305"
+				startalpha="0"
+				midalphapos=".2"
+				midalpha=".75"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="-90"
+				anchor=".8"
+			/>
+		</particlesystem>
+			
+
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

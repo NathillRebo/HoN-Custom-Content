@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Silhouette3"
+
+	
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	maxcharges="5"
+
+	actiontype="passive"
+	cooldowntime="4000,3000,2000,1000"
+>
+	<onabilityimpact>
+		<entitytype type="Ability_Soccer_Sprint" target="inflictor_entity" source="inflictor_entity" />
+		<else>
+			<isready>
+				<startcooldown />
+				<applystate name="State_Silhouette_Ability3" duration="4000" target="source_entity" />
+				<pushability name="Ability_Silhouette4_Swap" />
+				<applystate name="State_Silhouette_Ability3" duration="4000" target="stack_proxy_entity" />
+			</isready>
+		</else>
+	</onabilityimpact>
+	
+	<onattackimpact propagatetoillusions="true">
+		<cantarget targetscheme="enemy_nonboss_units">
+			<applystate name="State_Silhouette_Ability3_Enemy" duration="10000" target="target_entity" proxy="this_entity" />
+		</cantarget>
+	</onattackimpact>	
+	
+	<onframe />
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"/>
+	
+	<modifier key="soccer" modpriority="150"
+		baselevel="0"
+		maxlevel="1"
+		attackspeed="0.22"
+	>
+	
+		<onattackimpact/>
+		
+	</modifier>
+	
+    <altavatar key="Hero_Silhouette.Alt12"
+	    icon="/heroes/silhouette/alt12/ability_03/icon.tga"
+	/>
+		
+	
+</ability>

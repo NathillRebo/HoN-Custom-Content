@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Legionnaire_Shard"
+	icon="icon.tga"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	passiveeffect=""
+	
+	maxcharges="6"
+	totaldamagemultiplierpercharge="-0.1"
+>
+	<onframe />
+	
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1" />
+	</onrefresh>
+</state>

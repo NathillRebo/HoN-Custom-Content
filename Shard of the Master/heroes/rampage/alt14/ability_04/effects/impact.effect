@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world"  scale="1.5">
+			<sound
+				linearfalloff="true" 
+				falloffstart="700"
+				falloffend="1300"
+				volume=".7"
+				sample="../../sounds/ab4_imp.wav"
+			/>	
+
+			<simpleemitter
+				count="1"
+				spawnrate="222"
+				particlelife="5000"
+				offsetsphere="0 0 0"
+			>
+				<particle>
+					<groundsprite			
+						life="2700"
+						material="/shared/effects/materials/dirtpile_groundsprite.material"
+						size="250"
+						color=".5"						
+						startalpha=".5"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".85"
+						minyaw="0"
+						maxyaw="360"
+						position="0 0 0"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			
+
+
+			<model
+				color="1"
+				model="horn/model.mdf"
+				startscale="0"
+				midscale="1.75"
+				endscale="1.75"
+				midscalepos=".1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".8"
+				life="2500"
+				yaw="180"
+			>
+				<simpleemitter
+					spawnrate="120"
+					life="500"
+					particlelife="300"
+					position="0 0 30"
+					offsetsphere="50 50 30"
+					material="/shared/effects/materials/lightning_ring.material"
+				>
+					<particle
+						maxangle="360"
+						startcolor="2 0 2"
+						endcolor="0"
+						startsize="0"
+						endsize="100"
+					/>
+				</simpleemitter>
+				
+				<template name="soundwaves" >
+				<controller yaw="{angle}">
+					<simpleemitter
+						delay="300"
+						position="{position}"
+						directionalspace="local"
+						particledirectionalspace="local"
+						life="1600"
+						startspawnrate="15"
+						midspawnrate="15"
+						endspawnrate="0"
+						direction="0 1 0"
+						angle="0"
+						speed="100"
+						particlelife="200"
+						material="/shared/effects/materials/corona_07.material"
+					>
+						<particle
+							lockup="1"
+							lockright="1"
+							turn="1"
+							startcolor="{color}"
+							endcolor="0"
+							startsize="20"
+							endsize="50"
+							anchor="1"
+							scale="{scale}"
+						/>
+					</simpleemitter>
+				</controller>
+				</template>
+				
+				<instance name="soundwaves" angle="0" position="0 10 70" color="0 2 2" scale="1"/>
+				<instance name="soundwaves" angle="180" position="0 10 70" color="0 2 0" scale="1"/>
+				
+				<instance name="soundwaves" angle="90" position="0 20 50" color="0 2 0" scale="1.5"/>
+				<instance name="soundwaves" angle="270" position="0 20 50" color="2 0 2" scale="1.5"/>
+				
+				<instance name="soundwaves" angle="0" position="0 30 25" color="2 0 2" scale=".5"/>
+				<instance name="soundwaves" angle="180" position="0 30 25" color="0 2 0" scale=".5"/>
+				
+				<instance name="soundwaves" angle="90" position="0 30 10" color="2 0 2" scale=".5"/>
+				<instance name="soundwaves" angle="270" position="0 30 10" color="0 2 2" scale=".5"/>
+						
+				
+			<simpleemitter
+				delay="100"
+				offsetsphere="150 150 100"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				position="0 0 100"
+				count="200"
+				speed="50"
+				material="/shared/effects/materials/sparks_reveal_blue.material"
+			>
+				<particle
+					minstartframe=".33"
+					maxstartframe=".5"
+					endframe="1"
+					color="0 2 2"
+					size="50"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+				/>
+			</simpleemitter>
+			</model>
+			
+			
+
+			
+			<simpleemitter
+				count="1"
+				spawnrate="222"
+				particlelife="5000"
+			>
+				<particle>
+
+					<groundsprite
+						delay="100"
+						life="2000"
+						material="/shared/effects/materials/ground_smash_overlay.material"
+						size="110"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".85"
+					/>
+
+					<billboard
+						life="500"
+						color="1.0 1.0 1.0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam=".5"
+						endparam="0.0"
+						startsize="128"
+						endsize="768"
+						depthbias="0"
+						position="0 0 10"
+						material="/shared/effects/materials/refract_ring.material"
+						lockup="true"
+						pitch="90"
+					/>
+
+				</particle>
+			</simpleemitter>
+
+			<billboard
+				life="1000"
+				position="0 0 0"
+				startcolor="0 0 1"
+				endcolor="0"
+				size="300"
+				depthbias="-100"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				life="1000"
+				position="0 0 0"
+				startcolor="0 .25 1"
+				endcolor="0"
+				size="150"
+				depthbias="-100"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<simpleemitter
+				count="1"
+				spawnrate="222"
+				particlelife="5000"
+			>
+				<particle>
+				
+					<billboard
+						life="2000"
+						position="0 0 0"
+						startcolor="1 0 1"
+						endcolor="0"
+						startsize="300"
+						endsize="100"
+						depthbias="-25"
+						material="/shared/effects/materials/whitedot.material"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+					
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="0"
+				spawnrate="222"
+				particlelife="5000"
+			>
+				<particle>
+
+					<model
+						model="/heroes/rampage/ability_04/effects/rock_explosion/model.mdf"
+						anim="idle"
+						scale="1"
+						life="1750"
+						startalpha="1"	
+						midalpha="1"				
+						endalpha="0"
+						midalphapos=".9"
+						position="0 0 -5"
+						yaw="90"
+						startcolor="0 0 0"
+						midcolor="1.2 1.2 1.2"
+						endcolor="1.2 1.2 1.2"
+						midcolorpos=".5"
+					>
+						<template name="flashes">
+						
+							<trailemitter
+								life="1250"
+								bone="{bone}"						
+								spawnrate="50"
+								particlelife="1000"
+								texpostime="1000"
+								texposscale="0"
+								texstretchscale="1"
+								position="0 0 0"
+								material="/shared/effects/materials/arrow_trail.material"
+								startparticlecolor="1 0 .5"
+								midparticlecolor="0 1 1"
+								endparticlecolor="0"
+							>
+								<particle
+									 startsize="30"
+									 midsize="5"
+									 endsize="2"
+									 midsizepos="0.25"
+							 />
+							</trailemitter>
+							
+						</template>
+
+						<instance name="flashes" bone="Box043" />
+						<instance name="flashes" bone="Box040" />
+						<instance name="flashes" bone="Box037" />
+						<instance name="flashes" bone="Box028" />
+						<instance name="flashes" bone="Box035" />
+						<instance name="flashes" bone="Box046" />
+						<instance name="flashes" bone="Box044" />
+						<instance name="flashes" bone="Box033" />
+						<instance name="flashes" bone="Box045" />
+						<instance name="flashes" bone="Box040" />
+					</model>
+					
+					<model
+						model="/heroes/rampage/ability_04/effects/rock_explosion/model.mdf"
+						anim="idle"
+						scale="1"
+						life="2250"
+						startalpha="1"	
+						midalpha="1"				
+						endalpha="0"
+						midalphapos=".9"
+						position="0 -85 -5"
+						startcolor="0 0 0"
+						midcolor="1.2 1.2 1.2"
+						endcolor="1.2 1.2 1.2"
+						midcolorpos=".5"
+					>
+					</model>
+
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				life="300"
+				spawnrate="250"
+				minparticlelife="250"
+				maxparticlelife="500"
+				mingravity="0"
+				maxgravity="25"
+				speed="50"
+				position="0 0 50"
+				offsetsphere="75 75 50"
+				material="/shared/effects/materials/soul_projectile2.material"
+				depthbias="-75"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor=".15"
+					endcolor="0"
+					startalpha="1"
+					endalpha="0"
+					startsize="75"
+					minendsize="25"
+					maxendsize="35"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="2500"
+				spawnrate="20"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				gravity="-10"
+				speed="10"
+				drag="0.07"
+				acceleration="0.0"
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 30"
+				material="/shared/effects/materials/pyroclast_01.material"
+				offsetsphere="75 75 15"
+				inheritvelocity=".5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color=".35"
+					maxanglespeed="30"
+					startsize="65"
+					endsize="95"
+					startalpha="0"
+					midalpha=".45"
+					endalpha="0"
+					midalphapos=".2"
+				 />
+			</simpleemitter>
+			
+			
+			<simpleemitter
+				count="1"
+				spawnrate="1000"
+				particlelife="3000"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				offsetsphere="0 0 0"
+			>
+				<particle
+					turn="1"
+				>
+
+					<simpleemitter
+						count="20"
+						minparticlelife="50"
+						maxparticlelife="1000"
+						spawnrate="35"
+						minspeed="25"
+						maxspeed="50"
+						gravity="2"
+						direction="0 0 0"
+						material="/shared/effects/materials/pyroclast_03.material"
+						offsetsphere="25 25 10"
+						position="0 0 50"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							depthbias="-25"
+							color=".25 .25 .25"
+							startscale="50"
+							endscale="50"
+							startalpha="0"
+							midalpha=".35"
+							endalpha="0"
+						/>
+						
+						<particle
+							minangle="0"
+							maxangle="360"
+							depthbias="-25"
+							color="0 0 0"
+							startscale="50"
+							endscale="50"
+							startalpha="0"
+							midalpha=".35"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						count="2"
+						minparticlelife="50"
+						maxparticlelife="1000"
+						spawnrate="35"
+						minspeed="25"
+						maxspeed="50"
+						gravity="2"
+						direction="0 0 0"
+						material="/shared/effects/materials/pyroclast_03.material"
+						offsetsphere="25 25 10"
+						position="0 0 50"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							depthbias="-25"
+							color="0 0 0"
+							startscale="50"
+							endscale="150"
+							startalpha="0"
+							midalpha=".25"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="600"
+				startspawnrate="30"
+				midspawnrate="30"
+				endspawnrate="0"
+				particlelife="300"
+				position="0 0 10"
+				material="/shared/effects/materials/corona_07.material"
+			>
+				<particle
+					startcolor="0 .75 .75"
+					endcolor="0"
+					endsize="500"
+					depthbias="-75"
+					lockup="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="600"
+				delay="200"
+				offsetsphere="90 90 0"
+				count="20"
+				particlelife="400"
+				position="0 0 10"
+				material="/shared/effects/materials/beer_splash.material"
+			>
+				<particle
+					color="0 1 0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					maxangle="360"
+					startsize="0"
+					endsize="200"
+				/>
+				<particle
+					color="1 0 .75"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					maxangle="360"
+					startsize="0"
+					endsize="200"
+				/>
+				<particle
+					color="0 1 1"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					maxangle="360"
+					startsize="0"
+					endsize="200"
+				/>
+			</simpleemitter>
+
+			<billboard
+				life="300"
+				position="0 0 0"
+				startcolor="0 .25 .25"
+				endcolor="0"
+				endsize="750"
+				depthbias="-75"
+				lockup="1"
+				pitch="90"
+				material="/shared/effects/materials/corona_06.material"
+			/>
+			
+			<billboard
+				delay="50"
+				life="300"
+				position="0 0 0"
+				startcolor="0 1 1"
+				endcolor="0"
+				endsize="400"
+				depthbias="-75"
+				lockup="1"
+				pitch="90"
+				material="/shared/effects/materials/corona_07.material"
+			/>
+			
+			<billboard
+				delay="100"
+				life="300"
+				position="0 0 0"
+				startcolor="0 1 1"
+				endcolor="0"
+				endsize="400"
+				depthbias="-75"
+				lockup="1"
+				pitch="90"
+				material="/shared/effects/materials/corona_07.material"
+			/>
+			
+			<billboard
+				delay="150"
+				life="300"
+				position="0 0 0"
+				startcolor="0 1 1"
+				endcolor="0"
+				endsize="400"
+				depthbias="-75"
+				lockup="1"
+				pitch="90"
+				material="/shared/effects/materials/corona_07.material"
+			/>
+			
+			
+			<simpleemitter
+				delay="00"
+				count="1"
+				direction="0 0 1"
+				angle="0"
+				speed="500"
+				gravity="50"
+				particlelife="1000"
+			>
+				<particle>
+					<model
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						anim="idle"
+						position="0 0 0"
+						startscale="2"
+						endscale="10"
+						life="1000"
+					>
+						<template name="trail">
+							<twopointtrailemitter
+								bone_a="{bonea}"
+								bone_b="{boneb}"
+								life="700"
+								spawnrate="200"
+								particlelife="300"
+								texpostime="100"
+								texposscale="0"
+								texstretchscale="1.025"	
+								startparticlealpha="1"
+								midparticlealpha="1"
+								midalphapos=".85"
+								endparticlealpha="0"
+								material="/shared/effects/materials/goo_trail_blend_02_lighter.material"
+							>
+								<particle
+									startcolor="0 1 0"
+									endcolor="0 1 1"
+									startsize="19"
+									endsize="24"
+								/>
+							</twopointtrailemitter>
+						</template>
+						
+						<instance name="trail" bonea="_bone_fx_01"  boneb="_bone_fx_02" color1="1 1 0" />
+						<instance name="trail" bonea="_bone_fx_02"  boneb="_bone_fx_03" color1="1 .5 0" />
+						<instance name="trail" bonea="_bone_fx_03"  boneb="_bone_fx_04" color1="1 .25 .25"/>
+						<instance name="trail" bonea="_bone_fx_04"  boneb="_bone_fx_05" color1="1 0 .5"/>
+						<instance name="trail" bonea="_bone_fx_05"  boneb="_bone_fx_06" color1="0 .5 1" />
+						<instance name="trail" bonea="_bone_fx_06"  boneb="_bone_fx_07" color1="0 1 1" />
+						<instance name="trail" bonea="_bone_fx_07"  boneb="_bone_fx_08" color1="0 .5 1" />
+						<instance name="trail" bonea="_bone_fx_08"  boneb="_bone_fx_09" color1="1 0 1" />
+						<instance name="trail" bonea="_bone_fx_09"  boneb="_bone_fx_10" color1="1 0 .5"/>
+						<instance name="trail" bonea="_bone_fx_10"  boneb="_bone_fx_11" color1="1 .25 .25"/>
+						<instance name="trail" bonea="_bone_fx_11"  boneb="_bone_fx_12" color1="1 .5 0" />
+						<instance name="trail" bonea="_bone_fx_12"  boneb="_bone_fx_01" color1="1 .25 0" />
+						
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="30"
+				minparticlelife="2000"
+				maxparticlelife="2500"
+				mincount="18"
+				maxcount="20"
+				offsetsphere="100 100 0"
+				position="0 0 10"
+				material="/shared/effects/materials/water.material"
+			>
+				<particle
+					startsize="20"
+					midsize="50"
+					endsize="50"
+					maxangle="360"
+					startalpha=".8"
+					midalpha=".8"
+					endalpha="0"
+					minscale="2"
+					maxscale="4"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color="1 0 1"
+					startframe="0"
+					endframe="1"
+				/>
+				<particle
+					startsize="20"
+					midsize="50"
+					endsize="50"
+					maxangle="360"
+					startalpha=".8"
+					midalpha=".8"
+					endalpha="0"
+					minscale="2"
+					maxscale="4"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color="0 1 0"
+					startframe="0"
+					endframe="1"
+				/>
+				<particle
+					startsize="20"
+					midsize="50"
+					endsize="50"
+					maxangle="360"
+					startalpha=".8"
+					midalpha=".8"
+					endalpha="0"
+					minscale="2"
+					maxscale="4"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color="0 1 1"
+					startframe="0"
+					endframe="1"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rampage_Ability1_Self_Alt"
+	
+	icon="../../ability_01/icon.tga"
+	passiveeffect="charge.effect"
+
+	movespeedpercharge="15,20,25,30"
+	
+	unitwalking="true"
+	modifierkey="rampage_alt_charging"
+>
+	<oninflict>
+		<playanim name="charge_1" target="source_entity" />
+	</oninflict>
+
+	<onframe>
+		<condition target="source_entity" test="hastrait stunned or hastrait immobilized or hastrait restrained">
+			<expire />
+		</condition>
+	</onframe>
+	
+	<modifier key="rampage_charge_treewalking" priority="100"
+		passiveeffect="charge_magic.effect"
+		immunitytype="MagicImmunity1"
+	/>
+</state>

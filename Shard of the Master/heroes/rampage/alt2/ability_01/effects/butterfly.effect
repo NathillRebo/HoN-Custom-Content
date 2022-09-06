@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				spawnrate="5"
+				gravity="-25"
+				minparticlelife="600"
+				maxparticlelife="1000"
+				offsetsphere="35 35 25"
+			>
+				<particle
+					turn="0"
+				>
+					<model
+						position="0 0 0"
+						life="500"
+						anim="idle"
+						model="butterfly/butterfly.mdf"
+						minscale="1.25"
+						maxscale="1.75"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".85"
+						lockup="1"
+						lockright="1"
+						pitch="0"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+
+</effect>

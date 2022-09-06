@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters vDiffuseColor="0 0 1" fSpecularLevel="1.0000" fGlossiness="1250" fOpacity="1.0000" fReflect="1.0000" >
+		<vec2 name="vUVScale" value="2 2" />
+		<vec2 name="vUVScroll" value="-.025 -.025" />
+		<vec2 name="vUVScale2" value=".25 .25" />
+		<vec2 name="vUVScroll2" value=".01 -.01" />
+		<vec3 name="vReflectColor" value="1.0" />
+		<float name="fNormalScale" value="2" />
+		<float name="fRefractScale" value="0.05" />
+	</parameters>
+	<phase
+		name="refract"
+		vs="mesh_color_water"
+		ps="mesh_color_water2"
+		srcblend="BLEND_SRC_ALPHA"
+		dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
+		cull="CULL_NONE"
+		translucent="true"
+		depthwrite="true"
+		depthbias="1"
+		depthslopebias="true"
+		alphawrite="true"
+		refractive="true"
+	>
+		<sampler
+			name="diffuse"
+			texture="$white"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+		<sampler
+			name="normalmap"
+			texture="/shared/textures/water_normal2.tga"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+		<samplercube
+			name="cube"
+			texture="/world/sky/soap_bubbles/1.tga"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+	</phase>
+	<phase
+		name="color"
+		vs="mesh_color_water"
+		ps="mesh_color_water2_norefract"
+		srcblend="BLEND_SRC_ALPHA"
+		dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
+		cull="CULL_NONE"
+		translucent="true"
+		depthwrite="true"
+		depthbias="1"
+		depthslopebias="true"
+		alphawrite="true"
+		refractive="false"
+	>
+		<sampler
+			name="diffuse"
+			texture="$black"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+		<sampler
+			name="normalmap"
+			texture="/shared/textures/water_normal2.tga"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+		<samplercube
+			name="cube"
+			texture="/world/sky/soap_bubbles/1.tga"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+	</phase>
+</material>

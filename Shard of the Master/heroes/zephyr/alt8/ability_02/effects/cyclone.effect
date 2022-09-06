@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">	
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume=".7"
+				sample="/heroes/zephyr/ability_02/sounds/cast.wav"
+			/>	
+			
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume=".7"
+				sample="../../sounds/ab2_%.wav"
+			/>	
+		
+			<simpleemitter
+				bone="_bone_cyclone01"
+				spawnrate="30"
+				particlelife="300"
+				depthbias="-100"
+				material="/shared/effects/materials/bad_healing_smoke_06.material"
+			>
+				<particle
+					startcolor="1 .25 0"
+					midcolor="0"
+					endcolor="0"
+					startalpha="0"
+					midalpha=".5"
+					midalphapos=".2"
+					endalpha="0"
+					startsize="150"
+					endsize="200"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+				/>
+			</simpleemitter>
+					
+			<template name="wind">
+		<!--
+				<orbiteremitter
+					bone="{bone}"
+					minspawnrate="1"
+					maxspawnrate="3"
+					particlelife="500"
+					origin="0 0 -{origin}" 
+					orbit="{orbit} 0 0 " 
+					speed="2"
+					direction="0 0 1" 
+					offset="0 0 0"
+					cylindrical="true" 
+					material="/shared/effects/materials/pyroclast_01.material"
+					expirelife="500"
+				>
+					<particle
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-200"
+						maxanglespeed="200"					
+						color=".3 .3 .3"
+						startalpha="0"
+						midalpha=".8"
+						endalpha="0"
+						endalphapos=".998"
+						startsize="00"
+						endsize="{size2}"	
+					/>
+				</orbiteremitter>	
+			-->
+				<billboard	
+					bone="{bone}"
+					material="/shared/effects/materials/{material}.material"
+					position="0 0 {pos1}"
+					size="{size}"
+					roll="105"
+					rollspeed="{speed}"
+					color="{color}"
+					alpha=".5"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					yaw="0"
+				/>
+
+			</template>			
+			
+			<instance name="wind" material="twirl_03" size="30"  speed="1800" color=".66 .66 0" bone=""				/>
+			<instance name="wind" material="twirl_03" size="60"  speed="1800" color=".66 .53 0" bone="_bone_cyclone02"/>
+			<instance name="wind" material="twirl_03" size="30"  speed="1600" color=".66 .40 0" bone="_bone_cyclone03"/>
+			<instance name="wind" material="twirl_03" size="130" speed="1600" color=".66 .26 0" bone="_bone_cyclone04"/>
+			<instance name="wind" material="twirl_03" size="160" speed="400"  color=".66 .13 0" bone="_bone_cyclone05"/>
+			<instance name="wind" material="twirl_03" size="210" speed="400"  color=".66 .00 0"	bone="_bone_cyclone06"/>
+			<instance name="wind" material="twirl_03" size="250" speed="400"  color=".50 .00 0" bone="_bone_cyclone07"/>
+
+			<simpleemitter
+				position="0 0 75"
+				spawnrate="7"
+				particlelife="1000"
+				gravity="-1"
+				material="/shared/effects/materials/abstract_reveal_02.material"
+				offsetsphere="100 100 25"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				inheritvelocity=".25"
+			>
+				<particle
+					maxangle="360"
+					startsize="50"
+					endsize="150"
+					startcolor="10 .7 0"
+					midcolor="10 0 0"
+					midcolorpos=".2"
+					endcolor="-10"
+					startframe=".8"
+					endframe="1"
+					minscale="1"
+					maxscale="1.2"
+				/>
+			</simpleemitter>			
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rampage_Ability1_SpeedBoost"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	movespeed="700"
+	maxmovespeed="150"
+	
+	unitwalking="true"
+
+	slowresistance="1.0"
+>	
+	<altavatar key="Hero_Rampage.Alt14" modpriority="1"
+	    icon="/heroes/Rampage/alt14/ability_01/icon.tga"
+	>
+	</altavatar>
+</state>

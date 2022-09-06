@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Mumra_Ability1"
+
+	radius="275"
+	
+	lifetime="10000"
+	impactinterval="750"
+	maximpactsperinterval="1"
+	targetselection="random"
+	targetscheme="visible_enemy_units"
+	effecttype="Magic"
+	
+	effect="effects/self.effect"
+	
+	dynamicprecache="effects/impact.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<applystate name="State_Stunned_Static" duration="100"/>
+		<damage effecttype="Magic" amount="20,40,60,80" />
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onimpact>
+			<chance threshold="0.18">
+				<setpos0 position="target_entity"/>
+				<spawnunit name="Gadget_Mumra_Ability3_SoulReveal" count="1" target="source_position" pushentity="true" />
+				<spawnprojectile name="Projectile_Mumra_Ability_03_Soul" source="source_entity" target="target_position" bind="stack_entity" proxy="stack_entity" />
+			</chance>
+			<else>
+				<applystate name="State_Stunned_Static" duration="100"/>
+				<damage effecttype="Magic" amount="20,40,60,80" />
+				
+				<!-- Dynamic visual effects -->
+				<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+				<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+			</else>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Mumra.Alt4" modpriority="101"
+		effect="../alt4/ability_01/effects/self.effect"
+		dynamicprecache="../alt4/ability_01/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt4/ability_01/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.Alt5" modpriority="101"
+		effect="../alt5/ability_01/effects/self.effect"
+		dynamicprecache="../alt5/ability_01/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt5/ability_01/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.set_ascension" modpriority="101"
+		effect="../set_ascension/ability_01/effects/self.effect"
+		dynamicprecache="../set_ascension/ability_01/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../set_ascension/ability_01/effects/impact.effect" entity="this_entity" />
+		</onspawn>	
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.Alt6" modpriority="101"
+		effect="../alt6/ability_01/effects/self.effect"
+		dynamicprecache="../alt6/ability_01/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt6/ability_01/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.Alt7" modpriority="101"
+		effect="../alt7/ability_01/effects/self.effect"
+		dynamicprecache="../alt7/ability_01/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt7/ability_01/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Mumra.Alt8" modpriority="101"
+		effect="../alt7/ability_01/effects/self.effect"
+		dynamicprecache="../alt7/ability_01/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt7/ability_01/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	
+</affector>

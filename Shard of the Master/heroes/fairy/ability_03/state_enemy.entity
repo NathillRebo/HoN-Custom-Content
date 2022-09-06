@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Fairy_Ability3_Shard"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	stunned="true"
+	frozen="true"
+	smackable="true"
+
+	nothreat="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="frozen"
+>
+	<ondamaged priority="-10">
+		<targettype type="player_controlled">
+			<compare a="source_damage" b="0" op="gt">
+				<changeduration b="1000" op="sub" />
+			</compare>
+		</targettype>
+	</ondamaged>
+	
+	<altavatar key="Hero_Fairy.Alt3"
+		passiveeffect="../alt3/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.Alt4"
+		passiveeffect="../alt4/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.Alt6"
+		passiveeffect="../alt6/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.trophy_skin02"
+		passiveeffect="../trophy_skin/ability_02/effects/state01.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.trophy_skin03"
+		passiveeffect="../trophy_skin/ability_02/effects/state.effect"
+	/>
+	
+	<modifier key="Combo_efx_fairy" modpriority="101"
+		passiveeffect="../alt6/ability_02/effects/state_combo.effect"
+	/>
+	
+	<altavatar key="Hero_Fairy.Alt7"
+		passiveeffect="../alt7/ability_02/effects/state.effect"
+	/>
+	
+</state>

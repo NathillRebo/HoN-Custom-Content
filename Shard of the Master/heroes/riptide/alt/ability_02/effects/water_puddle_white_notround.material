@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters fSpecularLevel="0" fGlossiness="1250">
+		<vec2 name="vUVScale" value="3 3" />
+		<vec2 name="vUVScroll" value="-.1 .1" />
+		<vec2 name="vUVScale2" value=".25 .25" />
+		<vec2 name="vUVScroll2" value="-.02 .02" />
+		<vec3 name="vReflectColor" value=".25 0 .25" />
+		<float name="fHeight" value="5" />
+	</parameters>
+	<phase
+		name="color"
+		vs="effect_water"
+		ps="effect_water_norefract"
+		srcblend="BLEND_SRC_ALPHA"
+		dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
+		cull="CULL_NONE"
+		translucent="true"
+		depthwrite="false"
+		depthbias="1"
+		depthslopebias="true"
+		alphawrite="false"
+		refractive="false"
+	>
+		<sampler
+			name="diffuse"
+			texture="/shared/effects/textures/water_puddle_white_notround.tga"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+		<sampler
+			name="normalmap"
+			texture="/shared/textures/water_normal2.tga"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+		<samplercube
+			name="cube"
+			texture="/world/sky/liquid_metal_02/1.tga"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+	</phase>
+</material>

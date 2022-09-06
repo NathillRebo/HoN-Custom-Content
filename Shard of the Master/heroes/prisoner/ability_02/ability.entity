@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Prisoner2"
+	icon="icon.tga"
+	statuseffecttooltip="State_Prisoner_Ability2"
+	
+	anim="ability_2"
+	casttime="200"
+	castactiontime="200"
+	casteffect=""
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_heroes"
+	casteffecttype="Physical"
+	
+	novoiceresponse="true"
+	
+	range="400"
+	manacost="45,50,55,60"
+	cooldowntime="15000"
+	cooldowntype="Prisoner_W"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	dynamicprecache="effects/state_sound.effect"
+	
+	modifierkey="Prisoner_W"
+>
+	<modifier key="shardofthemaster_boost" modpriority="100"/>
+	<onlearn>
+		<setscriptvalue name="sound_effect" value="effects/state_sound.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onimpact>
+		<applystate name="State_Prisoner_Ability2" inflictor="source_entity" target="target_entity" duration="3000,5000,7000,9000" />
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="sound_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_entity" occlude="true" />
+	</onimpact>
+	
+	<onready>
+		<expirestate name="State_Prisoner_Bonus_Ability3_2" target="source_entity" />
+	</onready>
+	
+	<altavatar key="Hero_Prisoner.Alt" modpriority="90"
+		dynamicprecache="../alt/ability_02/effects/state_sound.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="sound_effect" value="../alt/ability_02/effects/state_sound.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Prisoner.Alt2" modpriority="90"
+		dynamicprecache="../alt2/ability_02/effects/state_sound.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="sound_effect" value="../alt2/ability_02/effects/state_sound.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Prisoner.Alt3" modpriority="90"
+		dynamicprecache="../alt3/ability_02/effects/state_sound.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="sound_effect" value="../alt3/ability_02/effects/state_sound.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Prisoner.Alt4" modpriority="90"
+		dynamicprecache="../alt4/ability_02/effects/state_sound.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="sound_effect" value="../alt4/ability_02/effects/state_sound.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Prisoner.Alt5" modpriority="90"
+		icon="../alt5/ability_02/icon.tga"
+		dynamicprecache="../alt5/ability_02/effects/state_sound.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="sound_effect" value="../alt5/ability_02/effects/state_sound.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Prisoner.Alt6" modpriority="90"
+		dynamicprecache="../alt6/ability_02/effects/state_sound.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="sound_effect" value="../alt6/ability_02/effects/state_sound.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Prisoner.Alt9"
+        icon="../alt9/ability_02/icon.tga"
+		dynamicprecache="../alt9/ability_02/effects/state_sound.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="sound_effect" value="../alt9/ability_02/effects/state_sound.effect" entity="this_entity" />
+		</onlearn>
+ 	</altavatar>
+</ability>

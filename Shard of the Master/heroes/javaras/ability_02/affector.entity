@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Javaras_Ability2"
+
+	radius="350"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	impacteffect="effects/impact.effect"
+>
+	<onspawn>
+		<!-- Apply shield if an enemy hero is near landing location -->
+		<areaofeffect
+			center="this_entity"
+			radius="350"
+			targetscheme="enemy_heroes"
+			targetselection="all"
+			effecttype=""
+			ignoreinvulnerable="false"
+		>
+			<hasmodifier name="shardofthemaster_boost">
+				<evaluate a="target_maxmana" b="0.555" op="mult"/>
+				<applystate name="State_Javaras2_Shard" duration="result" target="target_entity" />
+			</hasmodifier>
+		</areaofeffect>
+		<compare a="result" b="1" op="ge">
+			<applystate name="State_Javaras_Ability2_Shield" duration="7000" target="source_entity" />
+			<pushability name="Ability_Javaras2" />
+			<reducecooldown duration="4000" entity="stack_entity" />
+			
+			<!-- Trigger E if leveled -->
+			<pushability name="Ability_Javaras3" />
+			<compare a="source_level" source="stack_entity" b="0" op="gt">
+				<setcharges a="1" entity="stack_entity" />
+				<starttimer duration="7000" entity="stack_entity" />
+			</compare>
+		</compare>
+	</onspawn>
+	
+	<onimpact>
+		<!-- Slow state -->
+		<applystate name="State_Javaras_Ability2" duration="2500" />
+	</onimpact>
+</affector>

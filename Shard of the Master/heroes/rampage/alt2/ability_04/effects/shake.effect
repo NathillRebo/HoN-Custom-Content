@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name=""  deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<sound
+			    life="1500"
+				volume="1" 
+				sample="/heroes/rampage/alt2/sounds/ab4_channel.ogg"
+				linearfalloff="true"
+				falloffstart="200"
+				falloffend="1300"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+
+		<camerashake2 scale="5" radius="1200" duration="1000" frequency="50" />
+
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

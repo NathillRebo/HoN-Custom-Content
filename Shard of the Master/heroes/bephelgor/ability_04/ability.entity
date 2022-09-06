@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Bephelgor4"
+	
+	statuseffecttooltip="State_Bephelgor_Ability4"
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+	
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	targetradius="600"
+	casteffect=""
+	maxcharges="100"
+	manacost="100,150,200"
+	cooldowntime="90000"
+	
+	novoiceresponse="true"
+>
+	<ontimer>
+		<applystate name="State_Bephelgor_Ability4_Removecharges" duration="100000" />
+	</ontimer>
+	
+	<onready>
+		<expirestate target="source_entity" name="State_Bephelgor_Ability4_NotReady" />
+	</onready>
+
+	<onframe>
+		<isready />
+		<else>
+			<hasmodifier name="Balphagore_ult_notready" />
+			<else>
+				<applystate name="State_Bephelgor_Ability4_NotReady" continuous="true" target="source_entity" />
+			</else>
+		</else>
+
+		<compare a="charges" b="50" op="lt">
+			<setactivemodifierkey name="" />
+			<setaccumulator value="0" />
+		</compare>
+		<else>
+			<compare a="charges" b="100" op="lt">
+				<hasmodifier name="bephelgor_ability4_level2" />
+				<else>
+					<setactivemodifierkey name="bephelgor_ability4_level2" />
+				</else>		
+			</compare>
+			<else>
+				<hasmodifier name="bephelgor_ability4_level3" />
+				<else>
+					<setactivemodifierkey name="bephelgor_ability4_level3" />
+				</else>
+			</else>
+		</else>
+		
+		<compare a="charges" b="100" op="ge">
+			<compare a="accumulator" b="0" op="eq">
+				<setaccumulator value="1" />
+				<hasavatarkey name="Hero_Bephelgor.Alt2">
+					<playeffect effect="/heroes/bephelgor/alt2/ability_04/effects/ready.effect" source="source_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Bephelgor.Alt3">
+						<playeffect effect="/heroes/bephelgor/alt3/ability_04/effects/ready.effect" source="source_entity" target="" />
+					</hasavatarkey>					
+					<else>
+						<hasavatarkey name="Hero_Bephelgor.Alt4">
+							<playeffect effect="/heroes/bephelgor/alt4/ability_04/effects/ready.effect" source="source_entity" target="" />
+						</hasavatarkey>		
+						<else>
+						<hasavatarkey name="Hero_Bephelgor.Alt5">
+							<playeffect effect="/heroes/bephelgor/alt5/ability_04/effects/ready.effect" source="source_entity" target="" />
+						</hasavatarkey>	
+						<else>
+							<playeffect effect="effects/ready.effect" source="source_entity" target="" />
+						</else>
+						</else>
+					</else>
+				</else>
+			</compare>
+		</compare>
+	</onframe>
+	
+	<onimpact>
+		<hasmodifier name="bephelgor_ability4_level3">
+			<!-- Effects for each avatar -->
+			<hasavatarkey name="Hero_Bephelgor.Alt2">
+				<playeffect effect="/heroes/bephelgor/alt2/ability_04/effects/cast.effect" source="source_entity" target="" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Bephelgor.Alt3">
+					<playeffect effect="/heroes/bephelgor/alt3/ability_04/effects/cast.effect" source="source_entity" target="" />
+				</hasavatarkey>			
+				<else>
+					<hasavatarkey name="Hero_Bephelgor.Alt4">
+						<playeffect effect="/heroes/bephelgor/alt4/ability_04/effects/cast.effect" source="source_entity" target="" />
+					</hasavatarkey>			
+					<else>
+					<hasavatarkey name="Hero_Bephelgor.Alt5">
+						<playeffect effect="/heroes/bephelgor/alt5/ability_04/effects/cast.effect" source="source_entity" target="" />
+					</hasavatarkey>			
+					<else>
+						<playeffect effect="effects/cast.effect" source="source_entity" target="" />
+					</else>
+				</else>
+				</else>
+			</else>
+		</hasmodifier>
+		
+		<spawnaffector name="Affector_Bephelgor_Ability4" proxy="source_entity" target="source_entity" pushentity="true" param="charges" />
+		<spawnaffector name="Affector_Bephelgor_Ability4_Minion" proxy="source_entity" target="source_position" />
+		
+		<setcharges a="0" />
+		<setactivemodifierkey name="" />
+		<resettimer />
+	</onimpact>
+	
+	<ondeath>
+		<hasmodifier name="ihazatokenoflife" />
+		<else>
+			<setcharges a="0" />
+			<setaccumulator value="0" />
+			<resettimer />
+		</else>
+	</ondeath>	
+
+	<aura state="State_Bephelgor_Ability4_Aura" radius="1000" notooltip="true" targetscheme="player_controlled_enemy_units" stack="true" ignoreinvulnerable="true" />
+	
+	<modifier key="ult_boost" modpriority="100"
+		cooldowntime="70000"
+		targetradius="1000"
+	>
+		<onimpact>
+			<hasmodifier name="bephelgor_ability4_level3">
+				<!-- Effects for each avatar -->
+				<hasavatarkey name="Hero_Bephelgor.Alt2">
+					<playeffect effect="/heroes/bephelgor/alt2/ability_04/effects/cast.effect" source="source_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Bephelgor.Alt3">
+						<playeffect effect="/heroes/bephelgor/alt3/ability_04/effects/cast.effect" source="source_entity" target="" />
+					</hasavatarkey>			
+					<else>
+						<hasavatarkey name="Hero_Bephelgor.Alt4">
+							<playeffect effect="/heroes/bephelgor/alt4/ability_04/effects/cast.effect" source="source_entity" target="" />
+						</hasavatarkey>			
+						<else>
+						<hasavatarkey name="Hero_Bephelgor.Alt5">
+							<playeffect effect="/heroes/bephelgor/alt5/ability_04/effects/cast.effect" source="source_entity" target="" />
+						</hasavatarkey>			
+						<else>
+							<playeffect effect="effects/cast.effect" source="source_entity" target="" />
+						</else>
+					</else>
+					</else>
+				</else>
+			</hasmodifier>
+			
+			<spawnaffector name="Affector_Bephelgor_Ability4_SotM" proxy="source_entity" target="source_entity" pushentity="true" param="charges" />
+			<spawnaffector name="Affector_Bephelgor_Ability4_Minion" proxy="source_entity" target="source_position" />
+			
+			<setcharges a="0" />
+			<setactivemodifierkey name="" />
+			<resettimer />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="bephelgor_ability4_level2" modpriority="60"
+		icon="icon_b.tga"
+	>
+	</modifier>
+	
+	<modifier key="bephelgor_ability4_level3" modpriority="70"
+		icon="icon_c.tga"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Bephelgor.Alt3" modpriority="1"
+		icon="../alt3/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Bephelgor.Alt4" modpriority="1"
+		icon="../alt4/ability_04/icon.tga"
+	>
+		<modifier key="bephelgor_ability4_level2" modpriority="60"
+			icon="../alt4/ability_04/icon_b.tga"
+		>
+		</modifier>
+		
+		<modifier key="bephelgor_ability4_level3" modpriority="70"
+			icon="../alt4/ability_04/icon_c.tga"
+		>
+		</modifier>
+	</altavatar>
+</ability>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Legionnaire_Ability3"
+
+	radius="300"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Physical Splash"
+
+>
+	<onimpact>
+		<damage effecttype="Physical Splash" amount="120,150,185,215" />
+		<hasmodifier name="shardofthemaster_boost" target="source_entity">
+			<applystate name="State_Legionnaire_Shard" duration="6000" />
+		</hasmodifier>
+	</onimpact>
+</affector>

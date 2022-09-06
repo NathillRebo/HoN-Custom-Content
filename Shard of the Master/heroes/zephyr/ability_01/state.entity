@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Zephyr_Ability1"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	ishidden="true"
+	
+	immobilized="true"
+	
+	effecttype=""
+>
+
+<altavatar key="Hero_Zephyr.Alt8"
+	icon="/heroes/zephyr/alt8/ability_01/icon.tga"
+	/>
+	
+</state>

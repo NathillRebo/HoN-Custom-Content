@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chronos1_Shard"
+
+	icon="icon.tga"
+	passiveeffect=""
+
+	effecttype=""
+	modifierkey="chronos1_secondcast"
+>		
+	
+</state>

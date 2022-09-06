@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="default_1.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model" >
+
+	<anim name="idle" clip="clips/walk_1.clip" loop="true" blendtime="500">
+		<startevent cmd="StartEffect effects/body.effect 1"/>
+
+		<frameevent frame="3" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2500 0.2"/>
+		<frameevent frame="3" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2500 0.2"/>
+		<frameevent frame="6" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+
+		<frameevent frame="15" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2500 0.2"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+
+		<frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="8" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="20" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	</anim>
+	
+</model>

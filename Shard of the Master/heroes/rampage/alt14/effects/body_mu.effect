@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".85">
+
+		<sound
+		        delay="1000"
+		        soundloop="true"
+				fadein="250"
+				fadeout="250"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1000"
+				volume=".8"
+				sample="../sounds/mu_loop.wav"
+			/>
+			
+			<template name="ground">
+				<simpleemitter
+					spawnrate="6"
+					particlelife="1200"
+					offsetsphere="50 50 0"
+					bone="{bone}"
+					position="0 0 0"
+				>
+					<particle
+					>
+						<groundsprite
+							minlife="700"
+							maxlife="1200"
+							startsize="0"
+							midsize="45"
+							endsize="40"
+							midsizepos=".2"
+							maxyaw="360"
+							color="1 0 .5"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							minscale=".25"
+							maxscale=".75"
+							material="/shared/effects/materials/goop_reveal_ground_blend.material"
+						/>
+					</particle>
+					<particle
+					>
+						<groundsprite
+							minlife="700"
+							maxlife="1200"
+							startsize="0"
+							midsize="45"
+							endsize="40"
+							midsizepos=".2"
+							maxyaw="360"
+							color="1 0 1"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							minscale=".25"
+							maxscale=".75"
+							material="/shared/effects/materials/goop_reveal_ground_blend.material"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+			
+			<instance name="ground" bone="_bone_rightfoot" />
+			<instance name="ground" bone="_bone_leftfoot" />
+			
+			<simpleemitter
+				bone="_bone_rightfoot"
+				position="0"
+				spawnrate="15"
+				inheritvelocity=".7"
+				limitinheritvelocity="150"
+				drag="0.05"
+			>
+			<template name="color">
+				<particle>
+					<terrainemitter
+						mindelay="50"
+						maxdelay="150"
+						spawnrate="20"
+						minparticlelife="800"
+						maxparticlelife="1000"
+						mincount="1"
+						maxcount="3"
+						offsetsphere="20 20 5"
+						material="/shared/effects/materials/water.material"
+					>
+						<particle
+							startsize="8"
+							midsize="15"
+							endsize="15"
+							maxangle="360"
+							startalpha=".8"
+							midalpha=".8"
+							endalpha="0"
+							minscale="1.5"
+							maxscale="2.3"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+							color="{color}"
+							framespeed="1"	
+						/>
+					</terrainemitter>
+				</particle>
+			</template>
+			<instance name="color" color="1 1 0"/>
+			<instance name="color" color="0 1 0"/>
+			<instance name="color" color="0 1 1"/>
+			<instance name="color" color="1 0 .7"/>
+			<instance name="color" color=".5 0 1"/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_leftfoot"
+				position="0"
+				spawnrate="15"
+				inheritvelocity=".7"
+				limitinheritvelocity="150"
+				drag="0.05"
+			>
+			<template name="color">
+				<particle>
+					<terrainemitter
+						mindelay="50"
+						maxdelay="150"
+						spawnrate="20"
+						minparticlelife="800"
+						maxparticlelife="1000"
+						mincount="1"
+						maxcount="3"
+						offsetsphere="20 20 5"
+						material="/shared/effects/materials/water.material"
+					>
+						<particle
+							startsize="8"
+							midsize="15"
+							endsize="15"
+							maxangle="360"
+							startalpha=".8"
+							midalpha=".8"
+							endalpha="0"
+							minscale="1.5"
+							maxscale="2.3"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+							color="{color}"
+							framespeed="1"	
+						/>
+					</terrainemitter>
+				</particle>
+			</template>
+			<instance name="color" color="1 1 0"/>
+			<instance name="color" color="0 1 0"/>
+			<instance name="color" color="0 1 1"/>
+			<instance name="color" color="1 0 .7"/>
+			<instance name="color" color=".5 0 1"/>
+			</simpleemitter>
+			
+			<template name="dripping_poison">
+				<controller
+					bone="{bone}"
+				>
+					<simpleemitter
+						position="{position}"
+						spawnrate="20"
+						particlelife="1500"
+						gravity="20"
+						minspeed="100"
+						maxspeed="100"
+						direction="0 0 -1"
+						offsetsphere="15"
+						inheritvelocity="-.1"
+						limitinheritvelocity="150"
+						drag="0"
+					>
+						<particle
+						minscale=".5"
+						maxscale="1">
+							<trailemitter
+								life="1500"
+								spawnrate="30"
+								minparticlelife="50"
+								maxparticlelife="100"
+								speed="1"
+								material="/shared/effects/materials/arrow_trail_blend.material"
+								texposscale="0"
+								texstretchscale="1"
+								startparticlealpha="1"
+								midparticlealpha="1"
+								endparticlealpha="0"
+							>
+								<particle
+									startcolor="1 0 .5"
+									endcolor="1 0 .5"
+									minstartscale="2.0"
+									maxstartscale="3.0"
+									minendscale="0"
+									maxendscale=".75"
+									midscalepos=".4"
+								/>
+							</trailemitter>
+						</particle>
+					</simpleemitter>
+				</controller>
+			</template>
+			
+			<instance name="dripping_poison" bone="_bone_weaponattach" position="0 0 10" />
+			<instance name="dripping_poison" bone="_bone_weaponattach" position="0 0 0" />
+			<instance name="dripping_poison" bone="_bone_weaponattach" position="0 0 20" />
+			
+			
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

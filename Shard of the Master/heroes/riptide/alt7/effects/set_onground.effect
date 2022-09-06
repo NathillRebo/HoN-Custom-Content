@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+  <definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+			<simpleemitter
+				spawnrate="3"
+				gravity="30" drag=".3"
+				speed="100"
+				angle="0"
+				particlelife="2000"
+				offsetsphere="10 10 0"
+				direction="0 0 1"
+			>
+				<particle>
+					<template name="2dfire">
+						<model
+							timenudge="{timenudge=0}" delay="{delay=0}"
+							life="{life}"
+							model="water_twister/2dfire.mdf"
+							anim="twister_slow"
+							minscale="1" maxscale="1.5"
+							position="{position}"
+							pitch="{pitch=0}" maxyaw="360" roll="{roll=0}"
+						>
+							<twopointtrailemitter
+								spawnrate="{spawnrate}"
+								particlelife="{particlelife}"
+								bone_a="Point002" bone_b="Point003"
+								material="/shared/effects/materials/water_puddle_norefract.material"
+								texposscale="0"
+								texstretchscale="1.25"
+								subframepos="1"
+							>
+								<particle
+									startcolor="{startcolor}" midcolor="{midcolor}" endcolor="{endcolor}" midcolorpos=".4"
+									startsize="0" midsize="1" endsize="0"
+									startalpha="0" midalpha="1" endalpha="1" midalphapos=".1"
+								/>
+							</twopointtrailemitter>
+							<twopointtrailemitter
+								spawnrate="200"
+								particlelife="{particlelife}"
+								bone_a="Point002" bone_b="Point003"
+								material="/shared/effects/materials/refract_waterring.material"
+								texposscale="0"
+								texstretchscale="1.25"
+								subframepos="1"
+							>
+								<particle
+									startalpha="0" midalpha="1" endalpha="0" midalphapos=".4"
+									startparam=".1" endparam="0.0"
+								/>
+							</twopointtrailemitter>
+
+							<template name="smoke">
+								<trailemitter
+									bone="{bone}"
+									spawnrate="35"
+									particlelife="1000"
+									speed="30" drag=".2" gravity="0"
+									material="/shared/effects/materials/solid_bolt.material"
+									position="{position}"
+									inheritvelocity=".2"
+									direction="0 0 -1"
+								>
+									<particle
+										color="0.14 0.57 1.00"
+										minstartsize="30" maxstartsize="50" endsize="1"
+										startalpha="0" midalpha=".2" endalpha="0"
+									/>
+								</trailemitter>
+
+								<simpleemitter
+									bone="{bone}"
+									spawnrate="150"
+									minparticlelife="200" maxparticlelife="650"
+									gravity="-5" minspeed="50" maxspeed="120" drag=".2"
+									material="/shared/effects/materials/whitewater_02.material"
+									offsetsphere="15"
+									minangle="20" maxangle="90"
+									direction="0 0 1" directionalspace="global"
+									inheritvelocity=".1"
+								>
+									<particle
+										minangle="0" maxangle="360"
+										startcolor="0" midcolor=".5" endcolor="0"
+										minstartsize="1" maxstartsize="4" endsize="0" scale=".7"
+									/>
+								</simpleemitter>
+							</template>
+							<instance name="smoke" bone="Point002" position="0 0 0"/>
+							<instance name="smoke" bone="Point003" position="0 0 0"/>
+
+						</model>
+					</template>
+					<instance name="2dfire" life="650" spawnrate="300" particlelife="650" position="0 0 0" startcolor=".07 .1 1" midcolor=".98 .86 .82" endcolor=".07 .1 1"/>
+					<instance name="2dfire" delay="100" life="250" spawnrate="800" particlelife="300" position="0 0 55" yaw="-180" startcolor=".5 1 1" midcolor=".98 .86 .82" endcolor=".5 1 1"/>
+					<instance name="2dfire" timenudge="800" life="300" spawnrate="200" particlelife="300" position="0 0 30" startcolor=".13 .25 .79" midcolor=".08 .25 .92" endcolor=".13 .25 .79"/>
+					<instance name="2dfire" delay="150" timenudge="250" life="300" spawnrate="200" particlelife="300" position="0 0 10" yaw="-90" startcolor="0.00 0.74 1.00" midcolor="0.14 0.36 1.00" endcolor="0.14 0.78 1.00"/>
+					<instance name="2dfire" delay="250" life="200" spawnrate="200" particlelife="300" position="0 0 30" yaw="-135" startcolor="0.00 0.74 1.00" midcolor="0.00 0.74 1.00" endcolor="0.29 0.82 1.00"/>
+				</particle>
+			</simpleemitter>
+
+			<!-- water on ground -->
+			<simpleemitter
+				bone="_bone_origin"
+				gravity="-1"
+				spawnrate="10"
+				minparticlelife="600" maxparticlelife="850"
+				offsetsphere="50 50 0"
+				material="/shared/effects/materials/wave.material"
+				depthbias="-55"
+				inheritvelocity="-0.1"
+				expirelife="1000"
+			>
+				<particle
+					minangle="-180" maxangle="180"
+					startcolor="0 0 0" midcolor=".2" endcolor="0 0 0"
+					size="3"
+					minstartscale="5" maxstartscale="10" minendscale="15" maxendscale="20"
+					startalpha="0" midalpha=".15" midalphapos="0.2" endalpha="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				bone="_bone_origin"
+				gravity="-1"
+				spawnrate="30"
+				minparticlelife="600"
+				maxparticlelife="850"
+				offsetsphere="50 50 0"
+				material="/shared/effects/materials/water_spray_add.material"
+				depthbias="-55"
+				expirelife="1000"
+				inheritvelocity="-0.1"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					startcolor="0" midcolor=".25" endcolor="0"
+					size="1"
+					minstartscale="5"
+					maxstartscale="10"
+					minendscale="15"
+					maxendscale="20"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				bone="_bone_origin"
+				gravity="-1"
+				spawnrate="10"
+				minparticlelife="350" maxparticlelife="500"
+				offsetsphere="50 50 0"
+				expirelife="1000"
+				material="/shared/effects/materials/whitewater_02.material"
+			>
+				<particle
+					minangle="-180" maxangle="180"
+					startcolor="0 0 0" midcolor="0 .5 .5" endcolor="0 0 0"
+					size="4"
+					minstartscale="6" maxstartscale="8" maxendscale="20" minendscale="12"
+					startalpha="0" midalpha="0.25" midalphapos="0.2" endalpha="0"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				bone="_bone_origin"
+				gravity="-1"
+				spawnrate="20"
+				minparticlelife="350" maxparticlelife="500"
+				offsetsphere="50 50 0"
+				expirelife="1000"
+				material="/shared/effects/materials/whitewater_02.material"
+			>
+				<particle
+					minangle="-180" maxangle="180"
+					startcolor="0 0 0" midcolor=".25 .25 .25" endcolor="0 0 0"
+					size="4"
+					minstartscale="6" maxstartscale="8" maxendscale="20" minendscale="12"
+					startalpha="0" midalpha="0.25" midalphapos="0.2" endalpha="0"
+					startanchor="1" endanchor="0"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				bone="_bone_origin"
+				gravity="-1"
+				spawnrate="10"
+				minparticlelife="350" maxparticlelife="500"
+				offsetsphere="50 50 0"
+				expirelife="1000"
+				material="/shared/effects/materials/refract_outsplash.material"
+			>
+				<particle
+					minangle="-180" maxangle="180"
+					color="1 1 1"
+					param=".05"
+					size="4"
+					minstartscale="10" maxstartscale="12" maxendscale="35" minendscale="40"
+					startalpha="0" midalpha="1" midalphapos="0.2" endalpha="0"
+					startanchor="1" endanchor="0"
+				/>
+			</simpleemitter>
+		</particlesystem>
+  </definitions>
+  <thread>
+    <spawnparticlesystem particlesystem="system0" instance="instance0" />
+    <waitfordeath instance="instance0" />
+  </thread>
+</effect>

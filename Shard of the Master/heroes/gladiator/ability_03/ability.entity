@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Gladiator3"
+	
+	icon="/heroes/gladiator/ability_03/icon.tga"
+	
+	cooldowntime="10000,8000,6000,4000"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	impacteffect=""
+	casteffect=""
+	passiveeffect=""
+	
+	actiontype="passive"
+>
+	<onframe />
+	
+	<onattackstart>
+		<canactivate>
+			<!-- Anim -->
+			<cantarget targetscheme="enemy_units" effecttype="Physical">
+				<playanim name="ability_2" speed="source_attackspeed" target="source_entity" />
+			</cantarget>
+		</canactivate>
+	</onattackstart>
+	
+	<onattackpreimpact>
+		<canactivate>
+			<isready entity="this_entity">
+				<cantarget targetscheme="enemy_buildings" />
+				<else>
+					<!-- Base bonus damage -->
+					<setvar0 a="20,40,60,80" />
+					<targettype type="ally">
+						<setvar0 a="var0" b="0.5" op="mult" />
+						<bonusdamageadd a="var0" target="" />
+					</targettype>
+					<else>
+						<bonusdamageadd a="var0" target="" />
+					</else>					
+				</else>
+			</isready>
+		</canactivate>
+	</onattackpreimpact>
+	
+	<onattackimpact>
+		<isready entity="this_entity">
+			<cantarget targetscheme="ally_units_and_structures" effecttype="Physical" />
+			<else>
+				<cantarget targetscheme="enemy_buildings" />
+				<else>
+					<cantarget targetscheme="enemy_units" effecttype="Physical">
+						<spawnaffector name="Affector_Gladiator_Ability3" target="target_position" positionmodifier="pointonline" positionorigin="source_entity" positionvalue="380,420,460,500" />
+						<splashdamage a="total_adjusted_damage" b="1" op="mult" radius="380,420,460,500" effecttype="Splash Cleave" targetscheme="enemy_units" />
+						<startcooldown />
+						
+						<!-- VFX -->
+						<hasavatarkey name="Hero_Gladiator.Alt2" >
+							<playeffect effect="/heroes/gladiator/alt2/ability_03/effects/cast.effect" target="" source="source_entity"/>
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Gladiator.Alt3" >
+								<playeffect effect="/heroes/gladiator/alt3/ability_03/effects/cast.effect" target="" source="source_entity"/>
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Gladiator.Alt4" >
+									<playeffect effect="/heroes/gladiator/alt4/ability_03/effects/cast.effect" target="" source="source_entity"/>
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Gladiator.Alt5" >
+										<playeffect effect="/heroes/gladiator/alt5/ability_03/effects/cast.effect" target="" source="source_entity"/>
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Gladiator.Alt6" >
+											<playeffect effect="/heroes/gladiator/alt6/ability_03/effects/cast.effect" target="" source="source_entity"/>
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Gladiator.Alt7" >
+												<playeffect effect="/heroes/gladiator/alt7/ability_03/effects/cast.effect" target="" source="source_entity"/>
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Gladiator.Alt8" >
+													<playeffect effect="/heroes/gladiator/alt8/ability_03/effects/cast.effect" target="" source="source_entity"/>
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Gladiator.Alt9" >
+														<playeffect effect="/heroes/gladiator/alt9/ability_03/effects/cast.effect" target="" source="source_entity"/>
+													</hasavatarkey>
+													<else>
+														<hasavatarkey name="Hero_Gladiator.Alt11" >
+															<playeffect effect="/heroes/gladiator/alt11/ability_03/effects/cast.effect" target="" source="source_entity"/>
+														</hasavatarkey>
+														<else>
+															<playeffect effect="/heroes/gladiator/ability_03/effects/cast.effect" target="" source="source_entity"/>
+														</else>
+													</else>
+												</else>	
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</cantarget>
+				</else>
+			</else>
+		</isready>
+	</onattackimpact>
+
+	<modifier key="ready" modpriority="90" condition="ready"
+	>
+		<onframe>
+			<targettype type="alive" target="this_owner_entity">
+				<applystate name="State_Gladiator_Ability3_Effect" target="source_entity" continuous="true" timeout="frametime" />
+			</targettype>
+		</onframe>
+	</modifier>	
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"/>
+	
+	<altavatar key="Hero_Gladiator.Alt2"
+		icon="/heroes/gladiator/alt2/ability_03/icon.tga"
+	>
+	</altavatar>
+
+	<altavatar key="Hero_Gladiator.Alt3"
+		icon="/heroes/gladiator/alt3/ability_03/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Gladiator.Alt4"
+		icon="/heroes/gladiator/alt4/ability_03/icon.tga"
+	>
+	</altavatar>
+	
+	<modifier key="soccer" modpriority="150" 
+		baselevel="0"
+		maxlevel="1"
+		cooldowntime="4000"
+		attackspeed="0.19"
+	/>
+	
+</ability>

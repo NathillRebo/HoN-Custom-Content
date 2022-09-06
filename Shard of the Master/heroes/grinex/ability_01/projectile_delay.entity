@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Grinex_Ability1_Delay"
+
+	lifetime="250"
+	useexactlifetime="true"
+	gravity="5000"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	anim="ability_1_jump"
+	
+	traileffect="effects/projectile_trail.effect"
+	
+	canturn="false"
+>
+	<onimpact>
+		<distance />
+        <compare a="result" b="500" op="lt">
+			<compare a="target_entity" b="0" op="eq">
+				<teleport interpolate="false" target="this_proxy_position" />
+				<expirestate name="State_Grinex_Ability1" target="source_entity" />
+			</compare>
+			<else>
+				<teleport interpolate="false" target="target_position" />
+				<expirestate name="State_Grinex_Ability1" target="source_entity" />
+				<targettype type="alive" target="target_entity">
+					<cantarget effecttype="Magic">
+						<combatevent effecttype="AbilityBasedProjectile">
+							<onimpact>
+								<cantarget effecttype="Push">
+									<!-- Set pos1 to be where you end up, set pos2 to be where target ends up to prevent weird angles in final positions -->
+									<teleport interpolate="false" source="this_proxy_entity" target="target_position" />
+									<setpos0 position="this_proxy_position" offsetspace="this_proxy_entity" offset="0 250 0" />
+									<setpos1 position="target_position" positionend="pos0" positionmodifier="pointonline" positionvalue="375" />
+									<setpos2 position="target_position" positionend="pos0" positionmodifier="pointonline" positionvalue="450" />
+									
+									<!-- Spawn gadget to set orientation correctly -->
+									<spawnunit name="Gadget_Grinex_Ability1" count="1" target="target_position" facing="pos1" pushentity="true" />
+									
+									<unbind target="source_entity" />
+									<spawnprojectile 
+										name="Projectile_Grinex_Ability1" 
+										source="stack_position" 
+										target="pos1" 
+										bind="source_entity" 
+										bindstate="State_Grinex_Ability1_Bind" 
+										unbindondeath="true" 
+										bindturn="true" 
+										offset="0 -100 0"
+										offsetspace="this_proxy_entity"
+										proxy="source_entity"
+										pushentity="true"
+									/>
+									<setproxy target="stack_entity" />
+									<pushability name="Ability_Grinex1" />
+									<setproxy entity="stack_entity" target="this_proxy_entity" />
+									<popentity />
+									
+									<unbind target="target_entity" />
+									<spawnprojectile 
+										name="Projectile_Grinex_Ability1_Cliff" 
+										source="target_position" 
+										target="pos2"
+										offset="0 40 0"
+										offsetspace="this_proxy_entity"
+										pushentity="true"
+									/>
+									<setproxy target="stack_entity" />
+									<popentity />
+									<spawnprojectile 
+										name="Projectile_Grinex_Ability1_Enemy" 
+										source="target_position" 
+										target="pos2" 
+										bind="target_entity" 
+										bindstate="State_Grinex_Ability1_Bind_Enemy" 
+										unbindondeath="true" 
+										bindturn="true"
+										offset="0 0 0"
+										offsetspace="this_proxy_entity"
+										proxy="target_entity"
+										pushentity="true"
+									/>
+									<setproxy entity="this_proxy_entity" target="stack_entity" />
+									
+								</cantarget>
+								
+								<damage effecttype="Magic" amount="50,80,110,140" />
+								<hasmodifier name="shardofthemaster_boost" target="source_entity">
+									<attack targetscheme="enemy_units" source="source_entity" target="target_entity" />
+								</hasmodifier>
+
+								<!-- Apply W state if applicable -->
+								<!--
+								<pushability name="Ability_Grinex2" source="source_entity" />
+								<setvar0 a="source_level" source="stack_entity" />
+								<compare a="var0" b="0" op="gt">
+									<applystate name="State_Grinex_Ability2_Armor" duration="5000" statelevel="var0" />
+								</compare>
+								-->
+							</onimpact>
+						</combatevent>
+					</cantarget>
+				</targettype>
+			</else>
+		</compare>
+	</onimpact>
+
+	<altavatar key="Hero_Grinex.Alt"
+		traileffect="/heroes/grinex/alt/ability_01/effects/projectile_trail.effect"
+	/>
+
+	<altavatar key="Hero_Grinex.Alt2"
+		traileffect="/heroes/grinex/alt2/ability_01/effects/projectile_trail.effect"
+	/>
+
+	<altavatar key="Hero_Grinex.Alt3"
+		traileffect="/heroes/grinex/alt3/ability_01/effects/projectile_trail.effect"
+	/>
+
+	<altavatar key="Hero_Grinex.Alt4"
+		traileffect="/heroes/grinex/alt4/ability_01/effects/projectile_trail.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt5"
+		traileffect="/heroes/grinex/alt5/ability_01/effects/projectile_trail.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt6"
+		traileffect="/heroes/grinex/alt6/ability_01/effects/projectile_trail.effect"
+	/>
+	
+	<altavatar key="Hero_Grinex.Alt7"
+		traileffect="/heroes/grinex/alt6/ability_01/effects/projectile_trail.effect"
+	/>
+</projectile>

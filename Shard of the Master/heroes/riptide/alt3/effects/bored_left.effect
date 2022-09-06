@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<template name="waterball">
+				<simpleemitter
+					count="1"
+					bone="{bone}"
+					direction="{dir}"
+					angle="0"
+					speed="1"
+					particlelife="10000"
+				>
+					<particle
+						turn="1"
+					>
+						<simpleemitter
+							count="1"
+							particlelife="500"
+							speed="500"
+							drag="0.02"
+							direction="0 1 0"
+							angle="5"
+							material="/shared/effects/materials/water_splash_02.material"
+							particledirectionalspace="local"
+						>
+							<particle
+								lockup="true"
+								lockright="true"
+								startalpha="1"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".75"
+								startparam=".05"
+								endparam="0.00"
+								size="20"
+								angle="90"
+								pitch="90"
+							>
+								<trailemitter
+									life="500"
+									spawnrate="20"
+									material="/shared/effects/materials/wave_trail.material"
+									particlelife="750"
+									texposscale="0"
+									texstretchscale="1"
+									startparticlecolor="1"
+									midparticlecolor="1"
+									endparticlecolor="0"
+								>
+									<particle
+										startcolor=".25 1 1"
+										endcolor="1"
+										startsize="20"
+										endsize="60"
+									/>
+								</trailemitter>
+								<simpleemitter
+									life="500"
+									startspawnrate="60"
+									endspawnrate="20"
+									minparticlelife="750"
+									maxparticlelife="1000"
+									material="/shared/effects/materials/water_spray_add02.material"
+									offsetsphere="5"
+									maxspeed="50"
+									drag="0.02"
+								>
+									<particle
+										startcolor="0 .4 .4"
+										midcolor=".05 .075 .1"
+										endcolor="0"
+										midcolorpos=".4"
+										turn="1"
+										angle="90"
+										minsize="40"
+										maxsize="60"
+										startscale=".1"
+										minendscale="1"
+										maxendscale="2"
+									/>
+								</simpleemitter>
+							</particle>
+						</simpleemitter>
+						
+						<simpleemitter
+							mincount="40"
+							maxcount="50"
+							minparticlelife="2500"
+							maxparticlelife="3000"
+							minspeed="200"
+							maxspeed="1600"
+							drag="0.06"
+							gravity="4"
+							direction="0 1 0"
+							angle="20"
+							material="/shared/effects/materials/petal_blend.material"
+						>
+							<template name="petal_particle">
+								<particle
+									minyawspeed="-360"
+									maxyawspeed="360"
+									minrollspeed="-360"
+									maxrollspeed="360"
+									minpitchspeed="-360"
+									maxpitchspeed="360"
+									minsize="2"
+									maxsize="5"
+									startalpha="0"
+									midalpha="2"
+									endalpha="0"
+									color="{color}"
+								/>
+							</template>
+							<instance name="petal_particle" color=".8 .2 .8" />
+							<instance name="petal_particle" color=".8 .2 .2" />
+							<instance name="petal_particle" color=".2 .8 .6" />
+							<instance name="petal_particle" color=".8 .6 .2" />
+						</simpleemitter>
+						
+						<billboard
+							life="500"
+							material="/shared/effects/materials/corona_06.material"
+							startsize="10"
+							endsize="120"
+							startcolor="0"
+							midcolor=".05 .2 .2"
+							endcolor="0"
+							lockup="true"
+							lockright="true"
+							directionalspace="local"
+						/>
+						<billboard
+							life="500"
+							material="/shared/effects/materials/refract_ring.material"
+							startsize="10"
+							endsize="180"
+							startparam="0"
+							midparam=".05"
+							endparam="0"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							lockup="true"
+							lockright="true"
+							directionalspace="local"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+			
+			<instance name="waterball" bone="_bone_lefthand" dir="0 0 -1" />
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

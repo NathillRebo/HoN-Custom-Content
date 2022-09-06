@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Zephyr_Ability4"
+	
+	model="/shared/models/invis.mdf"
+	passiveeffect="effects/steamer.effect"
+	isselectable="false"
+	drawonmap="false"
+	immobile="true"
+	invulnerable="true"
+	
+	sightrangeday="600"
+	sightrangenight="600"
+	clearvision="true"
+
+	lifetime="6000,8000,10000"
+	
+	corpsetiltfactor="0"
+	noblockneutralspawn="true"
+>
+	<aura state="State_Zephyr_Ability4_Tornado" radius="60" targetscheme="enemy_units" effecttype="SuperiorMagic" /> 
+	<aura state="State_Zephyr_Ability4_Debuff" radius="550" targetscheme="enemy_units" effecttype="SuperiorMagic" disablenegativeeffectpopuponrefresh="true" /> 
+	
+	<onspawn>
+		<killtrees radius="600" />
+	</onspawn>
+	
+	<modifier key="ult_boost" modpriority="100"
+		lifetime="8000,10000,12000"
+		sightrangeday="825"
+		sightrangenight="825"
+		passiveeffect="effects/steamer_sotm.effect"
+	>
+		<aura state="State_Zephyr_Ability4_Tornado" radius="90" targetscheme="enemy_units" effecttype="SuperiorMagic" />
+		<aura state="State_Zephyr_Ability4_Debuff" radius="825" targetscheme="enemy_units" effecttype="SuperiorMagic" disablenegativeeffectpopuponrefresh="true" />
+	</modifier>
+		
+	<altavatar key="Hero_Zephyr.Alt3" modpriority="1"
+		passiveeffect="/heroes/zephyr/alt3/ability_04/effects/steamer.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="/heroes/zephyr/alt3/ability_04/effects/steamer_sotm.effect"
+		>		
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Zephyr.Alt4" modpriority="1"
+		passiveeffect="/heroes/zephyr/alt4/ability_04/effects/steamer.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="/heroes/zephyr/alt4/ability_04/effects/steamer_sotm.effect"
+		>		
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Zephyr.Alt5" modpriority="1"
+		passiveeffect="/heroes/zephyr/alt5/ability_04/effects/steamer.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="/heroes/zephyr/alt5/ability_04/effects/steamer_sotm.effect"
+		>		
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Zephyr.Alt6" modpriority="1"
+		passiveeffect="/heroes/zephyr/alt6/ability_04/effects/steamer.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="/heroes/zephyr/alt6/ability_04/effects/steamer_sotm.effect"
+		>		
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Zephyr.Alt7" modpriority="1"
+		passiveeffect="/heroes/zephyr/alt7/ability_04/effects/steamer.effect"
+	>
+		<onspawn>
+			<killtrees radius="600" />
+			<hasmodifier name="ult_boost" entity="source_entity">
+				<hasmodifier name="Pirate_Set_Bonus" entity="source_entity">
+					<setactivemodifierkey name="Pirate_Set_Bonus_SotM" />
+				</hasmodifier>
+				<else>
+					<setactivemodifierkey name="zephyr_R_sotm" />
+				</else>
+			</hasmodifier>
+			<else>
+				<hasmodifier name="Pirate_Set_Bonus" entity="source_entity">
+					<setactivemodifierkey name="Pirate_Set_Bonus" />
+				</hasmodifier>
+			</else>
+		</onspawn>
+		
+		
+		<modifier key="zephyr_R_sotm" modpriority="110"
+			passiveeffect="/heroes/zephyr/alt7/ability_04/effects/steamer_sotm.effect"
+		>		
+		</modifier>
+		
+		<modifier key="Pirate_Set_Bonus" modpriority="120"
+			passiveeffect="/heroes/zephyr/alt7/ability_04/effects/steamer_pirate.effect"
+		/>
+		
+		<modifier key="Pirate_Set_Bonus_SotM" modpriority="130"
+			passiveeffect="/heroes/zephyr/alt7/ability_04/effects/steamer_pirate_sotm.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Zephyr.Alt8" modpriority="1"
+	    icon="/heroes/zephyr/alt8/ability_04/icon.tga"
+		passiveeffect="/heroes/zephyr/alt8/ability_04/effects/steamer.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="/heroes/zephyr/alt8/ability_04/effects/steamer_sotm.effect"
+		>		
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Zephyr.Alt9" modpriority="1"
+		passiveeffect="/heroes/zephyr/alt9/ability_04/effects/steamer.effect"
+	>
+		<modifier key="ult_boost" modpriority="100"
+			passiveeffect="/heroes/zephyr/alt9/ability_04/effects/steamer_sotm.effect"
+		>		
+		</modifier>
+	</altavatar>
+</gadget>

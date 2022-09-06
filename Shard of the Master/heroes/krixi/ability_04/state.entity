@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Krixi_Ability4"
+	
+	icon="icon.tga"
+	passiveeffect="effects/ability_04_state.effect"
+	displaylevel="true"
+	
+	movespeed="0"
+	
+	effecttype=""
+>
+	
+	<altavatar key="Hero_Krixi.Alt5" 
+		passiveeffect="../alt5/ability_04/effects/ability_04_state.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt7" 
+		passiveeffect="../alt7/ability_04/effects/ability_04_state.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt8" 
+		passiveeffect="../alt8/ability_04/ability_04_state.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt8" 
+		icon="../alt8/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt9" 
+	    icon="../alt9/ability_04/icon.tga"
+		passiveeffect="../alt9/ability_04/effects/ability_04_state.effect"
+	/>
+</state>

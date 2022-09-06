@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="pulse">
+	<definitions>
+		
+		<modifier
+			name="modifier0"
+			life="1000"
+			material="../material2.material"
+		/>
+		
+	</definitions>
+	<thread>
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<waitfordeath instance="instance1"/>
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

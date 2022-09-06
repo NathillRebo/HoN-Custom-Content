@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rampage_Ability1_Timer"
+	
+	ishidden="true"
+	impactinterval="1000"
+>
+	<oninflict>
+		<applystate name="State_Rampage_Ability1_Assist" target="this_owner_target_entity" duration="100" />
+	</oninflict>
+
+	<onimpact>
+		<applystate name="State_Rampage_Ability1_Assist" target="this_owner_target_entity" duration="100" />
+		<!--
+		<addcharges entity="this_proxy_entity" />
+		<compare a="result" b="5" op="ge">
+			<hasavatarkey name="Hero_Rampage.Alt4" entity="this_proxy_entity">
+				<setactivemodifierkey entity="this_proxy_entity" name="rampage_charge_treewalking_Alt4" />
+			</hasavatarkey>
+			<else>
+				<setactivemodifierkey entity="this_proxy_entity" name="rampage_charge_immunity" />
+			</else>
+		</compare>
+		-->
+	</onimpact>
+	
+	<onexpired>
+		<setactivemodifierkey entity="this_proxy_entity" name="rampage_charge_linger" />
+	</onexpired>
+</state>

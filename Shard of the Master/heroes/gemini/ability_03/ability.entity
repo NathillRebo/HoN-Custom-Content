@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Gemini3"
+
+	icon="icon.tga"
+	
+	anim="ability_3"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+
+	modifierkey="GeminiStatsAura1,GeminiStatsAura2,GeminiStatsAura3,GeminiStatsAura4"
+
+	dontshowhovercast="true"
+>
+	<aura state="State_Gemini_Ability3_Int" radius="9999" targetscheme="Gemini_And_Catz" effecttype="" notooltip="true" />
+	<aura state="State_Gemini_Ability3_Agi" radius="9999" targetscheme="Gemini_And_Catz" effecttype="" notooltip="true" />
+	<aura state="State_Gemini_Ability3_Str" radius="9999" targetscheme="Gemini_And_Catz" effecttype="" notooltip="true" />
+
+	<onframe/>
+	
+	<!-- Make the aura stack and not go to illusions -->
+	<modifier key="krosmode" modpriority="101"
+	>
+		<aura state="State_Gemini_Ability3_Int" radius="9999" targetscheme="Gemini_And_Catz" effecttype="" notooltip="true" propagatecondition="not_illusion" stack="true" />
+		<aura state="State_Gemini_Ability3_Agi" radius="9999" targetscheme="Gemini_And_Catz" effecttype="" notooltip="true" propagatecondition="not_illusion" stack="true" />
+		<aura state="State_Gemini_Ability3_Str" radius="9999" targetscheme="Gemini_And_Catz" effecttype="" notooltip="true" propagatecondition="not_illusion" stack="true" />
+	</modifier>
+	
+	<modifier key="shardofthemaster_boost" modpriority="1"
+		strengthpercharge="1"
+		agilitypercharge="1"
+		intelligencepercharge="1"
+	>
+		<onframe>
+			<setvar0 a="0.03444" b="source_strength" op="mult"/>
+			<setvar1 a="0.03444" b="source_agility" op="mult"/>
+			<setvar2 a="0.03444" b="source_intelligence" op="mult"/>
+			<evaluate a="var0" b="var1" op="add"/>
+			<evaluate a="result" b="var2" op="add"/>
+			<setcharges a="result" />
+		</onframe>
+	</modifier>
+</ability>

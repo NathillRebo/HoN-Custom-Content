@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DoctorRepulsor_Ability3"
+	
+	icon="icon.tga"
+	passiveeffect="effects/passive.effect"
+	
+	attackspeed="0.5"
+	
+	effecttype="StatusBuff"
+	modifierkey="doctorRepulsorAbility3_active"
+>
+	<onattackstart>
+		<setattackprojectile name="Projectile_DoctorRepulsorEpicAttack" />
+	</onattackstart>
+
+	<onattack>
+		<hasavatarkey name="Hero_DoctorRepulsor.Alt5" >
+			<playeffect effect="../alt5/ability_03/effects/cast.effect" target="source_entity" />
+		</hasavatarkey>
+		<else>
+			<playeffect effect="effects/cast.effect" target="source_entity" />
+		</else>
+
+		<expire />
+	</onattack>
+	
+	<onattackimpact>
+		<hasavatarkey name="Hero_DoctorRepulsor.Alt5" >
+			<playeffect effect="../alt5/ability_03/effects/impact.effect" target="" source="target_entity" />
+		</hasavatarkey>
+		<else>
+			<playeffect effect="effects/impact.effect" target="" source="target_entity" />
+		</else>
+		
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<damage effecttype="Magic" amount="35,50,65,80" />
+			<applystate name="State_DoctorRepulsor_Ability3_Slow" duration="600" />
+		</areaofeffect>
+	</onattackimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onattackimpact>
+			<hasavatarkey name="Hero_DoctorRepulsor.Alt5" >
+				<playeffect effect="../alt5/ability_03/effects/impact.effect" target="" source="target_entity" />
+			</hasavatarkey>
+			<else>
+				<playeffect effect="effects/impact.effect" target="" source="target_entity" />
+			</else>
+			<setvar0 a="source_maxmana" b="0.01" op="mult" />
+			<areaofeffect
+				radius="300"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="35,50,65,80" />
+				<applystate name="State_DoctorRepulsor_Ability3_Slow" duration="600" />
+				<givemana amount="var0" target="source_entity"/>
+			</areaofeffect>
+		</onattackimpact>
+	</modifier>
+	
+	<onframe />
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt/ability_03/effects/passive.effect"
+	>
+		<onattackstart>
+			<setattackprojectile name="Projectile_DoctorRepulsorEpicAttack" />
+		</onattackstart>
+
+		<onattack>
+			<playeffect effect="effects/cast.effect" target="source_entity" />
+			<expire />
+		</onattack>
+		
+		<onattackimpact>
+			<playeffect effect="effects/impact.effect" target="" source="target_entity" />
+			<areaofeffect
+				radius="300"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="35,50,65,80" />
+				<applystate name="State_DoctorRepulsor_Ability3_Slow" duration="600" />
+			</areaofeffect>
+		</onattackimpact>
+		
+		<onframe />
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt2" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt2/ability_03/effects/passive.effect"
+	>
+		<onattackstart>
+			<setattackprojectile name="Projectile_DoctorRepulsorEpicAttack" />
+		</onattackstart>
+
+		<onattack>
+			<playeffect effect="effects/cast.effect" target="source_entity" />
+			<expire />
+		</onattack>
+		
+		<onattackimpact>
+			<playeffect effect="effects/impact.effect" target="" source="target_entity" />
+			<areaofeffect
+				radius="300"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="35,50,65,80" />
+				<applystate name="State_DoctorRepulsor_Ability3_Slow" duration="600" />
+			</areaofeffect>
+		</onattackimpact>
+		
+		<onframe />
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt3" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt3/ability_03/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt4" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt4/ability_03/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt5" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt5/ability_03/effects/passive.effect"
+	>
+		<modifier key="Level_11" modpriority="11"
+		>
+			<onattack>
+				<playeffect effect="../alt5/11-15/ability_03/effects/cast.effect" target="source_entity" />
+				<expire />
+			</onattack>
+			
+			<onattackimpact>
+				<playeffect effect="../alt5/11-15/ability_03/effects/impact.effect" target="" source="target_entity" />
+				<areaofeffect
+					radius="300"
+					targetselection="all"
+					targetscheme="enemy_units"
+					effecttype="Magic"
+				>
+					<damage effecttype="Magic" amount="35,50,65,80" />
+					<applystate name="State_DoctorRepulsor_Ability3_Slow" duration="600"  />
+				</areaofeffect>
+			</onattackimpact>
+		</modifier>
+		
+		<modifier key="Level_16" modpriority="11"
+		>
+			<onattack>
+				<playeffect effect="../alt5/11-15/ability_03/effects/cast.effect" target="source_entity" />
+				<expire />
+			</onattack>
+			
+			<onattackimpact>
+				<playeffect effect="../alt5/ability_03/effects/impact.effect" target="" source="target_entity" />
+				<areaofeffect
+					radius="300"
+					targetselection="all"
+					targetscheme="enemy_units"
+					effecttype="Magic"
+				>
+					<damage effecttype="Magic" amount="35,50,65,80" />
+					<applystate name="State_DoctorRepulsor_Ability3_Slow" duration="600"  />
+				</areaofeffect>
+			</onattackimpact>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt6" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt6/ability_03/effects/passive.effect"
+	>
+		<onattackstart>
+			<setattackprojectile name="Projectile_DoctorRepulsorEpicAttack" />
+		</onattackstart>
+
+		<onattack>
+			<playeffect effect="../alt6/ability_03/effects/cast.effect" target="source_entity" />
+			<expire />
+		</onattack>
+		
+		<onattackimpact>
+			<playeffect effect="../alt6/ability_03/effects/impact.effect" target="" source="target_entity" />
+			<areaofeffect
+				radius="300"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="35,50,65,80" />
+				<applystate name="State_DoctorRepulsor_Ability3_Slow" duration="600" />
+			</areaofeffect>
+		</onattackimpact>
+		
+		<onframe />
+		
+		<modifier key="Alt6_Ability3_Upgrade" modpriority="101"
+			passiveeffect="/heroes/doctor_repulsor/alt6/ability_03/effects/passive_upgrade.effect"
+		>
+			<onattackstart>
+				<setattackprojectile name="Projectile_DoctorRepulsorEpicAttack" />
+			</onattackstart>
+
+			<onattack>
+				<playeffect effect="../alt6/ability_03/effects/cast.effect" target="source_entity" />
+				<expire />
+			</onattack>
+			
+			<onattackimpact>
+				<playeffect effect="../alt6/ability_03/effects/impact.effect" target="" source="target_entity" />
+				<areaofeffect
+					radius="300"
+					targetselection="all"
+					targetscheme="enemy_units"
+					effecttype="Magic"
+				>
+					<damage effecttype="Magic" amount="35,50,65,80" />
+					<applystate name="State_DoctorRepulsor_Ability3_Slow" duration="600" />
+				</areaofeffect>
+			</onattackimpact>
+			
+			<onframe />
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.set_ascent" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/set_ascension/ability_03/effects/passive.effect"
+	>
+		<onattackstart>
+			<setattackprojectile name="Projectile_DoctorRepulsorEpicAttack" />
+		</onattackstart>
+
+		<onattack>
+			<playeffect effect="../set_ascension/ability_03/effects/cast.effect" target="source_entity" />
+			<expire />
+		</onattack>
+		
+		<onattackimpact>
+			<playeffect effect="../set_ascension/ability_03/effects/impact.effect" target="" source="target_entity" />
+			<areaofeffect
+				radius="300"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="35,50,65,80" />
+				<applystate name="State_DoctorRepulsor_Ability3_Slow" duration="600" />
+			</areaofeffect>
+		</onattackimpact>
+		
+		<onframe />
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt9" modpriority="1"
+		passiveeffect="/heroes/doctor_repulsor/alt9/ability_03/effects/passive.effect"
+	>
+		<onattackstart>
+			<setattackprojectile name="Projectile_DoctorRepulsorEpicAttack" />
+		</onattackstart>
+
+		<onattack>
+			<playeffect effect="effects/cast.effect" target="source_entity" />
+			<expire />
+		</onattack>
+		
+		<onattackimpact>
+			<playeffect effect="/heroes/doctor_repulsor/alt9/ability_03/effects/impact.effect" target="" source="target_entity" />
+			<areaofeffect
+				radius="300"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="35,50,65,80" />
+				<applystate name="State_DoctorRepulsor_Ability3_Slow" duration="600" />
+			</areaofeffect>
+		</onattackimpact>
+		
+		<onframe />
+	</altavatar>
+	
+	<altavatar key="Hero_DoctorRepulsor.Alt10" modpriority="1"
+		icon="../alt10/ability_03/icon.tga"
+		passiveeffect="/heroes/doctor_repulsor/alt10/ability_03/effects/passive.effect"
+	>
+		<modifier key="doctorRepulsorAlt10_Ability3_Upgrade"
+			icon="../alt10/ability_03/icon_upgrade.tga"
+		/>
+		<onattackstart>
+			<setattackprojectile name="Projectile_DoctorRepulsorEpicAttack" />
+		</onattackstart>
+
+		<onattack>
+			<playeffect effect="effects/cast.effect" target="source_entity" />
+			<expire />
+		</onattack>
+		
+		<onattackimpact>
+			<playeffect effect="/heroes/doctor_repulsor/alt10/ability_03/effects/impact.effect" target="" source="target_entity" />
+			<areaofeffect
+				radius="300"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<damage effecttype="Magic" amount="35,50,65,80" />
+				<applystate name="State_DoctorRepulsor_Ability3_Slow" duration="600" />
+			</areaofeffect>
+		</onattackimpact>
+		
+		<onframe />
+	</altavatar>
+
+</state>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Midas_Ability2"
+
+	radius="200"
+	lifetime="-1"
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="all_other_units"
+	effecttype="SuperiorMagic"
+	impacteffect=""
+	
+>
+	<onspawn>
+		<setparam a="75,120,165,210" />
+	</onspawn>
+	
+	<onimpact>
+		<cantarget targetscheme="ally_units">
+			<heal a="30,60,90,120" />
+			<hasmodifier name="shardofthemaster_boost">
+				<applystate name="State_Midas_Shard" duration="2500" />
+				<dispel type="StatusDebuff" />	
+			</hasmodifier>
+			<hasavatarkey name="Hero_Midas.Alt2" >
+				<playeffect effect="/heroes/midas/alt2/ability_02/effects/impact_heal.effect" target="target_entity" source="target_entity" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Midas.Alt3" >
+					<playeffect effect="/heroes/midas/alt3/ability_02/effects/impact_heal.effect" target="target_entity" source="target_entity" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Midas.Alt5" >
+						<playeffect effect="/heroes/midas/alt5/ability_02/effects/impact_heal.effect" target="target_entity" source="target_entity" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Midas.Alt6" >
+							<hasmodifier entity="source_entity" name="Alt6_Level_9">
+								<playeffect effect="/heroes/midas/alt6/ability_02/effects/lvl_3/impact_heal.effect" target="target_entity" source="target_entity" occlude="true" />
+							</hasmodifier>
+							<else>
+								<hasmodifier entity="source_entity" name="Alt6_Level_6">
+									<playeffect effect="/heroes/midas/alt6/ability_02/effects/lvl_2/impact_heal.effect" target="target_entity" source="target_entity" occlude="true" />
+								</hasmodifier>
+								<else>
+									<hasmodifier entity="source_entity" name="Alt6_Level_3">
+										<playeffect effect="/heroes/midas/alt6/ability_02/effects/lvl_1/impact_heal.effect" target="target_entity" source="target_entity" occlude="true" />
+									</hasmodifier>
+									<else>
+										<playeffect effect="/heroes/midas/alt6/ability_02/effects/impact_heal.effect" target="target_entity" source="target_entity" occlude="true" />
+									</else>
+								</else>
+							</else>
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Midas.Alt7" >
+								<playeffect effect="/heroes/midas/alt7/ability_02/effects/impact_heal.effect" target="target_entity" source="target_entity" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Midas.Alt9" >
+									<playeffect effect="/heroes/midas/alt9/ability_02/effects/impact_heal.effect" target="target_entity" source="target_entity" occlude="true" />
+								</hasavatarkey>
+								<else>
+								<playeffect effect="effects/impact_heal.effect" target="target_entity" source="target_entity" occlude="true" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			</else>
+			<compare a="param" b="360" op="lt">
+				<evaluate a="param" b="15,20,25,30" op="add" />
+				<setparam a="result" />
+				<heal a="15,20,25,30" target="proxy_entity" />
+			</compare>
+		</cantarget>
+		
+		<cantarget targetscheme="enemy_units" effecttype="Magic">
+			<hasmodifier name="Midas1" >
+				<applystate name="State_Midas_Reagent2" duration="4000" />
+			</hasmodifier>
+			<hasmodifier name="Midas2" >
+				<applystate name="State_Midas_Reagent2" duration="4000" />
+			</hasmodifier>
+			<hasmodifier name="Midas3" >
+				<applystate name="State_Midas_Reagent2" duration="4000" />
+			</hasmodifier>
+		</cantarget>
+	</onimpact>
+
+	<onexpired>
+		<areaofeffect
+			radius="200"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<damage effecttype="Magic" amount="1" b="param" op="mult" source="source_entity" />
+			<playeffect effect="effects/impact_damage.effect" target="target_entity" source="target_entity" occlude="true" />
+			<hasmodifier name="Midas1" >
+				<applystate name="State_Midas_Reagent2" duration="4000" />
+			</hasmodifier>
+			<hasmodifier name="Midas2" >
+				<applystate name="State_Midas_Reagent2" duration="4000" />
+			</hasmodifier>
+			<hasmodifier name="Midas3" >
+				<applystate name="State_Midas_Reagent2" duration="4000" />
+			</hasmodifier>
+		</areaofeffect>
+	</onexpired>
+	
+</affector>

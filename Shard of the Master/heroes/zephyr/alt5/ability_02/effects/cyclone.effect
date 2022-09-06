@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true">
+	<definitions>
+	
+		<modifier name="partypets"
+			life="500"
+			loop="true"
+			startcolor=".75 .75 5"
+			midcolor="5 .75 .75"
+			endcolor=".75 5 .75"
+			alpha="1"
+		/>
+			
+		<particlesystem name="system0" space="world" scale="1">	
+		
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume=".4"
+				sample="../sounds/cast.wav"
+			/>	
+		
+			<!--Rainbow trail-->
+			<trailemitter
+				bone="Scene Root"
+				position="0 0 50"
+				
+				spawnrate="30"
+				particlelife="450"
+				texpostime="450"
+				material="/shared/effects/materials/rainbowtrail.material"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				directionalspace="world"
+			>
+				<particle
+					startsize="50"
+					endsize="10"
+					startcolor="0 0 0"
+					midcolor="1 1 1"
+					midcolorpos="0.2"
+					endcolor="1 1 1"
+				/>
+			</trailemitter>
+			
+			<!--Rainbow Absorption-->
+<!--			<trailemitter
+				bone="Scene Root"
+				position="0 0 50"
+				
+				spawnrate="30"
+				particlelife="1000"
+				texpostime="1000"
+				speed="10"
+				material="/heroes/zephyr/effects/rainbowtrail.material"
+				texposscale="0.0"
+				texstretchscale="1.0"
+			>
+				<particle
+					startsize="350"
+					endsize="10"
+					startcolor="0 0 0"
+					midcolor=".3 .3 .3"
+					endcolor="0 0 0"
+					stickiness=".9"
+				/>
+			</trailemitter>
+-->
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="partypets"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

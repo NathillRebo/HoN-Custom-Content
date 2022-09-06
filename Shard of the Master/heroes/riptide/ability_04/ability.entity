@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Riptide4"
+	
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	targetscheme="all_units"
+	actiontype="no_target"
+	casteffecttype="SuperiorMagic GlobalAbility"
+
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+
+	manacost="100"
+	cooldowntime="130000,105000,80000"
+	
+	noshuffle="true"
+>
+	<onimpact>
+		<setpos0 entity="this_entity" position="0" offset="8000 8000 0" />
+		<spawnunit name="Gadget_Riptide_Ability4" target="pos0" pushentity="true" />
+		<applystate name="State_Riptide_Ability4" target="source_entity" duration="30000" />
+		<starttimer duration="30000" />
+		
+		<!-- Art -->
+		<hasmodifier entity="source_entity" name="riptide_inwater">
+			<playeffect effect="" source="source_entity" target="" />
+		</hasmodifier>
+		<else>
+			<playeffect effect="../ability_03/effects/start.effect" source="source_entity" target="" />
+		</else>	
+		
+		<hasavatarkey entity="source_entity" name="Hero_Riptide.Alt">
+			<playeffect effect="/heroes/riptide/alt/ability_04/effects/water_ground_gadget.effect" source="stack_entity" target="stack_entity" ignoreculling="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey entity="source_entity" name="Hero_Riptide.Alt2">
+				<playeffect effect="/heroes/riptide/alt2/ability_04/effects/water_ground_gadget.effect" source="stack_entity" target="stack_entity" ignoreculling="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey entity="source_entity" name="Hero_Riptide.Alt3">
+					<playeffect effect="/heroes/riptide/alt3/ability_04/effects/water_ground_gadget.effect" source="stack_entity" target="stack_entity" ignoreculling="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey entity="source_entity" name="Hero_Riptide.Alt4">
+						<playeffect effect="/heroes/riptide/alt4/ability_04/effects/water_ground_gadget.effect" source="stack_entity" target="stack_entity" ignoreculling="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey entity="source_entity" name="Hero_Riptide.Alt5">
+							<playeffect effect="/heroes/riptide/alt4/ability_04/effects/water_ground_gadget.effect" source="stack_entity" target="stack_entity" ignoreculling="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey entity="source_entity" name="Hero_Riptide.Alt6">
+								<playeffect effect="/heroes/riptide/alt6/ability_04/effects/water_ground_gadget.effect" source="stack_entity" target="stack_entity" ignoreculling="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey entity="source_entity" name="Hero_Riptide.Alt7">
+									<playeffect effect="/heroes/riptide/alt7/ability_04/effects/water_ground_gadget.effect" source="stack_entity" target="stack_entity" ignoreculling="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey entity="source_entity" name="Hero_Riptide.Alt8">
+										<playeffect effect="/heroes/riptide/alt8/ability_04/effects/water_ground_gadget.effect" source="stack_entity" target="stack_entity" ignoreculling="true" />
+									</hasavatarkey>
+									<else>
+										<playeffect effect="effects/water_ground_gadget.effect" source="stack_entity" target="stack_entity" ignoreculling="true" />
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onimpact>
+	
+	<ondeath>
+		<resettimer />
+	</ondeath>
+	
+	<modifier key="riptide_ult_active" modpriority="90"
+		disabled="true"
+	/>
+	
+	<altavatar key="Hero_Riptide.Alt"
+		icon="../alt/ability_04/icon.tga"
+	/>
+</ability>

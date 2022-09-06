@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect entityeffectscale="true" deferred="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="5" >
+			
+			<simpleemitter					
+					bone="Dummy003"
+					material="/shared/effects/materials/smoke_01.material"
+					particlelife="750"
+					spawnrate="75"
+					count="150"
+					direction="0 -1 0"
+					speed="10"
+					gravity="-5"
+					offsetsphere="5"
+					particledirectionalspace="global"
+				>
+					<particle
+						startalpha="1"
+						endalpha="0"
+						color=".15"
+						startsize="20"
+						endsize="10"
+						startanchor="1"
+						endanchor="0"
+					/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier1"/> 
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

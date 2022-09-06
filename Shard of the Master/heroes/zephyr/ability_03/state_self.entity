@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Zephyr_Shard"
+
+	ishidden="true"
+	
+	passiveeffect="effects/area.effect"
+
+>
+</state>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+				randomloop="true"
+	            soundloop="true"
+				fadein="250"
+				fadeout="1500"
+				volume="1"
+				sample="../../sounds/ab1_state.wav"
+				linearfalloff="true"
+				falloffstart="800" 
+				falloffend="1300" 
+			/>
+			
+			<terrainemitter
+				spawnrate="25"
+				range="25"
+				particlelife="2000"
+			>
+				<particle>
+					<groundsprite
+						minlife="250"
+						maxlife="500"
+						material="/shared/effects/materials/puddle_03.material"
+						minstartsize="25"
+						maxstartsize="50"
+						endsize="100"
+						minyaw="-360"
+						maxyaw="360"
+						color=".4 .7 1"
+						startalpha="0"
+						midalpha=".85"
+						endalpha="0"
+						midalphapos=".25"
+						position="0 0 0"
+					/>
+				</particle>
+			</terrainemitter>
+
+			<simpleemitter
+				minparticlelife="150"
+				maxparticlelife="300"
+				spawnrate="25"
+				minspeed="350"
+				maxspeed="550"
+				gravity="-15"
+				direction="0 0 1"
+				drag="0.05"
+				material="/shared/effects/materials/beer_splash.material"
+				offsetsphere="75 75 10"
+				position="0 0 25"
+				depthbias="-25"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startsize="65"
+					endsize="110"
+					color=".8 .4 .8"
+					startalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				minparticlelife="150"
+				maxparticlelife="300"
+				spawnrate="25"
+				minspeed="350"
+				maxspeed="550"
+				gravity="-15"
+				direction="0 0 1"
+				drag="0.02"
+				material="/shared/effects/materials/beer_splash.material"
+				offsetsphere="75 75 10"
+				position="0 0 25"
+				depthbias="-25"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startsize="65"
+					endsize="110"
+					color="1 1 1"
+					startalpha=".75"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			
+			<simpleemitter
+				spawnrate="150"
+				minparticlelife="250"
+				maxparticlelife="650"
+				gravity="-50"
+				drag=".01"
+				material="/shared/effects/materials/bubble_add.material"
+				offsetsphere="60 60 15"
+				minangle="-25"
+				maxangle="25"
+				direction="0 0 1"
+				directionalspace="global"
+				depthbias="-35"
+				position="0 0 0"
+			>
+				<particle 
+					startcolor=".75 .3 .75"
+					endcolor="0 0 0"
+					param=".25"
+					minstartsize="5"
+					maxstartsize="20"
+					minendsize="25"
+					maxendsize="42"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+			
+		<particlesystem name="system1" space="entity" scale="1">
+
+			<billboard
+				position="0 0 125"
+				life="1350"
+				startcolor=".65 .25 .65"
+				midcolor=".65 .25 .65"
+				endcolor="0 0 0"
+				startsize="200"
+				endsize="200"
+				rollspeed="-360"
+				depthbias="-25"
+				material="../../effects/material.material"
+				lockright="true"
+				lockup="true"
+				pitch="-90"
+				directionalspace="local"
+			/>
+			
+			<billboard
+				position="0 0 50"
+				life="1350"
+				startcolor=".65 .25 .65"
+				midcolor=".65 .25 .65"
+				endcolor="0 0 0"
+				startsize="200"
+				endsize="200"
+				rollspeed="360"
+				depthbias="-25"
+				material="../../effects/material.material"
+				lockright="true"
+				lockup="true"
+				pitch="90"
+				directionalspace="local"
+			/>
+			
+			<template name="material">
+			<simpleemitter
+				spawnrate="10"
+				minparticlelife="250"
+				maxparticlelife="650"
+				gravity="0"
+				drag=".01"
+				material="{material}"
+				offsetsphere="60 60 15"
+				minangle="-25"
+				maxangle="25"
+				direction="0 0 1"
+				directionalspace="global"
+				depthbias="-25"
+				position="0 0 0"
+			>
+				<template name="color">
+					<particle 
+						startcolor="0"
+						midcolor="{color}"
+						endcolor="0 0 0"
+						param=".25"
+						startsize="20"
+						endsize="32"
+						maxangle="360"
+						minscale=".7"
+						maxscale="1.5"
+					/>
+				</template>
+				<instance name="color" color="1 .7 1"/>
+				<instance name="color" color=".7 1 1"/>
+				<instance name="color" color="1 1 .5"/>
+				<instance name="color" color=".7 .5 1"/>
+				<instance name="color" color=".5 1 .5"/>
+			</simpleemitter>
+			</template>
+			<instance name="material" material="/shared/effects/materials/planet_01.material"/>
+			<instance name="material" material="/shared/effects/materials/planet_02.material"/>
+			<instance name="material" material="/shared/effects/materials/planet_03.material"/>
+			<instance name="material" material="/shared/effects/materials/planet_04.material"/>
+			<instance name="material" material="/shared/effects/materials/planet_05.material"/>
+		
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

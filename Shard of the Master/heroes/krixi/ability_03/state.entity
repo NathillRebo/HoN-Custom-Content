@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Krixi_Ability3"
+
+	icon="icon.tga"
+	
+	passiveeffect="effects/ability_03.effect"
+	displaylevel="true"
+	
+	basedamagemultiplier="0.05,0.10,0.15,0.20"
+>
+	
+	<!-- Switch to night state -->
+	<modifier key="krixi_night" condition="night" modpriority="101"
+		basedamagemultiplier="0.15,0.20,0.25,0.30"
+	>
+	</modifier>
+
+	<altavatar key="Hero_Krixi.Alt4" modpriority="100"
+	    passiveeffect="../alt4/ability_03/effects/ability_03.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt5" modpriority="100"
+	    passiveeffect="../alt5/ability_03/effects/ability_03.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt6" modpriority="100"
+	    passiveeffect="../alt6/ability_03/effects/ability_03.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt7" modpriority="100"
+	    passiveeffect="../alt7/ability_03/effects/ability_03.effect"
+	/>
+
+	<altavatar key="Hero_Krixi.Alt8" modpriority="100"
+	    passiveeffect="../alt8/ability_03/ability_03.effect"
+		icon="../alt8/ability_03/icon.tga"
+	>
+		<modifier key="mastery_silver" modpriority="101"
+			passiveeffect="../alt8/silver/ability_03/ability_03.effect"
+		/>
+		<modifier key="mastery_gold" modpriority="101"
+			passiveeffect="../alt8/gold/ability_03/ability_03.effect"
+		/>
+		<modifier key="mastery_purple" modpriority="101"
+			passiveeffect="../alt8/purple/ability_03/ability_03.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt9" modpriority="100"
+	    icon="../alt9/ability_03/icon.tga"
+	    passiveeffect="../alt9/ability_03/effects/ability_03.effect"	
+	/>
+</state>

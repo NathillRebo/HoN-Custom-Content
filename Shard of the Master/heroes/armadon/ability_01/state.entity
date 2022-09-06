@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Armadon_Ability1"
+	
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	maxcharges="4"
+	
+	movespeedslow="0.2"
+	movespeedslowpercharge="0.03,0.06,0.09,0.12"
+	armorpercharge="-1,-1.5,-2,-2.5"
+
+	negativeeffect="slowed"
+>
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" />
+	</onrefresh>
+	
+	<modifier key="armadon_nobossarmor" modpriority="100" condition="boss" notooltooltip="true"
+		armorpercharge="0"
+	/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="101">
+		<onframe>
+			<evaluate a="0.0035" b="target_maxhealth" op="mult"/>
+			<evaluate a="result" b="charges" op="mult" />
+			<evaluate a="result" b="frametime" op="mult" />
+			<damage effecttype="Magic DOT" amount="1" b="result" op="mult" />
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_Armadon.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_01/state.effect"
+	/>
+	
+	<altavatar key="Hero_Armadon.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Armadon.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_01/effects/state.effect"
+	/>	
+	
+	<altavatar key="Hero_Armadon.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_01/effects/state.effect"
+		icon="../alt8/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Armadon.set_ascension" modpriority="1"
+		passiveeffect="../set_ascension/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Armadon.Alt9" modpriority="1"
+		passiveeffect="../alt9/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Armadon.Alt10" modpriority="1"
+		passiveeffect="../alt10/ability_01/effects/state.effect"
+	/>
+</state>

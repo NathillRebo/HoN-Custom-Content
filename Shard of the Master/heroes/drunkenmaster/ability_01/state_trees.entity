@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DrunkenMaster_Ability1_Trees"
+	
+	icon="icon.tga"
+	ishidden="true"
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	
+>
+	<onframe>
+		<killtrees radius="60" />
+	</onframe>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt10"
+	    icon="/heroes/drunkenmaster/alt10/ability_01/icon.tga"
+	/>
+	
+</state>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ellonia_Ability3_Shard"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_freeze.effect"
+	effecttype="StatusBuff"
+	allowtransfer="true"
+
+	frozen="true"
+	
+	stunned="true"
+	
+	stunneddurationmultiplier="-0.85"
+	debuffdurationmultiplier="-0.85"
+	
+>
+	<ondamaged priority="5">		
+		<scaledamage scale="0.15" />
+	</ondamaged>
+
+	<onexpired>
+		<playanim name="idle" />
+	</onexpired>
+
+	<altavatar key="Hero_Ellonia.Alt4"
+		icon="/heroes/ellonia/alt4/ability_03/icon.tga"
+		passiveeffect="../alt4/ability_03/effects/state_freeze.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt5"
+		passiveeffect="../alt5/ability_03/effects/state_freeze.effect"
+	/>
+
+	<altavatar key="Hero_Ellonia.Alt6"
+		passiveeffect="../alt6/ability_03/effects/state_freeze.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt7"
+		icon="../alt7/ability_03/icon.tga" 
+		passiveeffect="../alt7/ability_03/effects/state_freeze.effect"
+	/>
+	
+	<altavatar key="Hero_Ellonia.Alt8"
+		passiveeffect="../alt8/ability_03/effects/state_freeze.effect"
+	/>	
+	
+	<altavatar key="Hero_Ellonia.Alt9" />
+</state>

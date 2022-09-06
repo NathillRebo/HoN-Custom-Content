@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_Empath_Ability1_Self" 
+
+    icon="icon.tga" 
+    passiveeffect="effects/state_self.effect" 
+
+    effecttype="" 
+    alwaystransmitdata="true" 
+> 
+    <onframe>
+		<heal target="this_owner_entity" a="20,30,38,46" b="frametime" op="mult"/> 
+    </onframe> 
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onframe>
+			<areaofeffect
+				radius="450"
+				targetselection="all"
+				targetscheme="ally_units"
+				effecttype=""
+			>
+				<heal target="target_entity" a="20,30,38,46" b="frametime" op="mult"/> 
+			</areaofeffect>
+		</onframe> 
+	</modifier>
+     
+    <onexpired> 
+        <expirestate name="State_Empath_Ability1_Enemy" target="this_proxy_entity" /> 
+    </onexpired> 
+
+	<altavatar key="Hero_Empath.Alt7"
+		passiveeffect="/heroes/empath/alt7/ability_01/effects/state_self.effect"
+		icon="../alt7/ability_01/icon.tga"
+	>
+		<modifier key="Alt7_Ability1_Upgrade"
+			icon="../alt7/ability_01/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Empath.Alt8"
+		passiveeffect="/heroes/empath/alt8/ability_01/effects/state_self.effect"
+		
+	/>
+	
+	<altavatar key="Hero_Empath.Alt9"
+		passiveeffect="/heroes/empath/alt9/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.Alt10"
+		passiveeffect="/heroes/empath/alt10/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin01"
+		passiveeffect="/heroes/empath/trophy_skin/model_01/ability_01/effects/state_self.effect"
+	/>
+
+	<altavatar key="Hero_Empath.trophy_skin02"
+		passiveeffect="/heroes/empath/trophy_skin/model_02/ability_01/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Empath.trophy_skin03"
+		passiveeffect="/heroes/empath/trophy_skin/model_03/ability_01/effects/state_self.effect"
+	/>
+	
+</state>  

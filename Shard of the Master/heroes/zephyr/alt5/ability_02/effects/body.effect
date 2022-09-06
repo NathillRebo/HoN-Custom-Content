@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<modifier name="PARTYTIME!"
+			life="800"
+			loop="true"
+			startcolor="3 .5 3"
+			midcolor="1.5"
+			endcolor="3 .5 3"
+		/>
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+			<!--Rainbow trail-->
+			<trailemitter
+				bone="_bone_center"
+				spawnrate="30"
+				particlelife="250"
+				texpostime="250"
+				material="/shared/effects/materials/rainbowtrail.material"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				directionalspace="local"
+			>
+				<particle
+					minsize="75"
+					maxsize="110"
+					startcolor="0 0 0"
+					midcolor=".5"
+					midcolorpos="0.2"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" modifier="PARTYTIME!"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

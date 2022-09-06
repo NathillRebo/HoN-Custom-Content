@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" showoutlines="true" disable2dworld="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="0.7143">
+
+			<template name="splashes">
+				<simpleemitter
+					bone="{bone}"
+					depthbias="-15"
+					minparticlelife="250"
+					maxparticlelife="500"
+					spawnrate="10"
+					minspeed="50"
+					maxspeed="100"
+					gravity="25"
+					direction="0 0 1"
+					minangle="-90"
+					maxangle="90"
+					drag="0.25"
+					material="/shared/effects/materials/purple_goop_overlay.material"
+					offsetsphere="0 0 0"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-180"
+						maxanglespeed="180"
+						minstartsize="25"
+						maxstartsize="50"
+						minendsize="90"
+						maxendsize="115"
+						color=".5 .5 .5"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".3"
+						minscale=".15"
+						maxscale=".3"
+						anchor="1"
+					/>
+				</simpleemitter>
+			
+				<simpleemitter
+					bone="{bone}"
+					depthbias="-25"
+					minparticlelife="450"
+					maxparticlelife="700"
+					spawnrate="16"
+					minspeed="50"
+					maxspeed="100"
+					gravity="25"
+					direction="0 0 1"
+					minangle="-90"
+					maxangle="90"
+					drag="0.25"
+					material="/shared/effects/materials/beer_splash.material"
+					offsetsphere="5 5 5"
+				>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="40"
+						endsize="110"
+						startcolor=".5 .2 .5"
+						midcolor=".5 .2 .5"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="40"
+						endsize="110"
+						startcolor=".8 .5 .8"
+						midcolor=".8 .5 .8"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="40"
+						endsize="110"
+						startcolor=".8 .5 .8"
+						midcolor=".8 .5 .8"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					bone="{bone}"
+					depthbias="0"
+					minparticlelife="250"
+					maxparticlelife="500"
+					spawnrate="35"
+					minspeed="50"
+					maxspeed="100"
+					gravity="25"
+					direction="0 0 1"
+					minangle="-90"
+					maxangle="90"
+					drag="0.25"
+					material="/shared/effects/materials/bubble_add.material"
+					offsetsphere="15 15 5"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="10"
+						endsize="20"
+						color=".75 .5 .75"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						minscale=".25"
+						maxscale=".5"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="splashes" bone="_bone_fx_06" />
+			<instance name="splashes" bone="_bone_fx_09" />
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<template name="spout">
+<!--
+				<simpleemitter
+					bone="{bone}"
+					depthbias="-25"
+					minparticlelife="350"
+					maxparticlelife="750"
+					spawnrate="200"
+					minspeed="50"
+					maxspeed="100"
+					gravity="100"
+					direction="0 0 1"
+					minangle="-90"
+					maxangle="90"
+					drag="0.25"
+					material="/shared/effects/materials/beer_splash.material"
+					offsetsphere="0 0 0"
+				>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						size="30"
+						startcolor=".5 .2 .1"
+						midcolor=".5 .2 .1"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						size="30"
+						startcolor=".8 .5 .25"
+						midcolor=".8 .5 .25"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						size="30"
+						startcolor=".8 .5 .25"
+						midcolor=".8 .5 .25"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+				</simpleemitter>
+-->
+				<simpleemitter
+					bone="{bone}"
+					depthbias="0"
+					minparticlelife="250"
+					maxparticlelife="500"
+					spawnrate="35"
+					minspeed="50"
+					maxspeed="100"
+					gravity="25"
+					direction="0 0 1"
+					minangle="-90"
+					maxangle="90"
+					drag="0.25"
+					material="/shared/effects/materials/bubble_add.material"
+					offsetsphere="5 5 5"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="10"
+						endsize="17"
+						color=".75 .5 .75"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						minscale=".25"
+						maxscale=".5"
+					/>
+				</simpleemitter>
+	
+			</template>
+
+			<instance name="spout" bone="_bone_fx_01" />
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

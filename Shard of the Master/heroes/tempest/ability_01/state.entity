@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tempest_Ability1"
+
+	icon="/heroes/tempest/ability_01/icon.tga"
+	passiveeffect=""
+	
+	impactinterval="2000"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<onframe />
+	
+	<oninflict>
+		<entitytype type="Pet_PuppetMaster_Ability4">
+			<setactivemodifierkey name="voodoo_puppet" />
+		</entitytype>
+		<else>
+			<cantarget effecttype="Magic" targetscheme="enemy_units" ignoreinvulnerable="false">
+				<applystate name="State_Stunned" duration="250,500,750,1000" />
+				
+				<!-- Staff of the Master -->
+				<hasmodifier name="ult_boost" entity="source_entity">
+					<damage effecttype="" amount="30,50,70,90" />
+				</hasmodifier>
+				<else>
+					<damage effecttype="Magic" amount="30,50,70,90" />
+				</else>
+				
+				<!-- Art -->
+				<hasavatarkey name="Hero_Tempest.Alt3">
+					<playeffect effect="/heroes/tempest/alt3/ability_01/effects/stun.effect" source="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Tempest.Alt4">
+						<playeffect effect="/heroes/tempest/alt4/ability_01/effects/stun.effect" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Tempest.Alt5">
+							<playeffect effect="/heroes/tempest/alt5/ability_01/effects/stun.effect" source="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Tempest.Alt6">
+								<playeffect effect="/heroes/tempest/alt6/ability_01/effects/stun.effect" source="target_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Tempest.Alt7">
+									<playeffect effect="/heroes/tempest/alt7/ability_01/effects/stun.effect" source="target_entity" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="/heroes/tempest/ability_01/effects/stun.effect" source="target_entity" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</cantarget>
+		</else>
+	</oninflict>
+	
+	<onimpact>
+        <cantarget effecttype="Magic" targetscheme="enemy_units" ignoreinvulnerable="false">
+			<applystate name="State_Stunned" duration="250,500,750,1000" />
+			
+			<!-- Staff of the Master -->
+			<hasmodifier name="ult_boost" entity="source_entity">
+				<damage effecttype="" amount="30,50,70,90" />
+			</hasmodifier>
+			<else>
+				<damage effecttype="Magic" amount="30,50,70,90" />
+			</else>
+			
+			<!-- Art -->
+			<hasavatarkey name="Hero_Tempest.Alt3">
+				<playeffect effect="/heroes/tempest/alt3/ability_01/effects/stun.effect" source="target_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Tempest.Alt4">
+					<playeffect effect="/heroes/tempest/alt4/ability_01/effects/stun.effect" source="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Tempest.Alt5">
+						<playeffect effect="/heroes/tempest/alt5/ability_01/effects/stun.effect" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Tempest.Alt6">
+							<playeffect effect="/heroes/tempest/alt6/ability_01/effects/stun.effect" source="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Tempest.Alt7">
+								<playeffect effect="/heroes/tempest/alt7/ability_01/effects/stun.effect" source="target_entity" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="/heroes/tempest/ability_01/effects/stun.effect" source="target_entity" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</cantarget>
+	</onimpact>
+	
+	<onrefresh>
+		<changeduration b="4000" op="add" />
+	</onrefresh>
+	
+	<modifier key="voodoo_puppet" modpriority="100">
+		<onframe>
+			<changeduration b="50" op="add" />
+			<setactivemodifierkey name="" />
+			<cantarget effecttype="Magic" targetscheme="enemy_units" ignoreinvulnerable="false">
+				<applystate name="State_Stunned" duration="250,500,750,1000" />
+				
+				<!-- Staff of the Master -->
+				<hasmodifier name="ult_boost" entity="source_entity">
+					<damage effecttype="" amount="30,50,70,90" />
+				</hasmodifier>
+				<else>
+					<damage effecttype="Magic" amount="30,50,70,90" />
+				</else>
+				
+				<!-- Art -->
+				<hasavatarkey name="Hero_Tempest.Alt3">
+					<playeffect effect="/heroes/tempest/alt3/ability_01/effects/stun.effect" source="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Tempest.Alt4">
+						<playeffect effect="/heroes/tempest/alt4/ability_01/effects/stun.effect" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Tempest.Alt5">
+							<playeffect effect="/heroes/tempest/alt5/ability_01/effects/stun.effect" source="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Tempest.Alt6">
+								<playeffect effect="/heroes/tempest/alt6/ability_01/effects/stun.effect" source="target_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Tempest.Alt7">
+									<playeffect effect="/heroes/tempest/alt7/ability_01/effects/stun.effect" source="target_entity" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="/heroes/tempest/ability_01/effects/stun.effect" source="target_entity" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</cantarget>
+		</onframe>
+	</modifier>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<oninflict>
+			<entitytype type="Pet_PuppetMaster_Ability4">
+				<setactivemodifierkey name="voodoo_puppet" />
+			</entitytype>
+			<else>
+				<cantarget effecttype="Magic" targetscheme="enemy_units" ignoreinvulnerable="false">
+					<applystate name="State_Stunned" duration="250,500,750,1000" />
+					
+					<!-- Staff of the Master -->
+					<hasmodifier name="ult_boost" entity="source_entity">
+						<damage effecttype="" amount="30,50,70,90" />
+					</hasmodifier>
+					<else>
+						<damage effecttype="Magic" amount="30,50,70,90" />
+					</else>
+					
+					<areaofeffect
+						radius="225"
+						targetselection="all"
+						targetscheme="enemy_units"
+						effecttype="Magic"
+						ignore="target_entity"
+					>
+						<chance threshold="0.34">
+							<applystate name="State_Tempest_Ability1" target="target_entity" proxy="this_inflictor_entity" duration="4000" />
+						</chance>
+					</areaofeffect>
+					
+					<!-- Art -->
+					<hasavatarkey name="Hero_Tempest.Alt3">
+						<playeffect effect="/heroes/tempest/alt3/ability_01/effects/stun.effect" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Tempest.Alt4">
+							<playeffect effect="/heroes/tempest/alt4/ability_01/effects/stun.effect" source="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Tempest.Alt5">
+								<playeffect effect="/heroes/tempest/alt5/ability_01/effects/stun.effect" source="target_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Tempest.Alt6">
+									<playeffect effect="/heroes/tempest/alt6/ability_01/effects/stun.effect" source="target_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Tempest.Alt7">
+										<playeffect effect="/heroes/tempest/alt7/ability_01/effects/stun.effect" source="target_entity" />
+									</hasavatarkey>
+									<else>
+										<playeffect effect="/heroes/tempest/ability_01/effects/stun.effect" source="target_entity" />
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</cantarget>
+			</else>
+		</oninflict>
+		
+		<onimpact>
+			<cantarget effecttype="Magic" targetscheme="enemy_units" ignoreinvulnerable="false">
+				<applystate name="State_Stunned" duration="250,500,750,1000" />
+				
+				<!-- Staff of the Master -->
+				<hasmodifier name="ult_boost" entity="source_entity">
+					<damage effecttype="" amount="30,50,70,90" />
+				</hasmodifier>
+				<else>
+					<damage effecttype="Magic" amount="30,50,70,90" />
+				</else>
+				
+				<areaofeffect
+					radius="225"
+					targetselection="all"
+					targetscheme="enemy_units"
+					effecttype="Magic"
+					ignore="target_entity"
+				>
+					<chance threshold="0.34">
+						<applystate name="State_Tempest_Ability1" target="target_entity" proxy="this_inflictor_entity" duration="4000" />
+					</chance>
+				</areaofeffect>
+				
+				<!-- Art -->
+				<hasavatarkey name="Hero_Tempest.Alt3">
+					<playeffect effect="/heroes/tempest/alt3/ability_01/effects/stun.effect" source="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Tempest.Alt4">
+						<playeffect effect="/heroes/tempest/alt4/ability_01/effects/stun.effect" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Tempest.Alt5">
+							<playeffect effect="/heroes/tempest/alt5/ability_01/effects/stun.effect" source="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Tempest.Alt6">
+								<playeffect effect="/heroes/tempest/alt6/ability_01/effects/stun.effect" source="target_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Tempest.Alt7">
+									<playeffect effect="/heroes/tempest/alt7/ability_01/effects/stun.effect" source="target_entity" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="/heroes/tempest/ability_01/effects/stun.effect" source="target_entity" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</cantarget>
+		</onimpact>
+	</modifier>
+
+</state>

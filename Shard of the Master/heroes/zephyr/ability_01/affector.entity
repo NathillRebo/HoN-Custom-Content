@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Zephyr_Ability1"
+
+	radiusstart="70"
+	radiusend="250"
+	speed="800"
+	lifetime="675"
+	arc="150"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	maximpactspertarget="1"
+	persist="true"
+	effect="effects/steamer.effect"
+>
+	<onimpact>
+		<applystate name="State_Stunned" duration="100" />
+		<spawnunit name="Gadget_Zephyr_Ability1" target="target_entity" offsetspace="this_entity" pushentity="true" offset="0 -10" />
+		<applystate name="State_Zephyr_Ability1" duration="600" />
+		<cantarget effecttype="Push">
+			<push force="625" duration="600" source="stack_entity" />
+		</cantarget>
+		<damage effecttype="Magic" amount="70,140,210,280" />
+	</onimpact>
+	
+	<altavatar key="Hero_Zephyr.Alt3" modpriority="1"
+		effect="/heroes/zephyr/alt3/ability_01/effects/steamer.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt4" modpriority="1"
+		effect="/heroes/zephyr/alt4/ability_01/effects/steamer.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt5" modpriority="1"
+		effect="/heroes/zephyr/alt5/ability_01/effects/steamer.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt6" modpriority="1"
+		effect="/heroes/zephyr/alt6/ability_01/effects/steamer.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt7" modpriority="1"
+		effect="/heroes/zephyr/alt7/ability_01/effects/steamer.effect"
+	>
+		<modifier key="Pirate_Set_Bonus" modpriority="100"
+			effect="/heroes/zephyr/alt7/ability_01/effects/steamer_pirate.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Zephyr.Alt8" modpriority="1"
+	    icon="/heroes/zephyr/alt8/ability_01/icon.tga"
+		effect="/heroes/zephyr/alt8/ability_01/effects/steamer.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt9" modpriority="1"
+		effect="/heroes/zephyr/alt9/ability_01/effects/steamer.effect"
+	/>
+	
+	<modifier key="soccer" modpriority="150">
+		<onimpact>
+			<setent0 entity="target_entity" />
+			<areaofeffect targetscheme="SoccerBalls" source="target_entity" center="target_entity" ignoreinvulnerable="true" targetselection="all" radius="200">
+				<setproxy entity="ent0" target="target_entity" />
+			</areaofeffect>
+			
+			<pushentityproxy entity="ent0" />
+			<compare a="stack_proxy_entity" b="target_entity" op="eq">
+				<applystate name="State_Soccer_NoTeleport" duration="300" target="stack_entity" />
+				<applystate name="State_Soccer_Sliding" duration="3000" accumulator="250" target="stack_entity" />
+				<playeffect effect="effects/kickboom.effect" target="target_entity" />
+				<setproxy entity="target_entity" target="" />
+				<setproxy entity="stack_entity" target="" />
+				<expirestate name="State_Soccer_HasBall" target="target_entity" />
+				<deactivatemodifierkey name="soccer_hasball" entity="target_entity" />
+				
+				<!-- team stuff for ball -->
+				
+				<applystate name="State_Stunned" duration="100" />
+				<unbind target="target_entity" />
+				<unbind target="stack_entity" />
+			</compare>
+			
+			<spawnunit name="Gadget_Zephyr_Ability1" target="target_entity" offsetspace="this_entity" pushentity="true" offset="0 -10" />
+			<applystate name="State_Zephyr_Ability1" duration="600" />
+			<cantarget effecttype="Push">
+				<push force="625" duration="600" source="stack_entity" />
+			</cantarget>
+			<damage effecttype="Magic" amount="70,140,210,280" />
+		</onimpact>	
+	</modifier>
+	
+</affector>

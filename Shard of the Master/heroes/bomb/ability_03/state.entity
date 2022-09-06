@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bombardier_Ability3"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	maxcharges="8"
+	
+	effecttype=""	
+	allowtransfer="false"
+>
+	<modifier key="shardofthemaster_boost"
+		movespeedpercharge="-2.25"
+	>
+		<onrefresh>
+			<compare a="charges" b="8" op="lt">
+				<!-- Damage -->
+				<setvar0 a="20,30,40,50" />
+				<targettype type="hero">
+					<damage effecttype="Magic Returned" amount="1" b="var0" op="mult" />
+				</targettype>
+				<else>
+					<damage effecttype="Magic Returned" amount="0.75" b="var0" op="mult" />
+				</else>
+				
+				<!-- Art -->
+				<hasavatarkey name="Hero_Bombardier.Alt9">
+					<playeffect effect="../alt9/ability_03/effects/impact.effect" source="target_position" occlude="true" />
+					<playeffect effect="../alt9/ability_03/effects/explosion.effect" source="target_position" occlude="true" />	
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Bombardier.Alt10">
+						<playeffect effect="../alt9/ability_03/effects/impact.effect" source="target_position" occlude="true" />
+						<playeffect effect="../alt9/ability_03/effects/explosion.effect" source="target_position" occlude="true" />	
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Bombardier.Alt11">
+							<playeffect effect="../alt11/ability_03/effects/impact.effect" source="target_position" occlude="true" />
+							<playeffect effect="../alt11/ability_03/effects/explosion.effect" source="target_position" occlude="true" />	
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Bombardier.Alt12">
+								<playeffect effect="../alt12/ability_03/effects/impact.effect" source="target_position" occlude="true" />
+								<playeffect effect="../alt12/ability_03/effects/explosion.effect" source="target_position" occlude="true" />	
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/impact.effect" source="target_position" occlude="true" />
+								<playeffect effect="effects/explosion.effect" source="target_position" occlude="true" />	
+							</else>
+						</else>
+					</else>
+				</else>
+			</compare>
+		</onrefresh>
+	</modifier>
+	
+	<oninflict>
+		<!-- Damage -->
+		<setvar0 a="20,30,40,50" />
+		<targettype type="hero">
+			<damage effecttype="Magic Returned" amount="1" b="var0" op="mult" />
+		</targettype>
+		<else>
+			<damage effecttype="Magic Returned" amount="0.75" b="var0" op="mult" />
+		</else>
+		
+		<!-- Art -->
+		<hasavatarkey name="Hero_Bombardier.Alt11">
+			<playeffect effect="../alt11/ability_03/effects/impact.effect" source="target_position" occlude="true" />
+			<playeffect effect="../alt11/ability_03/effects/explosion.effect" source="target_position" occlude="true" />	
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Bombardier.Alt12">
+				<playeffect effect="../alt12/ability_03/effects/impact.effect" source="target_position" occlude="true" />
+				<playeffect effect="../alt12/ability_03/effects/explosion.effect" source="target_position" occlude="true" />	
+			</hasavatarkey>
+			<else>
+				<playeffect effect="effects/impact.effect" source="target_position" occlude="true" />
+				<playeffect effect="effects/explosion.effect" source="target_position" occlude="true" />	
+			</else>
+		</else>
+		
+	</oninflict>
+	
+	<onrefresh>
+		<compare a="charges" b="4" op="lt">
+			<!-- Damage -->
+			<setvar0 a="20,30,40,50" />
+			<targettype type="hero">
+				<damage effecttype="Magic Returned" amount="1" b="var0" op="mult" />
+			</targettype>
+			<else>
+				<damage effecttype="Magic Returned" amount="0.75" b="var0" op="mult" />
+			</else>
+			
+			<!-- Art -->
+			<hasavatarkey name="Hero_Bombardier.Alt9">
+				<playeffect effect="../alt9/ability_03/effects/impact.effect" source="target_position" occlude="true" />
+				<playeffect effect="../alt9/ability_03/effects/explosion.effect" source="target_position" occlude="true" />	
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Bombardier.Alt10">
+					<playeffect effect="../alt9/ability_03/effects/impact.effect" source="target_position" occlude="true" />
+					<playeffect effect="../alt9/ability_03/effects/explosion.effect" source="target_position" occlude="true" />	
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Bombardier.Alt11">
+						<playeffect effect="../alt11/ability_03/effects/impact.effect" source="target_position" occlude="true" />
+						<playeffect effect="../alt11/ability_03/effects/explosion.effect" source="target_position" occlude="true" />	
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Bombardier.Alt12">
+							<playeffect effect="../alt12/ability_03/effects/impact.effect" source="target_position" occlude="true" />
+							<playeffect effect="../alt12/ability_03/effects/explosion.effect" source="target_position" occlude="true" />	
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/impact.effect" source="target_position" occlude="true" />
+							<playeffect effect="effects/explosion.effect" source="target_position" occlude="true" />	
+						</else>
+					</else>
+				</else>
+			</else>
+		</compare>
+	</onrefresh>
+	
+	<altavatar key="Hero_Bombardier.Alt11"
+	    icon="../alt11/ability_03/icon.tga"
+	/>
+	
+</state>

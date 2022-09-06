@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+		
+
+
+				<model 
+					bone="_bone_centerofchest"
+					anim="idle"
+					startalpha="1"
+					endalpha="0"
+					model="model/model.mdf"
+					color="1 1 1"
+					scale="2.7"
+					yawspeed="180"
+					expirelife="500"
+					position="0 0 -15"
+				>
+				
+					<billboard
+						expirelife="250"
+						position="0 0 0"
+						startcolor=".5 .2 .075"
+						endcolor="0 0 0"
+						size="65"
+						rollspeed="-720"
+						depthbias="-25"
+						material="/heroes/drunkenmaster/effects/material.material"
+						lockright="true"
+						lockup="true"
+						pitch="-90"
+						directionalspace="local"
+						yawspeed="180"
+					/>
+					
+					<billboard
+						expirelife="250"
+						position="0 0 0"
+						startcolor=".5 .2 .075"
+						endcolor="0 0 0"
+						size="65"
+						rollspeed="-720"
+						depthbias="-25"
+						material="/heroes/drunkenmaster/effects/material.material"
+						lockright="true"
+						lockup="true"
+						pitch="-90"
+						directionalspace="local"
+						yawspeed="-180"
+					/>
+				</model>
+				
+				<model 
+					bone="_bone_centerofchest"
+					anim="idle"
+					startalpha="1"
+					endalpha="0"
+					model="model/model.mdf"
+					material="/shared/effects/materials/shell2.material"
+					startcolor=".6 .2 0"
+					endcolor="0 0 0"
+					scale="2.7"
+					yawspeed="180"
+					expirelife="500"
+					position="0 0 -15"
+				/>
+		
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+      	<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

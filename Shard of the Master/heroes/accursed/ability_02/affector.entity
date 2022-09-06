@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Accursed_Ability2"
+
+	radius="700"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	impacteffect="effects/affector.effect"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="110,140,170,200" />
+		
+		<!-- Apply Accursed's Sear -->
+		<hasmodifier name="Accursed_E_Leveled" >
+			<pushability name="Ability_Accursed3" />
+			<setvar0 a="source_level" source="stack_entity" />
+			<applystate name="State_Accursed_Ability3_Debuff" duration="2000" statelevel="var0" disablenegativeeffectpopuponrefresh="true" />
+		</hasmodifier>
+	</onimpact>
+	
+	<altavatar key="Hero_Accursed.Alt5" modpriority="1"
+		impacteffect="/heroes/accursed/alt5/ability_02/effects/affector.effect"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt7" modpriority="1"
+		impacteffect="/heroes/accursed/alt7/ability_02/effects/affector.effect"
+		icon="/heroes/accursed/alt7/ability_02/icon.tga"
+	/>
+	
+</affector>

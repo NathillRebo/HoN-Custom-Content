@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Revenant_Ability3"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	stealthtype="hero"
+	fadetime="1000"
+	unitwalking="true"
+	
+	effecttype="StatusStealth"
+>
+	<modifier key="shardofthemaster_boost" modpriority="101" 
+		cliffwalking="true"
+		buildingwalking="true"
+		treewalking="true" 
+		movespeedmultiplier="0.2"
+	/>
+	
+	<oninflict>
+		<hasavatarkey name="Hero_Revenant.Alt4">
+			<playeffect effect="../alt4/ability_03/effects/initial_impact.effect" source="target_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Revenant.Alt6">
+				<playeffect effect="../alt6/ability_03/effects/initial_impact.effect" source="target_entity" />
+			</hasavatarkey>
+			<else>
+				<playeffect effect="effects/initial_impact.effect" source="target_entity" />
+			</else>
+		</else>
+		<forgetattacks />
+		<startfade />
+	</oninflict>
+	
+	<onattackpredamage>
+		<cantarget targetscheme="enemy_units">
+			<targettype type="Boss" />
+			<else>
+				<applystate name="State_Revenant_Ability3_Armor" target="target_entity" duration="6000" />
+			</else>
+		</cantarget>
+	</onattackpredamage>
+	
+	<onattack>
+		<expire />
+	</onattack>
+	
+	<onactivatepreimpact>
+		<expire />
+		<isitem entity="inflictor_entity" >
+			<expire />
+		</isitem>
+	</onactivatepreimpact>
+	
+	
+	<modifier key="Revenant_Ability4_1" modpriority="100"
+		movespeedmultiplier="0.1"
+	>
+		<onactivatepreimpact>
+			<condition target="this_inflictor_entity" source="source_entity" test="target_entity eq source_entity" />
+			<else>
+				<expire />
+			</else>
+			<isitem entity="inflictor_entity" >
+				<expire />
+			</isitem>
+		</onactivatepreimpact>
+	</modifier>
+	
+	<modifier key="Revenant_Ability4_2" modpriority="100"
+		movespeedmultiplier="0.1"
+	>
+		<onactivatepreimpact>
+			<condition target="this_inflictor_entity" source="source_entity" test="target_entity eq source_entity" />
+			<else>
+				<expire />
+			</else>
+			<isitem entity="inflictor_entity" >
+				<expire />
+			</isitem>
+		</onactivatepreimpact>
+	</modifier>
+	
+	<modifier key="Revenant_Ability4_3" modpriority="100"
+		movespeedmultiplier="0.1"
+	>
+		<onactivatepreimpact>
+			<condition target="this_inflictor_entity" source="source_entity" test="target_entity eq source_entity" />
+			<else>
+				<expire />
+			</else>
+			<isitem entity="inflictor_entity" >
+				<expire />
+			</isitem>
+		</onactivatepreimpact>
+	</modifier>
+
+	<modifier key="Revenant_Ability4_1boost" modpriority="100"
+		movespeedmultiplier="0.1"
+	>
+		<onactivatepreimpact>
+			<condition target="this_inflictor_entity" source="source_entity" test="target_entity eq source_entity" />
+			<else>
+				<expire />
+			</else>
+			<isitem entity="inflictor_entity" >
+				<expire />
+			</isitem>
+		</onactivatepreimpact>
+	</modifier>
+
+	<modifier key="Revenant_Ability4_2boost" modpriority="100"
+		movespeedmultiplier="0.1"
+	>
+		<onactivatepreimpact>
+			<condition target="this_inflictor_entity" source="source_entity" test="target_entity eq source_entity" />
+			<else>
+				<expire />
+			</else>
+			<isitem entity="inflictor_entity" >
+				<expire />
+			</isitem>
+		</onactivatepreimpact>
+	</modifier>
+
+	<modifier key="Revenant_Ability4_3boost" modpriority="100"
+		movespeedmultiplier="0.1"
+	>
+		<onactivatepreimpact>
+			<condition target="this_inflictor_entity" source="source_entity" test="target_entity eq source_entity" />
+			<else>
+				<expire />
+			</else>
+			<isitem entity="inflictor_entity" >
+				<expire />
+			</isitem>
+		</onactivatepreimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Revenant.Alt" modpriority="1"
+		passiveeffect="../alt/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Revenant.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Revenant.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_03/effects/state.effect"
+		icon="../alt4/ability_03/icon.tga"
+	>
+		<modifier key="Alt4_Ability3_Upgrade" modpriority="99"
+			passiveeffect="../alt4/ability_03/effects/state_upgrade.effect"
+			icon="../alt4/ability_03/icon_upgrade.tga"
+		/>
+			
+			
+		<!-- oh boy, more alt4 modifier madness -->
+		
+		<modifier key="Revenant_Ability4_1upgrade" modpriority="100"
+			movespeedmultiplier="0.1"
+		>
+			<onactivatepreimpact>
+				<condition target="this_inflictor_entity" source="source_entity" test="target_entity eq source_entity" />
+				<else>
+					<expire />
+				</else>
+				<isitem entity="inflictor_entity" >
+					<expire />
+				</isitem>
+			</onactivatepreimpact>
+		</modifier>
+		
+		<modifier key="Revenant_Ability4_2upgrade" modpriority="100"
+			movespeedmultiplier="0.1"
+		>
+			<onactivatepreimpact>
+				<condition target="this_inflictor_entity" source="source_entity" test="target_entity eq source_entity" />
+				<else>
+					<expire />
+				</else>
+				<isitem entity="inflictor_entity" >
+					<expire />
+				</isitem>
+			</onactivatepreimpact>
+		</modifier>
+		
+		<modifier key="Revenant_Ability4_3upgrade" modpriority="100"
+			movespeedmultiplier="0.1"
+		>
+			<onactivatepreimpact>
+				<condition target="this_inflictor_entity" source="source_entity" test="target_entity eq source_entity" />
+				<else>
+					<expire />
+				</else>
+				<isitem entity="inflictor_entity" >
+					<expire />
+				</isitem>
+			</onactivatepreimpact>
+		</modifier>
+
+		<modifier key="Revenant_Ability4_1upgradeboost" modpriority="100"
+			movespeedmultiplier="0.1"
+		>
+			<onactivatepreimpact>
+				<condition target="this_inflictor_entity" source="source_entity" test="target_entity eq source_entity" />
+				<else>
+					<expire />
+				</else>
+				<isitem entity="inflictor_entity" >
+					<expire />
+				</isitem>
+			</onactivatepreimpact>
+		</modifier>
+
+		<modifier key="Revenant_Ability4_2upgradeboost" modpriority="100"
+			movespeedmultiplier="0.1"
+		>
+			<onactivatepreimpact>
+				<condition target="this_inflictor_entity" source="source_entity" test="target_entity eq source_entity" />
+				<else>
+					<expire />
+				</else>
+				<isitem entity="inflictor_entity" >
+					<expire />
+				</isitem>
+			</onactivatepreimpact>
+		</modifier>
+
+		<modifier key="Revenant_Ability4_3upgradeboost" modpriority="100"
+			movespeedmultiplier="0.1"
+		>
+			<onactivatepreimpact>
+				<condition target="this_inflictor_entity" source="source_entity" test="target_entity eq source_entity" />
+				<else>
+					<expire />
+				</else>
+				<isitem entity="inflictor_entity" >
+					<expire />
+				</isitem>
+			</onactivatepreimpact>
+		</modifier>
+	</altavatar>
+	
+	<!-- end of alt4 -->
+	
+	<altavatar key="Hero_Revenant.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_03/effects/state.effect"
+	/>
+</state>

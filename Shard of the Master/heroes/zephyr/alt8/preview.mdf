@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="Flame_Sentinel_Zephyr_rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model" >
+    <anim name="idle" clip="clips/default_1.clip" loop="true" fps="30"/>
+</model>

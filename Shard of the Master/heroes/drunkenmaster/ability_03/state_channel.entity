@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Drunkenmaster_Ability3_Channel"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_channel.effect"
+	
+	impactinterval="250"
+	
+	effecttype=""
+	allowtransfer="false"
+>
+	<onimpact>
+		<pushability name="Ability_DrunkenMaster3" />
+		<addcharges count="2,3,4,5" entity="stack_entity" />
+		<starttimer duration="2000" entity="stack_entity" />
+		
+		<!-- Cooldown reduction -->
+		<pushability name="Ability_DrunkenMaster1" />
+		<reducecooldown duration="500" entity="stack_entity" />
+		<pushability name="Ability_DrunkenMaster2" />
+		<reducecooldown duration="500" entity="stack_entity" />
+	</onimpact>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt5" 
+		passiveeffect="../alt5/ability_03/effects/state_channel.effect"
+	/>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt6" 
+		passiveeffect="../alt6/ability_03/effects/state_channel.effect"
+	/>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt7" 
+		passiveeffect="../alt7/ability_03/effects/state_channel.effect"
+	/>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt8" 
+		passiveeffect="../alt8/ability_03/effects/state_channel.effect"
+	/>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt9" 
+		passiveeffect="../alt9/ability_03/effects/state_channel.effect"
+	/>
+	
+</state>

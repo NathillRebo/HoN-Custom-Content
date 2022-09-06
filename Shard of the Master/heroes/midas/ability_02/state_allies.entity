@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Midas_Shard"
+
+	icon="icon.tga"
+	
+	debuffdurationmultiplier="-0.3"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onframe />
+</state>

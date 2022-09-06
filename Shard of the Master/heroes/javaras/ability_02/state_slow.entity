@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Javaras2_Shard"
+
+	icon="icon.tga"
+	passiveeffect=""
+	silenced="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="silenced"
+>
+</state>

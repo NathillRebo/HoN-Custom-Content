@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Arachna1"
+
+	statuseffecttooltip="State_Arachna_Ability1"
+	statuseffectheader="true"
+	icon="icon.tga"
+
+	casttime="1000"
+	castactiontime="200"
+	casteffect="effects/cast.effect"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	cooldowntime="0"
+	
+	activatescheme="canattack"
+	actiontype="attack"
+	targetscheme="enemy_units"
+	casteffecttype="Magic Attack"
+	projectile="Projectile_Ability_Arachna1"
+	manacost="15"
+	range="575"
+
+	targetpriorities="enemy_heroes"
+	
+	doubleactivate="true"
+>	
+	<modifier key="shardofthemaster_boost" modpriority="100"/>
+	
+	<onattack>
+		<!-- Required to allow the skill to stack with Attack Modifiers -->
+		<setvalue name="combat_attackability" a="0" />
+	</onattack>
+	
+	<onimpact>
+		<cantarget effecttype="Magic">
+			<applystate name="State_Arachna_Ability1" duration="2000" disablenegativeeffectpopuponrefresh="true" />
+		</cantarget>
+	</onimpact>
+	
+	<onframe>
+		<!-- Use binary to figure out the modifier to apply -->
+		<!-- Combinations: 000, 001, 011, 010, 110, 100, 101, 111 -->
+		<!-- Counting from right-to-left (LSB): Jade Spire = 1, Faux Bow = 2, Wingbow = 4 -->
+		<setaccumulator value="0" />
+		<hasmodifier name="alt_JadeSpire" entity="source_entity">
+			<changeaccumulator b="1" op="add" />
+		</hasmodifier>		
+		<hasmodifier name="alt_FauxBow" entity="source_entity">
+			<changeaccumulator b="2" op="add" />
+		</hasmodifier>		
+		<hasmodifier name="alt_Wingbow" entity="source_entity">
+			<changeaccumulator b="4" op="add" />
+		</hasmodifier>		
+		
+		<!-- Perform combination check here -->
+		<!-- All 3 items, Wingbow takes priority in combination with Jade Spire -->
+		<compare a="accumulator" b="7" op="ge">
+			<setactivemodifierkey name="alt_JadeSpire_and_Wingbow" entity="this_entity" />
+		</compare>
+		<else>
+			<!-- Wingbow vs. Faux Bow -->
+			<compare a="accumulator" b="6" op="eq">
+				<setactivemodifierkey name="alt_Wingbow" entity="this_entity" />
+			</compare>
+			<else>
+				<!-- Wingbow & Jade Spire -->
+				<compare a="accumulator" b="5" op="eq">
+					<setactivemodifierkey name="alt_JadeSpire_and_Wingbow" entity="this_entity" />
+				</compare>
+				<else>
+					<!-- Wingbow -->
+					<compare a="accumulator" b="4" op="eq">
+						<setactivemodifierkey name="alt_JWingbow" entity="this_entity" />
+					</compare>
+					<else>
+						<!-- Faux Bow and Jade Spire -->
+						<compare a="accumulator" b="3" op="eq">
+							<setactivemodifierkey name="alt_JadeSpire_and_FauxBow" entity="this_entity" />
+						</compare>
+						<else>
+							<!-- Faux Bow -->
+							<compare a="accumulator" b="2" op="eq">
+								<setactivemodifierkey name="alt_FauxBow" entity="this_entity" />
+							</compare>
+							<else>
+								<!-- Jade Spire -->
+								<compare a="accumulator" b="1" op="eq">
+									<setactivemodifierkey name="alt_JadeSpire" entity="this_entity" />
+								</compare>
+								<else>
+									<!-- No conditions match -->
+									<setactivemodifierkey name="" entity="this_entity" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onframe>
+	
+	<modifier key="alt_JadeSpire" modpriority="1"
+		range="425"
+	>
+	</modifier>
+	
+	<modifier key="alt_FauxBow" modpriority="2"
+		range="675"
+	>
+	</modifier>
+
+	<modifier key="alt_Wingbow" modpriority="3"
+		range="725"
+	>
+	</modifier>	
+	
+	<modifier key="alt_JadeSpire_and_FauxBow" modpriority="4"
+		range="525"
+	>
+	</modifier>
+	
+	<modifier key="alt_JadeSpire_and_Wingbow" modpriority="5"
+		range="575"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Arachna.Alt2" modpriority="1"
+		casteffect="effects/cast_alt2.effect"
+		icon="/heroes/arachna/alt2/ability_01/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Arachna.Alt5" modpriority="1"
+		casteffect="../alt5/ability_01/effects/cast.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Arachna.Alt7" modpriority="1"
+		casteffect="../alt7/ability_01/effects/cast.effect"
+	/>
+</ability>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Defiler2"
+	
+	icon="icon.tga"
+	
+	anim="ability_2"
+	casttime="800"
+	castactiontime="500"
+	casteffect="effects/cast.effect"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	
+	manacost="65"
+	cooldowntime="13000"
+	
+	range="900"
+	
+	targetradius="250,300,350,400"
+	targetmaterial="/shared/materials/area_cast_indicator.material"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<hasavatarkey name="Hero_Defiler.set_ascension">
+			<playeffect effect="../set_ascension/ability_02/effects/impact.effect,../set_ascension/ability_02/effects/impact2.effect,../set_ascension/ability_02/effects/impact3.effect,../set_ascension/ability_02/effects/impact4.effect" source="target_position" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Defiler.Alt2">
+				<playeffect effect="../alt2/ability_02/effects/impact.effect,../alt2/ability_02/effects/impact2.effect,../alt2/ability_02/effects/impact3.effect,../alt2/ability_02/effects/impact4.effect" source="target_position" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Defiler.Alt3">
+					<playeffect effect="../alt3/ability_02/effects/impact.effect,../alt3/ability_02/effects/impact2.effect,../alt3/ability_02/effects/impact3.effect,../alt3/ability_02/effects/impact4.effect" source="target_position" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Defiler.Alt4">
+						<playeffect effect="../alt4/ability_02/effects/impact.effect,../alt4/ability_02/effects/impact2.effect,../alt4/ability_02/effects/impact3.effect,../alt4/ability_02/effects/impact4.effect" source="target_position" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Defiler.Alt5">
+							<playeffect effect="../alt5/ability_02/effects/impact.effect,../alt5/ability_02/effects/impact2.effect,../alt5/ability_02/effects/impact3.effect,../alt5/ability_02/effects/impact4.effect" source="target_position" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Defiler.Alt6">
+								<playeffect effect="../alt6/ability_02/effects/impact.effect,../alt6/ability_02/effects/impact2.effect,../alt6/ability_02/effects/impact3.effect,../alt6/ability_02/effects/impact4.effect" source="target_position" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/impact.effect,effects/impact2.effect,effects/impact3.effect,effects/impact4.effect" source="target_position" occlude="true"/>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+		<areaofeffect
+			radius="250,300,350,400"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<applystate name="State_Defiler_Ability2" duration="2000,2700,3300,4000" />
+		</areaofeffect>
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"/>
+	
+	<altavatar key="Hero_Defiler.Alt2" modpriority="1"
+		casteffect="../alt2/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt3" modpriority="1"
+		casteffect="../alt3/ability_02/effects/cast.effect"
+	>
+		<modifier key="Alt3_Voice"
+			casteffect="../alt3/ability_02/effects/cast_ult.effect"
+		>
+		
+			<onimpact>
+				<playeffect effect="../alt3/ability_02/effects/impact_ult.effect" source="target_position" occlude="true" />
+				<areaofeffect
+					radius="250,300,350,400"
+					targetselection="all"
+					targetscheme="enemy_units"
+					effecttype="Magic"
+				>
+					<applystate name="State_Defiler_Ability2" duration="2000,2700,3300,4000" />
+				</areaofeffect>
+			</onimpact>		
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Defiler.Alt4" modpriority="1"
+		casteffect="../alt4/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt5" modpriority="1" 
+	    icon="/heroes/defiler/alt5/ability_02/icon.tga"
+		casteffect="../alt5/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt6" modpriority="1" 
+		casteffect="../alt6/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.set_ascension" modpriority="1"
+		casteffect="../set_ascension/ability_02/effects/cast.effect"
+	/>
+</ability>

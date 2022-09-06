@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rampage_Ability1_Sight"
+	
+	icon=""
+	ishidden="true"
+	
+	serverentity="true"
+	sighted="true"
+	revealed="true"
+>
+	<aura
+		gadget="Gadget_Rampage_Ability1"
+		radius="0"
+		targetscheme="self"
+	/>
+
+	<ondeath>
+		<!-- Put Stampede on a 10 second cooldown if the target dies early -->
+		<pushability source="this_inflictor_entity" name="Ability_Rampage1" />
+		<resetcooldown entity="stack_entity" />
+		<startcooldown entity="stack_entity" duration="10000" />
+		
+		<setaccumulator value="1" />
+		<expire />
+	</ondeath>
+	
+	<onorderdisjointed>
+		<!-- Put Stampede on a 10 second cooldown if the target orderdisjoints -->
+		<pushability source="this_inflictor_entity" name="Ability_Rampage1" />
+		<resetcooldown entity="stack_entity" />
+		<startcooldown entity="stack_entity" duration="10000" />
+		
+		<setaccumulator value="1" />
+		<expire />
+	</onorderdisjointed>
+	
+	<onexpired>
+		<compare a="accumulator" b="1" op="ne">
+			<pushability source="source_entity" name="Ability_Rampage1" />
+			<startcooldown entity="stack_entity" duration="20000" />
+		</compare>
+	</onexpired>
+    
+	<altavatar key="Hero_Rampage.Alt14"
+		icon="/heroes/Rampage/alt14/ability_01/icon.tga"
+	>
+	</altavatar>
+	
+</state>

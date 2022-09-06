@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".9">
+		
+			<sound
+			    delay="200"
+			    life="5000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".7"
+				sample="/heroes/bephelgor/alt5/sounds/ab1_cast.wav"
+			/>
+
+			<sound
+			    forcestereo="true"
+			    delay="250"
+			    life="5000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="/heroes/bephelgor/alt5/sounds/ab1_vox.wav"
+			/>
+						
+			<sound
+			    soundloop="true"
+				fadein="1000"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".7"
+				sample="/heroes/bephelgor/alt5/sounds/ab1_state.wav"
+			/>
+
+			<simpleemitter
+				count="2"
+				spawnrate="2"
+				particlelife="2600"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				position="0 0 60"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						position="0 -25 5"
+						life="3500"
+						anim="idle"
+						model="/heroes/bephelgor/ability_03/effects/embers/model.mdf"
+						material="embers/material.material"
+						scale="2.7"
+						startcolor=".5 .5 1"
+						midcolor=".25 .5 1"
+						endcolor=".25 .5 1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+						midcolorpos=".2"
+					>
+						<template name="goo">
+							<beam
+								expirelife="500"
+								minlife="2000"
+								maxlife="2500"
+								bone_a="{a}"
+								bone_b="{b}"
+								color="{colorz}"
+								size="{sizez}"
+								startalpha="1"
+								midalpha="1"
+								endalpha="0"
+								position="0 60 -25"
+								position_b="0 60 -25"
+								material="/shared/effects/materials/goo.material"
+							/>
+						</template>
+						
+						<template name="coal">
+							<model
+								bone="{bone}"
+								position="0 60 -25"
+								scale="{scale}"
+								expirelife="1500"
+								model="coal/model.mdf"
+								material="coal/material.material"
+								yaw="90"
+								startcolor="1"
+								endcolor="-1"
+								startalpha="1"
+								endalpha="0"
+							>
+							</model>
+						</template>
+						
+						<!-- big coal piece -->
+						<!--
+						<instance name="coal" bone="Box10" scale="9"/>
+						
+						<instance name="coal" bone="Box09" scale="7"/>
+						<instance name="coal" bone="Box01" scale="7"/>
+						<instance name="coal" bone="Box06" scale="7"/>
+						<instance name="coal" bone="Box02" scale="7"/>
+						
+						<instance name="coal" bone="Box05" scale="6"/>
+						<instance name="coal" bone="Box07" scale="6"/>
+						<instance name="coal" bone="Box04" scale="6"/>
+						
+						<instance name="coal" bone="Box08" scale="5"/>
+						<instance name="coal" bone="Box03" scale="5"/>
+						-->
+						<!-- tiny coal pieces -->
+						<!--
+						<instance name="coal" bone="Box012" scale="2"/>
+						<instance name="coal" bone="Box013" scale="2"/>
+						
+						<instance name="coal" bone="Box022" scale="2"/>
+						<instance name="coal" bone="Box023" scale="2"/>
+						
+						<instance name="coal" bone="Box038" scale="2"/>
+						<instance name="coal" bone="Box039" scale="2"/>
+						-->
+						
+						<!-- lava goo -->
+						<instance name="goo" a="Box01" b="Box02" colorz="0 .5 1" sizez="10"/>
+						<instance name="goo" a="Box03" b="Box04" colorz="0 .5 1" sizez="10"/>
+						<instance name="goo" a="Box05" b="Box06" colorz="0 .3 .8" sizez="3"/>
+						<instance name="goo" a="Box07" b="Box08" colorz="0 .3 .8" sizez="10"/>
+						<instance name="goo" a="Box09" b="Box10" colorz="0 .3 .8" sizez="10"/>
+						<instance name="goo" a="Box10" b="Box11" colorz="0 .3 .8" sizez="10"/>
+
+						<template name="delayedBloodSplats">
+							<controller scale="{scale}" bone="{boner}">
+								<simpleemitter
+									delay="200"
+									count="20"
+									bone="{boner}"
+									life="5000"
+									particlelife="950"				
+									spawnrate="15"
+									speed="180"
+									gravity="22"
+									minangle="0"
+									maxangle="30"
+									material="/shared/effects/materials/whitewater_02.material"
+									offsetsphere="50 50 0"
+									position="0 60 -25"
+							
+								>
+									<particle 
+										minanglespeed="-100"
+										maxanglespeed="100"
+										minangle="0"
+										maxangle="360"
+										startcolor="0 .5 1"
+										midcolor="0 .3 .8"
+										endcolor="1"
+										startsize="20"			
+										endsize="100"
+										startalpha="0"
+										midalpha=".5"
+										endalpha="0"
+									/>
+								</simpleemitter>
+								
+								<simpleemitter
+									delay="200"
+									count="10"
+									bone="{boner}"
+									life="5000"
+									particlelife="950"				
+									spawnrate="15"
+									speed="180"
+									gravity="22"
+									minangle="0"
+									maxangle="30"
+									material="/shared/effects/materials/refract_wave2.material"
+									offsetsphere="50 50 0"
+									position="0 60 -25"
+							
+								>
+									<particle 
+										minanglespeed="-100"
+										maxanglespeed="100"
+										minangle="0"
+										param=".1"
+										maxangle="360"
+										startsize="20"			
+										endsize="100"
+										startalpha="0"
+										midalpha="1"
+										endalpha="0"
+									/>
+								</simpleemitter>
+							</controller>
+						</template>
+						
+						<instance name="delayedBloodSplats" boner="Box10" scale=".5"/>
+						<instance name="delayedBloodSplats" boner="Box02" scale=".5"/>
+						<instance name="delayedBloodSplats" boner="Box11" scale=".5"/>
+
+						<template name="DelayedBloodPools">
+							<simpleemitter
+								bone="{boner}"
+								delay="300"
+								life="700"
+								spawnrate="3"
+								particlelife="7500"
+								maxspeed="2"
+								offsetsphere="20 20 0"
+								position="0 60 -20"
+							>
+								<particle>
+									<groundsprite
+										life="2500"
+										material="/shared/effects/materials/blood_pool_white.material"
+										startsize="10"
+										endsize="18"
+										maxyaw="360"
+										startcolor="0 .5 1"
+										midcolorpos=".7"
+										endcolor="1"
+										minyawspeed="-10"
+										maxyawspeed="10"
+										startalpha="0"
+										midalpha=".5"
+										endalpha="0"
+									/>
+								</particle>
+							</simpleemitter>
+						</template>
+						
+						<instance name="DelayedBloodPools" boner="Box01"/>
+						<instance name="DelayedBloodPools" boner="Box02"/>
+						<instance name="DelayedBloodPools" boner="Box03"/>
+						<instance name="DelayedBloodPools" boner="Box04"/>
+						<instance name="DelayedBloodPools" boner="Box05"/>
+						<instance name="DelayedBloodPools" boner="Box06"/>
+						<instance name="DelayedBloodPools" boner="Box07"/>
+						<instance name="DelayedBloodPools" boner="Box08"/>
+						<instance name="DelayedBloodPools" boner="Box09"/>
+						<instance name="DelayedBloodPools" boner="Box10"/>
+
+					</model>
+				</particle>
+			</simpleemitter>
+		<!--
+			<simpleemitter
+				delay="400"				
+				spawnrate="100"				
+				particlelife="500"
+				gravity="0"				
+				minspeed="6500"
+				maxspeed="8500"
+				drag="0.016"
+				minangle="-70"
+				maxangle="70"
+				offsetsphere="15"
+				position="0 60 120"
+				direction="0 1 0"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity=".5"
+			>
+				<particle			
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					startcolor=".4 .8 1"
+					midcolor=".3 .7 1"
+					endcolor="1"
+					midcolorpos="0.1"
+					heightdistort=".02"
+					startsize="40"
+					endsize="180"
+					turn="1"					
+				/>
+			</simpleemitter>
+			-->
+			<simpleemitter
+				delay="400"				
+				spawnrate="240"				
+				particlelife="700"
+				gravity="0"				
+				minspeed="7500"
+				maxspeed="8500"
+				drag="0.016"
+				minangle="-70"
+				maxangle="70"
+				offsetsphere="15"
+				position="0 60 120"
+				direction="0 1 0"
+				material="/shared/effects/materials/white_splash.material"
+				inheritvelocity=".5"
+			>
+				<particle					
+					startcolor="0 .4 .4"
+					midcolor=".2 .6 1"
+					endcolor="2"
+					midcolorpos="0.25"
+					startheight="120"
+					midheight="15"
+					midheightpos=".8"
+					endheight="0"
+					startsize="60"
+					midsize="150"
+					endsize="90"
+					midsizepos=".8"
+					startalpha=".5"
+					midalphapos=".35"
+					endalpha="0"
+					turn="1"					
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				delay="400"				
+				spawnrate="30"				
+				particlelife="700"
+				gravity="0"				
+				minspeed="7500"
+				maxspeed="8500"
+				drag="0.016"
+				minangle="-70"
+				maxangle="70"
+				offsetsphere="15"
+				position="0 60 120"
+				direction="0 1 0"
+				material="/shared/effects/materials/wave_trail.material"
+				inheritvelocity=".5"
+			>
+				<particle					
+					startcolor=".05 .15 .25"
+					midcolor=".05 .1 .125"
+					endcolor="0"
+					midcolorpos="0.75"
+					startheight="40"
+					endheight="200"
+					startsize="60"
+					endsize="150"
+					startalpha=".5"
+					midalphapos=".35"
+					endalpha="0"
+					turn="1"	
+					angle="90"					
+				/>
+			</simpleemitter>			
+			<!--
+			<simpleemitter
+				delay="500"
+				life="2400"
+				startspawnrate="200"
+				endspawnrate="0"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				gravity="0"
+				minspeed="1000"
+				maxspeed="3500"
+				drag="0.01"
+				minangle="-60"
+				maxangle="60"
+				offsetsphere="15"
+				position="0 60 100"
+				direction="0 1 0"
+				material="/shared/effects/materials/bad_heal_smoke_06.material"
+				inheritvelocity=".5"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-250"
+					maxanglespeed="250"
+					turn="1"
+					startcolor=".3"
+					midcolor=".1"
+					endcolor="0"
+					midcolorpos="0.1"
+					startscale="50"
+					minendscale="10"
+					maxendscale="20"
+					startstickiness="0"
+					minendstickiness="0"
+					maxendstickiness="0"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					midalphapos="0.1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="500"
+				life="2500"
+				startspawnrate="140"
+				endspawnrate="0"
+				minparticlelife="500"
+				maxparticlelife="1500"
+				gravity="0"
+				minspeed="1000"
+				maxspeed="3500"
+				drag="0.01"
+				angle="70"
+				offsetsphere="15"
+				position="0 60 100"
+				direction="0 1 0"
+				material="/shared/effects/materials/bad_heal_smoke_06.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-250"
+					maxanglespeed="250"
+					turn="1"
+					startcolor=".3"
+					midcolor=".1"
+					endcolor="0"
+					midcolorpos="0.1"
+					startscale="80"
+					minendscale="10"
+					maxendscale="20"
+					startstickiness="0"
+					minendstickiness="0.0"
+					maxendstickiness="0"
+					startalpha="0"
+					midalpha=".6"
+					endalpha="0"
+					midalphapos="0.1"
+				/>
+			</simpleemitter>
+			-->
+			<simpleemitter
+				delay="500"
+				life="2500"
+				startspawnrate="30"
+				endspawnrate="0"
+				minparticlelife="500"
+				maxparticlelife="1500"
+				gravity="0"
+				minspeed="1000"
+				maxspeed="3500"
+				drag="0.01"
+				angle="70"
+				offsetsphere="15"
+				position="0 60 100"
+				direction="0 1 0"
+				material="/shared/effects/materials/refract_wave.material"
+				depthbias="-20"
+			>
+				<particle
+					turn="1"
+					param=".1"
+					startscale="80"
+					minendscale="10"
+					maxendscale="20"
+					startstickiness="0"
+					minendstickiness="0.0"
+					maxendstickiness="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos="0.1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="400"				
+				spawnrate="30"				
+				particlelife="1200"
+				gravity="0"				
+				minspeed="6500"
+				maxspeed="8500"
+				drag="0.016"
+				angle="70"
+				offsetsphere="15"
+				position="0 60 120"
+				direction="0 1 0"
+			>
+				<particle					
+				>
+					<simpleemitter
+						spawnrate="50"
+						minparticlelife="200"
+						maxparticlelife="1000"			
+						gravity="-5"
+						minspeed="10"
+						maxspeed="50"
+						drag=".05"
+						material="/shared/effects/materials/spark.material"
+						offsetsphere="40"
+						minangle="70"
+						maxangle="90"
+						direction="0 0 1"
+						directionalspace="global"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							startcolor="0"
+							midcolor=".5 .75 1"
+							endcolor="0 0 0"
+							midcolorpos=".3"
+							minstartsize="5"
+							maxstartsize="8"
+							endsize="0"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>		
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

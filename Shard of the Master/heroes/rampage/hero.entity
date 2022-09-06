@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Rampage"
+
+	team="Legion"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.3"
+	modelscale="1.0"
+	effectscale="1"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+
+	category="cc physical"
+	difficulty="2.5"
+
+	solorating="0"
+	junglerating="0"
+	carryrating="2"
+	supportrating="0"
+	initiatorrating="1"
+	gankerrating="5"
+	pusherrating="0"
+	rangedrating="0"
+	meleerating="5"
+
+	movespeed="295"
+	turnrate="6000"
+	turnsmoothing="0.05"
+	
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="1.12"
+	magicarmor="5"
+
+	inventory0="Ability_Rampage1"
+	inventory1="Ability_Rampage2"
+	inventory2="Ability_Rampage3"
+	inventory3="Ability_Rampage4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="900"
+	attackactiontime="450"
+	attackcooldown="1700"
+	attackdamagemin="22"
+	attackdamagemax="32"
+	attacknumanims="2"
+	attackoffset="20 64 100"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+	
+	corpsetime="3300"
+	corpsefadetime="3000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+
+	primaryattribute="Strength"
+	strength="23"
+	strengthperlevel="2.2"
+	agility="17"
+	agilityperlevel="1.7"
+	intelligence="15"
+	intelligenceperlevel="1.8"
+	
+	previewmodel="preview.mdf"
+	previewpos="0 0 -50"
+	previewangles="0 0 0"
+	previewscale="1.0"
+	
+	storemodel="preview.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.15"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_EnhancedMarchers" />
+	<recommendeditem name="Item_Steamboots" />
+	<recommendeditem name="Item_LifeSteal5" />
+	<recommendeditem name="Item_Shield2" />
+	<recommendeditem name="Item_PortalKey" />
+	<recommendeditem name="Item_Insanitarius" />
+	<recommendeditem name="Item_StrengthAgility" />
+	<recommendeditem name="Item_Immunity" />
+	<recommendeditem name="Item_BehemothsHeart" />
+
+	<modifier key="ult_boost" modpriority="101"
+    >
+        <aura state="State_Rampage_Ult_Boost" radius="0" targetscheme="self"/>
+    </modifier>
+	
+	<modifier key="iamsheeped" morpriotity="1000"
+		passiveeffect=""
+	/>
+	
+	<modifier key="Rampage_Q_WarpState" modpriority="100"
+		ismobile="false"
+	/>
+
+	<modifier key="rampage_dragging" modpriority="100"
+		walkanim="ability_4_run"
+	/>
+	
+	<!-- <modifier key="gated" modpriority="200"
+		magicarmor="5"
+		armor="0.95"
+		
+		primaryattribute="Strength"
+		strength="23"
+		strengthperlevel="2.2"
+		agility="17"
+		agilityperlevel="1.7"
+		intelligence="15"
+		intelligenceperlevel="1.8"
+		
+		attackdamagemin="27.75"
+		attackdamagemax="37.75"
+		
+		inventory0="Reborn_Ability_Rampage1"
+		inventory1="Reborn_Ability_Rampage2"
+		inventory2="Reborn_Ability_Rampage3"
+		inventory3="Reborn_Ability_Rampage4"
+	>
+	</modifier> -->
+	
+	<modifier key="soccer" modpriority="190" 
+		turnrate="650"
+		maxmana="100"
+		attackrange="150"
+		movespeed="310"
+		maxhealth="550"
+		attackdamagemin="55"
+		attackdamagemax="55"
+		intelligence="0"
+		strength="0"
+		agility="0"
+		inventory0="Ability_Soccer_SlideKick"
+		inventory1="Ability_Soccer_Sprint"
+		inventory2="Ability_Rampage1"
+		inventory3="Ability_Rampage4"
+		inventory4="Ability_Rampage3"
+		cancarryitems="false" inventory8="" inventory12=""
+	/>	
+
+	<altavatar key="Hero_Rampage.Alt"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		model="alt/model.mdf"
+		
+		previewmodel="alt/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"
+		
+		storemodel="alt/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.15"
+	>
+		<modifier key="rampage_alt_charging" priority="100"
+			walkanim="charge_1"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt2"
+		altavatar="true"
+		passiveeffect="alt2/effects/glow.effect"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		model="alt2/model.mdf"		
+		previewmodel="alt2/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"	
+		
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.15"
+	>	
+		<modifier key="rampage_alt2_charging" priority="100"
+			walkanim="charge_1"
+		/>
+	</altavatar>	
+	
+	<altavatar key="Hero_Rampage.Alt3"
+		preglobalscale="1.4"
+		effectscale="1"
+		
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		model="alt3/model.mdf"		
+		previewmodel="alt3/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"	
+		
+		selectedsound="alt3/sounds/voice/select_%.wav"
+	    selectedflavorsound="alt3/sounds/voice/select_flavour_%.wav"
+	    confirmmovesound="alt3/sounds/voice/move_%.wav"
+	    confirmattacksound="alt3/sounds/voice/attack_%.wav"
+	    nomanasound="alt3/sounds/voice/no_mana.wav"
+     	cooldownsound="alt3/sounds/voice/cooldown.wav"
+		tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+    	tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt3/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.15"
+	/>
+	
+	<altavatar key="Hero_Rampage.Alt4"
+		preglobalscale="1.05"
+		passiveeffect=""
+		effectscale="1"
+		infoheight="225"
+		
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		model="alt4/model.mdf"
+		
+		previewmodel="alt4/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"	
+		attackimpacteffect="alt4/effects/impact.effect"
+		
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt4/sounds/voice/select_%.wav"
+		selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt4/sounds/voice/move_%.wav"
+		confirmattacksound="alt4/sounds/voice/attack_%.wav"
+		nomanasound="alt4/sounds/voice/no_mana.wav"
+		cooldownsound="alt4/sounds/voice/cooldown.wav"
+		tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt4/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale=".80"
+	/>
+		
+	<altavatar key="Hero_Rampage.Alt5"
+		preglobalscale="1.05"
+		passiveeffect="alt5/effects/body.effect"
+		effectscale="1"
+		infoheight="225"
+	
+		icon2="alt5/icon.tga"
+		portrait="alt5/icon.tga"
+		model="alt5/model.mdf"
+		
+		previewmodel="alt5/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"	
+		
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt5/sounds/voice/select_%.wav"
+		selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt5/sounds/voice/move_%.wav"
+		confirmattacksound="alt5/sounds/voice/attack_%.wav"
+		nomanasound="alt5/sounds/voice/no_mana.wav"
+		cooldownsound="alt5/sounds/voice/cooldown.wav"
+		tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt5/preview.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 0"
+		storescale="1.1"
+	/>
+	
+	<altavatar key="Hero_Rampage.Alt6"
+		preglobalscale="1.225"
+		passiveeffect="alt6/effects/body.effect"
+		infoheight="225"
+	
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		model="alt6/model.mdf"
+		
+		previewmodel="alt6/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"	
+		
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt6/sounds/voice/select_%.wav"
+		selectedflavorsound="alt6/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt6/sounds/voice/move_%.wav"
+		confirmattacksound="alt6/sounds/voice/attack_%.wav"
+		nomanasound="alt6/sounds/voice/no_mana.wav"
+		cooldownsound="alt6/sounds/voice/cooldown.wav"
+		tauntedsound="alt6/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt6/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt6/preview.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 0"
+		storescale="1.1"
+	>
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Bushwack.Alt3 aa.Hero_Gunblade.Alt3 aa.Hero_Hiro.Alt5 aa.Hero_Rally.Alt4 aa.Hero_Rampage.Alt6 aa.Hero_WitchSlayer.Alt4" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="RiftHunter_Set" />
+			</compare>
+		</onspawn>
+
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Bushwack.Alt3 aa.Hero_Gunblade.Alt3 aa.Hero_Hiro.Alt5 aa.Hero_Rally.Alt4 aa.Hero_Rampage.Alt6 aa.Hero_WitchSlayer.Alt4" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="RiftHunter_Set" />
+			</compare>
+		</onrespawn>
+		
+		<modifier key="RiftHunter_Set" modpriority="101"
+			tooleffectpath38="alt6/effects/set_boost.effect"
+			passiveeffect="alt6/effects/body_set.effect"
+			skin="setboost"
+		/>
+
+		<modifier key="rampage_ability4_Active" modpriority="102"
+			passiveeffect="alt6/ability_04/effects/state_self.effect"
+			walkanim="ability_4_run"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt7"
+		preglobalscale="1.225"
+		passiveeffect="alt7/effects/body.effect"
+		infoheight="180"
+		respawneffect="/shared/effects/respawn_rampage.effect"
+		
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+		model="alt7/model.mdf"
+		
+		previewmodel="alt7/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"	
+		
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt7/sounds/voice/select_%.wav"
+		selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt7/sounds/voice/move_%.wav"
+		confirmattacksound="alt7/sounds/voice/attack_%.wav"
+		nomanasound="alt7/sounds/voice/no_mana.wav"
+		cooldownsound="alt7/sounds/voice/cooldown.wav"
+		tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+		
+		attackimpacteffect="alt7/effects/impact.effect"
+		
+		storemodel="alt7/preview.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 0"
+		storescale="1.1"
+	>
+		<modifier key="rampage_ability4_Active" modpriority="2"
+			walkanim="ability_4_run"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt8"
+		preglobalscale="1.225"
+		passiveeffect="alt8/effects/body.effect"
+		infoheight="225"
+	
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		model="alt8/model.mdf"
+		
+		respawneffect="/shared/effects/respawn_rampage.effect"
+		previewmodel="alt8/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"	
+		
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt8/sounds/voice/select_%.wav"
+		selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt8/sounds/voice/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/attack_%.wav"
+		nomanasound="alt8/sounds/voice/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/cooldown.wav"
+		tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+		
+		attackimpacteffect="alt8/effects/impact.effect"
+		
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 0"
+		storescale="1.1"
+	>
+		<modifier key="rampage_ability4_Active" modpriority="2"
+			walkanim="ability_4_run"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt9"
+		preglobalscale="1.225"
+		passiveeffect="alt9/effects/body.effect"
+		infoheight="225"
+	
+		icon2="alt9/icon.tga"
+		portrait="alt9/icon.tga"
+		model="alt9/model.mdf"
+		
+		portraitpassiveeffect="alt9/effects/preview.effect"
+		
+		overrideportraiteffects="true"
+		respawneffect="/shared/effects/respawn_rampage2.effect"
+		previewmodel="alt9/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"
+		
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt9/sounds/voice/select_%.wav"
+		selectedflavorsound="alt9/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt9/sounds/voice/move_%.wav"
+		confirmattacksound="alt9/sounds/voice/attack_%.wav"
+		nomanasound="alt9/sounds/voice/no_mana.wav"
+		cooldownsound="alt9/sounds/voice/cooldown.wav"
+		tauntedsound="alt9/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt9/sounds/voice/taunt_after.wav"
+		
+		
+		storemodel="alt9/preview.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 0"
+		storescale="1.1"
+		
+		storepassiveeffect="alt9/effects/preview.effect"
+		previewpassiveeffect="alt9/effects/preview.effect"
+		
+		tooleffectkeyname0="Item_SolsBulwark"
+		tooleffectpath0="alt9/upgraded_body/body.effect"
+		tooleffectgroup0="body"
+		
+		tooleffectkeyname1="Item_DaemonicBreastplate"
+		tooleffectpath1="alt9/upgraded_body/body.effect"
+		tooleffectgroup1="body"
+		
+		tooleffectkeyname2=""
+		tooleffectpath2="alt9/base_body/body.effect"
+		tooleffectgroup2="body"
+		
+		tooleffectkeyname3="effect_UpgradedBoots"
+		tooleffectpath3="alt9/dragon_upgraded_boots/body.effect"
+		tooleffectgroup3="boots"
+		
+		tooleffectkeyname4="effect_Boots"
+		tooleffectpath4="alt9/upgraded_boots/body.effect"
+		tooleffectgroup4="boots"
+		
+		tooleffectkeyname5="effect_brand"
+		tooleffectpath5="alt9/upgraded_weapon/body.effect"
+		tooleffectgroup5="weapon"
+		
+		tooleffectkeyname8="Item_Insanitarius"
+		tooleffectpath8="alt9/upgraded_helm/body.effect"
+		tooleffectgroup8="helm"
+		
+		tooleffectkeyname9="Item_Shield2"
+		tooleffectpath9="alt9/upgraded_helm/body.effect"
+		tooleffectgroup9="helm"
+		
+		tooleffectkeyname10=""
+		tooleffectpath10="alt9/base_helm/body.effect"
+		tooleffectgroup10="helm"
+		
+		tooleffectkeyname11="Item_MagicArmor2"
+		tooleffectpath11="alt9/dragon_upgraded_helm/body.effect"
+		tooleffectgroup11="dragonhelm"
+		
+		tooleffectkeyname12="Item_ElderParasite"
+		tooleffectpath12="alt9/dragon_upgraded_helm/body.effect"
+		tooleffectgroup12="dragonhelm"
+		
+		tooleffectkeyname13=""
+		tooleffectpath13="alt9/dragon_base_helm/body.effect"
+		tooleffectgroup13="dragonhelm"
+		
+		tooleffectkeyname14="Item_PowerSupply"
+		tooleffectpath14="alt9/upgraded_arms/body.effect"
+		tooleffectgroup14="arms"
+		
+		tooleffectkeyname15="Item_BloodChalice"
+		tooleffectpath15="alt9/upgraded_arms/body.effect"
+		tooleffectgroup15="arms"
+		
+		tooleffectkeyname16="Item_Immunity"
+		tooleffectpath16="alt9/dragon_upgraded_tail/body.effect"
+		tooleffectgroup16="tail"
+		
+		tooleffectkeyname17="Item_Pierce"
+		tooleffectpath17="alt9/dragon_upgraded_tail/body.effect"
+		tooleffectgroup17="tail"
+		
+		tooleffectkeyname18=""
+		tooleffectpath18="alt9/dragon_base_tail/body.effect"
+		tooleffectgroup18="tail"
+		
+		tooleffectkeyname19="Item_BehemothsHeart"
+		tooleffectpath19="alt9/upgraded_chest/body.effect"
+		tooleffectgroup19="chest"
+		
+		tooleffectkeyname20="Item_PortalKey"
+		tooleffectpath20="alt9/portalkey/body.effect"
+		tooleffectgroup20="pkey"
+		/>
+
+	<altavatar key="Hero_Rampage.Alt10"
+		preglobalscale="1.225"
+		passiveeffect="alt10/effects/body.effect"
+		infoheight="200"
+	
+		icon2="alt10/icon.tga"
+		portrait="alt10/icon.tga"
+		model="alt10/model.mdf"
+		
+		previewmodel="alt10/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"	
+		
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt10/sounds/voice/select_%.wav"
+		selectedflavorsound="alt10/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt10/sounds/voice/move_%.wav"
+		confirmattacksound="alt10/sounds/voice/attack_%.wav"
+		nomanasound="alt10/sounds/voice/no_mana.wav"
+		cooldownsound="alt10/sounds/voice/cooldown.wav"
+		tauntedsound="alt10/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt10/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt10/preview.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 0"
+		storescale="1.1"
+		
+		portraitcampos="-15 0 50"
+	>
+		<modifier key="rampage_ability4_Active" modpriority="2"
+			walkanim="ability_4_run"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt11"
+		preglobalscale="1.225"
+		passiveeffect="alt11/effects/body.effect"
+		infoheight="225"
+	
+		icon2="alt11/icon.tga"
+		portrait="alt11/icon.tga"
+		model="alt11/model.mdf"
+		
+		
+		previewmodel="alt11/preview.mdf"
+		previewpos="0 0 -60"
+		previewangles="0 0 0"
+		previewscale="1.0"	
+		
+		corpsetime="3000"
+		corpsefadetime="5500"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		selectedsound="alt11/sounds/voice/select_%.wav"
+		selectedflavorsound="alt11/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt11/sounds/voice/move_%.wav"
+		confirmattacksound="alt11/sounds/voice/attack_%.wav"
+		nomanasound="alt11/sounds/voice/no_mana.wav"
+		cooldownsound="alt11/sounds/voice/cooldown.wav"
+		tauntedsound="alt11/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt11/sounds/voice/taunt_after.wav"
+		
+		portraitcampos="-7 0 65"
+		
+		storemodel="alt11/preview.mdf"
+		storepos="0 0 -30"
+		storeangles="0 0 0"
+		storescale="1.0"
+	>
+		<modifier key="rampage_ability4_Active" modpriority="100"
+			walkanim="ability_4_run"
+		/>	
+	</altavatar>
+	
+	
+	<altavatar key="Hero_Rampage.Alt13"
+		preglobalscale="1"
+		icon2="alt13/icon.tga"
+		portraitcampos="60 50 65"
+		
+		infoheight="200"
+		
+		model="alt13/model.mdf"
+		
+		selectedsound="alt13/sounds/voice/select_%.wav"
+		selectedflavorsound="alt13/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt13/sounds/voice/move_%.wav"
+		confirmattacksound="alt13/sounds/voice/attack_%.wav"
+		nomanasound="alt13/sounds/voice/no_mana.wav"
+		cooldownsound="alt13/sounds/voice/cooldown.wav"
+		tauntedsound="alt13/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt13/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt13/preview.mdf"
+		
+		storemodel="alt13/preview.mdf"
+		storescale=".9"
+	>
+		<onspawn propagatetoillusions="false">
+			<ownsproduct target="this_entity" product="aa.Hero_Salomon.Alt5 aa.Hero_SandWraith.Alt9 aa.Hero_Rampage.Alt13 aa.Hero_EmeraldWarden.Alt9 aa.Hero_Dampeer.Alt7 aa.Hero_Hunter.Alt9 aa.Hero_Pestilence.Alt8 aa.Hero_Armadon.Alt8">
+				<activatemodifierkey name="Heavy_Armor_Set" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn propagatetoillusions="false">
+			<ownsproduct target="this_entity" product="aa.Hero_Salomon.Alt5 aa.Hero_SandWraith.Alt9 aa.Hero_Rampage.Alt13 aa.Hero_EmeraldWarden.Alt9 aa.Hero_Dampeer.Alt7 aa.Hero_Hunter.Alt9 aa.Hero_Pestilence.Alt8 aa.Hero_Armadon.Alt8">
+				<activatemodifierkey name="Heavy_Armor_Set" />
+			</ownsproduct>
+		</onrespawn>
+
+		<onkilled>
+			<ownsproduct target="this_entity" product="aa.Hero_Salomon.Alt5 aa.Hero_SandWraith.Alt9 aa.Hero_Rampage.Alt13 aa.Hero_EmeraldWarden.Alt9 aa.Hero_Dampeer.Alt7 aa.Hero_Hunter.Alt9 aa.Hero_Pestilence.Alt8 aa.Hero_Armadon.Alt8">
+				<deactivatemodifierkey name="Heavy_Armor_Set" />
+			</ownsproduct>
+		</onkilled>
+
+		<modifier key="iamsheeped" modpriority="100"
+			passiveeffect=""
+		>
+			<onkilled>
+				<ownsproduct target="this_entity" product="aa.Hero_Salomon.Alt5 aa.Hero_SandWraith.Alt9 aa.Hero_Rampage.Alt13 aa.Hero_EmeraldWarden.Alt9 aa.Hero_Dampeer.Alt7 aa.Hero_Hunter.Alt9 aa.Hero_Pestilence.Alt8 aa.Hero_Armadon.Alt8">
+					<deactivatemodifierkey name="Heavy_Armor_Set" />
+				</ownsproduct>
+			</onkilled>
+		</modifier>
+
+		<modifier key="Heavy_Armor_Set" modpriority="1000"
+			tooleffectpath37="alt13/heavyarmor_set/heavyarmor_set.effect"
+		/>
+	</altavatar>
+		
+	<altavatar key="Hero_Rampage.Alt14"
+		preglobalscale="1.2"
+		icon2="alt14/icon.tga"
+		model="alt14/model.mdf"
+		
+		passiveeffect="alt14/effects/body.effect"
+		attackimpacteffect="alt14/effects/impact.effect"
+		
+		corpsetime="1000"
+		corpsefadetime="2000"		
+		
+		selectedsound="alt14/sounds/voice/select_%.wav"
+		selectedflavorsound="alt14/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt14/sounds/voice/move_%.wav"
+		confirmattacksound="alt14/sounds/voice/attack_%.wav"
+		nomanasound="alt14/sounds/voice/no_mana.wav"
+		cooldownsound="alt14/sounds/voice/cooldown.wav"
+		tauntedsound="alt14/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt14/sounds/voice/taunt_after.wav"
+		
+		previewmodel="alt14/preview.mdf"
+		previewpos="0 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.0"
+		
+		storemodel="alt14/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.15"
+		
+		portraitcampos="70 -70 -25"
+	>
+		<onkill propagatetoillusions="false" >
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<spawnunit name="Gadget_Rampage_Alt14" count="1" target="target_position" pushentity="true" maxactive="5" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+		</onkill>
+		
+		<onspawn>
+		    <playeffect effect="alt14/effects/spawn_sound.effect" source="target_position" target="" />
+			<activatemodifierkey name="Punk_Rampage_Spawn" />
+			
+			<upgradeselected target="this_entity" upgrade="sc.punk_circle_upgrade">
+				<activatemodifierkey name="Graffiti_Punk_Circle" />
+			</upgradeselected>
+		</onspawn>
+		
+		
+		<modifier key="Graffiti_Punk_Circle" modpriority="2"
+			localselectionringmaterial="/shared/materials/selection_indicator_graffiti.material"
+		/>
+		<modifier key="Punk_Rampage_Spawn" modpriority="100"
+			passiveeffect="alt14/effects/body_mu.effect"
+		/>
+	</altavatar>
+</hero>

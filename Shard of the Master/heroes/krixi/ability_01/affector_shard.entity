@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Krixi_Shard"
+
+	radius="170"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	destroytrees="true"
+>
+	<onspawn>
+		<playeffect effect="effects/ability_01.effect" source="target_position" target="" occlude="true" />
+	</onspawn>
+
+	<onimpact>
+		<else>
+			<applystate name="State_Stunned" duration="750" />
+			<damage effecttype="Magic" amount="75,150,225,300" />
+		</else>		
+	</onimpact>
+
+	<altavatar key="Hero_Krixi.Alt2" modpriority="100"
+	>
+		<onspawn>
+			<playeffect effect="../alt2/ability_01/effects/ability_01.effect" source="target_position" target="" occlude="true" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt3" modpriority="100"
+	>
+		<onspawn>
+			<playeffect effect="../alt3/ability_01/effects/ability_01.effect" source="target_position" target="" occlude="true" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt4" modpriority="100"
+	>
+		<onspawn>
+			<playeffect effect="../alt4/ability_01/effects/ability_01.effect" source="target_position" target="" occlude="true" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt5" modpriority="100"
+	>
+		<onspawn>
+			<playeffect effect="../alt5/ability_01/effects/ability_01.effect" source="target_position" target="" occlude="true" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt6" modpriority="100"
+	>
+		<onspawn>
+			<playeffect effect="../alt2/ability_01/effects/ability_01.effect" source="target_position" target="" occlude="true" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt7" modpriority="100"
+	>
+		<onspawn>
+			<playeffect effect="../alt2/ability_01/effects/ability_01.effect" source="target_position" target="" occlude="true" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt8" modpriority="100"
+	>
+		<onspawn>
+			<hasmodifier name="mastery_silver">
+				<playeffect effect="../alt8/silver/ability_01/ability_01.effect" source="target_position" target="" occlude="true" />
+			</hasmodifier>
+			<else>
+				<hasmodifier name="mastery_gold">
+					<playeffect effect="../alt8/gold/ability_01/ability_01.effect" source="target_position" target="" occlude="true" />
+				</hasmodifier>
+				<else>
+					<hasmodifier name="mastery_purple">
+						<playeffect effect="../alt8/purple/ability_01/ability_01.effect" source="target_position" target="" occlude="true" />
+					</hasmodifier>
+					<else>
+						<playeffect effect="../alt8/ability_01/ability_01.effect" source="target_position" target="" occlude="true" />
+					</else>
+				</else>
+			</else>
+			<playeffect effect="../alt2/ability_01/effects/ability_01.effect" source="target_position" target="" occlude="true" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt9" modpriority="100"
+	>
+		<onspawn>
+			<playeffect effect="../alt9/ability_01/effects/ability_01.effect" source="target_position" target="" occlude="true" />
+		</onspawn>
+	</altavatar>
+</affector>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Magmus_Shard"
+	
+	lifetime="350"
+>
+	<onframe>
+		<compare a="this_proxy_entity" b="0" op="eq">
+			<spawnunit name="Gadget_Magmus_Shard" target="target_position" fixedposition="true" pushentity="true" />
+			<setproxy target="stack_entity" />
+		</compare>
+		<else>
+			<distance source="this_proxy_entity" />
+			<compare a="result" b="75" op="ge">
+				<spawnunit name="Gadget_Magmus_Shard" target="target_position" fixedposition="true" pushentity="true" />
+				<setproxy target="stack_entity" />
+			</compare>
+		</else>
+	</onframe>
+</affector>

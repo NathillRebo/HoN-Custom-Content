@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dreadknight_Ability3_EnemyRegen"
+
+	icon="icon.tga"
+	passiveeffect=""
+	effecttype=""
+
+>	
+	<onframe>
+		<!-- Reduce target's HP regen by 30/45/60/75% -->
+		<evaluate a="target_healthregen" b="-0.3,-0.45,-0.6,-0.75" op="mult" />
+		<evaluate a="result" b="frametime" op="mult" />
+		<changehealth a="result" />
+	</onframe>
+	
+	<altavatar key="Hero_Dreadknight.Alt11" modpriority="1"
+		icon="/heroes/dreadknight/alt11/ability_03/icon.tga"
+	/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		strength="-7"
+		agility="-7"
+		intelligence="-7"
+	/>
+</state>

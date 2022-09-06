@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_PuppetMaster3"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	anim=""
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	maxcharges="4"
+
+	actiontype="passive"
+>
+	<onimpact/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		actiontype="target_self"
+		frontqueue="true"
+		inheritmovement="true"
+		noninterrupting="true"
+		nobreakchannel="true"
+		noresponse="true"
+		noshuffle="true"
+		manacost="90"
+		cooldowntime="12000"
+		anim=""
+		casttime="0"
+		castactiontime="0"
+	>
+		<onimpact>
+			<resetattackcooldown />
+			<setcharges a="1" />
+			<resettimer />
+		</onimpact>
+	</modifier>
+	
+	<onlearn>
+		<setcharges a="4" />
+		<starttimer duration="12000,10000,8000,6000" />
+	</onlearn>
+	
+	<onattackstart>
+		<compare a="charges" b="1" op="eq">
+			<setattackprojectile name="Projectile_PuppetMasterSplashAttack" />
+		</compare>
+	</onattackstart>
+	
+	<onattackimpact />
+	
+	<onattack>
+		<removecharge />
+		<compare a="charges" b="1" op="eq">
+			<resettimer />
+		</compare>
+		<else>
+			<starttimer duration="12000,10000,8000,6000" />
+		</else>
+		<compare a="charges" b="0" op="eq">
+			<addcritical chance="1.0" multiplier="1.5,1.75,2.0,2.25" />
+			<setcharges a="4" />
+		</compare>
+	</onattack>
+	
+	<onattackimpact>
+		<compare a="charges" b="4" op="eq">
+			<splashdamage centerontarget="true" target="target_entity" a="total_adjusted_damage" b="0.25,0.5,0.75,1.0" op="mult" radius="150" effecttype="Physical Splash Cleave" targetscheme="enemy_units" />
+		</compare>
+	</onattackimpact>
+	
+	<ontimer>
+		<removecharge />
+		<compare a="charges" b="1" op="gt">
+			<starttimer duration="12000,10000,8000,6000" />
+		</compare>
+	</ontimer>
+	
+	<ondeath>
+		<setcharges a="4" />
+		<starttimer duration="12000,10000,8000,6000" />
+	</ondeath>
+
+	<altavatar key="Hero_PuppetMaster.Alt10"
+		icon="../alt10/ability_03/icon.tga"
+	>
+		<modifier key="Alt10_Ability3_Upgrade"
+			icon="../alt10/ability_03/icon_b.tga"
+		/>
+	</altavatar>
+
+	<modifier key="soccer" modpriority="150"
+		baselevel="0"
+		maxlevel="1"
+		attackspeed="0.30"
+	>
+		
+		<onlearn />
+		<onattackimpact />
+		
+		<onattack>
+			<removecharge />
+			<compare a="charges" b="0" op="eq">
+				<addcritical chance="1.0" multiplier="2.0" />
+				<addattackimpactactions>
+					<splashdamage centerontarget="true" target="target_entity" a="total_adjusted_damage" b="1" op="mult" radius="275" effecttype="Physical Splash Cleave" targetscheme="enemy_units" />
+				</addattackimpactactions>
+				<setcharges a="3" />
+			</compare>
+		</onattack>	
+	</modifier>
+
+	<altavatar key="Hero_PuppetMaster.Alt12"
+	    icon="../alt12/ability_03/icon.tga"
+	>
+		<onattackstart>
+			<compare a="charges" b="1" op="eq">
+				<setattackprojectile name="Projectile_PuppetMasterSplashAttack" />
+				<playeffect effect="../alt12/ability_03/effects/cast_audio.effect" target="source_entity" />
+			</compare>
+		</onattackstart>
+	</altavatar>
+</ability>

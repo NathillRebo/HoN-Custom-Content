@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Arachna_Ability1"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	movespeedslow="0.15,0.25,0.35,0.45"
+	attackspeed="-0.15,-0.25,-0.35,-0.45"
+
+	negativeeffect="slowed"
+>
+	<onframe>
+		<damage effecttype="Magic DOT" amount="10,20,30,40" b="frametime" op="mult" />
+	</onframe>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		maxcharges="5"
+	>
+		<oninflict>
+			<addcharges count="1"/>
+		</oninflict>
+		
+		<onrefresh>
+			<addcharges count="1"/>
+		</onrefresh>
+		
+		<onframe>
+			<evaluate a="5" b="charges" op="mult"/>
+			<evaluate a="result" b="10,20,30,40" op="add" />
+			<evaluate a="result" b="frametime" op="mult" />
+			<damage effecttype="Magic DOT" amount="1" b="result" op="mult" />
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_Arachna.Alt2" modpriority="1"
+		icon="/heroes/arachna/alt2/ability_01/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Arachna.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_01/effects/state.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Arachna.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_01/effects/state.effect"
+	/>
+</state>

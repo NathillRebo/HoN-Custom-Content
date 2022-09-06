@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+		<particlesystem name="system0" space="world">
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="15"
+				offsetradial="20"
+				offsetdirection="0 0 1"
+				offsetradialangle="90"
+				material="/shared/effects/materials/sparks_reveal_white.material"
+				minparticlelife="800"
+				maxparticlelife="1600"
+				gravity="-2"
+				collide="1"
+				depthbias="10"
+				inheritvelocity=".2"
+			>
+				<particle
+					maxangle="360"
+					minsize="30"
+					maxsize="40"
+					startframe=".25"
+					endframe="1"
+					startcolor=".5" endcolor="0 .2 3"
+					alpha=".75"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_centerofchest"	
+				material="/shared/effects/materials/whitedot.material"
+				color=".1 .2 .3"
+				size="50"
+				depthbias="-100"
+			/>
+			
+			<model
+				bone="Box19" roll="90" pitch="180"
+				scale=".42"
+				model="/heroes/krixi/alt8/effects/model.mdf"
+				material="/shared/effects/materials/shell4.material"
+				alpha="1" color="1"
+				inheritparentmodifiers="true"
+				inheritparentalpha="true"
+			/>
+		
+		<template name="trails">
+			<trailemitter
+				bone="{bone}"
+				position="0 0 0" 
+				spawnrate="10"
+				particlelife="400"
+				acceleration="0"
+				material="/shared/effects/materials/spirit_smoke.material"
+				depthbias="-10"
+				texpostime="600"
+				texposscale="0"
+				texstretchscale="1"
+				gravity="0" 
+				subframepose="1"
+			>
+				<particle 
+					startsize="5" endsize="1" midsizepos=".75"
+					scale="4"
+					startcolor="0 .15 .35" midcolor=".4 .4 .75" endcolor="0 0 0"
+					turn="true" 
+					anchor="true"
+				>
+				</particle>
+				
+			</trailemitter>
+		</template>
+		<instance name="trails" bone="Bone002"  />
+		<instance name="trails" bone="Bone001" />
+		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

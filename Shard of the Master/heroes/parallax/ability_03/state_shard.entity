@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statenetaccum
+	name="State_Parallax_Shard"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype=""
+	allowtransfer=""
+	
+	stunneddurationmultiplier="-0.1"
+	debuffdurationmultiplier="-0.1"
+	
+	shield="true"
+	maxaccumulator="540"
+>	
+	<onframe>
+		<setcharges a="accumulator" entity="this_entity" />
+	</onframe>
+
+	<ondamaged>
+		<damageeffecttype effecttype="DOT" />
+		<else>
+			<targettype type="enemy">
+				<playeffect effect="effects/impact.effect" source="source_entity"/>
+			</targettype>
+		</else>
+		
+		<setvar0 a="source_damage" b="1" op="mult" />
+		<compare a="var0" b="accumulator" op="ge">
+			<evaluate a="var0" b="accumulator" op="sub" />
+			<changedamage b="result" op="min" />
+			<expire />
+		</compare>
+		<else>
+			<changedamage b="0" op="mult" />
+			<evaluate a="accumulator" b="var0" op="sub" />
+			<setaccumulator value="result" />
+		</else>
+	</ondamaged>
+	
+	<onattackedpostimpact>
+		<targettype type="enemy">
+			<playeffect effect="effects/impact.effect" source="source_entity" />
+		</targettype>
+	</onattackedpostimpact>
+	
+	<onexpired>
+		<playeffect effect="effects/state_expire.effect" source="source_entity"/>
+	</onexpired>
+
+	<altavatar key="Hero_Gunblade.Alt" modpriority="1"
+		passiveeffect="/heroes/gunblade/alt/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Gunblade.Alt2" modpriority="1"
+		passiveeffect="/heroes/gunblade/alt2/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Gunblade.Alt3" modpriority="1"
+		passiveeffect="/heroes/gunblade/alt3/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Gunblade.Alt4" modpriority="1"
+		passiveeffect="/heroes/gunblade/alt4/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Gunblade.Alt5" modpriority="1"
+		passiveeffect="/heroes/gunblade/alt5/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Gunblade.Alt6" modpriority="1"
+		passiveeffect="/heroes/gunblade/alt6/ability_02/effects/state.effect"
+	>
+		<onexpired>
+			<playeffect effect="../alt6/ability_02/effects/state_expire.effect" source="source_entity"/>
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Gunblade.Alt7" modpriority="1"
+		passiveeffect="/heroes/gunblade/alt7/ability_02/effects/state.effect"
+	>
+		<onattackedpostimpact>
+			<targettype type="enemy">
+				<playeffect effect="../alt7/ability_02/effects/impact.effect" source="source_entity" />
+			</targettype>
+		</onattackedpostimpact>
+		
+		<onexpired>
+			<playeffect effect="../alt7/ability_02/effects/state_expire.effect" source="source_entity"/>
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Gunblade.Alt8" modpriority="1"
+	    icon="../alt8/ability_02/icon.tga"
+		passiveeffect="/heroes/gunblade/alt8/ability_02/effects/state.effect"
+	>
+		<onattackedpostimpact>
+			<targettype type="enemy">
+				<playeffect effect="../alt8/ability_02/effects/impact.effect" source="source_entity" />
+			</targettype>
+		</onattackedpostimpact>
+		
+		<onexpired>
+			<playeffect effect="../alt8/ability_02/effects/state_expire.effect" source="source_entity"/>
+		</onexpired>
+	</altavatar>
+
+	<altavatar key="Hero_Gunblade.Alt9" modpriority="1"
+		passiveeffect="/heroes/gunblade/alt9/ability_02/effects/state.effect"
+	/>
+	
+</statenetaccum>

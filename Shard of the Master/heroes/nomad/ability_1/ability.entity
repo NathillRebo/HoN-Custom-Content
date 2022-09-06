@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Nomad1"
+
+	icon="icon.tga"
+	
+	statuseffecttooltip="State_Nomad_Ability1_Allies"
+	statuseffecttooltip2="State_Nomad_Ability1_Enemies"
+	
+	anim="ability_1"
+	casttime="0"
+	castactiontime="0"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+	targetradius="300"
+	casteffect=""
+	
+	manacost="75"
+	cooldowntime="24000,20000,16000,12000"
+
+>
+	<onimpact >
+		<applystate name="State_Nomad_Ability1" duration="4000"/>
+		<spawnunit name="Gadget_Nomad_Ability1" target="source_entity" bind="source_entity" />
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost">
+		<onimpact >
+			<applystate name="State_Nomad_Ability1" duration="4000"/>
+			<spawnunit name="Gadget_Nomad_Ability1" target="source_entity" bind="source_entity" />
+			<spawnillusion 
+				target="this_owner_entity"
+				count="1"
+				spawncircular="true"
+				spawncircularradius="100"
+				spawncircularrotate="false"
+				pushentity="true"
+				lifetime="9000"
+				receivedamagemultiplier="2.25"
+				inflictdamagemultiplier="0.4"
+				spawneffect="effects/multiple_images.effect"
+				deatheffect="effects/multiple_images_death.effect"
+			/>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Nomad.Alt7"
+		icon="../alt7/ability_1/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt11"
+		icon="../alt11/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt12"
+		icon="../alt12/ability_01/icon.tga"
+	>
+		<modifier key="nomadAlt12_Ability1_Upgrade"
+			icon="../alt12/ability_01/icon_u.tga"
+		/>
+	</altavatar>
+</ability>

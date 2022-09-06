@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Zephyr_Ability2_Invis"
+
+	icon="icon.tga"
+	ishidden="true"
+	
+	passiveeffect=""
+
+	stealthtype="hero"
+>
+	<oninflict>
+		<startfade />
+	</oninflict>
+	
+	<altavatar key="Hero_Zephyr.Alt8"
+	    icon="/heroes/zephyr/alt8/ability_02/icon.tga"
+	/>
+	
+</state>

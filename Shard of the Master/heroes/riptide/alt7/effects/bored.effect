@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			
+				<controller bone="_bone_righthand" life="2600">				
+					
+
+					<simpleemitter
+						position="-5 0 -5"
+						spawnrate="30"
+						particlelife="300"
+						material="/shared/effects/materials/bubble_add.material"
+					>
+						<particle
+							maxangle="360"
+							startsize="0"
+							minendsize="25"
+							maxendsize="30"
+							startcolor="1"
+							endcolor="0 .3 .5"
+							minanglespeed="-300"
+							maxanglespeed="300"
+							alpha=".7"
+							anchor="1"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						position="-5 0 -5"
+						offsetsphere="10 10 10"
+						spawnrate="30"
+						particlelife="700"
+						gravity="20"
+						material="/shared/effects/materials/bubble_add.material"
+					>
+						<particle
+							startsize="10"
+							startwidth="3"
+							endwidth="0"
+							endsize="0"
+							startcolor="0"
+							midcolor=".4 .8 1"
+							endcolor="0 .35 1"
+							lockup="1"
+						/>
+					</simpleemitter>
+					
+
+					
+					<simpleemitter
+						position="-5 0 -5"
+						spawnrate="10"
+						particlelife="300"
+						material="/shared/effects/materials/refract_wave.material"
+					>
+						<particle
+							maxangle="360"
+							startsize="0"
+							endsize="30"
+							minanglespeed="-300"
+							maxanglespeed="300"
+							startalpha="1"
+							endalpha="0"
+							anchor="1"
+							param=".05"
+						/>
+					</simpleemitter>	
+				</controller>
+				
+				<controller bone="_bone_righthand" delay="2500" >	
+					<simpleemitter
+						position="-0 0 -30"
+						count="10"
+						minparticlelife="800"
+						maxparticlelife="1200"
+						gravity="10"
+						speed="50"
+						direction="0 0 1"
+						angle="180"
+						material="/shared/effects/materials/water_spray_add.material"
+					>
+						<particle 
+							maxangle="360"			
+							minanglespeed="-44"
+							maxanglespeed="44"				
+							startcolor="0"
+							midcolor=".3 .4 .5"
+							endcolor="0"
+							midcolorpos=".2"
+							startsize="0"
+							midsize="50"
+							endsize="70"
+						/>
+						<particle 
+							maxangle="360"			
+							minanglespeed="-44"
+							maxanglespeed="44"				
+							startcolor="0"	
+							midcolor=".1 .2 .5"
+							endcolor="0"
+							midcolorpos=".2"
+							startsize="0"
+							midsize="50"
+							endsize="70"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						position="-0 0 -30"
+						count="5"
+						minparticlelife="800"
+						maxparticlelife="1200"
+						gravity="10"
+						speed="50"
+						direction="0 0 1"
+						angle="180"
+						material="/shared/effects/materials/refract_outsplash.material"
+					>
+						<particle 
+							maxangle="360"			
+							minanglespeed="-44"
+							maxanglespeed="44"				
+							startalpha="0"
+							midalpha=".7"
+							endalpha="0"
+							startsize="0"
+							midsize="50"
+							endsize="70"
+							param=".075"
+						/>
+					</simpleemitter>
+				</controller>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

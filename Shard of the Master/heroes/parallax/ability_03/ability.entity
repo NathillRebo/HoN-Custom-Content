@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<abilityattribute
+	name="Ability_Parallax3"
+	icon="icon.tga"
+
+	dontshowhovercast="true"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	actiontype="passive"
+
+	maxcharges="120"
+	maxmanapercharge="3,6,9,12"
+
+	propagatetoillusions="true"
+
+	noshuffle="true"
+>
+	<onlearn>
+		<pushability name="Ability_Parallax1" source="source_entity" />
+		<setproxy entity="this_entity" target="stack_proxy_entity" />
+
+		<applystate name="State_Parallax_Ability3_Pulse" continuous="true" source="source_entity" target="source_entity" pushentity="true" proxy="this_proxy_entity" />
+	</onlearn>
+
+	<onrespawn>
+		<applystate name="State_Parallax_Ability3_Pulse" continuous="true" source="source_entity" target="source_entity" pushentity="true" proxy="this_proxy_entity" />
+	</onrespawn>
+
+	<onimpact />
+
+	<ondamage>
+		<cantarget targetscheme="enemy_heroes" effecttype="Magic">
+			<!-- Parallax's Q -->
+			<entitytype type="Projectile_Parallax_Ability1" target="inflictor_entity">
+				<addcharges count="1" entity="this_entity" />
+			</entitytype>
+
+			<!-- Parallax's W -->
+			<entitytype type="Projectile_Parallax_Ability2" target="inflictor_entity">
+				<addcharges count="1" entity="this_entity" />
+			</entitytype>
+		</cantarget>
+	</ondamage>
+	
+	<ondeath>
+		<evaluate a="charges" b="0.15" op="mult" />
+		<setcharges a="charges" b="result" op="sub" />
+	</ondeath>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		actiontype="target_self"
+		frontqueue="true"
+		inheritmovement="true"
+		noninterrupting="true"
+		nobreakchannel="true"
+		noresponse="true"
+		noshuffle="true"
+		manacost="0"
+		cooldowntime="15000"
+		anim=""
+		casttime="0"
+		castactiontime="0"
+	>
+		<activatecost>
+			<setvar0 a="charges" b="0.15" op="mult"/>
+			<setvar1 a="var0" b="30" op="mult"/>
+			<setaccumulator entity="this_entity" value="var1"/>
+			<setcharges a="charges" b="var0" op="sub" />
+		</activatecost>
+		
+		<onimpact>
+			<applystate name="State_Parallax_Shard" duration="6000" pushentity="true" />
+			<setaccumulator entity="stack_entity" value="accumulator" />
+		</onimpact>
+	</modifier>
+	
+</abilityattribute>

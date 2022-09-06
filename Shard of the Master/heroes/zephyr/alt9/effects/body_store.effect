@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".2">
+
+			<simpleemitter
+				spawnrate="150"
+				particlelife="1200"
+				material="/shared/effects/materials/grass_01.material"
+				offsetsphere="300 300 100"
+				position="0 0 80"
+				minangle="-30"
+				maxangle="30"
+				speed="520"
+				depthbias="-50"
+				direction=" 0 0 0"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="180"
+					maxanglespeed="300"
+					color="1 1 1"
+					minsize="2"
+					maxsize="30"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					scale="1.5"
+				/>
+			</simpleemitter>
+			
+			
+			<template name="ball">
+				<controller yawspeed="{yawspeed}" maxyaw="360" expirelife="300" startscale="1" endscale="0" >
+					<model
+						model="../ability_01/effects/soccerball/model.mdf"
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						pitchspeed="{pitchspeed}"
+						yawspeed="{pitchspeed}"
+						position="{position}"
+						expirelife="300"
+						startalpha="1"
+						minscale=".4"
+						maxscale=".65"
+						endalpha="0"
+						color=".65"
+						directionalspace="local"
+					/>
+				</controller>
+			</template>
+			
+			<instance name="ball" yawspeed="-300" pitchspeed="300" position="0 110 100" />
+			<instance name="ball" yawspeed="-200" pitchspeed="400" position="0 150 150" />
+			<instance name="ball" yawspeed="-150" pitchspeed="300" position="0 200 50" />
+			<instance name="ball" yawspeed="-070" pitchspeed="400" position="0 300 50" />
+			
+			
+			<template name="card">
+				<controller yawspeed="{yawspeed}" maxyaw="360" expirelife="300" startscale="1" endscale="0" >
+					<billboard
+						material="/shared/effects/materials/card_soccer.material"
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						pitchspeed="{speed}"
+						yawspeed="{speed}"
+						rollspeed="{speed}"
+						position="{position}"
+						expirelife="300"
+						startalpha="1"
+						minscale=".25"
+						maxscale=".4"
+						endalpha="0"
+						color="{color}"
+						directionalspace="local"
+						lockup="1"
+						lockright="1"
+					/>
+				</controller>
+			</template>
+			
+			<instance name="card" yawspeed="-300" speed="400" position="80 80 300"   color="1 0 0" />
+			<instance name="card" yawspeed="-200" speed="400" position="150 150 150" color="1 1 0" />
+			<instance name="card" yawspeed="-150" speed="300" position="200 200 50"  color="1 0 0" />
+			<instance name="card" yawspeed="-150" speed="400" position="180 180 250" color="1 1 0" />
+			<instance name="card" yawspeed="-100" speed="200" position="300 300 15"  color="1 0 0" />
+			<instance name="card" yawspeed="-100" speed="500" position="270 270 10"  color="1 1 0" />
+			<instance name="card" yawspeed="-070" speed="400" position="250 250 200" color="1 0 0" />
+			
+			<instance name="card" yawspeed="-300" speed="400" position="-80 -80 300"   color="1 1 0" />
+			<instance name="card" yawspeed="-200" speed="400" position="-150 -150 150" color="1 0 0" />
+			<instance name="card" yawspeed="-150" speed="300" position="-200 -200 50"  color="1 1 0" />
+			<instance name="card" yawspeed="-150" speed="400" position="-180 -180 250" color="1 0 0" />
+			<instance name="card" yawspeed="-070" speed="400" position="-250 -250 200" color="1 1 0" />
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

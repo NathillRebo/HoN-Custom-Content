@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Rampage_Alt14"
+	
+	icon="icon.tga"
+	portrait=""
+	model="/shared/models/invis.mdf"
+	skin=""
+	passiveeffect="effects/graffiti01.effect"
+	spawneffect=""
+	respawneffect=""
+	isselectable="false"
+	invulnerable="true"
+	selectsound=""
+	orderconfirmedsound=""
+
+	nothreat="true"
+	deathtime="0"
+	corpsetime="0"
+	
+	preglobalscale="1.35"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="20"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	unitwalking="true"
+	
+	drawonmap="false"
+	hoveronmap="false"
+	noblockneutralspawn="true"
+
+	immunity="MagicImmunity1"
+
+	attacktype="none"
+>
+
+
+</gadget>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">	
+			<model
+				bone="_bone_back"
+				model="/shared/models/invis.mdf"
+				scale="1.1"
+				position="0 0 0"
+			>
+				<model 
+					model="/heroes/dampeer/alt7/heavyarmor_set/model.mdf"
+					material="/heroes/dampeer/alt7/heavyarmor_set/material_1.material"
+					anim="idle"
+					color="1 1 1"
+					alpha="1"
+					scale=".27"					
+					expirelife="500"
+					position="0 0 -40"
+					pitch="-30"
+				>	
+					<simpleemitter
+						bone="_bone_fx02"
+						position="-3 5 5"
+						spawnrate="30"
+						midspawnratepos=".75"
+						startparticlescale="1"
+						midparticlescale="1"
+						endparticlescale="0"
+						midparticlescalepos=".75"
+						gravity="20"
+						minparticlelife="700"
+						maxparticlelife="1000"
+						material="/shared/effects/materials/sparks_reveal_white.material"
+					>
+						<particle
+							startcolor="1"
+							endcolor="1"
+							startframe=".25"
+							endframe="1"
+							startsize="13"
+							endsize="25"
+							maxangle="360"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						bone="_bone_fx03"
+						position="3 5 5"
+						spawnrate="30"
+						midspawnratepos=".75"
+						startparticlescale="1"
+						midparticlescale="1"
+						endparticlescale="0"
+						midparticlescalepos=".75"
+						gravity="20"
+						minparticlelife="700"
+						maxparticlelife="1000"
+						material="/shared/effects/materials/sparks_reveal_white.material"
+					>
+						<particle
+							startcolor="1"
+							endcolor="1"
+							startframe=".25"
+							endframe="1"
+							startsize="13"
+							endsize="25"
+							maxangle="360"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						bone="_bone_fx04"
+						position="0 0 0"
+						spawnrate="100"
+						midspawnratepos=".75"
+						startparticlescale="1"
+						midparticlescale="1"
+						endparticlescale="0"
+						midparticlescalepos=".75"
+						gravity="20"
+						minparticlelife="700"
+						maxparticlelife="1000"
+						material="/shared/effects/materials/sparks_reveal_white.material"
+						offsetsphere="60 5 0"
+					>
+						<particle
+							startcolor="1"
+							endcolor="1"
+							startframe=".25"
+							endframe="1"
+							startsize="18"
+							endsize="45"
+							maxangle="360"
+						/>
+					</simpleemitter>
+
+										
+					<twopointtrailemitter
+						bone_a="_bone_fx06"
+						bone_b="_bone_fx07"
+						spawnrate="25"
+						particlelife="150"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/flux_trail.material"
+						angle="0"
+					>
+						<particle
+							startcolor="0"
+							midcolor="1 .5 0"
+							endcolor="0"
+							midcolorpos=".25"
+							startanchor="1"
+							endanchor=".5"
+						/>
+					</twopointtrailemitter>
+					
+					<twopointtrailemitter
+						bone_a="_bone_fx08"
+						bone_b="_bone_fx09"
+						spawnrate="25"
+						particlelife="150"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/flux_trail.material"
+						angle="0"
+					>
+						<particle
+							startcolor="0"
+							midcolor="1 .5 0"
+							endcolor="0"
+							midcolorpos=".25"
+							startanchor="1"
+							endanchor=".5"
+						/>
+					</twopointtrailemitter>
+				</model>
+				
+				
+				<model
+					model="/heroes/flint_beastwood/alt12/ability_01/effects/star/model.mdf"
+					anim="idle"
+					scale=".6"
+					position="-2 22 -15"
+					yaw="12"
+					roll="12"
+				>
+					<twopointemitter
+						bone_a="_bone_vfx_02"
+						bone_b="_bone_vfx_03"
+						spawnrate="70"
+						midspawnratepos=".75"
+						startparticlescale="1"
+						midparticlescale="1"
+						endparticlescale="0"
+						midparticlescalepos=".75"
+						gravity="20"
+						minparticlelife="700"
+						maxparticlelife="1000"
+						material="/shared/effects/materials/sparks_reveal_white.material"
+					>
+						<particle
+							startcolor="1"
+							endcolor="1"
+							startframe=".25"
+							endframe="1"
+							startsize="10"
+							endsize="35"
+							maxangle="360"
+						/>
+					</twopointemitter>
+				</model>
+				
+				
+				<model
+					model="/heroes/flint_beastwood/alt12/ability_01/effects/star/model.mdf"
+					anim="idle"
+					scale=".6"
+					position="2 22 -15"
+					yaw="-12"
+					roll="-12"
+				>
+					<twopointemitter
+						bone_a="_bone_vfx_09"
+						bone_b="_bone_vfx_10"
+						spawnrate="70"
+						midspawnratepos=".75"
+						startparticlescale="1"
+						midparticlescale="1"
+						endparticlescale="0"
+						midparticlescalepos=".75"
+						gravity="20"
+						minparticlelife="700"
+						maxparticlelife="1000"
+						material="/shared/effects/materials/sparks_reveal_white.material"
+					>
+						<particle
+							startcolor="1"
+							endcolor="1"
+							startframe=".25"
+							endframe="1"
+							startsize="10"
+							endsize="35"
+							maxangle="360"
+						/>
+					</twopointemitter>
+				</model>
+			</model>
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

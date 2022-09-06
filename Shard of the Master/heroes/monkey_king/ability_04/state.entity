@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_MonkeyKing_Ability4"
+
+	passiveeffect="effects/cloud.effect"	
+
+	icon="icon.tga"
+
+	modifierkey="MonkeyKingFlying"
+	effecttype=""
+	movespeedmultiplier="0.1,0.2,0.3"
+	manaregen="3,5,7"
+	
+	dynamicprecache="effects/cast.effect"
+>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<ondamaged>
+			<changedamage b="33" op="sub" />
+		</ondamaged>
+	</modifier>
+	
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="iamsheeped">
+			<activatemodifierkey entity="this_entity" name="iamsheeped" />
+		</hasmodifier>
+		<else>
+			<deactivatemodifierkey entity="this_entity" name="iamsheeped" />
+		</else>
+		
+		<isterminated>
+			<expire />
+		</isterminated>
+	</onframe>	
+	
+	<oninflict>
+		<playeffect effect="effects/cast.effect" target="source_entity" occlude="true" />
+		<playanim name="cloud_cast" target="source_entity" />
+		<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+	</oninflict>
+
+	<onexpired>
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="cast_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="source_entity" occlude="true" />
+		
+		<getscriptvalue name="sound_expire_effect" destvar="str0" entity="this_entity" />
+		<setstr1 a="" />
+		<comparestrings a="str0" b="str1" op="ne">
+			<playeffectdynamic effect="str0" target="source_entity" occlude="true" />
+		</comparestrings>
+		
+		<playanim name="cloud_uncast" target="source_entity" />
+	</onexpired>
+	
+	<modifier key="iamsheeped" modpriority="9999"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt3"
+		icon="/heroes/monkey_king/alt3/ability_04/icon.tga"
+		passiveeffect="/heroes/monkey_king/alt3/ability_04/effects/cloud.effect"
+		dynamicprecache="../alt3/ability_04/effects/cast.effect"
+	>
+		<oninflict>
+			<playeffect effect="/heroes/monkey_king/alt3/ability_04/effects/cast.effect" target="source_entity" occlude="true" />
+			<playanim name="cloud_cast" target="source_entity" />
+			<setscriptvalue name="cast_effect" value="../alt3/ability_04/effects/cast.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt4"
+		icon="/heroes/monkey_king/alt4/ability_04/icon.tga"
+		passiveeffect="/heroes/monkey_king/alt4/ability_04/effects/cloud.effect"
+		dynamicprecache="../alt4/ability_04/effects/cast.effect"
+	>
+		<oninflict>
+			<playeffect effect="/heroes/monkey_king/alt4/ability_04/effects/cast.effect" target="source_entity" occlude="true" />
+			<playanim name="cloud_cast" target="source_entity" />
+			<setscriptvalue name="cast_effect" value="../alt4/ability_04/effects/cast.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt5"
+		passiveeffect="/heroes/monkey_king/alt5/ability_04/effects/cloud.effect"
+		dynamicprecache="../alt5/ability_04/effects/cast.effect"
+	>
+		<oninflict>
+			<playeffect effect="/heroes/monkey_king/alt5/ability_04/effects/cast.effect" target="source_entity" occlude="true" />
+			<playanim name="cloud_cast" target="source_entity" />
+			<setscriptvalue name="cast_effect" value="../alt5/ability_04/effects/cast.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt6"
+		passiveeffect="/heroes/monkey_king/alt6/ability_04/effects/cloud.effect"
+		dynamicprecache="../alt6/ability_04/effects/cast.effect"
+	>
+		<oninflict>
+			<playeffect effect="/heroes/monkey_king/alt6/ability_04/effects/cast.effect" target="source_entity" occlude="true" />
+			<playanim name="cloud_cast" target="source_entity" />
+			<setscriptvalue name="cast_effect" value="../alt6/ability_04/effects/cast.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt7"
+		passiveeffect="/heroes/monkey_king/alt7/ability_04/effects/cloud.effect"
+		dynamicprecache="../alt7/ability_04/effects/cast.effect"
+	>
+		<oninflict>
+			<playeffect effect="/heroes/monkey_king/alt7/ability_04/effects/cast.effect" target="source_entity" occlude="true" />
+			<playanim name="cloud_cast" target="source_entity" />
+			<setscriptvalue name="cast_effect" value="../alt7/ability_04/effects/cast.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt8"
+		passiveeffect="/heroes/monkey_king/alt8/ability_04/effects/cloud.effect"
+		dynamicprecache="../alt8/ability_04/effects/cast.effect,../alt8/ability_04/effects/sound_expire.effect"
+	>
+		<oninflict>
+			<playeffect effect="/heroes/monkey_king/alt8/ability_04/effects/cast.effect" target="source_entity" occlude="true" />
+			<playanim name="cloud_cast" target="source_entity" />
+			<setscriptvalue name="cast_effect" value="../alt8/ability_04/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="sound_expire_effect" value="../alt8/ability_04/effects/sound_expire.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt9"
+		passiveeffect="/heroes/monkey_king/alt9/ability_04/effects/cloud.effect"
+		dynamicprecache="../alt9/ability_04/effects/cast.effect"
+	>
+		<oninflict>
+			<playeffect effect="/heroes/monkey_king/alt9/ability_04/effects/cast.effect" target="source_entity" occlude="true" />
+			<playanim name="cloud_cast" target="source_entity" />
+			<setscriptvalue name="cast_effect" value="../alt9/ability_04/effects/cast.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt11"
+		passiveeffect="/heroes/monkey_king/alt11/ability_04/effects/cloud.effect"
+		dynamicprecache="../alt11/ability_04/effects/cast.effect"
+	>
+		<oninflict>
+			<playeffect effect="/heroes/monkey_king/alt11/ability_04/effects/cast.effect" target="source_entity" occlude="true" />
+			<playanim name="cloud_cast" target="source_entity" />
+			<setscriptvalue name="cast_effect" value="../alt11/ability_04/effects/cast.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt12"
+		passiveeffect="/heroes/monkey_king/alt12/ability_04/effects/cloud.effect"
+		dynamicprecache="../alt12/ability_04/effects/cast.effect"
+	>
+		<oninflict>
+			<playeffect effect="/heroes/monkey_king/alt12/ability_04/effects/cast.effect" target="source_entity" occlude="true" />
+			<playanim name="cloud_cast" target="source_entity" />
+			<setscriptvalue name="cast_effect" value="../alt12/ability_04/effects/cast.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt13"
+		passiveeffect="/heroes/monkey_king/alt13/ability_04/effects/cloud.effect"
+		dynamicprecache="../alt13/ability_04/effects/cast.effect"
+	>
+		<oninflict>
+			<playeffect effect="/heroes/monkey_king/alt13/ability_04/effects/cast.effect" target="source_entity" occlude="true" />
+			<playanim name="cloud_cast" target="source_entity" />
+			<setscriptvalue name="cast_effect" value="../alt13/ability_04/effects/cast.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt14"
+		passiveeffect="/heroes/monkey_king/alt14/ability_04/effects/cloud.effect"
+		dynamicprecache="../alt14/ability_04/effects/cast.effect"
+	>
+		<oninflict>
+			<playeffect effect="/heroes/monkey_king/alt14/ability_04/effects/cast.effect" target="source_entity" occlude="true" />
+			<playanim name="cloud_cast" target="source_entity" />
+			<setscriptvalue name="cast_effect" value="../alt14/ability_04/effects/cast.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_MonkeyKing.Alt15"
+		icon="/heroes/monkey_king/alt15/ability_04/icon.tga"
+		passiveeffect="/heroes/monkey_king/alt15/ability_04/effects/cloud.effect"
+		dynamicprecache="../alt15/ability_04/effects/cast.effect"
+	>
+		<oninflict>
+			<playeffect effect="/heroes/monkey_king/alt15/ability_04/effects/cast.effect" target="source_entity" occlude="true" />
+			<playanim name="cloud_cast" target="source_entity" />
+			<setscriptvalue name="cast_effect" value="../alt15/ability_04/effects/cast.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>	
+	
+	<altavatar key="Hero_MonkeyKing.Alt16"
+		passiveeffect="/heroes/monkey_king/alt16/ability_04/effects/cloud.effect"
+		dynamicprecache="../alt16/ability_04/effects/cast.effect"
+	>
+		<oninflict>
+			<playeffect effect="/heroes/monkey_king/alt16/ability_04/effects/cast.effect" target="source_entity" occlude="true" />
+			<playanim name="cloud_cast" target="source_entity" />
+			<setscriptvalue name="cast_effect" value="../alt16/ability_04/effects/cast.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<modifier key="soccer" modpriority="150" movespeedmultiplier="" manaregen="1.5" movespeed="25" />
+	
+</state>

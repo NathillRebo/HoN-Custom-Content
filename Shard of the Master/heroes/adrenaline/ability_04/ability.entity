@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Adrenaline4"
+
+	icon="/heroes/adrenaline/ability_04/icon.tga"
+	
+	anim="ability_4"
+	casttime="1000"
+	castactiontime="300"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	casteffecttype=""
+	targetscheme="all_units"
+	casteffect="effects/cast.effect"
+
+	manacost="100,150,200"
+	cooldowntime="100000,90000,80000"
+	
+	targetradius="750"
+	targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+	showrangeandradiusintooltip="true"
+	
+	passiveeffect=""
+	novoiceresponse="true"
+	
+	checkcostinvalidvoice="nomanasound"
+	checkcostinvalidstr="error_low_mana"
+	
+	maxcharges="10"
+>
+	
+	<onimpact>		
+		<spawnunit name="Gadget_Adrenaline_Ability4" target="source_position" proxy="this_entity" pushentity="true" />
+		<setproxy entity="this_entity" target="stack_entity" />
+		<applystate name="State_Adrenaline_Ability4_Modifier" duration="4000,4500,5000" target="source_entity" proxy="stack_entity" />
+		<starttimer duration="2000" />
+	</onimpact>
+	
+	<modifier key="adrenaline_R_disabled" modpriority="100"
+		disabled="true"
+	>
+		<ondeath>
+			<expirestate name="State_Adrenaline_Ability4_Modifier" target="source_entity" />
+			<kill target="this_proxy_entity" source="" />
+		</ondeath>
+	</modifier>
+	
+	<modifier key="adrenaline_R_collapsable" modpriority="110"
+		casttime="0"
+		castactiontime="0"
+		manacost="0"
+		ignorecooldown="true"
+		anim=""
+		casteffect=""
+		
+		frontqueue="true"
+		inheritmovement="true"
+		noninterrupting="true"
+		noresponse="true"
+	>
+		<onimpact>
+			<expirestate name="State_Adrenaline_Ability4_Modifier" target="source_entity" />
+			<kill target="this_proxy_entity" source="" />
+		</onimpact>
+		
+		<ondeath>
+			<expirestate name="State_Adrenaline_Ability4_Modifier" target="source_entity" />
+			<kill target="this_proxy_entity" source="" />
+		</ondeath>
+	</modifier>
+	
+	<modifier key="shardofthemaster_boost" modpriority="120"
+		strengthpercharge="4"
+	/>
+		
+	<altavatar key="Hero_Adrenaline.Alt"
+		icon="/heroes/adrenaline/alt/ability_04/icon.tga"
+		casteffect="/heroes/adrenaline/alt/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt2"
+		icon="/heroes/adrenaline/alt2/ability_04/icon.tga"
+		casteffect="/heroes/adrenaline/alt2/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt3"
+		casteffect="/heroes/adrenaline/alt3/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt4"
+		casteffect="/heroes/adrenaline/alt3/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt5"
+	    icon="/heroes/adrenaline/alt5/ability_04/icon.tga"
+		casteffect="/heroes/adrenaline/alt5/ability_04/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt6"
+		casteffect="/heroes/adrenaline/alt6/ability_04/effects/cast.effect"
+	/>
+	
+</ability>

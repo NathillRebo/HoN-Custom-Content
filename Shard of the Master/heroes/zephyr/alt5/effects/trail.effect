@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+			<!--Rainbow trail-->
+			<model
+				bone="_bone_center"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				anim="idle"
+				scale="1.75"
+			>
+				<twopointtrailemitter
+					bone_a="_bone_fx_01"
+					bone_b="_bone_fx_06"
+					spawnrate="40"
+					particlelife="1000"
+					texpostime="1000"
+					material="/shared/effects/materials/rainbowtrail.material"
+					texposscale="0.0"
+					texstretchscale="1.0"
+					directionalspace="local"
+				>
+					<particle
+						startcolor="0 0 0"
+						midcolor=".4"
+						midcolorpos="0.2"
+						endcolor="0 0 0"
+					/>
+				</twopointtrailemitter>
+			</model>
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" modifier="PARTYTIME!"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

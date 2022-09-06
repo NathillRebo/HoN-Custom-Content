@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			<template name="dripping_poison">
+				<controller
+					bone="{bone}"
+				>
+					<simpleemitter
+						position="{position}"
+						minspawnrate="5"
+						maxspawnrate="10"
+						particlelife="1500"
+						gravity="20"
+						minspeed="10"
+						maxspeed="20"
+						direction="0 0 -1"
+						angle="90"
+						offsetsphere="5"
+						inheritvelocity="-.1"
+						limitinheritvelocity="150"
+						drag="0"
+					>
+						<particle
+						scale=".5">
+							<trailemitter
+								life="1500"
+								spawnrate="30"
+								minparticlelife="50"
+								maxparticlelife="100"
+								speed="1"
+								material="/shared/effects/materials/arrow_trail_blend.material"
+								texposscale="0"
+								texstretchscale="1"
+								startparticlealpha="1"
+								midparticlealpha="1"
+								endparticlealpha="0"
+							>
+								<particle
+									startcolor="1 .1 1"
+									endcolor="1 .1 1"
+									minstartscale="2.0"
+									maxstartscale="3.0"
+									minendscale="0"
+									maxendscale=".75"
+									midscalepos=".4"
+								/>
+							</trailemitter>
+							<terrainemitter
+								mindelay="100"
+								maxdelay="200"
+								spawnrate="500"
+								minparticlelife="1000"
+								maxparticlelife="2000"
+								mincount="1"
+								maxcount="2"
+								offsetsphere="20"
+								material="/shared/effects/materials/goop_reveal_ground.material"
+							>
+								<particle
+									minscale="1"
+									maxscale="20"
+									lockup="true"
+									color="1 .1 1"
+									startalpha="1"
+									endalpha="0"
+									pitch="90"
+									maxangle="360"
+									startsize="0"
+									midsize="2.5"
+									endsize="2.5"
+									midsizepos=".2"
+								/>
+							</terrainemitter>
+							<terrainemitter
+								mindelay="450"
+								maxdelay="650"
+								spawnrate="500"
+								minparticlelife="500"
+								maxparticlelife="1000"
+								mincount="1"
+								maxcount="3"
+								offsetsphere="20"
+								material="/shared/effects/materials/blood_pool_white.material"
+							>
+								<particle
+									minscale=".5"
+									maxscale="4"
+									lockup="true"
+									lockright="true"
+									pitch="90"
+									color="1 .1 1"
+									startalpha="1"
+									endalpha="0"
+								/>
+							</terrainemitter>
+						</particle>
+					</simpleemitter>
+					
+					<simpleemitter
+						position="{position}"
+						spawnrate="10"
+						particlelife="3000"
+						inheritvelocity=".25"
+						limitinheritvelocity="150"
+						drag="0.05"
+					>
+						<particle>
+							
+						</particle>
+						
+						<particle>
+							<terrainemitter
+								mindelay="450"
+								maxdelay="650"
+								spawnrate="20"
+								minparticlelife="500"
+								maxparticlelife="1000"
+								mincount="1"
+								maxcount="3"
+								offsetsphere="20"
+								material="/shared/effects/materials/blood_pool_white.material"
+							>
+								<particle
+									minscale=".25"
+									maxscale="2"
+									lockup="true"
+									lockright="true"
+									pitch="90"
+									color="1 .1 1"
+									startalpha=".75"
+									endalpha="0"
+								/>
+							</terrainemitter>
+						</particle>
+					</simpleemitter>
+				</controller>
+			</template>
+			
+			<instance name="dripping_poison" bone="_bone_weapon3" position="0 0 0" />
+			<instance name="dripping_poison" bone="_bone_weapon3" position="0 0 0" />
+			<instance name="dripping_poison" bone="_bone_weapon3" position="0 0 0" />
+			<instance name="dripping_poison" bone="Bone017" position="0 10 0" />
+			<instance name="dripping_poison" bone="_bone_head" position="0 0 0" />
+			<instance name="dripping_poison" bone="Bone018" position="0 0 0" />
+
+
+			
+			<terrainemitter
+				expirelife="100"
+				spawnrate="5"
+				minparticlelife="1000"
+				maxparticlelife="2000"
+				offsetsphere="20"
+				material="/shared/effects/materials/goop_reveal_ground.material"
+			>
+				<particle
+					minscale="1"
+					maxscale="40"
+					lockup="true"
+					color="1 .1 1"
+					startalpha="1"
+					endalpha="0"
+					pitch="90"
+					maxangle="360"
+					startsize="0"
+					midsize="2.5"
+					endsize="2.5"
+					midsizepos=".2"
+				/>
+			</terrainemitter>
+		
+		</particlesystem>
+	</definitions>
+	
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

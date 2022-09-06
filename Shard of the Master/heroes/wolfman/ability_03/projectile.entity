@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Warbeast_Shard"
+
+	speed="2400"
+	gravity=""
+	
+	effectscale="1.0"
+	model="/shared/models/invis.mdf"
+	canturn="true"
+	flying="true"
+	flyheight="0"
+	traileffect="trail.effect"
+	
+	impactdistance="60"
+>
+	<onspawn>
+		<playanim name="attack_1" target="source_entity" />
+	</onspawn>
+
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<applystate name="State_Warbeast_Slow_Shard" target="target_entity" duration="1000" />
+				<attack source="this_owner_entity" target="target_entity" startcooldown="false" />
+			</onimpact>
+		</combatevent>
+		<unbind target="source_entity" />
+		<targettype type="alive" target="source_entity">
+			<playanim name="idle" target="source_entity"/>
+		</targettype>
+
+		<order command="attack" source="source_entity" target="target_entity" queue="front" />
+	</onimpact>
+</projectile>

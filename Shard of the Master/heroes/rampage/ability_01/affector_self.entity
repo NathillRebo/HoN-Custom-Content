@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Rampage_Ability1_Self"
+
+	radius="200"
+	lifetime="-1"
+
+	targetselection="all"
+	targetscheme="enemy_heroes"
+	maximpactspertarget="1"
+	effecttype="Physical"
+>
+	<onimpact>
+		<compare a="target_entity" b="this_proxy_entity" op="ne">
+			<!-- Horned Strike (E) -->
+			<pushability name="Ability_Rampage3" />
+			<setvar0 a="source_level" source="stack_entity" />
+			
+			<compare a="var0" b="0" op="gt">
+				<!-- Slow Duration = 1000 + 500*Level (ms) -->
+				<evaluate a="var0" b="500" op="mult" />
+				<setvar1 a="result" b="1000" op="add" />
+				<applystate name="State_Rampage_Ability3" target="target_entity" duration="var1" />
+				
+				<!-- Damage = 30 + 30*Level -->
+				<evaluate a="var0" b="30" op="mult" />
+				<evaluate a="result" b="30" op="add" />
+				<damage effecttype="Physical" target="target_entity" amount="1" b="result" op="mult" />
+				
+				<!-- Art for Horned Strike (E) -->
+				<playeffect effect="../ability_03/effects/impact.effect" source="target_entity" />
+				<playeffect effect="../ability_03/effects/cast.effect" target="source_entity" />
+			</compare>
+		</compare>
+	</onimpact>
+	
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="rampagedisabled" />
+		<else>
+			<delete target="this_entity" />
+		</else>
+	</onframe>
+</affector>

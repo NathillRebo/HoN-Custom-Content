@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Engineer_Ability1"
+
+	radius="200"	
+	targetselection="all"
+	targetscheme="all_units_and_buildings"
+	effecttype="Magic"
+	destroytrees="true"
+	impactdelay="0"
+	impacteffect=""
+	
+>
+	<onimpact>
+		<targettype type="Boss" />
+		<else>
+			<cantarget targetscheme="enemy_units">
+				<applystate name="State_Stunned" duration="1600,1900,2200,2500" />
+				<playanim name="knock_1" target="target_entity" />
+				<damage effecttype="Magic" amount="90,160,230,300" />
+				
+				<cantarget effecttype="Push Disable">
+					<push force="1250" duration="200" source="this_entity" />
+				</cantarget>
+			</cantarget>
+			<targettype type="self">
+				<push force="1250" duration="200" source="this_entity" />
+			</targettype>
+		</else>
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onimpact>
+			<targettype type="Boss" />
+			<else>
+				<cantarget targetscheme="enemy_units">
+					<applystate name="State_Stunned" duration="1600,1900,2200,2500" />
+					<playanim name="knock_1" target="target_entity" />
+					<damage effecttype="Magic" amount="90,160,230,300" />
+					
+					<cantarget effecttype="Push Disable">
+						<push force="1250" duration="200" source="this_entity" />
+					</cantarget>
+				</cantarget>
+				<targettype type="self">
+					<push force="1250" duration="200" source="this_entity" />
+				</targettype>
+				<cantarget targetscheme="enemy_buildings">
+					<applystate name="State_Stunned" duration="1200,1400,1600,1800" />
+					<damage effecttype="Magic" amount="65,115,165,215" />
+				</cantarget>
+			</else>
+		</onimpact>
+	</modifier>
+</affector>

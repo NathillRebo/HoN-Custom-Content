@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Martyr_Ability2_Shard"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="false"
+	maxcharges="100"
+	healthregenpercharge="1"
+	incomingdamagemultiplierpercharge="-0.0075"
+>
+	<oninflict>
+		<addcharges count="accumulator"/>
+	</oninflict>
+	<onrefresh>
+		<addcharges count="accumulator"/>
+	</onrefresh>
+</state>

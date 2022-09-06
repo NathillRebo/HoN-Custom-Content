@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Adrenaline_Ability4_Self"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	unitwalking="true"
+	buildingwalking="true"
+	cliffwalking="true"
+	treewalking="true"
+	
+	slowresistance="1.0"
+	movespeedmultiplier="1.0"
+	
+	strengthpercharge="3,4,5"
+	attackspeedpercharge="0.05"
+	armorpercharge="1.0"
+	magicarmorpercharge="1.0"
+	maxcharges="7"
+	
+	effecttype=""
+	
+	modifierkey="adrenaline_ability4_EverythingWalking"
+>
+	<onframe />
+	
+	<onindirectkill propagatetoillusions="false" >
+		<targettype type="alive" target="source_entity">
+			<targettype type="hero">
+				<targettype type="enemy">
+					<targettype type="illusion" />
+					<else>               
+						<targettype type="mimic" />
+						<else> 
+							<targettype type="self" />
+							<else>
+								<targettype type="heropet" />
+								<else>
+									<pushability source="source_entity" name="Ability_Adrenaline4" />
+									<addcharges entity="stack_entity" count="1" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</targettype>
+			</targettype>
+		</targettype>
+	</onindirectkill>
+	
+	<onkill propagatetoillusions="false" >
+		<targettype type="alive" target="source_entity">
+			<targettype type="hero">
+				<targettype type="enemy">
+					<targettype type="illusion" />
+					<else>               
+						<targettype type="mimic" />
+						<else> 
+							<targettype type="self" />
+							<else>
+								<targettype type="heropet" />
+								<else>
+									<pushability source="source_entity" name="Ability_Adrenaline4" />
+									<addcharges entity="stack_entity" count="1" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</targettype>
+			</targettype>
+		</targettype>
+	</onkill>
+	
+	<onassist propagatetoillusions="false" >
+		<targettype type="alive" target="source_entity">
+			<targettype type="hero">
+				<targettype type="enemy">
+					<targettype type="illusion" />
+					<else>                
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<pushability source="source_entity" name="Ability_Adrenaline4" />
+								<addcharges entity="stack_entity" count="1" />
+							</else>
+						</else>
+					</else>
+				</targettype>
+			</targettype>
+		</targettype>
+	</onassist>
+
+	<altavatar key="Hero_Adrenaline.Alt"
+	    icon="/heroes/adrenaline/alt/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.Alt2"
+	    icon="/heroes/adrenaline/alt2/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Adrenaline.5"
+	    icon="/heroes/adrenaline/alt5/ability_04/icon.tga"
+	/>
+
+</state>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="high.model" med="high.model" low="high.model" >
+	
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true">
+	<frameevent frame="62" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	<frameevent frame="18" cmd="PlaySoundLinear ../sounds/Cup_move_%.wav 0 200 .60"/>
+	<frameevent frame="52" cmd="PlaySoundLinear ../sounds/barrel_move_%.wav 0 200 .20"/>
+	<frameevent frame="111" cmd="PlaySoundLinear ../sounds/barrel_move_%.wav 0 200 .20"/>
+	<frameevent frame="46" cmd="PlaySoundLinear ../sounds/Cup_move_%.wav 0 200 .60"/>
+    <frameevent frame="80" cmd="PlaySoundLinear ../sounds/Cup_move_%.wav 0 200 .60"/>
+	<frameevent frame="145" cmd="PlaySoundLinear ../sounds/Cup_move_%.wav 0 200 .60"/>
+	<frameevent frame="145" cmd="PlaySoundLinear ../sounds/barrel_move_%.wav 0 200 .20"/>
+	<frameevent frame="135" cmd="PlaySoundLinear ../sounds/Cup_move_%.wav 0 200 .60"/>
+	<frameevent frame="62" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	<frameevent frame="72" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	<frameevent frame="72" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	<frameevent frame="110" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	<frameevent frame="110" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	<frameevent frame="121" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	<frameevent frame="121" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	<frameevent frame="180" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	<frameevent frame="180" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	</anim>
+
+	
+</model>

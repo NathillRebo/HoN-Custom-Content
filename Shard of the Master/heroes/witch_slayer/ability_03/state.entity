@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WitchSlayer_Ability3"
+	
+	icon="icon.tga"
+	passiveeffect="effects/link.effect"
+	
+	effecttype="StatusDebuff"
+>
+	<onframe>
+		<compare a="target_mana" b="1" op="gt">
+			<setvar0 a="25,50,75,100" b="frametime" op="mult" />
+			<takemana amount="var0" />
+			<compare a="result" b="0" op="gt">
+				<givemana amount="var0" target="source_entity" />
+			</compare>
+		</compare>
+		<else>
+			<order command="stop" source="source_entity" target="source_entity" />
+		</else>
+	</onframe>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onframe>
+			<setvar0 a="25,50,75,100" b="frametime" op="mult" />
+			<takemana amount="var0" />
+			<compare a="result" b="0" op="gt">
+				<givemana amount="var0" target="source_entity" />
+			</compare>
+			<distance target="target_entity" source="this_inflictor_entity" />
+			<compare a="result" b="100" op="gt">
+				<cantarget effecttype="Push">
+					<push force="-184" frame="true" source="source_entity" />
+				</cantarget>
+			</compare>
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_WitchSlayer.Pimp"
+		passiveeffect="/heroes/witch_slayer/alt/ability_03/effects/link.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt3"
+		passiveeffect="/heroes/witch_slayer/alt3/ability_03/effects/link.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt4"
+		passiveeffect="/heroes/witch_slayer/alt4/ability_03/effects/link.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_WitchSlayer.Alt5"
+		passiveeffect="/heroes/witch_slayer/alt5/ability_03/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt6"
+		passiveeffect="/heroes/witch_slayer/alt6/ability_03/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt7"
+		passiveeffect="/heroes/witch_slayer/alt7/ability_03/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt8"
+		passiveeffect="/heroes/witch_slayer/alt8/ability_03/effects/link_base.effect"
+	>
+		<onexpired>
+			<playeffect effect="/heroes/witch_slayer/alt8/ability_03/effects/expire_sound.effect" source="target_position" target="target_position" occlude="true" />
+		</onexpired>
+		
+		<modifier key="Alt8_Ability3_Upgrade" modpriority="1"
+			passiveeffect="../alt8/ability_03/effects/link_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<modifier key="soccer" modpriority="150" displayname="true">
+		<onframe >
+			<compare a="target_mana" b="1" op="gt">
+				<setvar0 a="21" b="frametime" op="mult" />
+				<takemana amount="var0" />
+				<compare a="result" b="0" op="gt">
+					<givemana amount="var0" target="source_entity" />
+				</compare>
+			</compare>
+			<else>
+				<order command="stop" source="source_entity" target="source_entity" />
+			</else>
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_WitchSlayer.Alt9"
+		passiveeffect="/heroes/witch_slayer/alt9/ability_03/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt10"
+		passiveeffect="/heroes/witch_slayer/alt9/ability_03/effects/link.effect"
+	/>
+	
+	<altavatar key="Hero_WitchSlayer.Alt11"
+		passiveeffect="/heroes/witch_slayer/alt11/ability_03/effects/link.effect"
+	/>
+	
+</state>

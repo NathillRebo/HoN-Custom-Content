@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Chipper_Ability3_Buff"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<oninflict>
+		<setaccumulator entity="this_entity" value="125,225,325,425" />
+	</oninflict>
+	
+	<onframe />
+	
+	<onattackeddamageevent>
+		<damageeffecttype effecttype="Magic">
+			<compare a="accumulator" b="damage_attempted" op="le">
+				<evaluate a="accumulator" b="0.5" op="mult" />
+				<givemana target="proxy_entity" amount="accumulator" b="0.5" op="mult" />
+				<setvalue name="damage_attempted" a="damage_attempted" b="accumulator" op="sub" />
+				<expire />
+				<setaccumulator value="0" />
+			</compare>
+			<else>
+				<evaluate a="damage_attempted" b="0.5" op="mult" />
+				<givemana target="proxy_entity" amount="damage_attempted" b="0.5" op="mult" />
+				<evaluate a="accumulator" b="damage_attempted" op="sub" />
+				<setaccumulator value="result" />
+				<setvalue name="damage_attempted" a="0" />
+			</else>
+		</damageeffecttype>
+		<else>
+			<damageeffecttype effecttype="SuperiorMagic">
+				<compare a="accumulator" b="damage_attempted" op="le">
+					<evaluate a="accumulator" b="0.5" op="mult" />
+					<givemana target="proxy_entity" amount="accumulator" b="0.5" op="mult" />
+					<setvalue name="damage_attempted" a="damage_attempted" b="accumulator" op="sub" />
+					<expire />
+					<setaccumulator value="0" />
+				</compare>
+				<else>
+					<evaluate a="damage_attempted" b="0.5" op="mult" />
+					<givemana target="proxy_entity" amount="damage_attempted" b="0.5" op="mult" />
+					<evaluate a="accumulator" b="damage_attempted" op="sub" />
+					<setaccumulator value="result" />
+					<setvalue name="damage_attempted" a="0" />
+				</else>
+			</damageeffecttype>
+		</else>
+	</onattackeddamageevent>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<oninflict>
+			<setaccumulator entity="this_entity" value="185,285,385,485" />
+		</oninflict>
+		
+		<onframe />
+		
+		<onattackeddamageevent>
+			<compare a="accumulator" b="damage_attempted" op="le">
+				<evaluate a="accumulator" b="0.5" op="mult" />
+				<givemana target="proxy_entity" amount="accumulator" b="0.5" op="mult" />
+				<setvalue name="damage_attempted" a="damage_attempted" b="accumulator" op="sub" />
+				<expire />
+				<setaccumulator value="0" />
+			</compare>
+			<else>
+				<evaluate a="damage_attempted" b="0.5" op="mult" />
+				<givemana target="proxy_entity" amount="damage_attempted" b="0.5" op="mult" />
+				<evaluate a="accumulator" b="damage_attempted" op="sub" />
+				<setaccumulator value="result" />
+				<setvalue name="damage_attempted" a="0" />
+			</else>
+			<compare a="accumulator" b="damage_attempted" op="le">
+				<evaluate a="accumulator" b="0.5" op="mult" />
+				<givemana target="proxy_entity" amount="accumulator" b="0.5" op="mult" />
+				<setvalue name="damage_attempted" a="damage_attempted" b="accumulator" op="sub" />
+				<expire />
+				<setaccumulator value="0" />
+			</compare>
+			<else>
+				<evaluate a="damage_attempted" b="0.5" op="mult" />
+				<givemana target="proxy_entity" amount="damage_attempted" b="0.5" op="mult" />
+				<evaluate a="accumulator" b="damage_attempted" op="sub" />
+				<setaccumulator value="result" />
+				<setvalue name="damage_attempted" a="0" />
+			</else>
+		</onattackeddamageevent>
+	</modifier>
+	
+	<altavatar key="Hero_Chipper.Alt3"
+		passiveeffect="../alt3/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Chipper.Alt4"
+		passiveeffect="../alt4/ability_03/effects/state.effect"
+	>
+		<onexpired>
+			<playeffect effect="../alt4/ability_03/effects/sound_stop.effect" source="source_entity" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Chipper.trophy_skin01"
+		passiveeffect="../trophy_skin/model_01/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Chipper.trophy_skin02"
+		passiveeffect="../trophy_skin/model_02/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Chipper.trophy_skin03"
+		passiveeffect="../trophy_skin/model_03/ability_03/effects/state.effect"
+	/>
+	
+</state>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ra4"
+
+	icon="icon.tga"
+	
+	anim="ability_4"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	passiveeffect=""
+	cooldowntime="210000,150000,90000"
+	actiontype="passive"
+	targetradius="375"
+	
+	modifierkey="Rault1,Rault2,Rault3"
+>
+	<modifier key="shardofthemaster_boost" modpriority="100"/>
+	
+	<ondeath propagatetoillusions="false" >
+		<hasmodifier name="ihazatokenoflife" />
+		<else>
+			<condition test="isready">
+				<applystate name="State_Ra_Ability4_Initial" duration="3000" target="source_entity" />
+				<protecteddeath target="source_entity" />
+				<playanim name="ability_4" target="source_entity" source="source_entity"/>
+				<hasavatarkey name="Hero_Ra.Alt3">
+					<playeffect effect="effects/meteor_alt3.effect" source="source_position" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Ra.Alt5">
+						<playeffect effect="../alt5/ability_04/effects/meteor.effect" source="source_position" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Ra.Alt6">
+							<playeffect effect="../alt6/ability_04/effects/meteor.effect" source="source_position" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Ra.Alt7">
+								<playeffect effect="../alt7/ability_04/effects/meteor.effect" source="source_position" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Ra.Alt8">
+								    <play2dsound sample="/heroes/ra/alt8/sounds/ab4_return_vox.ogg" channel="90" volume="1.0" dampen="0.4" sourceonly="true" targetonly="true" />
+									<playeffect effect="../alt8/ability_04/effects/meteor.effect" source="source_entity" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Ra.Alt9">
+									    <play2dsound sample="/heroes/ra/alt9/sounds/ab4_death.ogg" channel="90" volume="1.0" dampen="0.4" sourceonly="true" targetonly="true" />
+										<spawnunit name="Gadget_RA_Ability4" target="source_entity" />
+									</hasavatarkey>
+									<else>
+									<hasavatarkey name="Hero_Ra.Alt10">
+									    <play2dsound sample="/heroes/ra/alt10/sounds/ab4_vox.ogg" channel="90" volume="1.0" dampen="0.4" sourceonly="true" targetonly="true" />
+										<playeffect effect="../alt10/ability_04/effects/meteor.effect" source="source_position" occlude="true" />
+									</hasavatarkey>
+									<else>
+										<playeffect effect="effects/meteor.effect" source="source_position" occlude="true" />
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>					
+				</else>					
+				<playeffect effect="../effects/respawn_1.effect" source="source_position" occlude="true" />
+				<setrespawntime target="source_entity" a="3000" />
+				<setrespawnposition target="source_entity" position="source_position" />
+				<setvar0 a="source_mana" b="source_maxmana" op="div" />
+				<compare a="var0" b="0.5" op="ge" >
+					<evaluate a="source_maxmana" b="0.5" op="mult" />
+					<evaluate a="source_mana" b="result" op="sub" />
+					<setvar0 a="result" b="source_maxmana" op="div" />
+					<setrespawnhealthmultiplier target="source_entity" value=".6" />
+					<setrespawnmanamultiplier target="source_entity" value="var0" />
+					<startcooldown />
+				</compare>
+				<else>
+					<compare a="var0" b="0.01" op="le" >
+						<setrespawnhealthmultiplier target="source_entity" value="0.1" />
+						<setrespawnmanamultiplier target="source_entity" value="0" />
+						<startcooldown />
+					</compare>
+					<else>
+						<setvar0 a="var0" b="0.1" op="add" />
+						<setrespawnhealthmultiplier target="source_entity" value="var0" />
+						<setrespawnmanamultiplier target="source_entity" value="0" />
+						<startcooldown />
+					</else>
+				</else>
+			</condition>
+		</else>
+	</ondeath>
+	
+	<onimpact />
+	
+	<altavatar key="Hero_Ra.Alt5"
+		icon="../alt5/ability_04/icon.tga"
+	/>
+	
+</ability>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Blitz1"
+
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="500"
+	castactiontime="300"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	
+	manacost="100,110,120,130"
+	cooldowntime="10000"
+
+	range="500"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+	targetpriorities="enemy_heroes"
+	
+>
+	<onimpact>
+		<spawnprojectile name="Projectile_Blitz_Ability1" target="target_entity" />
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="100"
+		casttime="0"
+		castactiontime="0"
+		frontqueue="true"
+		noninterrupting="true"
+	>	
+	</modifier>
+	
+	<modifier key="shardofthemaster_boost"
+		range="575"
+	>
+		<onimpact>
+			<spawnprojectile name="Projectile_Blitz_Ability1" target="target_entity" />
+			
+			<areaofeffect
+				radius="400"
+				targetselection="closest"
+				targetscheme="visible_enemy_units"
+				effecttype="Magic"
+				maxtotalimpacts="1"
+				impacteffect="effects/impact.effect"
+				ignore="target_entity"
+			>
+				<spawnprojectile name="Projectile_Blitz_Ability1" target="target_entity" />
+			</areaofeffect>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Blitz.Alt" modpriority="2"
+		dynamicprecache="../alt/ability_01/effects/impact.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="impact_effect" value="../alt/ability_01/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Blitz.Alt6" modpriority="2"
+	    icon="../alt6/ability_01/icon.tga"
+		dynamicprecache="../alt6/ability_01/effects/impact.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="impact_effect" value="../alt6/ability_01/effects/impact.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+</ability>

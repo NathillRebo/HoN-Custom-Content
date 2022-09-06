@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bephelgor_Ability1_Snare"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	movespeedslow="0.20"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+	<onframe>
+		<damage effecttype="Magic DOT" amount="40,60,85,110" b="frametime" op="mult" />
+	</onframe>
+	
+	<altavatar key="Hero_Bephelgor.Alt4"
+		icon="../alt4/ability_01/icon.tga"
+		passiveeffect="../alt4/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Bephelgor.Alt5"
+		passiveeffect="effects/state_alt5.effect"
+	/>
+</state>

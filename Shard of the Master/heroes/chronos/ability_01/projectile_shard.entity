@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Chronos_Ability1_Second"
+
+	speed="2600"
+	gravity="0"
+
+	modelscale="1.0"
+	model=""
+	deatheffect=""
+	canturn="false"
+	flying="true"
+	flyheight="0"
+>
+	<onimpact>
+		<targettype type="alive" target="source_entity" >
+			<playanim name="idle" target="source_entity" />
+		</targettype>
+	</onimpact>
+</projectile>

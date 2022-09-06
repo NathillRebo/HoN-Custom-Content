@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_SirBenzington3"
+
+	icon="icon.tga"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	
+	attackrange="100,150,200,250"
+>
+	<onattackingdamageevent>
+		<cantarget targetscheme="enemy_units">
+			<setvalue name="damage_magicarmorpierce" a="damage_magicarmorpierce" b="2,3,4,5" op="add" />
+		</cantarget>
+	</onattackingdamageevent>
+	
+	<onframe/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="101"
+		movespeedpercharge="0.6"
+		maxcharges="101"
+	>
+		<onframe>
+			<setvar0 a="movement" b="0.1767" op="mult" />
+			<addcharges entity="this_entity" count="var0"/>
+			<removecharge/>
+		</onframe>
+		
+		<onattackimpact>
+			<cantarget targetscheme="enemy_units" effecttype="Magic">
+				<compare a="charges" b="50" op="ge">
+					<!-- Damage -->
+					<setvar0 a="1.4" b="charges" op="mult" />
+					<targettype type="illusion" target="source_entity">
+						<setvar0 a="var0" b="0.33" op="mult" />
+						<damage effecttype="Magic" amount="1" b="var0" op="mult" />
+						<evaluate a="var0" b="10" op="mult"/>
+						<applystate name="State_SirBenzington3_Shard" target="target_entity" duration="result" />
+					</targettype>
+					<else>
+						<damage effecttype="Magic" amount="1" b="var0" op="mult" />
+						<evaluate a="var0" b="10" op="mult"/>
+						<applystate name="State_SirBenzington3_Shard" target="target_entity" duration="result" />
+					</else>
+					<setcharges a="0"/>
+				</compare>
+			</cantarget>
+		</onattackimpact>
+	</modifier>
+	
+	
+	<altavatar key="Hero_SirBenzington.Alt8"
+		icon="../alt8/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt9"
+		icon="../alt8/ability_02/icon.tga"
+	/>
+</ability>

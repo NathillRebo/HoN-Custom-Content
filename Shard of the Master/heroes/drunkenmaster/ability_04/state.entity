@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Drunkenmaster_Ability4"
+	
+	ishidden="true"
+	
+	maxcharges="4"
+>	
+	<oninflict>
+		<!-- Spawn an anchor which faces 0 degrees -->
+		<spawnunit name="Gadget_Drunkenmaster_Ability4_Empty" target="this_owner_entity" pushentity="true" fixedposition="true" />
+		<setent0 entity="stack_entity" />
+		<spawnunit name="Gadget_Drunkenmaster_Ability4_Empty" target="ent0" facing="ent0" pushentity="true" />
+		<setproxy target="stack_entity" />
+		<delete target="ent0" />
+		
+		<!-- Spawn the 3 directions -->
+		<spawnunit name="Gadget_Drunkenmaster_Ability4_Empty" target="this_owner_entity" offsetspace="this_proxy_entity" offset="-433 -250 0" pushentity="true" />
+		<setproxy entity="this_proxy_entity" target="stack_entity" />
+		<setent0 entity="stack_entity" />
+		<spawnaffector name="Affector_Drunkenmaster_Ability4_Open" target="this_owner_entity" proxy="stack_entity" />
+		<spawnunit name="Gadget_Drunkenmaster_Ability4_Empty" target="this_owner_entity" offsetspace="this_proxy_entity" offset="0 500 0" pushentity="true" />
+		<setproxy entity="ent0" target="stack_entity" />
+		<setent0 entity="stack_entity" />
+		<spawnaffector name="Affector_Drunkenmaster_Ability4_Open" target="this_owner_entity" proxy="stack_entity" />
+		<spawnunit name="Gadget_Drunkenmaster_Ability4_Empty" target="this_owner_entity" offsetspace="this_proxy_entity" offset="433 -250 0" pushentity="true" />
+		<setproxy entity="ent0" target="stack_entity" />
+		<spawnaffector name="Affector_Drunkenmaster_Ability4_Open" target="this_owner_entity" proxy="stack_entity" />
+	</oninflict>
+	
+	<onframe>
+		<!-- Move all the pressure points to their correct positions -->
+		<setpos0 position="this_owner_entity" offsetspace="this_proxy_entity" offset="-433 -250 0" />
+		<pushentity entity="this_proxy_entity" />
+		<setent0 entity="stack_proxy_entity" />
+		<teleport source="ent0" target="pos0" interpolate="true" />
+		<setpos0 position="this_owner_entity" offsetspace="this_proxy_entity" offset="0 500 0" />
+		<pushentity entity="ent0" />
+		<setent0 entity="stack_proxy_entity" />
+		<teleport source="ent0" target="pos0" interpolate="true" />
+		<setpos0 position="this_owner_entity" offsetspace="this_proxy_entity" offset="433 -250 0" />
+		<pushentity entity="ent0" />
+		<setent0 entity="stack_proxy_entity" />
+		<teleport source="ent0" target="pos0" interpolate="true" />
+		
+		<cantarget targetscheme="visible_enemy_units" source="this_proxy_entity" target="this_owner_entity" ignoreinvulnerable="true">
+			<pushentity entity="this_proxy_entity" />
+			<setent0 entity="stack_proxy_entity" />
+			<changeaccumulator entity="ent0" b="0" op="add" />
+			<compare a="result" b="1" op="eq">
+				<changeaccumulator entity="ent0" b="0" op="min" />
+				<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed">
+					<spawnaffector name="Affector_Drunkenmaster_Ability4_Closed" target="this_owner_entity" proxy="ent0" />
+				</hasmodifier>
+				<else>
+					<spawnaffector name="Affector_Drunkenmaster_Ability4_Open" target="this_owner_entity" proxy="ent0" />
+				</else>
+				<pushentity entity="ent0" />
+				<setent0 entity="stack_proxy_entity" />
+				<changeaccumulator entity="ent0" b="0" op="min" />
+				<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed">
+					<spawnaffector name="Affector_Drunkenmaster_Ability4_Closed" target="this_owner_entity" proxy="ent0" />
+				</hasmodifier>
+				<else>
+					<spawnaffector name="Affector_Drunkenmaster_Ability4_Open" target="this_owner_entity" proxy="ent0" />
+				</else>
+				<pushentity entity="ent0" />
+				<setent0 entity="stack_proxy_entity" />
+				<changeaccumulator entity="ent0" b="0" op="min" />
+				<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed">
+					<spawnaffector name="Affector_Drunkenmaster_Ability4_Closed" target="this_owner_entity" proxy="ent0" />
+				</hasmodifier>
+				<else>
+					<spawnaffector name="Affector_Drunkenmaster_Ability4_Open" target="this_owner_entity" proxy="ent0" />
+				</else>
+			</compare>
+		</cantarget>
+		<else>
+			<!-- Accumulator value of 0 on the gadgets means they're visible, 1 means invisible -->
+			<pushentity entity="this_proxy_entity" />
+			<setent0 entity="stack_proxy_entity" />
+			<changeaccumulator entity="ent0" b="0" op="add" />
+			<compare a="result" b="0" op="eq">
+				<changeaccumulator entity="ent0" b="1" op="add" />
+				<pushentity entity="ent0" />
+				<setent0 entity="stack_proxy_entity" />
+				<changeaccumulator entity="ent0" b="1" op="add" />
+				<pushentity entity="ent0" />
+				<setent0 entity="stack_proxy_entity" />
+				<changeaccumulator entity="ent0" b="1" op="add" />
+			</compare>
+		</else>
+		
+		<compare a="accumulator" b="0" op="gt">
+			<setaccumulator value="accumulator" valueb="1" valueop="sub" />
+			<compare a="accumulator" b="0" op="eq">
+				<!-- Reset the pressure points -->
+				<setcharges a="0" />
+				<pushentity entity="this_proxy_entity" />
+				<hasmodifier entity="stack_proxy_entity" name="drunkenmaster_ability4_Closed">
+					<changeaccumulator entity="stack_proxy_entity" b="0" op="add" />
+					<compare a="result" b="0" op="eq">
+						<spawnaffector name="Affector_Drunkenmaster_Ability4_Open" target="this_owner_entity" proxy="stack_proxy_entity" />
+					</compare>
+				</hasmodifier>
+				<setactivemodifierkey entity="stack_proxy_entity" name="" />
+				<pushentity entity="stack_proxy_entity" />
+				<hasmodifier entity="stack_proxy_entity" name="drunkenmaster_ability4_Closed">
+					<changeaccumulator entity="stack_proxy_entity" b="0" op="add" />
+					<compare a="result" b="0" op="eq">
+						<spawnaffector name="Affector_Drunkenmaster_Ability4_Open" target="this_owner_entity" proxy="stack_proxy_entity" />
+					</compare>
+				</hasmodifier>
+				<setactivemodifierkey entity="stack_proxy_entity" name="" />
+				<pushentity entity="stack_proxy_entity" />
+				<hasmodifier entity="stack_proxy_entity" name="drunkenmaster_ability4_Closed">
+					<changeaccumulator entity="stack_proxy_entity" b="0" op="add" />
+					<compare a="result" b="0" op="eq">
+						<spawnaffector name="Affector_Drunkenmaster_Ability4_Open" target="this_owner_entity" proxy="stack_proxy_entity" />
+					</compare>
+				</hasmodifier>
+				<setactivemodifierkey entity="stack_proxy_entity" name="" />
+			</compare>
+		</compare>
+	</onframe>
+	
+	<onattackeddamageevent>
+		<hasmodifier entity="target_entity" name="drunkenmaster_ability4_Owner">
+			<damageeffecttype effecttype="DOT" />
+			<else>
+				<!-- Determine which pressure point(s) was hit and how to proceed -->
+				<getyaw source="this_owner_entity" target="target_entity" />
+				<setvar0 a="result" />
+				<setvar3 a="accumulator" />
+				
+				<setaccumulator value="0" />
+				<compare a="var0" b="45" op="gt">
+					<compare a="var0" b="75" op="lt">
+						<!-- Bottom left and top -->
+						<pushentity entity="this_proxy_entity" />
+						<setent0 entity="stack_proxy_entity" />
+						<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed">
+							<pushentity entity="ent0" />
+							<setent0 entity="stack_proxy_entity" />
+							<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed" />
+							<else>
+								<setaccumulator value="2" />
+							</else>
+						</hasmodifier>
+						<else>
+							<pushentity entity="ent0" />
+							<setent0 entity="stack_proxy_entity" />
+							<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed">
+								<setaccumulator value="1" />
+							</hasmodifier>
+							<else>
+								<compare a="var0" b="60" op="ge">
+									<setaccumulator value="1" />
+								</compare>
+								<else>
+									<setaccumulator value="2" />
+								</else>
+							</else>
+						</else>
+					</compare>
+					<else>
+						<compare a="var0" b="165" op="gt">
+							<!-- Bottom left and bottom right -->
+							<pushentity entity="this_proxy_entity" />
+							<setent0 entity="stack_proxy_entity" />
+							<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed">
+								<pushentity entity="ent0" />
+								<pushentity entity="stack_proxy_entity" />
+								<setent0 entity="stack_proxy_entity" />
+								<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed" />
+								<else>
+									<setaccumulator value="3" />
+								</else>
+							</hasmodifier>
+							<else>
+								<pushentity entity="ent0" />
+								<pushentity entity="stack_proxy_entity" />
+								<setent0 entity="stack_proxy_entity" />
+								<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed">
+									<setaccumulator value="1" />
+								</hasmodifier>
+								<else>
+									<!-- Both points are hit but in this context it's closer to bottom left -->
+									<setaccumulator value="1" />
+								</else>
+							</else>
+						</compare>
+						<else>
+							<!-- Just bottom left -->
+							<pushentity entity="this_proxy_entity" />
+							<setent0 entity="stack_proxy_entity" />
+							<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed" />
+							<else>
+								<setaccumulator value="1" />
+							</else>
+						</else>
+					</else>
+				</compare>
+				<else>
+					<compare a="var0" b="-75" op="gt">
+						<compare a="var0" b="-45" op="lt">
+							<!-- Top and bottom right -->
+							<pushentity entity="this_proxy_entity" />
+							<pushentity entity="stack_proxy_entity" />
+							<setent0 entity="stack_proxy_entity" />
+							<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed">
+								<pushentity entity="ent0" />
+								<setent0 entity="stack_proxy_entity" />
+								<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed" />
+								<else>
+									<setaccumulator value="3" />
+								</else>
+							</hasmodifier>
+							<else>
+								<pushentity entity="ent0" />
+								<setent0 entity="stack_proxy_entity" />
+								<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed">
+									<setaccumulator value="2" />
+								</hasmodifier>
+								<else>
+									<compare a="var0" b="-60" op="ge">
+										<setaccumulator value="2" />
+									</compare>
+									<else>
+										<setaccumulator value="3" />
+									</else>
+								</else>
+							</else>
+						</compare>
+						<else>
+							<!-- Just top -->
+							<pushentity entity="this_proxy_entity" />
+							<pushentity entity="stack_proxy_entity" />
+							<setent0 entity="stack_proxy_entity" />
+							<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed" />
+							<else>
+								<setaccumulator value="2" />
+							</else>
+						</else>
+					</compare>
+					<else>
+						<compare a="var0" b="-165" op="lt">
+							<!-- Bottom left and bottom right -->
+							<pushentity entity="this_proxy_entity" />
+							<setent0 entity="stack_proxy_entity" />
+							<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed">
+								<pushentity entity="ent0" />
+								<pushentity entity="stack_proxy_entity" />
+								<setent0 entity="stack_proxy_entity" />
+								<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed" />
+								<else>
+									<setaccumulator value="3" />
+								</else>
+							</hasmodifier>
+							<else>
+								<pushentity entity="ent0" />
+								<pushentity entity="stack_proxy_entity" />
+								<setent0 entity="stack_proxy_entity" />
+								<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed">
+									<setaccumulator value="1" />
+								</hasmodifier>
+								<else>
+									<!-- Both points are hit but in this context it's closer to bottom right -->
+									<setaccumulator value="3" />
+								</else>
+							</else>
+						</compare>
+						<else>
+							<!-- Just bottom right -->
+							<pushentity entity="this_proxy_entity" />
+							<pushentity entity="stack_proxy_entity" />
+							<pushentity entity="stack_proxy_entity" />
+							<setent0 entity="stack_proxy_entity" />
+							<hasmodifier entity="ent0" name="drunkenmaster_ability4_Closed" />
+							<else>
+								<setaccumulator value="3" />
+							</else>
+						</else>
+					</else>
+				</else>
+				
+				<setvar0 a="accumulator" />
+				<setaccumulator value="var3" />
+				<!-- At this point we know exactly which point (or no points) was hit -->
+				<compare a="var0" b="1" op="eq">
+					<!-- Hit bottom left -->
+					<pushentity entity="this_proxy_entity" />
+					<setent0 entity="stack_proxy_entity" />
+					<setactivemodifierkey entity="ent0" name="drunkenmaster_ability4_Closed" />
+					<activatemodifierkey entity="ent0" name="drunkenmaster_ability4_Closing" />
+					<spawnaffector name="Affector_Drunkenmaster_Ability4_Closed" owner="this_proxy_entity" target="this_owner_entity" proxy="ent0" />
+<!-- 					<damage amount="15,30,45" effecttype="" target="this_owner_entity" /> -->
+					<addcharges count="1" />
+					<setaccumulator value="160" />
+					<hasavatarkey name="Hero_DrunkenMaster.Alt10">
+						<playeffect effect="../alt10/ability_04/effects/attack_impact.effect" source="this_owner_entity" />
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/attack_impact.effect" source="this_owner_entity" />
+					</else>
+					<!--This just plays a sound when the pressure points are hit-->
+					<compare a="charges" b="1" op="eq">
+						<play2dsound sample="/heroes/drunkenmaster/ability_04/sounds/ring_1.wav" channel="113" volume="1.0" dampen="0.5" sourceonly="true" targetonly="true" />
+						<delayannouncer duration="2000" sourceonly="true" />
+						<pausevoiceovers duration="2000" />
+					</compare>
+					<else>
+					<compare a="charges" b="2" op="eq">
+						<play2dsound sample="/heroes/drunkenmaster/ability_04/sounds/ring_2.wav" channel="113" volume="1.0" dampen="0.5" sourceonly="true" targetonly="true" />
+						<delayannouncer duration="2000" sourceonly="true" />
+						<pausevoiceovers duration="2000" />
+					</compare>
+					</else>
+					
+				</compare>
+				<else>
+					<compare a="var0" b="2" op="eq">
+						<!-- Hit top -->
+						<pushentity entity="this_proxy_entity" />
+						<pushentity entity="stack_proxy_entity" />
+						<setent0 entity="stack_proxy_entity" />
+						<setactivemodifierkey entity="ent0" name="drunkenmaster_ability4_Closed" />
+						<activatemodifierkey entity="ent0" name="drunkenmaster_ability4_Closing" />
+						<spawnaffector name="Affector_Drunkenmaster_Ability4_Closed" owner="this_proxy_entity" target="this_owner_entity" proxy="ent0" />
+	<!-- 					<damage amount="15,30,45" effecttype="" target="this_owner_entity" /> -->
+						<addcharges count="1" />
+						<setaccumulator value="160" />
+						<hasavatarkey name="Hero_DrunkenMaster.Alt10">
+							<playeffect effect="../alt10/ability_04/effects/attack_impact.effect" source="this_owner_entity" />
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/attack_impact.effect" source="this_owner_entity" />
+						</else>	
+						
+						<!--This just plays a sound when the pressure points are hit-->
+						<compare a="charges" b="1" op="eq">
+							<play2dsound sample="/heroes/drunkenmaster/ability_04/sounds/ring_1.wav" channel="113" volume="1.0" dampen="0.5" sourceonly="true" targetonly="true" />
+							<delayannouncer duration="2000" sourceonly="true" />
+							<pausevoiceovers duration="2000" />
+						</compare>
+						<else>
+						<compare a="charges" b="2" op="eq">
+							<play2dsound sample="/heroes/drunkenmaster/ability_04/sounds/ring_2.wav" channel="113" volume="1.0" dampen="0.5" sourceonly="true" targetonly="true" />
+							<delayannouncer duration="2000" sourceonly="true" />
+							<pausevoiceovers duration="2000" />
+						</compare>
+						</else>
+ 						
+					</compare>
+					<else>
+						<compare a="var0" b="3" op="eq">
+							<!-- Hit bottom right -->
+							<pushentity entity="this_proxy_entity" />
+							<pushentity entity="stack_proxy_entity" />
+							<pushentity entity="stack_proxy_entity" />
+							<setent0 entity="stack_proxy_entity" />
+							<setactivemodifierkey entity="ent0" name="drunkenmaster_ability4_Closed" />
+							<activatemodifierkey entity="ent0" name="drunkenmaster_ability4_Closing" />
+							<spawnaffector name="Affector_Drunkenmaster_Ability4_Closed" owner="this_proxy_entity" target="this_owner_entity" proxy="ent0" />
+		<!-- 					<damage amount="15,30,45" effecttype="" target="this_owner_entity" /> -->
+							<addcharges count="1" />
+							<setaccumulator value="160" />
+							<hasavatarkey name="Hero_DrunkenMaster.Alt10">
+								<playeffect effect="../alt10/ability_04/effects/attack_impact.effect" source="this_owner_entity" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/attack_impact.effect" source="this_owner_entity" />
+							</else>	
+							
+							<!--This just plays a sound when the pressure points are hit-->
+							<compare a="charges" b="1" op="eq">
+								<play2dsound sample="/heroes/drunkenmaster/ability_04/sounds/ring_1.wav" channel="113" volume="1.0" dampen="0.5" sourceonly="true" targetonly="true" />
+								<delayannouncer duration="2000" sourceonly="true" />
+								<pausevoiceovers duration="2000" />
+							</compare>
+							<else>
+							<compare a="charges" b="2" op="eq">
+								<play2dsound sample="/heroes/drunkenmaster/ability_04/sounds/ring_2.wav" channel="113" volume="1.0" dampen="0.5" sourceonly="true" targetonly="true" />
+								<delayannouncer duration="2000" sourceonly="true" />
+								<pausevoiceovers duration="2000" />
+							</compare>
+							</else>
+							
+						</compare>
+					</else>
+				</else>
+
+				
+				<compare a="charges" b="3" op="eq">
+					<!-- Trigger the extra damage -->
+<!-- 					<setvar2 source="target_entity" a="2.8" />
+					<setvalue name="damage_attempted" a="damage_attempted" b="var2" op="mult" />
+					<popup name="critical" source="target_entity" target="target_entity" a="damage_attempted" /> -->
+					
+					<damage amount="250,375,500" effecttype="Physical DOT" target="this_owner_entity" source="target_entity" />
+					
+					<applystate name="State_Stunned" target="this_owner_entity" duration="1000,1500,2000" />
+					<applystate name="State_Panda_Ability2_Bind" target="this_owner_entity" duration="1000,1500,2000" />
+					<hasavatarkey name="Hero_DrunkenMaster.Alt10">
+						<playeffect effect="../alt10/ability_04/effects/punch.effect" source="this_owner_entity" />
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/punch.effect" source="this_owner_entity" />
+					</else>
+					<playanim name="knock" source="this_owner_entity" />
+					<spawnprojectile name="Projectile_Drunkenmaster_Ability4_Toss" bind="this_owner_entity" source="this_owner_position" target="this_owner_position" />
+					
+					<addcharges count="1" />
+					
+					<!-- Start cooldown on Drunken Master R for the affected target -->
+					<hasmodifier name="ult_boost" entity="target_entity">
+						<applystate name="State_Drunkenmaster_Ability4_Cooldown" duration="4000" target="this_owner_entity" />
+					</hasmodifier>
+					<else>
+						<applystate name="State_Drunkenmaster_Ability4_Cooldown" duration="12000" target="this_owner_entity" />
+					</else>
+					
+					<expire />
+				</compare>
+			</else>
+		</hasmodifier>
+	</onattackeddamageevent>
+	
+	<onexpired>
+		<!-- Clean up -->
+		<pushentity entity="this_proxy_entity" />
+		<setent0 entity="stack_proxy_entity" />
+		<pushentity entity="stack_proxy_entity" />
+		<setent1 entity="stack_proxy_entity" />
+		<pushentity entity="stack_proxy_entity" />
+		<setent2 entity="stack_proxy_entity" />
+		
+		<delete target="ent0" />
+		<delete target="ent1" />
+		<delete target="ent2" />
+		<delete target="this_proxy_entity" />
+	</onexpired>
+</state>

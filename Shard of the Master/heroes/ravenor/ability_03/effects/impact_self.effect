@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			life="500"
+			startcolor="0"
+			endcolor="1"
+		/>
+	
+		<particlesystem name="system0" space="world" scale="1.15">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				minfalloffend="700"
+				maxfalloffend="2000"
+				minvolume=".2"
+				maxvolume=".4"
+				sample="/heroes/ravenor/ability_03/sounds/shield_impact_%.wav"
+			/>
+
+			<simpleemitter
+				count="15"
+				bone="_bone_center"
+				spawnrate="1000"
+				minparticlelife="250"
+				maxparticlelife="500"
+				gravity="5"
+				drag=".25"
+				position="0 0 0"
+				offsetsphere="75"
+				material="/shared/effects/materials/spore_01.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					color="0 0 0"
+					startalpha="1"
+					endalpha="0"
+					startsize="0"
+					endsize="200"
+					startanchor="1"
+					endanchor="1"
+				/>
+			</simpleemitter>
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<model
+				bone="_bone_center"
+				life="125"
+				model="/heroes/artesia/ability_01/effects/sphere/orb2.mdf"
+				startcolor="0 0 0"
+				midcolor=".5 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				expirelife="500"
+				startscale="2.5"
+				endscale="1"
+				midscalepos=".6"
+				yawspeed="180"
+			/>
+			
+			<model
+				bone="_bone_center"
+				life="125"
+				model="/heroes/artesia/ability_01/effects/sphere/orb2.mdf"
+				startcolor="0 0 0"
+				midcolor=".3 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				expirelife="500"
+				startscale="2.5"
+				endscale="1"
+				midscalepos=".6"
+				yawspeed="-180"
+			/>
+			
+			<billboard
+				bone="_bone_center"
+				delay="100"
+				life="250"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".35"
+				param=".25"
+				startsize="0"
+				endsize="750"
+				depthbias="-100"
+				position="0 0 20"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				pitch="90"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

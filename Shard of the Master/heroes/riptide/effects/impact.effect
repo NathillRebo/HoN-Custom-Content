@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".9">
+
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2200"
+				volume=".3" 
+				sample="/shared/sounds/impacts/impact_heavy_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1000"
+				volume=".1" 
+				sample="/heroes/rocky/sounds/impact_%.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".8" 
+				sample="/heroes/riptide/sounds/new_imp_%.wav"
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				depthbias="-30"
+				life="200"
+				minparticlelife="450"				
+				maxparticlelife="1200"				
+				spawnrate="600"
+				acceleration="0.0"
+				drag="0.02"
+				gravity="50"
+				minangle="0"
+				maxangle="20"
+				direction="0 0 0"
+				speed="750"
+				offsetsphere="50 50 50"
+				material="/shared/effects/materials/blood_white.material"
+				collide="0"
+				inheritvelocity=".01"
+			>
+				<particle 
+					minangle="0"
+					maxangle="160"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="20"
+					endsize="160"
+					startcolor="1.5"
+					midcolor=".4 .95 1"
+					midcolorpos=".75"
+					endcolor=".2 .6 1"				
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					minscale=".3"
+					maxscale=".8"
+				/>
+				<particle 
+					minangle="0"
+					maxangle="160"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="20"
+					endsize="160"
+					startcolor="1"
+					endcolor=".2 .65 1"				
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					minscale=".3"
+					maxscale=".8"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				depthbias="-30"
+				life="200"
+				minparticlelife="450"				
+				maxparticlelife="1200"				
+				spawnrate="50"
+				minspeed="10"
+				maxspeed="100"
+				minangle="-90"
+				maxangle="90"
+				drag="0.01"
+				material="/shared/effects/materials/refract_wave.material"
+				offsetsphere="20"
+				inheritvelocity="0"
+				direction="0 0 1"
+			>
+				<particle
+					turn="true"
+				>
+					<billboard
+						startparam=".5"
+						endparam="0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						material="/shared/effects/materials/refract_outsplash.material"
+						size="100"
+						life="700"
+						pitch="90"
+						roll="0"
+						lockup="true"
+						lockright="true"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="15"
+				minparticlelife="500"
+				maxparticlelife="750"
+				spawnrate="150"
+				minspeed="350"
+				maxspeed="600"
+				gravity="50"
+				minangle="0"
+				maxangle="10"
+				material="/shared/effects/materials/whitewater_02.material"
+				offsetsphere="15 15 0"
+				position="0 0 0"
+				direction="0 0 0"
+
+			>
+				<particle
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					startcolor="0 0 0"
+					midcolor=".22"
+					endcolor="0 0 0"
+					startsize="40"
+					endsize="90"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="25"
+				minparticlelife="500"
+				maxparticlelife="750"
+				spawnrate="100"
+				minspeed="350"
+				maxspeed="600"
+				gravity="40"
+				minangle="0"
+				maxangle="10"
+				material="/shared/effects/materials/whitewater_02.material"
+				offsetsphere="15 15 0"
+				position="0 0 50"
+				direction="0 0 0"
+				inheritvelocity="0"
+			>
+				<particle
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					startcolor="0 0 0"
+					midcolor="0 .1 .15"
+					endcolor="0 0 0"
+					startsize="40"
+					endsize="90"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

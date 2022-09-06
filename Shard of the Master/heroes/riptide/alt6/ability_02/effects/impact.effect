@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_02" useentityeffectscale="1">
+	<definitions>
+	
+	
+
+		<particlesystem name="system0" space="world" scale=".5">
+
+		
+		<billboard
+			delay="00"		
+			life="800"
+			bone="_bone_centerofchest"		
+			material="/shared/effects/materials/whitedot.material"
+			position="0 0 0"
+			startcolor="1"			
+			endcolor="0"
+			startsize="250"
+			endsize="500"
+			midsizepos=".3"
+			depthbias="-100"
+		/>		
+			<simpleemitter 
+				bone="_bone_centerofchest"
+				count="50"
+         		spawnrate="222"				
+				minparticlelife="800"
+          		maxparticlelife="1200"
+          		gravity="0"
+          		drag="0"
+				speed="150"
+				position="0 0 0"
+				offsetsphere="20 20 20"
+          		material="/shared/effects/materials/snowflake.material"
+				inheritvelocity="0.25"
+      		>
+				<particle 
+					maxangle="360"			
+					minanglespeed="-44"
+					maxanglespeed="44"
+					scale="2"					
+					color="1"		
+					startalpha="0"
+					midalpha=".7"
+					endalpha="0"
+					startsize="75"
+					midsize="11"
+					endsize="44"				
+				/>
+        	</simpleemitter>
+<!--
+-->
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  <spawnmodifier instance="instance1" modifier="modifier0"/> 
+	  
+      <waitfordeath instance="instance0" />
+	   <waitfordeath instance="instance1" />	
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Hammerstorm_Ability2"
+
+	radius="600"
+	impactdelay="0"
+	targetselection="all"
+	targetscheme="ally_units"
+	effecttype=""
+>
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		radius="700"
+	/>
+	
+	<onimpact>
+		<applystate name="State_Hammerstorm_Ability2" duration="5000" />
+	</onimpact>
+	
+	<altavatar key="Hero_Hammerstorm.Alt11" modpriority="1"
+		icon="/heroes/Hammerstorm/alt11/ability_02/icon.tga"
+		casteffect="../alt11/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt13" modpriority="1"
+		casteffect="../alt13/ability_02/effects/cast.effect"
+	/>
+</affector>

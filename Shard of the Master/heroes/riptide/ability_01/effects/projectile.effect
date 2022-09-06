@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect entityeffectscale="true" deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.7" >
+
+		<!-- main water effects -->
+			<simpleemitter
+				spawnrate="200"
+				particlelife="150"
+				gravity="50"
+				material="/shared/effects/materials/puddle_reveal_blend.material"
+			>
+				<particle
+					startsize="40"
+					endsize="0"
+					maxangle="360"
+					startcolor=".0 .8 .8"
+					endcolor=".2 .2 .7"
+					startalpha=".4"
+					midalpha=".4"
+					endalpha="0"
+					startframe=".3"
+					endframe=".1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="200"
+				particlelife="70"
+				direction="0 1 0"
+				minangle="0"
+				maxangle="0"
+				directionalspace="local"
+				speed="1"
+				material="/shared/effects/materials/refract_gush.material"
+			>
+				<particle
+					startsize="40"
+					endsize="00"
+					angle="0"
+					turn="1"
+					param=".025"
+					startalpha="1"
+					endalpha="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="100"
+				particlelife="150"
+				offsetsphere="0"
+				direction="0 1 0"
+				minangle="0"
+				maxangle="0"
+				directionalspace="local"
+				position="0 10 0"
+				speed="1"
+				material="/shared/effects/materials/arc_add.material"
+			>
+				<particle
+					startsize="60"
+					startwidth="30"
+					endsize="20"
+					endwidth="10"
+					startcolor=".55"
+					midcolorpos=".45"
+					midcolor=".15"
+					endcolor="0"
+					startalpha=".7"
+					midalpha=".7"
+					endalpha="0"
+					anchor=".3"
+					startframe="0"
+					endframe="1"
+					turn="1"
+				/>
+			</simpleemitter>
+
+			
+			
+			<!-- water droplets -->
+			<simpleemitter
+				spawnrate="700"
+				minparticlelife="50"
+				maxparticlelife="200"
+				position="0 10 0"
+				offsetsphere="30"
+				direction="0 -1 0"
+				minangle="0"
+				maxangle="0"
+				speed="200"
+				gravity="100"
+				material="/shared/effects/materials/bubble_add.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor="0 1 2"
+					endcolor="0"
+					startsize="7"
+					midsize="7"
+					endsize="0"
+					maxangle="360"
+					minscale=".1"
+					maxscale="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="700"
+				minparticlelife="50"
+				maxparticlelife="200"
+				position="0 10 0"
+				offsetsphere="3"
+				direction="0 -1 0"
+				minangle="0"
+				maxangle="0"
+				speed="200"
+				gravity="100"
+				material="/shared/effects/materials/bubble_add.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor="0 .5 2"
+					endcolor="0"
+					startsize="15"
+					midsize="15"
+					endsize="0"
+					maxangle="360"
+					minscale=".1"
+					maxscale="1"
+				/>
+			</simpleemitter>
+				
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

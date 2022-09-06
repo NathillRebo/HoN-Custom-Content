@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bephelgor_Ability3"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	ishidden="true"
+	impactinterval="100"
+>
+	<onimpact>
+		<setvar0 a="8,12,16,20" />
+		<addcharges count="0" entity="this_spawner_entity" />
+		<compare a="result" b="var0" op="lt">
+			<targettype type="illusion" target="source_entity" />
+			<else>
+				<addcharges count="1" entity="this_spawner_entity" />
+				<heal target="source_entity" a="10,15,20,25" />
+				<delete target="target_entity" />
+				<hasavatarkey name="Hero_Bephelgor.Alt3" >
+					<playeffect effect="effects/capture_alt3.effect" target="source_entity" />
+				</hasavatarkey> 
+				<else>
+					<hasavatarkey name="Hero_Bephelgor.Alt5" >
+						<playeffect effect="effects/capture_alt5.effect" target="source_entity" />
+					</hasavatarkey> 
+					<else>
+						<playeffect effect="effects/capture.effect" target="source_entity" />
+					</else>
+				</else>
+			</else>
+		</compare>
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost">
+		<onimpact>
+			<setvar0 a="8,12,16,20" />
+			<addcharges count="0" entity="this_spawner_entity" />
+			<compare a="result" b="var0" op="lt">
+				<targettype type="illusion" target="source_entity" />
+				<else>
+					<addcharges count="1" entity="this_spawner_entity" />
+					<heal target="source_entity" a="10,15,20,25" />
+					<applystate name="State_Bephelgor_Ability3_Shard" duration="10000" target="source_entity" />
+					<delete target="target_entity" />
+					<hasavatarkey name="Hero_Bephelgor.Alt3" >
+						<playeffect effect="effects/capture_alt3.effect" target="source_entity" />
+					</hasavatarkey> 
+					<else>
+						<hasavatarkey name="Hero_Bephelgor.Alt5" >
+							<playeffect effect="effects/capture_alt5.effect" target="source_entity" />
+						</hasavatarkey> 
+						<else>
+							<playeffect effect="effects/capture.effect" target="source_entity" />
+						</else>
+					</else>
+				</else>
+			</compare>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Bephelgor.Alt4"
+		icon="/heroes/bephelgor/alt4/ability_03/icon.tga"
+	/>
+	
+</state>

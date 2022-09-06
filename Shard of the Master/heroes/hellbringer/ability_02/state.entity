@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hellbringer_Ability2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	displaylevel="true"
+	deniable="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	impactinterval="1000"
+	maxcharges="8"
+	
+	
+>
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		movespeedslow="0.35"
+	/>
+	
+	<onframe />
+	
+	<onimpact>
+		<addcharges />
+		<damage effecttype="Magic DOT" amount="10" b="charges" op="mult" />
+		<popup name="poison" a="result" source="target_entity" target="source_entity" />
+		<compare a="charges" b="8" op="eq" >
+			<setcharges a="0" />
+		</compare>
+	</onimpact>
+	
+	<altavatar key="Hero_Hellbringer.Alt2" modpriority="90"
+		passiveeffect="../alt2/ability_02/effects/state.effect"
+		icon="../alt2/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt3" modpriority="90"
+		passiveeffect="../alt3/ability_02/effects/state.effect"
+		icon="../alt3/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_02/effects/state.effect"
+		icon="../alt5/ability_02/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Hellbringer.Alt6" modpriority="90"
+		passiveeffect="../alt6/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Hellbringer.Alt7" modpriority="90"
+		passiveeffect="../alt7/ability_02/effects/state.effect"
+		icon="../alt7/ability_02/icon.tga"
+	/>
+</state>

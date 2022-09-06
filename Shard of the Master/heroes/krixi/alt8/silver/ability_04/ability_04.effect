@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="moon_beam">
+	<definitions>
+		
+		<particlesystem name="system0" space="entity" scale="1.5">
+			<sound
+				sample="/heroes/krixi/ability_01/sounds/ability_01.wav"
+				volume="0.45"
+				linearfalloff="true"
+				falloffstart="1500"
+				falloffend="2500"
+			/>
+			
+			<sound
+				sample="/heroes/krixi/alt8/sounds/ab4.wav"
+				volume="0.45"
+				linearfalloff="true"
+				falloffstart="1500"
+				falloffend="2500"
+			/>
+		
+	<!-- hekix trail -->	
+		<simpleemitter
+			delay="-1000" spawnrate="10" count="6"
+			minparticlelife="1100"
+			maxparticlelife="1300"
+			position="0 0 70"
+			offsetsphere="15"
+		>
+			<particle 
+			>
+				<model
+					position="0 0 0"
+					life="1200"
+					anim="idle"
+					model="/shared/effects/models/helix/helix.mdf"
+					startscale=".1" midscale=".1" endscale="0" midscalepos=".65"
+					color="0 0 0" alpha="0"
+				>
+					<template name="trails">
+						<trailemitter
+							bone="{bone}"
+							spawnrate="150"
+							particlelife="450" 
+							texpostime="50"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/phantom_smoke_13.material"
+						>
+							<particle
+								startsize="700" midsize="500" endsize="500" midsizepos=".5"
+								startcolor="0" midcolor=".35 .3 .35" endcolor=".25 .25 1" midcolorpos=".5"
+								startalpha="0" midalpha=".5" endalpha="0" midalphapos=".15"
+							/>
+						</trailemitter>
+						<simpleemitter
+							bone="{bone}"
+							spawnrate="15"
+							offsetradial="20"
+							offsetdirection="0 0 1"
+							offsetradialangle="90"
+							material="/shared/effects/materials/sparks_reveal_white.material"
+							minparticlelife="800" maxparticlelife="1000"
+							startalpha="1" endalpha="0"
+							gravity="-2"
+							collide="1"
+							depthbias="10"
+							inheritvelocity=".2"
+						>
+							<particle
+								maxangle="360"
+								minsize="300"
+								maxsize="400"
+								startframe=".25"
+								endframe="1"
+								startcolor="1" endcolor="0 .2 3"
+							/>
+						</simpleemitter>
+					</template>
+					<instance name="trails" bone="_bone_fx_01" />
+				</model>
+			</particle>
+		</simpleemitter>
+		
+	<!-- groundsprite -->
+		<groundsprite
+			bone="_bone_origin"
+			life="1400"
+			delay="150"
+			timenudge="0"
+			material="/shared/effects/materials/luna_moon_symbol_03.material"
+			size="45"
+			startcolor="0 0 0"
+			midcolor=".5 .5 .65"
+			endcolor="0 0 0"
+			midcolorpos=".4"	
+			startalpha="1"
+			midalpha="1"
+			endalpha="0"
+			midalphapos=".4"
+			yawspeed="90"
+		/>
+		<groundsprite
+			bone="_bone_origin"
+			life="1400"
+			delay="150"
+			timenudge="0"
+			material="/shared/effects/materials/luna_moon_symbol_03.material"
+			size="50"
+			startcolor="0 0 0"
+			midcolor=".25 .25 .5"
+			endcolor="0 0 0"
+			midcolorpos=".5"	
+			startalpha="1"
+			midalpha="1"
+			endalpha="0"
+			midalphapos=".4"
+			yawspeed="-90" 
+		/>
+	
+	<!-- STREAKS -->
+		<simpleemitter
+			life="1000"
+			delay="0"
+			spawnrate="60"
+			count="1"
+			bone="_bone_origin"
+			particlelife="1575"			
+			gravity="0"
+			speed="0"
+			drag="0"
+			acceleration="0"
+			position="0 0 205"
+			material="/shared/effects/materials/streak_08.material"
+			offsetsphere="0 0 0"
+			minangle="0"
+			maxangle="0"
+			direction="0 0 0"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+			<particle 
+				minangle="0" maxangle="0"
+				minanglespeed="0" maxanglespeed="0"
+				startcolor="0 0 0" midcolor="0 .5 .75" endcolor="0 0 0" midcolorpos=".3"
+				startframe="0" endframe="1"
+				startwidth="10" midwidth="75" endwidth="150" midwidthpos=".2"
+				height="820"
+				startalpha="0" midalpha="1" endalpha="0" midalphapos=".1"
+				startstickiness="0" 	endstickiness="0"
+				lockup="true" lockright="false"
+			/>
+		</simpleemitter>
+
+		<simpleemitter
+			life="1000"
+			delay="0"
+			spawnrate="60"
+			count="1"
+			bone="_bone_origin"
+			particlelife="1200"			
+			gravity="0"
+			speed="0"
+			drag="0"
+			acceleration="0"
+			position="0 0 205"
+			material="/shared/effects/materials/streak_08.material"
+			offsetsphere="0 0 0"
+			minangle="0"
+			maxangle="0"
+			direction="0 0 0"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+			<particle 
+				minangle="0" maxangle="0"
+				minanglespeed="0" maxanglespeed="0"
+				startcolor="0 0 0" midcolor="0 .5 .75" endcolor="0 0 0" midcolorpos=".5"
+				startframe="0" endframe="1"
+				startwidth="5" midwidth="16" endwidth="31" midwidthpos=".2"
+				height="820"
+				startalpha="0" midalpha=".1" endalpha="0" midalphapos=".1"
+				startstickiness="0" endstickiness="0"
+				lockup="true" lockright="false"
+			/>
+		</simpleemitter>
+
+		<simpleemitter
+			life="1000"
+			delay="0"
+			spawnrate="60"
+			count="1"
+			bone="_bone_origin"
+			particlelife="1000"			
+			gravity="0"
+			speed="0"
+			drag="0"
+			acceleration="0"
+			position="0 0 205"
+			material="/shared/effects/materials/streak_08.material"
+			offsetsphere="0 0 0"
+			minangle="0"
+			maxangle="0"
+			direction="0 0 0"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+			<particle 
+				minangle="0" maxangle="0"
+				minanglespeed="0" maxanglespeed="0"
+				startcolor="0 0 0" midcolor="0 .25 .5" endcolor="0 0 0" midcolorpos=".5"
+				startframe="0" endframe="1"
+				startwidth="5" midwidth="220" endwidth="5" midwidthpos=".2"
+				height="820"
+				startalpha="0" midalpha=".1" endalpha="0" midalphapos=".1"
+				startstickiness="0" endstickiness="0"
+				lockup="true" lockright="false"
+			/>
+		</simpleemitter>
+
+	<!-- LIGHT -->
+		<light
+			life="750"
+			startcolor="1 2 3"
+			endcolor="0 0 0"
+			midcolorpos=".2"
+			falloffstart="50"
+			falloffend="150"
+			position="0 0 50"
+		/>
+
+<!-- *****************  PROJECTILE GLOW 2 **************** -->
+
+<!-- Frost FLASHES -->
+     <template name="flashs" >
+		<simpleemitter
+			spawnrate="36"
+			count="3"
+			minparticlelife="600" maxparticlelife="800"
+			bone="_bone_origin"
+			position="0 0 160"
+			material="/shared/effects/materials/flare_01.material"
+		>
+			<particle 
+				angle="{angle}"
+				startcolor=".8 .9 1" midcolor=".8 .9 1" endcolor="0 0 0" midcolorpos=".5"
+				startframe="0" endframe="1"
+				minstartwidth="450" midwidth="225" endwidth=".1"
+				startheight="1" midheight="5" endheight="10" endheightpos=".9"
+				startalpha="1" midalpha="1" endalpha="1" midalphapos=".3"
+			/>
+		</simpleemitter>
+	</template>
+	<instance name="flashs" angle="0"/>
+	<instance name="flashs" angle="90"/>
+	<instance name="flashs" angle="45"/>
+	<instance name="flashs" angle="-45"/>
+	
+		<simpleemitter
+			life="1800"
+			delay="500"
+			spawnrate="60"
+			count="1"
+			bone="_bone_origin"
+			particlelife="1000"			
+			gravity="0"
+			speed="0"
+			drag="0"
+			acceleration="0"
+			position="0 0 205"
+			material="/shared/effects/materials/streak_11.material"
+			offsetsphere="0 0 0"
+			minangle="0"
+			maxangle="0"
+			direction="0 0 0"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+			<particle 
+				minangle="0" maxangle="0"
+				minanglespeed="0" maxanglespeed="0"
+				startcolor="0" midcolor=".5 .5 .75" endcolor="0 0 0" midcolorpos=".5"
+				startframe="0" endframe="1"
+				startwidth="5" midwidth="90" endwidth="180"
+				height="820"
+				startalpha="0" midalpha=".1" endalpha="0" midalphapos=".1"
+				startstickiness="0" endstickiness="0"
+				lockup="true" lockright="false"
+			/>
+		</simpleemitter>
+
+		<simpleemitter
+			life="1800"
+			delay="700"
+			spawnrate="60"
+			count="1"
+			bone="_bone_origin"
+			particlelife="1000"			
+			gravity="0"
+			speed="0"
+			drag="0"
+			acceleration="0"
+			position="0 0 205"
+			material="/shared/effects/materials/streak_11.material"
+			offsetsphere="0 0 0"
+			minangle="0"
+			maxangle="0"
+			direction="0 0 0"
+			offsetdirection="0 0 0"
+			offsetradial="0 0 0"
+		>
+			<particle 
+				minangle="0" maxangle="0"
+				minanglespeed="0" maxanglespeed="0"
+				startcolor="0" midcolor=".8" endcolor="0 0 0" midcolorpos=".2"
+				startframe="0" endframe="1"
+				startwidth="0" midwidth="40" endwidth="140"
+				height="820"
+				startalpha="0" midalpha=".1" endalpha="0" midalphapos=".1"
+				startstickiness="0" endstickiness="0"
+				lockup="true" lockright="false"
+			/>
+		</simpleemitter>
+		
+	<!-- SPARKLES -->
+		<simpleemitter
+			life="3000"
+			delay="500"
+			bone="_bone_origin"
+			spawnrate="33"
+			count="32"
+			particlelife="250"			
+			gravity="0"
+			speed="2"
+			drag="0"
+			acceleration="0"
+			position="0 0 180"
+			material="/shared/effects/materials/frost_flash_15.material"
+			offsetsphere="5 5 425"
+			minangle="360"
+			maxangle="180"
+			direction="0 0 1"
+			offsetdirection="0 0 0"
+			offsetradial="0"
+		>
+			<particle 
+				minangle="135" maxangle="210"
+				minanglespeed="-50" maxanglespeed="-150"
+				startcolor="2 2 2" 	midcolor="2 2 2" endcolor="2 2 2" midcolorpos=".2"
+				startframe="0" endframe="1"
+				startsize="50" midsize="15" endsize=".1" midsizepos=".5"
+				startalpha="1" midalpha="1" endalpha="0" midalphapos=".5"
+			/>
+			<particle 
+				minangle="135" maxangle="210"
+				minanglespeed="-50" maxanglespeed="-150"
+				startcolor="2 2 2" 	midcolor="2 2 2" endcolor="2 2 2" midcolorpos=".2"
+				startframe="0" endframe="1"
+				startsize="35" midsize="35" endsize=".1" midsizepos=".5"
+				startalpha="1" midalpha="1" endalpha="0" midalphapos=".5"
+			/>
+			<particle 
+				minangle="135" maxangle="210"
+				minanglespeed="-50" maxanglespeed="-150"
+				startcolor="2 2 2" 	midcolor="2 2 2" endcolor="2 2 2" midcolorpos=".2"
+				startframe="0" endframe="1"
+				startsize="35" midsize="15" endsize=".1" midsizepos=".5"
+				startalpha="1" midalpha="1" endalpha="0" midalphapos=".5"
+			/>
+		</simpleemitter>
+		
+		<!-- IMPACT STAR -->
+		<simpleemitter
+			spawnrate="100"
+			particlelife="270"
+			bone="_bone_centerofchest"
+			count="10"
+			material="/shared/effects/materials/star_03.material"
+			speed="10"
+			drag="0.05"
+			offsetsphere="0 0 0"
+			position="0 0 0"
+		>
+			<particle
+				startcolor="1" midcolor="1" endcolor="0" midcolorpos="0.5"
+				startalpha="1.0" endalpha="0.0"
+				minangle="0" maxangle="360"
+				width="3.5"
+				startheight="1.0" endheight="70.0"
+				flare="true" turn="false"
+			/>
+		</simpleemitter>
+	
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

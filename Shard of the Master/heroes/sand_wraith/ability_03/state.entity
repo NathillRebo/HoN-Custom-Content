@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_SandWraith_Ability3"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+
+	attackspeed="0.15,0.3,0.45,0.6"
+>
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onattackimpact>
+			<areaofeffect
+				radius="304"
+				targetselection="all"
+				targetscheme="nonneutral_enemy_units"
+				effecttype=""
+				center="target_position"
+			>
+			</areaofeffect> <!-- Checks nearby enemies -->
+			<compare a="result" b="1" op="le">
+				<targettype type="illusion" target="source_entity" >
+					<damage effecttype="Magic" amount="33.33" />
+				</targettype>
+				<else>
+					<damage effecttype="Magic" amount="100" />
+				</else>
+			</compare>
+		</onattackimpact>
+	</modifier>
+	<altavatar key="Hero_SandWraith.Alt" modpriority="1"
+		passiveeffect="../alt/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_SandWraith.Alt2" modpriority="1"
+		passiveeffect="../alt2/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_SandWraith.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_SandWraith.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_03/effects/state.effect"
+	    icon="../alt4/ability_03/icon.tga"
+	/>
+	
+	<altavatar key="Hero_SandWraith.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_SandWraith.Alt9" modpriority="1"
+		passiveeffect="../alt9/ability_03/effects/state.effect"
+	    icon="../alt9/ability_03/icon.tga"
+	/>
+	
+	<altavatar key="Hero_SandWraith.Alt10" modpriority="1"
+	    icon="../ability_03/icon.tga"
+		passiveeffect="../alt10/ability_03/effects_03/state.effect"
+	>
+		<modifier key="rainstorm"
+			passiveeffect="../alt10/ability_03/effects_01/state.effect"
+		/>
+		
+		<modifier key="lightning"
+			passiveeffect="../alt10/ability_03/effects_02/state.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_SandWraith.Alt11" modpriority="1"
+		passiveeffect="../alt11/ability_03/effects/state.effect"
+	/>
+</state>

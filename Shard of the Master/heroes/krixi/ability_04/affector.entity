@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Krixi_Ability4"
+
+	radius="700"
+	
+	impactinterval="600"
+	maxintervals="5,8,11"
+	maximpactsperinterval="1"
+	maximpactspertarget="4"
+	targetselection="random"
+	targetscheme="visible_enemy_units"
+	effecttype="Magic"
+	
+	effect=""
+	impacteffect="effects/ability_04_impact.effect"
+	dynamicprecache="effects/ability_04_impact.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/ability_04_impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<damage effecttype="Magic" amount="200,250,300" />
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="100"
+		impactinterval="450"
+		maximpactspertarget="6,9,12"
+		maxintervals="6,12,18"		
+	>
+		<onimpact>
+			<!-- Main target -->
+			<applystate name="State_Stunned" duration="100" />
+			<damage effecttype="Magic" amount="200,250,300" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Krixi.Alt2" modpriority="100"
+	    impacteffect="../alt2/ability_04/effects/ability_04_impact.effect"
+		dynamicprecache="../alt2/ability_04/effects/ability_04_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt2/ability_04/effects/ability_04_impact.effect" entity="this_entity" />
+		</onspawn>
+    </altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt3" modpriority="100"
+	    impacteffect="../alt3/ability_04/effects/ability_04_impact.effect"
+		dynamicprecache="../alt3/ability_04/effects/ability_04_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt3/ability_04/effects/ability_04_impact.effect" entity="this_entity" />
+		</onspawn>
+    </altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt4" modpriority="100"
+	    impacteffect="../alt4/ability_04/effects/ability_04_impact.effect"
+		dynamicprecache="../alt4/ability_04/effects/ability_04_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt4/ability_04/effects/ability_04_impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt5" modpriority="100"
+	    impacteffect="../alt5/ability_04/effects/ability_04_impact.effect"
+		dynamicprecache="../alt5/ability_04/effects/ability_04_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt5/ability_04/effects/ability_04_impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt6" modpriority="100"
+	    impacteffect="../alt6/ability_04/effects/ability_04_impact.effect"
+		dynamicprecache="../alt6/ability_04/effects/ability_04_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt6/ability_04/effects/ability_04_impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt7" modpriority="100"
+	    impacteffect="../alt7/ability_04/effects/ability_04_impact.effect"
+		dynamicprecache="../alt7/ability_04/effects/ability_04_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt7/ability_04/effects/ability_04_impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt8" modpriority="100"
+	    impacteffect="../alt8/ability_04/ability_04_impact.effect"
+		dynamicprecache="../alt8/ability_04/effects/ability_04_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt8/ability_04/effects/ability_04_impact.effect" entity="this_entity" />
+		</onspawn>
+		
+		<modifier key="mastery_silver" modpriority="101"
+			impacteffect="../alt8/silver/ability_04/ability_04_impact.effect"
+			dynamicprecache="../alt8/silver/ability_04/ability_04_impact.effect"
+		>
+			<onspawn>
+				<setscriptvalue name="impact_effect" value="../alt8/silver/ability_04/ability_04_impact.effect" entity="this_entity" />
+			</onspawn>
+		</modifier>
+		
+		<modifier key="mastery_gold" modpriority="101"
+			impacteffect="../alt8/gold/ability_04/ability_04_impact.effect"
+			dynamicprecache="../alt8/gold/ability_04/ability_04_impact.effect"
+		>
+			<onspawn>
+				<setscriptvalue name="impact_effect" value="../alt8/gold/ability_04/ability_04_impact.effect" entity="this_entity" />
+			</onspawn>
+		</modifier>
+		
+		<modifier key="mastery_purple" modpriority="101"
+			impacteffect="../alt8/purple/ability_04/ability_04_impact.effect"
+			dynamicprecache="../alt8/purple/ability_04/ability_04_impact.effect"
+		>
+			<onspawn>
+				<setscriptvalue name="impact_effect" value="../alt8/purple/ability_04/ability_04_impact.effect" entity="this_entity" />
+			</onspawn>
+		</modifier>
+		
+		<modifier key="ult_boost" modpriority="110"
+			impactinterval="450"
+			maximpactspertarget="6,9,12"
+			maxintervals="6,12,18"		
+		>
+			<onimpact>
+				<!-- Main target -->
+				<applystate name="State_Stunned" duration="100" />
+				<damage effecttype="Magic" amount="200,250,300" />
+			</onimpact>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt9" modpriority="100"
+	    impacteffect="../alt9/ability_04/effects/ability_04_impact.effect"
+		dynamicprecache="../alt9/ability_04/effects/ability_04_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt9/ability_04/effects/ability_04_impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+</affector>

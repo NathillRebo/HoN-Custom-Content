@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Rampage_Ability1_Alt2"
+
+	speed="1200"
+	gravity=""
+	
+	effectscale="1.0"
+	
+	canturn="true"
+	flying="true"
+	flyheight="0"
+	
+	impactdistance="60"
+>
+	<onspawn>
+		<playeffect effect="warp.effect" source="source_entity" target=""/>
+	</onspawn>
+
+	<onimpact>
+		<expirestate name="State_Rampage_Ability1_Cooldown" target="source_entity" />
+		<cantarget targetscheme="enemy_units" ignoreinvulnerable="false">
+			<combatevent effecttype="AbilityBasedProjectile">
+				<onimpact>
+					<expirestate name="State_Rampage_Ability1_Disabled" target="source_entity" />
+					<cantarget effecttype="Physical">
+						<applystate name="State_Rampage_Ability3" duration="950,1150,1350,1550" />
+						<spawnaffector name="Affector_Rampage_Ability1" target="target_entity" />
+						<cantarget effecttype="Push">
+							<push force="147,157,163,168" duration="950,1150,1350,1550" source="source_entity" />
+						</cantarget>
+						<damage effecttype="Physical" amount="100,140,180,220" />
+					</cantarget>
+				</onimpact>
+			</combatevent>
+		</cantarget>
+		<playeffect effect="../../ability_03/effects/impact.effect" source="target_entity"/>
+		<playeffect effect="../../ability_03/effects/cast.effect" target="source_entity"/>
+	</onimpact>
+</projectile>

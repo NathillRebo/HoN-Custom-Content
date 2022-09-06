@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Moira3"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	noshuffle="true"
+	
+	anim="ability_3"
+	casteffect=""
+	casttime="100"
+	castactiontime="100"
+	channeltime="2000"
+	ischanneling="true"
+
+	actiontype="target_position"
+	casteffecttype="Magic"
+	
+	manacost="70,85,100,115"
+	cooldowntime="95000,90000,85000,80000"
+	
+	range="2000,3000,4000,5000"
+
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+>
+	<onimpact />
+
+	<onchannelstart>
+		<!-- Spawn Mimic -->
+		<!-- Meaningful lifetime of spirit = channel time + lifetime -->
+		<spawnmimic
+			owner="source_entity"
+			source="source_entity"
+			target="target_position"
+			receivedamagemultiplier="2.5"
+			inflictdamagemultiplier="0.5"
+			count="1"
+			lifetime="14000,20000,26000,32000"
+			pushentity="true"
+
+			spawneffect=""
+		/>
+		<applystate name="State_Moira_Ability3_Disabled" duration="2000" target="stack_entity" />
+		<applystate name="State_Moira_Ability3_Mimic" continuous="true" target="stack_entity" proxy="source_entity" />
+
+		<setproxy entity="stack_entity" target="source_entity" />
+
+		<setproxy entity="this_entity" target="stack_entity" />
+
+		<!-- Give it max health  -->
+		<changehealth target="stack_entity" a="9999" />
+
+		<!-- If an enemy is within 1000 units, reveal Moira -->
+		<areaofeffect
+			center="stack_entity"
+			targetscheme="enemy_units"
+			targetselection="all"
+			maximpactspertarget="1"
+			radius="1000"
+		/>
+		<compare a="result" b="1" op="ge">
+			<setvar0 a="source_team" />
+			<compare a="var0" b="1" op="eq">
+				<spawnunit name="Gadget_Moira_Ability3_Reveal" target="target_position" pushentity="true" ischannel="true" team="2" fixedposition="true" />
+			</compare>
+			<compare a="var0" b="2" op="eq">
+				<spawnunit name="Gadget_Moira_Ability3_Reveal" target="target_position" pushentity="true" ischannel="true" team="1" fixedposition="true" />
+			</compare>
+		</compare>
+		
+		<!-- Apply self state to channel the hero, set the proxy of the ability to the state -->
+		<applystate name="State_Moira_Ability3_Self_Start" duration="2000" target="source_entity" pushentity="true" proxy="this_proxy_entity" />
+	</onchannelstart>
+
+	<onchannelbreak>
+		<applystate name="State_Moira_Ability3_Stunned" target="this_proxy_entity" continuous="true" />
+		<expirestate name="State_Moira_Ability3_Self_Start" target="source_entity" />
+	</onchannelbreak>
+
+	<onchannelend>
+		<!-- Apply self state to channel the hero, set the proxy of the ability to the state -->
+		<applystate name="State_Moira_Ability3_Self" duration="12000,18000,24000,30000" target="source_entity" pushentity="true" proxy="this_proxy_entity" />
+		
+		<!-- Start specific item cooldowns on the mimic -->		
+		<foreachitem source="this_proxy_entity">
+			<!-- Portal Key -->
+			<entitytype target="target_entity" type="Item_PortalKey">
+				<startcooldown duration="3000" entity="target_entity" />
+			</entitytype>
+		</foreachitem>
+
+		<selectentity source="source_entity" targets="this_proxy_entity"/>	
+		<replaceinselectionsets source="source_entity" target="this_proxy_entity" />
+
+		<!-- Apply a state to the mimic so that if he dies it pops the hero out of it early and spawn the shared exp gadget -->
+		<spawnunit name="Gadget_Moira_Ability3" count="1" target="this_proxy_position" proxy="this_proxy_entity" />
+	</onchannelend>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onchannelstart>
+			<!-- Spawn Mimic -->
+			<!-- Meaningful lifetime of spirit = channel time + lifetime -->
+			<spawnmimic
+				owner="source_entity"
+				source="source_entity"
+				target="target_position"
+				receivedamagemultiplier="1"
+				inflictdamagemultiplier="1"
+				count="1"
+				lifetime="17000,23000,29000,35000"
+				pushentity="true"
+
+				spawneffect=""
+			/>
+			<applystate name="State_Moira_Ability3_Disabled" duration="2000" target="stack_entity" />
+			<applystate name="State_Moira_Ability3_Mimic" continuous="true" target="stack_entity" proxy="source_entity" />
+
+			<setproxy entity="stack_entity" target="source_entity" />
+
+			<setproxy entity="this_entity" target="stack_entity" />
+
+			<!-- Give it max health  -->
+			<changehealth target="stack_entity" a="9999" />
+
+			<!-- If an enemy is within 1000 units, reveal Moira -->
+			<areaofeffect
+				center="stack_entity"
+				targetscheme="enemy_units"
+				targetselection="all"
+				maximpactspertarget="1"
+				radius="1000"
+			/>
+			<compare a="result" b="1" op="ge">
+				<setvar0 a="source_team" />
+				<compare a="var0" b="1" op="eq">
+					<spawnunit name="Gadget_Moira_Ability3_Reveal" target="target_position" pushentity="true" ischannel="true" team="2" fixedposition="true" />
+				</compare>
+				<compare a="var0" b="2" op="eq">
+					<spawnunit name="Gadget_Moira_Ability3_Reveal" target="target_position" pushentity="true" ischannel="true" team="1" fixedposition="true" />
+				</compare>
+			</compare>
+			
+			<!-- Apply self state to channel the hero, set the proxy of the ability to the state -->
+			<applystate name="State_Moira_Ability3_Self_Start" duration="2000" target="source_entity" pushentity="true" proxy="this_proxy_entity" />
+		</onchannelstart>
+		
+		<onchannelend>
+		<!-- Apply self state to channel the hero, set the proxy of the ability to the state -->
+		<applystate name="State_Moira_Ability3_Self" duration="15000,21000,27000,33000" target="source_entity" pushentity="true" proxy="this_proxy_entity" />
+		
+		<!-- Start specific item cooldowns on the mimic -->		
+		<foreachitem source="this_proxy_entity">
+			<!-- Portal Key -->
+			<entitytype target="target_entity" type="Item_PortalKey">
+				<startcooldown duration="3000" entity="target_entity" />
+			</entitytype>
+		</foreachitem>
+
+		<selectentity source="source_entity" targets="this_proxy_entity"/>	
+		<replaceinselectionsets source="source_entity" target="this_proxy_entity" />
+
+		<!-- Apply a state to the mimic so that if he dies it pops the hero out of it early and spawn the shared exp gadget -->
+		<spawnunit name="Gadget_Moira_Ability3" count="1" target="this_proxy_position" proxy="this_proxy_entity" />
+	</onchannelend>
+	</modifier>
+
+	<modifier key="Moiraiamammimic" modpriority="100" condition="mimic"
+		requiredlevel="26"
+	>
+	</modifier>
+
+	<modifier key="Moira_Mimic" modpriority="100"
+		ignorecooldown="true"
+		anim="" 
+		icon="icon2.tga"
+		casttime="0"
+		castactiontime="0"
+		manacost="0"
+		actiontype="no_target"
+		cooldowntime="0"
+		ischanneling="false"
+	>
+		<onimpact>
+			<!-- Stun the spirit -->
+			<applystate name="State_Moira_Ability3_Stunned" target="source_entity" continuous="true" />
+
+			<!-- Reselect the hero -->
+			<order command="stop" force="true" target="source_owner_entity" source="source_owner_entity" />
+			<selectentity source="source_owner_entity" targets="source_owner_entity"/>
+			<replaceinselectionsets source="source_entity" target="source_owner_entity" />
+
+			<!-- Expire the state  -->
+			<expirestate target="source_owner_entity" name="State_Moira_Ability3_Self" />
+		</onimpact>
+	</modifier>
+</ability>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Magmus_Fire"
+
+	icon="icon.tga"
+	passiveeffect="effects/burningstate.effect"
+	
+	deniable="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"	
+>
+	<onframe>
+		<evaluate a="36" b="frametime" op="mult" />
+		<damage effecttype="DOT" amount="1" b="result" op="mult" />
+	</onframe>
+</state>

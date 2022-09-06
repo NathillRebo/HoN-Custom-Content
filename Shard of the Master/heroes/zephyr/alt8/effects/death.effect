@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+	<definitions>
+	
+		<modifier
+			color=".25"
+			life="10000"
+		/>
+		
+		<particlesystem deferred="true" name="system0" space="world" scale="1.0">
+			
+			<simpleemitter
+				count="1"
+				bone="_bone_centerofchest"
+				particlelife="300"
+				depthbias="0"
+				material="/shared/effects/materials/fireball_01.material"
+			>
+				<particle
+					startcolor="1 .5 0"
+					midcolor="1 .5 0"
+					endcolor="0"
+					startsize="10"
+					endsize="300"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="1"
+				bone="_bone_centerofchest"
+				particlelife="300"
+				depthbias="-100"
+				material="/shared/effects/materials/bad_healing_smoke_05.material"
+			>
+				<particle
+					startcolor="1 .5 0"
+					endcolor="0"
+					startalpha="1"
+					endalpha="0"
+					startsize="10"
+					endsize="300"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<groundsprite
+				size="150"
+				life="2000"
+				startalpha="1"
+				midalpha="1"
+				midalphapos=".65"
+				endalpha="0"
+				material="/shared/effects/materials/ground_scorch.material"
+			/>
+			
+			<simpleemitter
+				count="20"
+				bone="_bone_centerofchest"
+				minparticlelife="100"
+				maxparticlelife="300"
+				minspeed="100"
+				maxspeed="300"
+				depthbias="-100"
+				material="/shared/effects/materials/soul_projectile2.material"
+			>
+				<particle
+					startcolor="1 .5 0"
+					midcolor="1 .25 0"
+					endcolor="0"
+					startsize="0"
+					endsize="40"
+					angle="90"
+					turn="1"
+					anchor="1"
+					minscale="1"
+					maxscale="2"
+				/>
+			</simpleemitter>
+			
+			<template name="fire_wisps" >
+				<controller bone="{bone}" >
+					<simpleemitter
+						life="500"
+						spawnrate="50"
+						directionalspace="local"
+						position="{position}"
+						minparticlelife="300"
+						maxparticlelife="600"
+						gravity="-10"
+						material="/shared/effects/materials/flame.material"
+					>
+						<particle
+							startsize="10"
+							endsize="4"
+							startwidth="15"
+							midwidth="7"
+							endwidth="4"
+							startcolor="1 .4 .4"
+							endcolor="0"
+							anchor=".75"
+							scale=".75"
+						/>
+						<particle
+							startsize="10"
+							endsize="4"
+							startwidth="15"
+							midwidth="7"
+							endwidth="4"
+							startcolor="1 .4 .4"
+							endcolor="0"
+							anchor=".75"
+							yaw="180"
+							scale=".75"
+						/>
+					</simpleemitter>
+				</controller>
+			</template>
+			
+			<instance name="fire_wisps" bone="Bone_R_beard_05" position="9 2 0" />
+			<instance name="fire_wisps" bone="Bone_R_beard_02" position="9 2 0" />
+			<instance name="fire_wisps" bone="Bone_L_beard_05" position="9 -2 0" />
+			<instance name="fire_wisps" bone="Bone_L_beard_02" position="9 -2 0" />
+			
+			
+
+			
+	</particlesystem>
+
+</definitions>
+<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<spawnmodifier instance="instance0" />
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+</thread>
+</effect>
+
+
+
+
+

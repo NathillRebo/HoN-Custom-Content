@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Kane3"
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_Kane_Ability3"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	actiontype="passive"
+	
+>
+	<onattackingpredamage>
+		<combatsupertype supertype="attack">
+			<combateffecttype effecttype="Attack">
+				<cantarget targetscheme="enemy_units_and_structures_and_noboss" >
+					<applystate name="State_Kane_Ability3" source="this_owner_entity" owner="this_owner_entity" target="target_entity" duration="4000" pushentity="true" />
+					<addcharges entity="stack_entity" count="1" />
+				</cantarget>
+			</combateffecttype>
+		</combatsupertype>
+	</onattackingpredamage>
+	
+	<onattackpreimpact>
+		<combatsupertype supertype="attack">
+			<combateffecttype effecttype="Attack">
+				<applystate name="State_Kane_Ability3" duration="0" pushentity="true" />
+				<compare a="source_charges" source="stack_entity" b="0" op="gt">
+					<!-- Bonus damage dealt to opponent based on their Attack Damage -->
+					<setvar0 a="source_charges" source="stack_entity" b="0.05" op="mult" />
+					<setvar1 a="target_attackdamage" b="var0" op="mult" />
+					<setvalue name="combat_basedamage" a="combat_basedamage" b="var1" op="add" />
+				</compare>
+			</combateffecttype>
+		</combatsupertype>
+	</onattackpreimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onattackedpreimpact>
+			<combatsupertype supertype="attack">
+				<chance threshold="0.08">
+					<attack targetscheme="enemy_units" source="source_entity" target="target_entity" />
+				</chance>
+			</combatsupertype>
+		</onattackedpreimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Kane.Alt11"
+		icon="../alt11/ability_03/icon.tga"
+	/>	
+</ability>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Krixi2"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	casteffecttype="Physical"
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+
+	cooldowntime="1000"
+	
+	targetradius="500"
+	
+	nosilence="true"
+	nostun="true"
+	noresponse="true"
+
+>
+	<onattackstart priority="90">
+		<hasmodifier name="krosmode">
+			<targettype type="melee" target="source_entity">
+				<cantarget targetscheme="enemy_units">
+					<setattackprojectile name="Projectile_KrixiAttack_HD" />
+				</cantarget>
+			</targettype>
+		</hasmodifier>
+	</onattackstart>
+
+	<onimpact>
+		<setactivemodifierkey name="Ability_Krixi2_active" entity="this_entity" />
+	</onimpact>
+
+	<onattackimpact
+		priority="999"
+		activateonbounces="true"
+	>
+		<targettype type="building">
+			<bounce count="1,2,3,5" range="500" damagemult="0.5" targetscheme="visible_enemy_objects" seek="closest" maxbouncespertarget="1"/>
+		</targettype>
+		<else>
+			<bounce count="1,2,3,5" range="500" damagemult="0.75" targetscheme="visible_enemy_objects" seek="closest" maxbouncespertarget="1"/>
+		</else>
+	</onattackimpact>
+	
+	<modifier key="Ability_Krixi2_active" condition="toggle_active" modpriority="100"
+		icon="icon_b.tga"
+	>
+		<onattackimpact
+			priority="999"
+			activateonbounces="true"
+		>
+			<targettype type="hero">
+				<bounce count="1,2,3,5" range="500" damagemult="0.75" targetscheme="visible_enemy_heroes" seek="closest" maxbouncespertarget="1"/>
+			</targettype>
+		</onattackimpact>
+
+		<onimpact>
+			<setactivemodifierkey name="" entity="this_entity" />
+		</onimpact>
+
+	</modifier>
+	
+	<altavatar key="Hero_Krixi.Alt2" modpriority="1"
+		icon="../alt2/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt8" modpriority="1"
+	    icon="../alt8/ability_02/icon.tga" 
+	>
+		<modifier key="Ability_Krixi2_active" condition="toggle_active" modpriority="100"
+			icon="../alt8/ability_02/ability_2b.tga"
+		>
+			<onattackimpact
+				priority="999"
+				activateonbounces="true"
+			>
+				<targettype type="hero">
+					<bounce count="1,2,3,5" range="500" damagemult="0.75" targetscheme="visible_enemy_heroes" seek="closest" maxbouncespertarget="1"/>
+				</targettype>
+			</onattackimpact>
+			
+			<onimpact>
+				<setactivemodifierkey name="" entity="this_entity" />
+			</onimpact>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt9" modpriority="1"
+	    icon="../alt9/ability_02/icon.tga" 
+	>
+	    <modifier key="Ability_Krixi2_active" condition="toggle_active" modpriority="100"
+			icon="../alt9/ability_02/ability_2b.tga"
+		>
+			<onattackimpact
+				priority="999"
+				activateonbounces="true"
+			>
+				<targettype type="hero">
+					<bounce count="1,2,3,5" range="500" damagemult="0.75" targetscheme="visible_enemy_heroes" seek="closest" maxbouncespertarget="1"/>
+				</targettype>
+			</onattackimpact>
+			
+			<onimpact>
+				<setactivemodifierkey name="" entity="this_entity" />
+			</onimpact>
+		</modifier>
+    </altavatar>
+</ability>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".2"
+				sample="/shared/sounds/impacts/impact_flesh_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="/shared/sounds/impacts/impact_body_%.wav"
+			/>
+
+			<!-- peace & love poof -->
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				life="500"
+				count="4"
+				spawnrate="75"
+				particlelife="2500"
+				gravity=".5"
+				speed="150"
+				drag="0.1"
+				acceleration="0.0"
+				material="/shared/effects/materials/feather.material"
+				offsetsphere="35 35 50"
+				direction="0 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					minsize="10"
+					maxsize="25"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					minsize="10"
+					maxsize="25"
+					color="1 .5 1"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					minsize="10"
+					maxsize="25"
+					color="1 .75 1"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				life="500"
+				count="2"
+				spawnrate="75"
+				particlelife="2500"
+				gravity=".5"
+				speed="150"
+				drag="0.1"
+				acceleration="0.0"
+				material="/shared/effects/materials/peace.material"
+				offsetsphere="35 35 50"
+				direction="0 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					minsize="10"
+					maxsize="15"
+					color="1 0 1"
+					startalpha=".5"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				life="500"
+				count="7"
+				spawnrate="75"
+				particlelife="2500"
+				gravity=".5"
+				speed="150"
+				drag="0.1"
+				acceleration="0.0"
+				material="/shared/effects/materials/cherry_blossom.material"
+				offsetsphere="35 35 50"
+				direction="0 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+			>
+				<particle
+					minsize="6"
+					maxsize="10"
+					minanglespeed="-20"
+					maxanglespeed="20"
+					maxangle="360"
+					color="2"
+					startalpha="1"
+					midalpha=".8"
+					endalpha="0"
+				/>
+				<particle
+					minsize="6"
+					maxsize="10"
+					minanglespeed="-20"
+					maxanglespeed="20"
+					maxangle="360"
+					color="2 .65 .5"
+					startalpha="1"
+					midalpha=".8"
+					endalpha="0"
+				/>
+				<particle
+					minsize="6"
+					maxsize="10"
+					minanglespeed="-20"
+					maxanglespeed="20"
+					maxangle="360"
+					color=".5 .65 2"
+					startalpha="1"
+					midalpha=".8"
+					endalpha="0"
+				/>
+				<particle
+					minsize="6"
+					maxsize="10"
+					minanglespeed="-20"
+					maxanglespeed="20"
+					maxangle="360"
+					color=".5 2 .5"
+					startalpha="1"
+					midalpha=".8"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			
+			
+	</particlesystem>
+		
+</definitions>
+<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		
+		<waitfordeath  instance="instance1"/>
+</thread>
+</effect>
+
+
+
+
+

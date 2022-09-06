@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="local">
+		
+		<template name="traffic light">
+			<controller bone="_bone_weaponattach">
+				<simpleemitter
+					delay="{delay}"
+					position="{pos}"
+					material="/shared/effects/materials/whitedot.material"
+					particlelife="{life}"
+					timenudge="4000"
+					spawnrate=".25"
+				>
+					<particle
+						alpha="1"
+						color="{color}"
+						size="20"
+						anchor="1"
+					/>
+				</simpleemitter>
+			</controller>
+		</template>
+		
+		<instance name="traffic light" delay="0" pos="10 10 -5" life="1000" color="0 1 0" />
+		<instance name="traffic light" delay="0" pos="-10 10 20" life="2000" color="1 0 0" />
+		<instance name="traffic light" delay="0" pos="10 -10 20" life="2000" color="1 0 0" />
+		<instance name="traffic light" delay="0" pos="-10 -10 -5" life="1000" color="0 1 0" />
+		
+		<instance name="traffic light" delay="1000" pos="10 10 10" life="1000" color="1 .5 0" />
+		<instance name="traffic light" delay="2000" pos="-10 10 -5" life="1000" color="0 1 0" />
+		<instance name="traffic light" delay="2000" pos="10 -10 -5" life="1000" color="0 1 0" />
+		<instance name="traffic light" delay="1000" pos="-10 -10 10" life="1000" color="1 .5 0" />
+		
+		<instance name="traffic light" delay="2000" pos="10 10 20" life="2000" color="1 0 0" />
+		<instance name="traffic light" delay="3000" pos="-10 10 10" life="1000" color="1 .5 0" />
+		<instance name="traffic light" delay="3000" pos="10 -10 10" life="1000" color="1 .5 0" />
+		<instance name="traffic light" delay="2000" pos="-10 -10 20" life="2000" color="1 0 0" />
+			
+		<template name="exhaust">
+			<controller bone="{bone}">
+				<simpleemitter					
+					position="{pos}"
+					material="/shared/effects/materials/smoke_01.material"
+					particlelife="750"
+					spawnrate="75"
+					direction="0 -1 0"
+					speed="10"
+					gravity="-5"
+					offsetsphere="5"
+					particledirectionalspace="global"
+				>
+					<particle
+						startalpha=".5"
+						endalpha="0"
+						color=".75"
+						startsize="20"
+						endsize="10"
+						startanchor="1"
+						endanchor="0"
+					/>
+				</simpleemitter>
+			</controller>
+		</template>
+				
+			<instance name="exhaust" bone="Dummy002" pos="25 90 25" />
+			<instance name="exhaust" bone="Dummy002" pos="-25 90 25" />
+		
+		</particlesystem>
+	
+
+
+
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1"/>
+		<waitfordeath instance="instance0" />
+	
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

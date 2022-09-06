@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Nitro_Shard"
+		
+	icon=""
+	portrait=""
+	model="/shared/models/invis.mdf"
+	skin=""
+	
+	passiveeffect="../../behemoth/ability_01/effects/impact.effect"
+	spawneffect=""
+	respawneffect=""
+	isselectable="false"
+	iscontrollable="false"
+	invulnerable="true"
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="0.9"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="38"
+	boundsradius="40"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	clearvision="false"
+	drawonmap="false"
+
+	attacktype="none"
+	
+	lifetime="5000"
+	
+	corpsetime="0"
+	deathtime="0"
+	corpsefadetime="0"
+	
+	blocking="true"
+	noblockneutralspawn="true"
+	
+	effectinheritsstart="true"
+>
+</gadget>

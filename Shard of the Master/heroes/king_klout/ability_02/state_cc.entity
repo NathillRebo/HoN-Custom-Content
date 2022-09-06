@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_KingKlout_Ability2a_CC"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	silenced="true"
+	disarmed="true"
+>
+	<modifier key="shardofthemaster_boost" modpriority="100" movespeedslow="0.3"/>
+</state>

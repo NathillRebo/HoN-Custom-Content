@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Moira_Ability3_Self"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	
+	effecttype=""
+
+	ischanneling="true"
+	channeltime="12000,18000,24000,30000"
+	
+	modifierkey="channeling_spirit"
+>
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		channeltime="15000,21000,27000,33000"
+	/>
+	
+	<onchannelstart>
+		<playanim name="ability_3_channel" target="source_entity" />
+		<order command="forcechannel" source="this_owner_entity" target="this_owner_entity" />
+	</onchannelstart>
+
+	<onchannelbreak>
+		<!-- Stun the spirit -->
+		<applystate name="State_Moira_Ability3_Stunned" target="this_proxy_entity" continuous="true" />
+
+		<!-- Reselect the hero -->
+		<!--<order command="stop" force="true" target="this_owner_entity" source="this_owner_entity" />-->
+		<selectentity source="this_owner_entity" targets="this_owner_entity"/>
+		<replaceinselectionsets source="this_proxy_entity" target="this_owner_entity" />
+
+		<!-- Expire the state  -->
+		<expire />
+	</onchannelbreak>
+	
+	<onexpired>	
+		<compare a="this_proxy_entity" b="0" op="ne">
+			<!-- Stun the spirit -->
+			<applystate name="State_Moira_Ability3_Stunned" target="this_proxy_entity" continuous="true" />
+		</compare>		
+		
+		<playanim name="idle" />
+	</onexpired>
+
+	<onframe>
+		<targettype target="this_owner_entity" type="stunned">
+			<breakchannel entity="this_owner_entity" />
+		</targettype>
+
+		<targettype target="this_owner_entity" type="silenced">
+			<breakchannel entity="this_owner_entity" />
+		</targettype>
+	</onframe>
+
+	<ondeath>
+		<!-- Stun the spirit -->
+		<applystate name="State_Moira_Ability3_Stunned" target="this_proxy_entity" continuous="true" />
+
+		<!-- Reselect the hero -->
+		<!--<order command="stop" force="true" target="this_owner_entity" source="this_owner_entity" />-->
+		<selectentity source="this_owner_entity" targets="this_owner_entity"/>
+		<replaceinselectionsets source="this_proxy_entity" target="this_owner_entity" />
+
+		<!-- Expire the state  -->
+		<expire />
+	</ondeath>
+	
+	<onactivatepreimpact>
+		<!-- Mana removal from the real Moira for both abilities and items -->
+		<takemana target="this_proxy_entity" amount="combat_manacost" triggeractionscript="true" />
+		
+		<!-- Ability impact -->
+		
+		<!-- Trigger cooldowns on the real Moira's abilities -->
+		<entitytype type="Ability_Moira1" target="inflictor_entity" source="inflictor_entity">
+			<pushability source="this_proxy_entity" target="this_proxy_entity" name="Ability_Moira1" />
+			<startcooldown entity="stack_entity" />
+		</entitytype>
+
+		<entitytype type="Ability_Moira2" target="inflictor_entity" source="inflictor_entity">
+			<pushability source="this_proxy_entity" target="this_proxy_entity" name="Ability_Moira2" />
+			<startcooldown entity="stack_entity" />
+		</entitytype>
+
+		<entitytype type="Ability_Moira4" target="inflictor_entity" source="inflictor_entity">
+			<pushability source="this_proxy_entity" target="this_proxy_entity" name="Ability_Moira4" />
+			<startcooldown entity="stack_entity" />
+		</entitytype>
+	
+		<!-- Item stuff -->
+		
+		<foreachitem source="this_proxy_entity">
+			<entitytype source="inflictor_entity" target="target_entity">
+			
+				<setvar0 a="0" /> <!-- Var0 will act as a check, if a single entity type passes then Var0 will be 1 or greater -->
+				
+				<!-- Resto Stone -->
+				<entitytype target="target_entity" type="Item_RestorationStone">
+					<startcooldown entity="target_entity" />
+
+					<refreshabilities source="this_proxy_entity" target="this_proxy_entity" excluded="Ability_Taunt"/>
+					<setvar0 a="result" />
+					
+					<refreshinventoryitems source="this_proxy_entity" target="this_proxy_entity" excluded="Item_RestorationStone"/>
+					<setvar0 a="var0" b="result" op="add"/>
+					
+					<setvar0 a="var0" b="30000" op="add"/>		
+					
+					<compare a="var0" b="210000" op="le">
+						<setvar0 a="210000" b="var0" op="sub"/>
+						<reducecooldown duration="var0" entity="target_entity" />
+					</compare>
+				</entitytype>
+				<setvar0 a="var0" b="result" op="add" /> <!-- If branch was run, var0 will add, else stay current value -->
+				
+				<!-- Insanitarius was removed here because it doesn't get tracked with onactivatepreimpact -->
+				
+				<!-- Alchemist's Bones -->
+				<entitytype target="target_entity" type="Item_Gloves3">
+					<removecharge entity="target_entity" />
+					
+					<!-- Start Alchemist Bone's timer if charges = 1 (2 before charge removal) -->
+					<addcharges count="0" entity="target_entity" />
+					<setvar0 a="result" />
+					
+					<compare a="var0" b="1" op="eq">
+						<starttimer duration="120000" entity="target_entity" />
+					</compare>
+					<else>
+						<!-- Disables Alchemist's Bones on Moira if charges are 0 -->
+						<compare a="var0" b="0" op="eq">
+							<setactivemodifierkey name="gloves3disabled" entity="target_entity" />
+						</compare>
+					</else>
+					<startcooldown entity="target_entity" />
+				</entitytype>
+				<setvar0 a="var0" b="result" op="add" /> <!-- If branch was run, var0 will add, else stay current value -->
+				
+				<!-- Soul Trap -->
+				<entitytype target="target_entity" type="Item_Soultrap">
+					<removecharge entity="target_entity" />
+					<startcooldown entity="target_entity" />
+				</entitytype>
+				<setvar0 a="var0" b="result" op="add" /> <!-- If branch was run, var0 will add, else stay current value -->
+				
+				<!-- Mana Battery -->
+				<entitytype target="target_entity" type="Item_ManaBattery">
+					<setcharges a="0" entity="target_entity" />
+					<startcooldown entity="target_entity" />
+				</entitytype>
+				<setvar0 a="var0" b="result" op="add" /> <!-- If branch was run, var0 will add, else stay current value -->
+				
+				<!-- Power Supply -->
+				<entitytype target="target_entity" type="Item_PowerSupply">
+					<setcharges a="0" entity="target_entity" />
+					<startcooldown entity="target_entity" />
+				</entitytype>
+				<setvar0 a="var0" b="result" op="add" /> <!-- If branch was run, var0 will add, else stay current value -->
+				
+				<!-- Blood Chalice -->
+				<entitytype target="target_entity" type="Item_BloodChalice">
+					<removecharge entity="target_entity" />
+					<startcooldown entity="target_entity" />
+				</entitytype>
+				<setvar0 a="var0" b="result" op="add" /> <!-- If branch was run, var0 will add, else stay current value -->
+				
+				<!-- Shrunken Head -->
+				<entitytype target="target_entity" type="Item_Immunity">
+					<removecharge entity="target_entity" />
+					<startcooldown entity="target_entity" />
+				</entitytype>
+				<setvar0 a="var0" b="result" op="add" /> <!-- If branch was run, var0 will add, else stay current value -->
+				
+				<!-- Genjuro -->
+				<entitytype target="target_entity" type="Item_Sasuke">
+					<removecharge entity="target_entity" />
+					<compare a="result" b="0" op="eq">
+						<setactivemodifierkey name="sasuke_disabled" entity="target_entity" />
+					</compare>
+					<else>
+						<startcooldown entity="target_entity" />
+					</else>
+					
+					<starttimer duration="16000" entity="target_entity" />
+				</entitytype>
+				<setvar0 a="var0" b="result" op="add" /> <!-- If branch was run, var0 will add, else stay current value -->
+				
+				<!-- setvar0 returns current value and <else> only runs if result is 0 -->
+				<else>
+					<startcooldown entity="target_entity" />					
+				</else>
+			</entitytype>
+		</foreachitem>
+	</onactivatepreimpact>
+	
+	<onactivatestart>
+		<!-- Lex Talionis only triggers in this event -->
+		<entitytype target="inflictor_entity" type="Item_LexTalionis">
+			<foreachitem source="this_proxy_entity">
+				<entitytype target="target_entity" type="Item_LexTalionis">
+					<startcooldown entity="target_entity" />
+				</entitytype>
+			</foreachitem>			
+		</entitytype>
+	</onactivatestart>
+	
+	<altavatar key="Hero_Moira.Alt"
+		passiveeffect="../alt/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Moira.Alt2"
+		passiveeffect="../alt2/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Moira.Alt3"
+		passiveeffect="../alt3/ability_03/effects/state_self.effect"
+	/>
+	
+</state>

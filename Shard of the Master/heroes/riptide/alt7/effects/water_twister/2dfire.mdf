@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="effect_line.max" file="2dfire.model" type="K2">
+	<anim name="twister" clip="2dfire.clip" fps="70"/>
+	<anim name="twister_fast" clip="2dfire.clip" fps="100"/>
+	<anim name="twister_slow" clip="2dfire.clip" fps="65"/>
+</model>
+

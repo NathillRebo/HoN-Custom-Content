@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+			<sound
+				    dampen="0.5"
+				    channelid="storeaud"
+					sound2d="true"
+					volume=".5"
+					sample="../sounds/store_audio.wav"
+			/>
+			
+			<!--  base  model -->			
+			<model
+				model="../model_store_l.mdf"
+				anim="idle"
+				position="-15 0 0"
+				yaw="18"
+			>
+				<template  name="waterdrop">	
+					
+					<controller bone="{bone}" >				
+						<simpleemitter
+							position="-5 0 -5"
+							spawnrate="30"
+							particlelife="300"
+							material="/shared/effects/materials/bubble_add.material"
+						>
+							<particle
+								maxangle="360"
+								startsize="0"
+								minendsize="25"
+								maxendsize="30"
+								startcolor="1"
+								endcolor="0 .3 .5"
+								minanglespeed="-300"
+								maxanglespeed="300"
+								alpha=".7"
+								anchor="1"
+							/>
+						</simpleemitter>
+						<simpleemitter
+							position="-5 0 -5"
+							offsetsphere="10 10 10"
+							spawnrate="30"
+							particlelife="700"
+							gravity="20"
+							material="/shared/effects/materials/bubble_add.material"
+						>
+							<particle
+								startsize="10"
+								startwidth="3"
+								endwidth="0"
+								endsize="0"
+								startcolor="0"
+								midcolor=".4 .8 1"
+								endcolor="0 .35 1"
+								lockup="1"
+							/>
+						</simpleemitter>
+						<simpleemitter
+							position="-5 0 -5"
+							spawnrate="10"
+							particlelife="300"
+							material="/shared/effects/materials/refract_wave.material"
+						>
+							<particle
+								maxangle="360"
+								startsize="0"
+								endsize="30"
+								minanglespeed="-300"
+								maxanglespeed="300"
+								startalpha="1"
+								endalpha="0"
+								anchor="1"
+								param=".05"
+							/>
+						</simpleemitter>	
+					</controller>
+					
+				</template>
+				<instance name="waterdrop" bone="_bone_lefthand" />
+				<instance name="waterdrop" bone="_bone_righthand" />
+				<instance name="waterdrop" bone="Bip01 L Forearm" />
+				<instance name="waterdrop" bone="Bip01 R Forearm" />
+				
+			</model>	
+			
+			<model
+				model="hands/hands.mdf"
+				anim="idle"
+				position="-15 0 0"
+				material="../water.material"
+				yaw="18"
+			/>
+			
+			<simpleemitter
+				delay="-750"
+				spawnrate="5"
+				minparticlelife="3500"
+				maxparticlelife="4500"
+				material="/shared/effects/materials/ring_reveal_gradient_01.material"
+				depthbias="-50"
+				offsetsphere="0"
+			>
+				<particle
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					size="180"
+					minstartscale=".75" maxstartscale=".95"
+					endscale="1.1"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					startframe="0"
+					endframe=".65"
+					minstartparam=".3"
+					maxstartparam=".4"
+					endparam=".7"
+					color="1 1 1"
+					anchor="1"
+				/>
+			</simpleemitter>
+		
+			<simpleemitter
+				delay="-750"
+				spawnrate="1"
+				minparticlelife="2500"
+				maxparticlelife="3500"
+				material="/shared/effects/materials/refract_ripples.material"
+				depthbias="-50"
+				offsetsphere="0"
+			>
+				<particle
+					maxangle="360"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					size="160"
+					minstartscale=".25" maxstartscale=".5"
+					endscale="1.5"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					startframe="0"
+					endframe=".75"
+					minstartparam=".0"
+					maxstartparam=".1"
+					endparam=".8"
+					color="1"
+					anchor="1"
+				/>
+			</simpleemitter>
+				
+			<billboard				
+				delay="-750"
+				color=".75 1 1"
+				alpha=".5"
+				size="100"
+				expirelife="500"					
+				material="/shared/effects/materials/ground_whitedot.material"	
+				depthbias="-30"
+			/>	
+			
+			<!-- base model step on ground -->
+			
+			<controller delay="400" scale="1"	>
+				<billboard
+					position="0 0 50"
+					life="200"
+					color="1.0 1.0 1.0"
+					startalpha="1.0"
+					midalpha="1.0"
+					endalpha="0.0"
+					midalphapos="0.75"
+					startparam=".1"
+					endparam="0.0"
+					startsize="300"
+					endsize="1000"
+					depthbias="-100"
+					material="/shared/effects/materials/refract_ring.material"
+					lockup="true"
+					pitch="90"
+				/>		
+
+				<simpleemitter
+					count="15"
+					gravity="50"
+					minspeed="500"  maxspeed="1000"
+					drag=".025"
+					direction="0 0 1"
+					minparticlelife="400"
+					maxparticlelife="500"
+					minangle="0" maxangle="180"
+					offsetsphere="0"
+					depthbias="-50"
+					material="/shared/effects/materials/water_spray_reveal_gradient_01.material"
+				>
+					<particle
+						maxangle="360"
+						minanglespeed="-20"
+						maxanglespeed="20"
+						startsize="80"
+						minendsize="80"
+						maxendsize="120"
+						color=".6 1 1"
+						startscale=".75"
+						minendscale="1"
+						maxendscale="2.5"
+						minstartframe=".4"
+						maxstartframe=".6"
+						minmidframe=".1"
+						maxmidframe=".4"
+						endframe="0"
+						param=".4"
+						startalpha="0"
+						midalpha="1"
+						endalpha="1"
+						midalphapos=".2"
+					/>
+				</simpleemitter>
+			</controller>
+			
+			<!-- ult form model rising  -->
+			<controller delay="1800" scale="1" >
+				<simpleemitter
+					depthbias="-30"
+					life="500"
+					minparticlelife="750"				
+					maxparticlelife="1300"
+					startspawnrate="500"
+					endspawnrate="0"
+					minspeed="0"
+					maxspeed="1750"
+					gravity="65"
+					direction="0 0 1"
+					minangle="0"
+					maxangle="15"
+					drag="0.01"
+					material="/shared/effects/materials/water_spray_reveal_gradient_01.material"
+					offsetsphere="25 25 50"
+					position="0 0 20"
+					collide="1"
+					directionalspace="local"
+				>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="40"
+						endsize="150"
+						startcolor="1"
+						midcolor=".5 .8 1"					
+						endcolor="1"				
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						minendscale="1"
+						maxendscale="2.5"
+						minstartframe=".4"
+						maxstartframe=".6"
+						minmidframe=".1"
+						maxmidframe=".4"
+						endframe="0"
+						param=".4"
+					/>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="40"
+						endsize="160"
+						startcolor="1"
+						midcolor=".6 1 1"					
+						endcolor="1"				
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						minendscale="1"
+						maxendscale="2.5"
+						minstartframe=".4"
+						maxstartframe=".6"
+						minmidframe=".1"
+						maxmidframe=".4"
+						endframe="0"
+						param=".4"
+					/>
+					<particle 
+						minangle="0"
+						maxangle="260"
+						minanglespeed="-20"
+						maxanglespeed="20"
+						startsize="110"
+						endsize="0"
+						startcolor="1"
+						endcolor=".8 1 1"				
+						startalpha=".5"
+						midalpha="1"
+						endalpha="0"
+						minendscale="1"
+						maxendscale="2.5"
+						minstartframe=".4"
+						maxstartframe=".6"
+						minmidframe=".1"
+						maxmidframe=".4"
+						endframe="0"
+						param=".4"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					depthbias="-30"
+					life="500"
+					minparticlelife="750"				
+					maxparticlelife="1500"				
+					spawnrate="40"
+					minspeed="0"
+					maxspeed="1450"
+					gravity="55"
+					direction="0 0 1"
+					minangle="20"
+					maxangle="15"
+					drag="0.01"
+					material="/shared/effects/materials/refract_outsplash.material"
+					offsetsphere="25 25 50"
+					position="0 0 20"
+					directionalspace="local"
+				>
+					<particle 
+						maxangle="360"
+						startsize="145"
+						endsize="325"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						startparam="0.5"
+						endparam="0"
+					/>
+				</simpleemitter>
+				
+				
+				<billboard
+					depthbias="-30"
+					position="0 0 15"
+					life="800"
+					material="/shared/effects/materials/refract_ripple.material"
+					startsize="135"
+					endsize="525"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					startparam="0.02"
+					endparam="0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					directionalspace="local"
+				/>
+
+				<billboard
+					delay="50"
+					life="700"
+					material="/shared/effects/materials/octagon_aura.material"
+					position="0 0 15"
+					depthbias="-50"
+					startcolor=".1 .25 .25"
+					endcolor="0 .1 .2"
+					startsize="105"
+					endsize="305"
+					startalpha="0"
+					midalphapos=".2"
+					midalpha=".75"
+					endalpha="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					anchor=".8"
+					directionalspace="local"
+				/>
+			
+			</controller> 
+			
+			<!-- ult form model -->
+			<model
+				model="../effects/ult_form/model_store_l.mdf"
+				anim="idle"
+				position="-30 0 0"
+				yaw="20"
+				scale="3"
+			>
+				<!-- lowbody model part -->
+				<controller bone="_bone_center" >
+					
+					<model
+						model="/heroes/riptide/effects/water/model.mdf"
+						anim="idle"
+						material="../water.material"
+						alpha=".75"
+						expirelife="500"
+						position="0 0 -55"
+						scale="1.75"
+						color="1 1 1"
+						yawspeed="300"
+					/>
+					
+					<simpleemitter
+						delay="3000"
+						life="2000" loop="1"
+						spawnrate="2"
+						particlelife="2000"
+						direction="0 0 1"
+						speed="25"
+						minangle="0"
+						maxangle="0" 
+						position="0 0 -50"
+					>
+						<particle>
+						
+							<billboard
+								life="1500"
+								material="/shared/effects/materials/octagon_aura.material"
+								startsize="150"
+								endsize="65"
+								midsizepos=".5"
+								startcolor="0"
+								midcolor="0 .3 .65"
+								endcolor="0"
+								midcolorpos=".75"
+								depthbias="-10"
+								scale=".35"
+								lockup="1" lockright="1" pitch="-90"
+							/>
+
+						</particle>
+					</simpleemitter>
+
+				</controller>
+				
+				<template name="text">
+					<trackeremitter
+						delay="3500"
+						expirelife="500"
+						position="0 -40 0"
+						targetposition="0 -40 300.0"
+						targetowner="target"
+						tracktype="distance"
+						trackspeed="200.0" 
+						spawnrate="10"
+						particlelife="1200"
+						speed="20"
+						offsetsphere="28 28 0"
+						distancelife="true"
+						angle="0"
+					>
+						<particle
+							minscale="0.8"
+							maxscale="1.5"
+							startstickiness="0" endstickiness=".35"
+							
+						>
+							<billboard
+								minlife="750"
+								maxlife="950"
+								material="{material}"
+								startcolor="{startcolor}"
+								midcolor="{midcolor}"
+								endcolor="0"
+								minsize="2.5" maxsize="5"
+								scale="{scale}"
+								startheighth="2"
+								endheight="5"
+								lockright="ture"
+								lockup="ture"
+								startalpha="0" midalpha="1" endalpha="0"
+							/>
+						</particle>
+					</trackeremitter>
+					
+				</template>
+				<instance name="text" material="/shared/effects/materials/whitesquare.material" scale=".5"  startcolor="0 .5 .35" midcolor="0 1 .75" />
+				<instance name="text" material="/shared/effects/materials/whitesquare_02.material" scale="1" startcolor="0 .35 .5" midcolor="0 .75 1" />
+		
+				<controller  delay="4000" scale=".35" bone="_bone_origin" position="0 -40 0" >
+					<simpleemitter
+						minparticlelife="400"
+						maxparticlelife="600"
+						bone="_bone_origin"
+						offsetsphere="100 100 0"
+						spawnrate="30"
+						material="/shared/effects/materials/whitetriangle.material"
+						drag="0.02"
+						gravity="-30"
+					>
+						<particle
+							turn="1"
+							maxangle="360"
+							size="20"
+							minscale="0.25"
+							maxscale=".75"
+							startcolor="1 .75 0"
+							midcolor="1 .5 0"
+							endcolor="0"
+							lockup="true"
+						>
+							<billboard
+								material="/shared/effects/materials/wisp_inner.material"
+								color="1 .5 0"
+								scale=".75"
+							/>
+						</particle>
+					</simpleemitter>
+					
+					<simpleemitter
+						bone="_bone_origin"
+						spawnrate="1"
+						particlelife="1000"
+						position="0 0 10"
+						material="/shared/effects/materials/refract_swell.material"
+					>
+						<particle
+							lockup="1"
+							pitch="90"
+							startalpha=".35"
+							endalpha="0"
+							startsize="0"
+							endsize="500"
+							param=".1"
+							anchor="1"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						bone="_bone_origin"
+						spawnrate="2.5"
+						particlelife="2200"
+						position="0 0 10"
+						material="/shared/effects/materials/octagon_aura.material"
+						depthbias="-50"
+					>
+						<particle
+							lockup="1"
+							pitch="90"
+							startalpha=".35"
+							endalpha="0"
+							startsize="0"
+							endsize="300"
+							startcolor=".35 .15 0"
+							endcolor="0"
+							anchor="1"
+						/>
+					</simpleemitter>
+				
+					
+					<simpleemitter
+						bone="_bone_origin"
+						spawnrate="5"
+						particlelife="1500"
+						position="0 0 10"
+						material="/shared/effects/materials/whitedot.material"
+					>
+						<particle
+							lockup="1"
+							pitch="90"
+							startalpha=".35"
+							endalpha="0"
+							startsize="0"
+							endsize="650"
+							startcolor=".45 .2 0"
+							endcolor="0"
+							anchor="1"
+						/>
+					</simpleemitter>
+				
+				</controller>
+			
+			</model>
+			
+		<!-- Ult model glow flash -->	
+			<model
+				life="800"
+				model="../effects/ult_form/model_store_l.mdf"
+				anim="idle"
+				position="-30 0 0"
+				yaw="20"
+				scale="3"
+				startcolor="0 3 3"
+				midcolor="0 3 3"
+				endcolor="1"
+				midcolorpos=".3"
+				material="/shared/effects/materials/shell_vine_reveal2.material"
+				startparam0="0"
+				midparam0=".8"
+				endparam0="1"
+				loop="true"	
+			/>
+			
+			<model
+				life="1000"
+				model="../effects/ult_form/model_store_l.mdf"
+				anim="idle"
+				position="-30 0 0"
+				yaw="20"
+				scale="3"
+				startcolor="0 3 3"
+				midcolor="0 3 3"
+				endcolor="1"
+				midcolorpos=".3"
+				material="/shared/effects/materials/shell_pulse_reveal2.material"
+				startparam0="0"
+				midparam0=".8"
+				endparam0="1"
+				loop="true"	
+			/>
+			
+			<model
+				life="600"
+				model="../effects/ult_form/model_store_l.mdf"
+				anim="idle"
+				position="-30 0 0"
+				yaw="20"
+				scale="3"
+				startcolor="0 3 3"
+				midcolor="0 3 3"
+				endcolor="1"
+				midcolorpos=".3"
+				material="/shared/effects/materials/shell_pulse_reveal2.material"
+				startparam0="0"
+				midparam0=".8"
+				endparam0="1"
+				loop="true"	
+			/>
+			
+			
+		
+			
+			
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+      	<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>

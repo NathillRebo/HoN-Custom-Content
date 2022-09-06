@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="model.max" file="model.model" type="K2"  >
+
+	<anim name="idle" clip="default_1.clip" fps="30" loop="1"/>
+	<anim name="attack_1" clip="attack_1.clip" fps="60" loop="1"/>
+	
+	<anim name="attack_2" clip="attack_2.clip" fps="90" loop="1"/>
+	
+</model>

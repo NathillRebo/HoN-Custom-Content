@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="2.5">
+
+			<simpleemitter
+				count="25"
+				particlelife="1250"
+				spawnrate="650"
+				minspeed="100"
+				maxspeed="350"
+				gravity="10"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="25"
+				drag="0.01"
+				material="/shared/effects/materials/beer_splash.material"
+				offsetsphere="25 25 10"
+				position="0 0 35"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startsize="20"
+					endsize="40"
+					color="1 1 1"
+					startalpha=".5"
+					endalpha="0"
+					startstickiness="0"
+					endstickiness=".4"
+				/>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startsize="20"
+					endsize="40"
+					color=".8 .5 .25"
+					startalpha=".5"
+					endalpha="0"
+					startstickiness="0"
+					endstickiness=".4"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="25"
+				minparticlelife="350"
+				maxparticlelife="700"
+				spawnrate="100"
+				minspeed="250"
+				maxspeed="350"
+				gravity="20"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="1"
+				drag="0.01"
+				material="/shared/effects/materials/beer_puddle.material"
+				offsetsphere="25 25 10"
+				position="0 0 0"
+			>
+				<particle
+					depthbias="-100"
+					startcolor=".8 .8 .5 "
+					endcolor=".5 .5 .3"
+					height="65"
+					startwidth="10"
+					endwidth="30"
+					startscale="1"
+					endscale="2"
+					startalpha=".65"
+					endalpha="0"
+					lockup="1"
+					lockright="1"
+					minyaw="0"
+					maxyaw="360"
+					yawspeed="-35"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="20"
+				minparticlelife="250"
+				maxparticlelife="650"
+				spawnrate="35"
+				minspeed="25"
+				maxspeed="50"
+				gravity="2"
+				direction="0 0 0"
+				material="/shared/effects/materials/beer_splash.material"
+				offsetsphere="25 25 10"
+				position="0 0 50"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					depthbias="-25"
+					color=".8 .5 .25"
+					startscale="15"
+					endscale="15"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+				<particle
+					minangle="0"
+					maxangle="360"
+					depthbias="-25"
+					color="1 1 1"
+					startscale="15"
+					endscale="15"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="30"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				spawnrate="650"
+				minspeed="100"
+				maxspeed="425"
+				gravity="10"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="25"
+				drag="0.01"
+				material="/shared/effects/materials/bubble_add.material"
+				offsetsphere="25 25 10"
+				position="0 0 35"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					minstartsize="1"
+					maxstartsize="3"
+					minendsize="5"
+					maxendsize="8"
+					startcolor=".75 .5 .25"
+					midcolor=".75 .5 .25"
+					endcolor="0 0 0"
+					startstickiness="0"
+					endstickiness=".4"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="10"
+				spawnrate="20"
+				minparticlelife="450"
+				maxparticlelife="900"
+				gravity="10"
+				speed="25"
+				direction="0 0 1"
+				offsetsphere="25 25 25"
+				position="0 0 100"
+				material="/shared/effects/materials/refract_stream.material"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="180"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="30"
+					endsize="60"
+					param=".5"
+					depthbias="-25"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+		
+		<particlesystem name="system1" space="world" scale="2">
+
+			<simpleemitter
+				count="25"
+				particlelife="1250"
+				spawnrate="650"
+				minspeed="100"
+				maxspeed="350"
+				gravity="10"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="25"
+				drag="0.01"
+				material="/shared/effects/materials/beer_splash.material"
+				offsetsphere="25 25 10"
+				position="0 0 35"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startsize="20"
+					endsize="40"
+					color="1 1 1"
+					startalpha=".5"
+					endalpha="0"
+					startstickiness="0"
+					endstickiness=".4"
+				/>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startsize="20"
+					endsize="40"
+					color=".8 .5 .25"
+					startalpha=".5"
+					endalpha="0"
+					startstickiness="0"
+					endstickiness=".4"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="20"
+				minparticlelife="250"
+				maxparticlelife="650"
+				spawnrate="35"
+				minspeed="25"
+				maxspeed="50"
+				gravity="2"
+				direction="0 0 0"
+				material="/shared/effects/materials/beer_splash.material"
+				offsetsphere="25 25 10"
+				position="0 0 50"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					depthbias="-25"
+					color=".8 .5 .25"
+					startscale="15"
+					endscale="15"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+				<particle
+					minangle="0"
+					maxangle="360"
+					depthbias="-25"
+					color="1 1 1"
+					startscale="15"
+					endscale="15"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="30"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				spawnrate="650"
+				minspeed="100"
+				maxspeed="425"
+				gravity="10"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="25"
+				drag="0.01"
+				material="/shared/effects/materials/bubble_add.material"
+				offsetsphere="25 25 10"
+				position="0 0 35"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					minstartsize="1"
+					maxstartsize="3"
+					minendsize="5"
+					maxendsize="8"
+					startcolor=".75 .5 .25"
+					midcolor=".75 .5 .25"
+					endcolor="0 0 0"
+					startstickiness="0"
+					endstickiness=".4"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="75"
+				count="8"
+				minparticlelife="150"
+				maxparticlelife="300"
+				spawnrate="25"
+				direction="0 0 0"
+				offsetsphere="15 15 0"
+			>
+				<particle>
+					<groundsprite
+						minlife="250"
+						maxlife="500"
+						material="/shared/effects/materials/beer_puddle.material"
+						minstartsize="10"
+						maxstartsize="20"
+						minendsize="40"
+						maxendsize="50"
+						minyaw="-360"
+						maxyaw="360"
+						color=".75 .65 .5"
+						startalpha="0"
+						midalpha=".85"
+						endalpha="0"
+						midalphapos=".25"
+						position="0 0 0"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="60"
+				spawnrate="150"
+				minparticlelife="250"
+				maxparticlelife="650"
+				gravity="-5"
+				drag=".01"
+				material="/shared/effects/materials/bubble_add.material"
+				offsetsphere="60 60 15"
+				minangle="-25"
+				maxangle="25"
+				direction="0 0 1"
+				directionalspace="global"
+				depthbias="-35"
+				position="0 0 0"
+			>
+				<particle 
+					startcolor=".75 .5 .25"
+					endcolor="0 0 0"
+					param=".25"
+					minstartsize="5"
+					maxstartsize="8"
+					minendsize="12"
+					maxendsize="16"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnparticlesystem instance="instance1" particlesystem="system1" />
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

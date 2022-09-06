@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Panda_Ability3"
+
+	gravity="5000"
+	lifetime="850"
+	useexactlifetime="true"
+
+	modelscale="1.0"
+	model=""
+	deatheffect=""
+	canturn="false"
+	flying="false"
+	flyheight="0"
+>
+	<onimpact>
+		<hasavatarkey name="Hero_Panda.Alt6">
+			<playeffect effect="../alt6/ability_03/effects/state.effect" target="source_entity" source="source_entity"/>
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Panda.Alt9">
+				<playeffect effect="../alt9/ability_03/effects/state.effect" target="source_entity" source="source_entity"/>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Panda.Alt10">
+					<hasmodifier name="Night_Set_PandaAlt10" >
+						<playeffect effect="../alt11/ability_03/effects/state.effect" target="source_entity" source="source_entity"/>
+					</hasmodifier>
+					<else>
+						<playeffect effect="../alt10/ability_03/effects/state.effect" target="source_entity" source="source_entity"/>
+					</else>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Panda.Alt11">
+						<hasmodifier name="Night_Set_PandaAlt11" >
+							<playeffect effect="../alt10/ability_03/effects/state.effect" target="source_entity" source="source_entity"/>
+						</hasmodifier>
+						<else>
+							<playeffect effect="../alt11/ability_03/effects/state.effect" target="source_entity" source="source_entity"/>
+						</else>
+					</hasavatarkey>
+					<else>
+			<playeffect effect="effects/state.effect" target="source_entity" source="source_entity"/>
+		</else>
+				</else>
+			</else>
+		</else>
+		<areaofeffect
+			radius="200"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Physical Splash"
+		>
+			<applystate name="State_Stunned" duration="1500,1750,2000,2250" />
+			<damage effecttype="Physical Splash" amount="100,175,250,325" />
+			<hasavatarkey name="Hero_Panda.Alt9">
+				<playeffect effect="../alt9/ability_03/effects/state_enemy.effect" source="target_entity" target="target_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Panda.Alt10">
+					<hasmodifier name="Night_Set_PandaAlt10" >
+						<playeffect effect="../alt11/ability_03/effects/state_enemy.effect" source="target_entity" target="target_entity" />
+					</hasmodifier>
+					<else>
+						<playeffect effect="../alt10/ability_03/effects/state_enemy.effect" source="target_entity" target="target_entity" />
+					</else>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Panda.Alt11">
+						<hasmodifier name="Night_Set_PandaAlt11" >
+							<playeffect effect="../alt10/ability_03/effects/state_enemy.effect" source="target_entity" target="target_entity" />
+						</hasmodifier>
+						<else>
+							<playeffect effect="../alt11/ability_03/effects/state_enemy.effect" source="target_entity" target="target_entity" />
+						</else>
+					</hasavatarkey>
+					<else>
+			<playeffect effect="effects/state_enemy.effect" source="target_entity" target="target_entity" />
+					</else>
+				</else>
+			</else>
+		</areaofeffect>
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onimpact>
+			<hasavatarkey name="Hero_Panda.Alt6">
+				<playeffect effect="../alt6/ability_03/effects/state.effect" target="source_entity" source="source_entity"/>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Panda.Alt9">
+					<playeffect effect="../alt9/ability_03/effects/state.effect" target="source_entity" source="source_entity"/>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Panda.Alt10">
+						<hasmodifier name="Night_Set_PandaAlt10" >
+							<playeffect effect="../alt11/ability_03/effects/state.effect" target="source_entity" source="source_entity"/>
+						</hasmodifier>
+						<else>
+							<playeffect effect="../alt10/ability_03/effects/state.effect" target="source_entity" source="source_entity"/>
+						</else>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Panda.Alt11">
+							<hasmodifier name="Night_Set_PandaAlt11" >
+								<playeffect effect="../alt10/ability_03/effects/state.effect" target="source_entity" source="source_entity"/>
+							</hasmodifier>
+							<else>
+								<playeffect effect="../alt11/ability_03/effects/state.effect" target="source_entity" source="source_entity"/>
+							</else>
+						</hasavatarkey>
+						<else>
+				<playeffect effect="effects/state.effect" target="source_entity" source="source_entity"/>
+			</else>
+					</else>
+				</else>
+			</else>
+			<areaofeffect
+				radius="200"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Physical Splash"
+			>
+				<applystate name="State_Stunned" duration="1500,1750,2000,2250" />
+				<damage effecttype="Physical Splash" amount="125,200,275,350" />
+				<evaluate a="source_maxhealth" b="0.2" op="mult"/>
+				<compare a="result" b="target_health" op="gt">
+					<kill target="target_entity" />
+				</compare>
+				<hasavatarkey name="Hero_Panda.Alt9">
+					<playeffect effect="../alt9/ability_03/effects/state_enemy.effect" source="target_entity" target="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Panda.Alt10">
+						<hasmodifier name="Night_Set_PandaAlt10" >
+							<playeffect effect="../alt11/ability_03/effects/state_enemy.effect" source="target_entity" target="target_entity" />
+						</hasmodifier>
+						<else>
+							<playeffect effect="../alt10/ability_03/effects/state_enemy.effect" source="target_entity" target="target_entity" />
+						</else>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Panda.Alt11">
+							<hasmodifier name="Night_Set_PandaAlt11" >
+								<playeffect effect="../alt10/ability_03/effects/state_enemy.effect" source="target_entity" target="target_entity" />
+							</hasmodifier>
+							<else>
+								<playeffect effect="../alt11/ability_03/effects/state_enemy.effect" source="target_entity" target="target_entity" />
+							</else>
+						</hasavatarkey>
+						<else>
+				<playeffect effect="effects/state_enemy.effect" source="target_entity" target="target_entity" />
+						</else>
+					</else>
+				</else>
+			</areaofeffect>
+		</onimpact>
+	</modifier>
+</projectile>

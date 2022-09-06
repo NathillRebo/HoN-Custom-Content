@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Drunkenmaster_Ability2"
+
+	lifetime="400"
+	useexactlifetime="true"
+	
+	gravity="0"
+
+	modelscale="2"
+	model="/shared/models/invis.mdf"
+	
+	traileffect="effects/warp.effect"
+	
+	canturn="false"
+	flying="true"
+	pathing="true"
+	flyheight="0"
+	
+	range="400"
+	
+	dynamicprecache="effects/aoe_impact.effect"
+>
+	<onspawn>
+		<setscriptvalue name="aoe_impact_effect" value="effects/aoe_impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<!-- Damage -->
+		<setvar0 a="45,70,95,120" />
+		<areaofeffect
+			radius="200"
+			targetselection="closest"
+			targetscheme="enemy_units"
+			effecttype="Physical"
+		>
+			<targettype type="hero">
+				<damage effecttype="Physical" amount="1" b="var0" op="mult" />
+			</targettype>
+			<else>
+				<damage effecttype="Physical" amount="1.75" b="var0" op="mult" />
+			</else>
+			
+		</areaofeffect>
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="aoe_impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="source_position" target="" occlude="true" />
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onimpact>
+			<!-- Damage -->
+			<setvar0 a="45,70,95,120" />
+			<areaofeffect
+				radius="200"
+				targetselection="closest"
+				targetscheme="enemy_units"
+				effecttype="Physical"
+			>
+				<targettype type="hero">
+					<damage effecttype="Physical" amount="1" b="var0" op="mult" />
+					
+					<pushability source="this_owner_entity" slot="1" />
+					<reducecooldown entity="stack_entity" duration="950" />
+				</targettype>
+				<else>
+					<damage effecttype="Physical" amount="1.75" b="var0" op="mult" />
+				</else>
+				
+			</areaofeffect>
+			
+			<!-- Dynamic visual effects -->
+			<getscriptvalue name="aoe_impact_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" source="source_position" target="" occlude="true" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt" modpriority="1"
+		traileffect="../alt/ability_02/effects/warp.effect"
+	>		
+	</altavatar>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt2" modpriority="1"
+		traileffect="../alt2/ability_02/effects/warp.effect"
+	>		
+	</altavatar>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt3" modpriority="1"
+		traileffect="../alt3/ability_02/effects/warp.effect"
+	>		
+	</altavatar>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt4" modpriority="1"
+		traileffect="../alt4/ability_02/effects/warp.effect"
+	>		
+	</altavatar>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt5" modpriority="1"
+		traileffect="../alt5/ability_02/effects/warp.effect"
+		dynamicprecache="../alt5/ability_02/effects/aoe_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="aoe_impact_effect" value="../alt5/ability_02/effects/aoe_impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt6" modpriority="1"
+		traileffect="../alt6/ability_02/effects/warp.effect"
+		dynamicprecache="../alt6/ability_02/effects/aoe_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="aoe_impact_effect" value="../alt6/ability_02/effects/aoe_impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt7" modpriority="1"
+		traileffect="../alt7/ability_02/effects/warp.effect"
+		dynamicprecache="../alt7/ability_02/effects/aoe_impact.effect,../alt7/ability_02/effects/aoe_impact_boost.effect"
+	>
+		<onspawn>
+			<hasmodifier name="Pirate_Set_Bonus">
+				<setscriptvalue name="aoe_impact_effect" value="../alt7/ability_02/effects/aoe_impact_boost.effect" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setscriptvalue name="aoe_impact_effect" value="../alt7/ability_02/effects/aoe_impact.effect" entity="this_entity" />
+			</else>
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt8" modpriority="1"
+		traileffect="../alt8/ability_02/effects/warp.effect"
+		dynamicprecache="../alt8/ability_02/effects/aoe_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="aoe_impact_effect" value="../alt8/ability_02/effects/aoe_impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt9" modpriority="1"
+		traileffect="../alt9/ability_02/effects/warp.effect"
+		dynamicprecache="../alt9/ability_02/effects/aoe_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="aoe_impact_effect" value="../alt9/ability_02/effects/aoe_impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_DrunkenMaster.Alt10" modpriority="1"
+		traileffect="../alt10/ability_02/effects/warp.effect"
+		dynamicprecache="../alt10/ability_02/effects/aoe_impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="aoe_impact_effect" value="../alt10/ability_02/effects/aoe_impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+</projectile>

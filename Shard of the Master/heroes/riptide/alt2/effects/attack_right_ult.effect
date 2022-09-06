@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  useentityeffectscale="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".9">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2200"
+				volume=".33"
+				sample="../sounds/impact_%.wav"
+			/>
+
+			<simpleemitter
+				bone="Bip01 R Hand"
+				depthbias="-30"
+				life="300"
+				minparticlelife="450"				
+				maxparticlelife="1200"				
+				spawnrate="800"
+				acceleration="0.0"
+				drag="0.02"
+				gravity="50"
+				minangle="0"
+				maxangle="20"
+				direction="0 0 0"
+				speed="750"
+				offsetsphere="50 50 50"
+				material="/shared/effects/materials/blood_white.material"
+				collide="0"
+				inheritvelocity=".1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="160"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="20"
+					endsize="160"
+					startcolor="1.5"
+					midcolor=".4 .95 1"
+					midcolorpos=".75"
+					endcolor=".2 .6 1"				
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					minscale=".3"
+					maxscale=".8"
+				/>
+				<particle 
+					minangle="0"
+					maxangle="160"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="20"
+					endsize="160"
+					startcolor="1"
+					endcolor=".2 .65 1"				
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					minscale=".3"
+					maxscale=".8"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="Bip01 R Hand"
+				depthbias="-30"
+				life="400"
+				minparticlelife="450"				
+				maxparticlelife="1200"				
+				spawnrate="100"
+				minspeed="10"
+				maxspeed="100"
+				minangle="-90"
+				maxangle="90"
+				drag="0.01"
+				material="/shared/effects/materials/refract_wave.material"
+				offsetsphere="20"
+				inheritvelocity="0"
+				direction="0 0 1"
+			>
+				<particle
+					turn="true"
+				>
+					<billboard
+						startparam=".5"
+						endparam="0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						material="/shared/effects/materials/refract_outsplash.material"
+						size="100"
+						life="700"
+						pitch="90"
+						roll="0"
+						lockup="true"
+						lockright="true"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="Bip01 R Hand"
+				count="30"
+				minparticlelife="500"
+				maxparticlelife="750"
+				spawnrate="150"
+				minspeed="350"
+				maxspeed="600"
+				gravity="50"
+				minangle="0"
+				maxangle="10"
+				material="/shared/effects/materials/whitewater_02.material"
+				offsetsphere="15 15 0"
+				position="0 0 0"
+				direction="0 0 0"
+
+			>
+				<particle
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					startcolor="0 0 0"
+					midcolor=".22"
+					endcolor="0 0 0"
+					startsize="40"
+					endsize="90"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="Bip01 R Hand"
+				count="50"
+				minparticlelife="500"
+				maxparticlelife="750"
+				spawnrate="100"
+				minspeed="350"
+				maxspeed="600"
+				gravity="40"
+				minangle="0"
+				maxangle="10"
+				material="/shared/effects/materials/whitewater_02.material"
+				offsetsphere="15 15 0"
+				position="0 0 50"
+				direction="0 0 0"
+				inheritvelocity="0"
+			>
+				<particle
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					startcolor="0 0 0"
+					midcolor="0 .1 .15"
+					endcolor="0 0 0"
+					startsize="40"
+					endsize="90"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<trailemitter
+				life="175"
+				directionalspace="local"
+				spawnrate="240"
+				particlelife="500"
+				texpostime="0"
+				texposscale="0"
+				texstretchscale="1"
+				material="/shared/effects/materials/swoosh_add.material"
+				bone="Bip01 R Hand"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".1 .5 1"
+					endcolor="0"
+					midcolorpos=".2"
+					startsize="10"
+					endsize="20"
+				/>
+			</trailemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

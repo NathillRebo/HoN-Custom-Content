@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="luna_aura" useentityeffectscale="true">
+
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+			<groundsprite
+				life="2000"
+				loop="true"
+				material="/shared/effects/materials/dragon_symbol.material"
+				startsize="65"
+				midsize="75"
+				endsize="65"
+				midsizepos=".5"
+				startcolor=".5"
+				midcolor="1"
+				endcolor=".5"				
+				midcolorpos=".2"
+				minangle="0"
+				maxangle="0"
+				angles="0 0 0"
+				yawspeed="180"
+			/>
+		</particlesystem>
+
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

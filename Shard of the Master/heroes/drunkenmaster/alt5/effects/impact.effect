@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" useentityeffectscale="1" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1200"
+				volume=".80" 
+				sample="../sounds/attack_%.wav"
+			/>
+			
+			<sound
+				fadein="0"
+				fadeout="400"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1200"
+				volume=".70"
+				sample="/shared/sounds/impacts/impact_body_%.wav"
+			/>
+
+			<template name="impact">
+				<simpleemitter
+					bone="_bone_centerofchest"
+					position="0 0 0"
+					count="15"
+					spawnrate="500"
+					gravity="14"
+					speed="165"
+					minparticlelife="300"
+					maxparticlelife="600"
+					offsetsphere="25 25 50"
+					material="/shared/effects/materials/refract_stream.material"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="0"
+						maxanglespeed="180"
+						param=".2"
+						startsize="5"
+						minendsize="50"
+						maxendsize="100"
+						color="1 1 1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".2"
+						startheightdistort=".5"
+						endheightdesitort="0"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="impact" bone="_bone_centerofchest"/>
+
+			<template name="splashes">
+				<simpleemitter
+					count="10"
+					bone="{bone}"
+					depthbias="0"
+					minparticlelife="300"
+					maxparticlelife="600"
+					spawnrate="50"
+					minspeed="50"
+					maxspeed="100"
+					gravity="25"
+					direction="0 0 1"
+					minangle="-90"
+					maxangle="90"
+					drag="0.25"
+					material="/shared/effects/materials/purple_goop_overlay.material"
+					offsetsphere="50 50 25"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-180"
+						maxanglespeed="180"
+						minstartsize="50"
+						maxstartsize="100"
+						minendsize="180"
+						maxendsize="250"
+						color=".5"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".25"
+						maxscale=".5"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					count="17"
+					bone="{bone}"
+					depthbias="-20"
+					minparticlelife="450"
+					maxparticlelife="700"
+					spawnrate="500"
+					minspeed="50"
+					maxspeed="100"
+					gravity="25"
+					direction="0 0 1"
+					minangle="-90"
+					maxangle="90"
+					drag="0.25"
+					material="/shared/effects/materials/beer_splash.material"
+					offsetsphere="50 50 30"
+					position="0 0 25"
+				>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="75"
+						endsize="250"
+						startcolor=".8 .5 .8"
+						midcolor=".8 .5 .8"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="40"
+						endsize="110"
+						startcolor=".8 .5 .8"
+						midcolor=".8 .5 .8"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="40"
+						endsize="110"
+						startcolor=".8 .5 .8"
+						midcolor=".8 .5 .8"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					count="15"
+					bone="{bone}"
+					depthbias="-25"
+					minparticlelife="500"
+					maxparticlelife="750"
+					spawnrate="250"
+					minspeed="75"
+					maxspeed="150"
+					material="/shared/effects/materials/bubble_add.material"
+					offsetsphere="25 25 25"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						minstartsize="13"
+						maxstartsize="26"
+						minendsize="40"
+						maxendsize="50"
+						startcolor="1 .65 1"
+						midcolor="1 .65 1"
+						endcolor="0 0 0"
+						minscale=".25"
+						maxscale=".5"
+					/>
+				</simpleemitter>
+
+			</template>
+
+			<instance name="splashes" bone="_bone_centerofchest" />
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor=".65 .225 .65"
+				midcolor=".65 .225 .65"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="250"
+				endsize="0"
+				depthbias="-15"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="350"
+				param="0.1"
+				startsize="50"
+				endsize="260"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"
+				depthbias="-15"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				delay="100"
+				life="350"
+				param="0.1"
+				startsize="50"
+				endsize="260"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"
+				depthbias="-15"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hiro_Ability1"
+
+	icon="icon.tga"
+	passiveeffect="effects/fury.effect"
+	forceanim="ability_1"
+	
+	immunitytype="MagicImmunity1"
+	silenced="true"
+	perplexed="false"
+	
+	modifierkey="activation_modifier"
+	
+	totaldamagemultiplier="-0.5,-0.4,-0.3,-0.2"
+	
+	effecttype=""
+>
+	
+	<onframe>
+		<areaofeffect
+			radius="250"
+			effecttype="Magic"
+			targetselection="all"
+			targetscheme="enemy_units"
+		>
+			<damage effecttype="Magic DOT" amount="75,95,115,135" b="frametime" op="mult" />
+			<applystate name="State_Hiro_Ability1_Tooltip" continuous="true" timeout="frametime" />
+		</areaofeffect>
+	</onframe>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		attackspeed="1.65"
+	>
+	</modifier>
+	
+	<modifier key="activation_modifier" modpriority="101"
+		immunitytype=""
+	>
+	</modifier>
+
+	<onattackimpact>
+		<playeffect effect="../hd_swiftblade/effects/ability_01/cast.effect" target="target_entity" source="source_entity"/>
+	</onattackimpact>
+	
+	<altavatar key="Hero_Hiro.Classic" modpriority="1"
+		passiveeffect="effects/fury.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="effects/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt" modpriority="1"
+		passiveeffect="../alt/effects/ability_01/fury.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="../alt/effects/ability_01/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt2" modpriority="1"
+		passiveeffect="../alt2/effects/ability_01/fury.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="../alt2/effects/ability_01/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt3" modpriority="1"
+		passiveeffect="../alt3/effects/ability_01/fury.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="../alt3/effects/ability_01/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt4" modpriority="1"
+		passiveeffect="../alt4/effects/ability_01/fury.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="../alt4/effects/ability_01/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt5" modpriority="1"
+		passiveeffect="../alt5/effects/ability_01/fury.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="../alt5/effects/ability_01/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt6" modpriority="90"
+		passiveeffect="../alt6/ability_01/effects/fury.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="../alt6/ability_01/effects/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt7" modpriority="90"
+		passiveeffect="../alt7/ability_01/effects/fury.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="../alt7/ability_01/effects/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt8" modpriority="90"
+		passiveeffect="../alt8/ability_01/effects/fury.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="../alt8/ability_01/effects/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt9" modpriority="90"
+		passiveeffect="../alt9/ability_01/effects/fury.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="../alt9/ability_01/effects/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt10" modpriority="90"
+		passiveeffect="../alt10/ability_01/effects/fury.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="../alt10/ability_01/effects/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt12" modpriority="90"
+		passiveeffect="../alt12/ability_01/fury.effect"
+		icon="../alt12/ability_01/ability_1.tga"
+	>
+		<onattackimpact>
+			<playeffect effect="../alt12/ability_01/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+		
+		<modifier key="hiroAlt12_Ability1_Upgrade"
+			passiveeffect="../alt12/ability_01/fury_upgrade.effect"
+			icon="../alt12/ability_01/ability_1_u.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt13" modpriority="90"
+		passiveeffect="../alt13/ability_01/effects/fury.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="../alt13/ability_01/effects/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Hiro.Alt14" modpriority="90"
+		icon="../alt14/ability_01/icon.tga"
+		passiveeffect="../alt14/ability_01/effects/fury.effect"
+	>
+		<onattackimpact>
+			<playeffect effect="../alt14/ability_01/effects/cast.effect" target="target_entity" source="source_entity"/>
+		</onattackimpact>
+	</altavatar>
+	
+</state>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect entityeffectscale="true" deferred="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1" >
+
+			<sound
+			    voiceresponseoff="true"
+				dampen="0.7"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume="1"
+				sample="../../sounds/ab2_vox.wav"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier1"/> 
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Gladiator_Ability3"
+
+	radius="380,420,460,500"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Physical"
+	impacteffect="effects/impact.effect"
+>
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onimpact>
+			<cantarget effecttype="Push Disable">
+				<evaluate a="source_attackdamage" b="-1.2" op="mult"/>
+				<evaluate a="result" b="225" op="sub"/>
+				<push force="result" duration="250" source="this_owner_entity" />
+			</cantarget>
+		</onimpact>
+	</modifier>
+
+	<altavatar key="Hero_Gladiator.Alt2" modpriority="1"
+		impacteffect="../alt2/ability_03/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt6" modpriority="1"
+		impacteffect="../alt6/ability_03/effects/impact.effect"
+	/>
+
+	<altavatar key="Hero_Gladiator.Alt9" modpriority="1"
+		impacteffect="../alt9/ability_03/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt11" modpriority="1"
+		impacteffect="../alt11/ability_03/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt12" modpriority="1"
+		impacteffect="../alt12/ability_03/effects/impact.effect"
+	/>
+	
+</affector>

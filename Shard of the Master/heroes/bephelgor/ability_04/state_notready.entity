@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bephelgor_Ability4_NotReady"
+
+	ishidden="true"
+	
+	modifierkey="Balphagore_ult_notready"
+>
+
+	<!-- This state is used to prevent Balphagore from gaining charges -->
+</state>

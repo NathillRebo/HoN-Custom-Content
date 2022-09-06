@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Bephelgor_Ability1"
+
+	radius="400"
+	arc="120"
+	
+	lifetime="3000"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	persist="true"
+	effect="effects/affector.effect"
+	
+>
+	<onframeimpact>
+		<applystate name="State_Bephelgor_Ability1_Snare" duration="500" disablenegativeeffectpopuponrefresh="true" />
+	</onframeimpact>
+	
+	<altavatar key="Hero_Bephelgor.Alt2"
+		effect="effects/affector_alt.effect"
+	/>
+	
+	<altavatar key="Hero_Bephelgor.Alt3"
+		effect="effects/affector_alt3.effect"
+	/>
+	
+	<altavatar key="Hero_Bephelgor.Alt4"
+		effect="../alt4/ability_01/effects/affector.effect"
+	/>
+	
+	<altavatar key="Hero_Bephelgor.Alt5"
+		effect="effects/affector_alt5.effect"
+	/>
+</affector>

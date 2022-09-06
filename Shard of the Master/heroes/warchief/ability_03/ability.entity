@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Warchief3"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	
+	cooldowntime="8750"
+>
+	<onattackstart propagatetoillusions="true" >
+		<canactivate>
+			<cantarget targetscheme="enemy_units" effecttype="Magic">
+				<playanim name="ability_2" speed="source_attackspeed" target="source_entity" />
+			</cantarget>
+		</canactivate>
+	</onattackstart>
+	
+	<onattackimpact>
+		<cantarget targetscheme="enemy_units" effecttype="Magic">
+			<isready entity="this_entity">
+				<setvar0 source="source_entity" a="source_intelligence" b="1,1.5,2,2.5" op="mult" />
+				<targettype type="illusion" target="source_entity">
+					<damage effecttype="Magic" amount="0.33" b="var0" op="mult" />
+				</targettype>
+				<else>
+					<damage effecttype="Magic" amount="1" b="var0" op="mult" />
+				</else>
+				<hasmodifier name="shardofthemaster_boost">
+					<setvar1 source="source_entity" a="source_intelligence" b="7.9331" op="mult" />
+					<targettype type="illusion" target="source_entity">
+						<evaluate a="var1" b="0.33" op="mult"/>
+						<applystate name="State_Stunned_Knockdown" target="target_entity" duration="result" />
+					</targettype>
+					<else>
+						<applystate name="State_Stunned_Knockdown" target="target_entity" duration="var1" />
+					</else>
+				</hasmodifier>
+				<startcooldown />
+				
+				<!-- Art -->
+				<hasavatarkey name="Hero_Warchief.Alt" >
+					<playeffect effect="../alt/ability_03/effects/impact.effect" source="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Warchief.Alt2" >
+						<playeffect effect="../alt2/ability_03/effects/impact.effect" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/impact.effect" source="target_entity" />
+					</else>
+				</else>
+			</isready>
+		</cantarget>
+	</onattackimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"/>
+	
+	<modifier key="ready" modpriority="90" condition="ready"
+	>
+		<onframe>
+			<targettype type="alive" target="this_owner_entity">
+				<applystate name="State_Warchief_Ability3_Ready" target="source_entity" continuous="true" timeout="frametime" />
+			</targettype>
+		</onframe>
+	</modifier>
+
+</ability>

@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale=".75">
+			
+			<sound
+				    dampen="0.5"
+				    channelid="storeaud"
+					sound2d="true"
+					volume=".5"
+					sample="../sounds/store_audio.wav"
+				/>	
+				
+			<sound
+			        delay="1000"
+				    dampen="0.5"
+				    channelid="storeaudv"
+					sound2d="true"
+					volume=".7"
+					sample="../sounds/voice/select_1.wav"
+				/>	
+				
+			<template name="ground">
+				<simpleemitter
+					spawnrate="6"
+					particlelife="1200"
+					offsetsphere="45 45 0"
+					bone="{bone}"
+					position="{position}"
+				>
+					<particle
+					>
+						<groundsprite
+							minlife="700"
+							maxlife="1200"
+							startsize="0"
+							midsize="45"
+							endsize="40"
+							midsizepos=".2"
+							maxyaw="360"
+							color="1 0 .5"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							minscale=".2"
+							maxscale=".8"
+							material="/shared/effects/materials/goop_reveal_ground_blend.material"
+						/>
+					</particle>
+					<particle
+					>
+						<groundsprite
+							minlife="700"
+							maxlife="1200"
+							startsize="0"
+							midsize="45"
+							endsize="40"
+							midsizepos=".2"
+							maxyaw="360"
+							color="1 0 .5"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							minscale=".2"
+							maxscale=".8"
+							material="/shared/effects/materials/goop_reveal_ground_blend.material"
+						/>
+					</particle>
+					<particle
+					>
+						<groundsprite
+							minlife="700"
+							maxlife="1200"
+							startsize="0"
+							midsize="45"
+							endsize="40"
+							midsizepos=".2"
+							maxyaw="360"
+							color="1 0 .5"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							minscale=".2"
+							maxscale=".8"
+							material="/shared/effects/materials/goop_reveal_ground_blend.material"
+						/>
+					</particle>
+					<particle
+					>
+						<groundsprite
+							minlife="700"
+							maxlife="1200"
+							startsize="0"
+							midsize="45"
+							endsize="40"
+							midsizepos=".2"
+							maxyaw="360"
+							color="0 1 0"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							minscale=".2"
+							maxscale=".8"
+							material="/shared/effects/materials/goop_reveal_ground_blend.material"
+						/>
+					</particle>
+				</simpleemitter>
+			</template>
+			
+			<instance name="ground" bone="_bone_rightfoot" position="0 0 0" />
+			<instance name="ground" bone="_bone_leftfoot" position="0 0 0" />
+			<instance name="ground" bone="Box002" position="0 0 -18" />
+			
+			<template name="ground">
+			<simpleemitter
+				spawnrate="10"
+				minparticlelife="800"
+				maxparticlelife="1000"
+				offsetsphere="45 45 0"
+				material="/shared/effects/materials/water.material"
+				bone="{bone}"
+				position="{position}"
+			>
+				<template name="color">
+				<particle
+					startsize="8"
+					midsize="15"
+					endsize="15"
+					maxangle="360"
+					startalpha=".8"
+					midalpha=".8"
+					endalpha="0"
+					minscale=".5"
+					maxscale="4"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color="{color}"
+					framespeed="1"	
+				/>
+				</template>
+			<instance name="color" color="1 1 0"/>
+			<instance name="color" color="0 1 0"/>
+			<instance name="color" color="0 1 1"/>
+			<instance name="color" color="1 0 .7"/>
+			<instance name="color" color=".5 0 1"/>
+			</simpleemitter>
+			</template>
+			
+			<instance name="ground" bone="_bone_rightfoot" position="0 0 0" />
+			<instance name="ground" bone="_bone_leftfoot" position="0 0 0" />
+			<instance name="ground" bone="Box002" position="0 0 -18" />
+			
+			<model
+				delay="750"
+				model="../model_store_l.mdf"
+				anim="idle"
+				life="110"
+				startscale="1.5"
+				endscale="2.5"
+				alpha=".5"
+			/>
+			
+			<billboard
+				delay="750" life="200"
+				color="1.0 1.0 1.0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam=".5"
+				endparam="0.0"
+				startsize="58"
+				endsize="668"
+				depthbias="-100"
+				position="0 0 60"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				pitch="0"
+			/>	
+			
+			<trailemitter
+				life="2000"
+				bone="_bone_leftfoot"
+				spawnrate="80"
+				particlelife="450"
+				subframepose="1"
+				drag="0.01"
+				texpostime="6000"
+				texposscale="0"
+				texstretchscale="1"
+				material="/shared/effects/materials/blob_reveal_white2.material"
+				startparticlealpha="1"
+				endparticlealpha="1"
+				depthbias="-450"
+			>
+				<particle
+					color="2 2 0"
+					startalpha="1"
+					endalpha="1"
+					startframe="0"
+					endframe="1"
+					startsize="20"
+					endsize="0"
+				/>
+				<particle
+					color="2 0 2"
+					startalpha="1"
+					endalpha="1"
+					startframe="0"
+					endframe="1"
+					startsize="20"
+					endsize="0"
+				/>
+				<particle
+					color="2 0 0"
+					startalpha="1"
+					endalpha="1"
+					startframe="0"
+					endframe="1"
+					startsize="20"
+					endsize="0"
+				/>
+				<particle
+					color="0 2 2"
+					startalpha="1"
+					endalpha="1"
+					startframe="0"
+					endframe="1"
+					startsize="20"
+					endsize="0"
+				/>
+			</trailemitter>
+			<trailemitter
+				life="2000"
+				bone="_bone_rightfoot"
+				spawnrate="80"
+				particlelife="450"
+				subframepose="1"
+				drag="0.01"
+				texpostime="6000"
+				texposscale="0"
+				texstretchscale="1"
+				material="/shared/effects/materials/blob_reveal_white2.material"
+				startparticlealpha="1"
+				endparticlealpha="1"
+				depthbias="-450"
+			>
+				<particle
+					color="2 2 0"
+					startalpha="1"
+					endalpha="1"
+					startframe="0"
+					endframe="1"
+					startsize="20"
+					endsize="0"
+				/>
+				<particle
+					color="2 0 2"
+					startalpha="1"
+					endalpha="1"
+					startframe="0"
+					endframe="1"
+					startsize="20"
+					endsize="0"
+				/>
+				<particle
+					color="2 0 0"
+					startalpha="1"
+					endalpha="1"
+					startframe="0"
+					endframe="1"
+					startsize="20"
+					endsize="0"
+				/>
+				<particle
+					color="0 2 2"
+					startalpha="1"
+					endalpha="1"
+					startframe="0"
+					endframe="1"
+					startsize="20"
+					endsize="0"
+				/>
+			</trailemitter>
+			
+			<template name="dripping_poison">
+				<controller
+					bone="{bone}"
+				>
+					<simpleemitter
+						position="{position}"
+						spawnrate="5"
+						particlelife="1500"
+						gravity="15"
+						minspeed="100"
+						maxspeed="100"
+						direction="0 0 -1"
+						offsetsphere="15"
+						inheritvelocity="-.1"
+						limitinheritvelocity="150"
+						drag="0"
+					>
+						<particle
+							minscale=".5"
+							maxscale="1">
+							<trailemitter
+								life="1000"
+								spawnrate="60"
+								minparticlelife="100"
+								maxparticlelife="150"
+								speed="1"
+								material="/shared/effects/materials/arrow_trail_blend.material"
+								texposscale="0"
+								texstretchscale="1"
+								startparticlealpha="1"
+								midparticlealpha="1"
+								endparticlealpha="0"
+							>
+								<particle
+									startcolor="1 0 .5"
+									endcolor="1 0 .5"
+									minstartscale="1.0"
+									maxstartscale="2.0"
+									minendscale="0"
+									maxendscale=".75"
+									midscalepos=".4"
+								/>
+							</trailemitter>
+							<terrainemitter
+								mindelay="100"
+								maxdelay="200"
+								spawnrate="500"
+								minparticlelife="1000"
+								maxparticlelife="2000"
+								mincount="1"
+								maxcount="2"
+								offsetsphere="20"
+								material="/shared/effects/materials/goop_reveal_ground.material"
+							>
+								<particle
+									minscale="1"
+									maxscale="20"
+									lockup="true"
+									color="1 0 .5"
+									startalpha="1"
+									endalpha="0"
+									pitch="90"
+									maxangle="360"
+									startsize="0"
+									midsize="2.5"
+									endsize="2.5"
+									midsizepos=".2"
+								/>
+							</terrainemitter>
+							<terrainemitter
+								mindelay="450"
+								maxdelay="650"
+								spawnrate="500"
+								minparticlelife="500"
+								maxparticlelife="1000"
+								mincount="1"
+								maxcount="3"
+								offsetsphere="20"
+								material="/shared/effects/materials/blood_pool_white.material"
+							>
+								<particle
+									minscale=".5"
+									maxscale="4"
+									lockup="true"
+									lockright="true"
+									pitch="90"
+									color="1 0 .5"
+									startalpha="1"
+									endalpha="0"
+								/>
+							</terrainemitter>
+						</particle>
+					</simpleemitter>
+				</controller>
+			</template>
+			
+			<instance name="dripping_poison" bone="_bone_weaponattach" position="0 0 10" />
+			<instance name="dripping_poison" bone="_bone_weaponattach" position="0 0 0" />
+			<instance name="dripping_poison" bone="_bone_weaponattach" position="0 0 20" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+      	<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

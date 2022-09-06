@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Accursed_Ability2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<oninflict>
+		<setaccumulator value="0" />
+		<setcharges a="110,140,170,200" entity="this_entity" /> <!-- Shield health as charges -->
+	</oninflict>
+
+	<onrefresh>
+		<setaccumulator value="0" />
+		<setcharges a="110,140,170,200" entity="this_entity" /> <!-- Shield health as charges -->
+	</onrefresh>
+	
+	<ondamaged>
+		<absorbdamage max="110,140,170,200">
+			<hasavatarkey name="Hero_Accursed.Alt">
+				<playeffect effect="/heroes/accursed/alt/ability_02/effects/ability.effect" source="source_entity" target="" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Accursed.Alt2">
+					<playeffect effect="/heroes/accursed/alt2/ability_02/effects/ability.effect" source="source_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Accursed.Alt3">
+						<playeffect effect="/heroes/accursed/alt3/ability_02/effects/ability.effect" source="source_entity" target="" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Accursed.Alt4">
+							<playeffect effect="/heroes/accursed/alt4/ability_02/effects/ability.effect" source="source_entity" target="" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Accursed.Alt5">
+								<playeffect effect="/heroes/accursed/alt5/ability_02/effects/ability.effect" source="source_entity" target="" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Accursed.Alt6">
+									<playeffect effect="/heroes/accursed/alt6/ability_02/effects/ability.effect" source="source_entity" target="" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Accursed.Alt7">
+										<playeffect effect="/heroes/accursed/alt7/ability_02/effects/ability.effect" source="source_entity" target="" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Accursed.Alt8">
+											<playeffect effect="/heroes/accursed/alt8/ability_02/effects/ability.effect" source="source_entity" target="" />
+										</hasavatarkey>
+										<else>
+											<playeffect effect="effects/ability.effect" source="source_entity" target="" />
+										</else>
+									</else>	
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			<spawnaffector name="Affector_Accursed_Ability2" owner="this_inflictor_entity" target="source_position" />
+			<expire />
+		</absorbdamage>
+		
+		<!-- Shield health as charges -->
+		<evaluate a="110,140,170,200" b="accumulator" op="sub" />
+		<evaluate a="result" b="0" op="max" />
+		<setcharges a="result" entity="this_entity" />
+	</ondamaged>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		stunneddurationmultiplier="-0.3"
+		debuffdurationmultiplier="-0.3"
+	/>
+	
+	<onframe />
+	
+	<altavatar key="Hero_Accursed.Alt" modpriority="1"
+		passiveeffect="/heroes/accursed/alt/ability_02/effects/state.effect"
+		icon="/heroes/accursed/alt/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt2" modpriority="1"
+		passiveeffect="/heroes/accursed/alt2/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt3" modpriority="1"
+		passiveeffect="/heroes/accursed/alt3/ability_02/effects/state.effect"
+		icon="/heroes/accursed/alt3/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt4" modpriority="1"
+		passiveeffect="/heroes/accursed/alt4/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt5" modpriority="1"
+		passiveeffect="/heroes/accursed/alt5/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt6" modpriority="1"
+		passiveeffect="/heroes/accursed/alt6/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt7" modpriority="1"
+		passiveeffect="/heroes/accursed/alt7/ability_02/effects/state.effect"
+		icon="/heroes/accursed/alt7/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt8" modpriority="1"
+		passiveeffect="/heroes/accursed/alt8/ability_02/effects/state.effect"
+	/>
+	
+</state>

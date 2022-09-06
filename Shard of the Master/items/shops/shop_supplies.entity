@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Supplies"
+
+	style="supplies"
+	
+	icon="shop_supplies.tga"
+	order="1"
+	slot="3"
+>
+	<item name="Item_ManaPotion" /> 45
+	<item name="Item_HomecomingStone" /> 50
+	<item name="Item_RunesOfTheBlight" /> 75
+	<item name="Item_GoldenApple" /> 75
+	<item name="Item_LunarTear" /> 75
+	<item name="Item_OpheliasPact" /> 80
+	<item name="Item_HealthPotion" /> 100
+	<item name="Item_ManaEye" /> 100
+	<item name="Item_VeiledRot" /> 100
+	<item name="Item_FlamingEye" /> 100
+	<item name="Item_DustOfRevelation" /> 200
+	<item name="Item_FlyingCourier" />	200
+	<item name="Item_IoynStone" /> 200
+	<item name="Item_ElementUsersTome" /> 200
+	<item name="Item_SomazsSynchronizer" /> 300
+	<item name="Item_RejuvenationPotion" /> 350
+	<item name="Item_Bottle" /> 650
+	
+	<item name="Item_Custom_ShardOfTheMaster" /> 1100
+</shop>

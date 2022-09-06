@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Bephelgor_Ability4_SotM"
+
+	radiusstart="50"
+	radiusend="1000"
+	
+	lifetime="700"
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	persist="true"
+	impacteffect="effects/impact.effect"
+>
+	<onspawn>
+		<compare a="param" b="100" op="ge">
+			<setactivemodifierkey entity="this_entity" name="Balphagore_ult_level3" />
+			
+			<hasavatarkey name="Hero_Bephelgor.Alt3">
+				<playeffect effect="/heroes/bephelgor/alt3/ability_04/effects/level_3_sotm.effect" source="this_entity"	/>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Bephelgor.Alt5">
+					<playeffect effect="/heroes/bephelgor/alt5/ability_04/effects/level_3_sotm.effect" source="this_entity"/>
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/level_3_sotm.effect" source="this_entity" />
+				</else>
+			</else>
+		</compare>
+		<else>
+			<compare a="param" b="50" op="ge">
+				<setactivemodifierkey entity="this_entity" name="Balphagore_ult_level2" />
+				
+				<hasavatarkey name="Hero_Bephelgor.Alt3">
+					<playeffect effect="/heroes/bephelgor/alt3/ability_04/effects/level_2_sotm.effect" source="this_entity"/>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Bephelgor.Alt5">
+						<playeffect effect="/heroes/bephelgor/alt5/ability_04/effects/level_2_sotm.effect" source="this_entity"/>
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/level_2_sotm.effect" source="this_entity" />
+					</else>
+				</else>
+			</compare>
+			<else>
+				<hasavatarkey name="Hero_Bephelgor.Alt2">
+					<playeffect effect="/heroes/bephelgor/alt2/ability_04/effects/level_1_sotm.effect" source="this_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Bephelgor.Alt3">
+						<playeffect effect="/heroes/bephelgor/alt3/ability_04/effects/level_1_sotm.effect" source="this_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Bephelgor.Alt4">
+							<playeffect effect="/heroes/bephelgor/alt4/ability_04/effects/level_1_sotm.effect" source="this_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Bephelgor.Alt5">
+								<playeffect effect="/heroes/bephelgor/alt5/ability_04/effects/level_1_sotm.effect" source="this_entity" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/level_1_sotm.effect" source="this_entity" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onspawn>
+
+	<onimpact>
+		<applystate name="State_Bephelgor_Ability4" duration="4000" />
+		
+		<!-- Balph W state application -->
+		<targettype type="hero">
+			<!-- Get level of Balph W -->
+			<pushability name="Ability_Bephelgor2" source="source_entity" target="source_entity" />
+			<setvar0 a="source_level" b="1" op="max" source="stack_entity" />
+			<applystate name="State_Bephelgor_Ability2" duration="1500" proxy="target_entity" statelevel="var0" pushentity="true" />
+			<hasmodifier name="balph_W_normal" entity="stack_entity" />
+			<else>
+				<setactivemodifierkey name="balph_R_sotm" entity="stack_entity" />
+			</else>
+		</targettype>		
+		
+		<!-- Damage -->
+		<setvar0 a="param" b="2,3,4" op="mult" />
+		<setvar0 a="var0" b="200,250,300" op="add" />
+		<damage effecttype="Magic" amount="0" b="var0" op="add" />
+		
+		<!-- VFX -->
+		<hasmodifier name="Balphagore_ult_level3">
+			<hasavatarkey name="Hero_Bephelgor.Alt3">
+				<playeffect effect="/heroes/bephelgor/alt3/ability_04/effects/impact_level_3.effect" source="target_position" target=""/>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Bephelgor.Alt5">
+					<playeffect effect="/heroes/bephelgor/alt5/ability_04/effects/impact_level_3.effect" source="target_position" target=""/>
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/impact_level_3.effect" source="target_position" target=""/>
+				</else>
+			</else>
+		</hasmodifier>
+		<else>
+			<hasmodifier name="Balphagore_ult_level2">
+				<hasavatarkey name="Hero_Bephelgor.Alt3">
+					<playeffect effect="/heroes/bephelgor/alt3/ability_04/effects/impact_level_2.effect" source="target_position" target=""/>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Bephelgor.Alt5">
+						<playeffect effect="/heroes/bephelgor/alt5/ability_04/effects/impact_level_2.effect" source="target_position" target=""/>
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/impact_level_2.effect" source="target_position" target=""/>
+					</else>
+				</else>
+			</hasmodifier>
+			<else>
+				<hasavatarkey name="Hero_Bephelgor.Alt3">
+					<playeffect effect="/heroes/bephelgor/alt3/ability_04/effects/impact_level_1.effect" source="target_position" target=""/>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Bephelgor.Alt5">
+						<playeffect effect="/heroes/bephelgor/alt5/ability_04/effects/impact_level_1.effect" source="target_position" target=""/>
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/impact_level_1.effect" source="target_position" target=""/>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onimpact>
+	
+	<altavatar key="Hero_Bephelgor.Alt3" modpriority="1"
+		impacteffect="/heroes/bephelgor/alt3/ability_04/effects/impact.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Bephelgor.Alt5" modpriority="1"
+		impacteffect="/heroes/bephelgor/alt5/ability_04/effects/impact.effect"
+	>
+	</altavatar>
+	
+</affector>

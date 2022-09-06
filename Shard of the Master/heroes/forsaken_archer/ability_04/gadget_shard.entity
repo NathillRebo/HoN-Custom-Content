@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<heropet
+	name="Pet_ForsakenArcher_Ability4_Shard"
+	
+	icon="/heroes/forsaken_archer/ability_04/icon.tga"
+	portrait="icon.tga"
+	
+	model="effects/skeleton/model.mdf"
+	passiveeffect="effects/passive.effect"
+	spawneffect="../ability_03/pet/effects/spawn.effect"
+	
+	infoheight="170"
+	preglobalscale="1.9"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+
+	isselectable="false"
+	iscontrollable="false"
+	
+	canrotate="true"
+	ismobile="false"
+	unitwalking="true"
+	
+	invulnerable="true"
+	
+	inventory0="Ability_ForsakenArcher4_Shard"
+
+	attacktype="none"
+	combattype="Ranged"
+
+	sightrangeday="800"
+	sightrangenight="800"
+	
+	nothreat="true"
+	lifetime="2150"
+	
+	corpsetime="0"
+	corpsefadetime="0"
+	
+	unittype="Uninfestable heropet"
+	noblockneutralspawn="true"
+>
+	<ondeath>
+		<delete target="this_entity" />
+	</ondeath>
+	
+	<onexpired>
+		<delete target="this_entity" />
+	</onexpired>
+	
+	<ondamaged>
+		<changedamage b="0" op="mult" />
+	</ondamaged>
+
+	<altavatar key="Hero_ForsakenArcher.Alt" modpriority="1"
+		model="../alt/ability_04/effects/pet/model.mdf"
+		preglobalscale="1.9"
+	/>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt2" modpriority="1"
+		model="../alt2/ability_04/effects/pet/model.mdf"
+		preglobalscale="1.9"
+	/>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt3" modpriority="1"
+		model="../alt3/ability_04/effects/pet/model.mdf"
+		preglobalscale="1.75"
+	/>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt4" modpriority="1"
+		model="../alt4/ability_04/effects/pet/model.mdf"
+		passiveeffect="../alt4/ability_04/effects/passive.effect"
+		spawneffect="../alt4/ability_03/pet/effects/spawn.effect"
+		preglobalscale="1.75"
+	/>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_04/effects/passive.effect"
+		spawneffect="../alt6/ability_03/pet/effects/spawn.effect"
+		model="../alt6/ability_04/effects/tiger/model.mdf"
+		preglobalscale="2.3"
+	/>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_04/effects/minion/passive.effect"
+		spawneffect="../alt7/ability_04/effects/minion/spawn.effect"
+		model="../alt7/ability_04/effects/minion/model.mdf"
+		preglobalscale="1.7"
+	/>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt9" modpriority="1"
+	    icon="/heroes/forsaken_archer/alt9/ability_04/icon.tga"
+		passiveeffect="../alt9/ability_04/effects/passive.effect"
+		spawneffect="../alt9/ability_04/effects/spawn.effect"
+		model="../alt9/ability_04/effects/skeleton/model.mdf"
+		preglobalscale="2.2"
+	/>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt10" modpriority="1"
+		passiveeffect="../alt10/ability_04/effects/passive.effect"
+		spawneffect="../alt10/ability_04/effects/spawn.effect"
+		model="../alt10/ability_03/pet/model_2.mdf"
+		preglobalscale="2.2"
+	/>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt11" modpriority="1"
+		icon="/heroes/forsaken_archer/alt11/ability_04/icon.tga"
+		passiveeffect="../alt11/ability_04/effects/passive.effect"
+		spawneffect="../alt11/ability_04/effects/spawn.effect"
+	/>
+	
+</heropet>

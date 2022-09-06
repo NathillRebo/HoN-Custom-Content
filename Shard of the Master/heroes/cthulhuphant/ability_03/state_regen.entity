@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Cthulhuphant_Ability3_Regen"
+
+	icon="icon.tga"
+	serverentity="true"
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	healthregen="5,10,15,20"
+>
+	<modifier key="shardofthemaster_boost"
+		serverentity="false"
+		strengthpercharge="1.5"
+	>
+		<oninflict>
+			<addcharges count="1" timed="true" />
+		</oninflict>
+
+		<onrefresh>
+			<addcharges count="1" timed="true" />
+		</onrefresh>
+	</modifier>
+	<onframe />
+	
+	<modifier key="cthulhu_E_illusion" condition="illusion"
+		healthregen="1.67,3.33,5.0,6.67"
+	/>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt7" modpriority="1"
+	    icon="/heroes/cthulhuphant/alt7/ability_03/icon.tga"
+	>
+		<modifier key="Night_Set_CthulhuphantAlt7"
+			icon="/heroes/cthulhuphant/alt8/ability_03/icon.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt8" modpriority="1"
+	    icon="/heroes/cthulhuphant/alt8/ability_03/icon.tga"
+	>
+		<modifier key="Night_Set_CthulhuphantAlt8"
+			icon="/heroes/cthulhuphant/alt7/ability_03/icon.tga"
+		/> 
+	</altavatar>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt9" modpriority="1"
+	    icon="/heroes/cthulhuphant/alt9/ability_03/icon.tga"
+	/>
+	
+</state>

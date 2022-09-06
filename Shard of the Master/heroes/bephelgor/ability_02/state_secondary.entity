@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bephelgor_Ability2_Secondary"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	silenced="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	impactinterval="500"
+>
+	<onimpact>
+		<targettype type="hero" target="this_owner_entity">
+			<hasmodifier entity="source_entity" name="Balphagore_ult_notready" >
+				<pushability source="source_entity" name="Ability_Bephelgor4" />
+				<reducecooldown entity="stack_entity" duration="1000" />	
+			</hasmodifier>
+			<else>
+				<pushability source="source_entity" name="Ability_Bephelgor4" />
+				<addcharges entity="stack_entity" count="1" />
+				<starttimer duration="30000" entity="stack_entity" />
+				<expirestate name="State_Bephelgor_Ability4_Removecharges" target="source_entity" />
+			</else>
+		</targettype>
+	</onimpact>
+
+	<oninflict>
+		<playeffect effect="effects/cast.effect" source="target_entity" target="proxy_entity"/>
+	</oninflict>
+	
+	<onframe>
+		<damage effecttype="Magic DOT" amount="40,50,60,70" b="frametime" op="mult"  />
+	</onframe>
+	
+	<ondeath>
+		<expire />
+	</ondeath>
+	
+	<modifier key="balph_R_sotm" modpriority="100">
+		<onimpact />
+	</modifier>
+	
+	<altavatar key="Hero_Bephelgor.Alt2" modpriority="1"
+	>
+		<oninflict>
+			<playeffect effect="effects/cast_alt.effect" source="target_entity" target="proxy_entity"/>
+		</oninflict>	
+	</altavatar>
+	
+	<altavatar key="Hero_Bephelgor.Alt3" modpriority="1"
+		passiveeffect="effects/state_alt3.effect"
+	>
+		<oninflict>
+			<playeffect effect="effects/cast_alt3.effect" source="target_entity" target="proxy_entity"/>
+		</oninflict>	
+	</altavatar>
+	
+	<altavatar key="Hero_Bephelgor.Alt4" modpriority="1"
+		icon="../alt4/ability_02/icon.tga"
+	>
+		<oninflict>
+			<playeffect effect="effects/cast_alt4.effect" source="target_entity" target="proxy_entity"/>
+		</oninflict>	
+	</altavatar>
+	
+	<altavatar key="Hero_Bephelgor.Alt5" modpriority="2"
+		passiveeffect="effects/state_alt5.effect"
+	>
+		<oninflict>
+			<playeffect effect="effects/cast_alt5.effect" source="target_entity" target="proxy_entity"/>
+		</oninflict>	
+	</altavatar>
+	
+</state>

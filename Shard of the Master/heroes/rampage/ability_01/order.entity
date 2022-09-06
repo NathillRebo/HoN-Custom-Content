@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<order
+	name="Order_Rampage_Ability1"
+
+	triggerrange="100"
+>
+	<onbegin>		
+		<applystate name="State_Rampage_Ability1_Disabled" target="source_entity" continuous="true" />
+		<applystate name="State_Rampage_Ability1_Self" target="source_entity" continuous="true" proxy="target_entity" />
+		<applystate name="State_Rampage_Ability1_Timer" target="source_entity" continuous="true" />
+		
+		<applystate name="State_Rampage_Ability1_Sight" target="target_entity" continuous="true" pushentity="true" proxy="target_entity" />
+		<setproxy index="1" target="stack_entity" />		
+	</onbegin>
+	
+	<oncancel>
+		<!-- Expire self state -->
+		<expirestate name="State_Rampage_Ability1_Self" target="source_entity" />
+		<expirestate name="State_Rampage_Ability1_Timer" target="source_entity" />
+		<expirestate name="State_Rampage_Ability1_Disabled" target="source_entity" />
+		
+		<!-- Expire the state on the target & delete other proxies -->
+		<expire entity="this_proxy_entity1" /> <!-- state_sight -->		
+	</oncancel>
+	
+	<onframe>
+		<distance />
+		<compare a="result" b="400" op="le">
+			<spawnprojectile name="Projectile_Rampage_Ability1" source="source_entity" bind="source_entity" bindturn="true" target="target_entity" proxy="target_entity" noresponse="true" pushentity="true" />
+			<applystate name="State_Rampage_Ability1_Warp" duration="1500" target="source_entity" proxy="stack_entity" />
+			<delete target="this_entity" />
+		</compare>
+		<condition target="source_entity" test="hastrait stunned or hastrait immobilized or hastrait restrained">
+			<cancel />
+		</condition>
+	</onframe>
+</order>

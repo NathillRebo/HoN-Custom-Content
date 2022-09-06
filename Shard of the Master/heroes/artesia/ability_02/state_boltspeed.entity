@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Artesia_Ability2_BoltSpeed"
+	
+	ishidden="true"
+	
+	passiveeffect=""
+	
+	modifierkey="Artesia_BoltSpeed1,Artesia_BoltSpeed2,Artesia_BoltSpeed3,Artesia_BoltSpeed4"
+>	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		modifierkey="Artesia_BoltSpeed2,Artesia_BoltSpeed3,Artesia_BoltSpeed4,Artesia_BoltSpeed5"
+	/>
+</state>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Moraxus3"
+
+	
+	icon="icon.tga"	
+	anim="ability_3"
+	casttime="0"
+	castactiontime="0"
+	casteffect=""
+	
+	baselevel="1"
+	maxlevel="5"
+	requiredlevel="0,1,3,5,7"
+	statuseffecttooltip="State_Moraxus_Ability3_Slow"
+
+	actiontype="target_position"
+	
+	manacost="25"
+	cooldowntime="1500"
+	frontqueue="true"
+	targetscheme="enemy_units"
+	disabled="true,false"
+	
+	casteffecttype="Magic"	
+	range="1000"
+	forcerange="1000"
+	targetradius="60"
+	
+	maxcharges="2,2,3,4,5"
+	allowoutofrangecast="true"
+	allowoutofboundscast="true"
+	novoiceresponse="true"
+	
+	showlinecast="true"
+	linecastrange="1060"
+	linecastwidth="60"
+	
+	showrangeandradiusintooltip="true"
+	
+	dynamicprecache="effects/newaxe.effect"
+>
+	<onspawn>
+		<setcharges a="2" />		
+	</onspawn>
+	
+	<onlearn>
+		<setscriptvalue name="newaxe_effect" value="effects/newaxe.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onupgrade>
+		<addcharges count="1" />
+	</onupgrade>
+	
+	<onframe>
+		<!-- The first value in the <compare /> here is not a typo, it's to prevent the timer being displayed when you did not level up the skill yet -->
+		<compare a="charges" b="2,2,3,4,5" op="eq">
+			<setaccumulator value="0" op="min" />
+		</compare>
+		<else>
+			<setaccumulator value="accumulator" valueb="frametime" valueop="add" />
+		</else>
+
+		<compare a="charges" b="0" op="gt">
+			<setactivemodifierkey name="" />
+		</compare>
+
+		<compare a="accumulator" b="5" op="gt">
+			<setaccumulator value="0" />
+			<addcharges count="1" />
+			<compare a="charges" b="2,2,3,4,5" op="eq" />
+			<else>
+				<starttimer duration="5000" />
+				<changeduration b="5000" op="max" />
+			</else>
+		</compare>
+	</onframe>
+
+	<onimpact>
+		<spawnunit name="Gadget_Moraxus_Ability3_Reveal" count="1" target="source_position" pushentity="true" />
+		<spawnprojectile name="Projectile_Moraxus_Ability3" source="source_entity" target="target_position" bind="stack_entity" proxy="stack_entity" />
+
+		<!-- Charges tracking -->
+		<compare a="charges" b="2,2,3,4,5" op="eq">
+			<starttimer duration="5000" />
+		</compare>
+		<removecharge />
+		<compare a="charges" b="0" op="eq">
+			<setactivemodifierkey name="moraxus_E_Disabled" />
+		</compare>
+	</onimpact>
+	
+	<ondeath>
+		<setcharges a="2,2,3,4,5" />
+		<setactivemodifierkey name="" />
+		<starttimer entity="this_entity" duration="0" />
+	</ondeath>
+
+	<ontimer>
+		<getscriptvalue name="newaxe_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="source_entity" target="source_entity" occlude="true" />
+	</ontimer>
+	
+	<modifier key="moraxus_E_Disabled" modpriority="90"
+		disabled="true"
+	>
+	</modifier>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onattackedpreimpact>
+			<combatsupertype supertype="attack">
+				<chance threshold="0.15">
+					<random min="1" max="5" />
+					<setvar0 a="result" />
+					
+					<compare a="var0" b="1" op="eq">
+						<setpos0 position="target_entity" offsetspace="stack_entity" offset="-713 -713 0" />
+						<spawnunit name="Gadget_Moraxus_Ability3_Reveal" count="1" target="source_position" pushentity="true" />
+						<spawnprojectile name="Projectile_Moraxus_Ability3" source="source_entity" target="pos0" bind="stack_entity" proxy="stack_entity" />
+					</compare>
+					<else>
+						<compare a="var0" b="2" op="eq">
+							<setpos0 position="target_entity" offsetspace="stack_entity" offset="-713 -188 0" />
+							<spawnunit name="Gadget_Moraxus_Ability3_Reveal" count="1" target="source_position" pushentity="true" />
+							<spawnprojectile name="Projectile_Moraxus_Ability3" source="source_entity" target="pos0" bind="stack_entity" proxy="stack_entity" />
+						</compare>
+						<else>
+							<compare a="var0" b="3" op="eq">
+								<setpos0 position="target_entity" offsetspace="stack_entity" offset="0 0 0" />
+								<spawnunit name="Gadget_Moraxus_Ability3_Reveal" count="1" target="source_position" pushentity="true" />
+								<spawnprojectile name="Projectile_Moraxus_Ability3" source="source_entity" target="pos0" bind="stack_entity" proxy="stack_entity" />
+							</compare>
+							<else>
+								<compare a="var0" b="4" op="eq">
+									<setpos0 position="target_entity" offsetspace="stack_entity" offset="-188 -713 0" />
+									<spawnunit name="Gadget_Moraxus_Ability3_Reveal" count="1" target="source_position" pushentity="true" />
+									<spawnprojectile name="Projectile_Moraxus_Ability3" source="source_entity" target="pos0" bind="stack_entity" proxy="stack_entity" />
+								</compare>
+								<else>
+									<setpos0 position="target_entity" offsetspace="stack_entity" offset="-188 -188 0" />
+									<spawnunit name="Gadget_Moraxus_Ability3_Reveal" count="1" target="source_position" pushentity="true" />
+									<spawnprojectile name="Projectile_Moraxus_Ability3" source="source_entity" target="pos0" bind="stack_entity" proxy="stack_entity" />
+								</else>
+							</else>
+						</else>
+					</else>
+					<setpos0 position="target_entity" offsetspace="stack_entity" offset="0 0 0" />
+					<spawnunit name="Gadget_Moraxus_Ability3_Reveal" count="1" target="source_position" pushentity="true" />
+					<spawnprojectile name="Projectile_Moraxus_Ability3" source="source_entity" target="pos0" bind="stack_entity" proxy="stack_entity" />
+				</chance>
+			</combatsupertype>
+		</onattackedpreimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Moraxus.Alt"
+		icon="../alt/ability_03/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Moraxus.Alt4"
+		dynamicprecache="../alt4/ability_03/effects/newaxe.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="newaxe_effect" value="../alt4/ability_03/effects/newaxe.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+
+	<modifier key="rapidfire" modpriority="99"
+	>
+		<onframe>
+			<compare a="charges" b="2,2,3,4,5" op="eq">
+				<setaccumulator value="0" op="min" />
+			</compare>
+			<else>
+				<setaccumulator value="accumulator" valueb="frametime" valueop="add" />
+			</else>
+
+			<compare a="charges" b="0" op="gt">
+				<setactivemodifierkey name="" />
+			</compare>
+
+			<compare a="accumulator" b="1" op="gt">
+				<setaccumulator value="0" />
+				<addcharges count="1" />
+				<compare a="charges" b="2,2,3,4,5" op="eq" />
+				<else>
+					<starttimer duration="1000" />
+					<changeduration b="1000" op="max" />
+				</else>
+			</compare>
+		</onframe>
+
+		<onimpact>
+			<spawnunit name="Gadget_Moraxus_Ability3_Reveal" count="1" target="source_position" pushentity="true" />
+			<spawnprojectile name="Projectile_Moraxus_Ability3" source="source_entity" target="target_position" bind="stack_entity" proxy="stack_entity" />		
+
+			<!-- Charges tracking -->
+			<compare a="charges" b="2,2,3,4,5" op="eq">
+				<starttimer duration="1000" />
+			</compare>
+			<removecharge />
+			<compare a="charges" b="0" op="eq">
+				<setactivemodifierkey name="moraxus_E_Disabled" />
+			</compare>
+		</onimpact>
+	</modifier>
+
+</ability>

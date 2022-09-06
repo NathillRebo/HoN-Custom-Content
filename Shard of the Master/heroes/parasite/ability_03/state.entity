@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Parasite_Ability3"
+	icon="icon.tga"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	passiveeffect="effects/state.effect"
+	
+	deathpersist="true"
+>
+	<onframe />
+	
+	<altavatar key="Hero_Parasite.Alt5" modpriority="90"
+		passiveeffect="../alt5/ability_03/effects/state.effect"
+	>
+		<modifier key="Alt5_Ability3_Upgrade" modpriority="10"
+			passiveeffect="../alt5/ability_03/effects/state_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Parasite.Alt6" modpriority="90"
+		passiveeffect="../alt6/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Parasite.Alt8" modpriority="90"
+		passiveeffect="../alt8/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Parasite.set_ascension" modpriority="90"
+		passiveeffect="../set_ascension/ability_03/effects/state.effect"
+	/>
+</state>

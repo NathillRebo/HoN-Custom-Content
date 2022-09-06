@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Legionnaire3"
+	
+	icon="icon.tga"
+	targetradius="300"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	maxcharges="7"
+
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="500,400,300,200"
+	cooldowntype="legionnaire_E"
+	noresponse="true"
+	
+	dynamicprecache="effects/cast.effect"
+>
+	<onlearn>
+		<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onimpact>
+		<setactivemodifierkey name="legionnaire_E_inactive" />
+	</onimpact>
+	
+	<onattackedpreimpact>
+		<combatsupertype supertype="attack">
+			<isready>
+				<setaccumulator value="0" />
+
+				<compare a="charges" b="8" op="ge">
+					<setaccumulator value="1" />
+				</compare>
+				<else>
+					<evaluate a="9" b="charges" op="mult" />
+					<evaluate a="0" b="result" op="add" />
+					<evaluate a="result" b="100" op="div" />
+					<chance threshold="result">
+						<setaccumulator value="1" />
+					</chance>
+					<else>
+						<addcharges count="1" />
+						<starttimer duration="5000" />
+					</else>
+				</else>
+
+				<compare a="accumulator" b="1" op="eq">
+					<startcooldown />
+					
+					<spawnaffector name="Affector_Legionnaire_Ability3" target="source_entity" firsttarget="" />
+					
+					<!-- Dynamic visual effects -->
+					<getscriptvalue name="cast_effect" destvar="str0" entity="this_entity" />
+					<playeffectdynamic effect="str0" source="source_entity" target="" occlude="true" />
+
+					<setcharges a="0" />
+					<resettimer />
+				</compare>
+			</isready>
+		</combatsupertype>
+	</onattackedpreimpact>
+	
+	<ontimer>
+		<setcharges a="0" />
+	</ontimer>
+	
+	<modifier key="legionnaire_E_inactive" modpriority="100"
+		icon="/shared/icons/off.tga"
+	>
+		<onimpact>
+			<setactivemodifierkey name="" />
+		</onimpact>
+		
+		<onattackedpreimpact />
+	</modifier>
+	
+	<altavatar key="Hero_Legionnaire.Alt"
+		dynamicprecache="effects/cast_alt.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast_alt.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt2"
+		dynamicprecache="effects/cast_alt2.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast_alt2.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt3"
+		dynamicprecache="effects/cast_alt3.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast_alt3.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt4"
+		dynamicprecache="effects/cast_alt4.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast_alt4.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt5"
+		dynamicprecache="effects/cast_alt5.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast_alt5.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+		
+	<altavatar key="Hero_Legionnaire.Alt6"
+		icon="/heroes/legionnaire/alt6/ability_03/icon.tga"
+		dynamicprecache="effects/cast_alt6.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast_alt6.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt7"
+		dynamicprecache="effects/cast_alt7.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast_alt7.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt8"
+		dynamicprecache="effects/cast_alt8.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast_alt8.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt10"
+		dynamicprecache="effects/cast_alt10.effect"
+	>
+		<onlearn>
+			<hasmodifier name="hellbourne">
+				<setscriptvalue name="cast_effect" value="effects/cast_alt10_hellbourne.effect" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setscriptvalue name="cast_effect" value="effects/cast_alt10_legion.effect" entity="this_entity" />
+			</else>
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt11"
+		dynamicprecache="../alt11/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt11/ability_03/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt13"
+		dynamicprecache="../alt13/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt13/ability_03/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt15"
+		dynamicprecache="../alt15/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt15/ability_03/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Alt16"
+		dynamicprecache="../alt16/ability_03/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt16/ability_03/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.pog_skin"
+		dynamicprecache="effects/cast_pog.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast_pog.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.trophy_skin"
+		dynamicprecache="effects/cast_trophy.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast_trophy.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Legionnaire.Classic"
+		dynamicprecache="effects/cast_classic.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast_classic.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>	
+</ability>

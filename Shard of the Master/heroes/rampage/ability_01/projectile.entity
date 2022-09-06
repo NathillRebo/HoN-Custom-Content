@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Rampage_Ability1"
+
+	speed="1200"
+	lifetime="1500"
+	gravity=""
+	
+	effectscale="1.0"
+	
+	canturn="true"
+	flying="true"
+	flyheight="0"
+	
+	impactdistance="100"
+>
+	<onspawn />
+	
+	<onimpact>
+		<cantarget targetscheme="enemy_units" ignoreinvulnerable="false">
+			<combatevent effecttype="AbilityBasedProjectile">
+				<onimpact>
+					<expirestate name="State_Rampage_Ability1_Disabled" target="source_entity" />
+					<cantarget effecttype="Physical">
+						<applystate name="State_Stunned" duration="1000,1200,1400,1600" />
+						<spawnaffector name="Affector_Rampage_Ability1" target="target_entity" />
+						
+						<cantarget effecttype="Push">
+							<push force="150" duration="1000,1200,1400,1600" source="source_entity" />
+						</cantarget>
+						<damage effecttype="Physical" amount="100,140,180,220" />
+					</cantarget>
+				</onimpact>
+			</combatevent>
+		</cantarget>
+		
+		<!-- Art -->
+		<hasavatarkey name="Hero_Rampage.Alt2" entity="source_entity" >
+			<playeffect effect="/heroes/rampage/alt2/ability_01/effects/impact.effect" source="target_entity" />
+			<playeffect effect="../ability_03/effects/cast.effect" target="source_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Rampage.Alt7" entity="source_entity" >
+				<playeffect effect="/heroes/rampage/alt7/ability_03/effects/impact.effect" source="target_entity" />
+				<playeffect effect="../ability_03/effects/cast.effect" target="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Rampage.Alt14" entity="source_entity" >
+					<playeffect effect="/heroes/rampage/alt14/ability_01/effects/impact.effect" source="target_entity" />
+					<playeffect effect="../ability_03/effects/cast.effect" target="source_entity" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="../ability_03/effects/impact.effect" source="target_entity" />
+					<playeffect effect="../ability_03/effects/cast.effect" target="source_entity" />
+				</else>
+			</else>
+		</else>
+	</onimpact>
+	
+	<ondeath>
+		<expirestate name="State_Rampage_Ability1_Warp" target="source_entity" />
+		
+		<!-- Expire lingering states -->
+		<expirestate name="State_Rampage_Ability1_Timer" target="source_entity" />
+		<expirestate name="State_Rampage_Ability1_Disabled" target="source_entity" />
+		<expirestate name="State_Rampage_Ability1_Self" target="source_entity" />
+		<expirestate name="State_Rampage_Ability1_Sight" target="this_proxy_entity" />
+		
+		<!-- Apply residual states -->
+		<applystate name="State_Rampage_Ability1_SpeedBoost" target="source_entity" duration="500" />
+		
+		<!-- Logic to reset Rampage's Stampede target switch -->
+		<pushability name="Ability_Rampage1" />
+		<setaccumulator value="0" entity="stack_entity" />
+	</ondeath>
+	
+</projectile>

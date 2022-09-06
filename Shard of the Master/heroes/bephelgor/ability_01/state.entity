@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bephelgor_Ability1"
+	ishidden="true"
+	effecttype=""
+	displaylevel="true"
+	impactinterval="500"
+>
+	<oninflict>
+		<setcharges a="0" />
+	</oninflict>
+	
+	<onimpact>
+		<compare a="charges" b="5" op="eq">
+			<spawnunit name="Pet_Bephelgor_Ability1" target="target_position" offsetspace="source_entity" offset="50 250" owner="" team="" count="1"  />
+		</compare>
+		<compare a="charges" b="4" op="eq">
+			<spawnunit name="Pet_Bephelgor_Ability1" target="target_position" offsetspace="source_entity" offset="-50 200" owner="" team="" count="1"  />
+			<setcharges a="5" />
+		</compare>
+		<compare a="charges" b="3" op="eq">
+			<spawnunit name="Pet_Bephelgor_Ability1" target="target_position" offsetspace="source_entity" offset="0 250" owner="" team="" count="1"  />
+			<setcharges a="4" />
+		</compare>
+		<compare a="charges" b="2" op="eq">
+			<spawnunit name="Pet_Bephelgor_Ability1" target="target_position" offsetspace="source_entity" offset="0 225" owner="" team="" count="1"  />
+			<setcharges a="3" />
+		</compare>
+		<compare a="charges" b="1" op="eq">
+			<spawnunit name="Pet_Bephelgor_Ability1" target="target_position" offsetspace="source_entity" offset="-25 225" owner="" team="" count="1"  />
+			<setcharges a="2" />
+		</compare>
+		<compare a="charges" b="0" op="eq">
+			<spawnunit name="Pet_Bephelgor_Ability1" target="target_position" offsetspace="source_entity" offset="25 200" owner="" team="" count="1"  />
+			<setcharges a="1" />
+		</compare>
+	</onimpact>
+</state>

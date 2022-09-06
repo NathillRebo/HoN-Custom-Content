@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Prophet_Shard"
+	
+	icon="icon.tga"
+	
+	attackspeedpercharge="0.10"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+>
+	<oninflict>
+		<addcharges count="1" timed="true" />
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" timed="true"/>
+	</onrefresh>
+</state>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Aluna_Ability2_Red"
+
+	speed="3000"
+	gravity="0"
+
+	modelscale="1.25"
+	model="effects/staff.mdf"
+	
+	impacteffect="effects/impactred.effect"
+	traileffect="effects/trailred.effect"
+	deatheffect=""
+	
+	canturn="false"
+	flying="true"
+	flyheight="70"
+	
+	touchradius="125"
+	maxtouchespertarget="1"
+	touchtargetscheme="enemy_units"
+	toucheffecttype="Magic"
+	touchradiusdiradjust="true"
+	
+	lifetime="8000"
+	
+	dynamicprecache="effects/impactred.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impactred_effect" value="effects/impactred.effect" entity="this_entity" />
+	</onspawn>
+	
+	<ontouch>
+		<damage effecttype="Magic" amount="150,220,290,360" />
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="impactred_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+	</ontouch>
+	
+	<modifier key="shardofthemaster_boost" modpriority="133">
+		<ontouch>
+			<damage effecttype="Magic" amount="150,220,290,360" />
+			<setvar0 a="target_maxhealth" b="0.12" op="mult" />
+			<pushstack a="var0" />
+			<compare a="target_health" b="result" op="lt">
+				<kill target="target_entity" />
+			</compare>
+			
+			<!-- Dynamic visual effects -->
+			<getscriptvalue name="impactred_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+		</ontouch>
+	</modifier>
+	
+	<altavatar key="Hero_Aluna.Alt"
+		model="../alt/ability_02/effects/staff.mdf"
+		
+		impacteffect="../alt/ability_02/effects/impactred.effect"
+		traileffect="../alt/ability_02/effects/trailred.effect"
+		dynamicprecache="../alt/ability_02/effects/impactred.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impactred_effect" value="../alt/ability_02/effects/impactred.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt2"
+		model="../alt2/ability_02/effects/staff.mdf"
+		
+		impacteffect="../alt2/ability_02/effects/impactred.effect"
+		traileffect="../alt2/ability_02/effects/trailred.effect"
+		dynamicprecache="../alt2/ability_02/effects/impactred.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impactred_effect" value="../alt2/ability_02/effects/impactred.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt3"
+		model="../alt3/ability_02/effects/staff.mdf"
+		
+		impacteffect="../alt3/ability_02/effects/impactred.effect"
+		traileffect="../alt3/ability_02/effects/trailred.effect"
+		dynamicprecache="../alt3/ability_02/effects/impactred.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impactred_effect" value="../alt3/ability_02/effects/impactred.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt4"
+		model="../alt4/ability_02/effects/staff.mdf"
+		
+		impacteffect="../alt4/ability_02/effects/impactred.effect"
+		traileffect="../alt4/ability_02/effects/trailred.effect"
+		dynamicprecache="../alt4/ability_02/effects/impactred.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impactred_effect" value="../alt4/ability_02/effects/impactred.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt5"
+		model="../alt5/ability_02/effects/staff/model.mdf"
+		
+		impacteffect="../alt5/ability_02/effects/impactred.effect"
+		traileffect="../alt5/ability_02/effects/trailred.effect"
+		dynamicprecache="../alt5/ability_02/effects/impactred.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impactred_effect" value="../alt5/ability_02/effects/impactred.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+		
+	<altavatar key="Hero_Aluna.Alt7"
+		model="../alt7/ability_02/effects/staff.mdf"
+		impacteffect="../alt7/ability_02/effects/impactred.effect"
+		traileffect="../alt7/ability_02/effects/trailred.effect"
+		dynamicprecache="../alt7/ability_02/effects/impactred.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impactred_effect" value="../alt7/ability_02/effects/impactred.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt8"
+		model="../alt8/ability_02/effects/staff.mdf"
+		modelscale="1.25"
+		impacteffect="../alt8/ability_02/effects/impactred.effect"
+		traileffect="../alt8/ability_02/effects/trailred.effect"
+		dynamicprecache="../alt8/ability_02/effects/impactred.effect"
+	>
+		<modifier key="Combo_efx_red" modpriority="101"
+			dynamicprecache="../alt8/ability_02/effects/impactred_combo.effect"
+		>
+			<onspawn>
+				<setscriptvalue name="impactred_effect" value="../alt8/ability_02/effects/impactred_combo.effect" entity="this_entity" />
+			</onspawn>
+		</modifier>	
+		
+		<onspawn>
+			<setscriptvalue name="impactred_effect" value="../alt8/ability_02/effects/impactred.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+</projectile>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bephelgor_Ability3_Shard"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	ishidden=""
+	attackspeedpercharge="0.1"
+	movespeedmultiplierpercharge="0.01"
+	maxcharges="6"
+>
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+	
+	<altavatar key="Hero_Bephelgor.Alt4"
+		icon="/heroes/bephelgor/alt4/ability_03/icon.tga"
+	/>
+	
+</state>

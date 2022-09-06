@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Calamity3"
+	
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	
+	casttime="0"
+	castactiontime="0"
+	noresponse="true"
+
+	cooldowntime="16000,12000,8000,4000"
+>
+	<ontimer>
+		<setaccumulator value="0" />
+	</ontimer>
+
+	<onattackingdamageevent propagatetoillusions="false">
+		<targettype type="stealth" />
+		<else>
+			<isstealthed entity="source_entity" />
+			<else>
+				<damageeffecttype effecttype="DOT" />
+				<else>
+					<damageeffecttype effecttype="Returned" />
+					<else>
+						<cantarget targetscheme="enemy_nonboss_nonhero_units" effecttype="Physical"> <!-- If you hit creeps use the accumulator/timer for the cooldown -->
+							<compare a="accumulator" b="0" op="le">
+								<setactivemodifierkey entity="this_entity" name="Calamity_nextattackneedstobeinvis" />
+								<applystate name="State_Calamity_Ability3_Strike" target="source_entity" duration="100" />
+								<attack startcooldown="false" />
+								
+								<!-- VFX -->
+								<hasavatarkey name="Hero_Calamity.Alt">
+									<playeffect effect="../alt/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Calamity.Alt2">
+										<playeffect effect="../alt2/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Calamity.Alt3">
+											<playeffect effect="../alt3/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Calamity.Alt4">
+												<playeffect effect="../alt4/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Calamity.Alt5">
+													<playeffect effect="../alt5/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Calamity.Alt6">
+														<playeffect effect="../alt6/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+													</hasavatarkey>
+													<else>
+														<hasavatarkey name="Hero_Calamity.Alt8">
+															<playeffect effect="../alt8/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+														</hasavatarkey>
+														<else>
+															<hasavatarkey name="Hero_Calamity.Alt9">
+																<playeffect effect="../alt9/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+															</hasavatarkey>
+															<else>
+																<playeffect effect="effects/impact.effect" source="target_entity" target="" occlude="true" />
+															</else>
+														</else>
+													</else>
+												</else>
+											</else>
+										</else>
+									</else>
+								</else>
+
+								<setaccumulator value="1" />
+								<hasmodifier name="rapidfire">
+									<starttimer duration="4000,3000,2000,1000" />
+								</hasmodifier>
+								<else>
+									<starttimer duration="10000,7500,5000,2500" />
+								</else>
+							</compare>
+						</cantarget>
+						<else>
+							<cantarget targetscheme="enemy_heroes" effecttype="Physical"> <!-- If you hit heroes use the normal cooldown -->
+								<isready>
+									<startcooldown />
+									
+									<setactivemodifierkey entity="this_entity" name="Calamity_nextattackneedstobeinvis" />
+									<applystate name="State_Calamity_Ability3_Strike" target="source_entity" duration="100" />
+									<attack startcooldown="false" />
+									
+									<!-- VFX -->
+									<hasavatarkey name="Hero_Calamity.Alt">
+										<playeffect effect="../alt/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Calamity.Alt2">
+											<playeffect effect="../alt2/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Calamity.Alt3">
+												<playeffect effect="../alt3/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Calamity.Alt4">
+													<playeffect effect="../alt4/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Calamity.Alt5">
+														<playeffect effect="../alt5/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+													</hasavatarkey>
+													<else>
+														<hasavatarkey name="Hero_Calamity.Alt6">
+															<playeffect effect="../alt6/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+														</hasavatarkey>
+														<else>
+															<hasavatarkey name="Hero_Calamity.Alt8">
+																<playeffect effect="../alt8/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+															</hasavatarkey>
+															<else>
+																<hasavatarkey name="Hero_Calamity.Alt9">
+																	<playeffect effect="../alt9/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+																</hasavatarkey>
+																<else>
+																	<playeffect effect="effects/impact.effect" source="target_entity" target="" occlude="true" />
+																</else>
+															</else>
+														</else>
+													</else>
+												</else>
+											</else>
+										</else>
+									</else>
+									
+									<!-- Drain state duration -->
+									<setvar0 a="30000,60000,90000,120000" />
+									<applystate name="State_Calamity_Ability3_Drain" duration="var0" target="target_entity" />
+									
+									<!-- Buff state duration -->
+									<setvar1 a="var0" b="1.5" op="mult" />
+									<applystate name="State_Calamity_Ability3_Gain" duration="var1" target="source_entity" />
+								</isready>
+							</cantarget>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onattackingdamageevent>
+	
+	<modifier key="shardofthemaster_boost">
+		<onattackingdamageevent propagatetoillusions="false">
+			<targettype type="stealth" />
+			<else>
+				<isstealthed entity="source_entity" />
+				<else>
+					<damageeffecttype effecttype="DOT" />
+					<else>
+						<damageeffecttype effecttype="Returned" />
+						<else>
+							<cantarget targetscheme="enemy_nonboss_nonhero_units" effecttype="Physical"> <!-- If you hit creeps use the accumulator/timer for the cooldown -->
+								<compare a="accumulator" b="0" op="le">
+									<setactivemodifierkey entity="this_entity" name="Calamity_nextattackneedstobeinvis" />
+									<applystate name="State_Calamity_Ability3_Strike" target="source_entity" duration="100" />
+									<attack startcooldown="false" />
+									
+									<!-- VFX -->
+									<hasavatarkey name="Hero_Calamity.Alt">
+										<playeffect effect="../alt/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Calamity.Alt2">
+											<playeffect effect="../alt2/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Calamity.Alt3">
+												<playeffect effect="../alt3/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Calamity.Alt4">
+													<playeffect effect="../alt4/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Calamity.Alt5">
+														<playeffect effect="../alt5/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+													</hasavatarkey>
+													<else>
+														<hasavatarkey name="Hero_Calamity.Alt6">
+															<playeffect effect="../alt6/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+														</hasavatarkey>
+														<else>
+															<hasavatarkey name="Hero_Calamity.Alt8">
+																<playeffect effect="../alt8/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+															</hasavatarkey>
+															<else>
+																<hasavatarkey name="Hero_Calamity.Alt9">
+																	<playeffect effect="../alt9/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+																</hasavatarkey>
+																<else>
+																	<playeffect effect="effects/impact.effect" source="target_entity" target="" occlude="true" />
+																</else>
+															</else>
+														</else>
+													</else>
+												</else>
+											</else>
+										</else>
+									</else>
+
+									<setaccumulator value="1" />
+									<hasmodifier name="rapidfire">
+										<starttimer duration="4000,3000,2000,1000" />
+									</hasmodifier>
+									<else>
+										<starttimer duration="10000,7500,5000,2500" />
+									</else>
+								</compare>
+							</cantarget>
+							<else>
+								<cantarget targetscheme="enemy_heroes" effecttype="Physical"> <!-- If you hit heroes use the normal cooldown -->
+									<isready>
+										<startcooldown />
+										
+										<setactivemodifierkey entity="this_entity" name="Calamity_nextattackneedstobeinvis" />
+										<applystate name="State_Calamity_Ability3_Strike" target="source_entity" duration="100" />
+										<attack startcooldown="false" />
+										
+										<!-- VFX -->
+										<hasavatarkey name="Hero_Calamity.Alt">
+											<playeffect effect="../alt/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Calamity.Alt2">
+												<playeffect effect="../alt2/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Calamity.Alt3">
+													<playeffect effect="../alt3/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Calamity.Alt4">
+														<playeffect effect="../alt4/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+													</hasavatarkey>
+													<else>
+														<hasavatarkey name="Hero_Calamity.Alt5">
+															<playeffect effect="../alt5/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+														</hasavatarkey>
+														<else>
+															<hasavatarkey name="Hero_Calamity.Alt6">
+																<playeffect effect="../alt6/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+															</hasavatarkey>
+															<else>
+																<hasavatarkey name="Hero_Calamity.Alt8">
+																	<playeffect effect="../alt8/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+																</hasavatarkey>
+																<else>
+																	<hasavatarkey name="Hero_Calamity.Alt9">
+																		<playeffect effect="../alt9/ability_03/effects/impact.effect" source="target_entity" target="" occlude="true" />
+																	</hasavatarkey>
+																	<else>
+																		<playeffect effect="effects/impact.effect" source="target_entity" target="" occlude="true" />
+																	</else>
+																</else>
+															</else>
+														</else>
+													</else>
+												</else>
+											</else>
+										</else>
+										
+										<!-- Drain state duration -->
+										<setvar0 a="60000,90000,120000,150000" />
+										<applystate name="State_Calamity_Ability3_Drain" duration="var0" target="target_entity" />
+										
+										<!-- Buff state duration -->
+										<setvar1 a="var0" b="1.5" op="mult" />
+										<applystate name="State_Calamity_Ability3_Gain" duration="var1" target="source_entity" />
+									</isready>
+								</cantarget>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</onattackingdamageevent>
+	</modifier>
+	
+	<onattackstart propagatetoillusions="false">
+		<hasmodifier name="Calamity_nextattackneedstobeinvis">
+			<setvalue name="combat_attackability" a="1" />
+			<setattackprojectile name="Projectile_Calamity_Ability3_Invis" />
+			<setactivemodifierkey name="" />
+		</hasmodifier>
+	</onattackstart>
+
+	<onimpact />
+
+	<!-- Make the aura only heroes, not toggleable, and not work on illusions for krosmode -->
+	<modifier key="krosmode" modpriority="101"
+		actiontype="passive"
+	>
+		<onimpact />
+	</modifier>
+	
+	<altavatar key="Hero_Calamity.Alt9"
+		icon="../alt9/ability_03/icon.tga"
+	/>
+</ability>

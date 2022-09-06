@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_MonkeyKing4"
+
+	icon="icon.tga"
+	
+	anim="cloud_cast"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="passive"
+	cooldowntime="5000"
+	
+	manacost="0"
+	modifierkey="MonkeyKingUlt1,MonkeyKingUlt2,MonkeyKingUlt3"
+>
+	<onimpact />
+	
+	<ondamaged priority="-10">
+		<compare a="source_damage" b="0" op="gt">
+			<targettype type="self" />
+			<else>
+				<targettype type="hero">
+					<startcooldown duration="5000" />
+					<expirestate name="State_MonkeyKing_Ability4" target="source_entity" />
+				</targettype>
+			</else>
+		</compare>
+	</ondamaged>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<ondamaged priority="-10">
+			<compare a="source_damage" b="33" op="gt">
+				<targettype type="self" />
+				<else>
+					<targettype type="hero">
+						<startcooldown duration="5000" />
+						<expirestate name="State_MonkeyKing_Ability4" target="source_entity" />
+					</targettype>
+				</else>
+			</compare>
+		</ondamaged>
+	</modifier>
+	
+	<onframe>
+		<isready>
+			<targettype type="alive" target="source_entity">
+				<applystate name="State_MonkeyKing_Ability4" continuous="true" />
+			</targettype>
+		</isready>
+	</onframe>
+	
+	<altavatar key="Hero_MonkeyKing.Alt3"
+		icon="/heroes/monkey_king/alt3/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt4"
+		icon="/heroes/monkey_king/alt4/ability_04/icon.tga"
+	/>
+	<altavatar key="Hero_MonkeyKing.Alt11"
+		icon="/heroes/monkey_king/alt11/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_MonkeyKing.Alt15"
+		icon="../alt15/ability_04/icon.tga"
+	/>
+
+	<modifier key="soccer" modpriority="150" modifierkey=""
+		baselevel="0"
+		maxlevel="1"
+		attackspeed="0.3"
+		cooldowntime="8000"
+	>
+		<ondamaged>
+			<compare a="source_damage" b="0" op="gt">
+				<targettype type="self" />
+				<else>
+					<cantarget targetscheme="enemy_units">
+						<else>
+							<startcooldown duration="7000" />
+							<expirestate name="State_MonkeyKing_Ability4" target="source_entity" />
+						</else>
+					</cantarget>
+				</else>
+			</compare>
+		</ondamaged>
+		<onimpact />
+	</modifier>	
+	
+</ability>

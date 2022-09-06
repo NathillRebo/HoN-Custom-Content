@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Calamity_Ability3_Drain"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="100"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	strengthpercharge="-1"
+	agilitypercharge="-1"
+	intelligencepercharge="-1"
+
+	movespeedpercharge="-3"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1" timed="true" />
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1" timed="true" />
+	</onrefresh>
+	
+	<modifier key="shardofthemaster_boost"
+		deathpersist="true"
+	/>
+</state>

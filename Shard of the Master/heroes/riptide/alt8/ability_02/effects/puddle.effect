@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+
+			<template name="puddle" >
+				<groundsprite
+					life="500"
+					material="/shared/effects/materials/water_puddle_white_notround.material"
+					size="{size}"
+					color="0 .35 .5"
+					startalpha="0"
+					endalpha=".75"
+					position="{position}"
+					yaw="{yaw}"
+				/>
+				
+				<groundsprite
+					delay="500"
+					expirelife="500"
+					material="/shared/effects/materials/water_puddle_white_notround.material"
+					size="{size}"
+					color="0 .35 .5"
+					startalpha=".75"
+					endalpha="0"
+					position="{position}"
+					yaw="{yaw}"
+				/>
+				
+			</template>
+			<instance name="puddle" position="0 0 0" size="350" yaw="90" />
+			
+		
+			<simpleemitter
+				spawnrate="1"
+				particlelife="1500"
+				position="0 0 50"
+				material="/shared/effects/materials/octagon_aura.material"
+				depthbias="-100"
+			>
+				<particle
+					lockup="1"
+					pitch="90"
+					startalpha="1"
+					endalpha="0"
+					startsize="0"
+					endsize="750"
+					startcolor="0"
+					midcolor="0 .2 .2"
+					endcolor="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			
+			<simpleemitter
+				
+				spawnrate="150"
+				position="0 0 50"
+				particlelife="800"
+				speed="100"
+				drag=".1"
+				angle="0"
+				direction="0 0 1"
+				material="/shared/effects/materials/sparks_reveal.material"
+				offsetsphere="250 250 0"
+				depthbias="-5"
+			>
+				<particle
+					minangle="0" maxangle="360"
+					color="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					startsize="30"
+					endsize="50"
+					midsizepos=".2"
+					startframe=".3"
+					endframe="1"
+					minscale="1"
+					maxscale="3"
+				/>
+			</simpleemitter>
+			
+			<model
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				anim="idle"
+				color="0 1 .5"
+				startscale="1"
+				endscale="7.5"
+				life="1000" loop="1"
+				position="0 0 0"
+			>
+				<simpleemitter
+					bone="Scene Root"
+					spawnrate="100"
+					position="0 0 0"
+					particlelife="2000"
+					speed="30"
+					drag=".05"
+					angle="360"
+					direction="1 0 0"
+					material="/shared/effects/materials/sparks_reveal_white.material"
+					offsetsphere="1"
+					depthbias="-5"
+				>
+					<particle
+						minangle="0" maxangle="360"
+						startcolor="0 .75 2" midcolor="0 1 1" endcolor="0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						startsize="3"
+						endsize="5"
+						midsizepos=".2"
+						startframe=".5"
+						endframe=".3"
+						minscale="1"
+						maxscale="3"
+					/>
+				</simpleemitter>
+			
+			</model>
+		
+			<groundsprite				
+				color="0 .2 .3"
+				size="400"
+				expirelife="500"					
+				material="/shared/effects/materials/whitedot_ground.material"			
+			/>
+			
+			<groundsprite				
+				color="0 .1 .125"
+				alpha=".5"
+				size="600"
+				expirelife="500"					
+				material="/shared/effects/materials/ground_whitedot.material"			
+			/>
+
+			<template name="wave">
+				<simpleemitter
+					spawnrate=".5"
+					particlelife="2500"
+					speed="100.0"
+					minangle="0"
+					maxangle="10"
+					direction="{direction}"
+					position="0 0 0"
+					timenudge="500"
+				>
+					<particle
+					 turn="true"
+					>
+						<billboard
+							life="2500"
+							material="/shared/effects/materials/wave.material"
+							startcolor="0"
+							midcolor=".05"
+							endcolor="0"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+							param=".012"
+							startsize="250"
+							endsize="400"
+							yaw="180"
+							roll="90"
+							directionalspace="local"
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+							mindelay="100"
+							maxdelay="500"
+							depthbias="-100"
+						/>
+
+				</particle>
+
+			</simpleemitter>
+		</template>	
+		
+		<instance name="wave" direction="1 0 0"/>
+		<instance name="wave" direction="-1 0 0"/>
+		<instance name="wave" direction="0 1 0"/>
+		<instance name="wave" direction="0 -1 0"/>
+		
+
+		<template name="reeds" >
+			<model 
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				anim="idle"
+				yaw="{yaw1}"
+				scale="11"
+				expirelife="600"
+			>
+				<model
+					bone="_bone_fx_01"
+					delay="500"
+					model="/heroes/andromeda/ability_02/effects/aurora1.mdf"
+					anim="idle"
+					expirelife="500"
+					startscale=".07"
+					endscale="0"
+					
+				>
+					<simpleemitter
+						bone="_bone_fx"
+						spawnrate="4"
+						minarticlelife="1500"
+						maxparticlelife="3500"
+						offsetsphere="0 0 0"
+					>
+						<particle 
+						>
+							<billboard
+								material="/shared/effects/materials/light_rays.material"
+								startscale="1"
+								endscale="1"
+								minwidth="150"
+								maxwidth="300"
+								minheight="220"
+								maxheight="200"
+								startcolor="0"
+								midcolor="0 .12 .15"
+								endcolor="0 0 0"
+								position="0 0 125"	
+								minlife="1333"
+								maxlife="2000"
+							/>
+						</particle>
+					</simpleemitter>
+				</model>			
+			</model>
+			
+			
+		</template>
+		
+		<instance name="reeds" yaw1="0" yaw2="86"  scale=".19" />
+		<instance name="reeds" yaw1="55" yaw2="53" scale=".25" />
+		<instance name="reeds" yaw1="40" yaw2="8" scale=".21" />
+		<instance name="reeds" yaw1="60" yaw2="60" scale=".23" />
+		<instance name="reeds" yaw1="80" yaw2="157" scale=".15" />
+		<instance name="reeds" yaw1="87" yaw2="35" scale=".2" />
+		<instance name="reeds" yaw1="120" yaw2="86"  scale=".19" />
+		<instance name="reeds" yaw1="140" yaw2="53" scale=".25" />
+		<instance name="reeds" yaw1="160" yaw2="8" scale=".21" />
+		<instance name="reeds" yaw1="215" yaw2="60" scale=".23" />
+		<instance name="reeds" yaw1="200" yaw2="157" scale=".15" />
+		<instance name="reeds" yaw1="220" yaw2="35" scale=".2" />
+		<instance name="reeds" yaw1="240" yaw2="86"  scale=".19" />
+		<instance name="reeds" yaw1="260" yaw2="53" scale=".25" />
+		<instance name="reeds" yaw1="280" yaw2="8" scale=".21" />
+		<instance name="reeds" yaw1="300" yaw2="60" scale=".23" />
+		<instance name="reeds" yaw1="-50" yaw2="157" scale=".15" />
+		<instance name="reeds" yaw1="-75" yaw2="35" scale=".2" />
+		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />		
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

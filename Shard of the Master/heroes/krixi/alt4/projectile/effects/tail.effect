@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="tail" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<sound
+				sample="/heroes/krixi/sounds/attack_%.wav"
+				volume="0.65"
+				linearfalloff="true"
+				falloffstart="400"
+				falloffend="1800"
+				fadeout="2000"
+				fadein="0"
+			/>
+	
+			<template name="star">
+
+			<billboard
+				bone="{bone}"
+				material="/shared/effects/materials/flare1.material"
+				life="1000"
+				startcolor=".2 .2 .2"
+				midcolor=".7 .7 .7"
+				endcolor=".2 .2 .2"
+				startsize="5"
+				midsize="10"
+				endsize="5"
+				loop="true"
+				depthbias="-3"
+			/>
+
+		</template>
+		
+			<instance name="star" bone="_bone_001"/>
+			<instance name="star" bone="_bone_002"/>
+			<instance name="star" bone="_bone_003"/>
+			<instance name="star" bone="_bone_004"/>
+			<instance name="star" bone="_bone_005"/>
+			<instance name="star" bone="_bone_006"/>
+			<instance name="star" bone="_bone_007"/>
+			<instance name="star" bone="_bone_008"/>
+			<instance name="star" bone="_bone_009"/>
+			<instance name="star" bone="_bone_010"/>
+			<instance name="star" bone="_bone_011"/>
+			<instance name="star" bone="_bone_012"/>
+			<instance name="star" bone="_bone_013"/>
+			
+
+			
+			<trailemitter
+				spawnrate="25"
+				particlelife="250"
+				texpostime="250"
+				texposscale="0"
+				texstretchscale="0.75"
+				material="/shared/effects/materials/whitesquare.material"
+				position="5 7 0"
+			>
+				<particle
+					startsize="20"
+					midsize="7.5"
+					endsize="1"
+					midsizepos=".5"
+					startcolor=".2 .2 2"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+			
+			<trailemitter
+				spawnrate="25"
+				particlelife="250"
+				texpostime="250"
+				texposscale="0"
+				texstretchscale="0.75"
+				material="/shared/effects/materials/whitesquare.material"
+				position="0 0 0"
+			>
+				<particle
+					startsize="15"
+					midsize="5"
+					endsize="1"
+					midsizepos=".5"
+					startcolor="2 2 5"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+			
+			<trailemitter
+				spawnrate="25"
+				particlelife="250"
+				texpostime="250"
+				texposscale="0"
+				texstretchscale="0.75"
+				material="/shared/effects/materials/whitesquare.material"
+				position="-5 7 0"
+			>
+				<particle
+					startsize="20"
+					midsize="7.5"
+					endsize="1"
+					midsizepos=".5"
+					startcolor="2 .2 .2"
+					endcolor="0 0 0"
+				/>
+			</trailemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

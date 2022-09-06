@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rampage_Ability4_Alt8_Art"
+
+	icon="icon.tga"
+	ishidden="true"
+	
+	effecttype=""
+	
+	modifierkey="Alt8_Ulting"
+>
+	<onframe>
+		<condition target="this_proxy_entity" test="not_hasstate State_Rampage_Ability4">
+			<expire />
+		</condition>
+	</onframe>
+</state>

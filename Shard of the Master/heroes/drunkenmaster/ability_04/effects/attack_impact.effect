@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+
+			<controller
+				life="3000"
+				owner="source"
+				position="0 0 100"
+				lookatowner="target"
+				lookatbone="Scene Root" 
+				lookatposition="0 0 70"
+				lookat="true"
+			>
+						
+				<simpleemitter
+					bone="_bone_centerofchest"
+					direction="0 -1 0"
+					minangle="0"
+					maxangle="90"
+					count="50"
+					speed="600"
+					drag=".005"
+					particlelife="500"
+					material="/shared/effects/materials/light_rays.material"
+				>
+					<particle
+						startsize="0"
+						endsize="90"
+						startwidth="0"
+						endwidth="30"
+						startcolor=".2 .05 0"
+						endcolor="0"
+						turn="1"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					direction="0 -1 0"
+					angle="0"
+					count="1"
+					speed="400"
+					drag=".005"
+					particlelife="500"
+					particledirectionalspace="local"
+					material="/shared/effects/materials/ground_arc.material"
+				>
+					<particle
+						startsize="0"
+						endsize="500"
+						startcolor=".4 .1 0"
+						endcolor="0"
+						turn="1"
+					/>
+				</simpleemitter>
+				
+				</controller>
+			
+
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="sun_beam" deferred="true" >
+	<definitions>
+		
+		<particlesystem name="system0" space="entity" scale="1.0">
+		
+		<sound
+				sample="/heroes/krixi/alt4/sounds/death_foley.wav"
+				volume=".7"
+				linearfalloff="true"
+				falloffstart="1500"
+				falloffend="2500"
+			/>
+				
+			<sound
+			    forcestereo="true"
+			    life="8000"
+			    delay="650"
+				sample="/heroes/krixi/alt4/sounds/whistle_%.wav"
+				volume="1"
+				linearfalloff="true"
+				falloffstart="1500"
+				falloffend="2500"
+			/>
+		
+		
+			<sound
+			    life="8000"
+			    delay="800"
+				sample="/heroes/krixi/alt4/sounds/death_foley_exp.wav"
+				volume="1"
+				linearfalloff="true"
+				falloffstart="1500"
+				falloffend="2500"
+			/>
+			
+			
+			<sound
+			    life="8000"
+			    forcestereo="true"
+			    delay="5300"
+				sample="/heroes/krixi/alt4/sounds/crackle_1.wav"
+				volume="1"
+				linearfalloff="true"
+				falloffstart="1500"
+				falloffend="2500"
+			/>
+			
+						<sound
+				life="8000"
+			    forcestereo="true"
+			    delay="5350"
+				sample="/heroes/krixi/alt4/sounds/explosion_%.wav"
+				volume="1"
+				linearfalloff="true"
+				falloffstart="1500"
+				falloffend="2500"
+			/>
+
+		<template name="star">
+
+			<billboard
+				bone="{bone}"
+				material="/shared/effects/materials/flare1.material"
+				life="1000"
+				startcolor=".2 .2 .2"
+				midcolor=".7 .7 .7"
+				endcolor=".2 .2 .2"
+				startsize="5"
+				midsize="10"
+				endsize="5"
+				loop="true"
+				depthbias="-3"
+			/>
+
+		</template>
+		
+		<model
+			model="stars/model.mdf"
+			anim="idle"
+			parentalpha="true"
+			inheritparentmodifiers="true"
+			position="0 0 0"
+		>
+			<instance name="star" bone="_bone_001"/>
+			<instance name="star" bone="_bone_002"/>
+			<instance name="star" bone="_bone_003"/>
+			<instance name="star" bone="_bone_004"/>
+			<instance name="star" bone="_bone_005"/>
+			<instance name="star" bone="_bone_006"/>
+			<instance name="star" bone="_bone_007"/>
+			<instance name="star" bone="_bone_008"/>
+			<instance name="star" bone="_bone_009"/>
+			<instance name="star" bone="_bone_010"/>
+			<instance name="star" bone="_bone_011"/>
+			<instance name="star" bone="_bone_012"/>
+			<instance name="star" bone="_bone_013"/>
+			
+		</model>
+	
+
+<!-- random explosions -->	
+		<simpleemitter
+			delay="700"
+			count="10"
+			spawnrate="2"
+			life="4000"
+			bone="_bone_centerofchest"
+			particlelife="2000"
+			offsetsphere="50"
+		>
+			<particle>
+			
+			<simpleemitter
+				delay="0"
+				bone="_bone_centerofchest"
+				count="50"
+				spawnrate="1000"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				life="750"
+				speed="1000"
+				gravity="5"
+				drag=".125"
+				direction="0 0 1"
+				maxangle="0"
+				minangle="180"
+				material="/shared/effects/materials/star_blend.material"
+				position="0 0 10"
+			>
+				<particle
+					color="1 1 1"
+					startsize="7.5"
+					endsize="0"
+					startalpha="1"
+					endalpha="0"
+					minanglespeed="500"
+					maxanglespeed="800"
+				>
+					<trailemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="25"
+						life="500"
+						particlelife="500"
+						texpostime="0"
+						texposscale="5"
+						texstretchscale="1"
+					>
+						<particle
+							startsize="0"
+							midsize="5"
+							endsize="0"
+							startcolor="1 1 1"
+							endcolor="0 0 0"
+						/>
+					</trailemitter>
+				</particle>
+				
+				<particle
+					color="1 1 1"
+					startsize="7.5"
+					endsize="0"
+					startalpha="1"
+					endalpha="0"
+					minanglespeed="500"
+					maxanglespeed="800"
+				>
+					<trailemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="25"
+						life="500"
+						particlelife="500"
+						texpostime="0"
+						texposscale="5"
+						texstretchscale="1"
+					>
+						<particle
+							startsize="0"
+							midsize="5"
+							endsize="0"
+							startcolor="0 0 1"
+							endcolor="0 0 0"
+						/>
+					</trailemitter>
+				</particle>
+				
+				<particle
+					color="1 1 1"
+					startsize="5"
+					endsize="0"
+					startalpha="1"
+					endalpha="0"
+					minanglespeed="500"
+					maxanglespeed="800"
+				>
+					<trailemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="25"
+						life="500"
+						particlelife="500"
+						texpostime="0"
+						texposscale="5"
+						texstretchscale="1"
+					>
+						<particle
+							startsize="0"
+							midsize="7.5"
+							endsize="0"
+							startcolor="1 0 0"
+							endcolor="0 0 0"
+						/>
+					</trailemitter>
+				</particle>
+			</simpleemitter>
+		</particle>
+	</simpleemitter>
+
+<!-- big explosion -->	
+			<simpleemitter
+				delay="5350"
+				bone="_bone_centerofchest"
+				count="300"
+				spawnrate="300"
+				minparticlelife="1500"
+				maxparticlelife="2500"
+				life="100"
+				speed="8000"
+				gravity="2"
+				drag=".05"
+				direction="0 0 1"
+				maxangle="0"
+				minangle="180"
+				material="/shared/effects/materials/star_blend.material"
+				position="0 0 20"
+				offsetsphere="20"
+			>
+				<particle
+					color="1 1 1"
+					startsize="7.5"
+					endsize="0"
+					startalpha="1"
+					endalpha="0"
+					minanglespeed="500"
+					maxanglespeed="800"
+				>
+					<trailemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="25"
+						life="500"
+						particlelife="500"
+						texstretchscale="1"
+					>
+						<particle
+							startsize="0"
+							midsize="5"
+							endsize="0"
+							startcolor="1 1 1"
+							endcolor="0 0 0"
+						/>
+					</trailemitter>
+				</particle>
+				
+				<particle
+					color="1 1 1"
+					startsize="7.5"
+					endsize="0"
+					startalpha="1"
+					endalpha="0"
+					minanglespeed="500"
+					maxanglespeed="800"
+				>
+					<trailemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="25"
+						life="500"
+						particlelife="500"
+						texpostime="0"
+						texposscale="5"
+						texstretchscale="1"
+					>
+						<particle
+							startsize="0"
+							midsize="5"
+							endsize="0"
+							startcolor="0 0 1"
+							endcolor="0 0 0"
+						/>
+					</trailemitter>
+				</particle>
+				
+				<particle
+					color="1 1 1"
+					startsize="5"
+					endsize="0"
+					startalpha="1"
+					endalpha="0"
+					minanglespeed="500"
+					maxanglespeed="800"
+				>
+					<trailemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="25"
+						life="500"
+						particlelife="500"
+						texpostime="0"
+						texposscale="5"
+						texstretchscale="1"
+					>
+						<particle
+							startsize="0"
+							midsize="7.5"
+							endsize="0"
+							startcolor="1 0 0"
+							endcolor="0 0 0"
+						/>
+					</trailemitter>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="5500"
+				bone="_bone_centerofchest"
+				count="100"
+				spawnrate="1000"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				life="750"
+				speed="5000"
+				gravity="1"
+				drag=".05"
+				direction="0 0 1"
+				maxangle="0"
+				minangle="180"
+				material="/shared/effects/materials/star_blend.material"
+				position="0 0 20"
+			>
+				<particle
+					color="1 1 1"
+					startsize="7.5"
+					endsize="0"
+					startalpha="1"
+					endalpha="0"
+					minanglespeed="500"
+					maxanglespeed="800"
+				>
+					<trailemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="25"
+						life="500"
+						particlelife="500"
+						texpostime="0"
+						texposscale="5"
+						texstretchscale="1"
+					>
+						<particle
+							startsize="0"
+							midsize="5"
+							endsize="0"
+							startcolor="1 1 1"
+							endcolor="0 0 0"
+						/>
+					</trailemitter>
+				</particle>
+				
+				<particle
+					color="1 1 1"
+					startsize="7.5"
+					endsize="0"
+					startalpha="1"
+					endalpha="0"
+					minanglespeed="500"
+					maxanglespeed="800"
+				>
+					<trailemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="25"
+						life="500"
+						particlelife="500"
+						texpostime="0"
+						texposscale="5"
+						texstretchscale="1"
+					>
+						<particle
+							startsize="0"
+							midsize="5"
+							endsize="0"
+							startcolor="0 0 1"
+							endcolor="0 0 0"
+						/>
+					</trailemitter>
+				</particle>
+				
+				<particle
+					color="1 1 1"
+					startsize="5"
+					endsize="0"
+					startalpha="1"
+					endalpha="0"
+					minanglespeed="500"
+					maxanglespeed="800"
+				>
+					<trailemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="25"
+						life="500"
+						particlelife="500"
+						texpostime="0"
+						texposscale="5"
+						texstretchscale="1"
+					>
+						<particle
+							startsize="0"
+							midsize="7.5"
+							endsize="0"
+							startcolor="1 0 0"
+							endcolor="0 0 0"
+						/>
+					</trailemitter>
+				</particle>
+			</simpleemitter>
+
+			<billboard
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				delay="5350"
+				material="/shared/effects/materials/whitedot.material"
+				size="250"
+				startcolor="0"
+				midcolor=".6"
+				endcolor="0"
+				midcolorpos=".3"
+				life="1500"
+				depthbias="-50"
+			/>
+			
+			<!-- continuous sparks -->			
+			<!--
+			<simpleemitter
+				delay="1000"
+				bone="_bone_centerofchest"
+				count="5000"
+				spawnrate="100"
+				minparticlelife="3000"
+				maxparticlelife="5000"
+				life="4000"
+				speed="1000"
+				gravity=".1"
+				drag=".1"
+				direction="0 0 1"
+				maxangle="0"
+				minangle="180"
+				material="/shared/effects/materials/star_blend.material"
+				position="0 0 0"
+			>
+				<particle
+					color="1 1 1"
+					startsize="7.5"
+					endsize="0"
+					startalpha="1"
+					endalpha="0"
+					minanglespeed="500"
+					maxanglespeed="800"
+				>
+					<trailemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="25"
+						life="500"
+						particlelife="500"
+						texpostime="0"
+						texposscale="5"
+						texstretchscale="1"
+					>
+						<particle
+							startsize="0"
+							midsize="5"
+							endsize="0"
+							startcolor="1 1 1"
+							endcolor="0 0 0"
+						/>
+					</trailemitter>
+				</particle>
+				
+				<particle
+					color="1 1 1"
+					startsize="7.5"
+					endsize="0"
+					startalpha="1"
+					endalpha="0"
+					minanglespeed="500"
+					maxanglespeed="800"
+				>
+					<trailemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="25"
+						life="500"
+						particlelife="500"
+						texpostime="0"
+						texposscale="5"
+						texstretchscale="1"
+					>
+						<particle
+							startsize="0"
+							midsize="5"
+							endsize="0"
+							startcolor="0 0 1"
+							endcolor="0 0 0"
+						/>
+					</trailemitter>
+				</particle>
+				
+				<particle
+					color="1 1 1"
+					startsize="5"
+					endsize="0"
+					startalpha="1"
+					endalpha="0"
+					minanglespeed="500"
+					maxanglespeed="800"
+				>
+					<trailemitter
+						material="/shared/effects/materials/whitedot.material"
+						spawnrate="25"
+						life="500"
+						particlelife="500"
+						texpostime="0"
+						texposscale="5"
+						texstretchscale="1"
+					>
+						<particle
+							startsize="0"
+							midsize="7.5"
+							endsize="0"
+							startcolor="1 0 0"
+							endcolor="0 0 0"
+						/>
+					</trailemitter>
+				</particle>
+			</simpleemitter>
+	-->
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+
+		<wait duration="1500"/>
+
+		<waitfordeath instance="instance0" />
+
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

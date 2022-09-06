@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hydromancer_Ability3_Shard"
+
+	icon="icon.tga"
+	passiveeffect=""
+	attackspeed="0.6"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<ondamaged>
+		<scaledamage scale="0.75" />
+	</ondamaged>
+	
+	<altavatar key="Hero_Hydromancer.Alt5"
+	    icon="../alt5/ability_03/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Hydromancer.Alt7"
+	    icon="/heroes/Hydromancer/alt7/ability_03/icon.tga"
+	>
+		<modifier key="Night_Set_HydromancerAlt7"
+			icon="/heroes/Hydromancer/alt8/ability_03/icon.tga" 
+		/>
+	</altavatar>
+	
+	
+	<altavatar key="Hero_Hydromancer.Alt8"
+	    icon="/heroes/Hydromancer/alt8/ability_03/icon.tga" 
+	>
+		<modifier key="Night_Set_HydromancerAlt8"
+			icon="/heroes/Hydromancer/alt7/ability_03/icon.tga"
+		/>
+	</altavatar>
+</state>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_KingKlout_Ability2a_Pulse"
+
+	icon="icon.tga"
+
+	impactinterval="2000"
+
+	effecttype=""
+	allowtransfer="false"
+>
+	<modifier key="shardofthemaster_boost" modpriority="100" impactinterval="1500"/>
+	
+	<oninflict>
+		<hasavatarkey name="Hero_KingKlout.Alt3">
+			<playeffect effect="../alt3/ability_02/effects/pulse_250.effect,../alt3/ability_02/effects/pulse_275.effect,../alt3/ability_02/effects/pulse_300.effect,../alt3/ability_02/effects/pulse_325.effect" source="this_owner_entity" target="" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<playeffect effect="effects/pulse_250.effect,effects/pulse_275.effect,effects/pulse_300.effect,effects/pulse_325.effect" source="this_owner_entity" target="" occlude="true" />
+		</else>
+		<areaofeffect
+			radius="250,275,300,325"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			center="this_owner_entity"
+		>
+			<applystate name="State_KingKlout_Ability2a_CC" target="target_entity" duration="300,600,900,1200" />
+			<damage effecttype="Magic" source="this_owner_entity" target="target_entity" amount="15,30,45,60" />
+		</areaofeffect>
+
+		<areaofeffect
+			radius="250,275,300,325"
+			targetselection="all"
+			targetscheme="enemy_heroes"
+			effecttype="Magic"
+			center="this_owner_entity"
+		>
+		</areaofeffect>
+		<setaccumulator value="result" />
+		<while test="accumulator ge 4">
+			<compare a="owner_counter" b="0" op="gt">
+				<applystate name="State_KingKlout_Ability1_BigSpawn" target="this_owner_entity" duration="300,600,900,1200" />
+			</compare>
+			<setaccumulator value="accumulator" valueb="4" valueop="sub" />
+		</while>
+	</oninflict>
+
+	<onimpact>
+		<hasavatarkey name="Hero_KingKlout.Alt3">
+			<playeffect effect="../alt3/ability_02/effects/pulse_250.effect,../alt3/ability_02/effects/pulse_275.effect,../alt3/ability_02/effects/pulse_300.effect,../alt3/ability_02/effects/pulse_325.effect" source="this_owner_entity" target="" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<playeffect effect="effects/pulse_250.effect,effects/pulse_275.effect,effects/pulse_300.effect,effects/pulse_325.effect" source="this_owner_entity" target="" occlude="true" />
+		</else>
+		<areaofeffect
+			radius="250,275,300,325"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			center="this_owner_entity"
+		>
+			<applystate name="State_KingKlout_Ability2a_CC" target="target_entity" duration="300,600,900,1200" />
+			<damage effecttype="Magic" source="this_owner_entity" target="target_entity" amount="15,30,45,60" />
+		</areaofeffect>
+
+		<areaofeffect
+			radius="250,275,300,325"
+			targetselection="all"
+			targetscheme="enemy_heroes"
+			effecttype="Magic"
+			center="this_owner_entity"
+		>
+		</areaofeffect>
+		<setaccumulator value="accumulator" valueb="result" valueop="add" />
+		<while test="accumulator ge 4">
+			<compare a="owner_counter" b="0" op="gt">
+				<applystate name="State_KingKlout_Ability1_BigSpawn" target="this_owner_entity" duration="300,600,900,1200" />
+			</compare>
+			<setaccumulator value="accumulator" valueb="4" valueop="sub" />
+		</while>
+	</onimpact>
+</state>

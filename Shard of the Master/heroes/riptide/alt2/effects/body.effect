@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+  <definitions>
+    <particlesystem name="system0" space="world" >
+		
+			<terrainemitter
+				minparticlelife="400"
+				maxparticlelife="600"
+				spawnrate="15"
+				material="/shared/effects/materials/refract_ring_depth.material"
+				range="50"
+				depthbias="-5"
+			>
+				<particle
+					turn="1"
+					angle="180"
+					minstartscale="1"
+					maxstartscale="2"
+					minendscale="4"
+					maxendscale="8"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					midcolor=".75 1 1"
+				/>
+			</terrainemitter>
+			
+			<skeletonemitter
+				minparticlelife="400"
+				maxparticlelife="600"
+				spawnrate="30"
+				material="/shared/effects/materials/bubble_add.material"
+				minspeed="5"
+				maxspeed="10"
+				drag="0.02"
+				gravity="15"
+				offsetsphere="10"
+				inheritvelocity=".25"
+			>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					minscale="0.25"
+					maxscale="0.75"
+					startcolor="0"
+					midcolor=".5 1 1"
+					endcolor="0"
+					lockup="true"
+				/>
+			</skeletonemitter>
+		
+			<model
+				model="water/model.mdf"
+				parentskeleton="true"
+				inheritparentmodifiers="false"
+				parentalpha="true"
+			/>
+			
+			<twopointemitter
+				bone_a="_bone_center"
+				bone_b="_bone_head"
+				minparticlelife="400"
+				maxparticlelife="600"
+				spawnrate="60"
+				material="/shared/effects/materials/water_spray_add.material"
+				minspeed="5"
+				maxspeed="10"
+				drag="0.02"
+				gravity="3"
+				offsetsphere="5"
+			>
+				<particle
+					minstartscale="1"
+					maxstartscale="2"
+					minendscale="3"
+					maxendscale="6"
+					startcolor="0"
+					midcolor=".25 .5 .5"
+					endcolor="0"
+					anchor="1"
+				/>
+			</twopointemitter>
+
+    </particlesystem>
+  </definitions>
+  <thread>
+    <spawnparticlesystem particlesystem="system0" instance="instance0" />
+    <waitfordeath instance="instance0" />
+  </thread>
+</effect>

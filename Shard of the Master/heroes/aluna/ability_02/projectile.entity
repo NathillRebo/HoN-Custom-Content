@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Aluna_Ability2"
+
+	speed="3000"
+	gravity="0"
+
+	modelscale="1.25"
+	model="effects/staff.mdf"
+	
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+	deatheffect="effects/death.effect"
+	
+	canturn="false"
+	flying="true"
+	flyheight="70"
+	
+	touchradius="125"
+	maxtouchespertarget="1"
+	touchtargetscheme="enemy_units"
+	toucheffecttype="Magic"
+	touchradiusdiradjust="true"
+	
+	lifetime="600"
+	
+	dynamicprecache="effects/impact.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<ontouch>
+		<hasmodifier name="soccer" entity="this_owner_entity" >
+			<damage amount="100" b="param" op="mult" />
+			<pushability entity="source_entity" target="source_entity" source="source_entity" name="Ability_Soccer_SlideKick" />
+			<addcharges count="1" entity="stack_entity" />
+			<compare a="result" b="1" op="eq">
+				<activatemodifierkey name="aluna_charge1" entity="source_entity" />
+			</compare>
+			<addcharges count="0" entity="stack_entity" />
+			<compare a="result" b="2" op="eq">
+				<deactivatemodifierkey name="aluna_charge1" entity="source_entity" />
+				<activatemodifierkey name="aluna_charge2" entity="source_entity" />
+			</compare>
+			<addcharges count="0" entity="stack_entity" />
+			<compare a="result" b="3" op="eq">
+				<deactivatemodifierkey name="aluna_charge2" entity="source_entity" />
+				<activatemodifierkey name="aluna_charge3" entity="source_entity" />
+				<applystate name="State_Soccer_AlunaBlue" target="source_entity" duration="-1" />
+			</compare>
+		</hasmodifier>
+		<else>
+			<damage effecttype="Magic" amount="150,220,290,360" b="param" op="mult"/>
+		</else>
+		<setparam a="param" b="0.9" op="mult" />
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+	</ontouch>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<ontouch>
+			<hasmodifier name="soccer" entity="this_owner_entity" >
+				<damage amount="100" b="param" op="mult" />
+				
+				<setvar0 a="target_maxhealth" b="0.12" op="mult" />
+				<pushstack a="var0" />
+				<compare a="target_health" b="result" op="lt">
+					<kill target="target_entity" />
+				</compare>
+				
+				<pushability entity="source_entity" target="source_entity" source="source_entity" name="Ability_Soccer_SlideKick" />
+				<addcharges count="1" entity="stack_entity" />
+				<compare a="result" b="1" op="eq">
+					<activatemodifierkey name="aluna_charge1" entity="source_entity" />
+				</compare>
+				<addcharges count="0" entity="stack_entity" />
+				<compare a="result" b="2" op="eq">
+					<deactivatemodifierkey name="aluna_charge1" entity="source_entity" />
+					<activatemodifierkey name="aluna_charge2" entity="source_entity" />
+				</compare>
+				<addcharges count="0" entity="stack_entity" />
+				<compare a="result" b="3" op="eq">
+					<deactivatemodifierkey name="aluna_charge2" entity="source_entity" />
+					<activatemodifierkey name="aluna_charge3" entity="source_entity" />
+					<applystate name="State_Soccer_AlunaBlue" target="source_entity" duration="-1" />
+				</compare>
+			</hasmodifier>
+			<else>
+				<damage effecttype="Magic" amount="150,220,290,360" b="param" op="mult"/>
+				
+				<setvar0 a="target_maxhealth" b="0.12" op="mult" />
+				<pushstack a="var0" />
+				<compare a="target_health" b="result" op="lt">
+					<kill target="target_entity" />
+				</compare>
+			</else>
+			<setparam a="param" b="0.9" op="mult" />
+			
+			<!-- Dynamic visual effects -->
+			<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+		</ontouch>
+	</modifier>
+	
+	<altavatar key="Hero_Aluna.Alt"
+		model="../alt/ability_02/effects/staff.mdf"
+		
+		impacteffect="../alt/ability_02/effects/impact.effect"
+		traileffect="../alt/ability_02/effects/trail.effect"
+		deatheffect="../alt/ability_02/effects/death.effect"
+		
+		dynamicprecache="../alt/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt2"
+		model="../alt2/ability_02/effects/staff.mdf"
+		
+		impacteffect="../alt2/ability_02/effects/impact.effect"
+		traileffect="../alt2/ability_02/effects/trail.effect"
+		deatheffect="../alt2/ability_02/effects/death.effect"
+		
+		dynamicprecache="../alt2/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt2/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt3"
+		model="../alt3/ability_02/effects/staff.mdf"
+		
+		impacteffect="../alt3/ability_02/effects/impact.effect"
+		traileffect="../alt3/ability_02/effects/trail.effect"
+		deatheffect="../alt3/ability_02/effects/death.effect"
+		
+		dynamicprecache="../alt3/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt3/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt4"
+		model="../alt4/ability_02/effects/staff.mdf"
+		
+		impacteffect="../alt4/ability_02/effects/impact.effect"
+		traileffect="../alt4/ability_02/effects/trail.effect"
+		deatheffect="../alt4/ability_02/effects/death.effect"
+		
+		dynamicprecache="../alt4/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt4/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt5"
+		model="../alt5/ability_02/effects/staff/model.mdf"
+		
+		impacteffect="../alt5/ability_02/effects/impact.effect"
+		traileffect="../alt5/ability_02/effects/trail.effect"
+		deatheffect="../alt5/ability_02/effects/death.effect"
+		
+		dynamicprecache="../alt5/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt5/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt7"
+		model="../alt7/ability_02/effects/staff.mdf"
+		
+		impacteffect="../alt7/ability_02/effects/impact.effect"
+		traileffect="../alt7/ability_02/effects/trail.effect"
+		deatheffect="../alt7/ability_02/effects/death.effect"
+		
+		dynamicprecache="../alt7/ability_02/effects/impact.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt7/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Aluna.Alt8"
+		model="../alt8/ability_02/effects/staff.mdf"
+		modelscale="1.5"
+		impacteffect="../alt8/ability_02/effects/impact.effect"
+		traileffect="../alt8/ability_02/effects/trail.effect"
+		deatheffect="../alt8/ability_02/effects/death.effect"
+		
+		dynamicprecache="../alt8/ability_02/effects/impact.effect"
+	>
+		<modifier key="Combo_efx_red" modpriority="101"
+			dynamicprecache="../alt8/ability_02/effects/impact_combo.effect"
+		>
+			<onspawn>
+				<setscriptvalue name="impact_effect" value="../alt8/ability_02/effects/impact_combo.effect" entity="this_entity" />
+			</onspawn>
+		</modifier>	
+	
+		<onspawn>
+			<setscriptvalue name="impact_effect" value="../alt8/ability_02/effects/impact.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+</projectile>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Monarch_Ability1"
+	
+	icon="icon.tga"
+	
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	revealed="true"
+	
+	immobilized2="true"
+	silenced="true"
+
+	negativeeffect="silenced"
+>
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		disarmed="true"
+		negativeeffect="stunned"
+	/>
+	
+	<onframe>
+		<evaluate a="100,150,180,210" b="1.5,2,2.5,3" op="div" />
+		<evaluate a="result" b="frametime" op="mult" />
+		<damage effecttype="Magic DOT" amount="1" b="result" op="mult" />
+	</onframe>
+	
+	<altavatar key="Hero_Monarch.Alt2"
+		icon="/heroes/monarch/alt2/ability_01/icon.tga"
+		passiveeffect="/heroes/monarch/alt2/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt3"
+		icon="/heroes/monarch/alt2/ability_01/icon.tga"
+		passiveeffect="/heroes/monarch/alt3/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt4"
+		passiveeffect="/heroes/monarch/alt4/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt5"
+		passiveeffect="/heroes/monarch/alt5/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt6"
+		passiveeffect="/heroes/monarch/alt6/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Monarch.Alt7"
+		passiveeffect="/heroes/monarch/alt7/ability_01/effects/state.effect"
+	/>
+	
+</state>

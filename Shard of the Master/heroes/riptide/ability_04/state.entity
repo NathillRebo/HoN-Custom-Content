@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Riptide_Ability4"
+	
+	ishidden="true"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	modifierkey="riptide_ult_active"
+>
+	<onframe>
+		<!-- Agility bonus aura -->
+		<areaofeffect
+			radius="1200"
+			center="this_owner_entity"
+			targetselection="all"
+			targetscheme="ally_heroes"
+			ignoreinvulnerable="true"
+		>
+			<applystate name="State_Riptide_Ability4_AgilityDamage" continuous="true" timeout="frametime" proxy="this_owner_entity" />
+		</areaofeffect>
+		
+		<!-- Minimap visibility -->
+		<areaofeffect
+			radius="2000"
+			center="this_owner_entity"
+			targetscheme="visible_enemy_heroes"
+			targetselection="all"
+			ignoreinvulnerable="true"
+			effecttype=""
+		>
+		</areaofeffect>
+		<compare a="result" b="0" op="eq">
+			<activatemodifierkey name="riptide_minimap_hidden" entity="this_owner_entity" />
+		</compare>
+		<else>
+			<deactivatemodifierkey name="riptide_minimap_hidden" entity="this_owner_entity" />
+		</else>
+	</onframe>
+	
+	<onexpired>
+		<!-- Make Riptide visible on the minimap -->
+		<deactivatemodifierkey name="riptide_minimap_hidden" entity="this_owner_entity" />
+	</onexpired>
+</state>

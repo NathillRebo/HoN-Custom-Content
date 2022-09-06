@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<template name="fire_wisps" >
+				<controller bone="{bone}" >
+					<simpleemitter
+						spawnrate="50"
+						directionalspace="local"
+						position="{position}"
+						minparticlelife="300"
+						maxparticlelife="600"
+						gravity="-10"
+						material="/shared/effects/materials/flame.material"
+					>
+						<particle
+							startsize="10"
+							endsize="4"
+							startwidth="15"
+							midwidth="7"
+							endwidth="4"
+							startcolor="1 .4 .4"
+							endcolor="0"
+							anchor=".75"
+							scale=".75"
+						/>
+						<particle
+							startsize="10"
+							endsize="4"
+							startwidth="15"
+							midwidth="7"
+							endwidth="4"
+							startcolor="1 .4 .4"
+							endcolor="0"
+							anchor=".75"
+							yaw="180"
+							scale=".75"
+						/>
+					</simpleemitter>
+				</controller>
+			</template>
+			<instance name="fire_wisps" bone="Bone_R_beard_05" position="9 2 0" />
+			<instance name="fire_wisps" bone="Bone_R_beard_02" position="9 2 0" />
+			<instance name="fire_wisps" bone="Bone_L_beard_05" position="9 -2 0" />
+			<instance name="fire_wisps" bone="Bone_L_beard_02" position="9 -2 0" />
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

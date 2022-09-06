@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world">
+			<sound
+				sample="/heroes/krixi/alt7/sounds/imp_%.wav"
+				volume=".4"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="800"
+			/>
+			
+			<simpleemitter
+				count="5"
+				direction="0 0 1"
+				angle="180"
+				position="0 0 50"
+				offsetsphere="5"
+				minspeed="150"
+				maxspeed="250"
+				drag=".02"
+				gravity="50"
+			>
+				<particle
+				
+				>
+					<controller scale=".5">
+						<simpleemitter
+							life="1200"
+							position="0 0 -5"
+							startspawnrate="300"
+							endspawnrate="1"
+							minparticlelife="100"
+							maxparticlelife="350"
+							offsetsphere="5"
+							minspeed="10.0"
+							maxspeed="30"
+							direction="0 0 1"
+							material="/shared/effects/materials/flare_03.material"
+						>
+							<particle
+								startsize="2"
+								midsize="1"
+								endsize="0"
+								maxangle="359"
+								maxanglespeed="30"
+								minanglespeed="-30"
+								minscale="2.5"
+								maxscale="4.5"
+								startcolor="1"
+								midcolor=".8 .5 0"
+								endcolor="0"
+								midcolorpos=".5"
+							/>
+						</simpleemitter>
+						
+						<simpleemitter
+							life="1200"
+							startspawnrate="80"
+							endspawnrate="1"
+							particlelife="550"			
+							gravity="100"
+							speed="100"
+							acceleration="1"
+							position="0 0 0"
+							drag=".1"
+							material="/shared/effects/materials/spark_10.material"
+							offsetsphere="5"
+							minangle="0"
+							maxangle="180"
+							direction="1 0 0"
+							offsetdirection="0 0 0"
+							offsetradial="0 0 0"
+							inheritvelocity="0.25"
+						>
+							<particle 
+								minangle="0"
+								maxangle="0"
+								minanglespeed="0"
+								maxanglespeed="0"
+								startcolor="1 1 .05"
+								midcolor=".2 .3 .05"
+								endcolor="0 0 0"
+								midcolorpos=".2"
+								startsize="15"
+								midsize="10"
+								endsize="0"
+								midsizepos=".3"
+							/>
+						</simpleemitter>
+						
+						<billboard
+							life="1000"
+							expirelife="100"
+							startcolor="1"
+							endcolor="0 0 0"
+							size="10"
+							material="/shared/effects/materials/glow_01.material"
+						/>
+						
+						<trailemitter
+							spawnrate="50"
+							particlelife="400"
+							texpostime="500"
+							texposscale="0.0"
+							texstretchscale=".4"
+							material="/shared/effects/materials/light_trail.material"
+							life="800"
+						>
+							<particle
+								startcolor="1 .4 .2"
+								midcolor=".8 .1 0"
+								endcolor="0"
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".075"
+								startsize="5"
+								midsize="15"
+								endsize="5"
+								midsizepos="0.2"
+						 />
+						</trailemitter>
+					</controller>
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

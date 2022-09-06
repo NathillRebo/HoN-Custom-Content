@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Voodoo_Ability3"
+
+	radius="165"
+	
+	lifetime="0"
+	targetselection="all"
+	targetscheme="enemy_heroes"
+	effecttype="Magic"
+>
+	<onimpact>
+		<applystate name="State_Voodoo_Ability3" duration="12000" />
+	</onimpact>
+
+	<!-- make the buffs/debuffs stack in krosmode -->
+	<modifier key="krosmode" modpriority="101"
+	>
+		<onimpact>
+			<applystate name="State_Voodoo_Ability3" duration="12000" stack="true" />	
+		</onimpact>
+	</modifier>
+	
+	<modifier key="shardofthemaster_boost" modpriority="102">
+		<onimpact>
+			<applystate name="State_Voodoo_Ability3" duration="12000" />
+			
+			<pushability name="Ability_Voodoo2" />
+			<getlevel entity="stack_entity" />
+			<setvar0 a="result" />
+			
+			<compare a="var0" b="0" op="gt">
+				<applystate name="State_Voodoo_Ability2_Debuff" duration="12000" statelevel="var0" />
+			</compare>
+		</onimpact>
+	</modifier>
+</affector>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="sun_beam">
+	<definitions>
+		
+		<particlesystem name="system0" space="entity" scale="1.0">
+
+			
+			<light
+				life="1350"
+				delay="500"
+				startcolor="0 0 0 "
+				midcolor=".5 1 1"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="30"
+				falloffend="75"
+				position="0 0 0"
+			/>
+		
+			<!-- STREAKS -->
+			
+			<simpleemitter
+				life="1000"
+				delay="500"
+				spawnrate="60"
+				count="1"
+				particlelife="1875"
+				position="0 0 0"
+				material="/shared/effects/materials/streak_11.material"
+				angle="0"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".5 1 1"
+					endcolor="0 0 0"
+					midcolorpos=".3"
+					startframe="0"
+					endframe="1"
+					startwidth="10"
+					endwidth="75"
+					midwidthpos=".2"
+					height="820"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					lockup="true"
+					lockright="false"
+				/>
+			</simpleemitter>
+<!--
+			<simpleemitter
+				life="1000"
+				delay="500"
+				spawnrate="60"
+				count="1"
+				particlelife="1500"
+				position="0 0 205"
+				material="/shared/effects/materials/streak_11.material"
+				angle="0"
+			>
+				<particle
+					minangle="0"
+					maxangle="0"
+					startcolor="0 0 0"
+					midcolor="0 1 1"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startwidth="5"
+					endwidth="91"
+					midwidthpos=".2"
+					height="820"
+					lockup="true"
+				/>
+			</simpleemitter>
+-->
+			<!--
+			<simpleemitter
+				life="1000"
+				delay="1000"
+				spawnrate="60"
+				count="1"
+				particlelife="1300"
+				position="0 0 205"
+				material="/shared/effects/materials/streak_11.material"
+				angle="0"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor="0 1 1"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startframe="0"
+					endframe="1"
+					startwidth="5"
+					midwidth="220"
+					endwidth="350"
+					midwidthpos=".2"
+					height="820"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					lockup="true"
+					lockright="false"
+				/>
+			</simpleemitter>
+-->			
+			
+			<!-- light beams -->
+			
+			<simpleemitter
+				spawnrate="1000"
+				delay="500"
+				minparticlelife="1500"
+				maxparticlelife="2000"
+				count="20"
+				direction="0 0 -1"
+				angle="0"
+				minspeed="0"
+				maxspeed="50"
+				minoffsetradial="0"
+				maxoffsetradial="30"
+				position="0 -10 0"
+				offsetradialangle="90"
+				material="/shared/effects/materials/flare2.material"
+			>
+			
+			<!--
+				<particle
+					startcolor="0"
+					midcolor=".8 1 1"
+					endcolor="0"
+					midcolorpos=".1"
+					lockup="true"
+					lockright="true"
+					minanglespeed="0"
+					maxanglespeed="0"
+					minwidth="90"
+					maxwidth="100"
+					startheight="1000"
+					minendheight="50"
+					maxendheight="650"
+					flare="true"
+				/>
+				-->
+				
+				<particle
+					startcolor="0"
+					midcolor=".25 .5 .5"
+					endcolor="0"
+					midcolorpos=".1"
+					lockup="true"
+					lockright="true"
+					minanglespeed="0"
+					maxanglespeed="0"
+					minwidth="60"
+					maxwidth="75"
+					startheight="1000"
+					minendheight="50"
+					maxendheight="650"
+					flare="true"
+				/>
+			</simpleemitter>
+		
+		</particlesystem>
+		
+		
+		<modifier
+			name="modifier0"
+			life="10000"
+			material="../material_noshadow.material"
+		/>
+		
+		<modifier
+			name="modifier1"
+			life="10000"
+			startalpha="1"
+			midalpha="0"
+			midalphapos=".01"
+			endalpha="0"
+		/>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<wait duration="1500"/>
+		<spawnmodifier instance="instance2" modifier="modifier1"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

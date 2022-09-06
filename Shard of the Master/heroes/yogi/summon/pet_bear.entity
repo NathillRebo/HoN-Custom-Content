@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Yogi_Ability1"
+	icon="/heroes/yogi/icons/ability_1.tga"
+	portrait="/heroes/yogi/icons/ability_1.tga"
+	model="/heroes/yogi/hd_wildsoul/summon/model.mdf"
+	
+	skin=""
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1.53"
+	modelscale="1.60,1.67,1.73,1.80"
+	effectscale="1.26"
+	boundsheight="96"
+	boundsradius="24"
+	selectionradius="60"
+	targetoffset="0 0 64"
+	
+	movespeed="330"
+	turnrate="360"
+	turnsmoothing="0.05"
+	
+	maxhealth="1400,1600,1800,2000"
+	healthregen="5"
+	maxmana="0"
+	manaregen="0"
+	immunity="TransfigureImmunity"
+	armor="3"
+	magicarmor="0"
+	
+	cancarryitems="true"
+	inventory0="Ability_Bear1"
+	inventory1=",,Ability_Bear3"
+	inventory2="Ability_Bear2"
+	inventory3=",Ability_Bear4"
+	
+	attackduration="1000"
+	attackactiontime="350"
+	attackcooldown="1500"
+	attackdamagemin="35"
+	attackdamagemax="40"
+	attacknumanims="2"
+	attackoffset="60 60 100"
+	attackprojectile=""
+	attackrange="128"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="../projectile/impact.effect"
+	attacktype="melee"
+	combattype="Melee"
+	
+	aggrorange="600"
+	sightrangeday="800"
+	sightrangenight="800"
+	
+	goldbountymin="100"
+	goldbountymax="100"
+	experiencebounty="196"
+	
+	tiltfactor="1.0"
+	tiltspeed="90.0"
+	
+	continuousmodifiers="true"
+	ispersistent="true"
+	diewithowner="true"
+	
+	deniablepercent="0.1"
+	unittype="persistent ElitePet"
+>
+	<onframe>
+		<hasmodifier name="shardofthemaster_boost" entity="this_proxy_entity">
+			<setactivemodifier name="shardofthemaster_boost"/>
+		</hasmodifier>
+	</onframe>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		maxhealth="1650,1850,2050,2250"
+		healthregen="5.4"
+		attackdamagemin="50"
+		attackdamagemax="55"
+		magicarmor="1"
+	>
+	</modifier>
+	
+	<onspawn>
+		<setproxy entity="this_proxy_entity" target="this_entity" />
+		<hasmodifier entity="this_owner_entity" name="Yogi_Ability4_Active">
+			<applystate name="State_Yogi_Ability4" target="this_owner_entity" istoggle="true" proxy="this_entity" />
+		</hasmodifier>
+		<hasavatarkey name="Hero_Yogi.Alt2">
+			<playeffect effect="/heroes/yogi/alt2/ability_01/effects/spawn.effect" source="target_entity" target="" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Yogi.Alt3">
+				<playeffect effect="../effects/ability_01/spawn.effect" source="target_entity" target="" />
+				<applystate name="State_Pet_Yogi_Alt3_Effects" target="this_entity" continuous="true"/>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Yogi.Alt4">
+					<playeffect effect="/heroes/yogi/alt4/ability_01/effects/spawn.effect" source="target_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Yogi.Alt5">
+						<playeffect effect="/heroes/yogi/alt5/summon/effects/spawn.effect" source="target_entity" target="" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Yogi.Alt6">
+							<playeffect effect="/heroes/yogi/alt6/summon/effects/spawn.effect" source="target_entity" target="" />
+						</hasavatarkey>
+						<else>
+							<playeffect effect="../effects/ability_01/spawn.effect" source="target_entity" target="" />
+						</else>						
+					</else>
+				</else>
+			</else>
+		</else>
+	</onspawn>
+	
+	<ondeath>
+		<setactivemodifierkey name="" target="this_proxy_entity" />
+		<damage effecttype="SuperiorMagic SuperiorPhysical" amount="100,200,300,400" inflictor="target_entity" source="target_entity" target="source_owner_entity"/>
+		<expirestate name="State_Yogi_Ability1" target="source_owner_entity" />
+	</ondeath>
+	
+	<altavatar key="Hero_Yogi.Classic"
+		icon="/heroes/yogi/icons/ability_1.tga"
+		portrait="/heroes/yogi/icons/ability_1.tga"
+		model="model.mdf"
+		skin=""
+		passiveeffect=""
+		spawneffect=""
+		respawneffect=""
+		selectsound=""
+		orderconfirmedsound=""
+		preglobalscale="1.53"
+		modelscale="1.60,1.67,1.73,1.80"
+		effectscale="1.26"
+		boundsheight="96"
+		boundsradius="24"
+		selectionradius="60"
+		targetoffset="0 0 64"
+		tiltfactor="1.0"
+		tiltspeed="90.0"
+	/>
+	
+	<altavatar key="Hero_Yogi.Alt"
+		icon="../alt/summon/icon.tga"
+		portrait="../alt/summon/icon.tga"
+		model="../alt/summon/model.mdf"
+		skin=""
+		passiveeffect=""
+		spawneffect=""
+		respawneffect=""
+		selectsound=""
+		orderconfirmedsound=""
+		preglobalscale="1.1"
+		modelscale="1.60,1.67,1.73,1.80"
+		effectscale="1.26"
+		boundsheight="96"
+		boundsradius="24"
+		selectionradius="60"
+		targetoffset="0 0 64"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Yogi.Alt2"
+		icon="../alt2/summon/icons/icon.tga"
+		portrait="../alt2/summon/icons/icon.tga"
+		model="../alt2/summon/model.mdf"
+		skin=""
+		tiltfactor="0"
+		passiveeffect="../alt2/summon/effects/body.effect"
+		spawneffect=""
+		respawneffect=""
+		selectsound=""
+		orderconfirmedsound=""
+		attackimpacteffect="../alt2/summon/effects/attack_impact.effect"
+		preglobalscale="1.4"
+		modelscale="1.60,1.67,1.73,1.80"
+		effectscale="1.26"
+		boundsheight="96"
+		boundsradius="24"
+		selectionradius="60"
+		targetoffset="0 0 64"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Yogi.Alt3"
+		icon="../alt3/summon/icon.tga"
+		portrait="../alt3/summon/icons/icon.tga"
+		model="../alt3/summon/model.mdf"
+		skin=""
+		tiltfactor="1"
+		passiveeffect=""
+		spawneffect=""
+		respawneffect=""
+		selectsound=""
+		orderconfirmedsound=""
+		attackimpacteffect="../alt3/summon/effects/attack_impact.effect"
+		preglobalscale="1.5"
+		modelscale="1.60,1.67,1.73,1.80"
+		effectscale="1.26"
+		boundsheight="96"
+		boundsradius="24"
+		selectionradius="60"
+		targetoffset="0 0 64"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Yogi.Alt4"
+		model="../alt4/summon/model.mdf"
+		skin=""
+		portraitcampos="-10 50 -20"
+		passiveeffect=""
+		spawneffect=""
+		respawneffect=""
+		selectsound=""
+		orderconfirmedsound=""
+		preglobalscale="1.1"
+		modelscale="1.60,1.67,1.73,1.80"
+		effectscale="1.26"
+		boundsheight="96"
+		boundsradius="24"
+		selectionradius="60"
+		targetoffset="0 0 64"
+	/>
+	
+	<altavatar key="Hero_Yogi.Alt5"
+		model="../alt5/summon/model.mdf"
+		icon="../alt5/summon/icon.tga"
+		skin=""
+		portraitcampos="3 10 0"
+		passiveeffect=""
+		spawneffect=""
+		respawneffect=""
+		selectsound=""
+		orderconfirmedsound=""
+		preglobalscale="1.6"
+		modelscale="1.60,1.67,1.73,1.80"
+		effectscale="1.26"
+		boundsheight="96"
+		boundsradius="24"
+		selectionradius="60"
+		targetoffset="0 0 64"
+	/>
+	
+	<altavatar key="Hero_Yogi.Alt6"
+		model="../alt6/summon/model.mdf"
+		icon="../alt5/summon/icon.tga"
+		skin=""
+		portraitcampos="5 30 5"
+		passiveeffect=""
+		spawneffect=""
+		respawneffect=""
+		selectsound=""
+		orderconfirmedsound=""
+		preglobalscale="1.6"
+		modelscale="1.30,1.37,1.43,1.50"
+		boundsheight="96"
+		boundsradius="24"
+		selectionradius="60"
+		targetoffset="0 0 64"
+	/>
+	
+	<altavatar key="Hero_Yogi.Soccer_skin"
+		model="../soccer_skin/summon/model.mdf"
+	/>
+</pet>

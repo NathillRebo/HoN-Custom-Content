@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Babayaga2_Shard"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_shield.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onframe />
+	
+	<onattackedpreimpact priority="0" propagatetoillusions="false" >
+		<compare a="combat_negated" b="0" op="eq">
+			<targettype type="enemy">
+				<combatsupertype supertype="spell">
+					<combateffecttype effecttype="AbilityBasedProjectile BindingProjectile" />
+					<else>
+						<negate>
+							<applystate name="State_Empath_Ability4_Assist" target="source_entity" inflictor="target_entity" duration="50" />
+							<playeffect effect="effects/impact.effect" source="this_owner_entity" target="" />
+							<playeffect effect="effects/bats.effect" source="this_owner_entity" target="" />
+							<expire />
+						</negate>
+					</else>
+				</combatsupertype>
+			</targettype>
+		</compare>
+	</onattackedpreimpact>
+</state>

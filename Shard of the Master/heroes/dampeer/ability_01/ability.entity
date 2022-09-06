@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Dampeer1"
+
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="800"
+	castactiontime="250"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="self_position"
+	targetradius="275"
+	targetmaterial="/shared/materials/area_cast_legion_indicator.material"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	
+    novoiceresponse="true"
+	manacost="75,85,95,105"
+	cooldowntime="10000"
+>
+	<onpreimpact>
+		<areaofeffect
+			radius="250"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			maximpactspertarget="1"
+		>
+		</areaofeffect>
+		<compare a="result" b="1" op="ge">
+			<playeffect effect="effects/impact_sound.effect" target="" source="source_entity"/>
+		</compare>
+	</onpreimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onkill propagatetoillusions="false" >
+			<targettype type="hero">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<reducecooldown duration="1750" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+		</onkill>
+	</modifier>
+
+	<onimpact>
+		<pushability name="Ability_Dampeer4" />
+		<compare source="stack_entity" a="source_level" b="1" op="ge">
+			<addcharges entity="stack_entity" count="0" />
+			<setaccumulator value="result" />
+		</compare>
+		<else>
+			<setaccumulator value="0" />
+		</else>
+		<spawnaffector name="Affector_Dampeer_Ability1" target="source_position" param="accumulator" />
+	</onimpact>
+</ability>

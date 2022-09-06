@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="2">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="128"
+				falloffend="1300"
+				volume="1"
+				sample="../sounds/imp_%.wav"
+			/>
+
+
+			<billboard			
+				life="400"
+				bone="_bone_centerofchest"
+				startsize="45"
+				endsize="100"
+				material="/shared/effects/materials/beer_splash.material"
+				startalpha="1"
+				endalpha="0"
+				depthbias="-30"
+				maxroll="360"
+				color="1 0 .5"
+				position="0 0 5"
+			/>
+	
+			<simpleemitter
+         			bone="_bone_centerofchest"
+         			spawnrate="2000"
+				count="15"
+				minparticlelife="400"
+          			maxparticlelife="1200"
+          			gravity="13"
+				minspeed="150"
+         			maxspeed="550"
+          			drag=".15"
+				offsetsphere="15"
+          			material="/shared/effects/materials/beer_splash.material"
+         		>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color="1 0 .5"
+					maxanglespeed="20"
+					minanglespeed="-120"
+					startsize="10"
+					minendsize="35"
+					maxendsize="45"			
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					endstickiness=".3"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+         			bone="_bone_centerofchest"
+         			spawnrate="2000"
+				count="25"
+				minparticlelife="400"
+          			maxparticlelife="1400"
+          			gravity="10"
+				minspeed="50"
+         			maxspeed="550"
+          			drag=".05"
+				offsetsphere="10"
+          			material="/shared/effects/materials/beer_splash.material"
+         		>
+  				<particle 
+					minangle="0"
+					maxangle="360"			
+					color="1 0 .5"
+					maxanglespeed="10"
+					minanglespeed="-10"
+					size="2"
+					minscale="1"
+					maxscale="2"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="500"
+				bone="_bone_head"
+				spawnrate="5"
+				offsetsphere="30 30 30"
+				particlelife="3000"
+				depthbias="-50"
+			>
+				<particle>
+					<groundsprite						
+						material="/shared/effects/materials/goop_reveal_ground_blend.material"						
+						life="2000"
+						size="5"			
+						minscale="1"
+						maxscale="6"
+						minyaw="-360"
+						maxyaw="360"
+						color="1 0 .5"
+						startalpha=".8"
+						midalpha=".8"
+						endalpha="0"
+					/>				
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

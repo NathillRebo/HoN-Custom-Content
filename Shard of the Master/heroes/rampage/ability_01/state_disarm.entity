@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rampage_Ability1_Disarm"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	disarmed="true"
+>
+
+    <altavatar key="Hero_Rampage.Alt14"
+		icon="/heroes/Rampage/alt14/ability_01/icon.tga"
+	>
+	</altavatar>
+	
+</state>

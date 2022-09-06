@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Riptide_Ability1"
+
+	speed="3000"
+	gravity="0"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	traileffect="effects/projectile.effect"
+	effectscale="1.0"
+	impacteffect=""
+>
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<cantarget effecttype="Magic">
+					<applystate name="State_Riptide_Ability1_Slow" duration="2000,2500,3000,3500" />
+					<damage effecttype="Magic" amount="95,170,250,330" />
+					
+					<!-- Art -->
+					<hasavatarkey name="Hero_Riptide.Alt">
+						<playeffect effect="../alt/ability_01/effects/impact.effect" source="target_entity" target="" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Riptide.Alt2">
+							<playeffect effect="../alt2/ability_01/effects/impact.effect" source="target_entity" target="" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Riptide.Alt4">
+								<playeffect effect="../alt4/ability_01/effects/impact.effect" source="target_entity" target="" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Riptide.Alt5">
+									<playeffect effect="../alt4/ability_01/effects/impact.effect" source="target_entity" target="" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Riptide.Alt6">
+										<playeffect effect="../alt6/ability_01/effects/impact.effect" source="target_entity" target="" occlude="true" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Riptide.Alt7">
+											<playeffect effect="../alt7/ability_01/effects/impact.effect" source="target_entity" target="" occlude="true" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Riptide.Alt8">
+												<playeffect effect="../alt8/ability_01/effects/impact.effect" source="target_entity" target="" occlude="true" />
+											</hasavatarkey>
+											<else>
+												<playeffect effect="effects/impact.effect" source="target_entity" target="" occlude="true" />
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</cantarget>
+			</onimpact>
+		</combatevent>
+	</onimpact>
+	
+	<altavatar key="Hero_Riptide.Alt"
+		traileffect="../alt/ability_01/effects/projectile.effect"
+	/>
+	
+	<altavatar key="Hero_Riptide.Alt6"
+		traileffect="../alt6/ability_01/effects/projectile.effect"
+	/>
+	
+	<altavatar key="Hero_Riptide.Alt7"
+		traileffect="../alt7/ability_01/effects/projectile.effect"
+	/>
+	
+	<altavatar key="Hero_Riptide.Alt8"
+		traileffect="../alt8/ability_01/effects/projectile.effect"
+	/>
+</projectile>

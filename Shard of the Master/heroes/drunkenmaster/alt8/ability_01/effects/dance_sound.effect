@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" name="">
+	<definitions>
+	
+		<particlesystem name="system0" space="world">
+	
+	<sound
+	            soundloop="true"
+				fadein="100"
+				fadeout="50"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".8"
+				sample="/heroes/drunkenmaster/alt8/sounds/ab1_dance.wav"
+			/>
+			
+
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

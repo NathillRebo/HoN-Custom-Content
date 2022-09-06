@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="low.model" type="K2">
+	<anim name="spawn" numframes="25" clip="clips/ability_4.clip" fps="30" loop="0"/>
+	<anim name="spawn_1"  clip="clips/ability_4.clip" fps="30" loop="1" loopbackframe="25"/>
+	<anim name="idle" clip="clips/ability_4.clip" loop="true" fps="50" loopbackframe="2" numframes="17">
+	</anim>
+	
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="-1">
+		<frameevent frame="6" cmd="StartEffect effects/feather.effect 1"/>
+		<endevent cmd="StopEffect 1" />
+	</anim>
+</model>

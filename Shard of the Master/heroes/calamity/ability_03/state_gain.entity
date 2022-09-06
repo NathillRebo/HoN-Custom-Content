@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Calamity_Ability3_Gain"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="100"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+
+	agilitypercharge="3"
+
+	movespeedpercharge="3"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1" timed="true" />
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1" timed="true" />
+	</onrefresh>
+	
+	<modifier key="shardofthemaster_boost"
+		deathpersist="true"
+	/>
+</state>

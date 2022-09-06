@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect entityeffectscale="true" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<template name="stuff" >
+				<trailemitter
+					life="175"
+					delay="{delay}"
+					directionalspace="local"
+					spawnrate="120"
+					particlelife="500"
+					texpostime="0"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/swoosh_add.material"
+					bone="{bone}"
+				>
+					<particle
+						startcolor="0"
+						midcolor=".1 .95 1"
+						endcolor="0"
+						midcolorpos=".2"
+						startsize="10"
+						endsize="20"
+					/>
+				</trailemitter>
+				
+				<trackeremitter
+					life="175"
+					delay="{delay}"
+					bone="{bone}"
+					targetbone="{bone}"
+					tracktype="angular"
+					trackspeed="2"
+					startspawnrate="400"
+					endspawnrate="0"
+					material="/shared/effects/materials/water_splash_02_add.material"
+					minparticlelife="200"
+					maxparticlelife="300"
+					inheritvelocity=".1"
+					limitinheritvelocity="40"
+				>
+					<particle
+						turn="true"
+						angle="-90"
+						startcolor="0 .5 .5"
+						midcolor=".3"
+						endcolor="0"
+						minsize="6"
+						maxsize="10"
+						startscale="2"
+						minendscale="4"
+						maxendscale="6"
+					/>
+				</trackeremitter>
+				
+				<simpleemitter
+					life="175"
+					delay="{delay}"
+					bone="{bone}"
+					startspawnrate="200"
+					endspawnrate="0"
+					material="/shared/effects/materials/water_spray_reveal_gradient_01.material"
+					minparticlelife="600"
+					maxparticlelife="1000"
+					maxspeed="20"
+					gravity="10"
+					inheritvelocity=".1"
+					limitinheritvelocity="40"
+				>
+					<particle
+						maxangle="360"
+						minanglespeed="-20"
+						maxanglespeed="20"
+						startsize="30"
+						minendsize="30"
+						maxendsize="60"
+						color=".6 1 1"
+						startscale=".75"
+						minendscale="1"
+						maxendscale="2.5"
+						minstartframe=".4"
+						maxstartframe=".6"
+						minmidframe=".1"
+						maxmidframe=".4"
+						endframe="0"
+						param=".4"
+						startalpha="0"
+						midalpha="1"
+						endalpha="1"
+						midalphapos=".2"
+					/>
+				</simpleemitter>
+			
+				<trackeremitter
+					life="175"
+					delay="{delay}"
+					bone="{bone}"
+					targetbone="{bone}"
+					tracktype="angular"
+					trackspeed="2"
+					startspawnrate="100"
+					endspawnrate="0"
+					material="/shared/effects/materials/refract_outsplash.material"
+					maxspeed="100"
+					minparticlelife="300"
+					maxparticlelife="500"
+					drag="0.02"
+					inheritvelocity=".1"
+					limitinheritvelocity="80"
+				>
+					<particle
+						turn="true"
+						angle="-90"
+						startparam="0"
+						midparam=".05"
+						endparam="0"
+						minsize="6"
+						maxsize="10"
+						startscale="3"
+						endscale="5"
+					/>
+				</trackeremitter>
+
+				<billboard
+					life="500"
+					color=".3 1 1"
+					size="20"
+					material="/shared/effects/materials/whitedot.material"
+					bone="{bone}"
+				/>
+			</template>
+			
+			<instance name="stuff" bone="Bip001 L Hand" delay="95" />
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

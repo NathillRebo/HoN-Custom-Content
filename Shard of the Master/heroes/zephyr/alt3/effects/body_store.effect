@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">	
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume=".7"
+				sample="../sounds/cast.wav"
+			/>
+
+			<model
+				parentskeleton="1"
+				expirelife="250"
+				model="model/model.mdf"
+				anim="idle"
+				material="/shared/effects/materials/shell2.material"
+				color=".5 .5 1"
+				scale="1"
+			/>
+
+			<model
+				parentskeleton="1"
+				expirelife="250"
+				model="model/model.mdf"
+				anim="idle"
+				color=".4 .2 .6"
+				startalpha=".5"
+				endalpha="0"
+				scale="1"
+			/>
+			
+
+			<model
+				expirelife="250"
+				model="cyclone_bones.mdf"
+				startalpha="1"
+				endalpha="0"
+				color="1 1 1"
+				scale="1"
+			>
+			
+			
+				<simpleemitter
+					position="0 0 0"
+					spawnrate="30"
+					particlelife="1000"
+					gravity="0"
+					material="/shared/effects/materials/pyroclast_01.material"
+					offsetsphere="15 15 25"
+					direction="1 0 0"
+					minangle="-180"
+					maxangle="180"
+					directionalspace="global"
+					inheritvelocity=".25"
+					depthbias="-25"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						anglespeed="20"
+						startsize="20"
+						midsize="60"
+						endsize="20"
+						lockup="true"
+						lockright="true"
+						pitch="0"
+						startcolor=".7 .75 .85"
+						midcolor=".7 .75 .85"
+						endcolor=".7 .75 .85"
+						midcolorpos=".25"
+						startalpha=".15"
+						endalpha="0"
+						midalphapos=".75"
+					/>
+				</simpleemitter>
+
+				<template name="wind">
+				
+				
+					<orbiteremitter
+						bone="{bone}"
+						minspawnrate="1"
+						maxspawnrate="3"
+						minparticlelife="1000"
+						maxparticlelife="2000"
+						origin="0 0 -{origin}"
+						orbit="{orbit} 0 0 "
+						speed="2"
+						direction="0 0 1"
+						offset="0 0 0"
+						cylindrical="true" 
+						material="/shared/effects/materials/pyroclast_01.material"
+						expirelife="500"
+						depthbias="-25"
+					>
+						<particle
+							minangle="-360"
+							maxangle="360"
+							minanglespeed="-200"
+							maxanglespeed="200"
+							color=".7 .75 .8"
+							startalpha="0"
+							midalpha=".25"
+							endalpha="0"
+							endalphapos=".998"
+							startsize="00"
+							endsize="{size2}"
+						/>
+					</orbiteremitter>
+
+					<billboard
+						bone="{bone}"
+						material="/shared/effects/materials/twirl_03.material"
+						position="0 0 {pos1}"
+						size="{size}"
+						roll="105"
+						rollspeed="{speed}"
+						color=".35"
+						lockup="true"
+						lockright="true"
+						pitch="75"
+						yaw="0"
+					/>
+
+					
+				</template>
+				
+				<instance name="wind"  size="30" pos1="0" size2="40" roll="30" speed="1800" orbit="-9" origin="5" bone="_bone_cyclone02"/>
+				<instance name="wind" size="15" pos1="10" size2="60" roll="90" speed="1600" orbit="-8" origin="6" bone="_bone_cyclone03"/>
+				<instance name="wind"  size="65" pos1="15" size2="80" roll="180" speed="1600" orbit="-5" origin="10" bone="_bone_cyclone04"/>
+				<instance name="wind"  size="80" pos1="25" size2="90" roll="220" speed="400" orbit="-4" origin="12" bone="_bone_cyclone05"/>
+				<instance name="wind" size="105" pos1="30"  size2="100" roll="300" speed="400" orbit="-2" origin="15" bone="_bone_cyclone06"/>
+				<instance name="wind"  size="125" pos1="40" size2="140" roll="360" speed="400" orbit="-2" origin="20" bone="_bone_cyclone07"/>
+
+				
+			</model>
+			
+			
+			
+
+
+			<simpleemitter
+				bone="Bip01 L UpperArm"
+				offsetsphere="0 0 0"
+				spawnrate="100"
+				particlelife="250"
+				position="0 0 0"
+				directionalspace="local"
+				minangle="0"
+				maxangle="1"
+				speed="150"
+				direction="1 0 0"
+			>
+				<particle
+					turn="true"
+				>
+					<billboard
+						life="100"
+						bone="Bip01 L UpperArm"
+						material="/shared/effects/materials/twirl_03.material"
+						position="0 0 0"
+						size="25"
+						startcolor=".25 .25 1"
+						endcolor="0"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="Bip01 R UpperArm"
+				offsetsphere="0 0 0"
+				spawnrate="100"
+				particlelife="250"
+				position="0 0 0"
+				directionalspace="local"
+				minangle="0"
+				maxangle="1"
+				speed="150"
+				direction="1 0 0"
+			>
+				<particle
+					turn="true"
+				>
+					<billboard
+						life="100"
+						bone="Bip01 R UpperArm"
+						material="/shared/effects/materials/twirl_03.material"
+						position="0 0 0"
+						size="25"
+						startcolor=".25 .25 1"
+						endcolor="0"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="Bip01 Head"
+				offsetsphere="0 0 0"
+				spawnrate="100"
+				particlelife="250"
+				position="0 0 0"
+				directionalspace="local"
+				minangle="0"
+				maxangle="1"
+				speed="150"
+				direction="1 0 0"
+			>
+				<particle
+					turn="true"
+				>
+					<billboard
+						life="165"
+						bone="Bip01 Head"
+						material="/shared/effects/materials/twirl_03.material"
+						position="0 0 2"
+						startsize="20"
+						endsize="5"
+						startcolor=".25 .25 1"
+						endcolor="0"
+						lockup="true"
+						lockright="true"
+						pitch="45"
+						depthbias="-20"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			
+
+			
+			
+			
+					
+
+
+					<billboard
+						expirelife="100"
+						bone="Bip01 L Hand"
+						material="/shared/effects/materials/twirl_03.material"
+						position="0 0 0"
+						size="30"
+						roll="0"
+						rollspeed="1600"
+						color=".25 .25 1"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+						yaw="90"
+						directionalspace="local"
+					/>
+					
+					<billboard
+						expirelife="100"
+						bone="Bip01 R Hand"
+						material="/shared/effects/materials/twirl_03.material"
+						position="0 0 0"
+						size="30"
+						roll="0"
+						rollspeed="1600"
+						color=".25 .25 1"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+						yaw="90"
+						directionalspace="local"
+					/>
+
+					
+					
+					
+					
+					
+					
+					
+					
+
+			<trackeremitter
+				bone="Bip01 Pelvis"
+				spawnrate="100"
+				particlelife="600"
+				targetposition="0 0 0"
+				tracktype="distance"
+				trackspeed="5000"
+				speed="225"
+				material="/shared/effects/materials/corona_07.material"
+				distancelife="true"
+			>
+				<particle
+					startcolor="0 .125 .75"
+					midcolor="0 .125 .75"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startsize="35"
+					midsize="20"
+					endsize="0"
+					lockup="true"
+					lockright="true"
+					pitch="75"
+				/>
+			</trackeremitter>
+
+			<trackeremitter
+				bone="Bip01 Pelvis"
+				spawnrate="100"
+				particlelife="600"
+				targetposition="0 0 0"
+				tracktype="distance"
+				trackspeed="5000" 
+				speed="500"
+				material="/shared/effects/materials/corona_07.material"
+				distancelife="true"
+			>
+				<particle
+					startcolor=".1 .1 .75"
+					midcolor=".1 .1 .75"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startsize="25"
+					midsize="10"
+					endsize="0"
+					lockup="true"
+					lockright="true"
+					pitch="75"
+				/>
+			</trackeremitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+
+
+			<controller
+				life="3000"
+				owner="source"
+				position="0 0 100"
+				lookatowner="target"
+				lookatbone="Scene Root" 
+				lookatposition="0 0 70"
+				lookat="true"
+			>
+						
+				<simpleemitter
+					bone="_bone_centerofchest"
+					direction="0 -1 0"
+					minangle="0"
+					maxangle="90"
+					count="40"
+					minspeed="500"
+					maxspeed="600"
+					drag=".005"
+					particlelife="500"
+					material="/shared/effects/materials/light_rays.material"
+				>
+					<particle
+						startsize="0"
+						endsize="90"
+						startwidth="0"
+						endwidth="30"
+						startcolor=".2 .05 .2"
+						endcolor="0"
+						turn="1"
+					/>
+				</simpleemitter>
+				<simpleemitter
+					bone="_bone_centerofchest"
+					direction="0 -1 0"
+					minangle="0"
+					maxangle="90"
+					count="20"
+					minspeed="300"
+					maxspeed="500"
+					drag=".005"
+					particlelife="500"
+					material="/shared/effects/materials/light_rays.material"
+				>
+					<particle
+						startsize="0"
+						endsize="90"
+						startwidth="0"
+						endwidth="30"
+						startcolor=".05 .2 .2"
+						endcolor="0"
+						turn="1"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					direction="0 -1 0"
+					angle="0"
+					count="1"
+					speed="400"
+					drag=".005"
+					particlelife="500"
+					particledirectionalspace="local"
+					material="/shared/effects/materials/ground_arc.material"
+				>
+					<particle
+						startsize="0"
+						endsize="500"
+						startcolor=".4 .1 .4"
+						endcolor="0"
+						turn="1"
+					/>
+				</simpleemitter>
+				<controller pitch="90">
+				<template name="material">
+					<simpleemitter
+						bone="_bone_centerofchest"
+						direction="0 -1 1"
+						minangle="0"
+						maxangle="90"
+						count="10"
+						minspeed="500"
+						maxspeed="700"
+						drag=".005"
+						gravity="50"
+						particlelife="500"
+						material="{material}"
+					>
+						<template name="color">
+							<particle 
+								startcolor="0"
+								midcolor="{color}"
+								endcolor="0 0 0"
+								param=".25"
+								startsize="10"
+								endsize="15"
+								maxangle="360"
+								minscale=".5"
+								maxscale="1.2"
+							/>
+						</template>
+						<instance name="color" color="1 .7 1"/>
+						<instance name="color" color=".7 1 1"/>
+						<instance name="color" color="1 1 .5"/>
+						<instance name="color" color=".7 .5 1"/>
+						<instance name="color" color=".5 1 .5"/>
+					</simpleemitter>
+				</template>
+				<instance name="material" material="/shared/effects/materials/planet_01.material"/>
+				<instance name="material" material="/shared/effects/materials/planet_02.material"/>
+				<instance name="material" material="/shared/effects/materials/planet_03.material"/>
+				<instance name="material" material="/shared/effects/materials/planet_04.material"/>
+				<instance name="material" material="/shared/effects/materials/planet_05.material"/>
+				</controller>
+				</controller>
+			
+
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

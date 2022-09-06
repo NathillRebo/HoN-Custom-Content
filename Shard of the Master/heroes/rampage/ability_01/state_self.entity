@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rampage_Ability1_Self"
+	
+	icon="icon.tga"
+	passiveeffect="effects/charge.effect"
+
+	movespeed="700"
+	maxmovespeed="150"
+	
+	unitwalking="true"
+	treewalking="true"
+	buildingwalking="true"
+	cliffwalking="true"
+	
+	perplexed="true"
+
+	slowresistance="1.0"
+>
+	<onframe>
+		<killtrees radius="100" />
+		
+		<!-- Put Stampede on a 10 second cooldown if the target is deleted -->
+		<compare a="this_proxy_entity" b="0" op="eq">
+			<setaccumulator value="1" />
+			<pushability source="source_entity" name="Ability_Rampage1" />
+			<resetcooldown entity="stack_entity" />
+			<startcooldown entity="stack_entity" duration="10000" />
+
+			<expire />
+		</compare>
+	</onframe>
+	
+	<modifier key="ult_boost" modpriority="100"
+		immunitytype="MagicImmunity1"
+	>
+	</modifier>
+	
+	<modifier key="soccer" modpriority="150">
+		<onexpired>
+			<pushability source="source_entity" name="Ability_Rampage1" />
+			<startcooldown entity="stack_entity" duration="10000" />
+		</onexpired>
+	</modifier>
+
+	<altavatar key="Hero_Rampage.Alt2" modpriority="1"
+		passiveeffect="../alt2/ability_01/effects/charge.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_01/effects/charge.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_01/effects/charge.effect"
+	/>
+	
+	<altavatar key="Hero_Rampage.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_01/effects/charge.effect"
+	/>
+	
+	<altavatar key="Hero_Rampage.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_01/effects/charge.effect"
+	/>
+	
+	<altavatar key="Hero_Rampage.Alt10" modpriority="1"
+		passiveeffect="../alt10/ability_01/effects/charge.effect"
+	/>
+	
+	<altavatar key="Hero_Rampage.Alt13" modpriority="1"
+		passiveeffect="../alt13/ability_01/effects/charge.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt14" modpriority="1"
+	    icon="/heroes/Rampage/alt14/ability_01/icon.tga"
+		passiveeffect="../alt14/ability_01/effects/charge.effect"
+	>
+	</altavatar>
+	
+</state>

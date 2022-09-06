@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" >
+		
+			<template name="glowy_eye">
+				<controller
+					bone="{bone}"
+				>
+					<simpleemitter
+						spawnrate="30"
+						minparticlelife="500"
+						maxparticlelife="1000"
+						position="{pos}"
+						gravity="-5"
+						maxspeed="10"
+						material="/shared/effects/materials/energy_reveal_white.material"
+						depthbias="-5"
+					>
+						<particle
+							maxangle="360"
+							startsize="5"
+							minendsize="15"
+							maxendsize="25"
+							startcolor="0"
+							midcolor=".25 0 1"
+							endcolor=".5 1 1"
+							midcolorpos=".25"
+							startframe="0"
+							midframe=".35"
+							endframe="1"
+							startanchor="1"
+							endanchor=".75"
+						/>
+					</simpleemitter>
+					
+					<billboard
+						position="{pos}"
+						material="/shared/effects/materials/whitedot.material"
+						color=".5 .25 0"
+						size="8"
+						depthbias="-2"
+					/>
+					
+					<billboard
+						position="{pos}"
+						material="/shared/effects/materials/whitedot.material"
+						color="1"
+						size="1.25"
+						depthbias="-2"
+					/>
+				</controller>
+			</template>
+			
+			<instance name="glowy_eye" bone="Bip02 Head" pos="18 11 7" />
+			<instance name="glowy_eye" bone="Bip02 Head" pos="18 11 -7" />
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Scout_Ability1_Attack"
+
+	icon="icon.tga"
+	
+	passiveeffect=""
+	effecttype=""
+	
+	attackspeed="0.90,1.70,2.50,3.20"
+	modifierkey="scout_ability1_attackspeed"
+>
+	<onframe />
+	
+	<oninflict>
+		<setcharges a="4" />
+	</oninflict>
+	
+	<onattack>
+		<removecharge />
+		<compare a="charges" b="0" op="eq">
+			<expire />
+		</compare>
+	</onattack>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onattack>
+			<removecharge />
+			<compare a="charges" b="0" op="eq">
+				<pushability name="Ability_Scout3" />
+				<reducecooldown duration="14000" entity="stack_entity" />
+				<getlevel entity="stack_entity" />
+				<setvar0 a="result" />
+				<compare a="1" b="var0" op="eq">
+					<addcritical chance="1.0" multiplier="1.4" />
+				</compare>
+				<else>
+					<compare a="2" b="var0" op="eq">
+						<addcritical chance="1.0" multiplier="1.6" />
+					</compare>
+					<else>
+						<compare a="3" b="var0" op="eq">
+							<addcritical chance="1.0" multiplier="1.8" />
+						</compare>
+						<else>
+							<compare a="4" b="var0" op="eq">
+								<addcritical chance="1.0" multiplier="2.0" />
+							</compare>
+						</else>
+					</else>
+				</else>
+				
+				<expire />
+			</compare>
+		</onattack>
+	</modifier>
+
+</state>

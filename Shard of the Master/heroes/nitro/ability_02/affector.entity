@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Nitro_Ability2"
+
+	radius="700"
+	arc="70"
+	
+	lifetime="50"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	maximpactspertarget="1"
+
+	effect="effects/impact.effect"
+	
+>
+	<onspawn>
+		<!-- Explosion art -->
+		<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="0 300 0" />
+		<playeffect effect="effects/explosion.effect" source="pos0" target="" occlude="true" />
+	</onspawn>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onspawn>
+			<!-- Explosion art -->
+			<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="0 300 0" />
+			<playeffect effect="effects/explosion.effect" source="pos0" target="" occlude="true" />
+			
+			<hasmodifier name="shardofthemaster_boost" target="source_entity">
+				<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="401.52 573.44 0" />
+				<areaofeffect
+					radius="50"
+					targetselection="all"
+					targetscheme="all_units"
+					effecttype="Push"
+				>
+					<setpos1 position="pos0" positionend="target_position" positionmodifier="pointpastline" positionvalue="50" />
+					<teleport source="target_entity" interpolate="true" target="pos1" noninterrupting="true" />
+				</areaofeffect>
+				<spawnunit name="Gadget_Nitro_Shard" target="pos0" fixedposition="true"/>
+				
+				<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="328.65 618.03 0" />
+				<areaofeffect
+					radius="50"
+					targetselection="all"
+					targetscheme="all_units"
+					effecttype="Push"
+				>
+					<setpos1 position="pos0" positionend="target_position" positionmodifier="pointpastline" positionvalue="50" />
+					<teleport source="target_entity" interpolate="true" target="pos1" noninterrupting="true" />
+				</areaofeffect>
+				<spawnunit name="Gadget_Nitro_Shard" target="pos0" fixedposition="true"/>
+				
+				<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="-328.65 618.03 0" />
+				<areaofeffect
+					radius="50"
+					targetselection="all"
+					targetscheme="all_units"
+					effecttype="Push"
+				>
+					<setpos1 position="pos0" positionend="target_position" positionmodifier="pointpastline" positionvalue="50" />
+					<teleport source="target_entity" interpolate="true" target="pos1" noninterrupting="true" />
+				</areaofeffect>
+				<spawnunit name="Gadget_Nitro_Shard" target="pos0" fixedposition="true"/>
+				
+				<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="250.88 653.52 0" />
+				<areaofeffect
+					radius="50"
+					targetselection="all"
+					targetscheme="all_units"
+					effecttype="Push"
+				>
+					<setpos1 position="pos0" positionend="target_position" positionmodifier="pointpastline" positionvalue="50" />
+					<teleport source="target_entity" interpolate="true" target="pos1" noninterrupting="true" />
+				</areaofeffect>
+				<spawnunit name="Gadget_Nitro_Shard" target="pos0" fixedposition="true"/>
+				
+				<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="169.33 679.21 0" />
+				<areaofeffect
+					radius="50"
+					targetselection="all"
+					targetscheme="all_units"
+					effecttype="Push"
+				>
+					<setpos1 position="pos0" positionend="target_position" positionmodifier="pointpastline" positionvalue="50" />
+					<teleport source="target_entity" interpolate="true" target="pos1" noninterrupting="true" />
+				</areaofeffect>
+				<spawnunit name="Gadget_Nitro_Shard" target="pos0" fixedposition="true"/>
+				
+				<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="-169.33 679.21 0" />
+				<areaofeffect
+					radius="50"
+					targetselection="all"
+					targetscheme="all_units"
+					effecttype="Push"
+				>
+					<setpos1 position="pos0" positionend="target_position" positionmodifier="pointpastline" positionvalue="50" />
+					<teleport source="target_entity" interpolate="true" target="pos1" noninterrupting="true" />
+				</areaofeffect>
+				<spawnunit name="Gadget_Nitro_Shard" target="pos0" fixedposition="true"/>
+				
+				<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="85.33 694.75 0" />
+				<areaofeffect
+					radius="50"
+					targetselection="all"
+					targetscheme="all_units"
+					effecttype="Push"
+				>
+					<setpos1 position="pos0" positionend="target_position" positionmodifier="pointpastline" positionvalue="50" />
+					<teleport source="target_entity" interpolate="true" target="pos1" noninterrupting="true" />
+				</areaofeffect>
+				<spawnunit name="Gadget_Nitro_Shard" target="pos0" fixedposition="true"/>
+				
+				<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="0 700 0" />
+				<areaofeffect
+					radius="50"
+					targetselection="all"
+					targetscheme="all_units"
+					effecttype="Push"
+				>
+					<setpos1 position="pos0" positionend="target_position" positionmodifier="pointpastline" positionvalue="50" />
+					<teleport source="target_entity" interpolate="true" target="pos1" noninterrupting="true" />
+				</areaofeffect>
+				<spawnunit name="Gadget_Nitro_Shard" target="pos0" fixedposition="true"/>
+				
+				<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="-401.52 573.44 0" />
+				<areaofeffect
+					radius="50"
+					targetselection="all"
+					targetscheme="all_units"
+					effecttype="Push"
+				>
+					<setpos1 position="pos0" positionend="target_position" positionmodifier="pointpastline" positionvalue="50" />
+					<teleport source="target_entity" interpolate="true" target="pos1" noninterrupting="true" />
+				</areaofeffect>
+				<spawnunit name="Gadget_Nitro_Shard" target="pos0" fixedposition="true"/>
+				
+				<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="-250.88 653.52 0" />
+				<areaofeffect
+					radius="50"
+					targetselection="all"
+					targetscheme="all_units"
+					effecttype="Push"
+				>
+					<setpos1 position="pos0" positionend="target_position" positionmodifier="pointpastline" positionvalue="50" />
+					<teleport source="target_entity" interpolate="true" target="pos1" noninterrupting="true" />
+				</areaofeffect>
+				<spawnunit name="Gadget_Nitro_Shard" target="pos0" fixedposition="true"/>
+				
+				<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="-85.33 694.75 0" />
+				<areaofeffect
+					radius="50"
+					targetselection="all"
+					targetscheme="all_units"
+					effecttype="Push"
+				>
+					<setpos1 position="pos0" positionend="target_position" positionmodifier="pointpastline" positionvalue="50" />
+					<teleport source="target_entity" interpolate="true" target="pos1" noninterrupting="true" />
+				</areaofeffect>
+				<spawnunit name="Gadget_Nitro_Shard" target="pos0" fixedposition="true"/>
+			</hasmodifier>
+		</onspawn>
+	</modifier>
+
+	<onimpact>
+		<damage effecttype="Magic" source="this_owner_entity" target="target_entity" amount="70,140,210,280" />
+		<applystate name="State_Stunned" target="target_entity" duration="1000" />
+		
+		<setpos0 position="target_position" />
+		<setpos1 position="this_position" positionend="target_position" positionmodifier="pointonline" positionvalue="725" />
+		<spawnprojectile name="Projectile_Nitro_Ability2_Toss" source="pos0" target="pos1" bind="target_entity" proxy="target_entity" />
+	</onimpact>
+	
+</affector>

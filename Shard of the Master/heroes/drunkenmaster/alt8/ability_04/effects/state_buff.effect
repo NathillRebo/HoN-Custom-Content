@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+		        voiceresponseoff="true"
+				volume=".80"
+				sample="../../sounds/ab4_start.wav"
+				linearfalloff="true"
+				falloffstart="400" 
+				falloffend="2500" 
+			/>
+			
+			<sound
+			    voiceresponseoff="true"
+			    delay="500"
+				volume="1"
+				sample="../../sounds/ab4_vox.wav"
+				linearfalloff="true"
+				falloffstart="400" 
+				falloffend="2500" 
+			/>
+			
+			
+			<sound
+			    voiceresponseoff="true"
+				soundloop="true"
+				randomloop="true"
+				fadein="500"
+				fadeout="1000"
+				volume=".80"
+				sample="../../sounds/ab4_music.wav"
+				linearfalloff="true"
+				falloffstart="400" 
+				falloffend="2500" 
+			/>
+			
+				<model 
+					bone="_bone_centerofchest"
+					anim="idle"
+					startalpha="1"
+					endalpha="0"
+					model="keg_shield/shield.mdf"
+					color="1 1 1"
+					scale="2.7"
+					yawspeed="180"
+					expirelife="500"
+					position="0 0 -15"
+				>
+				
+					<billboard
+						expirelife="250"
+						position="0 0 0"
+						startcolor=".5 .2 .075"
+						endcolor="0 0 0"
+						size="65"
+						rollspeed="-720"
+						depthbias="-25"
+						material="../../../effects/material.material"
+						lockright="true"
+						lockup="true"
+						pitch="-90"
+						directionalspace="local"
+						yawspeed="180"
+					/>
+					
+					<billboard
+						expirelife="250"
+						position="0 0 0"
+						startcolor=".5 .2 .075"
+						endcolor="0 0 0"
+						size="65"
+						rollspeed="-720"
+						depthbias="-25"
+						material="../../../effects/material.material"
+						lockright="true"
+						lockup="true"
+						pitch="-90"
+						directionalspace="local"
+						yawspeed="-180"
+					/>
+					
+				</model>
+				
+				<model 
+					bone="_bone_centerofchest"
+					anim="idle"
+					startalpha="1"
+					endalpha="0"
+					model="cards/model.mdf"
+					material="cards/material.material"
+					color="1 1 1"
+					scale="2.2"
+					yawspeed="180"
+					expirelife="500"
+					position="0 0 -15"
+					yaw="-75"
+					roll="-75"
+					pitch="-75"
+				/>
+				
+				<model 
+					bone="_bone_centerofchest"
+					anim="idle"
+					startalpha="1"
+					endalpha="0"
+					model="cards/model.mdf"
+					material="cards/material_spade.material"
+					color="1 1 1"
+					scale="2.2"
+					rollspeed="180"
+					expirelife="500"
+					position="0 0 -15"
+					yaw="-45"
+					roll="-45"
+					pitch="-45"
+				/>
+				
+				<model 
+					bone="_bone_centerofchest"
+					anim="idle"
+					startalpha="1"
+					endalpha="0"
+					model="cards/model.mdf"
+					material="cards/material_heart.material"
+					color="1 1 1"
+					scale="2.2"
+					pitchspeed="180"
+					expirelife="500"
+					position="0 0 -15"
+					yaw="45"
+					roll="45"
+					pitch="45"
+				/>
+			
+				<model 
+					bone="_bone_centerofchest"
+					anim="idle"
+					startalpha="1"
+					endalpha="0"
+					model="keg_shield/shield.mdf"
+					material="/shared/effects/materials/shell2.material"
+					startcolor=".6 .2 0"
+					endcolor="0 0 0"
+					scale="2.7"
+					yawspeed="180"
+					expirelife="500"
+					position="0 0 -15"
+				/>
+
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+      	<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

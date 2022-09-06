@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rampage_Ability3_Self"
+
+	icon="icon.tga"
+	passiveeffect=""
+
+	movespeedmultiplier="0.15"
+
+	effecttype=""
+>
+
+    <altavatar key="Hero_Rampage.Alt14"
+		icon="/heroes/Rampage/alt14/ability_03/icon.tga"
+	>
+	</altavatar>
+	
+</state>

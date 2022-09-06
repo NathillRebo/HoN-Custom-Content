@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Xalynx_Ability3"
+
+	radius="600"
+	effect=""
+	targetselection="closest"
+	maxtotalimpacts="4,5,6,7"
+	targetscheme="visible_enemy_units"
+	effecttype="Magic"
+	impacteffect="effects/impact.effect"
+	
+	dynamicprecache="effects/beam.effect"
+>
+	<onspawn>
+		<setscriptvalue name="beam_effect" value="effects/beam.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<applystate name="State_Xalynx_Ability3" proxy="this_proxy_entity" duration="200" />
+		<damage effecttype="Magic" amount="80,140,200,260" />
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="beam_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_entity" target="this_proxy_entity" occlude="true" />
+	</onimpact>	
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onimpact>
+			<push force="-2329" duration="200" source="source_entity" />
+			<applystate name="State_Xalynx_Ability3" proxy="this_proxy_entity" duration="200" />
+			<damage effecttype="Magic" amount="80,140,200,260" />
+			
+			<!-- Dynamic visual effects -->
+			<getscriptvalue name="beam_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" source="target_entity" target="this_proxy_entity" occlude="true" />
+		</onimpact>	
+	</modifier>
+	
+	<altavatar key="Hero_Xalynx.Alt3"
+		impacteffect="../alt3/ability_03/effects/impact.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Xalynx.Alt4"
+		impacteffect="../alt4/ability_03/effects/impact.effect"
+		dynamicprecache="../alt4/ability_03/effects/beam.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="beam_effect" value="../alt4/ability_03/effects/beam.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Xalynx.Alt5"
+		impacteffect="../alt5/ability_03/effects/impact.effect"
+		dynamicprecache="../alt5/ability_03/effects/beam.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="beam_effect" value="../alt5/ability_03/effects/beam.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Xalynx.Alt6" modpriority="1"
+		impacteffect="../alt6/ability_03/effects/beam_base.effect,../alt6/ability_03/effects/beam_upgrade.effect"
+	>
+		<onlearn>
+			<hasmodifier name="Alt6_Ability1_Upgrade" >
+				<setscriptvalue name="beam_effect" value="../alt6/ability_03/effects/beam_upgrade.effect" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setscriptvalue name="beam_effect" value="../alt6/ability_03/effects/beam_base.effect" entity="this_entity" />
+			</else>
+		</onlearn>
+		
+		<modifier key="Alt6_Ability3_Upgrade" modpriority="1"
+			impacteffect="../alt6/ability_03/effects/impact_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Xalynx.Alt7"
+		impacteffect="../alt7/ability_03/effects/impact.effect"
+		dynamicprecache="../alt7/ability_03/effects/beam.effect"
+	>
+		<onspawn>
+			<setscriptvalue name="beam_effect" value="../alt7/ability_03/effects/beam.effect" entity="this_entity" />
+		</onspawn>
+	</altavatar>
+
+</affector>

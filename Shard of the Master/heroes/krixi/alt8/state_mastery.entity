@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Mastery"
+
+	icon=""
+	skin="default"
+	passiveeffect=""
+	ishidden="true"
+	
+	effecttype=""
+>
+	<altavatar key="Hero_Krixi.Alt8" modpriority="100"
+		passiveeffect="" 
+	>
+		<modifier key="mastery_silver" modpriority="101"
+			passiveeffect="/heroes/krixi/alt8/silver/effects/body.effect"
+			
+		/>
+		<modifier key="mastery_gold" modpriority="101"
+			 passiveeffect="/heroes/krixi/alt8/gold/effects/body.effect"
+			 
+		/>
+		<modifier key="mastery_purple" modpriority="101"
+			 passiveeffect="/heroes/krixi/alt8/purple/effects/body.effect"
+			 
+		/>
+	</altavatar>
+</state>

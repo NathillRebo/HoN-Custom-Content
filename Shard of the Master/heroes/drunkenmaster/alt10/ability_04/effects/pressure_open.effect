@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<controller
+				position="0 0 50"
+				lookat="true"
+				lookatowner="target"
+			>
+				<billboard
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					color=".01 0 .01"
+					alpha="1"
+					directionalspace="local"
+					size="162"
+					roll="180"
+					position="0 0 80"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+				<billboard
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					color="1 0 1"
+					alpha=".75"
+					directionalspace="local"
+					size="160"
+					roll="180"
+					position="0 0 30"
+					material="/shared/effects/materials/circle_third_plank.material"
+				/>
+				
+				<billboard
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					color="1 .35 1"
+					alpha="1"
+					directionalspace="local"
+					size="162"
+					roll="180"
+					position="0 0 30"
+					material="/shared/effects/materials/circle_third_plankglow.material"
+				/>
+				<billboard
+					life="1000"
+					loop="ture"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					color=".3 .8 1"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					directionalspace="local"
+					startsize="150"
+					endsize="182"
+					roll="180"
+					position="0 0 30"
+					material="/shared/effects/materials/circle_third_plankglow.material"
+				/>
+			<!-- 	<controller pitch="90">
+				<template name="material">
+				<simpleemitter
+					spawnrate="3"
+					minparticlelife="150"
+					maxparticlelife="750"
+					gravity="10"
+					drag=".01"
+					material="{material}"
+					offsetcube="40 10 0"
+					minangle="0"
+					maxangle="0"
+					direction="0 0 1"
+					directionalspace="global"
+					depthbias="-25"
+					position="0 30 -60"
+				>
+					<template name="color">
+						<particle 
+							startcolor="0"
+							midcolor="{color}"
+							endcolor="0 0 0"
+							param=".25"
+							startsize="20"
+							endsize="32"
+							maxangle="360"
+							minscale=".4"
+							maxscale=".8"
+						/>
+					</template>
+					<instance name="color" color="1 .7 1"/>
+					<instance name="color" color=".7 1 1"/>
+					<instance name="color" color="1 1 .5"/>
+					<instance name="color" color=".7 .5 1"/>
+					<instance name="color" color=".5 1 .5"/>
+				</simpleemitter>
+				</template>
+				<instance name="material" material="/shared/effects/materials/planet_01.material"/>
+				<instance name="material" material="/shared/effects/materials/planet_02.material"/>
+				<instance name="material" material="/shared/effects/materials/planet_03.material"/>
+				<instance name="material" material="/shared/effects/materials/planet_04.material"/>
+				<instance name="material" material="/shared/effects/materials/planet_05.material"/>
+			</controller> -->
+			</controller>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

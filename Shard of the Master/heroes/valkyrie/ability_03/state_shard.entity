@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Valkyrie_Ability3_Shard"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_ally.effect"
+
+	incomingdamagemultiplier="-0.9"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onframe>
+		<hasmodifier name="iamsheeped" entity="this_owner_entity" >
+			<activatemodifierkey name="iamsheeped" entity="this_entity" />
+		</hasmodifier>
+		<else>
+			<deactivatemodifierkey name="iamsheeped" entity="this_entity"/>
+		</else>
+	</onframe>
+	
+	<modifier key="iamsheeped" modpriority="100"
+		passiveeffect=""
+	/>
+
+	<altavatar key="Hero_Valkyrie.Alt6" modpriority="90"
+		passiveeffect="../alt6/ability_03/effects/state_ally.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt7" modpriority="90"
+		passiveeffect="../alt7/ability_03/effects/state_ally.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt8" modpriority="90"
+		passiveeffect="../alt8/ability_03/effects/state_ally.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt9" modpriority="90"
+		passiveeffect="../alt9/ability_03/effects/state_ally.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt10" modpriority="90"
+		passiveeffect="../alt10/ability_03/effects/state_ally.effect"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt12" modpriority="90"
+	icon="/heroes/Valkyrie/alt12/ability_03/icon.tga"
+	passiveeffect="../alt12/ability_03/effects/state_ally.effect"
+	/>
+	<modifier key="valkyrieAlt12_Ability3_Upgrade"
+	icon="/heroes/Valkyrie/alt12/ability_03/icon_u.tga"
+	/>
+	
+	<altavatar key="Hero_Valkyrie.Alt13" modpriority="90"
+		passiveeffect="../alt13/ability_03/effects/state_ally.effect"
+	/>
+</state>

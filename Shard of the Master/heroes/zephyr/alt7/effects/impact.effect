@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".2"
+				sample="/shared/sounds/impacts/impact_flesh_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".75"
+				sample="/shared/sounds/impacts/impact_body_%.wav"
+			/>
+
+			<!-- feather poof -->
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				life="500"
+				count="2"
+				spawnrate="75"
+				particlelife="2500"
+				gravity=".5"
+				speed="150"
+				drag="0.1"
+				acceleration="0.0"
+				material="/shared/effects/materials/feather_white.material"
+				offsetsphere="35 35 50"
+				direction="0 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					minsize="10"
+					maxsize="25"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color=".7 .15 0"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				life="500"
+				count="2"
+				spawnrate="75"
+				particlelife="2500"
+				gravity=".5"
+				speed="150"
+				drag="0.1"
+				acceleration="0.0"
+				material="/shared/effects/materials/feather_white.material"
+				offsetsphere="35 35 50"
+				direction="0 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				collide="true"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					anglespeed="20"
+					minsize="10"
+					maxsize="25"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color="0 .25 .5"
+					startalpha=".75"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+			</simpleemitter>
+			
+	</particlesystem>
+		
+</definitions>
+<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		
+		<waitfordeath  instance="instance1"/>
+</thread>
+</effect>
+
+
+
+
+

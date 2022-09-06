@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Goldenveil_Ability1"
+
+	radius="300"
+	
+	lifetime="2750"
+	impactinterval="250"
+	maximpactsperinterval="1"
+	targetselection="closest"
+	targetscheme="visible_enemy_units"
+	effecttype="Magic"
+	effect="effects/affector_day.effect"
+	
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onframe>
+		<!-- Audio for impact -->
+		<areaofeffect
+			radius="325"
+			targetscheme="visible_enemy_units"
+			targetselection="closest"
+			ignoreinvulnerable="true"
+			maxtotalimpacts="1"
+		>
+		   <applystate name="State_Goldenveil_Sound" continuous="true" target="source_entity" stack="false" timeout="frametime" />
+		</areaofeffect>
+	</onframe>
+	
+	<onimpact>
+		<!-- Damage to main target -->
+		<damage effecttype="Magic" amount="15,25,35,45" />
+		
+		<!-- Residual damage per interval -->
+		<setvar0 a="3.5,5,6.5,8" />
+		
+		<setent0 entity="target_entity" />
+		
+		<!-- Residual AoE damage -->
+		<areaofeffect
+			radius="325"
+			center="this_entity"
+			effecttype="Magic"
+			targetscheme="enemy_units"
+			targetselection="all"
+			ignoreinvulnerable="false"
+			ignore="ent0"
+		>
+		   <damage effecttype="Magic" amount="1" b="var0" op="mult" />
+		</areaofeffect>
+		
+		<!-- Art -->
+		<hasavatarkey name="Hero_Goldenveil.Alt">
+			<playeffect effect="../alt/ability_01/effects/impact.effect" source="target_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Goldenveil.Alt2">
+				<playeffect effect="../alt2/ability_01/effects/impact.effect" source="target_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Goldenveil.Alt3">
+					<playeffect effect="../alt3/ability_01/effects/impact.effect" source="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Goldenveil.Alt4">
+						<playeffect effect="../alt3/ability_01/effects/impact.effect" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Goldenveil.Alt5">
+							<playeffect effect="../alt5/ability_01/effects/impact.effect" source="target_entity" />
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/impact.effect" source="target_entity" />
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onimpact>	
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onimpact>
+			<!-- Damage to main target -->
+			<damage effecttype="Magic" amount="15,25,35,45" />
+			<hasmodifier name="shardofthemaster_boost" target="source_entity">
+				<changeduration b="300" op="add" />
+			</hasmodifier>
+			
+			<!-- Residual damage per interval -->
+			<setvar0 a="11.25,18.75,26.25,33.75" />
+			
+			<setent0 entity="target_entity" />
+			
+			<!-- Residual AoE damage -->
+			<areaofeffect
+				radius="325"
+				center="this_entity"
+				effecttype="Magic"
+				targetscheme="enemy_units"
+				targetselection="all"
+				ignoreinvulnerable="false"
+				ignore="ent0"
+			>
+			   <damage effecttype="Magic" amount="1" b="var0" op="mult" />
+			</areaofeffect>
+			
+			<!-- Art -->
+			<hasavatarkey name="Hero_Goldenveil.Alt">
+				<playeffect effect="../alt/ability_01/effects/impact.effect" source="target_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Goldenveil.Alt2">
+					<playeffect effect="../alt2/ability_01/effects/impact.effect" source="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Goldenveil.Alt3">
+						<playeffect effect="../alt3/ability_01/effects/impact.effect" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Goldenveil.Alt4">
+							<playeffect effect="../alt3/ability_01/effects/impact.effect" source="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Goldenveil.Alt5">
+								<playeffect effect="../alt5/ability_01/effects/impact.effect" source="target_entity" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/impact.effect" source="target_entity" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</onimpact>	
+	</modifier>
+	
+	<altavatar key="Hero_Goldenveil.Alt"
+		effect="../alt/ability_01/effects/affector_day.effect"
+ 	/>
+	
+	<altavatar key="Hero_Goldenveil.Alt2"
+		effect="../alt2/ability_01/effects/affector_day.effect"
+ 	/>
+	
+	<altavatar key="Hero_Goldenveil.Alt3"
+		effect="../alt3/ability_01/effects/affector_day.effect"
+ 	/>
+	
+	<altavatar key="Hero_Goldenveil.Alt4"
+		effect="../alt3/ability_01/effects/affector_day.effect"
+ 	/>
+	
+	<altavatar key="Hero_Goldenveil.Alt5"
+		effect="../alt5/ability_01/effects/affector_day.effect"
+ 	/>
+	
+</affector>

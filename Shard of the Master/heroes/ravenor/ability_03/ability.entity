@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ravenor3"
+	
+	icon="icon.tga"	
+	statuseffecttooltip=""
+	
+	anim="ability_3"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	actiontype="passive"
+	casteffecttype="Magic"
+	targetradius="400"
+	
+	maxcharges="1"
+>
+	
+	<onattackimpact propagatetoillusions="false">
+		<cantarget targetscheme="enemy_units">
+			<compare a="charges" b="0" op="le">
+				<!-- Main target -->
+				<targettype type="hero">
+					<damage effecttype="Magic" amount="10,20,30,40"  />
+				</targettype>
+				<else>
+					<damage effecttype="Magic" amount="10,20,30,40" b="3" op="mult"  />
+				</else>
+				
+				<!-- Art -->
+				<hasavatarkey name="Hero_Ravenor.Alt6">
+					<playeffect effect="/heroes/ravenor/alt6/ability_03/effects/lightning_link.effect" />
+					<playeffect effect="/heroes/ravenor/alt6/ability_03/effects/impact.effect" target="target_entity" source="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Ravenor.Alt7">
+						<playeffect effect="/heroes/ravenor/alt7/ability_03/effects/lightning_link.effect" />
+						<playeffect effect="/heroes/ravenor/alt7/ability_03/effects/impact.effect" target="target_entity" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Ravenor.Alt8">
+							<playeffect effect="/heroes/ravenor/alt8/ability_03/effects/lightning_link.effect" />
+							<playeffect effect="/heroes/ravenor/alt8/ability_03/effects/impact.effect" target="target_entity" source="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Ravenor.Alt9">
+								<playeffect effect="/heroes/ravenor/alt9/ability_03/effects/lightning_link.effect" />
+								<playeffect effect="/heroes/ravenor/alt9/ability_03/effects/impact.effect" target="target_entity" source="target_entity" />
+							</hasavatarkey>
+							<else>
+							<playeffect effect="effects/lightning_link.effect" />
+							<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity" />
+						</else>
+					</else>
+				</else>
+				</else>
+				
+				<!-- Prioritize enemy heroes, then other enemy units -->
+				<areaofeffect
+					radius="400"
+					maxtotalimpacts="1"
+					effecttype="Magic"
+					targetselection="closest"
+					targetscheme="visible_enemy_units"
+					center="target_position"
+					ignore="target_entity"
+				>
+					<targettype type="hero">
+						<damage effecttype="Magic" amount="10,20,30,40"  />
+					</targettype>
+					<else>
+						<damage effecttype="Magic" amount="10,20,30,40" b="3" op="mult"  />
+					</else>
+					
+					<setproxy entity="this_entity" target="target_entity" />
+					
+					<!-- Art -->
+					<hasavatarkey name="Hero_Ravenor.Alt6">
+						<playeffect effect="/heroes/ravenor/alt6/ability_03/effects/lightning_link.effect" />
+						<playeffect effect="/heroes/ravenor/alt6/ability_03/effects/impact.effect" target="target_entity" source="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Ravenor.Alt7">
+							<playeffect effect="/heroes/ravenor/alt7/ability_03/effects/lightning_link.effect" />
+							<playeffect effect="/heroes/ravenor/alt7/ability_03/effects/impact.effect" target="target_entity" source="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Ravenor.Alt8">
+								<playeffect effect="/heroes/ravenor/alt8/ability_03/effects/lightning_link.effect" />
+								<playeffect effect="/heroes/ravenor/alt8/ability_03/effects/impact.effect" target="target_entity" source="target_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Ravenor.Alt9">
+									<playeffect effect="/heroes/ravenor/alt9/ability_03/effects/lightning_link.effect" />
+									<playeffect effect="/heroes/ravenor/alt9/ability_03/effects/impact.effect" target="target_entity" source="target_entity" />
+								</hasavatarkey>
+								<else>
+								<playeffect effect="effects/lightning_link.effect" />
+								<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity" />
+							</else>
+						</else>
+					</else>			
+					</else>			
+				</areaofeffect>
+				<compare a="result" b="1" op="lt">
+					<evaluate a="1" b="result" op="sub" />
+					<setaccumulator value="result" />
+					<areaofeffect
+						radius="400"
+						maxtotalimpacts="accumulator"
+						effecttype="Magic"
+						targetselection="closest"
+						targetscheme="visible_enemy_units"
+						center="target_position"
+						ignore="target_entity this_proxy_entity"
+					>
+						<targettype type="hero">
+							<damage effecttype="Magic" amount="10,20,30,40"  />
+						</targettype>
+						<else>
+							<damage effecttype="Magic" amount="10,20,30,40" b="3" op="mult"  />
+						</else>
+						
+						<!-- Art -->
+						<hasavatarkey name="Hero_Ravenor.Alt6">
+							<playeffect effect="/heroes/ravenor/alt6/ability_03/effects/lightning_link.effect" />
+							<playeffect effect="/heroes/ravenor/alt6/ability_03/effects/impact.effect" target="target_entity" source="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Ravenor.Alt7">
+								<playeffect effect="/heroes/ravenor/alt7/ability_03/effects/lightning_link.effect" />
+								<playeffect effect="/heroes/ravenor/alt7/ability_03/effects/impact.effect" target="target_entity" source="target_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Ravenor.Alt8">
+									<playeffect effect="/heroes/ravenor/alt8/ability_03/effects/lightning_link.effect" />
+									<playeffect effect="/heroes/ravenor/alt8/ability_03/effects/impact.effect" target="target_entity" source="target_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Ravenor.Alt9">
+										<playeffect effect="/heroes/ravenor/alt9/ability_03/effects/lightning_link.effect" />
+										<playeffect effect="/heroes/ravenor/alt9/ability_03/effects/impact.effect" target="target_entity" source="target_entity" />
+									</hasavatarkey>
+									<else>
+									<playeffect effect="effects/lightning_link.effect" />
+									<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity" />
+								</else>
+							</else>
+						</else>
+						</else>
+					</areaofeffect>
+				</compare>			
+				
+				<setcharges a="1" />
+			</compare>
+			<else>
+				<removecharge />
+			</else>
+		</cantarget>
+	</onattackimpact>
+	
+	<onimpact/>
+	
+	<altavatar key="Hero_Ravenor.Alt8"
+		icon="../alt8/ability_03/icon.tga" 
+	>
+ 	</altavatar>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		actiontype="target_self"
+		casteffecttype=""
+		manacost="95"
+		casttime="0"
+		castactiontime="0"
+		cooldowntime="45000"
+	>
+		<onimpact>
+			<applystate name="State_Ravenor_Shard" duration="4000" proxy="source_entity" />
+		</onimpact>
+	</modifier>
+	
+</ability>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Ability2_Day"
+
+	icon="icon.tga"
+	passiveeffect=""
+
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<aura
+		gadget="Gadget_Solstice_Ability2_Reveal_Day"
+		radius="0"
+		targetscheme="self"
+	/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="101">
+		<onattackeddamageevent>
+			<setvar1 a="damage_attempted" b="2.2627" op="mult"/>
+			<changeduration b="var1" op="add" />
+		</onattackeddamageevent>
+	</modifier>
+	
+	<onframe />
+	
+</state>

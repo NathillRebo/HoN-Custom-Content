@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".5">	
+
+			<model
+				bone="_bone_centerofchest"
+				color="2 1 1"
+				startalpha=".75"
+				endalpha="0"
+				position="0 0 0"
+				model="/heroes/kane/ability_04/effects/sphere/model.mdf"
+				material="material.material"
+				anim="idle"
+				expirelife="125"
+				startscale=".7"
+				endscale="0"
+				yawspeed="180"
+				pitchspeed="180"
+			>
+			</model>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

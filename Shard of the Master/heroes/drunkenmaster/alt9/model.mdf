@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model" >
+	
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true">
+	<frameevent frame="62" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	<frameevent frame="18" cmd="PlaySoundLinear ../sounds/Cup_move_%.wav 0 200 .60"/>
+	<frameevent frame="52" cmd="PlaySoundLinear ../sounds/barrel_move_%.wav 0 200 .20"/>
+	<frameevent frame="111" cmd="PlaySoundLinear ../sounds/barrel_move_%.wav 0 200 .20"/>
+	<frameevent frame="46" cmd="PlaySoundLinear ../sounds/Cup_move_%.wav 0 200 .60"/>
+    <frameevent frame="80" cmd="PlaySoundLinear ../sounds/Cup_move_%.wav 0 200 .60"/>
+	<frameevent frame="145" cmd="PlaySoundLinear ../sounds/Cup_move_%.wav 0 200 .60"/>
+	<frameevent frame="145" cmd="PlaySoundLinear ../sounds/barrel_move_%.wav 0 200 .20"/>
+	<frameevent frame="135" cmd="PlaySoundLinear ../sounds/Cup_move_%.wav 0 200 .60"/>
+	<frameevent frame="62" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	<frameevent frame="72" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	<frameevent frame="72" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	<frameevent frame="110" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	<frameevent frame="110" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	<frameevent frame="121" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	<frameevent frame="121" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	<frameevent frame="180" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	<frameevent frame="180" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	</anim>
+
+
+	<anim name="portrait" clip="clips/default_1.clip" loop="true"/>
+	
+	<anim name="item_1" clip="clips/item_1.clip">
+	<frameevent frame="10" cmd="PlaySoundLinear ../sounds/Cup_move_%.wav 0 1000 .80"/>
+	</anim>
+	
+	<anim name="ability_1_lunge" clip="clips/ability_1_lunge.clip" fps="30">
+	<frameevent frame="1" cmd="PlaySoundLinear sounds/ab1_launch_vox.wav 0 2500 1"/>
+	<frameevent frame="1" cmd="PlaySoundLinear ../ability_01/sounds/jump.wav 400 1500 .50"/>
+	<frameevent frame="1" cmd="PlaySoundLinear ../sounds/barrel_move_%.wav 0 1500 1"/>
+	<frameevent frame="1" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 0 1500 1"/>
+	</anim>
+	
+	<anim name="ability_1_circle" clip="clips/ability_1_circle.clip" fps="36">
+	<startevent cmd="StartEffect ability_01/effects/dance_sound.effect 4"/>
+	<endevent cmd="StopEffect 4" />
+	<frameevent frame="1" cmd="PlaySoundLinear sounds/ab1_dance_vox_%.wav 400 1800 .7"/>
+	</anim>
+	
+	<anim name="ability_1_impact" clip="clips/ability_1_impact.clip" fps="26">
+	<frameevent frame="1" cmd="PlaySoundLinear ../ability_01/sounds/impact.wav 400 2500 1"/>
+	<frameevent frame="1" cmd="PlaySoundLinear /heroes/behemoth/ability_02/sounds/impact.wav 400 1500 .50"/>
+	<frameevent frame="1" cmd="PlaySoundLinear sounds/ab1_vox_punch.wav 0 2000 1"/>
+	<frameevent frame="1" cmd="PlaySoundLinear sounds/ab1_punch.wav 0 800 .8"/>
+	</anim>
+
+	<anim name="ability_2" clip="clips/ability_2.clip" blendtime="300" fps="40"  loop="true">
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/drunkenmaster/alt9/sounds/ab2_vox_%.wav 0 1200 1"/>
+		<frameevent frame="18" cmd="PlaySoundLinear ../sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="65" cmd="PlaySoundLinear ../sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="39" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="82" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ../ability_03/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ../ability_03/sounds/splash_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ../ability_03/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ../ability_03/sounds/splash_%.wav 0 1200 .50"/>
+	</anim>
+	
+	<anim name="ability_2_s1" clip="clips/ability_2.clip" blendtime="300" fps="100"  loop="true">
+		<frameevent frame="18" cmd="PlaySoundLinear ../sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="65" cmd="PlaySoundLinear ../sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="39" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="82" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ../ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ../ability_02/sounds/splash_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ../ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ../ability_02/sounds/splash_%.wav 0 1200 .50"/>
+	</anim>
+	
+	<anim name="ability_2_s2" clip="clips/ability_2.clip" blendtime="300" fps="85"  loop="true">
+		<frameevent frame="18" cmd="PlaySoundLinear ../sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="65" cmd="PlaySoundLinear ../sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="39" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="82" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ../ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ../ability_02/sounds/splash_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ../ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ../ability_02/sounds/splash_%.wav 0 1200 .50"/>
+	</anim>
+	
+	<anim name="ability_2_s3" clip="clips/ability_2.clip" blendtime="300" fps="70"  loop="true">
+		<frameevent frame="18" cmd="PlaySoundLinear ../sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="65" cmd="PlaySoundLinear ../sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="39" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="82" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ../ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ../ability_02/sounds/splash_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ../ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ../ability_02/sounds/splash_%.wav 0 1200 .50"/>
+	</anim>
+	
+	<anim name="ability_2_s4" clip="clips/ability_2.clip" blendtime="300" fps="55"  loop="true">
+		<frameevent frame="18" cmd="PlaySoundLinear ../sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="65" cmd="PlaySoundLinear ../sounds/taunt.wav 0 1200 .40"/>
+		<frameevent frame="39" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="82" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 400 1200 1"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ../ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="16" cmd="PlaySoundLinear ../ability_02/sounds/splash_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ../ability_02/sounds/drink_%.wav 0 1200 .50"/>
+		<frameevent frame="63" cmd="PlaySoundLinear ../ability_02/sounds/splash_%.wav 0 1200 .50"/>
+	</anim>
+
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="30">
+	<frameevent frame="1" cmd="PlaySoundLinear ability_04/sounds/cast.wav 400 2500 .60"/>
+	<frameevent frame="10" cmd="PlaySoundLinear ../sounds/taunt.wav 0 1000 .80"/>
+	<frameevent frame="10" cmd="PlaySoundLinear ../ability_02/sounds/drink_%.wav 400 2500 1"/>
+    </anim>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="38" loop="false">
+		<frameevent frame="13" cmd="PlaySoundLinear ../ability_02/sounds/drink_%.wav 0 1000 .50"/>
+	    <frameevent frame="13" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 0 1200 1"/>
+		<frameevent frame="11" cmd="PlaySoundLinear ../sounds/whoosh_%.wav 0 1200 .70"/>
+		<frameevent frame="11" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="35" loop="false">
+	    <frameevent frame="1" cmd="PlaySoundLinear sounds/attack_grunt_%.wav 0 1200 .90"/>
+	    <frameevent frame="18" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 0 1200 1"/>
+		<frameevent frame="15" cmd="PlaySoundLinear ../sounds/whoosh_%.wav 0 1200 .70"/>
+		<frameevent frame="15" cmd="StartEffect effects/swoosh.effect"/>
+	</anim>
+	
+	<anim name="attack_3" clip="clips/attack_3.clip" fps="35" loop="false">
+	<frameevent frame="11" cmd="PlaySoundLinear sounds/attack_grunt_%.wav 0 1200 .90"/>
+	    <frameevent frame="11" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 0 1200 1"/>
+		<frameevent frame="11" cmd="PlaySoundLinear ../sounds/whoosh_%.wav 0 1200 .70"/>
+	</anim>
+	
+	<anim name="attack_4" clip="clips/attack_4.clip" fps="35" loop="false">
+		<frameevent frame="15" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 0 1200 1"/>
+		<frameevent frame="8" cmd="PlaySoundLinear ../sounds/whoosh_%.wav 0 1200 .70"/>
+		<frameevent frame="15" cmd="StartEffect effects/swoosh.effect"/>
+	</anim>
+
+	<anim name="ability_3" clip="clips/ability_3.clip" fps="30" loop="false">
+		<frameevent frame="11" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 400 2000 .65"/>
+	</anim>
+
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="30" blendtime="300" loop="true">
+		<frameevent frame="2" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="32" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="39" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="47" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="54" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="60" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="80" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="94" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="112" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="126" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="2" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="16" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="24" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="32" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="39" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="47" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="54" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="60" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="80" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="94" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="112" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="126" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="9" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 0 1500 .50"/>
+		<frameevent frame="94" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 0 1500 .50"/>
+		<frameevent frame="118" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 0 1500 .50"/>
+		<frameevent frame="136" cmd="PlaySoundLinear ../sounds/cup_move_%.wav 0 1500 .50"/>
+		<frameevent frame="20" cmd="PlaySoundLinear ../sounds/barrel_move_%.wav 0 500 .30"/>
+		<frameevent frame="54" cmd="PlaySoundLinear ../sounds/barrel_move_%.wav 0 500 .30"/>
+		<frameevent frame="85" cmd="PlaySoundLinear ../sounds/barrel_move_%.wav 0 500 .30"/>
+	</anim>
+	
+	<anim name="taunt_1" clip="clips/taunt_1.clip" fps="35">
+	<frameevent frame="12" cmd="PlaySoundLinear sounds/cup_move_%.wav 400 2200 1"/>
+	<frameevent frame="10" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	<frameevent frame="10" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	<frameevent frame="22" cmd="PlaySoundLinear sounds/taunt.wav 400 2200 1"/>
+	</anim>
+	
+	<anim name="bored_1" clip="clips/bored_1.clip" blendtime="150">
+	<frameevent frame="24" cmd="PlaySoundLinear sounds/whoosh_%.wav 0 200 .70"/>
+	<frameevent frame="25" cmd="PlaySoundLinear sounds/attack_grunt2_3.wav 0 200 .90"/>
+	<frameevent frame="30" cmd="PlaySoundLinear sounds/whoosh_%.wav 0 200 .70"/>
+	<frameevent frame="32" cmd="PlaySoundLinear sounds/attack_grunt_4.wav 0 200 .90"/>
+	<frameevent frame="45" cmd="PlaySoundLinear sounds/whoosh_%.wav 0 200 .70"/>
+	<frameevent frame="50" cmd="PlaySoundLinear sounds/attack_grunt_3.wav 0 200 .90"/>
+	<frameevent frame="77" cmd="PlaySoundLinear sounds/whoosh_%.wav 0 200 .70"/>
+	<frameevent frame="85" cmd="PlaySoundLinear sounds/whoosh_%.wav 0 200 .70"/>
+    </anim>
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="25" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_grunt.wav 200 2000 1"/>
+		<frameevent frame="45" cmd="PlaySoundLinear ../sounds/barrel_move_%.wav 0 1200 1"/>
+        <frameevent frame="0" cmd="PlaySoundLinear sounds/death_foley.wav 1300 1300 .70"/>	
+		<frameevent frame="1" cmd="starteffect effects/death.effect"/>
+	</anim>
+	
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+	
+		
+	
+</model>

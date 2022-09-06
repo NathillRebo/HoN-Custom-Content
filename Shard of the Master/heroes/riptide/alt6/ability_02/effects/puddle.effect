@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+			
+			<groundsprite
+				life="200"
+				material="/shared/effects/materials/ice_reveal.material"
+				size="300"
+				startcolor="0"
+				endcolor="1"
+			/>
+			
+			<groundsprite
+				life="200"
+				expirelife="1000"
+				material="/shared/effects/materials/ice_puddle_norefract.material"
+				size="400"
+				startcolor="0"
+				endcolor=".55"
+				param=".001"
+			/>
+			
+			<groundsprite
+				delay="200"
+				expirelife="1000"
+				material="/shared/effects/materials/ice_reveal.material"
+				size="500"
+				startcolor="5"
+				endcolor="0"
+			/>
+			
+			<groundsprite
+				delay="200"
+				expirelife="1000"
+				material="/shared/effects/materials/ice_puddle_norefract.material"
+				size="500"
+				startcolor=".55"
+				endcolor="0"
+				param=".001"
+			/>
+			
+			<simpleemitter
+				position="0 0 0"
+				spawnrate="2"
+				gravity="0"			
+				offsetsphere="80 80 0"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				speed="0"
+				directionalspace="global"
+				inheritvelocity="0"
+				depthbias="-20"
+				particlelife="4000"
+			>
+				<particle
+					maxyaw="360"
+					minscale="4.5"
+					maxscale="5.25"
+				>
+					<simpleemitter
+						life="3500"
+						spawnrate="10"
+						position="0 0 50"
+						gravity="2.5"
+						drag=".05"
+						minparticlelife="1500"
+						maxparticlelife="2000"
+						offsetsphere="70 70 0"
+						material="/shared/effects/materials/snowflake.material"
+					>
+						<particle
+							startsize="0"
+							midsize="5"
+							endsize="5"
+							midsizepos=".15"
+							startalpha="1"
+							misalpha="1"
+							endalpha="0"
+							minscale=".25"
+							maxscale=".7"
+							maxangle="359"
+							minanglespeed="-200"
+							maxanglespeed="200"
+						/>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+<!--			
+			<groundsprite				
+				alpha=".75"
+				scale="7.35"
+				expirelife="500"			
+				material="/shared/effects/materials/ground_crater.material"			
+			/>
+
+			<simpleemitter
+				offsetradial="350"
+				count="75"			
+			>
+				<particle minyaw="-360" maxyaw="360">
+					<groundsprite				
+						alpha=".10"
+						color=".5"
+						scale="1"
+						expirelife="500"			
+						material="/shared/effects/materials/sand_groun.material"			
+					/>
+				</particle>
+			</simpleemitter>
+-->
+
+			
+			<groundsprite				
+				alpha=".5"
+				scale="5.35"
+				expirelife="500"			
+				material="/shared/effects/materials/black_spot.material"			
+			/>
+			
+<!--			
+			<simpleemitter
+				offsetradial="350"
+				count="15"			
+			>
+				<particle minyaw="-360" maxyaw="360">
+					<groundsprite				
+						alpha=".25"
+						color=".5"
+						scale="1"
+						expirelife="500"							
+						material="/shared/effects/materials/bigger_cracks.material"			
+					/>
+				</particle>
+			</simpleemitter>
+		
+			<groundsprite
+				delay="500"
+				life="2000"
+				expirelife="500"
+				loop="true"
+				material="/shared/effects/materials/refract_ripple.material"
+				startparam="0"
+				endparam="0.2"
+				startsize="0"
+				endsize="450"
+				color="1"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+			/>
+-->	
+			<terrainemitter
+				position="0 0 0"
+				spawnrate="11111"
+				count=".5"
+				gravity="0"			
+				offsetsphere="80 80 0"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				speed="0"
+				directionalspace="global"
+				inheritvelocity="0"
+				depthbias="-20"
+			>
+				<particle
+					maxyaw="360"
+					minscale="4.5"
+					maxscale="5.25"
+				>
+					<billboard
+						maxroll="360"
+						minlife="1200"
+						maxlife="2000"
+						loop="true"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+						delay="600"
+						material="/shared/effects/materials/whitewater_02.material"	
+						expirelife="600"
+						startcolor="0"
+						midcolor=".05 .125 .15"
+						endcolor="0"
+						minstartscale=".65"
+						maxstartscale="1"
+						minendscale="1"
+						maxendscale="1.2"
+						depthbias="-2"
+						size="100"
+					/>
+
+				</particle>
+			</terrainemitter>
+			
+			<template name="wave">
+				<simpleemitter
+					spawnrate=".5"
+					particlelife="2500"
+					speed="100.0"
+					minangle="0"
+					maxangle="10"
+					direction="{direction}"
+					position="0 0 0"
+					timenudge="500"
+				>
+					<particle
+					 turn="true"
+					>
+						<billboard
+							life="2500"
+							material="/shared/effects/materials/wave.material"
+							startcolor="0"
+							midcolor=".1"
+							endcolor="0"
+							lockup="true"
+							lockright="true"
+							pitch="90"
+							param=".012"
+							startsize="250"
+							endsize="400"
+							yaw="180"
+							roll="90"
+							directionalspace="local"
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+							mindelay="100"
+							maxdelay="500"
+							depthbias="-100"
+						/>
+
+				</particle>
+
+			</simpleemitter>
+		</template>	
+		
+		<instance name="wave" direction="1 0 0"/>
+		<instance name="wave" direction="-1 0 0"/>
+		<instance name="wave" direction="0 1 0"/>
+		<instance name="wave" direction="0 -1 0"/>
+		<!--
+		<billboard
+			lockup="true"
+			pitch="90"
+			depthbias="-20"
+			material="/shared/effects/materials/corona_ground.material"
+			scale="13"
+			color=".1 .1 .25"
+		/>
+		-->
+		<template name="reeds" >
+			<model 
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				anim="idle"
+				yaw="{yaw1}"
+				scale="12"
+				position="0 0 -5"
+				expirelife="600"
+			>
+				
+				<model
+					bone="_bone_fx_01"
+					delay="500"
+					model="icicle/model.mdf"
+					material="icicle/ice.material"
+					expirelife="500"
+					startscale="{scale}"
+					endscale="0"
+					yaw="{yaw2}"
+					color="1.5"
+				/>
+				
+				<model
+					bone="_bone_fx_01"
+					model="icicle/model.mdf"
+					material="icicle/ice.material"
+					life="500"
+					startscale="0"
+					endscale="{scale}"
+					yaw="{yaw2}"
+					color="1.5"
+				/>
+			</model>
+		</template>
+		
+		<instance name="reeds" yaw1="0" yaw2="86"  scale=".09" />
+		<instance name="reeds" yaw1="55" yaw2="53" scale=".15" />
+		<instance name="reeds" yaw1="40" yaw2="8" scale=".11" />
+		<instance name="reeds" yaw1="60" yaw2="60" scale=".13" />
+		<instance name="reeds" yaw1="80" yaw2="157" scale=".05" />
+		<instance name="reeds" yaw1="87" yaw2="35" scale=".01" />
+		<instance name="reeds" yaw1="120" yaw2="86"  scale=".09" />
+		<instance name="reeds" yaw1="140" yaw2="53" scale=".15" />
+		<instance name="reeds" yaw1="160" yaw2="8" scale=".11" />
+		<instance name="reeds" yaw1="215" yaw2="60" scale=".13" />
+		<instance name="reeds" yaw1="200" yaw2="157" scale=".05" />
+		<instance name="reeds" yaw1="220" yaw2="35" scale=".01" />
+		<instance name="reeds" yaw1="240" yaw2="86"  scale=".09" />
+		<instance name="reeds" yaw1="260" yaw2="53" scale=".15" />
+		<instance name="reeds" yaw1="280" yaw2="8" scale=".11" />
+		<instance name="reeds" yaw1="300" yaw2="60" scale=".13" />
+		<instance name="reeds" yaw1="-50" yaw2="157" scale=".05" />
+		<instance name="reeds" yaw1="-75" yaw2="35" scale=".1" />
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />		
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale="1.75">
+			<sound
+			    life="5000"
+				linearfalloff="true" 
+				falloffstart="600"
+				falloffend="1300"
+				volume="1"
+				sample="../../sounds/ab2_cast.wav"
+			/>
+			
+			<controller 
+				scale=".25" 
+				rollspeed="1000" 
+				position="0 0 80"
+				particledirectionspace="local"
+			>
+				<model
+					pitch="-90"
+					life="500" loop="1"
+					model="/shared/effects/models/sphere/model.mdf"
+					material="sphere.material"
+					startscale="3.6"
+					endscale="4.0"
+					color="0 .35 .4"
+					midcolorpos=".2"
+					startalpha=".5"
+					endalpha=".5"
+					midalphapos=".3"
+				/>
+				
+				<model
+					pitch="-90"
+					life="300" loop="1"
+					model="/shared/effects/models/sphere/model.mdf"
+					material="sphere.material"
+					startscale="2.6"
+					endscale="3.0"
+					color="0 .25 .25"
+					midcolorpos=".2"
+					startalpha=".45"
+					endalpha=".45"
+					midalphapos=".3"
+					position="0 50 0"
+				/>
+				
+				<model
+					pitch="-90"
+					life="300" loop="1"
+					model="/shared/effects/models/sphere/model.mdf"
+					material="sphere.material"
+					startscale="1"
+					endscale="1.5"
+					color=".05 .1 .1"
+					midcolorpos=".2"
+					startalpha=".4"
+					endalpha=".4"
+					midalphapos=".3"
+					position="0 90 0"
+				/>
+			</controller>	
+		
+			<simpleemitter
+				spawnrate="10"
+				particlelife="500"
+				offsetsphere="0"
+				direction="0 -1 0"
+				minangle="-40" maxangle="40"
+				directionalspace="local"
+				position="0 0 90"
+				speed="100"
+				material="/shared/effects/materials/octagon_aura.material"
+			>
+				<particle
+					startsize="60"
+					endsize="20"
+					scale="2.3"
+					startcolor=".05 .25 .35"
+					midcolorpos=".45"
+					midcolor="0 .05 .05"
+					endcolor="0"
+					startalpha=".7"
+					midalpha=".7"
+					endalpha="0"
+					anchor=".3"
+					startframe="0"
+					endframe="1"
+					turn="0"
+				/>
+			</simpleemitter>
+		
+			
+			<model
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				anim="idle"
+				startscale="1"
+				endscale="3"
+				life="5000"
+				position="0 10 90"
+			>
+				<simpleemitter
+					bone="_bone_fx_01"
+					spawnrate="200"
+					life="850"
+					offsetsphere="50"
+					minangle="0"
+					maxangle="0"
+					direction="0 1 0"
+					particlelife="1500"
+				>
+					<template name="glow">
+						<particle
+							turn="true"
+							minscale="2"
+							maxscale="4.5"
+							startstickiness="0" endstickiness=".2"
+							lookat="true"
+							lookatowner="target"
+						>
+							<billboard
+								minlife="300"
+								maxlife="500"
+								position="0 0 0"
+								material="{material}"
+								startcolor="{startcolor}"
+								midcolor="{midcolor}"
+								endcolor="0"
+								minsize="2.5" maxsize="8"
+								scale="{scale}"
+								heightdistort=".5"
+								lockright="ture"
+								lockup="ture"
+							/>
+						</particle>
+					</template>
+					<instance name="glow" material="/shared/effects/materials/whitesquare.material" scale=".5"  startcolor=".05 .35 .25" midcolor="0 .5 .35" />
+					<instance name="glow" material="/shared/effects/materials/whitesquare_02.material" scale="1.35" startcolor=".05 .1 .25" midcolor=".1 .25 .5" />
+					
+				</simpleemitter>
+			</model>
+
+				<simpleemitter
+					position="0 0 90"
+					spawnrate="13"
+					startrange="40"
+					endrange="40"
+					particlelife="2000"
+					delay="-300"
+				>
+					<particle>
+						<simpleemitter
+							count="5"
+							particlelife="500"
+							spawnrate="90"
+							minspeed="350"
+							maxspeed="550"
+							gravity="-15"
+							direction="0 0 1"
+							drag="0.05"
+							material="/shared/effects/materials/whitewater_02.material"
+							offsetsphere="40 40 10"
+							position="0 0 0"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-60"
+								maxanglespeed="60"
+								startsize="65"
+								endsize="110"
+								startcolor=".25 .35 .35"
+								endcolor="0"
+								startalpha=".1"
+								midalpha=".1"
+								endalpha="0"
+							/>
+						</simpleemitter>
+						<simpleemitter
+							count="5"
+							particlelife="500"
+							spawnrate="90"
+							minspeed="350"
+							maxspeed="550"
+							gravity="-15"
+							direction="0 0 1"
+							drag="0.05"
+							material="/shared/effects/materials/refract_outsplash.material"
+							offsetsphere="40 40 10"
+							position="0 0 0"
+						>
+							<particle
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-60"
+								maxanglespeed="60"
+								startsize="65"
+								endsize="110"
+								startalpha="0"
+								midalpha=".75"
+								endalpha="0"
+								midalphapos=".2"
+								startparam="0.5"
+								endparam="0"
+							/>
+						</simpleemitter>
+					</particle>
+				</simpleemitter>
+			
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

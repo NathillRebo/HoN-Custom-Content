@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="moon_beam">
+	<definitions>
+		
+	
+		<particlesystem name="system0" space="entity" scale="1.5">
+
+		<billboard
+				bone="Bip01 Prop1" position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".0 .1 0.2"
+				endcolor="0"
+				expirelife="1300"
+				size="40"
+				yaw="180"
+				depthbias="-30"
+			/>
+		<billboard
+				bone="Bip01 Prop1" position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".0 .1 0.2"
+				endcolor="0"
+				expirelife="1300"
+				size="30"
+				depthbias="-30"
+			/>
+			
+			<billboard
+				bone="_bone_overhead"
+				material="/shared/effects/materials/krixi_q_add.material"
+				startcolor=".7"
+				endcolor="0"
+				expirelife="1300"
+				size="18"
+				depthbias="-30"
+				position="0 0 30"
+				roll="60"
+				yawspeed="100"
+			/>
+	
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

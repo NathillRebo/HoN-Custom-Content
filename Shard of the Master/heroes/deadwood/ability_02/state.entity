@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Deadwood_Ability2"
+
+	icon="icon.tga"
+	passiveeffect="effects/tree.effect"
+
+	damage="15,30,45,60"
+	effecttype=""
+	modifierkey="deadwood_ihasatree"
+>
+	<oninflict>
+		<setcharges a="4" />
+	</oninflict>
+	
+	<onrefresh>
+		<setcharges a="4" />
+	</onrefresh>
+	
+	<onattackimpact>
+		<removecharge />
+		<compare a="charges" b="0" op="eq">
+			<expire />
+		</compare>
+		
+		<!-- Art -->
+		<hasavatarkey name="Hero_Deadwood.Alt5">
+			<playeffect effect="/heroes/deadwood/alt5/ability_02/effects/attack_follow_through.effect" target="source_entity" />
+			<playeffect effect="/heroes/deadwood/alt5/ability_02/effects/attack_impact.effect" source="target_entity" />
+		</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Deadwood.Alt7">
+					<playeffect effect="/heroes/deadwood/alt7/ability_02/effects/attack_follow_through.effect" target="source_entity" />
+					<playeffect effect="/heroes/deadwood/alt7/ability_02/effects/attack_impact.effect" source="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Deadwood.Alt8">						
+						<hasmodifier name="Night_Set_DeadwoodAlt8" >
+							<playeffect effect="/heroes/deadwood/alt9/ability_02/effects/attack_follow_through.effect" target="source_entity" />
+							<playeffect effect="/heroes/deadwood/alt9/ability_02/effects/attack_impact.effect" source="target_entity" />
+						</hasmodifier>
+						<else>
+							<playeffect effect="/heroes/deadwood/alt8/ability_02/effects/attack_follow_through.effect" target="source_entity" />
+							<playeffect effect="/heroes/deadwood/alt8/ability_02/effects/attack_impact.effect" source="target_entity" />
+						</else>
+					</hasavatarkey>
+					<else>
+					<hasavatarkey name="Hero_Deadwood.Alt9">						
+						<hasmodifier name="Night_Set_DeadwoodAlt9" >
+							<playeffect effect="/heroes/deadwood/alt8/ability_02/effects/attack_follow_through.effect" target="source_entity" />
+							<playeffect effect="/heroes/deadwood/alt8/ability_02/effects/attack_impact.effect" source="target_entity" />
+						</hasmodifier>
+						<else>
+							<playeffect effect="/heroes/deadwood/alt9/ability_02/effects/attack_follow_through.effect" target="source_entity" />
+							<playeffect effect="/heroes/deadwood/alt9/ability_02/effects/attack_impact.effect" source="target_entity" />
+						</else>
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/attack_follow_through.effect" target="source_entity" />
+						<playeffect effect="effects/attack_impact.effect" source="target_entity" />
+					</else>					
+				</else>
+			</else>
+		</else>	
+	</onattackimpact>
+	
+	<onframe>
+		<hasmodifier name="iamsheeped" entity="this_owner_entity">
+			<activatemodifierkey name="iamsheeped" />
+		</hasmodifier>
+		<else>
+			<deactivatemodifierkey name="iamsheeped" />
+		</else>
+	</onframe>
+	
+	<onexpired>
+		<setcharges entity="this_proxy_entity" a="0" />
+	</onexpired>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onattackingdamageevent>
+			<cantarget targetscheme="enemy_units">
+				<cantarget targetscheme="boss"/>
+				<else>
+					<combatsupertype supertype="attack" >
+						<setvar0 a="1" />
+						<setvalue name="damage_armorpiercepercent" a="damage_armorpiercepercent" b="var0" op="add" />
+					</combatsupertype>
+				</else>
+			</cantarget>
+		</onattackingdamageevent>
+	</modifier>
+	
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_Deadwood.Alt2" modpriority="1"
+		passiveeffect="/heroes/deadwood/alt2/ability_02/effects/tree.effect"	
+	>
+		
+		<onattackimpact>
+			<removecharge />
+			
+			<!-- Art -->
+			<playeffect effect="/heroes/deadwood/alt2/ability_02/effects/attack_follow_through.effect" target="source_entity" />
+			<playeffect effect="/heroes/deadwood/alt2/ability_02/effects/attack_impact.effect" source="target_entity" />
+			<compare a="charges" b="0" op="eq">
+				<expire />
+			</compare>
+		</onattackimpact>
+		
+		<onexpired>
+			<setcharges entity="this_proxy_entity" a="0" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Deadwood.Alt3" modpriority="1"
+		passiveeffect="/heroes/deadwood/alt3/ability_02/effects/tree.effect"
+	/>
+	
+	<altavatar key="Hero_Deadwood.main_reskin" modpriority="1"
+		passiveeffect="/heroes/deadwood/reskin/ability_02/effects/tree.effect"	
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Deadwood.Alt4" modpriority="1"
+		passiveeffect="/heroes/deadwood/alt4/ability_02/effects/tree.effect"
+	/>
+	
+	<altavatar key="Hero_Deadwood.Alt5" modpriority="1"
+		passiveeffect="/heroes/deadwood/alt5/ability_02/effects/tree.effect"
+	/>
+	
+	<altavatar key="Hero_Deadwood.Alt7" modpriority="1"
+		passiveeffect="/heroes/deadwood/alt7/ability_02/effects/tree.effect"
+	/>
+	
+	<altavatar key="Hero_Deadwood.Alt8" modpriority="1"
+		passiveeffect=""
+	    icon="/heroes/Deadwood/alt8/ability_02/icon.tga"
+	>
+		<onframe>
+			<hasmodifier name="iamsheeped" entity="this_owner_entity">
+				<activatemodifierkey name="iamsheeped" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="iamsheeped" />
+			</else>
+			
+			<hasmodifier name="Night_Set_DeadwoodAlt8" entity="this_owner_entity">
+				<deactivatemodifierkey name="generalDeadwoodAlt8" />
+				<activatemodifierkey name="nightSetDeadwoodAlt8" />				
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="nightSetDeadwoodAlt8" />
+				<activatemodifierkey name="generalDeadwoodAlt8" />				
+			</else>
+		</onframe>
+	</altavatar>
+	
+	<modifier key="nightSetDeadwoodAlt8" modpriority="2"
+		passiveeffect="/heroes/deadwood/alt9/ability_02/effects/tree.effect"
+		icon="/heroes/Deadwood/alt9/ability_02/icon.tga"
+	/>
+	
+	<modifier key="generalDeadwoodAlt8" modpriority="2"
+		passiveeffect="/heroes/deadwood/alt8/ability_02/effects/tree.effect"
+		icon="/heroes/Deadwood/alt8/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Deadwood.Alt9" modpriority="1"
+		passiveeffect=""
+	    icon="/heroes/Deadwood/alt9/ability_02/icon2.tga"
+	>
+		<onframe>
+			<hasmodifier name="iamsheeped" entity="this_owner_entity">
+				<activatemodifierkey name="iamsheeped" />
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="iamsheeped" />
+			</else>
+			
+			<hasmodifier name="Night_Set_DeadwoodAlt9" entity="this_owner_entity">
+				<deactivatemodifierkey name="generalDeadwoodAlt9" />
+				<activatemodifierkey name="nightSetDeadwoodAlt9" />				
+			</hasmodifier>
+			<else>
+				<deactivatemodifierkey name="nightSetDeadwoodAlt9" />
+				<activatemodifierkey name="generalDeadwoodAlt9" />				
+			</else>
+		</onframe>
+	</altavatar>
+	
+	<modifier key="nightSetDeadwoodAlt9" modpriority="2"
+		passiveeffect="/heroes/deadwood/alt8/ability_02/effects/tree.effect"
+		icon="/heroes/Deadwood/alt8/ability_02/icon.tga"
+	/>
+	<modifier key="generalDeadwoodAlt9" modpriority="2"
+		passiveeffect="/heroes/deadwood/alt9/ability_02/effects/tree.effect"
+		icon="/heroes/Deadwood/alt9/ability_02/icon.tga"
+	/>
+</state>

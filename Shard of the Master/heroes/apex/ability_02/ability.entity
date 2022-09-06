@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Apex2"
+
+	icon="icon.tga"
+	
+	anim=""
+	casttime="0"
+	castactiontime="0"
+	casteffect=""
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casteffecttype="Magic"
+	manacost="70,80,90,100"
+	cooldowntime="16000,14000,12000,10000"
+>
+	<onimpact>
+		<resetattackcooldown />
+		<applystate name="State_Apex_Ability2" target="this_owner_entity" duration="2500" />
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="101">
+		<onattackpreimpact>
+			<chance threshold="0.20">
+				<applystate name="State_Apex_Ability2" target="this_owner_entity" duration="1700" />
+			</chance>
+		</onattackpreimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Apex.Alt" modpriority="100"
+	    icon="../alt/ability_02/icon.tga"
+	/>
+</ability>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Rally3"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	passiveeffect="effects/passive.effect"
+	
+	actiontype="passive"
+	
+	damage="15,20,25,30"
+>
+	<onattackingdamageevent>
+		<cantarget targetscheme="enemy_units">
+			<cantarget targetscheme="boss"/>
+			<else>
+				<setvar0 a="0.25,0.4,0.55,0.7" />
+				<setvalue name="damage_armorpiercepercent" a="damage_armorpiercepercent" b="var0" op="add" />
+			</else>
+		</cantarget>
+	</onattackingdamageevent>
+	
+	<onimpact />
+	
+	<modifier key="iamsheeped" modpriority="9999"
+		passiveeffect=""
+	/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		actiontype="target_entity"
+		targetscheme="ally_heroes"
+		range="1000"
+		cooldowntime="1000"
+	>
+		<onimpact>
+			<compare a="this_proxy_entity" b="0" op="ne">
+				<expirestate name="State_Rally_Shard" target="this_proxy_entity" />
+			</compare>
+			
+			<applystate name="State_Rally_Shard" continuous="true" />
+			<setproxy entity="this_entity" target="target_entity" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Rally.Alt" modpriority="1"
+		passiveeffect="/heroes/rally/alt/ability_03/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Rally.Alt2" modpriority="1"
+		passiveeffect="/heroes/rally/alt2/ability_03/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Rally.Alt3" modpriority="1"
+		passiveeffect="/heroes/rally/alt3/ability_03/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Rally.Alt4" modpriority="1"
+		passiveeffect="/heroes/rally/alt4/ability_03/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Rally.Alt5" modpriority="1"
+		passiveeffect="/heroes/rally/alt5/ability_03/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Rally.Alt6" modpriority="1"
+		passiveeffect="/heroes/rally/alt6/ability_03/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Rally.Alt7" modpriority="1"
+		passiveeffect="/heroes/rally/alt7/ability_03/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Rally.Alt8" modpriority="1"
+		passiveeffect="/heroes/rally/alt8/ability_03/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Rally.Alt9" modpriority="1"
+		passiveeffect="/heroes/rally/alt9/ability_03/effects/passive.effect"
+	/>
+	
+	<altavatar key="Hero_Rally.Alt11" modpriority="1"
+		passiveeffect="/heroes/rally/alt11/ability_03/effects/passive.effect"
+	/>
+	
+	<modifier key="level_2" modpriority="1"
+		passiveeffect="/heroes/rally/alt9/ability_03/effects/passive_stage2.effect"
+	/>
+	<modifier key="level_3" modpriority="1"
+		passiveeffect="/heroes/rally/alt9/ability_03/effects/passive_stage3.effect"
+	/>	
+</ability>

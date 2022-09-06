@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Bephelgor_Ability4_Minion"
+
+	radius="600"
+	targetselection="all"
+	targetscheme="enemy_heroes"
+	effecttype=""
+>
+	<onimpact>
+		<spawnprojectile name="Projectile_Bephelgor_Ability4" source="this_proxy_entity" noresponse="true" />
+	</onimpact>
+	
+	<altavatar key="Hero_Bephelgor.Alt2" modpriority="1"
+	>
+		<onimpact>
+			<spawnprojectile name="Projectile_Bephelgor_Ability4_Alt2" source="this_proxy_entity" noresponse="true" />
+		</onimpact>
+	</altavatar>
+
+	<altavatar key="Hero_Bephelgor.Alt3" modpriority="1"
+	>
+		<onimpact>
+			<spawnprojectile name="Projectile_Bephelgor_Ability4_Alt3" source="this_proxy_entity" noresponse="true" />
+		</onimpact>
+	</altavatar>
+</affector>

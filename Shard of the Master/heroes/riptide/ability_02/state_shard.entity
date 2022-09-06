@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Riptide_Shard"
+
+	icon="../ability_03/icon.tga"
+	passiveeffect=""
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	strength="-10"
+	agility="-10"
+	intelligence="-10"
+	movespeedslow="0.1"
+	attackspeed="-0.2"
+>
+
+	<altavatar key="Hero_Riptide.Alt"
+		icon="../alt/ability_03/icon.tga"
+	/>
+
+</state>

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" showoutlines="true" disable2dworld="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="0.7143">
+<!--		
+			<model 
+				bone="Box003"
+				startalpha="1"
+				endalpha="0"
+				model="keg/model.mdf"
+				anim="idle"
+				startcolor="1.3 1.15 1"
+				endcolor="0 0 0"
+				scale="1.35"
+				expirelife="250"
+				position="0 0 0"
+				directionalspace="local"
+				yaw="180"
+			/>
+-->
+			<template name="splashes">
+				<simpleemitter
+					bone="{bone}"
+					position="{position}"
+					depthbias="-15"
+					minparticlelife="1800"
+					maxparticlelife="2300"
+					spawnrate="10"
+					minspeed="50"
+					maxspeed="100"
+					gravity="25"
+					direction="0 0 1"
+					minangle="-90"
+					maxangle="90"
+					drag="0.25"
+					material="/shared/effects/materials/beer_puddle.material"
+					offsetsphere="0 0 0"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-180"
+						maxanglespeed="180"
+						minstartsize="25"
+						maxstartsize="50"
+						minendsize="90"
+						maxendsize="115"
+						color="1 1 1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".3"
+						minscale=".15"
+						maxscale=".3"
+						anchor="1"
+					/>
+				</simpleemitter>
+			
+				<simpleemitter
+					bone="{bone}"
+					position="{position}"
+					depthbias="-25"
+					minparticlelife="1800"
+					maxparticlelife="2200"
+					spawnrate="16"
+					minspeed="50"
+					maxspeed="100"
+					gravity="25"
+					direction="0 0 1"
+					minangle="-90"
+					maxangle="90"
+					drag="0.25"
+					material="/shared/effects/materials/beer_splash.material"
+					offsetsphere="5 5 5"
+				>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="40"
+						endsize="110"
+						startcolor=".5 .2 .1"
+						midcolor=".5 .2 .1"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="40"
+						endsize="110"
+						startcolor=".8 .5 .25"
+						midcolor=".8 .5 .25"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="40"
+						endsize="110"
+						startcolor=".8 .5 .25"
+						midcolor=".8 .5 .25"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					position="{position}"
+					bone="{bone}"
+					depthbias="0"
+					minparticlelife="1800"
+					maxparticlelife="2200"
+					spawnrate="35"
+					minspeed="50"
+					maxspeed="100"
+					gravity="25"
+					direction="0 0 1"
+					minangle="-90"
+					maxangle="90"
+					drag="0.25"
+					material="/shared/effects/materials/bubble_add.material"
+					offsetsphere="15 15 5"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="10"
+						endsize="20"
+						color=".75 .5 .25"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						minscale=".25"
+						maxscale=".5"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="splashes" bone="_bone_weaponattach" position="0 0 0" />
+			<instance name="splashes" bone="_bone_altweapon3" position="0 0 0" />
+<!--			
+			<controller bone="Box003">
+				<instance name="splashes" bone="Box003" position="20 20 0" />
+			</controller>
+			
+-->			
+			
+			
+			
+			
+			
+			
+			<template name="spout">
+<!--
+				<simpleemitter
+					bone="{bone}"
+					depthbias="-25"
+					minparticlelife="350"
+					maxparticlelife="750"
+					spawnrate="200"
+					minspeed="50"
+					maxspeed="100"
+					gravity="100"
+					direction="0 0 1"
+					minangle="-90"
+					maxangle="90"
+					drag="0.25"
+					material="/shared/effects/materials/beer_splash.material"
+					offsetsphere="0 0 0"
+				>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						size="30"
+						startcolor=".5 .2 .1"
+						midcolor=".5 .2 .1"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						size="30"
+						startcolor=".8 .5 .25"
+						midcolor=".8 .5 .25"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						size="30"
+						startcolor=".8 .5 .25"
+						midcolor=".8 .5 .25"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".2"
+						maxscale=".475"
+					/>
+				</simpleemitter>
+-->
+				<simpleemitter
+					position="{position}"
+					bone="{bone}"
+					depthbias="0"
+					minparticlelife="250"
+					maxparticlelife="500"
+					spawnrate="35"
+					minspeed="50"
+					maxspeed="100"
+					gravity="25"
+					direction="0 0 1"
+					minangle="-90"
+					maxangle="90"
+					drag="0.25"
+					material="/shared/effects/materials/bubble_add.material"
+					offsetsphere="5 5 5"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="10"
+						endsize="17"
+						color=".75 .5 .25"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						minscale=".25"
+						maxscale=".5"
+					/>
+				</simpleemitter>
+	
+			</template>
+			
+			<controller bone="Box003">
+				<instance name="spout" bone="Box003" position="20 20 0" />
+			</controller>
+			
+			<groundsprite
+				delay="300"
+				name="emitter0" 
+				count="1"
+				loop="false"			
+				material="/shared/effects/materials/beer_puddle.material"
+				life="2000"
+				startsize="25"
+				midsize="40"
+				endsize="60"				
+				position="0 45 0"
+				minyaw="-360"
+				maxyaw="360"
+				color=".75 .5 .25"
+				startalpha=".5"
+				midalpha=".5"
+				endalpha="0"
+			/>
+			
+			<groundsprite
+				delay="300"
+				name="emitter0" 
+				count="1"
+				loop="false"			
+				material="/shared/effects/materials/beer_splash.material"
+				life="2000"
+				startsize="30"
+				midsize="30"
+				endsize="50"
+				midsizepos=".25"				
+				position="0 45 0"
+				minyaw="-360"
+				maxyaw="360"
+				color=".75 .5 .25"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				midalphapos=".5"
+			/>
+
+			<groundsprite
+				delay="250"
+				name="emitter0" 
+				count="1"
+				loop="false"			
+				material="/shared/effects/materials/beer_puddle.material"
+				life="2000"
+				startsize="10"
+				midsize="25"
+				endsize="60"				
+				position="0 35 0"
+				minyaw="-360"
+				maxyaw="360"
+				color=".75 .5 .25"
+				startalpha=".5"
+				midalpha=".5"
+				endalpha="0"
+			/>
+			
+			<groundsprite
+				delay="200"
+				name="emitter0" 
+				count="1"
+				loop="false"			
+				material="/shared/effects/materials/beer_splash.material"
+				life="2000"
+				startsize="15"
+				midsize="30"
+				endsize="60"				
+				position="0 40 0"
+				minyaw="-360"
+				maxyaw="360"
+				color=".75 .5 .25"
+				startalpha=".5"
+				midalpha=".5"
+				endalpha="0"
+			/>
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

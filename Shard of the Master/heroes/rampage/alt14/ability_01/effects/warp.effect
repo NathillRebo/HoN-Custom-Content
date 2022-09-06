@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  persistent="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1"
+				sample="/heroes/rampage/ability_01/sounds/cast3.wav"
+			/>
+<!--
+			<simpleemitter
+				life="300"
+				position="0 0 50"
+				startspawnrate="-15"
+				endspawnrate="70"
+				particlelife="500"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/corona_07.material"
+			>
+				<particle
+					lockup="1"
+					lockright="1"
+					startcolor="0"
+					midcolor="0 1 1"
+					midcolorpos=".15"
+					endcolor="0"
+					startsize="150"
+					endsize="200"
+				/>
+			</simpleemitter>
+		-->	
+			<simpleemitter
+				life="300"
+				spawnrate="10"
+				particlelife="500"
+				particledirectionalspace="local"
+				direction="0 1 0"
+				angle="0"
+				speed="30"
+			>
+				<particle
+				>
+					<model	
+						model="../../model.mdf"
+						material="/shared/effects/materials/shell_rainbow.material"
+						life="500"
+						anim="idle"
+						scale="1"
+						color="0 .7 0"
+						startalpha="0"
+						midalpha="1"
+						midalphapos=".2"
+						endalpha="0"
+					/>
+				</particle>
+				<particle
+				>
+					<model	
+						model="../../model.mdf"
+						material="/shared/effects/materials/shell_rainbow.material"
+						life="500"
+						anim="idle"
+						scale="1"
+						color=".7 .3 0"
+						startalpha="0"
+						midalpha="1"
+						midalphapos=".2"
+						endalpha="0"
+					/>
+				</particle>
+				<particle
+				>
+					<model	
+						model="../../model.mdf"
+						material="/shared/effects/materials/shell_rainbow.material"
+						life="500"
+						anim="idle"
+						scale="1"
+						color="0 .7 .7"
+						startalpha="0"
+						midalpha="1"
+						midalphapos=".2"
+						endalpha="0"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="300"
+				spawnrate="25"
+				offsetsphere="100 100 50"
+				position="0 0 50"
+				particlelife="600"
+				material="/shared/effects/materials/blink.material"
+			>
+				<template name="color">
+				<particle
+					anchor="1"
+					maxangle="360"
+					startsize="0"
+					midsize="30"
+					endsize="0"
+					minscale=".5"
+					maxscale="1"
+					color="0 .5 1"
+				>
+					<trailemitter
+						life="600"
+						spawnrate="50"
+						particlelife="600"
+						material="/shared/effects/materials/beam.material"
+					>
+						<particle
+							startcolor="{color}"
+							endcolor="0"
+							size="10"
+						/>
+					</trailemitter>
+				</particle>
+				</template>
+				<instance name="color" color="1 1 0"/>
+				<instance name="color" color="0 1 0"/>
+				<instance name="color" color="0 1 1"/>
+				<instance name="color" color="1 0 .7"/>
+				<instance name="color" color=".5 0 1"/>
+				<particle
+					anchor="1"
+					maxangle="360"
+					startsize="0"
+					midsize="30"
+					endsize="0"
+					minscale=".5"
+					maxscale="1"
+					color="0 .5 1"
+				/>
+			</simpleemitter>
+					
+			<simpleemitter
+				life="300"
+				bone="_bone_leftfoot"
+				spawnrate="80"
+				particlelife="1000"
+				offsetsphere="10"
+				material="/shared/effects/materials/sparks_reveal_blue.material"
+			>
+				<particle
+					maxangle="360"
+					startframe=".25"
+					endframe="1"
+					color="0 1 .5"
+					size="75"
+					minscale="1"
+					maxscale="1.5"
+				/>
+				<particle
+					maxangle="360"
+					startframe=".25"
+					endframe="1"
+					color="1 .5 1"
+					size="75"
+					minscale="1"
+					maxscale="1.5"
+				/>
+				<particle
+					maxangle="360"
+					startframe=".25"
+					endframe="1"
+					color="1"
+					size="75"
+					minscale="1"
+					maxscale="1.5"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="300"
+				bone="_bone_rightfoot"
+				spawnrate="80"
+				particlelife="1000"
+				offsetsphere="10"
+				material="/shared/effects/materials/sparks_reveal_blue.material"
+			>
+				<particle
+					maxangle="360"
+					startframe=".25"
+					endframe="1"
+					color="0 1 .5"
+					size="75"
+					minscale="1"
+					maxscale="1.5"
+				/>
+				<particle
+					maxangle="360"
+					startframe=".25"
+					endframe="1"
+					color="1 .5 1"
+					size="75"
+					minscale="1"
+					maxscale="1.5"
+				/>
+				<particle
+					maxangle="360"
+					startframe=".25"
+					endframe="1"
+					color="1"
+					size="75"
+					minscale="1"
+					maxscale="1.5"
+				/>
+			</simpleemitter>
+	
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+	  
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

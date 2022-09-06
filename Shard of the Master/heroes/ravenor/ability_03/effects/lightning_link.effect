@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="chain_lightning">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".75">
+		
+			<sound
+				linearfalloff="true" 
+				minfalloffstart="400"
+				maxfalloffstart="1300"
+				falloffend="2000"
+				volume=".8"
+				sample="/heroes/ravenor/ability_03/sounds/impact_%.wav"
+			/>
+		
+			<beam
+				life="300"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_centerofchest"
+				size="120"
+				color=".5 0 0"
+				alpha="1"
+				material="/shared/effects/materials/black_energy.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="300"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_centerofchest"
+				size="65"
+				color="1 0 0"
+				alpha="1"
+				material="/shared/effects/materials/black_energy.material"
+				framespeed="3"
+			/>
+
+			<beam
+				life="300"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_centerofchest"
+				size="80"
+				color="1 0 0"
+				alpha="1"
+				material="/shared/effects/materials/black_energy.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="150"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_centerofchest"
+				bone_b="_bone_centerofchest"
+				size="35"
+				startcolor="1 0 0"
+				endcolor="0 0 0"
+				alpha="1"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				framespeed="1.75"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

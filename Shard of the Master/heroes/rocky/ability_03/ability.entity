@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Rocky3"
+
+	
+	
+	
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	
+	armor="2,4,6,8"
+	debuffdurationmultiplier="-0.1,-0.2,-0.3,-0.4"
+>
+	<onframe/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		armorpercharge="0.0684"
+		debuffdurationmultiplierpercharge="0.0009"
+	>
+		<onframe>
+			<setcharges a="source_strength"/>
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_Rocky.Alt11"
+		icon="../alt11/ability_03/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Rocky.Alt13"
+		icon="../alt13/ability_03/icon.tga"
+	/>
+</ability>

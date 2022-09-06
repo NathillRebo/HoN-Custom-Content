@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			life="500"
+			startcolor="6 .1 6"
+			endcolor="1"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+		<sound
+				linearfalloff="true" 
+				falloffstart="128"
+				falloffend="1300"
+				volume="1"
+				sample="../../sounds/ab3_imp_%.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="128"
+				falloffend="1300"
+				volume="1"
+				sample="../../sounds/ab3_splash.wav"
+			/>
+			
+			<simpleemitter
+				count="2"
+				minparticlelife="200"
+				maxparticlelife="400"
+				particlecolor="1"
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/beer_splash.material"
+			>
+				<particle
+					startcolor="1 0 .75"
+					endcolor="0 1 1"
+					startsize="30"
+					endsize="200"
+					turn="1"
+					minscale=".75"
+					maxscale="1"
+				/>
+				<particle
+					startcolor="0 1 0"
+					endcolor=".5 0 1"
+					startsize="30"
+					endsize="200"
+					turn="1"
+					minscale=".75"
+					maxscale="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="20"
+				minparticlelife="200"
+				maxparticlelife="400"
+				direction="0 0 1"
+				minangle="60"
+				maxangle="90"
+				minspeed="200"
+				maxspeed="300"
+				particlecolor=".6"
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/water_splash.material"
+			>
+				<particle
+					color="0 1 0"
+					startsize="30"
+					endsize="80"
+					turn="1"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="0 1 1"
+					startsize="30"
+					endsize="80"
+					turn="1"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="1 0 1"
+					startsize="30"
+					endsize="80"
+					turn="1"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="1 0 .75"
+					startsize="30"
+					endsize="80"
+					turn="1"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="1 0 .75"
+					startsize="30"
+					endsize="80"
+					turn="1"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="1 0 .75"
+					startsize="30"
+					endsize="80"
+					turn="1"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="1 0 .75"
+					startsize="30"
+					endsize="80"
+					turn="1"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="150"
+				minparticlelife="300"
+				maxparticlelife="700"
+				direction="0 0 1"
+				maxangle="70"
+				minspeed="200"
+				maxspeed="500"
+				gravity="50"
+				particlecolor=".6"
+				particlescale=".7"
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/blood_drop_white2.material"
+			>
+				<particle
+					color="0 1 0"
+					startsize="10"
+					endsize="5"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="1 0 1"
+					startsize="10"
+					endsize="5"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="0 1 1"
+					startsize="10"
+					endsize="5"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="1 0 .5"
+					startsize="10"
+					endsize="5"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="1 0 .5"
+					startsize="10"
+					endsize="5"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="1 0 .5"
+					startsize="10"
+					endsize="5"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="1 0 .5"
+					startsize="10"
+					endsize="5"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="1 0 .5"
+					startsize="10"
+					endsize="5"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="30"
+				minparticlelife="500"
+				maxparticlelife="700"
+				mincount="5"
+				maxcount="7"
+				offsetsphere="100 100 0"
+				position="0 0 10"
+				depthbias="-50"
+				
+				material="/shared/effects/materials/water.material"
+			>
+				<particle
+					startsize="20"
+					midsize="50"
+					endsize="50"
+					maxangle="360"
+					startalpha=".8"
+					midalpha=".8"
+					endalpha="0"
+					minscale="1"
+					maxscale="2"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color="1 0 1"
+					startframe="0"
+					endframe="1"
+				/>
+				<particle
+					startsize="20"
+					midsize="50"
+					endsize="50"
+					maxangle="360"
+					startalpha=".8"
+					midalpha=".8"
+					endalpha="0"
+					minscale="1"
+					maxscale="2"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color="0 1 0"
+					startframe="0"
+					endframe="1"
+				/>
+				<particle
+					startsize="20"
+					midsize="50"
+					endsize="50"
+					maxangle="360"
+					startalpha=".8"
+					midalpha=".8"
+					endalpha="0"
+					minscale="1"
+					maxscale="2"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color="0 1 1"
+					startframe="0"
+					endframe="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="30"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				mincount="2"
+				maxcount="5"
+				offsetsphere="100 100 0"
+				position="0 0 10"
+				depthbias="-50"
+				
+				material="/shared/effects/materials/beer_splash.material"
+			>
+				<particle
+					startsize="20"
+					midsize="50"
+					endsize="50"
+					maxangle="360"
+					startalpha=".8"
+					midalpha=".8"
+					endalpha="0"
+					minscale="1"
+					maxscale="2"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color="1 0 1"
+					startframe="0"
+					endframe="1"
+				/>
+				<particle
+					startsize="20"
+					midsize="50"
+					endsize="50"
+					maxangle="360"
+					startalpha=".8"
+					midalpha=".8"
+					endalpha="0"
+					minscale="1"
+					maxscale="2"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color="0 1 0"
+					startframe="0"
+					endframe="1"
+				/>
+				<particle
+					startsize="20"
+					midsize="50"
+					endsize="50"
+					maxangle="360"
+					startalpha=".8"
+					midalpha=".8"
+					endalpha="0"
+					minscale="1"
+					maxscale="2"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					color="0 1 1"
+					startframe="0"
+					endframe="1"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

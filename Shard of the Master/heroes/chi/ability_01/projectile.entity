@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Chi_Ability1"
+
+	speed="2750"
+	gravity="0"
+	flying="true"
+	flyheight="100"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+	effectscale="1"
+	impacteffect="effects/impact.effect"
+>
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<applystate name="State_Chi_Ability1" duration="1600,2400,3200,4000" />
+				
+				<!-- Base Damage -->
+				<setvar0 a="90,160,180,200" />
+				<damage effecttype="SuperiorMagic" amount="1" b="var0" op="mult" />
+			</onimpact>
+		</combatevent>
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost">
+		<onimpact>
+			<combatevent effecttype="AbilityBasedProjectile">
+				<onimpact>
+					<areaofeffect
+						radius="255"
+						targetselection="all"
+						targetscheme="enemy_units"
+						effecttype="Magic"
+						ignore="target_entity"
+					>
+						<applystate name="State_Chi_Ability1" duration="1600,2400,3200,4000" />
+						
+						<!-- Base Damage -->
+						<setvar0 a="90,160,180,200" />
+						<damage effecttype="SuperiorMagic" amount="1" b="var0" op="mult" />
+					</areaofeffect>
+					<playeffect effect="effects/impact_shard.effect" target="target_entity" source="target_entity" />
+				</onimpact>
+			</combatevent>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Chi.Alt"
+		traileffect="../alt/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Chi.Alt2"
+		traileffect="../alt2/ability_01/effects/trail.effect"
+	/>
+</projectile>

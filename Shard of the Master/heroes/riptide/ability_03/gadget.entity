@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Riptide_Ability3"
+	
+	icon=""
+	portrait=""
+	model="/shared/models/invis.mdf"
+	passiveeffect=""
+
+	boundsheight="0"
+	boundsradius="0"
+	isselectable="false"
+	iscontrollable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"	
+	
+	attacktype="none"
+	combattype="Ranged"	
+	
+	sightrangeday="350"
+	sightrangenight="350"
+
+	unitwalking="true"
+	canattack="false"
+	deathtime="0"
+	corpsetime="0"
+	invulnerable="true"
+	flying="true"
+	drawonmap="false"
+	
+	clearvision="true"
+	
+	noblockneutralspawn="true"
+>
+	<onspawn>
+		<spawnaffector name="Affector_Riptide_Ability2_Puddles" target="this_position" pushentity="true" />
+		<setproxy target="stack_entity" />
+	</onspawn>
+	
+	<ondeath>
+		<delete target="this_proxy_entity" />
+	</ondeath>
+</gadget>

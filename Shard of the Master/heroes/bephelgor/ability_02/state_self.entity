@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bephelgor_Ability2_Self"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	modifierkey="Balphagore_Used_Silence"
+	ishidden="true"
+	
+	effecttype=""
+>
+
+	<altavatar key="Hero_Bephelgor.Alt4" modpriority="1"
+		icon="../alt4/ability_02/icon.tga"
+	/>
+	
+
+</state>

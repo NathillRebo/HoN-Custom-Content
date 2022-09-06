@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Skrap_Ability1_Shard"
+	
+	model="effects/model/model.mdf"
+	passiveeffect=""
+
+	modelscale="10"
+
+	sightrangeday="525"
+	sightrangenight="400"
+	
+	selectionradius="40"
+	boundsheight="64"
+	boundsradius="16"
+	isselectable="false"
+
+	movespeed="390"
+	turnrate="5000"
+	turnsmoothing="0.05"
+	
+	unitwalking="true"
+	cliffwalking="true"
+	treewalking="true"
+	buildingwalking="true"
+
+	invulnerable="true"
+	flying="false"
+	drawonmap="false"
+	
+	lifetime="60000"
+	
+	maxhealth="-1"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+	
+	cancarryitems="false"
+	nothreat="true"
+	
+	armor="0"
+	magicarmor="0"
+	immunity=""
+	
+	canattack="false"
+	attacktype="ranged"
+	
+	aggrorange="0"
+	
+	iscontrollable="false"
+	noblockneutralspawn="true"
+
+	unittype="PseudoPet"
+
+	deathtime="0"
+	corpsetime="0"
+	corpsefadetime="0"
+>
+	<onspawn>
+		<applystate name="State_Skrap_Ability1_Set" duration="1000" />
+		<hasmodifier name="shardofthemaster_boost" target="owner_entity">
+			<setactivemodifier key="shardofthemaster_boost"/>
+		</hasmodifier>
+	</onspawn>
+	
+	<modifier key="shardofthemaster_boost"
+		lifetime="60000"
+		sightrangeday="1525"
+		sightrangenight="1400"
+		movespeed="390"
+	/>
+	
+	<onexpired>
+		<hasavatarkey name="Hero_Skrap.Alt3">
+			<playeffect effect="../alt3/ability_01/effects/explosion.effect" target="source_position" source="source_position" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<playeffect effect="effects/explosion.effect" target="source_position" source="source_position" occlude="true" />
+		</else>
+		<areaofeffect
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			targetselection="all"
+			radius="250"
+			maxtotalimpacts=""
+			maximpactspertarget="1"
+		>
+			<damage amount="80,105,130,155" effecttype="Magic" source="source_owner_entity" />
+			<applystate name="State_Stunned" duration="1250,1500,1750,2000" />
+		</areaofeffect>
+	</onexpired>
+
+	<onkilled>
+		<hasavatarkey name="Hero_Skrap.Alt3">
+			<playeffect effect="../alt3/ability_01/effects/explosion.effect" target="source_position" source="source_position" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<playeffect effect="effects/explosion.effect" target="source_position" source="source_position" occlude="true" />
+		</else>
+		<areaofeffect
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			targetselection="all"
+			radius="250"
+			maxtotalimpacts=""
+			maximpactspertarget="1"
+		>
+			<damage amount="80,105,130,155" effecttype="Magic" source="source_owner_entity" />
+			<applystate name="State_Stunned" duration="1250,1500,1750,2000" />
+		</areaofeffect>
+	</onkilled>
+
+	<altavatar key="Hero_Skrap.Alt"
+		model="../alt/ability_01/effects/model/model.mdf"
+		passiveeffect=""
+
+		modelscale="9"
+	/>
+
+	<altavatar key="Hero_Skrap.Alt2"
+		model="../alt2/ability_01/effects/model/model.mdf"
+		passiveeffect="../alt2/ability_01/effects/body.effect"
+
+		modelscale="2.0"
+	/>
+	
+	<altavatar key="Hero_Skrap.Alt3"
+		model="../alt3/ability_01/effects/model/model.mdf"
+		passiveeffect="../alt3/ability_01/effects/body.effect"
+
+		modelscale="9"
+	/>
+
+</pet>

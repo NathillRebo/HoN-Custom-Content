@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_KrixiAttack"
+
+	speed="900"
+	gravity="0"
+
+	modelscale="1.8"
+	model="model.mdf"
+	skin=""
+
+	effectscale="1.8"
+	impacteffect="effects/impact.effect"
+	traileffect="effects/tail.effect"
+>
+
+	<altavatar key="Hero_Krixi.Alt5" modpriority="100"
+		model="/heroes/krixi/alt5/effects/model.mdf"
+	    impacteffect="/heroes/krixi/alt5/effects/impact.effect"
+		traileffect="/heroes/krixi/alt5/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt6" modpriority="100"
+		model="/shared/models/invis.mdf"
+	    impacteffect="/heroes/krixi/alt6/effects/impact.effect"
+		traileffect="/heroes/krixi/alt6/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt7" modpriority="100"
+		modelscale="1.25"
+		model="/heroes/krixi/alt7/effects/model.mdf"
+	    impacteffect="/heroes/krixi/alt7/effects/impact.effect"
+		traileffect="/heroes/krixi/alt7/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt8" modpriority="100"
+		modelscale="1.25"
+		model="/heroes/krixi/alt8/effects/model.mdf"
+	    impacteffect="/heroes/krixi/alt8/effects/impact.effect"
+		traileffect="/heroes/krixi/alt8/effects/trail.effect"
+	>
+		<modifier key="mastery_silver" modpriority="101"
+			skin="silver"
+			impacteffect="/heroes/krixi/alt8/silver/effects/impact.effect"
+			traileffect="/heroes/krixi/alt8/silver/effects/trail.effect"
+		/>
+		<modifier key="mastery_gold" modpriority="101"
+			skin="gold"
+			impacteffect="/heroes/krixi/alt8/gold/effects/impact.effect"
+			traileffect="/heroes/krixi/alt8/gold/effects/trail.effect"
+		/>
+		<modifier key="mastery_purple" modpriority="101"
+			skin="purple"
+			impacteffect="/heroes/krixi/alt8/purple/effects/impact.effect"
+			traileffect="/heroes/krixi/alt8/purple/effects/trail.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt9" modpriority="100"
+		modelscale="2.2"
+		model="/heroes/krixi/alt9/effects/model.mdf"
+	    impacteffect="/heroes/krixi/alt9/effects/impact.effect"
+		traileffect="/heroes/krixi/alt9/effects/trail.effect"
+	/>
+</projectile>
+
+

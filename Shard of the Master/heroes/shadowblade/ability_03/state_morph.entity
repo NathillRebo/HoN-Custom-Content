@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ShadowBlade_Ability3_Morph"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	displaylevel="true"
+	propagatetoillusions="true"
+	
+	intelligence="5,10,15,20"
+
+	modifierkey="ShadowBlade_E_Form"
+	
+	effecttype=""
+	morphpriority=""
+	
+	maxcharges="1"
+>
+	
+	<onframe />
+
+	<onattackstart />
+	
+	<oninflict>
+		<expirestate name="State_ShadowBlade_Ability4_Morph" target="source_entity" />
+		<expirestate name="State_ShadowBlade_Ability1_Morph" target="source_entity" />
+		<expirestate name="State_ShadowBlade_Ability2_Morph" target="source_entity" />
+		<hasmodifier entity="this_owner_entity" name="krosmode">
+			<targettype source="this_owner_entity" target="this_owner_entity" type="melee">
+				<applystate name="State_ShadowBlade_Ability3_Morph_Krosmode" target="source_entity" duration="12000" pushentity="true" />
+			</targettype>
+		</hasmodifier>
+		
+		<!-- Add bonus on-attack effect indicator with a charge -->
+		<addcharges count="1" />
+		
+		<!-- Extra VFX -->
+		<hasavatarkey name="Hero_ShadowBlade.Alt3">
+			<hasmodifier name="Shroud_Set_Bonus">
+				<setactivemodifierkey name="shadowe_Alt3_shroud_effect" />
+			</hasmodifier>
+		</hasavatarkey>
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" />
+	</onrefresh>
+	
+	<onattackimpact propagatetoillusions="false">
+		<targettype type="building" />
+		<else>
+			<!-- Magic Damage & Stun -->
+			<compare a="charges" b="0" op="gt">
+				<cantarget targetscheme="enemy_units">
+					<cantarget effecttype="Magic">
+						<applystate name="State_Stunned" duration="600,800,1000,1200" />
+						<damage effecttype="Magic" amount="16,24,32,40" />
+					</cantarget>
+					
+					<setcharges a="0" />
+					<pushability name="Ability_ShadowBlade3" />
+					<resettimer entity="stack_entity" />
+				</cantarget>
+			</compare>
+			
+			<!-- Regular Bonus Damage -->
+			<setvar0 a="source_intelligence" b="0.2,0.4,0.6,0.8" op="mult" />
+			<damage effecttype="Magic" amount="1" b="var0" op="mult" />
+			<popup name="execution" a="var0" source="target_entity" target="source_entity" />
+		</else>
+	</onattackimpact>
+	
+	<modifier key="iamsheeped" modpriority="1000"
+		passiveeffect=""
+	/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		manaregen="7"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt3" modpriority="1"
+		passiveeffect=""
+	>	
+		<modifier key="shadowe_Alt3_shroud_effect" modpriority="90"
+			modifierkey2="shadowe_Alt3_shroud"
+		/>		
+	</altavatar>
+	
+	<altavatar key="Hero_ShadowBlade.Alt4" modpriority="1"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt5" modpriority="1"
+		passiveeffect=""
+	/>
+
+	<altavatar key="Hero_ShadowBlade.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_03/effects/state_self.effect"
+	/>
+
+	<modifier key="krosmode" modpriority="100"
+	>
+		<onattackstart>
+			<setattackprojectile name="Projectile_ShadowBlade_Ability3" />
+		</onattackstart>
+	</modifier>
+	
+	<altavatar key="Hero_ShadowBlade.Alt7" modpriority="1"
+	    icon="../alt7/ability_03/icon.tga"
+		passiveeffect="../alt7/ability_03/effects/state_self.effect"
+	/>
+</state>

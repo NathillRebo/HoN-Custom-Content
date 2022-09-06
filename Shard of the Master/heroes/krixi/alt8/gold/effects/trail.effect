@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world">
+		
+			<trailemitter
+				spawnrate="25"
+				particlelife="250"
+				texpostime="250"
+				texposscale="0"
+				texstretchscale="0.75"
+				material="/shared/effects/materials/bad_heal_smoke_06.material"
+			>
+				<particle
+					startsize="80"
+					midsize="20"
+					endsize="1"
+					midsizepos=".5"
+					startcolor="1"
+					midcolor=".85 .5 0"
+					endcolor="1 0 1"
+				/>
+			</trailemitter>
+			
+			<template name="sparks">
+			<model
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale=".6"
+				position="0 0 0"
+				anim="idle"
+				yawspeed="600"
+			>
+			
+			<simpleemitter
+				
+				spawnrate="100"
+				bone="{bone}"
+				particlelife="250"			
+				gravity="30"
+				minspeed="1"
+				maxspeed="150"
+				drag=".04"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="5 5 5"
+				inheritvelocity="1"
+				direction="0 0 1"
+				collide="true"
+				particledirectionalspace="local"
+				>
+				
+				<particle 					
+					startcolor=".5"
+					midcolor="1 .75 .3"
+					endcolor="0 0 0"
+					heightdistort=".06"
+					startsize="1"
+					midsize="2"
+					endsize="1"
+					scale="2"
+					turn="1"
+				/>
+			</simpleemitter>
+			</model>
+			</template>
+			<instance name="sparks" bone="_bone_fx_01"/>
+			<instance name="sparks" bone="_bone_fx_03"/>
+			<instance name="sparks" bone="_bone_fx_05"/>
+			<instance name="sparks" bone="_bone_fx_07"/>
+			<instance name="sparks" bone="_bone_fx_09"/>
+			<instance name="sparks" bone="_bone_fx_11"/>
+			
+			<simpleemitter
+				spawnrate="25"
+				material="/shared/effects/materials/sparks_reveal_white.material"
+				minparticlelife="400"
+				maxparticlelife="800"
+				gravity="3"
+				collide="1"
+				depthbias="10"
+				offsetsphere="5"
+			>
+				<particle
+					minsize="35"
+					maxsize="60"
+					startframe=".1"
+					endframe="1"
+					color="1 .25 .75"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="25"
+				material="/shared/effects/materials/sparks_reveal_white.material"
+				minparticlelife="400"
+				maxparticlelife="800"
+				gravity="3"
+				collide="1"
+				depthbias="10"
+				offsetsphere="5"
+			>
+				<particle
+					minsize="35"
+					maxsize="60"
+					startframe=".25"
+					endframe="1"
+					color="1 1 0"
+				/>
+			</simpleemitter>
+		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

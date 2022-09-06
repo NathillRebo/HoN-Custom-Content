@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DiseasedRider_Ability3_Debuff"
+	
+	icon="../ability_02/icon.tga"
+	passiveeffect=""
+	
+	movespeedslow="0.20"
+	attackspeedslow="0.2"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<altavatar key="Hero_DiseasedRider.Alt" modpriority="1"
+		icon="../alt/ability_02/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_DiseasedRider.Alt3" modpriority="1"
+		icon="../alt3/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt4" modpriority="1"
+		icon="../alt4/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt5"
+		icon="../alt5/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt6" modpriority="1"
+		icon="../alt6/ability_02/icon.tga"
+	/>
+</state>

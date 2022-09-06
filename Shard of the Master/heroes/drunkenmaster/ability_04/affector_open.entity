@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Drunkenmaster_Ability4_Open"
+
+	lifetime="-1"
+	visibility="self"
+	
+	effect=""
+>
+	<onspawn>
+		<playeffect effect="effects/pressure_open.effect" source="this_entity" target="this_proxy_entity" visibility="self" />
+	</onspawn>
+	
+	<onframe>
+		<targettype type="alive" source="this_proxy_entity" target="this_proxy_entity">
+			<hasmodifier entity="this_proxy_entity" name="drunkenmaster_ability4_Closing">
+				<deactivatemodifierkey entity="this_proxy_entity" name="drunkenmaster_ability4_Closing" />
+				<delete target="this_entity" />
+			</hasmodifier>
+			<else>
+				<changeaccumulator entity="this_proxy_entity" b="0" op="add" />
+				<compare a="result" b="1" op="eq">
+					<delete target="this_entity" />
+				</compare>
+			</else>
+		</targettype>
+		<else>
+			<delete target="this_entity" />
+		</else>
+	</onframe>
+
+	<altavatar key="Hero_DrunkenMaster.Alt10"
+	>
+		<onspawn>
+			<playeffect effect="../alt10/ability_04/effects/pressure_open.effect" source="this_entity" target="this_proxy_entity" visibility="self" />
+		</onspawn>
+	</altavatar>
+	
+</affector>

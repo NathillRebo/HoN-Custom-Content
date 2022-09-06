@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Zephyr3"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	passiveeffect="effects/state.effect"
+
+	actiontype="passive"
+
+	targetradius="250"
+>
+	<onattackedpreimpact>
+		<!-- Evasion will not take place if a target is within 250 radius of Zephyr -->
+		<distance />
+		<setvar0 a="result" />
+		
+		<setvar1 a="0.15,0.25,0.35,0.45" /> <!-- Evasion -->
+		
+		<targettype type="Tower"> <!-- Exception for towers, since they have a large boundsradius -->
+			<compare a="var0" b="350" op="ge">
+				<combatsupertype supertype="attack">
+					<combateffecttype effecttype="Attack">
+						<chance threshold="var1">
+							<!-- Only negate the attack if the target does not have True Strike -->
+							<compare a="combat_truestrike" b="0" op="eq">
+								<negate />
+								<popup name="miss" source="target_entity" target="target_entity" />
+							</compare>
+						</chance>
+					</combateffecttype>
+				</combatsupertype>
+			</compare>
+		</targettype>
+		<else>
+			<compare a="var0" b="250" op="ge">
+				<combatsupertype supertype="attack">
+					<combateffecttype effecttype="Attack">
+						<!-- Only apply to enemy ranged units -->
+						<targettype type="ranged">
+							<chance threshold="var1">
+								<!-- Only negate the attack if the target does not have True Strike -->
+								<compare a="combat_truestrike" b="0" op="eq">
+									<negate />
+									<popup name="miss" source="target_entity" target="target_entity" />
+								</compare>
+							</chance>
+						</targettype>						
+					</combateffecttype>
+				</combatsupertype>
+			</compare>
+		</else>
+	</onattackedpreimpact>
+	
+	<onimpact/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		actiontype="target_self"
+		frontqueue="true"
+		inheritmovement="true"
+		noninterrupting="true"
+		nobreakchannel="true"
+		noresponse="true"
+		noshuffle="true"
+		manacost="55"
+		cooldowntime="20000"
+		anim=""
+		casttime="0"
+		castactiontime="0"
+	>
+		<onimpact>
+			<spawnaffector name="Affector_Zephyr_Shard" target="source_entity" />
+			<applystate name="State_Zephyr_Shard" target="source_entity" duration="3000"/>
+			<starttimer duration="3000" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Zephyr.Alt3"
+		passiveeffect="../alt3/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt4"
+		passiveeffect="../alt4/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt5"
+		passiveeffect="../alt5/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt6"
+		passiveeffect="../alt6/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt7"
+		passiveeffect="../alt7/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt8"
+	    icon="/heroes/zephyr/alt8/ability_03/icon.tga"
+		passiveeffect="../alt8/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt9"
+		passiveeffect="../alt9/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt9"
+	    icon="/heroes/zephyr/alt9/ability_03/icon.tga"
+	/>
+	
+</ability>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="tail" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+
+			<sound
+				sample="/heroes/krixi/sounds/attack_%.wav"
+				volume="0.65"
+				linearfalloff="true"
+				falloffstart="400"
+				falloffend="1800"
+				fadeout="2000"
+				fadein="0"
+			/>
+	
+			<!--
+			<template name="blade_glow" >
+				<beam
+					bone_a="{bone}"
+					material="/shared/effects/materials/whitedot.material"
+					color=".5 .2 .1"
+					size="15"
+					depthbias="-30"
+				/>
+			</template>
+			
+			<instance name="blade_glow" bone="_bone_weapon1" />
+			<instance name="blade_glow" bone="_bone_weapon6" />
+			<instance name="blade_glow" bone="_bone_weapon3" />
+			<instance name="blade_glow" bone="_bone_weapon4" />
+			<instance name="blade_glow" bone="_bone_weapon5" />
+			-->
+			
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				color=".5 .1 0"
+				size="55"
+				depthbias="-30"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+			
+			<trailemitter
+				spawnrate="40"
+				particlelife="250"
+				texpostime="250"
+				texposscale="0"
+				texstretchscale="1"
+				material="/shared/effects/materials/flux_trail.material"
+			>
+				<particle
+					startsize="50"
+					midsize="17.5"
+					endsize="1"
+					midsizepos=".5"
+					startcolor="0"
+					midcolor="1.75 .6 .15"
+					endcolor="0"
+				/>
+			</trailemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

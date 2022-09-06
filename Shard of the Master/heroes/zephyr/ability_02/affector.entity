@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Zephyr_Ability2"
+
+	radius="300"
+	
+	lifetime="-1"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+>
+	<onframeimpact>
+		<isstealthed entity="source_entity" />
+		<else>
+			<damage effecttype="Magic DOT" amount="9" b="frametime" op="mult" />
+		</else>
+	</onframeimpact>
+</affector>

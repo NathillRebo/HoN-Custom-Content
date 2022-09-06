@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Artesia_Ability3_Bolts_Wisp"
+	icon="icon.tga"
+	
+	effecttype=""
+	
+	impactinterval="400"
+>
+	<onimpact>
+		<hasmodifier entity="this_proxy_entity" name="artesia_Mode2">
+			<compare a="charges" b="4" op="ge">
+				<setactivemodifierkey name="ArtesiaBolt3_Heal" target="source_entity" />
+			</compare>
+			<else>
+				<compare a="charges" b="3" op="eq">
+					<setactivemodifierkey name="ArtesiaBolt2_Heal" target="source_entity" />
+				</compare>
+				<else>
+					<compare a="charges" b="2" op="eq">
+						<setactivemodifierkey name="ArtesiaBolt1_Heal" target="source_entity" />
+					</compare>
+					<else>
+						<compare a="charges" b="1" op="le">
+							<expire />
+						</compare>
+					</else>
+				</else>
+			</else>
+		</hasmodifier>
+		<else>
+			<compare a="charges" b="4" op="ge">
+				<setactivemodifierkey name="ArtesiaBolt3" target="source_entity" />
+			</compare>
+			<else>
+				<compare a="charges" b="3" op="eq">
+					<setactivemodifierkey name="ArtesiaBolt2" target="source_entity" />
+				</compare>
+				<else>
+					<compare a="charges" b="2" op="eq">
+						<setactivemodifierkey name="ArtesiaBolt1" target="source_entity" />
+					</compare>
+					<else>
+						<compare a="charges" b="1" op="le">
+							<expire />
+						</compare>
+					</else>
+				</else>
+			</else>
+		</else>
+		<removecharge />
+		<hasmodifier entity="this_proxy_entity" name="artesia_Mode2">
+			<areaofeffect
+				radius="800"
+				targetselection="random"
+				targetscheme="ally_heroes"
+				maxtotalimpacts="1"
+				effecttype="Magic"
+				center="this_owner_entity"
+				ignore="source_entity"
+			>
+				<chance threshold="0.5">
+					<spawnprojectile name="Projectile_Artesia_Ability3_Heal" source="this_owner_entity" target="target_entity" offset="0 0 175" noresponse="true" param="owner_counter" />
+				</chance>
+				<else>
+					<spawnprojectile name="Projectile_Artesia_Ability3_bHeal" source="this_owner_entity" target="target_entity" offset="0 0 175" noresponse="true" param="owner_counter" />
+				</else>
+			</areaofeffect>
+		</hasmodifier>
+		<else>
+			<areaofeffect
+				radius="800"
+				targetselection="random"
+				targetscheme="visible_enemy_heroes"
+				maxtotalimpacts="1"
+				effecttype="Magic"
+				center="this_owner_entity"
+			>
+				<chance threshold="0.5">
+					<spawnprojectile name="Projectile_Artesia_Ability3" source="this_owner_entity" target="target_entity" offset="0 0 175" noresponse="true" param="owner_counter" />
+				</chance>
+				<else>
+					<spawnprojectile name="Projectile_Artesia_Ability3_b" source="this_owner_entity" target="target_entity" offset="0 0 175" noresponse="true" param="owner_counter" />
+				</else>
+			</areaofeffect>
+		</else>
+	</onimpact>
+	
+	<onexpired>
+		<expirestate name="State_Artesia_Ability2_BoltSpeed" target="this_owner_entity" />
+	</onexpired>
+	
+	<altavatar key="Hero_Artesia.Alt3"
+	>
+	
+		<modifier key="ArtesiaBolt3_Heal" priority="99"
+			passiveeffect="../alt3/ability_03/effects/state_3_heal.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt2_Heal" priority="99"
+			passiveeffect="../alt3/ability_03/effects/state_2_heal.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt1_Heal" priority="99"
+			passiveeffect="../alt3/ability_03/effects/state_1_heal.effect"
+		/>
+			
+		<modifier key="ArtesiaBolt3" priority="101"
+			passiveeffect="../alt3/ability_03/effects/state_3.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt2" priority="101"
+			passiveeffect="../alt3/ability_03/effects/state_2.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt1" priority="101"
+			passiveeffect="../alt3/ability_03/effects/state_1.effect"
+		/>
+	
+	</altavatar>
+	
+	<altavatar key="Hero_Artesia.Alt4"
+	>
+		<modifier key="ArtesiaBolt3" priority="110"
+			passiveeffect="../alt4/ability_03/effects/state_3.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt2" priority="110"
+			passiveeffect="../alt4/ability_03/effects/state_2.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt1" priority="110"
+			passiveeffect="../alt4/ability_03/effects/state_1.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt3_Heal" priority="99"
+			passiveeffect="../alt4/ability_03/effects/state_3_heal.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt2_Heal" priority="99"
+			passiveeffect="../alt4/ability_03/effects/state_2_heal.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt1_Heal" priority="99"
+			passiveeffect="../alt4/ability_03/effects/state_1_heal.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Artesia.Alt5"
+	>
+		<modifier key="ArtesiaBolt3" priority="110"
+			passiveeffect="../alt5/ability_03/effects/state_3.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt2" priority="110"
+			passiveeffect="../alt5/ability_03/effects/state_2.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt1" priority="110"
+			passiveeffect="../alt5/ability_03/effects/state_1.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt3_Heal" priority="99"
+			passiveeffect="../alt5/ability_03/effects/state_3_heal.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt2_Heal" priority="99"
+			passiveeffect="../alt5/ability_03/effects/state_2_heal.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt1_Heal" priority="99"
+			passiveeffect="../alt5/ability_03/effects/state_1_heal.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Artesia.Alt6"
+	>
+		<modifier key="ArtesiaBolt3" priority="110"
+			passiveeffect="../alt6/ability_03/effects/state_3.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt2" priority="110"
+			passiveeffect="../alt6/ability_03/effects/state_2.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt1" priority="110"
+			passiveeffect="../alt6/ability_03/effects/state_1.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt3_Heal" priority="99"
+			passiveeffect="../alt6/ability_03/effects/state_3_heal.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt2_Heal" priority="99"
+			passiveeffect="../alt6/ability_03/effects/state_2_heal.effect"
+		/>
+		
+		<modifier key="ArtesiaBolt1_Heal" priority="99"
+			passiveeffect="../alt6/ability_03/effects/state_1_heal.effect"
+		/>
+	</altavatar>
+	
+	<modifier key="ArtesiaBolt3_Heal" priority="99"
+		passiveeffect="effects/state_3_heal.effect"
+	/>
+	
+	<modifier key="ArtesiaBolt2_Heal" priority="99"
+		passiveeffect="effects/state_2_heal.effect"
+	/>
+	
+	<modifier key="ArtesiaBolt1_Heal" priority="99"
+		passiveeffect="effects/state_1_heal.effect"
+	/>
+	
+	<modifier key="ArtesiaBolt3" priority="99"
+		passiveeffect="effects/state_3.effect"
+	/>
+	
+	<modifier key="ArtesiaBolt2" priority="99"
+		passiveeffect="effects/state_2.effect"
+	/>
+	
+	<modifier key="ArtesiaBolt1" priority="99"
+		passiveeffect="effects/state_1.effect"
+	/>
+	
+	<modifier key="Artesia_BoltSpeed1" priority="101"
+		impactinterval="400"
+	/>
+	
+	<modifier key="Artesia_BoltSpeed2" priority="101"
+		impactinterval="350"
+	/>
+	
+	<modifier key="Artesia_BoltSpeed3" priority="101"
+		impactinterval="300"
+	/>
+	
+	<modifier key="Artesia_BoltSpeed4" priority="101"
+		impactinterval="250"
+	/>
+	
+	<modifier key="Artesia_BoltSpeed5" priority="101"
+		impactinterval="200"
+	/>
+	
+</state>

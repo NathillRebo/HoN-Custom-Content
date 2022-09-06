@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statenetaccum
+	name="State_Ravenor_Shard"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype=""
+	allowtransfer=""
+	
+	displaylevel="true"
+>	
+	<oninflict>
+		<addcharges count="2"/>
+	</oninflict>
+	
+	<onattackedpredamage>
+		<combateffecttype effecttype="Attack">
+			<targettype type="gadget" />
+			<else>
+				<setvalue name="combat_deflection" a="combat_deflection" b="99999" op="max" />
+				<spawnaffector name="Affector_Hypercrown_Bridge" source="target_entity" proxy="this_proxy_entity" target="source_position" direction="target_entity" firsttarget="target_entity" />
+				<setcharges a="charges" b="1" op="sub" />
+				<compare a="charges" b="0" op="eq">
+					<expire/>
+				</compare>
+			</else>
+		</combateffecttype>
+	</onattackedpredamage>
+</statenetaccum>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shellshock_Shard"
+	
+	icon="icon.tga"
+
+	passiveeffect="state.effect"
+	
+	immunitytype="MagicImmunity1"
+	
+	effecttype=""
+	
+	modifierkey="activation_modifier"
+>
+</state>

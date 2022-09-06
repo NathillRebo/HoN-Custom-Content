@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Geomancer_Ability3"
+	
+	icon="icon.tga"
+
+	stealthtype="hero"
+	fadetime="0"
+	
+	passiveeffect=""
+
+	movespeed="5,10,15,20"
+	
+	impactinterval="2000"
+	
+	effecttype=""
+	modifierkey="geomancer_ability3_Burrowed"
+>
+	<oninflict>
+		<spawnunit name="Gadget_Geomancer_Ability3" lifetime="30000" target="source_entity" bind="source_entity" pushentity="true" />
+		<setproxy entity="this_entity" target="stack_entity" />
+	</oninflict>
+	
+	<onrefresh>
+		<delete target="this_proxy_entity" source="" />
+		<spawnunit name="Gadget_Geomancer_Ability3" lifetime="30000" target="source_entity" pushentity="true" />
+		<setproxy entity="this_entity" target="stack_entity" />
+	</onrefresh>
+	
+	<onframe>
+		<!-- Check for nearby enemies for invisibility -->
+		<areaofeffect
+			center="this_owner_entity"
+			radius="400"
+			targetscheme="enemy_objects"
+			targetselection="all"
+			ignoreinvulnerable="true"
+			maxtotalimpacts="1"
+		>
+		</areaofeffect>
+		<compare a="result" b="1" op="ge">
+			<activatemodifierkey name="geomancer_ability3_nostealth" entity="this_entity" />
+		</compare>
+		<else>
+			<deactivatemodifierkey name="geomancer_ability3_nostealth" entity="this_entity" />
+		</else>
+	</onframe>
+	
+	<!-- Sonar mechanic -->
+	<onimpact>
+		<!-- Does not emit from Geomancer's illusions -->
+		<targettype type="illusion" source="source_entity" target="source_entity" />
+		<else>
+			<areaofeffect
+				center="source_entity"
+				radius="1200,1800,2400,3000"
+				targetscheme="enemy_units"
+				targetselection="all"
+				effecttype=""
+				ignoreinvulnerable="true"
+			>
+				<targettype type="visible" />
+				<else>
+					<targettype type="hero">
+						<spawnunit name="Gadget_Geomancer_Ability3_Mark" target="target_position" lifetime="2000" />
+					</targettype>
+					<else>
+						<spawnunit name="Gadget_Geomancer_Ability3_Mark_Small" target="target_position" lifetime="2000" />
+					</else>
+				</else>
+			</areaofeffect>
+			
+			<!-- VFX -->
+			<spawnaffector name="Affector_Geomancer_Ability3" source="this_proxy_entity" target="this_proxy_entity" />
+		</else>
+	</onimpact>
+	
+	<onexpired>
+		<!-- Cooldown on E -->
+		<pushability name="Ability_Geomancer3" />
+		<resetcooldown entity="stack_entity" />
+		<evaluate a="30000" b="lifetime" op="sub" />
+		<evaluate a="75000" b="result" op="sub" />
+		<startcooldown duration="result" entity="stack_entity" />
+		
+		<deactivatemodifierkey name="geomancer_ability3_disabled" entity="stack_entity" />
+		<applystate name="State_Geomancer_Ability3_DummyTeleport" target="source_entity" />
+		<delete target="this_proxy_entity" source="" /> 
+		<playeffect effect="effects/merge_audio.effect" target="source_entity" />	
+	</onexpired>
+	
+	<modifier key="shardofthemaster_boost" modpriority="101"
+		armor="5"
+		magicarmor="5"
+	>
+		<onexpired>
+			<playanim name="ability_1_burst" target="source_entity" />
+			<playeffect effect="effects/appear.effect" source="source_position" occlude="true" />
+			<spawnaffector name="Affector_Geomancer_Ability1" target="source_entity" />
+			
+			<!-- Cooldown on E -->
+			<pushability name="Ability_Geomancer3" />
+			<resetcooldown entity="stack_entity" />
+			<evaluate a="30000" b="lifetime" op="sub" />
+			<evaluate a="75000" b="result" op="sub" />
+			<startcooldown duration="result" entity="stack_entity" />
+			
+			<deactivatemodifierkey name="geomancer_ability3_disabled" entity="stack_entity" />
+			<applystate name="State_Geomancer_Ability3_DummyTeleport" target="source_entity" />
+			<delete target="this_proxy_entity" source="" /> 
+			<playeffect effect="effects/merge_audio.effect" target="source_entity" />	
+		</onexpired>
+	</modifier>
+	
+	<modifier key="geomancer_ability3_nostealth" modpriority="100"
+		stealthtype=""
+	>
+	</modifier>
+	
+	
+</state>

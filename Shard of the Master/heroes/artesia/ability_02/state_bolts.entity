@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Artesia_Ability2_Bolts"
+	
+	icon="icon.tga"
+	ishidden="true"
+	
+	passiveeffect=""
+	
+	impactinterval="400,350,300,250"
+>	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		impactinterval="350,300,250,200"
+	/>
+	<modifier key="ArcaneBolts1" priority="99">
+		<oninflict>
+			<applystate name="State_Artesia_Ability2_BoltSpeed" target="this_owner_entity" continuous="true" />
+			<areaofeffect
+				global="true"
+				targetscheme="MyArtesiaWisp"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<applystate name="State_Artesia_Ability2_BoltSpeed" continuous="true" />
+			</areaofeffect>
+		</oninflict>
+		
+		<onimpact>
+			<applystate name="State_Artesia_Ability3_Bolts" continuous="true" target="source_entity" pushentity="true" proxy="this_proxy_entity" statelevel="2" />
+			<addcharges count="1" entity="stack_entity" />
+			<pushability name="Ability_Artesia3" />
+			<addcharges count="1" entity="stack_entity" />
+			<areaofeffect
+				global="true"
+				targetscheme="MyArtesiaWisp"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<applystate name="State_Artesia_Ability3_Bolts_Wisp" continuous="true" pushentity="true" proxy="this_proxy_entity" statelevel="2" />
+				<addcharges count="1" entity="stack_entity" />
+				<applystate name="State_Artesia_Ability2_BoltSpeed" continuous="true" />
+			</areaofeffect>
+		</onimpact>
+	</modifier>
+	
+	<modifier key="ArcaneBolts2" priority="99">
+		<oninflict>
+			<applystate name="State_Artesia_Ability2_BoltSpeed" target="this_owner_entity" continuous="true" />
+			<areaofeffect
+				global="true"
+				targetscheme="MyArtesiaWisp"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<applystate name="State_Artesia_Ability2_BoltSpeed" continuous="true" />
+			</areaofeffect>
+		</oninflict>
+		
+		<onimpact>
+			<applystate name="State_Artesia_Ability3_Bolts" continuous="true" target="source_entity" pushentity="true" proxy="this_proxy_entity" statelevel="3" />
+			<addcharges count="1" entity="stack_entity" />
+			<pushability name="Ability_Artesia3" />
+			<addcharges count="1" entity="stack_entity" />
+			<areaofeffect
+				global="true"
+				targetscheme="MyArtesiaWisp"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<applystate name="State_Artesia_Ability3_Bolts_Wisp" continuous="true" pushentity="true" proxy="this_proxy_entity" statelevel="3" />
+				<addcharges count="1" entity="stack_entity" />
+				<applystate name="State_Artesia_Ability2_BoltSpeed" continuous="true" />
+			</areaofeffect>
+		</onimpact>
+	</modifier>
+	
+	<modifier key="ArcaneBolts3" priority="99">
+		<oninflict>
+			<applystate name="State_Artesia_Ability2_BoltSpeed" target="this_owner_entity" continuous="true" />
+			<areaofeffect
+				global="true"
+				targetscheme="MyArtesiaWisp"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<applystate name="State_Artesia_Ability2_BoltSpeed" continuous="true" />
+			</areaofeffect>
+		</oninflict>
+		
+		<onimpact>
+			<applystate name="State_Artesia_Ability3_Bolts" continuous="true" target="source_entity" pushentity="true" proxy="this_proxy_entity" statelevel="4" />
+			<addcharges count="1" entity="stack_entity" />
+			<pushability name="Ability_Artesia3" />
+			<addcharges count="1" entity="stack_entity" />
+			<areaofeffect
+				global="true"
+				targetscheme="MyArtesiaWisp"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<applystate name="State_Artesia_Ability3_Bolts_Wisp" continuous="true" pushentity="true" proxy="this_proxy_entity" statelevel="4" />
+				<addcharges count="1" entity="stack_entity" />
+				<applystate name="State_Artesia_Ability2_BoltSpeed" continuous="true" />
+			</areaofeffect>
+		</onimpact>
+	</modifier>
+	
+	<modifier key="ArcaneBolts4" priority="99">
+		<oninflict>
+			<applystate name="State_Artesia_Ability2_BoltSpeed" target="this_owner_entity" continuous="true" />
+			<areaofeffect
+				global="true"
+				targetscheme="MyArtesiaWisp"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<applystate name="State_Artesia_Ability2_BoltSpeed" continuous="true" />
+			</areaofeffect>
+		</oninflict>
+		
+		<onimpact>
+			<applystate name="State_Artesia_Ability3_Bolts" continuous="true" target="source_entity" pushentity="true" proxy="this_proxy_entity" statelevel="5" />
+			<addcharges count="1" entity="stack_entity" />
+			<pushability name="Ability_Artesia3" />
+			<addcharges count="1" entity="stack_entity" />
+			<areaofeffect
+				global="true"
+				targetscheme="MyArtesiaWisp"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<applystate name="State_Artesia_Ability3_Bolts_Wisp" continuous="true" pushentity="true" proxy="this_proxy_entity" statelevel="5" />
+				<addcharges count="1" entity="stack_entity" />
+				<applystate name="State_Artesia_Ability2_BoltSpeed" continuous="true" />
+			</areaofeffect>
+		</onimpact>
+	</modifier>
+</state>

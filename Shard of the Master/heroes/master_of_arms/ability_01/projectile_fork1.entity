@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_MasterOfArms_Ability1_Fork1"
+
+	speed="2500"
+	gravity="0"
+	
+	flying="true"
+	flyheight="100"
+
+	modelscale="1.7"
+	model="/shared/models/invis.mdf"
+
+	traileffect="effects/electrical_trail.effect"
+	impacteffect=""
+	
+>
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<compare a="target_entity" b="0" op="ne">
+					<setpos0 position="this_entity" offsetspace="this_entity" offset="565.69 565.69 0" />
+					<setpos1 position="this_entity" offsetspace="this_entity" offset="-565.69 565.69 0" />
+					<spawnprojectile name="Projectile_MasterOfArms_Ability1_Fork2" source="target_position" target="pos0" ignore="target_entity" />
+					<spawnprojectile name="Projectile_MasterOfArms_Ability1_Fork2" source="target_position" target="pos1" ignore="target_entity" />
+					
+					<cantarget effecttype="Magic">
+						<applystate name="State_MasterOfArms_Ability1_First" duration="1200,1400,1600,1800" />
+						<damage effecttype="Magic" amount="70,140,210,280" />			
+					</cantarget>
+				</compare>
+			</onimpact>
+		</combatevent>
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost">
+		<onimpact>
+			<combatevent effecttype="AbilityBasedProjectile">
+				<onimpact>
+					<compare a="target_entity" b="0" op="ne">
+						<setpos0 position="this_entity" offsetspace="this_entity" offset="273.6 742 0" />
+						<setpos1 position="this_entity" offsetspace="this_entity" offset="-273.6 742 0" />
+						<spawnprojectile name="Projectile_MasterOfArms_Ability1_Fork2" source="target_position" target="pos0" ignore="target_entity" />
+						<spawnprojectile name="Projectile_MasterOfArms_Ability1_Fork2" source="target_position" target="pos1" ignore="target_entity" />
+						<setpos0 position="this_entity" offsetspace="this_entity" offset="692.8 400 0" />
+						<setpos1 position="this_entity" offsetspace="this_entity" offset="-692.8 400 0" />
+						<spawnprojectile name="Projectile_MasterOfArms_Ability1_Fork2" source="target_position" target="pos0" ignore="target_entity" />
+						<spawnprojectile name="Projectile_MasterOfArms_Ability1_Fork2" source="target_position" target="pos1" ignore="target_entity" />
+						
+						<cantarget effecttype="Magic">
+							<applystate name="State_MasterOfArms_Ability1_First" duration="1200,1400,1600,1800" />
+							<damage effecttype="Magic" amount="70,140,210,280" />			
+						</cantarget>
+					</compare>
+				</onimpact>
+			</combatevent>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_MasterOfArms.Alt5"
+		traileffect="../alt5/ability_02/electrical_trail.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt6"
+		traileffect="../alt6/ability_02/effects/electrical_trail.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt8"
+		traileffect="../alt8/ability_02/effects/electrical_trail.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt9"
+		traileffect="../alt9/ability_01/effects/electrical_trail.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt10"
+		traileffect="../alt10/ability_01/effects/electrical_trail.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt11"
+		traileffect="../alt11/ability_01/effects/electrical_trail.effect"
+	/>
+	
+	<altavatar key="Hero_MasterOfArms.Alt12"
+		traileffect="../alt12/ability_01/effects/electrical_trail.effect"
+	/>
+	
+</projectile>

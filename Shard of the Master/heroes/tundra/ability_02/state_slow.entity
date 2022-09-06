@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Tundra_Ability2_Slow"
+	
+	icon="icon.tga"
+	
+	passiveeffect=""
+
+	movespeedslow="0.4"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<onattackedpreimpact/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		maxcharges="6"
+	>
+		<onattackedpreimpact>
+			<addcharges count="1" />
+			<compare a="charges" b="6" op="ge">
+				<applystate name="State_Stunned_Knockdown" duration="2000" target="source_entity"/>
+				<damage effecttype="Magic" amount="200" target="source_entity" source="this_inflictor_entity"/>
+				<expire/>
+			</compare>
+		</onattackedpreimpact>
+	</modifier>
+</state>

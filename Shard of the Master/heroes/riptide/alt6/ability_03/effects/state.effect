@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<modifier
+			life="3000"
+			name="modifier0"
+			material="../../effects/ult_form/material.material"
+			color="1"
+			startalpha="1"
+			endalpha=".5"
+		/>
+
+		<modifier 
+			name="modifier1"
+			material="/items/powerups/invisible/effects/refract.material"
+			param0="1"
+			alpha=".99"
+		/>
+
+		<particlesystem name="system0" space="entity" scale="1">
+		
+		<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".5"
+				sample="/heroes/riptide/ability_03/sounds/start_%.wav"
+			/>
+
+			<model
+				delay="2900"
+				parentmodel="true"
+				parentskeleton="true"
+				alpha=".45"
+				color="1"
+			/>
+
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<wait duration="2900" />
+		<spawnmodifier instance="instance1" modifier="modifier1"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+			<sound
+				    dampen="0.5"
+				    channelid="storeaud"
+					sound2d="true"
+					volume=".5"
+					sample="../sounds/store_audio.wav"
+			/>	
+			
+			<sound
+			        delay="2000"
+				    dampen="0.5"
+				    channelid="storeaudv"
+					sound2d="true"
+					volume=".7"
+					sample="../sounds/voice/select_4.wav"
+			/>	
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="10"
+				minparticlelife="700" maxparticlelife="1200"
+				gravity="1.2"
+				minspeed="100" maxspeed="260" drag=".075"
+				direction="0 0 -1"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="50"
+				minangle="0" maxangle="15"
+			>
+				
+				<particle
+					startcolor="0" midcolor=".005 0 .1" endcolor="0"
+					minstartsize="15" maxstartsize="35" endsize="0"
+					scale="5"
+				/>
+			</simpleemitter>
+
+
+			<template name="shineDust">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="30"
+					minparticlelife="500" maxparticlelife="800"
+					gravity="1.2"
+					minspeed="30" maxspeed="60" drag=".1"
+					direction="0 0 -1"
+					position="0 0 -10"
+					material="/shared/effects/materials/spark.material"
+					offsetsphere="45"
+					minangle="0" maxangle="15"
+				>
+					<particle
+						minangle="0" maxangle="360"
+						minpitchspeed="-180" maxpitchspeed="180"
+						startalpha="1" midalpha=".75" endalpha="0"
+						startcolor="0.70 0.50 1.00" midcolor="0.70 0.50 1.00" endcolor="0.70 0.50 1.00"
+						minstartsize="3" maxstartsize="8" endsize="0"
+						minscale="1.5" maxscale="2.3"
+					>
+						<controller life="600" startscale=".7" midscale="1" endscale="0">
+							<billboard
+								life="200" loop="true"
+								minstartsize="6" maxstartsize="7" midsize="0" minendsize="6" maxendsize="8"
+								color=".8 .6 1"
+								material="/shared/effects/materials/star_03.material"
+							/>
+						</controller>
+					</particle>
+					
+				</simpleemitter>
+			</template>
+			<instance name="shineDust" bone="_bone_centerofchest"/>
+			
+
+		</particlesystem>
+		
+		<particlesystem name="system1" space="entity" scale="1.3">
+
+		<controller delay="1750" scale="1.2" >
+
+			<simpleemitter
+				life="1000"
+				delay="000"
+				spawnrate="60"
+				count="1"
+				bone="_bone_origin"
+				particlelife="1575"			
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 205"
+				material="/shared/effects/materials/streak_08.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+			>
+				<particle 
+					startcolor="0 0 0"
+					midcolor=".3 .4 .4"
+					endcolor="0 0 0"
+					midcolorpos=".3"
+					startframe="0"
+					endframe="1"
+					startwidth="10"
+					midwidth="75"
+					endwidth="150"
+					midwidthpos=".2"
+					height="820"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					startstickiness="0"
+					endstickiness="0"
+					lockup="true"
+					lockright="false"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="1000"
+				delay="000"
+				spawnrate="60"
+				count="1"
+				bone="_bone_origin"
+				particlelife="1200"			
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 205"
+				material="/shared/effects/materials/streak_08.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+			>
+				<particle 
+					startcolor="0 0 0"
+					midcolor=".3 .4 .4"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startframe="0"
+					endframe="1"
+					startwidth="5"
+					midwidth="16"
+					endwidth="31"
+					midwidthpos=".2"
+					height="820"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					startstickiness="0"
+					endstickiness="0"
+					lockup="true"
+					lockright="false"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="1000"
+				delay="000"
+				spawnrate="60"
+				count="1"
+				bone="_bone_origin"
+				particlelife="1000"			
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 205"
+				material="/shared/effects/materials/streak_08.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+			>
+				<particle 
+					startcolor="0 0 0"
+					midcolor=".3 .4 .4"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startframe="0"
+					endframe="1"
+					startwidth="5"
+					midwidth="220"
+					endwidth="5"
+					midwidthpos=".2"
+					height="820"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					startstickiness="0"
+					endstickiness="0"
+					lockup="true"
+					lockright="false"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="1000"
+				delay="000"
+				spawnrate="60"
+				count="1"
+				bone="_bone_origin"
+				particlelife="1200"			
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 205"
+				material="/shared/effects/materials/light_rays.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+			>
+
+				<particle 
+					startcolor="0 0 0"
+					midcolor=".6 .75 1"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startwidth="5"
+					midwidth="16"
+					endwidth="31"
+					midwidthpos=".2"
+					height="820"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+					lockup="true"
+					lockright="false"
+				/>
+
+			</simpleemitter>
+
+		
+
+
+			<simpleemitter
+				life="1800"
+				delay="200"
+				spawnrate="60"
+				count="1"
+				bone="_bone_origin"
+				particlelife="1000"			
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 205"
+
+				material="/shared/effects/materials/streak_08.material"
+				offsetsphere="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 0 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+			>
+
+				<particle 
+
+					minangle="0"
+					maxangle="0"
+					minanglespeed="0"
+					maxanglespeed="0"
+
+
+					startcolor="0 0 0"
+					midcolor=".8 .5 1"
+					endcolor="0 0 0"
+
+					midcolorpos=".5"
+
+					startframe="0"
+					endframe="1"
+
+
+
+					startwidth="5"
+					midwidth="40"
+					endwidth="55"
+
+
+					height="820"
+
+
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					midalphapos=".1"
+
+					startstickiness="0"
+					endstickiness="0"
+
+					lockup="true"
+					lockright="false"
+
+				/>
+
+
+			</simpleemitter>
+
+
+			<light
+				life="950"
+				delay="100"
+				startcolor="0 0 0 "
+				midcolor=".6 .8 1"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="30"
+				falloffend="105"
+				position="0 0 100"
+			/>
+
+			<light
+				life="1350"
+				delay="200"
+				startcolor="0 0 0 "
+				midcolor=".6 .8 1"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="30"
+				falloffend="105"
+				position="0 0 100"
+			/>
+
+		</controller>
+
+	
+      </particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+      	<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

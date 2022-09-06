@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="moon_beam">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".25 .1 .45"
+				endcolor="0"
+				expirelife="1300"
+				size="75"
+				yaw="180"
+				depthbias="-30"
+				
+				position="0 0 0"
+			/>
+			
+			<controller yawspeed="-60"  directionalspace="global" expirelife="1000"  >
+				<template name="moon" >	
+					<billboard
+						material="/shared/effects/materials/luna_moon_symbol_03.material"
+						startcolor=".35 .25 .65"
+						endcolor="0"
+						expirelife="1300"
+						size="15"
+						depthbias="-30"
+						position="{position}"
+						yawspeed="100"
+						
+					/>
+				</template>
+				<instance name="moon" position="0 -25 35" />
+				<instance name="moon" position="0 25 35" />
+				<instance name="moon" position="25 0 35" />
+				<instance name="moon" position="-25 0 35" />
+			</controller>
+
+
+			<controller yawspeed="-90" directionalspace="global" expirelife="1000">
+
+				<groundsprite
+					directionalspace="local"
+					life="1400"
+					delay="150"
+					loop="1"
+					timenudge="0"
+					material="/shared/effects/materials/luna_moon_symbol_03.material"
+					size="50"
+					startcolor="0 0 0"
+					midcolor=".25 .15 .5"
+					endcolor="0 0 0"
+					midcolorpos=".5"	
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".4"
+					lockright="1"
+				/>
+			</controller>
+
+
+			<controller yawspeed="90" directionalspace="global" expirelife="1000">
+				<groundsprite
+					directionalspace="local"
+					bone="_bone_origin"
+					life="1400"
+					loop="1"
+					delay="150"
+					timenudge="0"
+					material="/shared/effects/materials/luna_moon_symbol_03.material"
+					size="45"
+					startcolor="0 0 0"
+					midcolor=".15 .25 .5"
+					endcolor="0 0 0"
+					midcolorpos=".4"	
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".4"
+					lockright="1"
+				/>
+
+			</controller>
+
+
+
+
+	
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

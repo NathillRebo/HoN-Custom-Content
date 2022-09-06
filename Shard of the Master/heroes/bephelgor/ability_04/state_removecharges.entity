@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bephelgor_Ability4_Removecharges"
+
+	icon="icon.tga"
+	ishidden="true"
+	impactinterval="1000"
+	
+	effecttype=""
+>	
+	<onimpact>
+		<compare a="charges" b="0" op="le" target="this_spawner_entity">
+			<removecharge entity="this_spawner_entity" />
+		</compare>
+	</onimpact>
+	
+	<altavatar key="Hero_Bephelgor.Alt4"
+		icon="../alt4/ability_04/icon.tga"
+	/>
+
+</state>

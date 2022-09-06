@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Fayde3_Bind"
+
+	icon="icon.tga"
+	
+	invulnerable="true"
+	disarmed="true"
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	
+	passiveeffect=""
+	
+	effecttype=""
+>
+</state>

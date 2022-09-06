@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hunter_Ability1_Buff"
+
+	icon="icon.tga"
+	
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+	silenced="true"
+	
+	attackspeed="0.6"
+	movespeedmultiplier="0.3"
+	lifesteal="0.25"
+	
+	modifierkey="Hunter_Q_Active"
+>
+	<onframe>
+		<damage effecttype="Magic DOT" amount="10,20,30,40" b="frametime" op="mult" />
+	</onframe>
+	
+	<onattackpredamage>
+		<cantarget targetscheme="enemy_units" />
+		<else>
+			<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.25" op="add" />
+		</else>
+	</onattackpredamage>
+	
+	<altavatar key="Hero_Hunter.Alt" modpriority="1"
+		passiveeffect="/heroes/hunter/alt/ability_01/effects/state_debuff.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt5"
+		passiveeffect="../alt5/ability_01/effects/state_debuff.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt6"
+		passiveeffect="../alt6/ability_01/effects/state_debuff.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt9"
+		passiveeffect="../alt9/ability_01/effects/state_debuff.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt10"
+		passiveeffect="../alt10/ability_01/effects/state_debuff.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt11"
+		passiveeffect="../alt11/ability_01/effects/state_debuff.effect"
+	/>
+	
+	<altavatar key="Hero_Hunter.Alt12"
+		passiveeffect="../alt12/ability_01/effects/state_debuff.effect"
+	/>
+</state>

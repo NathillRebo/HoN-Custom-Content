@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="purgeEffect" deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system1" space="entity" scale="1.9">
+		
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot_blend.material"
+				scale="2.5"
+				color="0"
+				alpha=".5"
+				depthbias="-150"
+			/>
+			
+			<template name="new_trails">
+				<controller
+					bone="_bone_centerofchest"
+					minscale=".4"
+					maxscale=".85"
+					minyawspeed="-720"
+					maxyawspeed="720"
+					minpitchspeed="-720"
+					maxpitchspeed="720"
+					minrollspeed="-720"
+					maxrollspeed="720"
+				>
+					<trailemitter
+						position="0 0 40"
+						spawnrate="30"
+						particlelife="200"
+						texposscale="2"
+						mintexpostime="50"
+						maxtexpostime="150"
+						texstretchscale="0"
+						material="/shared/effects/materials/femme_lightning_01_trail.material"
+					>
+						<particle
+							startscale="1"
+							midscale="10"
+							endscale="10"
+							color="{color}"
+							midcolorpos=".9"
+							endcolor="0"
+							framespeed="2"
+						/>
+					</trailemitter>
+				</controller>
+			</template>
+			
+			<instance name="new_trails" color=".65 0 1" />
+			<instance name="new_trails" color=".7 .3 1" />
+			<instance name="new_trails" color=".45 .25 1" />
+			<instance name="new_trails" color=".6 .4 .7" />
+			<instance name="new_trails" color=".65 .4 .9" />
+			<instance name="new_trails" color=".8 .5 1" />
+			<!--
+			<model
+				expirelife="250"
+				bone="_bone_centerofchest"
+				position="0 0 -10"
+				model="/items/recipes/null_stone/shield.mdf"
+				material="/shared/effects/materials/shell_flat_blend.material"
+				anim="idle"
+				scale=".8"
+				color=".05 .1 .2"
+				minyawspeed="-360"
+				maxyawspeed="-180"
+				minpitchspeed="180"
+				maxpitchspeed="360"
+				minrollspeed="180"
+				maxrollspeed="360"
+				startalpha=".4"
+				endalpha="0"
+			/>
+			-->
+
+			<model
+				expirelife="250"
+				bone="_bone_centerofchest"
+				position="0 0 -10"
+				model="shield.mdf"
+				anim="idle"
+				scale=".675"
+				startcolor=".3 .6"
+				endcolor="0 0 0"
+				yawspeed="-180"
+				pitchspeed="360"
+				alpha="1"
+			/>
+			
+			<model
+				life="1000"
+				bone="_bone_centerofchest"
+				position="0 0 -10"
+				model="shield.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				scale=".85"
+				startcolor="0 0 0"
+				midcolor=".35 0 .75"
+				endcolor="0 0 0"
+				yawspeed="-180"
+				pitchspeed="360"
+				alpha="1"
+				loop="true"
+			>
+			</model>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="12"
+				minparticlelife="250"
+				maxparticlelife="500"
+				gravity="0"
+				speed="0"
+				drag=".01"
+				depthbias="-25"
+				material="/shared/effects/materials/mana_01.material"
+				offsetsphere="10 10 15"
+				direction="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-360"
+					maxanglespeed="360"
+					startcolor="1 1 1"
+					midcolor=".35 .75"
+					endcolor="0 0 0"
+					minstartsize="5"
+					maxstartsize="10"
+					minendsize="50"
+					maxendsize="85"
+					param=".0175"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="18"
+				particlelife="500"
+				bone="_bone_centerofchest"
+				gravity="0"
+				minspeed="25"
+				maxspeed="50"
+				drag=".05"
+				material="/shared/effects/materials/smash_add.material"
+				direction="0 0 1"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="0"
+					maxanglespeed="360"
+					startcolor="0 0 0"
+					midcolor=".2 .05 .3"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startsize="65"
+					endsize="10"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="4"
+				particlelife="1000"
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/refract_swirl.material"
+				depthbias="-20"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					anglespeed="-360"
+					param="0.01"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					startsize="55"
+					endsize="120"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />	
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+
+
+
+
+
+

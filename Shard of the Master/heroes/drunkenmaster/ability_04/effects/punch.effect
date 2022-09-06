@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1"  useentityeffectscale="1" name="ability_01_impact">
+	<definitions>
+		<modifier
+			expirelife="1000"
+			name="modifier0"			
+			startoffset="0 0 -25"			
+			endoffset="0 0 0"			
+		
+			midcolorpos=".8"
+			endcolor="1.0 1.0 1.0"
+		/>		
+		
+		<particlesystem name="system0" space="world"  scale="2.2">
+
+			<sound
+			    voiceresponseoff="true"
+			    dampen="0.7"
+				forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1"
+				sample="/heroes/drunkenmaster/ability_04/sounds/impact.wav"
+			/>
+		
+
+			<simpleemitter			
+				count="1"
+				particlelife="5000"
+				spawnrate="10000"
+				gravity="-0"
+				speed="0.0"
+				acceleration="0.0"		
+				position="0 0 10"			
+				
+				
+			>
+				<particle>	
+
+					
+
+
+			<billboard
+				life="500"
+				position="0 0 70"
+				startsize="0"
+				midsize="60"
+				midsizepos=".25"
+				endsize="50"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				scale="1.25"
+				depthbias="-200"
+				material="/shared/effects/materials/pop.material"
+			/>
+				
+					<simpleemitter			
+						count="8"
+						spawnrate="1055"
+						particlelife="220"
+						gravity="0"
+						minspeed="22.0"
+						maxspeed="22"
+						acceleration="0.0"
+						timenudge="0"
+						position="0 0 0"
+						offsetsphere="0 0 0"						
+						material="/shared/effects/materials/cartoon_pop1.material"
+						
+					>
+						<particle
+							startcolor="1 1 1"
+							endcolor="1 .4 0"
+							
+							startalpha="1"							
+							endalpha="0"
+						    startscale="35"
+							endscale="130"
+							turn="true"
+						/>
+					</simpleemitter>			
+				</particle>
+			</simpleemitter>			
+
+		
+      </particlesystem>
+   </definitions>
+   <thread>
+   
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>   
+		<camerashake2 scale="11.0" radius="1200" duration="400" frequency="22" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

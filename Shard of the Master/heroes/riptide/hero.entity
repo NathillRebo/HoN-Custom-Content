@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Riptide"
+	
+	team="Hellbourne"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+
+	portraitcampos="0 0 20"
+	
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice /select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.7"
+	modelscale="1.3"
+	effectscale="1"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="52"
+	targetoffset="0 0 92"
+	infoheight="240"
+	
+	category="physical magic cc"
+	difficulty="1.5"
+
+	solorating="5"
+	junglerating="0"
+	carryrating="4"
+	supportrating="0"
+	initiatorrating="0"
+	gankerrating="4"
+	pusherrating="0"
+	rangedrating="0"
+	meleerating="5"
+
+	movespeed="290"
+	turnrate="540"
+	turnsmoothing="0.1"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="0"
+	magicarmor="5.0"
+
+	inventory0="Ability_Riptide1"
+	inventory1="Ability_Riptide2"
+	inventory2="Ability_Riptide3"
+	inventory3="Ability_Riptide4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="500"
+	attackcooldown="1700"
+	attackdamagemin="26"
+	attackdamagemax="30"
+	attacknumanims="2"
+	attackoffset="0 30 100"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="Riptide masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Agility"
+	strength="18"
+	strengthperlevel="2.0"
+	agility="22"
+	agilityperlevel="2.0"
+	intelligence="15"
+	intelligenceperlevel="2.0"
+	
+	previewmodel="model.mdf"
+	previewpos="-10 0 -50"
+	previewangles="0 0 0"
+	previewscale="2.0"
+	
+	storemodel="model.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.8"
+	
+	corpsetime="2000"
+	corpsefadetime="4000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+>
+	
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_PowerSupply" />
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Bottle" />
+	<recommendeditem name="Item_Striders" />
+	<recommendeditem name="Item_EnhancedMarchers" />
+	<recommendeditem name="Item_PortalKey" />
+	<recommendeditem name="Item_Shield2" />
+	<recommendeditem name="Item_Excruciator" />
+	<recommendeditem name="Item_Summon" />
+	<recommendeditem name="Item_Damage10" />
+	<recommendeditem name="Item_BehemothsHeart" />
+	
+	<modifier key="iamsheeped" modpriority="105"
+		passiveeffect=""
+	/>
+	
+	<modifier key="riptide_ability2_Active" modpriority="100"
+		treewalking="true"
+	/>
+
+	<modifier key="riptide_inwater" modpriority="102"
+		passiveeffect="effects/body_inwater.effect"
+		model="effects/ult_form/model.mdf"
+		attackimpacteffect="effects/ult_form/effects/impact.effect"
+		modelscale="1.75"	
+    	selectedsound="sounds/voice/morph/random_%.wav"
+	    confirmmovesound="sounds/voice/morph/random_%.wav"
+	    confirmattacksound="sounds/voice/morph/random_%.wav"
+	    nomanasound="sounds/voice/morph/no_mana.wav"
+	    cooldownsound="sounds/voice/morph/cooldown.wav"
+	    tauntedsound="sounds/voice/morph/taunt_prior.wav"
+	    tauntkillsound="sounds/voice/morph/taunt_after.wav"
+		portraitcampos="8 0 15"
+		
+		drawonmap="true"
+	/>
+	
+	<modifier key="riptide_minimap_hidden" modpriority="103"
+		minimapvisibility="allies"
+	/>
+
+	<modifier key="gated" modpriority="200"
+		magicarmor="5"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Riptide.Classic"
+		icon2="classic/icon.tga"
+		portrait="classic/icon.tga"
+		passiveeffect="classic/effects/body.effect"
+		
+		model="classic/model.mdf"
+		preglobalscale="2.0"
+		modelscale="1.3"
+		effectscale="1"
+		infoheight="240"
+		
+		previewmodel="classic/model.mdf"
+		previewpos="-10 0 -50"
+		previewangles="0 0 0"
+		previewscale="2.0"
+		
+		selectedsound="classic/sounds/voice/select_%.wav"
+		selectedflavorsound="classic/sounds/voice /select_flavour_%.wav"
+		confirmmovesound="classic/sounds/voice/move_%.wav"
+		confirmattacksound="classic/sounds/voice/attack_%.wav"
+		nomanasound="classic/sounds/voice/no_mana.wav"
+		cooldownsound="classic/sounds/voice/cooldown.wav"
+		announcersound="classic/sounds/voice/select_3.wav"
+		tauntedsound="classic/sounds/voice/taunt_prior.wav"
+		tauntkillsound="classic/sounds/voice/taunt_after.wav"
+	
+		storemodel="classic/model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="2.0"
+	>		
+		<modifier key="riptide_inwater" modpriority="102"
+			passiveeffect="classic/effects/body_inwater.effect"
+			model="classic/effects/ult_form/model.mdf"
+			attackimpacteffect="classic/effects/ult_form/effects/impact.effect"
+			modelscale="1.6"
+			
+			drawonmap="true"
+		/>
+		
+		<modifier key="riptide_minimap_hidden" modpriority="103"
+			minimapvisibility="allies"
+		/>
+	</altavatar>
+
+	<altavatar key="Alt"
+		icon2="alt/icon.tga"
+		portrait="alt/icon.tga"
+		
+		model="alt/model.mdf"
+		passiveeffect="alt/effects/body.effect"
+		preglobalscale="1.9"
+		infoheight="250"
+		
+		previewmodel="alt/model.mdf"
+		previewpos="-10 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.9"
+			
+		selectedsound="alt/sounds/voice/select_%.wav"
+     	selectedflavorsound="alt/sounds/voice /select_flavour_%.wav"
+    	confirmmovesound="alt/sounds/voice/move_%.wav"
+	    confirmattacksound="alt/sounds/voice/attack_%.wav"
+      	nomanasound="alt/sounds/voice/no_mana.wav"
+    	cooldownsound="alt/sounds/voice/cooldown.wav"
+	    tauntedsound="alt/sounds/voice/taunt_prior.wav"
+     	tauntkillsound="alt/sounds/voice/taunt_after.wav"
+	
+		storemodel="alt/model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.9"
+	>
+		<modifier key="riptide_inwater" modpriority="1"
+			passiveeffect="alt/effects/body_inwater.effect"
+			model="alt/in_water/armor/model.mdf"
+			attackimpacteffect="effects/ult_form/effects/impact.effect"
+			modelscale="1.6"
+			
+			drawonmap="true"	
+		/>
+		
+		<modifier key="riptide_minimap_hidden" modpriority="103"
+			minimapvisibility="allies"
+		/>
+	</altavatar>
+
+	<altavatar key="Alt2"
+		icon2="alt2/icon.tga"
+		portrait="alt2/icon.tga"
+		
+		model="alt2/model.mdf"
+		passiveeffect="alt2/effects/body.effect"
+		preglobalscale="1.4"
+		infoheight="250"
+		
+		previewmodel="alt2/preview.mdf"
+		previewpos="-10 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.7"
+				
+		selectedsound="alt2/sounds/voice/select_%.wav"
+     	selectedflavorsound="alt2/sounds/voice /select_flavour_%.wav"
+    	confirmmovesound="alt2/sounds/voice/move_%.wav"
+	    confirmattacksound="alt2/sounds/voice/attack_%.wav"
+      	nomanasound="alt2/sounds/voice/no_mana.wav"
+    	cooldownsound="alt2/sounds/voice/cooldown.wav"
+	    tauntedsound="alt2/sounds/voice/taunt_prior.wav"
+     	tauntkillsound="alt2/sounds/voice/taunt_after.wav"
+		
+		storemodel="alt2/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.45"
+		
+		attackimpacteffect="alt2/effects/impact.effect"
+		attackactioneffect=""
+	>
+		<modifier key="riptide_inwater" modpriority="1"
+			passiveeffect="alt2/effects/body_inwater.effect"
+			model="alt2/in_water/armor/model.mdf"
+			attackimpacteffect="effects/ult_form/effects/impact.effect"
+			modelscale="1.6"
+			
+			drawonmap="true"
+		/>
+		
+		<modifier key="riptide_minimap_hidden" modpriority="103"
+			minimapvisibility="allies"
+		/>
+	
+		<onspawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Solstice.Alt7 aa.Hero_Kraken.Alt4 aa.Hero_Pearl.Alt6 aa.Hero_Bubbles.Alt6 aa.Hero_Ophelia.Alt4 aa.Hero_EmeraldWarden.Alt6 aa.Hero_Ebulus.Alt5 aa.Hero_MasterOfArms.Alt6 aa.Hero_Martyr.Alt5 aa.Hero_Magmar.Alt5 aa.Hero_Hantumon.Alt6">
+				<activatemodifierkey name="Zodiac_Set" />
+			</ownsproduct>
+		</onspawn>
+
+		<onrespawn>
+			<ownsproduct target="this_entity" product="aa.Hero_Solstice.Alt7 aa.Hero_Kraken.Alt4 aa.Hero_Pearl.Alt6 aa.Hero_Bubbles.Alt6 aa.Hero_Ophelia.Alt4 aa.Hero_EmeraldWarden.Alt6 aa.Hero_Ebulus.Alt5 aa.Hero_MasterOfArms.Alt6 aa.Hero_Martyr.Alt5 aa.Hero_Magmar.Alt5 aa.Hero_Hantumon.Alt6">
+				<activatemodifierkey name="Zodiac_Set" />
+			</ownsproduct>
+		</onrespawn>
+
+		<!-- <onframe>
+			<activatemodifierkey name="Zodiac_Set" />
+		</onframe> -->
+
+		<modifier key="Zodiac_Set" modpriority="1"
+			tooleffectkeyname0=""
+			tooleffectpath0="/shared/effects/set_zodiac.effect"
+		/>
+	</altavatar>
+
+	<altavatar key="Alt3"
+		icon2="alt3/icon.tga"
+		portrait="alt3/icon.tga"
+		
+		model="alt3/model.mdf"
+		passiveeffect="alt3/effects/body.effect"
+		preglobalscale="1.7"
+		infoheight="250"
+		
+		previewmodel="alt3/model.mdf"
+		previewpos="-10 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.7"
+		
+		portraitcampos="-6 10 29"
+		
+		storemodel="alt3/model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+	
+	    selectedsound="alt3/sounds/voice/select_%.wav"
+     	selectedflavorsound="alt3/sounds/voice /select_flavour_%.wav"
+    	confirmmovesound="alt3/sounds/voice/move_%.wav"
+	    confirmattacksound="alt3/sounds/voice/attack_%.wav"
+      	nomanasound="alt3/sounds/voice/no_mana.wav"
+    	cooldownsound="alt3/sounds/voice/cooldown.wav"
+	    tauntedsound="alt3/sounds/voice/taunt_prior.wav"
+     	tauntkillsound="alt3/sounds/voice/taunt_after.wav"
+		
+		corpsetime="5000"
+		corpsefadetime="4000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	>
+		<modifier key="riptide_inwater" modpriority="1"
+			passiveeffect="alt3/effects/body_inwater.effect"
+			model="alt3/in_water/armor/model.mdf"
+			attackimpacteffect="effects/ult_form/effects/impact.effect"
+			modelscale="1.6"
+			portraitcampos="-6 10 25"
+			
+			drawonmap="true"
+		/>
+		
+		<modifier key="riptide_minimap_hidden" modpriority="103"
+			minimapvisibility="allies"
+		/>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Riptide.Alt4"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		
+		model="alt4/model.mdf"
+		passiveeffect="alt4/effects/body.effect"
+		preglobalscale="1.7"
+		infoheight="250"
+		attackimpacteffect="effects/impact.effect"
+		
+		previewmodel="alt4/model.mdf"
+		previewpos="-10 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.7"
+		
+		storemodel="alt4/model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+	
+	    selectedsound="alt4/sounds/voice/select_%.wav"
+     	selectedflavorsound="alt4/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt4/sounds/voice/move_%.wav"
+	    confirmattacksound="alt4/sounds/voice/attack_%.wav"
+      	nomanasound="alt4/sounds/voice/no_mana.wav"
+    	cooldownsound="alt4/sounds/voice/cooldown.wav"
+	    tauntedsound="alt4/sounds/voice/taunt_prior.wav"
+     	tauntkillsound="alt4/sounds/voice/taunt_after.wav"
+		
+		corpsetime="5000"
+		corpsefadetime="4000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		portraitcampos="15 -30 26"
+	>
+		<modifier key="riptide_inwater" modpriority="1"
+			passiveeffect="alt4/effects/body_inwater.effect"
+			model="alt4/effects/ult_form/model.mdf"
+			attackimpacteffect="effects/ult_form/effects/impact.effect"
+			modelscale="2"	
+			portraitcampos="15 0 12"
+			
+			selectedsound="alt4/sounds/voice/morphed/random_%.wav"
+     	    selectedflavorsound="alt4/sounds/voice/morphed/random_%.wav"
+    	    confirmmovesound="alt4/sounds/voice/morphed/random_%.wav"
+	        confirmattacksound="alt4/sounds/voice/morphed/random_%.wav"
+         	nomanasound="alt4/sounds/voice/morphed/no_mana.wav"
+    	    cooldownsound="alt4/sounds/voice/morphed/cooldown.wav"
+	        tauntedsound="alt4/sounds/voice/morphed/taunt_prior.wav"
+         	tauntkillsound="alt4/sounds/voice/morphed/taunt_after.wav"
+			
+			drawonmap="true"
+		/>
+		
+		<modifier key="riptide_minimap_hidden" modpriority="103"
+			minimapvisibility="allies"
+		/>
+		
+	</altavatar>
+
+	<altavatar key="Hero_Riptide.Alt5"
+		icon2="alt4/icon.tga"
+		portrait="alt4/icon.tga"
+		
+		model="alt5/model.mdf"
+		passiveeffect="alt4/effects/body.effect"
+		preglobalscale="1.7"
+		infoheight="250"
+		attackimpacteffect="alt4/effects/impact.effect"
+		
+		previewmodel="alt4/model.mdf"
+		previewpos="-10 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.7"
+		
+		storemodel="alt4/model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+	
+	    selectedsound="alt5/sounds/voice/select_%.wav"
+     	selectedflavorsound="alt5/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt5/sounds/voice/move_%.wav"
+	    confirmattacksound="alt5/sounds/voice/attack_%.wav"
+      	nomanasound="alt5/sounds/voice/no_mana.wav"
+    	cooldownsound="alt5/sounds/voice/cooldown.wav"
+	    tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+     	tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+		
+		corpsetime="5000"
+		corpsefadetime="4000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		portraitcampos="15 -30 26"
+	>
+		<modifier key="riptide_inwater" modpriority="1"
+			passiveeffect="alt4/effects/body_inwater.effect"
+			model="alt4/effects/ult_form/model.mdf"
+			attackimpacteffect="effects/ult_form/effects/impact.effect"
+			modelscale="2"	
+			portraitcampos="15 0 12"
+			
+			selectedsound="alt5/sounds/voice/random_%.wav"
+     	    selectedflavorsound="alt5/sounds/voice/random_%.wav"
+    	    confirmmovesound="alt5/sounds/voice/random_%.wav"
+	        confirmattacksound="alt5/sounds/voice/random_%.wav"
+         	nomanasound="alt5/sounds/voice/no_mana.wav"
+    	    cooldownsound="alt5/sounds/voice/cooldown.wav"
+	        tauntedsound="alt5/sounds/voice/taunt_prior.wav"
+         	tauntkillsound="alt5/sounds/voice/taunt_after.wav"
+			
+			drawonmap="true"
+		/>
+		
+		<modifier key="riptide_minimap_hidden" modpriority="103"
+			minimapvisibility="allies"
+		/>
+		
+	</altavatar>
+	
+	<altavatar key="Hero_Riptide.Alt6"
+		icon2="alt6/icon.tga"
+		portrait="alt6/icon.tga"
+		
+		flying="false"
+		flyheight="0"
+		
+		model="alt6/model.mdf"
+		passiveeffect="alt6/effects/body.effect"
+		preglobalscale="1.7"
+		infoheight="250"
+		attackimpacteffect="alt6/effects/impact.effect"
+		
+		previewmodel="alt6/model.mdf"
+		previewpos="-10 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.7"
+		
+		storemodel="alt6/model.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.7"
+	
+	    selectedsound="alt6/sounds/voice/motheryule/select_%.wav"
+     	selectedflavorsound="alt6/sounds/voice/motheryule/select_flavour_%.wav"
+    	confirmmovesound="alt6/sounds/voice/motheryule/move_%.wav"
+	    confirmattacksound="alt6/sounds/voice/motheryule/attack_%.wav"
+      	nomanasound="alt6/sounds/voice/motheryule/no_mana.wav"
+    	cooldownsound="alt6/sounds/voice/motheryule/cooldown.wav"
+	    tauntedsound="alt6/sounds/voice/motheryule/taunt_prior.wav"
+     	tauntkillsound="alt6/sounds/voice/motheryule/taunt_after.wav"
+		
+		corpsetime="5000"
+		corpsefadetime="4000"
+		corpsefadeeffect="/shared/effects/corpse_sink.effect"
+		
+		portraitcampos="10 -30 30"
+	>
+		<modifier key="riptide_inwater" modpriority="101"
+			flying="false"
+			flyheight="0"
+			passiveeffect="alt6/effects/body_inwater.effect"
+			model="alt6/effects/ult_form/model.mdf"
+			modelscale="1.5"	
+			portraitcampos="10 -20 20"
+		    selectedsound="alt6/sounds/voice/manofwinter/select_%.wav"
+     	    selectedflavorsound="alt6/sounds/voice/manofwinter/select_flavour_%.wav"
+    	    confirmmovesound="alt6/sounds/voice/manofwinter/move_%.wav"
+	        confirmattacksound="alt6/sounds/voice/manofwinter/attack_%.wav"
+      	    nomanasound="alt6/sounds/voice/manofwinter/no_mana.wav"
+    	    cooldownsound="alt6/sounds/voice/manofwinter/cooldown.wav"
+	        tauntedsound="alt6/sounds/voice/manofwinter/taunt_prior.wav"
+     	    tauntkillsound="alt6/sounds/voice/manofwinter/taunt_after.wav"
+			
+			drawonmap="true"
+		/>
+		
+		<modifier key="riptide_minimap_hidden" modpriority="103"
+			minimapvisibility="allies"
+		/>
+
+	</altavatar>
+	
+	<altavatar key="Hero_Riptide.Alt7"
+		icon2="alt7/icon.tga"
+		portrait="alt7/icon.tga"
+
+		model="alt7/model.mdf"
+		preglobalscale="1.1"
+		portraitcampos="3 12 35"
+		
+		previewmodel="alt7/preview.mdf"
+		previewpos="-10 0 -50"
+		previewangles="0 0 0"
+		previewscale="1.1"
+		
+		storemodel="alt7/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="1.1"
+		storepassiveeffect="alt7/effects/body_store.effect"
+		
+	    selectedsound="alt7/sounds/voice/select_%.wav"
+     	selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+    	confirmmovesound="alt7/sounds/voice/move_%.wav"
+	    confirmattacksound="alt7/sounds/voice/attack_%.wav"
+      	nomanasound="alt7/sounds/voice/no_mana.wav"
+    	cooldownsound="alt7/sounds/voice/cooldown.wav"
+	    tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+     	tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+	>
+		<onframe>
+			<ownsproduct target="this_entity" product="aa.Hero_Gauntlet.Alt10 aa.Hero_Flux.Alt6 aa.Hero_Scout.Alt11 aa.Hero_Prisoner.Alt9 aa.Hero_Kenisis.Alt6 aa.Hero_Riptide.Alt7" >
+				<hasmodifier name="riptide_inwater">
+					<setactivemodifierkey name="Riptide_set_efx_inwater" />
+				</hasmodifier>
+				<else>
+					<setactivemodifierkey name="Riptide_set_efx_onground" />
+				</else>
+				<activatemodifierkey name="Knockout_set_taunt" />
+			</ownsproduct>
+			<else>
+				<hasmodifier name="riptide_inwater">
+					<setactivemodifierkey name="Riptide_efx_inwater" />
+				</hasmodifier>
+				<else>
+					<setactivemodifierkey name="Riptide_efx_onground" />
+				</else>
+			</else>
+		</onframe>
+		
+		<onkilled>
+			<ownsproduct target="this_entity" product="aa.Hero_Gauntlet.Alt10 aa.Hero_Flux.Alt6 aa.Hero_Scout.Alt11 aa.Hero_Prisoner.Alt9 aa.Hero_Kenisis.Alt6 aa.Hero_Riptide.Alt7" >
+				<setactivemodifierkey name="" />
+			</ownsproduct>
+		</onkilled>
+	
+		<modifier key="Riptide_efx_onground" modpriority="103"
+			passiveeffect="effects/body.effect"
+			model="alt7/model.mdf"
+			odelscale="1.3"	
+			portraitcampos="0 12 45"
+		/>
+		
+		<modifier key="Riptide_efx_inwater" modpriority="103"
+			passiveeffect="alt7/effects/body_inwater.effect"
+			model="alt7/effects/ult_form/model.mdf"
+			modelscale="2.3"	
+			portraitcampos="5 10 15"
+			selectedsound="alt7/sounds/voice/select_%.wav"
+			selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+			confirmmovesound="alt7/sounds/voice/move_%.wav"
+			confirmattacksound="alt7/sounds/voice/attack_%.wav"
+			nomanasound="alt7/sounds/voice/no_mana.wav"
+			cooldownsound="alt7/sounds/voice/cooldown.wav"
+			tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+			tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+			
+			drawonmap="true"
+		/>
+		
+		<modifier key="riptide_minimap_hidden" modpriority="103"
+			minimapvisibility="allies"
+		/>
+	
+		<!-- set efx -->
+		<modifier key="Riptide_set_efx_onground" modpriority="104"
+			passiveeffect="effects/body.effect"
+			model="alt7/model.mdf"
+			modelscale="1.3"	
+			portraitcampos="3 12 35"
+			tooleffectpath37="alt7/effects/set_onground.effect"
+		/>
+		
+		<modifier key="Riptide_set_efx_inwater" modpriority="104"
+			passiveeffect="alt7/effects/body_inwater.effect"
+			model="alt7/effects/ult_form/model.mdf"
+			modelscale="2.3"	
+			portraitcampos="10 -20 20"
+			tooleffectpath37="alt7/effects/set_inwater.effect"
+		    selectedsound="alt7/sounds/voice/select_%.wav"
+			selectedflavorsound="alt7/sounds/voice/select_flavour_%.wav"
+			confirmmovesound="alt7/sounds/voice/move_%.wav"
+			confirmattacksound="alt7/sounds/voice/attack_%.wav"
+			nomanasound="alt7/sounds/voice/no_mana.wav"
+			cooldownsound="alt7/sounds/voice/cooldown.wav"
+			tauntedsound="alt7/sounds/voice/taunt_prior.wav"
+			tauntkillsound="alt7/sounds/voice/taunt_after.wav"
+			
+			drawonmap="true"
+		/>
+		
+	</altavatar>
+	
+	
+	<altavatar key="Hero_Riptide.Alt8"
+		icon2="alt8/icon.tga"
+		portrait="alt8/icon.tga"
+		
+		passiveeffect="alt8/effects/body.effect"
+		attackimpacteffect="alt8/effects/impact.effect"
+
+		model="alt8/model.mdf"
+		preglobalscale="0.7"
+		portraitcampos="-20 50 60"
+		
+		previewmodel="alt8/preview.mdf"
+		previewpos="-10 0 -50"
+		previewangles="0 0 0"
+		previewscale="0.8"
+		
+		storemodel="alt8/preview.mdf"
+		storepos="0 0 -20"
+		storeangles="0 0 0"
+		storescale="0.8"
+		storepassiveeffect=""
+		
+		selectedsound="alt8/sounds/voice/select_%.wav"
+		selectedflavorsound="alt8/sounds/voice/select_flavour_%.wav"
+		confirmmovesound="alt8/sounds/voice/move_%.wav"
+		confirmattacksound="alt8/sounds/voice/attack_%.wav"
+		nomanasound="alt8/sounds/voice/no_mana.wav"
+		cooldownsound="alt8/sounds/voice/cooldown.wav"
+		tauntedsound="alt8/sounds/voice/taunt_prior.wav"
+		tauntkillsound="alt8/sounds/voice/taunt_after.wav"
+	
+	>
+	
+	<modifier key="riptide_inwater" modpriority="101"
+			flying="false"
+			flyheight="0"
+			passiveeffect="alt8/effects/body_inwater.effect"
+			model="alt8/effects/ult_form/model.mdf"
+			attackimpacteffect="alt8/effects/ult_form/effects/impact.effect"
+			modelscale="4.7"	
+			portraitcampos="10 -20 15"
+			
+			selectedsound="alt8/sounds/voice/mod/select_%.wav"
+			selectedflavorsound=""
+			confirmmovesound="alt8/sounds/voice/mod/move_%.wav"
+			confirmattacksound="alt8/sounds/voice/mod/attack_%.wav"
+			nomanasound="alt8/sounds/voice/mod/no_mana.wav"
+			cooldownsound="alt8/sounds/voice/mod/cooldown.wav"
+			tauntedsound="alt8/sounds/voice/mod/taunt_prior.wav"
+			tauntkillsound="alt8/sounds/voice/mod/taunt_after.wav"
+		    
+	/>
+	</altavatar>
+</hero>

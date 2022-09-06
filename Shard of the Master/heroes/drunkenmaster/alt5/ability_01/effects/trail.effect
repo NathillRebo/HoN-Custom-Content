@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<simpleemitter
+				count="4"
+				delay="0"
+				spawnrate="10"
+				particlelife="3000"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+				turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale="2"
+						life="250"
+						model="../../model.mdf"
+						material="/shared/effects/materials/shell2.material"
+						anim="walk_1"
+						startcolor="1 .5 1"
+						midcolor="1 .5 1"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".35"
+					/>
+					
+				</particle>
+			</simpleemitter>
+
+			<terrainemitter
+				spawnrate="25"
+				range="25"
+				particlelife="2000"
+			>
+				<particle>
+					<groundsprite
+						minlife="250"
+						maxlife="500"
+						material="/shared/effects/materials/purple_goop_overlay.material"
+						minstartsize="25"
+						maxstartsize="50"
+						endsize="100"
+						minyaw="-360"
+						maxyaw="360"
+						color=".5 .5 .5"
+						startalpha="0"
+						midalpha=".85"
+						endalpha="0"
+						midalphapos=".25"
+						position="0 0 0"
+					/>
+
+					<simpleemitter
+						count="10"
+						minparticlelife="150"
+						maxparticlelife="300"
+						spawnrate="90"
+						minspeed="350"
+						maxspeed="550"
+						gravity="-15"
+						direction="0 0 1"
+						drag="0.05"
+						material="/shared/effects/materials/beer_splash.material"
+						offsetsphere="40 40 10"
+						position="0 0 0"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-60"
+							maxanglespeed="60"
+							startsize="65"
+							endsize="110"
+							color=".8 .5 .8"
+							startalpha=".65"
+							endalpha="0"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						count="10"
+						minparticlelife="150"
+						maxparticlelife="300"
+						spawnrate="90"
+						minspeed="350"
+						maxspeed="550"
+						gravity="-15"
+						direction="0 0 1"
+						drag="0.02"
+						material="/shared/effects/materials/beer_splash.material"
+						offsetsphere="40 40 10"
+						position="0 0 0"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-60"
+							maxanglespeed="60"
+							startsize="65"
+							endsize="110"
+							color=".8 .5 .8"
+							startalpha=".25"
+							endalpha="0"
+						/>
+					</simpleemitter>
+				</particle>
+			</terrainemitter>
+			
+			<simpleemitter
+				spawnrate="150"
+				minparticlelife="250"
+				maxparticlelife="650"
+				gravity="0"
+				drag=".01"
+				material="/shared/effects/materials/bubble_add.material"
+				offsetsphere="60 60 15"
+				minangle="-25"
+				maxangle="25"
+				direction="0 0 1"
+				directionalspace="global"
+				depthbias="-25"
+				position="0 0 0"
+			>
+				<particle 
+					startcolor=".75 .5 .75"
+					endcolor="0 0 0"
+					param=".25"
+					minstartsize="5"
+					maxstartsize="20"
+					minendsize="25"
+					maxendsize="42"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

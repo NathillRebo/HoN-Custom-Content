@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_DiseasedRider_Ability3_Buff"
+	
+	icon="../ability_02/icon.tga"
+	passiveeffect="effects2/state.effect"
+	
+	armor="12"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onattackedpreimpact>
+		<cantarget targetscheme="enemy_units" effecttype="Magic" >
+			<combatsupertype supertype="attack">
+				<combateffecttype effecttype="Attack">
+					<changeduration b="1000" op="sub" />
+					<applystate name="State_DiseasedRider_Ability3_Debuff" duration="2000" />
+				</combateffecttype>
+			</combatsupertype>
+		</cantarget>
+	</onattackedpreimpact>
+	
+	<onframe />
+	
+	<altavatar key="Hero_DiseasedRider.Alt" modpriority="1"
+		icon="../alt/ability_02/icon.tga"
+		passiveeffect="../alt/ability_02/effects/state.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_DiseasedRider.Alt3"
+		icon="../alt3/ability_02/icon.tga"
+		passiveeffect="../alt3/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt4"
+		passiveeffect="../alt4/ability_02/effects/state.effect"
+		icon="../alt4/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt5"
+		passiveeffect="../alt5/ability_02/effects/state.effect"
+		icon="../alt5/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_DiseasedRider.Alt6"
+		passiveeffect="../alt6/ability_02/effects/state.effect"
+		icon="../alt6/ability_02/icon.tga"
+	>        
+	</altavatar>
+	
+	<altavatar key="Hero_DiseasedRider.Alt7"
+		passiveeffect="../alt7/ability_02/effects/state.effect"
+	>        
+	</altavatar>
+	
+	<altavatar key="Hero_DiseasedRider.Alt8"
+		passiveeffect="../alt8/ability_02/effects/state.effect"
+	>        
+	</altavatar>
+	
+</state>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1" >
+
+		<trailemitter
+			life="200"
+			bone="_bone_weaponattach"
+			spawnrate="200"
+			particlelife="200"
+			texpostime="200"
+			texposscale="1"
+			texstretchscale="0"
+			material="/shared/effects/materials/blob_trail.material"
+		>
+			<particle
+				startcolor="1 0 .5"
+				endcolor="0 2 2"
+				startalpha="1"
+				endalpha="0"
+				startsize="50"
+				endsize="10"				
+			/>
+		</trailemitter>	
+		
+		<model
+			model="horn/model.mdf"
+			startcolor="0"
+			midcolor="0 2 2"
+			endcolor="0"
+			midcolorpos=".2"
+			life="200"
+			yaw="180"
+			roll="-90"
+			pitch="-10"
+			bone="Bone050"
+		/>
+
+      </particlesystem>
+   </definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	
+	<waitfordeath instance="instance0" />
+
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

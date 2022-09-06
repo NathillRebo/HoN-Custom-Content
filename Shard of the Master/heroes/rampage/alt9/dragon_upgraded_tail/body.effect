@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" >
+								
+				<sound
+				oneshot="true"
+				norestart="true"
+				channel="1458"
+				delay="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".5"
+				sample="/heroes/rampage/alt9/sounds/item_%.wav"
+			/>
+			
+			<sound
+			    oneshot="true"
+				norestart="true"
+				channel="1459"
+				delay="250"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".5"
+				sample="/heroes/rampage/alt9/sounds/dino_item_%.wav"
+			/>
+			
+			<template name="attachment">
+				<model
+					model="{model}"
+					material="../material.material"
+					parentskeleton="true"
+					inheritparentmodifiers="true"
+					parentteamcolor="true"
+					parentalpha="true"
+				/>
+			</template>
+			
+			<instance name="attachment" model="model.mdf" />
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

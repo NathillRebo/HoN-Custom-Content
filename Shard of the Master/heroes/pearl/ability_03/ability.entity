@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Pearl3"
+
+	icon="icon.tga"
+	
+	anim="ability_3"
+	casteffect=""
+
+	casttime="0"
+	castactiontime="0"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="false"
+	nonaggressive="true"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	targetradius="600"
+	
+	actiontype="target_self"
+	casteffecttype="SuperiorMagic"
+	targetscheme="ally_heroes"
+	
+	manacost="70,80,90,100"
+	cooldowntime="25000"
+	
+	interface="single_plus_one"
+	modifierkey="Pearl_E1,Pearl_E2,Pearl_E3,Pearl_E4"
+>
+	<onframe>
+		<setcharges entity="this_entity" a="0" />
+	</onframe>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"/>
+	
+	<onimpact>
+		<areaofeffect
+			targetselection="all"
+			targetscheme="ally_heroes"
+			radius="600"
+			effecttype=""
+			ignoreinvulnerable="true"
+		>
+			<hasmodifier name="shardofthemaster_boost" target="source_entity">
+				<dispel type="StatusDebuff" target="target_entity" />
+				<heal a="125,175,225,275" />
+			</hasmodifier>
+			<else>
+				<heal a="100,150,200,250" />
+			</else>
+			
+			<!-- VFX -->
+			<hasavatarkey name="Hero_Pearl.Alt">
+				<playeffect effect="/heroes/pearl/alt/ability_03/effects/impact_ally.effect" source="target_entity" target="" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Pearl.Alt2">
+					<playeffect effect="/heroes/pearl/alt2/ability_03/effects/impact_ally.effect" source="target_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Pearl.Alt3">
+						<playeffect effect="/heroes/pearl/alt3/ability_03/effects/impact_ally.effect" source="target_entity" target="" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Pearl.Alt4">
+							<playeffect effect="/heroes/pearl/alt4/ability_03/effects/impact_ally.effect" source="target_entity" target="" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Pearl.Alt5">
+								<playeffect effect="/heroes/pearl/alt5/ability_03/effects/impact_ally.effect" source="target_entity" target="" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Pearl.Alt6">
+									<playeffect effect="/heroes/pearl/alt6/ability_03/effects/impact_ally.effect" source="target_entity" target="" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Pearl.Alt7">
+										<playeffect effect="/heroes/pearl/alt7/ability_03/effects/impact_ally.effect" source="target_entity" target="" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Pearl.Alt8">
+											<playeffect effect="/heroes/pearl/alt8/ability_03/effects/impact_ally.effect" source="target_entity" target="" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Pearl.Alt9">
+												<playeffect effect="/heroes/pearl/alt9/ability_03/effects/impact_ally.effect" source="target_entity" target="" />
+											</hasavatarkey>
+											<else>
+												<playeffect effect="effects/impact_ally.effect" source="target_entity" target="" />
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</areaofeffect>
+	</onimpact>
+	
+	<modifier key="ready" modpriority="100" condition="ready">
+		<aura state="State_Pearl_Ability3_Tooltip" radius="500" targetscheme="ally_heroes" effecttype="" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+		
+		<onframe>
+			<areaofeffect
+				targetselection="all"
+				targetscheme="ally_heroes"
+				radius="500"
+				effecttype=""
+				ignoreinvulnerable="true"
+			>
+			</areaofeffect>
+			<setvar0 a="result" />
+			<compare a="var0" b="2" op="ge">
+				<areaofeffect
+					targetselection="all"
+					targetscheme="ally_heroes"
+					radius="500"
+					effecttype=""
+					ignoreinvulnerable="true"
+				>
+					<applystate name="State_Pearl_Ability3_Ally" continuous="true" timeout="frametime" pushentity="true" />
+					<setcharges entity="stack_entity" a="var0" />
+					<setcharges entity="this_entity" a="var0" />
+				</areaofeffect>
+			</compare>
+			<else>
+				<applystate name="State_Pearl_Ability3_Ally" target="source_entity" continuous="true" timeout="frametime" pushentity="true" />
+				<setcharges entity="stack_entity" a="var0" />
+				<setcharges entity="this_entity" a="var0" />
+			</else>
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_Pearl.Alt3" 
+	    icon="../alt3/ability_03/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Pearl.Alt8" 
+	    icon="../alt8/ability_03/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Pearl.Alt10" 
+		icon="/heroes/pearl/alt10/ability_03/icon.tga"
+	/>
+	
+</ability>

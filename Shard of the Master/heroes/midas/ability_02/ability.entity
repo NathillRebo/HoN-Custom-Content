@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Midas2"
+	
+	icon="icon.tga"
+	
+	anim="ability_2"
+	casttime="250"
+	castactiontime="250"
+	casteffect="effects/cast.effect"
+	novoiceresponse="true"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	targetradius="200"
+	targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+	
+	manacost="110,120,130,140"
+	cooldowntime="12000"
+	range="1000"
+	
+	showlinecast="true"
+	linecastrange="-1"
+	linecastmaxrange="1000"
+	linecastwidth="200"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	showrangeandradiusintooltip="true"
+
+>
+	<modifier key="shardofthemaster_boost" modpriority="101"/>
+	
+	<onimpact>
+		<spawnunit name="Gadget_Midas_Ability2" target="source_position" pushentity="true" duration="-1"/>
+		<setproxy entity="this_entity" target="stack_entity" />
+		<applystate name="State_Midas_Ability2" target="this_owner_entity" proxy="stack_entity" duration="-1" />
+		<spawnprojectile name="Projectile_Midas_Ability2" source="source_entity" bind="stack_entity" bindturn="true" proxy="stack_entity" target="target_position" />
+		<spawnaffector name="Affector_Midas_Ability2" target="stack_entity" proxy="stack_entity" />
+	</onimpact>
+	
+	<modifier key="midas_ability3_Boosted" modpriority="90"
+		cooldowntime="10000"
+	/>
+	
+	<modifier key="Midas1" modpriority="95"
+		cooldowntime="10000"
+	/>
+	
+	<modifier key="Midas2" modpriority="95"
+		cooldowntime="9000"
+	/>
+	
+	<modifier key="Midas3" modpriority="95"
+		cooldowntime="8000"
+	/>
+	
+	<modifier key="Midas1b" modpriority="100"
+		cooldowntime="8000"
+	/>
+	
+	<modifier key="Midas2b" modpriority="100"
+		cooldowntime="7000"
+	/>
+	
+	<modifier key="Midas3b" modpriority="100"
+		cooldowntime="6000"
+	/>
+	
+	<altavatar key="Hero_Midas.Alt2"
+		casteffect="/heroes/midas/alt2/ability_02/effects/cast.effect"
+		icon="/heroes/midas/alt2/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Midas.Alt3"
+		casteffect="/heroes/midas/alt3/ability_02/effects/cast.effect"
+		icon="/heroes/midas/alt3/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Midas.Alt5"
+		casteffect="/heroes/midas/alt5/ability_02/effects/cast.effect"
+		icon="/heroes/midas/alt5/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Midas.Alt6"
+		casteffect="/heroes/midas/alt6/ability_02/effects/cast.effect"
+		icon="/heroes/midas/alt6/ability_02/icon.tga"
+	>
+		<modifier key="Alt6_Level_3" modpriority="2"
+			icon="/heroes/midas/alt6/ability_02/icon_b.tga"
+		/>
+		
+		<modifier key="Alt6_Level_6" modpriority="3"
+			icon="/heroes/midas/alt6/ability_02/icon.tga"
+		/>
+		
+		<modifier key="Alt6_Level_9" modpriority="4"
+			icon="/heroes/midas/alt6/ability_02/icon_b.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Midas.Alt7"
+		icon="/heroes/midas/alt7/ability_02/icon.tga"
+	/>
+
+	<altavatar key="Hero_Midas.Alt9"
+		casteffect="/heroes/midas/alt9/ability_02/effects/cast.effect"
+		icon="/heroes/midas/alt9/ability_02/icon.tga"
+	/>
+
+</ability>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Solstice2"
+
+	icon="icon.tga"
+	statuseffecttooltip="State_Solstice_Ability2_Day"
+	
+	anim="ability_2"
+	casttime="0"
+	castactiontime="0"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="self_position"
+	targetradius="700"
+	targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+
+	manacost="55,60,65,70"
+	cooldowntime="29000,26000,23000,20000" 
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact />
+	
+	<onframe>
+		<setaccumulator value="0" />
+		<hasmodifier name="Day_Solstice" entity="source_entity">
+			<changeaccumulator b="1" op="add" />
+		</hasmodifier>		
+		<hasmodifier name="Night_Solstice" entity="source_entity">
+			<changeaccumulator b="2" op="add" />
+		</hasmodifier>		
+		<hasmodifier name="shardofthemaster_boost" entity="source_entity">
+			<changeaccumulator b="4" op="add" />
+		</hasmodifier>	
+		<compare a="accumulator" b="6" op="ge">
+			<setactivemodifierkey name="Night_Solstice_Shard" entity="this_entity" />
+		</compare>
+		<else>
+			<compare a="accumulator" b="5" op="eq">
+				<setactivemodifierkey name="Day_Solstice_Shard" entity="this_entity" />
+			</compare>
+			<else>
+				<compare a="accumulator" b="2" op="eq">
+					<setactivemodifierkey name="Night_Solstice" entity="this_entity" />
+				</compare>
+				<else>
+					<setactivemodifierkey name="Day_Solstice" entity="this_entity" />
+				</else>
+			</else>
+		</else>
+	</onframe>
+	
+	<modifier key="Day_Solstice_Shard" modpriority="102"
+		statuseffecttooltip="State_Solstice_Ability2_Day"
+		icon="icon.tga"
+	>
+		<onimpact>
+			<applystate name="State_Solstice_Ability2_Day" duration="8000" target="source_entity" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Night_Solstice_Shard" modpriority="102"
+		statuseffecttooltip="State_Solstice_Ability2_Night"
+		icon="icon_b.tga"
+		actiontype="target_position"
+		range="2000"
+	>
+		<onimpact>
+			<applystate name="State_Solstice_Ability2_Night" duration="8000" target="source_entity" />
+			<spawnaffector name="Affector_Solstice_Ability2_Night" target="target_position" occlude="true" />
+			<spawnunit name="Gadget_Solstice_Ability2_Reveal_Night" target="target_position" lifetime="500" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Day_Solstice" modpriority="100"
+		statuseffecttooltip="State_Solstice_Ability2_Day"
+		icon="icon.tga"
+	>
+		<onimpact>
+			<applystate name="State_Solstice_Ability2_Day" duration="8000" target="source_entity" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Night_Solstice" modpriority="100"
+		statuseffecttooltip="State_Solstice_Ability2_Night"
+		icon="icon_b.tga"
+		actiontype="target_position"
+		range="2000"
+	>
+		<onimpact>
+			<applystate name="State_Solstice_Ability2_Night" duration="8000" target="source_entity" />
+			<spawnaffector name="Affector_Solstice_Ability2_Night" target="target_position" occlude="true" />
+			<spawnunit name="Gadget_Solstice_Ability2_Reveal_Night" target="target_position" lifetime="500" />
+		</onimpact>
+	</modifier>
+</ability>

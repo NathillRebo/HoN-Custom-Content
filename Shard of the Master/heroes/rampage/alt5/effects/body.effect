@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world">
+
+			<controller
+				bone="_bone_head"
+			>
+				<billboard
+					life="2000"
+					loop="true"
+					position="0 -15 4"
+					startcolor=".75 .2 .2"
+					midcolor=".5 .1 .1"
+					endcolor=".75 .2 .2"
+					material="/shared/effects/materials/glow_01.material"
+					scale=".5"
+					depthbias="-5"
+				/>
+				<billboard
+					life="2000"
+					loop="true"
+					position="0 -15 4"
+					startcolor=".3"
+					midcolor=".1"
+					endcolor=".3"
+					material="/shared/effects/materials/glow_01.material"
+					scale=".2"
+					depthbias="-5"
+				/>
+				<light
+					position="0 -15 4"
+					color="1 0 0"
+					falloffend="125"
+				/>
+			</controller>
+				
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

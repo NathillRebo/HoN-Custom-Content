@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Devourer_Ability4_Stage1"
+	
+	icon="icon.tga"
+	
+	modifierkey="devourerult_stage1_1,devourerult_stage2_1,devourerult_stage3_1"
+	modifierkey2="devourerult_stage1"
+>
+	<onframe />
+	
+	<modifier key="shardofthemaster_boost" modpriority="1"
+		strength="15"
+	/>
+	
+	<altavatar key="Hero_Devourer.Alt13"
+		icon="/heroes/Devourer/alt13/ability_04/icon.tga"
+	>
+		<modifier key="Night_Set_Devourer" modpriority="100"
+			icon="/heroes/Devourer/alt14/ability_04/icon.tga"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Devourer.Alt14"
+		icon="/heroes/Devourer/alt14/ability_04/icon.tga"
+	>
+		<modifier key="Night_Set_Devourer" modpriority="100"
+			icon="/heroes/Devourer/alt13/ability_04/icon.tga"
+		/>
+	</altavatar>
+
+</state>

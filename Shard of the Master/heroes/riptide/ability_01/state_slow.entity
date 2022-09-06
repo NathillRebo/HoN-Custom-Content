@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Riptide_Ability1_Slow"
+
+	icon="icon.tga"
+	passiveeffect="effects/slow.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	movespeedslow="0.5"
+	attackspeedslow="0.2"
+
+	negativeeffect="slowed"
+>
+
+	<altavatar key="Hero_Riptide.Alt"
+		icon="../alt/ability_01/icon.tga"
+		passiveeffect="../alt/ability_01/effects/slow.effect"
+	/>
+
+	<altavatar key="Hero_Riptide.Alt6"
+		passiveeffect="../alt6/ability_01/effects/slow.effect"
+	/>
+	
+	<altavatar key="Hero_Riptide.Alt8"
+		passiveeffect="../alt8/ability_01/effects/slow.effect"
+	/>
+
+</state>

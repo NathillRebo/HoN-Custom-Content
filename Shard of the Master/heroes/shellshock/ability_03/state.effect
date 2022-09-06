@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+		<modifier 
+			name="modifier0"
+			alpha="1"
+			color="5 3 1"
+		/>
+
+		<particlesystem name="system0" space="entity" scale="1">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="1"
+				sample="/shared/sounds/items/item_immunity.wav"
+			/>
+
+			<model
+				life="1000"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="1.01 1.74 2.14"
+				endcolor="0 0 0"
+				startscale="1"
+				midscale="1.25"
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell4.material"
+				startalpha="0"
+				endalpha="10"
+			/>
+			
+			<model
+				expirelife="300"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="1.01 1.74 2.14"
+				endcolor="0"
+				material="/shared/effects/materials/shell2.material"
+			/>			
+		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+
+	</thread>
+
+</effect>

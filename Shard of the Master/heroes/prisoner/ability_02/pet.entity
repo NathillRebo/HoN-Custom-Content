@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Prisoner_Ability2"
+
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="/heroes/prisoner/ability_02/effects/ball/model.mdf"
+	skin=""
+	
+	isunit="false"
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	canturn="1"
+	
+	preglobalscale="1.0"
+	modelscale="2.0"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="16"
+	isselectable="true"
+	iscontrollable="false"
+	selectionradius="40"
+	targetoffset="0 0 0"
+	
+	maxhealth="2"
+	armor="0"
+	healthregen="0"
+	nothreat="true"
+
+	movespeed="550"
+	turnrate="900"
+	turnsmoothing="0.05"
+
+	cancarryitems="false"
+	
+	deathtime="0"
+	corpsetime="0"
+
+	immunity="GadgetImmunity"
+	
+	canattack="false"
+	ismobile="true"
+	
+	attacktype="melee"
+	combattype="Hero"
+	
+	drawonmap="false"
+	
+	sightrangeday="200"
+	sightrangenight="200"
+	clearvision="true"
+	
+	treewalking="true"
+	cliffwalking="true"
+	unitwalking="true"
+	buildingwalking="true"
+	
+	tiltfactor="1"
+	
+	lifetime="3000,5000,7000,9000"
+	goldbountymin="50"
+	goldbountymax="50"
+	
+	unittype="PseudoPet"
+>
+	<modifier key="shardofthemaster_boost" movespeed="100"/>
+	
+	<onspawn>
+		<hasmodifier name="shardofthemaster_boost" target="source_entity">
+			<setactivemodifier key="shardofthemaster_boost"/>
+		</hasmodifier>
+		<order command="follow" force="true" forceduration="10000" source="this_entity" target="this_proxy_entity" />
+	</onspawn>
+	
+	<ondamaged>
+		<changedamage b="1" op="min"/>
+	</ondamaged>
+	
+	<onframe>
+		<distance target="this_entity" source="this_proxy_entity" />
+		<compare a="result" b="800" op="ge">
+			<teleport source="this_entity" target="this_proxy_position" interpolate="false" />
+		</compare>
+	</onframe>
+
+	<onkilled>
+		<expirestate name="State_Prisoner_Ability2" target="this_proxy_entity" />
+	</onkilled>
+	
+	<modifier key="rapidfire" modpriority="100"
+		healthregenreduction="1.0"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Prisoner.Alt"
+		model="/heroes/prisoner/alt/ability_02/effects/anchor/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Prisoner.Alt2"
+		model="/heroes/prisoner/alt2/ability_02/effects/weapon/model.mdf"
+	/>
+	
+	<altavatar key="Hero_Prisoner.Alt3"
+		model="/heroes/prisoner/alt3/ability_02/effects/rake/model.mdf"
+		modelscale="1.75"
+	/>
+	
+	<altavatar key="Hero_Prisoner.Alt4"
+		model="/heroes/prisoner/alt4/ability_02/effects/ball/model.mdf"
+		modelscale="2.25"
+	/>
+	
+	<altavatar key="Hero_Prisoner.Alt5"
+		model="/heroes/prisoner/alt5/ability_02/effects/ball/model.mdf"
+		modelscale="2.25"
+	/>
+	
+	<altavatar key="Hero_Prisoner.Alt6"
+		model="/heroes/prisoner/alt6/ability_02/effects/ball/model.mdf"
+		modelscale="2.25"
+	/>
+	
+	<altavatar key="Hero_Prisoner.Alt9"
+		model="/heroes/prisoner/alt9/ability_02/effects/ball/model.mdf"
+		modelscale="2"
+	/>
+</pet>

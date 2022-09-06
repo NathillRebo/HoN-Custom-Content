@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters vDiffuseColor="1" fSpecularLevel="1" fGlossiness="1132" fOpacity="1.0000" fReflect="1.0000">
+		<vec2 name="vUVScroll" value="0.0 -2.5" />
+		<vec2 name="vUVScale"	value="2.00 4.00" />
+	</parameters>
+	<phase name="shadow" vs="mesh_shadow" ps="mesh_shadow" srcblend="BLEND_ONE" dstblend="BLEND_ZERO" translucent="false" cull="CULL_BACK" alphatest="true" />
+	<phase name="depth" vs="mesh_depth" ps="mesh_depth" srcblend="BLEND_ONE" dstblend="BLEND_ZERO" translucent="false" cull="CULL_BACK" alphatest="true" />
+	<phase name="color" vs="mesh_depth" ps="mesh_depth" srcblend="BLEND_ONE" dstblend="BLEND_ZERO" translucent="true" cull="CULL_BACK" alphatest="true" layer="0" colorwrite="false" alphawrite="false" depthwrite="true">
+		<multipass vs="mesh_color_unit_scroll5" ps="mesh_color_unit_scroll5" srcblend="BLEND_SRC_ALPHA" dstblend="BLEND_ONE_MINUS_SRC_ALPHA" translucent="true" cull="CULL_BACK" alphawrite="true" alphatest="true" layer="0">
+			<sampler name="diffuse" texture="foam1.tga" repeat_u="true" repeat_v="true" scale_u="4.0000" scale_v="4.0000" fps="15" mipmaps="true" fullquality="false" nocompress="false" filtering="true" border="false" />
+		</multipass>
+	</phase>
+	<phase name="fade" vs="mesh_depth" ps="mesh_depth" srcblend="BLEND_ONE" dstblend="BLEND_ZERO" translucent="true" cull="CULL_NONE" alphatest="true" layer="0" colorwrite="false" alphawrite="false" depthwrite="true">
+		<multipass vs="mesh_color_unit_scroll5" ps="mesh_color_unit_scroll5" srcblend="BLEND_SRC_ALPHA" dstblend="BLEND_ONE_MINUS_SRC_ALPHA" translucent="true" cull="CULL_BACK" alphatest="false" layer="0">
+			<sampler name="diffuse" texture="foam1.tga" repeat_u="true" repeat_v="true" scale_u="1.0000" scale_v="1.0000" fps="15" mipmaps="true" fullquality="false" nocompress="false" filtering="true" border="false" />
+		</multipass>
+	</phase>
+</material>

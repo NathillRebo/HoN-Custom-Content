@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_WitchSlayer3"
+
+	statuseffecttooltip="State_WitchSlayer_Ability3"
+	icon="icon.tga"
+	
+	anim="ability_3"
+	casttime="850"
+	castactiontime="300"
+	channeltime="4000"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	ischanneling="true"
+	targetscheme="enemy_mana_units"
+	casteffecttype="Magic"
+	
+	manacost="10"
+	cooldowntime="17000,14000,11000,8000"
+	
+	range="700"
+	channelrange="900"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	targetpriorities="enemy_heroes"
+	
+>
+	<modifier key="shardofthemaster_boost" modpriority="100"/>
+	
+	<onchannelstart>
+		<compare a="target_mana" b="0" op="eq">
+			<order command="stop" source="source_entity" target="source_entity" />
+			<resetcooldown />
+			<givemana amount="10" target="source_entity" />
+		</compare>
+		<else>
+			<killillusions />
+			<applystate name="State_WitchSlayer_Ability3" target="target_entity" ischannel="true"/>
+			<applystate name="State_WitchSlayer_Ability3_Self" target="source_entity" ischannel="true"/>
+		</else>
+	</onchannelstart>
+	
+	<onimpact />
+	
+	<altavatar key="Hero_WitchSlayer.Alt8"
+		icon="../alt8/ability_03/icon.tga"
+	>
+		<modifier key="Alt8_Ability3_Upgrade" modpriority="99"
+			icon="../alt8/ability_03/icon_upgrade.tga"
+		/>
+	</altavatar>
+	
+	<modifier key="soccer" modpriority="150" 
+		baselevel="0"
+		maxlevel="1"
+		cooldowntime="15000"
+		manacost="10"
+		statuseffecttooltip="State_Soccer_WitchSlayer_Ability3"
+		
+	>
+		<onimpact />
+	</modifier>
+	
+</ability>

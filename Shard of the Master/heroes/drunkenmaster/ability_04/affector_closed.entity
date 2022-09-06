@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Drunkenmaster_Ability4_Closed"
+
+	lifetime="-1"
+	visibility="self"
+	
+	effect=""
+>
+	<onspawn>
+		<!--
+		<playeffect effect="effects/pressure_closed.effect" source="this_entity" target="this_proxy_entity" visibility="allies" />-->
+	</onspawn>
+	
+	<onframe>
+		<targettype type="alive" source="this_proxy_entity" target="this_proxy_entity">
+			<changeaccumulator entity="this_proxy_entity" b="0" op="add" />
+			<compare a="result" b="1" op="eq">
+				<delete target="this_entity" />
+			</compare>
+			<else>
+				<hasmodifier entity="this_proxy_entity" name="drunkenmaster_ability4_Closed" />
+				<else>
+					<delete target="this_entity" />
+				</else>
+			</else>
+		</targettype>
+		<else>
+			<delete target="this_entity" />
+		</else>
+	</onframe>
+</affector>

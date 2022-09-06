@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<modifier 
+			name="modifier0"
+			color="1.35 .85 .65"
+			expirelife="500"
+			material="material.material"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+					
+					<sound
+	            soundloop="true"
+                fadein="300"
+                fadeout="300"				
+				volume=".5"
+				sample="/heroes/drunkenmaster/alt6/sounds/ab_4_loop.wav"
+				linearfalloff="true"
+				falloffstart="0" 
+				falloffend="800" 
+			/>
+			
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				startalpha="1"
+				midalpha="1"
+				endalpha="1"
+				material="/shared/effects/materials/shell2.material"
+				midalphapos=".9"
+				startcolor="0 0 0"
+				endcolor=".55 .55 .35"
+				life="500"
+			/>
+
+			<model
+				delay="500"
+				parentmodel="true"
+				parentskeleton="true"
+				alpha="1"
+				material="/shared/effects/materials/shell2.material"
+				startcolor=".55 .55 .35"
+				endcolor="0 0 0"
+				expirelife="200"
+			/>
+
+			<template name="bubbles">
+				<simpleemitter
+					bone="{bone}"
+					depthbias="-25"
+					minparticlelife="500"
+					maxparticlelife="1000"
+					spawnrate="35"
+					minspeed="50"
+					maxspeed="100"
+					gravity="25"
+					direction="0 0 1"
+					minangle="-90"
+					maxangle="90"
+					drag="0.25"
+					material="/shared/effects/materials/bubble_add.material"
+					offsetsphere="50 50 50"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="100"
+						endsize="50"
+						startcolor=".75 .75 .5"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						minscale=".25"
+						maxscale=".5"
+					/>
+				
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="100"
+						endsize="50"
+						startcolor="1 1 .25"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						minscale=".25"
+						maxscale=".5"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="bubbles" bone="_bone_centerofchest" />
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="3"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 35"
+				offsetsphere="25 25 25"
+				material="/shared/effects/materials/heathaze.material"
+				inheritvelocity=".1"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="1 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="25" 
+					endsize="250"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="2"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 75"
+				offsetsphere="25 25 25"
+				material="/shared/effects/materials/heathaze.material"
+				inheritvelocity=".1"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="1 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="25" 
+					endsize="250"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+      	<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

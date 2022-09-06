@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rampage_Ability1_Warp"
+	
+	icon="icon.tga"
+	passiveeffect="effects/warp.effect"
+	ishidden="true"
+	
+	silenced="true"
+	disarmed="true"
+	perplexed="true"
+	
+	modifierkey="Rampage_Q_WarpState"
+>
+	<onframe>
+		<!-- Don't apply combat-related events via the projectile entity if Rampage is stopped before he reaches the target -->
+		<condition source="source_entity" target="source_entity" test="hastrait stunned or hastrait immobilized or hastrait restrained">
+			<expire />
+			<kill target="this_proxy_entity" source="" />
+		</condition>
+	</onframe>
+	
+	<altavatar key="Hero_Rampage.Alt" modpriority="1"
+		passiveeffect="../alt/ability_01/effects/warp.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt2" modpriority="1"
+		passiveeffect="../alt2/ability_01/effects/warp.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt3" modpriority="1"
+		passiveeffect="../alt3/ability_01/effects/warp.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_01/effects/warp.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt5" modpriority="90"
+		passiveeffect="../alt5/ability_01/effects/warp.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_01/effects/warp.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_01/effects/warp.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_01/effects/warp.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt9" modpriority="1"
+		passiveeffect="../alt9/ability_01/effects/warp.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt10" modpriority="1"
+		passiveeffect="../alt10/ability_01/effects/warp.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt13" modpriority="1"
+		passiveeffect="../alt13/ability_01/effects/warp.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt14" modpriority="1"
+	    icon="/heroes/Rampage/alt14/ability_01/icon.tga"
+		passiveeffect="../alt14/ability_01/effects/warp.effect"
+	>
+	</altavatar>
+
+</state>

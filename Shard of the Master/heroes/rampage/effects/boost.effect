@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2">
+			
+			
+
+			<twopointemitter
+				spawnrate="35"
+				minparticlelife="600"
+				maxparticlelife="1200"
+				bone_a="_bone_weapon2"
+				bone_b="_bone_weapon3"
+				offsetsphere="5"
+				maxspeed="50"
+				direction="0 0 0"
+				angle="90"
+				gravity="0"
+				material="/shared/effects/materials/flame.material"
+			>
+				<particle
+					maxangle="360"
+					minstartscale="10"
+					maxstartscale="15"
+					minendscale="5"
+					maxendscale="7"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startcolor="0"
+					midcolor=".75 .55 .2"
+					endcolor="0"
+					midcolorpos=".1"
+					anchor="1"
+				/>
+			</twopointemitter>				
+			
+			<twopointemitter
+				spawnrate="35"
+				minparticlelife="600"
+				maxparticlelife="1200"
+				bone_a="_bone_weapon2"
+				bone_b="_bone_weapon3"
+				offsetsphere="5"
+				maxspeed="50"
+				direction="0 0 0"
+				angle="90"
+				gravity="0"
+				material="/shared/effects/materials/soul_projectile2.material"
+			>
+				<particle
+					maxangle="360"
+					minstartscale="10"
+					maxstartscale="15"
+					minendscale="5"
+					maxendscale="7"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startcolor="0 0 0"
+					midcolor=".75 .35 0"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					anchor="1"
+				/>
+			</twopointemitter>				
+
+			<simpleemitter
+				bone="_bone_weapon2"
+				spawnrate="5"
+				minparticlelife="350"
+				maxparticlelife="700"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				offsetsphere="25 25 0"
+				material="/shared/effects/materials/heathaze.material"
+				inheritvelocity=".1"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="1 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="25" 
+					endsize="50"
+				/>
+			</simpleemitter>			
+			
+			<simpleemitter
+				bone="_bone_weapon3"
+				spawnrate="5"
+				minparticlelife="350"
+				maxparticlelife="700"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				offsetsphere="25 25 0"
+				material="/shared/effects/materials/heathaze.material"
+				inheritvelocity=".1"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="1 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="10" 
+					endsize="20"
+				/>
+			</simpleemitter>
+
+
+		<simpleemitter
+			particlelife="1000"
+			spawnrate="8"
+			offsetsphere="10 10 0"
+		>
+
+			<particle> 
+				<groundsprite
+					maxangle="360"
+					material="/shared/effects/materials/earth_cracks_reveal_add.material"
+					minlife="1000"
+					maxlife="1500"
+					color="1 .8 .6"
+					minyaw="0"
+					maxyaw="360"
+					startframe=".4"
+					midframe=".2"
+					endframe="1"
+					midframepos=".65"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".25"
+					minscale=".5"
+					maxscale="1"
+				/>
+			</particle>
+		</simpleemitter>
+		
+		<controller scale=".2">
+			<terrainemitter	
+				spawnrate="35"
+				particlelife="1000"
+				range="70"
+			>
+				<particle>
+					<simpleemitter
+						life="800"
+						bone="_bone_fx_02"
+						spawnrate="10"
+						particlelife="700"
+						gravity="-2"
+						speed="10"
+						drag="0.07"
+						material="/shared/effects/materials/phantom_smoke_04.material"
+						offsetsphere="20 20 10"
+					>
+						<particle 
+							minangle="0"
+							maxangle="360"
+							minanglespeed="-40"
+							maxanglespeed="40"
+							startcolor="1 .5 0"
+							endcolor="0 0 0"
+							startsize="15"
+							endsize="80"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						life="800"
+						spawnrate="10"
+						minparticlelife="350"
+						maxparticlelife="500"
+						gravity="-15"
+						speed="30"
+						drag=".003"
+						material="/shared/effects/materials/flame.material"
+						offsetsphere="10 10 0"
+						angle="90"
+					>
+						<particle 
+							minangle="-35"
+							maxangle="35"
+							startcolor="1 .5 .5"
+							endcolor="0"
+							startsize="0"
+							midsize="62"
+							endsize="5"
+						/>
+						<particle 
+							minangle="-35"
+							maxangle="35"
+							startcolor=".8 .4 0"
+							endcolor="0"
+							startsize="0"
+							midsize="62"
+							endsize="5"
+						/>
+					</simpleemitter>
+
+
+					<simpleemitter
+						life="800"
+						spawnrate="10"
+						minparticlelife="350"
+						maxparticlelife="500"
+						gravity="-15"
+						speed="30"
+						drag=".003"
+						material="/shared/effects/materials/flames_07.material"
+						offsetsphere="35 35 0"
+						angle="90"
+					>
+						<particle 
+							maxanglespeed="30"
+							maxangle="360"
+							color="1 .75 .5"
+							startsize="35"
+							endsize="50"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+						/>
+						<particle 
+							maxanglespeed="50"
+							maxangle="360"
+							color="1"
+							startsize="25"
+							endsize="40"
+							startalpha="0"
+							midalpha=".4"
+							endalpha="0"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						timenudge="-500"
+						life="700"
+						minparticlelife="750"
+						maxparticlelife="1000"
+						spawnrate="3"
+						gravity="-10"
+						minspeed="50"
+						maxspeed="150"
+						material="/shared/effects/materials/flare2.material"
+						offsetsphere="0 0 0"
+						angle="10"
+					>
+						<particle 
+							minanglespeed="-430"
+							maxanglespeed="430"
+							minangle="-360"
+							maxangle="360"
+							color="1 .5 .2"
+							minstartscale="0"
+							maxstartscale="5"
+							endsize="0"
+							endstickiness="0.8"
+						/>
+					</simpleemitter>
+
+						
+				</particle>
+					
+			</terrainemitter>
+		</controller>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

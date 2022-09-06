@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vanya_Ability2"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	movespeedslowstart="0.6"
+	movespeedslowmid="0.4"
+	movespeedslowend="0.0"
+	movespeedslowmidpos="0.33"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+	<onframe />
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onframe>
+			<areaofeffect
+				radius="250"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+				ignore="target_entity"
+			>
+				<damage effecttype="Magic DOT" amount="35" b="frametime" op="mult" target="target_entity" />
+			</areaofeffect>
+			<evaluate a="199" b="result" op="mult"/>
+			<evaluate a="result" b="frametime" op="mult"/>
+			<changeduration b="result" op="add" />
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_Vanya.set_ascension"
+		passiveeffect="/heroes/vanya/set_ascension/ability_2/effects/state.effect"
+	/>	
+	
+	<altavatar key="Hero_Vanya.Alt4"
+		passiveeffect="/heroes/vanya/alt4/ability_2/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Vanya.Alt5"
+		passiveeffect="/heroes/vanya/alt5/ability_2/effects/state.effect"
+		icon="/heroes/vanya/alt5/ability_2/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Vanya.Alt6"
+		passiveeffect="/heroes/vanya/alt6/ability_2/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Vanya.Alt7"
+		passiveeffect="/heroes/vanya/alt7/ability_2/effects/state.effect"
+	/>
+</state>

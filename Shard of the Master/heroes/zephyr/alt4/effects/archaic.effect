@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  useentityeffectscale="1" deferred="true" >
+	<definitions >
+		
+		<particlesystem name="system0" space="world" scale="1">
+			<template name="hands">
+				<controller bone="{bone}" scale="1.2">					
+					<template name="ball_of_fire">
+						<trailemitter
+							spawnrate="30"
+							particlelife="300"
+							texpostime="500"
+							texposscale="0.0"
+							texstretchscale=".4"
+							material="/shared/effects/materials/light_trail.material"
+							life="800"
+							offsetsphere="4"
+						>
+							<particle
+								startcolor="1 .5 0"
+								midcolor=".5 .5 0"
+								endcolor="0"
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".075"
+								startsize="3"
+								midsize="7"
+								endsize="3"
+								midsizepos="0.2"
+						 />
+						</trailemitter>
+					</template>
+					
+					<trackeremitter	
+						bone="{bone}"
+						position="{position}"
+						targetbone="{bone}"
+						targetposition="{position}"
+						inheritvelocity="1"
+						tracktype="distance"
+						trackspeed=".7" 
+						spawnrate="300"
+						particlelife="300"
+						offsetsphere="{offset}"
+						speed="100"
+						direction="0 0 1"
+					>
+						<particle 
+							startsize="4"
+							endsize="0"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".1"
+							maxangle="360"
+							minscale=".1"
+							maxscale=".6"
+							color=".2 .5 1"					
+							
+						>
+							<instance name="ball_of_fire"/>
+						</particle>
+					</trackeremitter>
+				</controller>
+			</template>
+			
+			<instance name="hands" bone="Bone005" position="0 0 0" offset="50 20 0"/>
+			<instance name="hands" bone="Bone007" position="0 0 0" offset="50 20 0"/>
+			<instance name="hands" bone="Bone008" position="0 0 0" offset="50 20 0"/>
+			<instance name="hands" bone="Bone006" position="0 0 0" offset="50 20 0"/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

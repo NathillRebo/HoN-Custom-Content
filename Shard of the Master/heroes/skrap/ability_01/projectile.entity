@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Skrap_Ability1"
+
+	lifetime="800"
+	useexactlifetime="true"
+	gravity="6000"
+	model="effects/model/model.mdf"
+	
+	modelscale="10"
+	
+	traileffect=""
+	impacteffect=""
+>
+	<onimpact>
+		<hasavatarkey name="Hero_Skrap.Alt3">
+			<playeffect effect="../alt3/ability_01/effects/impact.effect" source="target_position" target="" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<playeffect effect="effects/impact.effect" source="target_position" target="" occlude="true" />
+		</else>
+		<spawnunit name="Pet_Skrap_Ability1" target="target_position" owner="this_owner_entity" />
+		<areaofeffect
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			targetselection="all"
+			radius="250"
+			maxtotalimpacts=""
+			maximpactspertarget="1"
+		>
+			<damage amount="60,80,100,120" effecttype="Magic" />
+			<applystate name="State_Stunned" duration="100" />
+		</areaofeffect>
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onimpact>
+			<hasavatarkey name="Hero_Skrap.Alt3">
+				<playeffect effect="../alt3/ability_01/effects/impact.effect" source="target_position" target="" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<playeffect effect="effects/impact.effect" source="target_position" target="" occlude="true" />
+			</else>
+			<spawnunit name="Pet_Skrap_Ability1_Shard" target="target_position" owner="this_owner_entity" />
+			<areaofeffect
+				targetscheme="enemy_units"
+				effecttype="Magic"
+				targetselection="all"
+				radius="250"
+				maxtotalimpacts=""
+				maximpactspertarget="1"
+			>
+				<damage amount="60,80,100,120" effecttype="Magic" />
+				<applystate name="State_Stunned" duration="100" />
+			</areaofeffect>
+		</onimpact>
+	</modifier>
+
+	<altavatar key="Hero_Skrap.Alt"
+		model="../alt/ability_01/effects/model/model.mdf"
+	
+		traileffect=""
+		impacteffect=""
+
+		modelscale="9"
+	/>
+
+	<altavatar key="Hero_Skrap.Alt2"
+		model="../alt2/ability_01/effects/model/model.mdf"
+	
+		traileffect=""
+		impacteffect=""
+
+		modelscale="2.0"
+	/>
+	
+	<altavatar key="Hero_Skrap.Alt3"
+		model="../alt3/ability_01/effects/model/model.mdf"
+	
+		traileffect=""
+		impacteffect=""
+
+		modelscale="9"
+	/>
+	
+</projectile>

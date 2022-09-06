@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+  <definitions>
+    <particlesystem name="system0" space="world" scale="2">
+		
+			
+			<skeletonemitter
+				minparticlelife="400"
+				maxparticlelife="600"
+				spawnrate="30"
+				material="/shared/effects/materials/snowflake.material"
+				minspeed="5"
+				maxspeed="10"
+				drag="0.1"
+				gravity="5"
+				offsetsphere="20"
+			>
+				<particle
+					turn="1"
+					minscale="0.1"
+					maxscale="0.25"
+					color="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					size="10"
+				/>
+			</skeletonemitter>
+				
+			<simpleemitter
+				bone="_bone_origin"
+				gravity="-1"
+				spawnrate="10"
+				minparticlelife="500"
+				maxparticlelife="750"
+				offsetsphere="17 17 0"
+				expirelife="1000"
+				material="/shared/effects/materials/whitewater_02.material"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"		
+					startcolor="0 0 0"
+					midcolor=".5"
+					endcolor="0 0 0"
+					size="1"
+					minstartscale="4"
+					maxstartscale="6"
+					maxendscale="8"
+					minendscale="12"
+					startalpha="0"
+					midalpha="0.25"
+					midalphapos="0.2"
+					endalpha="0"
+				/>
+			</simpleemitter>
+		
+			<terrainemitter
+				minparticlelife="750"
+				maxparticlelife="1000"
+				spawnrate="10"
+				material="/shared/effects/materials/ice_reveal.material"
+				range="20"
+				depthbias="-5"
+			>
+				<particle
+					turn="1"
+					angle="180"
+					size="15"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".25"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					minscale="2"
+					maxscale="3"
+					startcolor="0"
+					midcolor=".5 .5 .75"
+					endcolor="0"
+					maxangle="360"
+					framespeed=".8"
+				/>
+			</terrainemitter>
+			
+			<terrainemitter
+				minparticlelife="500"
+				maxparticlelife="750"
+				spawnrate="5"
+				material="/shared/effects/materials/ice_reveal.material"
+				range="20"
+				depthbias="-5"
+			>
+				<particle
+					turn="1"
+					angle="180"
+					size="15"
+					midalphapos=".25"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					minscale="2"
+					maxscale="3"
+					startcolor="0"
+					midcolor=".5 .5 .6"
+					endcolor="0"
+					maxangle="360"
+					anchor="1"
+					framespeed=".5"
+				/>
+			</terrainemitter>
+			
+			<billboard
+				bone="_bone_origin"
+				lockup="1"
+				pitch="90"
+				expirelife="100"
+				material="/shared/effects/materials/whitedot_ground.material"
+				color=".5"
+				size="20"
+			/>
+			
+			
+		<controller bone="_bone_lefthand" >	
+			<orbiteremitter	
+				spawnrate="30"
+				particlelife="1400"			
+				origin="1.0 1 1" 
+				orbit="1 0 0" 
+				direction="1 0 0" 
+				offset="3.14 5 3"
+				position="2 0 0"
+				cylindrical="true" 
+				minspeed="1"
+				maxspeed="10"
+				acceleration="0"
+				gravity="10"
+				material="/shared/effects/materials/snowflake.material"
+				inheritvelocity="0"
+				directionalspace="local"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=" 1 1 1"								
+					size="1"
+					minscale=".75"
+					maxscale="1.5"
+					startalpha="0"
+					midalpha="0.8"
+					endalpha="0"
+					midalphapos="0.9"
+					anchor="0"
+					depthbias="0"							
+				/>
+			</orbiteremitter>
+			<orbiteremitter	
+				spawnrate="70"
+				particlelife="1400"			
+				origin="1.0 1 1" 
+				orbit="1 0 0" 
+				direction="1 0 0" 
+				offset="3.14 2 3"
+				cylindrical="true" 
+				minspeed="1"
+				maxspeed="10"
+				acceleration="0"
+				gravity="10"
+				material="/shared/effects/materials/snowflake.material"
+				inheritvelocity="0"
+				directionalspace="local"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=" 1 1 1"								
+					size="1"
+					minscale=".75"
+					maxscale="1.75"
+					startalpha="0"
+					midalpha="0.8"
+					endalpha="0"
+					midalphapos="0.9"
+					anchor="0"
+					depthbias="0"							
+				/>
+			</orbiteremitter>
+		</controller>
+		
+		<controller bone="_bone_righthand" >	
+			<orbiteremitter	
+				spawnrate="30"
+				particlelife="1400"			
+				origin="1.0 1 1" 
+				orbit="1 0 0" 
+				direction="1 0 0" 
+				offset="3.14 5 3"
+				position="2 0 0"
+				cylindrical="true" 
+				minspeed="1"
+				maxspeed="10"
+				acceleration="0"
+				gravity="10"
+				material="/shared/effects/materials/snowflake.material"
+				inheritvelocity="0"
+				directionalspace="local"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=" 1 1 1"								
+					size="1"
+					minscale=".75"
+					maxscale="1.75"
+					startalpha="0"
+					midalpha="0.8"
+					endalpha="0"
+					midalphapos="0.9"
+					anchor="0"
+					depthbias="0"							
+				/>
+			</orbiteremitter>
+			<orbiteremitter	
+				spawnrate="70"
+				particlelife="1400"			
+				origin="1.0 1 1" 
+				orbit="1 0 0" 
+				direction="1 0 0" 
+				offset="3.14 2 3"
+				cylindrical="true" 
+				minspeed="1"
+				maxspeed="10"
+				acceleration="0"
+				gravity="10"
+				material="/shared/effects/materials/snowflake.material"
+				inheritvelocity="0"
+				directionalspace="local"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					color=" 1 1 1"								
+					size="1"
+					minscale=".75"
+					maxscale="1.75"
+					startalpha="0"
+					midalpha="0.8"
+					endalpha="0"
+					midalphapos="0.9"
+					anchor="0"
+					depthbias="0"							
+				/>
+			</orbiteremitter>
+		</controller>
+    </particlesystem>
+  </definitions>
+  <thread>
+    <spawnparticlesystem particlesystem="system0" instance="instance0" />
+    <waitfordeath instance="instance0" />
+  </thread>
+</effect>

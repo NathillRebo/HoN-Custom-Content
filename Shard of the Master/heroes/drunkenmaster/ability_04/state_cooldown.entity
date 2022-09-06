@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Drunkenmaster_Ability4_Cooldown"
+	
+	serverentity="true"
+	effecttype=""
+	
+	modifierkey="drunken_R_cooldown"
+>	
+	
+</state>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rally_Shard"
+	
+	icon="icon.tga"
+	
+	passiveeffect="effects/state.effect"
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	healthregenpercharge="0.20"
+	manaregenpercharge="0.09"
+	
+	modifierkey="rally_shard"
+>
+	<onframe>
+		<evaluate a="1" b="target_health_percent" op="sub" />
+		<evaluate a="100" b="result" op="mult" />
+		<setvar0 a="result" />
+		<setcharges a="var0" />
+	</onframe>
+</state>

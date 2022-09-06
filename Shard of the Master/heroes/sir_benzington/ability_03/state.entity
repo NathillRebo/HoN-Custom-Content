@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_SirBenzington3_Shard"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	movespeedslow="1"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+	
+	<altavatar key="Hero_SirBenzington.Alt8"
+		icon="../alt8/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_SirBenzington.Alt9"
+		icon="../alt8/ability_02/icon.tga"
+	/>
+</state>

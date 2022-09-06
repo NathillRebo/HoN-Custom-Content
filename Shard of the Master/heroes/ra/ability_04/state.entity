@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ra_Ability4"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype=""
+	modifierkey="Raultform"
+>
+	<altavatar key="Hero_Ra.Alt" modpriority="1"
+		passiveeffect="effects/state_alt.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Ra.Alt2" modpriority="1"
+		passiveeffect="effects/state_alt2.effect"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Ra.Alt3" modpriority="1"
+		passiveeffect="effects/state_alt3.effect"
+	>
+		<modifier key="Alt3_Full_Armor" modpriority="1"
+			passiveeffect="effects/state_alt3.effect"
+		>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Ra.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt5" modpriority="1"
+		icon="../alt5/ability_04/icon.tga"
+		passiveeffect="../alt5/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt8" modpriority="1"
+		passiveeffect="../alt8/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt9" modpriority="1"
+		passiveeffect="../alt9/ability_04/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt10" modpriority="1"
+		passiveeffect="../alt10/ability_04/effects/state.effect"
+	/>
+	
+	<ondeath>
+		<expire />
+	</ondeath>
+	
+	<onattackingdamageevent>
+		<setvalue name="damage_attempted" a="damage_attempted" b="1.1,1.2,1.3" op="mult" />
+	</onattackingdamageevent>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">	
+		<onindirectkill propagatetoillusions="false" >
+			<targettype type="alive" target="source_entity">
+				<targettype type="hero">
+					<targettype type="enemy">
+						<targettype type="illusion" />
+						<else>               
+							<targettype type="mimic" />
+							<else> 
+								<targettype type="self" />
+								<else>
+									<targettype type="heropet" />
+									<else>
+										<pushability name="Ability_Ra4" />
+										<reducecooldown duration="50000" entity="stack_entity" />
+									</else>
+								</else>
+							</else>
+						</else>
+					</targettype>
+				</targettype>
+			</targettype>
+		</onindirectkill>
+		
+		<onkill propagatetoillusions="false" >
+			<targettype type="alive" target="source_entity">
+				<targettype type="hero">
+					<targettype type="enemy">
+						<targettype type="illusion" />
+						<else>               
+							<targettype type="mimic" />
+							<else> 
+								<targettype type="self" />
+								<else>
+									<targettype type="heropet" />
+									<else>
+										<pushability name="Ability_Ra4" />
+										<reducecooldown duration="50000" entity="stack_entity" />
+									</else>
+								</else>
+							</else>
+						</else>
+					</targettype>
+				</targettype>
+			</targettype>
+		</onkill>
+		
+		<onassist propagatetoillusions="false" >
+			<targettype type="alive" target="source_entity">
+				<targettype type="hero">
+					<targettype type="enemy">
+						<targettype type="illusion" />
+						<else>                
+							<targettype type="self" />
+							<else>
+								<targettype type="heropet" />
+								<else>
+									<pushability name="Ability_Ra4" />
+									<reducecooldown duration="50000" entity="stack_entity" />
+								</else>
+							</else>
+						</else>
+					</targettype>
+				</targettype>
+			</targettype>
+		</onassist>
+	</modifier>
+	
+</state>

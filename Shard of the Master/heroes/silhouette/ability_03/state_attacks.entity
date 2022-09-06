@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Silhouette_Ability3"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+
+	attackspeed="4.0"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<oninflict>
+		<setcharges a="2" />
+	</oninflict>
+	
+	<onrefresh>
+		<setcharges a="2" />
+	</onrefresh>
+
+	<onattackstart>
+		<setattackprojectile name="Projectile_SilhouetteAttack3" />
+	</onattackstart>
+	
+	<onattack>
+		<addcharges count="-1" />
+		<compare a="charges" b="0" op="eq">
+			<expire />
+		</compare>
+	</onattack>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onattack>
+			<split count="3" range="825" damagemult="0.8" targetscheme="visible_enemy_objects" fulldamageonmaintarget="true"/>
+			
+			<addcharges count="-1" />
+			<compare a="charges" b="0" op="eq">
+				<expire />
+			</compare>
+		</onattack>
+	</modifier>
+	
+	<altavatar key="Hero_Silhouette.Alt2" modpriority="1"
+		passiveeffect="/heroes/silhouette/alt2/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt5" modpriority="1"
+		passiveeffect="/heroes/silhouette/alt5/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt6" modpriority="1"
+		passiveeffect="/heroes/silhouette/alt6/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt7" modpriority="1"
+		passiveeffect="/heroes/silhouette/alt8/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt8" modpriority="1"
+		passiveeffect="/heroes/silhouette/alt8/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt10" modpriority="1"
+		passiveeffect="/heroes/silhouette/alt10/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt12" modpriority="1"
+	    icon="/heroes/silhouette/alt12/ability_03/icon.tga"
+		passiveeffect="/heroes/silhouette/alt12/ability_03/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Silhouette.Alt13" modpriority="1"
+		passiveeffect="/heroes/silhouette/alt13/ability_03/effects/state_self.effect"
+	/>
+	
+</state>

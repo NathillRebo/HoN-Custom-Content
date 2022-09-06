@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Riptide_Ability3"
+	
+	effecttype=""
+	icon="icon.tga"
+	passiveeffect=""
+
+	agility="20,30,40,50"
+	movespeed="15,30,45,60"
+	unitwalking="true"
+	
+	modifierkey="riptide_inwater"
+	
+	propagatetoillusions="true"
+>
+	
+	<oninflict>
+		<pushability name="Ability_Riptide3" />
+		<setproxy target="stack_entity" />
+		
+		<hasavatarkey name="Hero_Riptide.Alt4" >
+			<playeffect effect="../alt4/ability_03/effects/start.effect" source="source_entity" target="" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Riptide.Alt5" >
+				<playeffect effect="../alt4/ability_03/effects/start.effect" source="source_entity" target="" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Riptide.Alt6" >
+					<playeffect effect="../alt6/ability_03/effects/start.effect" source="source_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/start.effect" source="source_entity" target="" />
+				</else>
+			</else>
+		</else>
+	</oninflict>
+	
+	<onexpired>
+		<hasmodifier entity="target_entity" name="riptide_ult_active" />
+		<else>
+			<hasavatarkey name="Hero_Riptide.Alt4" >
+				<playeffect effect="../alt4/ability_03/effects/end.effect" source="source_entity" target="" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Riptide.Alt5" >
+					<playeffect effect="../alt4/ability_03/effects/end.effect" source="source_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Riptide.Alt6" >
+						<playeffect effect="../alt6/ability_03/effects/end.effect" source="source_entity" target="" />
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/end.effect" source="source_entity" target="" />
+					</else>
+				</else>
+			</else>
+		</else>
+	</onexpired>
+	
+	<onframe />
+	
+	<altavatar key="Hero_Riptide.Alt"
+		icon="../alt/ability_03/icon.tga"
+	/>
+	
+</state>

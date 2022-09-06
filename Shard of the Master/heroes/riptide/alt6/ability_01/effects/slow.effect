@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="slow" useentityeffectscale="1" deferred="true">
+	<definitions>
+	
+		<modifier
+			expirelife="500"
+			startcolor="3"
+			endcolor="1"
+		/> 
+		
+	<particlesystem name="system0" space="world" scale="1">
+	
+		<model
+			parentmodel="1"
+			parentskeleton="1"
+			expirelife="500"
+			startcolor=".5 .75 1"
+			endcolor="0"
+			material="/shared/effects/materials/shell_rim_white.material"
+		/>
+			
+			<skeletonemitter
+				minparticlelife="400"
+				maxparticlelife="600"
+				spawnrate="100"
+				material="/shared/effects/materials/snowflake.material"
+				minspeed="5"
+				maxspeed="10"
+				drag="0.02"
+				gravity="10"
+				offsetsphere="15"
+				inheritvelocity=".25"
+			>
+				<particle
+					turn="1"
+					size="20"
+					minscale="0.25"
+					maxscale="0.75"
+					color=".85 1 1"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</skeletonemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				minparticlelife="400"
+				maxparticlelife="600"
+				spawnrate="100"
+				material="/shared/effects/materials/snowflake.material"
+				minspeed="5"
+				maxspeed="10"
+				drag="0.02"
+				gravity="15"
+				offsetsphere="30"
+				inheritvelocity=".25"
+			>
+				<particle
+					turn="1"
+					size="20"
+					minscale="0.25"
+					maxscale="0.75"
+					color=".85 1 1"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			<!--
+			<simpleemitter
+				bone="_bone_centerofchest"
+				offsetsphere="10"
+				spawnrate="10"
+				particlelife="1000"
+			>
+				<particle
+					anchor="1"
+				>
+					<groundsprite
+						life="1000"
+						startalpha=".35"
+						midalpha=".35"
+						endalpha="0"
+						startsize="50"
+						endsize="100"
+						maxyaw="360"
+						startcolor=".4"
+						endcolor=".2"
+						material="/shared/effects/materials/puddle_02.material"
+					/>
+				</particle>
+			</simpleemitter>
+			-->
+			
+			<terrainemitter
+				minparticlelife="750"
+				maxparticlelife="1000"
+				spawnrate="10"
+				material="/shared/effects/materials/ice_reveal.material"
+				range="20"
+				depthbias="-5"
+			>
+				<particle
+					turn="1"
+					angle="180"
+					size="50"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".25"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					minscale="2"
+					maxscale="3"
+					startcolor="0"
+					midcolor=".5 .5 .75"
+					endcolor="0"
+					maxangle="360"
+					framespeed=".8"
+				/>
+			</terrainemitter>
+			
+			<terrainemitter
+				minparticlelife="500"
+				maxparticlelife="750"
+				spawnrate="5"
+				material="/shared/effects/materials/ice_reveal.material"
+				range="20"
+				depthbias="-5"
+			>
+				<particle
+					turn="1"
+					angle="180"
+					size="50"
+					midalphapos=".25"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					minscale="2"
+					maxscale="3"
+					startcolor="0"
+					midcolor=".5 .5 .6"
+					endcolor="0"
+					maxangle="360"
+					anchor="1"
+					framespeed=".5"
+				/>
+			</terrainemitter>
+			
+			<billboard
+				bone="_bone_origin"
+				lockup="1"
+				pitch="90"
+				expirelife="100"
+				material="/shared/effects/materials/whitedot_ground.material"
+				color=".5"
+				size="20"
+			/>
+			
+			
+	
+	</particlesystem>
+	</definitions>
+	<thread>
+		<spawnmodifier instance="instance0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

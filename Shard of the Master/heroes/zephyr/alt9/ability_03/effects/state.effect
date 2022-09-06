@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">	
+
+			<sound
+				soundloop="true"
+				fadein="300"
+				fadeout="700"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".25"
+				sample="/heroes/zephyr/ability_03/sounds/state.wav"
+			/>
+
+					<model
+						expirelife="400"
+						model="ball/model.mdf"
+						material="ball/rim_gradient.material"
+						startscale="1.3"
+						midscale="2"
+						endscale="1.3"
+						position="0.0 0.0 30.0"
+						directionalspace="local"
+						loop="true"
+						life="2500"
+						yawspeed="360"
+						startcolor=".2 .1 0"
+						midcolor=".3 .1 0"
+						endcolor=".2 .1 0"
+					/>
+
+				
+				
+			<orbiteremitter
+				spawnrate="2"
+				particlelife="2300"
+				origin="0 0 -80" 
+				orbit="-3 100 30" 
+				direction="0 0 1" 
+				offset="10 10 10"
+				cylindrical="true" 
+				material="/shared/effects/materials/card_soccer.material"
+			>
+				<particle 
+					minyaw="0"
+					maxyaw="360"
+					minyawspeed="-1000"
+					maxyawspeed="1000" 	
+
+					minpitch="0"
+					maxpitch="360"
+					minpitchspeed="-1000"
+					maxpitchspeed="1000"
+					
+					minroll="0"
+					maxroll="360"
+					minrollspeed="-1000"
+					maxrollspeed="1000"
+					
+					color=".75 0 0"
+					
+					midcolorpos=".5" 	   
+						   
+					size="10"
+					   
+					startalpha="1"
+					
+					endalpha="0"
+					
+					lockup="1"
+					lockright="1"
+					
+					
+				/>
+				
+				<particle 
+					minyaw="0"
+					maxyaw="360"
+					minyawspeed="-1000"
+					maxyawspeed="1000" 	
+
+					minpitch="0"
+					maxpitch="360"
+					minpitchspeed="-1000"
+					maxpitchspeed="1000"
+					
+					minroll="0"
+					maxroll="360"
+					minrollspeed="-1000"
+					maxrollspeed="1000"
+					
+					color=".75 .75 0"	   
+						   
+					size="15"
+					   
+					startalpha="1"
+					endalpha="0"
+					
+					lockup="1"
+					lockright="1"
+				/>
+			</orbiteremitter>
+			
+				<billboard	
+					expirelife="300"
+					material="/shared/effects/materials/twirl_03.material"
+					position="0 0 50"
+					startsize="200"
+					midsize="50"
+					endsize="200"
+					roll="105"
+					rollspeed="360"
+					startcolor="0"
+					midcolor=".325 .25 .2"
+					endcolor="0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					life="3000"
+					loop="true"
+				/>	
+				<billboard	
+					expirelife="300"
+					material="/shared/effects/materials/twirl_03.material"
+					position="0 0 80"
+					startsize="200"
+					midsize="100"
+					endsize="200"
+					roll="105"
+					rollspeed="360"
+					startcolor="0"
+					midcolor=".325 .25 .2"
+					endcolor="0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					life="3000"
+					loop="true"
+				/>	
+
+			<billboard	
+					expirelife="300"					
+					material="/shared/effects/materials/twirl_03.material"
+					position="0 0 30"
+					startsize="200"
+					midsize="150"
+					endsize="200"
+					roll="105"
+					rollspeed="360"
+					startcolor="0"
+					midcolor=".325 .25 .2"
+					endcolor="0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					life="3000"
+					loop="true"
+				/>	
+			
+					
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

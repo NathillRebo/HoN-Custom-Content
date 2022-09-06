@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+			<controller
+				position="0 1 0"
+				lookat="true"
+				lookatowner="target"
+			>
+				<billboard
+					expirelife="500"
+					position="0 50 100"
+					material="/shared/effects/materials/whitedot_blend.material"
+					directionalspace="local"
+					depthbias="0"
+					height="100"
+					width="25"
+					flare="1"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					color="0"
+					startalpha=".75"
+					endalpha="0"
+				/>
+				<billboard
+					expirelife="500"
+					position="0 50 100"
+					material="/shared/effects/materials/whitedot.material"
+					directionalspace="local"
+					depthbias="0"
+					height="100"
+					width="10"
+					flare="1"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					startcolor=".75 0 0"
+					endcolor="0"
+				/>
+				<template name="charge_arrow">
+					<billboard
+						delay="{delay}"
+						life="1250"
+						loop="true"
+						position="{position}"
+						material="/shared/effects/materials/arrow_head.material"
+						directionalspace="local"
+						depthbias="0"
+						size="150"
+						scale="{scale}"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+						startcolor="0"
+						midcolor="{color}"
+						endcolor="-0.5"
+						midcolorpos=".2"
+					/>
+
+				</template>
+				<instance name="charge_arrow" delay="0" position="0 120 100" color=".75 0 0" scale=".175" />
+				<instance name="charge_arrow" delay="250" position="0 90 100" color=".5 0 0" scale=".225" />
+				<instance name="charge_arrow" delay="500" position="0 60 100" color="0 0 0" scale=".3" />
+				
+				<billboard
+					size="150"
+					expirelife="500"
+					position="0 50 100"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="-10"
+					directionalspace="local"
+					startcolor=".25 0 0"
+					endcolor="0"
+				/>
+				
+				<template name="target_arrow">
+					<billboard
+						life="1250"
+						loop="true"
+						delay="{delay}"
+						size="{size}"
+						position="0 50 100"
+						material="/shared/effects/materials/arrows.material"
+						lockup="true"
+						lockright="true"
+						directionalspace="local"
+						startcolor="-1"
+						midcolor=".5 0 0"
+						endcolor="-1"
+					/>
+				</template>
+				<instance name="target_arrow" size="75" delay="-500" />
+				<instance name="target_arrow" size="50" delay="-250" />
+				<instance name="target_arrow" size="25" delay="0" />
+				<instance name="target_arrow" size="10" delay="250" />
+			</controller>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

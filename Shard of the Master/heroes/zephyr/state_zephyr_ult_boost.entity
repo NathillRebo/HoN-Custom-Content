@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Zephyr_Ult_Boost"
+
+	icon=""
+	passiveeffect="effects/boost.effect"
+	
+	ishidden="true"
+	
+	effecttype=""
+>
+
+	<modifier key="iamsheeped" modpriority="1000" passiveeffect=""/>	
+	
+	<altavatar key="Hero_Zephyr.Alt" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>	
+	
+	<altavatar key="Hero_Zephyr.Alt2" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>	
+
+	<altavatar key="Hero_Zephyr.Alt3" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt4" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_Zephyr.Alt5" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>	
+	
+	<altavatar key="Hero_Zephyr.Alt6" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>	
+	
+	<altavatar key="Hero_Zephyr.Alt7" modpriority="90"
+		passiveeffect="alt7/effects/boost.effect"
+	/>		
+	
+	<altavatar key="Hero_Zephyr.Alt8" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>		
+	
+	<altavatar key="Hero_Zephyr.Alt9" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>		
+	
+	<altavatar key="Hero_Zephyr.pog_skin" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>		
+	
+	<altavatar key="Hero_Zephyr.pog_skin2" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>	
+	
+</state>

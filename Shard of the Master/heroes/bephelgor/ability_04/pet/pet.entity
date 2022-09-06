@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Bephelgor_Ability4"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect="effects/spawn.effect"
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1.405"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="32"
+	targetoffset="0 0 0"
+
+	movespeed="400"
+	turnrate="450"
+	turnsmoothing="0.05"
+	isselectable="true"
+	iscontrollable="false"
+
+	maxhealth="300,450,600"
+	healthregen="0.25"
+	immunity="BossImmunity"
+	maxmana="0"
+	manaregen="0"
+
+	armor="0"
+	magicarmor="0"
+
+	cancarryitems="false"
+	inventory0=""
+	inventory1=""
+	inventory2=""
+	inventory3=""
+
+	attackduration="1000"
+	attackactiontime="350"
+	attackcooldown="1250"
+	attackdamagemin="25,45,85"
+	attackdamagemax="30,50,90"
+	attacknumanims="2"
+	attackoffset="0 60 100"
+	attackprojectile=""
+	attackrange="100"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Melee"
+
+	aggrorange="600"
+	sightrangeday="1200"
+	sightrangenight="800"
+	
+	goldbountymin="0"
+	goldbountymax="0"
+	experiencebounty="0"
+	deniable="true"
+	
+	lifetime="8000"
+	
+	unittype="BephelgorMinion"
+
+	corpsetime="0"
+	corpsefadetime="0"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+	<ondeath>
+		<spawnaffector name="Affector_Bephelgor_Ability4_Pet_Explode" source="this_owner_entity" owner="this_owner_entity" inflictor="this_owner_entity" target="source_entity" />
+		
+		<hasavatarkey name="Hero_Bephelgor.Alt2">
+			<playeffect effect="../../alt2/ability_04/pet/effects/explosion.effect" target="source_entity" source="source_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Bephelgor.Alt3">
+				<playeffect effect="../../alt3/ability_04/pet/effects/explosion.effect" target="source_entity" source="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Bephelgor.Alt5">
+					<playeffect effect="../../alt5/ability_04/pet/effects/explosion.effect" target="source_entity" source="source_entity" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/explosion.effect" target="source_entity" source="source_entity" />
+				</else>
+			</else>
+		</else>
+	</ondeath>
+	
+	<onexpired>
+		<playeffect effect="effects/explosion.effect" target="source_entity" source="source_entity" />
+		<spawnaffector name="Affector_Bephelgor_Ability4_Pet_Explode" source="this_owner_entity" owner="this_owner_entity" inflictor="this_owner_entity" target="source_entity" />
+	</onexpired>
+	
+	<altavatar key="Hero_Bephelgor.Alt2"
+		model="../../alt2/ability_04/pet/model.mdf"
+		icon="../../alt2/ability_04/pet/icon.tga"
+		portrait="../../alt2/ability_04/pet/icon.tga"
+		preglobalscale="1.7"
+		
+		passiveeffect="../../alt2/ability_04/pet/effects/body.effect"
+		spawneffect="../../alt2/ability_04/pet/effects/spawn.effect"
+		attackimpacteffect="../../alt2/ability_04/pet/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Bephelgor.Alt3"
+		model="../../alt3/ability_04/pet/model.mdf"
+		icon="../../alt3/ability_04/pet/icon.tga"
+		portrait="../../alt3/ability_04/pet/icon.tga"
+		preglobalscale="1.55"
+		
+		passiveeffect="../../alt3/ability_04/pet/effects/body.effect"
+		spawneffect="../../alt3/ability_04/pet/effects/spawn.effect"
+		attackimpacteffect="../../alt3/ability_04/pet/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Bephelgor.Alt4"
+		model="../../alt4/ability_04/pet/model.mdf"
+		preglobalscale="2.0"
+	/>
+	
+	<altavatar key="Hero_Bephelgor.Alt5"
+		model="../../alt5/ability_04/pet/model.mdf"
+		preglobalscale="3"
+		
+		spawneffect="../../alt5/ability_03/pet/effects/spawn.effect"
+	/>
+</pet>

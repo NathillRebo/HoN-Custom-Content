@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+	name="State_Berzerker_Ability2_Debuff" 
+
+	icon="icon.tga" 
+	passiveeffect="effects/marked.effect" 
+
+	ishidden="false"
+	effecttype=""
+	
+	revealed="true"
+	sighted="true"
+>
+	<ondeath>
+		<targettype type="heropet" target="source_entity" />
+		<else>
+			<pushability name="Ability_Berzerker1" source="this_inflictor_entity" />
+			<reducecooldown duration="20000" entity="stack_entity" />
+			<pushability name="Ability_Berzerker2" source="this_inflictor_entity" />
+			<reducecooldown duration="20000" entity="stack_entity" />
+			
+			<expirestate name="State_Berzerker_Ability2" target="this_inflictor_entity" />
+			<expirestate name="State_Berzerker_Ability2_Buff" target="this_inflictor_entity" />
+			<applystate name="State_Berzerker_Ability2_Buff" target="this_inflictor_entity" continuous="true" timeout="1500" />
+		</else>
+	</ondeath>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<ondeath>
+			<targettype type="heropet" target="source_entity" />
+			<else>
+				<pushability name="Ability_Berzerker1" source="this_inflictor_entity" />
+				<reducecooldown duration="20000" entity="stack_entity" />
+				<pushability name="Ability_Berzerker2" source="this_inflictor_entity" />
+				<reducecooldown duration="20000" entity="stack_entity" />
+				
+				<expirestate name="State_Berzerker_Ability2" target="this_inflictor_entity" />
+				<expirestate name="State_Berzerker_Ability2_Buff" target="this_inflictor_entity" />
+				<applystate name="State_Berzerker_Ability2_Buff" target="this_inflictor_entity" continuous="true" timeout="1500" />
+				
+				<evaluate a="target_maxhealth" b="target_health" op="sub"/>
+				<evaluate a="0.3347" b="result" op="mult"/>
+				<heal a="result" />
+			</else>
+		</ondeath>
+	</modifier>
+
+	<aura
+		gadget="Gadget_Berzerker_Ability2_Sight"
+		radius="0"
+		targetscheme="self"
+	/>
+	
+	<modifier key="iamsheeped" modpriority="1"
+		passiveeffect=""
+	/>
+
+	<altavatar key="Hero_Berzerker.Alt"
+		passiveeffect="/heroes/berzerker/alt/ability_03/effects/marked.effect" 
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt2"
+		passiveeffect="/heroes/berzerker/alt2/ability_03/effects/marked.effect" 
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt3"
+		passiveeffect="/heroes/berzerker/alt3/ability_03/effects/marked.effect" 
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt4"
+		passiveeffect="/heroes/berzerker/alt4/ability_03/effects/marked.effect" 
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt5"
+		passiveeffect="/heroes/berzerker/alt5/ability_03/effects/marked.effect" 
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt6"
+		passiveeffect="/heroes/berzerker/alt6/ability_03/effects/marked.effect" 
+	>
+		<modifier key="insanitarius_on" modpriority="99"
+			passiveeffect="/heroes/berzerker/alt6/ability_03/insanitarius/effects/marked.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Berzerker.Alt7"
+		passiveeffect="/heroes/berzerker/alt7/ability_03/effects/marked.effect" 
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt8"
+		passiveeffect="/heroes/berzerker/alt8/ability_03/effects/marked.effect" 
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt10"
+		icon="../alt11/ability_03/icon.tga" 
+		passiveeffect="/heroes/berzerker/alt10/ability_03/effects/marked.effect" 
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt11"
+		icon="../alt11/ability_03/icon.tga" 
+		passiveeffect="/heroes/berzerker/alt10/ability_03/effects/marked_alt11.effect" 
+	/>
+	
+	<altavatar key="Hero_Berzerker.Alt12"
+	    icon="../alt12/ability_03/icon.tga" 
+		passiveeffect="/heroes/berzerker/alt12/ability_02/effects/marked.effect" 
+	/>	
+</state>  

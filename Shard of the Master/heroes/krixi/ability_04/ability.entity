@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Krixi4"
+
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="1000"
+	castactiontime="500"
+	casteffect="effects/ability_04.effect"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_self"
+	targetscheme="visible_enemy_units"
+	targetradius="700"
+	casteffecttype="Magic"
+	
+	manacost="150,200,250"
+	cooldowntime="160000,140000,120000"
+>
+	<onimpact>
+		<spawnaffector name="Affector_Krixi_Ability4" target="source_entity" />
+		<applystate name="State_Krixi_Ability4" target="source_entity" duration="2400,4200,6000" />
+	</onimpact>
+	
+	<modifier 
+		key="ult_boost" 
+		modpriority="102"
+		displayname="true"
+		cooldowntime="90000"
+	>
+		<onimpact>
+			<spawnaffector name="Affector_Krixi_Ability4" target="source_entity" />
+			<applystate name="State_Krixi_Ability4" target="source_entity" duration="2400,5000,7700" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Krixi.Alt2" modpriority="100"
+	    casteffect="../alt2/ability_04/effects/ability_04.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt3" modpriority="100"
+	    casteffect="../alt3/ability_04/effects/ability_04.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt4" modpriority="100"
+	    casteffect="../alt4/ability_04/effects/ability_04.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt5" modpriority="100"
+	    casteffect="../alt5/ability_04/effects/ability_04.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt6" modpriority="100"
+	    casteffect="../alt6/ability_04/effects/ability_04.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt7" modpriority="100"
+	    casteffect="../alt7/ability_04/effects/ability_04.effect"
+	/>
+	
+	<altavatar key="Hero_Krixi.Alt8" modpriority="100"
+	    icon="../alt8/ability_04/icon.tga"
+	    casteffect="../alt8/ability_04/ability_04.effect"
+	>
+		<modifier key="mastery_silver" modpriority="101"
+			 casteffect="../alt8/silver/ability_04/ability_04.effect"
+		/>
+		<modifier key="mastery_gold" modpriority="101"
+			 casteffect="../alt8/gold/ability_04/ability_04.effect"
+		/>
+		<modifier key="mastery_purple" modpriority="101"
+			 casteffect="../alt8/purple/ability_04/ability_04.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Krixi.Alt9" modpriority="100"
+	    icon="../alt9/ability_04/icon.tga"
+	    casteffect="../alt9/ability_04/effects/ability_04.effect"
+	/>
+</ability>

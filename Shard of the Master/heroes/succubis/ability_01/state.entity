@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Succubis_Ability1"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	displaylevel="true"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+>
+	<onattackingdamageevent>
+		<!-- Damage reduction of {26,34,42,50}% -->
+		<setvalue name="damage_attempted" a="damage_attempted" b="0.74,0.66,0.58,0.5" op="mult" />
+	</onattackingdamageevent>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onattackingdamageevent>
+			<setvar0 a="damage_attempted" b="0.16" op="mult"/>
+			<heal a="var0" target="this_inflictor_entity"/>
+			<!-- Damage reduction of {26,34,42,50}% -->
+			<setvalue name="damage_attempted" a="damage_attempted" b="0.74,0.66,0.58,0.5" op="mult" />
+		</onattackingdamageevent>
+	</modifier>
+	
+	<altavatar key="Hero_Succubis.Alt2" modpriority="1"
+		icon="/heroes/succubis/alt2/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Succubis.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Succubis.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Succubis.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_01/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Succubis.Alt7" modpriority="1"
+		passiveeffect="../alt7/ability_01/effects/state.effect"
+	/>
+	
+</state>

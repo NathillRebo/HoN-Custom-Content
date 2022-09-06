@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1" deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<template name="tireprints">
+			
+			<simpleemitter
+				bone="{bone}"			
+				spawnrate="20"
+				particlelife="1750"
+				gravity="0"
+				speed="1"
+				angle="0"
+				direction="0 1 0"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				depthbias="-100"
+				
+			>
+				<particle turn="1">	
+					<groundsprite	
+						life="1000"
+						material="/shared/effects/materials/tire_tracks.material"
+						width="35"
+						height="20"
+						yaw="90"
+						color="1 1 1"
+						startalpha=".75"
+						midalpha=".75"
+						endalpha="0"
+						position="0 0 0"
+						directionalspace="local"
+					/>	
+				</particle>
+			</simpleemitter>
+			</template>
+			
+			<instance name="tireprints" bone="_bone_origin"/>
+
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1"/>
+		<waitfordeath instance="instance0" />
+	
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

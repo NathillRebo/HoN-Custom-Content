@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Rampage_Ability2_Slow"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	movespeed="-35,-50,-65,-80"
+
+	negativeeffect="slowed"
+
+	effecttype="StatusDebuff"
+>
+	<onframe />
+	
+	<altavatar key="Hero_Rampage.Alt14"
+		icon="/heroes/Rampage/alt14/ability_02/icon.tga"
+	>
+	</altavatar>
+	
+</state>

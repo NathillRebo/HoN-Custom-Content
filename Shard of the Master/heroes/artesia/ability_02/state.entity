@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Artesia_Ability2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	allowtransfer="true"
+	effecttype=""
+	modifierkey="artesia_Dance"
+	
+	unitwalking="true"
+	
+	disarmed="true"
+>	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		movespeedmultiplier="0.15"
+		armor="3"
+		magicarmor="3"
+	/>
+	<aura
+		gadget="Gadget_Artesia_Ability2"
+		radius="0"
+		targetscheme="self"
+	/>
+	
+	<onframe>
+		<targettype type="stunned">
+			<expire />
+		</targettype>
+		<targettype type="silenced">
+			<expire />
+		</targettype>
+	</onframe>
+
+	<onexpired>
+		<expirestate name="State_Artesia_Ability2_Bolts" target="this_owner_entity" />
+		<playanim name="idle" source="this_owner_entity" target="this_owner_entity" />
+		<hidechannelbar toolname="Ability_Artesia2" />
+		<resetcooldown entity="this_proxy_entity" />
+		<startcooldown entity="this_proxy_entity" />
+		<setactivemodifierkey entity="this_proxy_entity" name="" />
+	</onexpired>
+	
+	<altavatar key="Hero_Artesia.Alt3"
+		passiveeffect="../alt3/ability_02/effects/state.effect"
+	>
+		<modifier key="artesia_Mode2" modpriority="101"
+			passiveeffect="../alt3/ability_02/effects/state_heal.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Artesia.Alt4" modpriority="100"
+		icon="../alt4/ability_02/icon.tga"
+		passiveeffect="../alt4/ability_02/effects/state.effect"
+	>
+		<modifier key="artesia_Mode2" modpriority="101"
+			passiveeffect="../alt4/ability_02/effects/state_heal.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Artesia.Alt5" modpriority="100"
+		icon="../alt4/ability_02/icon.tga"
+		passiveeffect="../alt5/ability_02/effects/state.effect"
+	>
+		<modifier key="artesia_Mode2" modpriority="101"
+			passiveeffect="../alt5/ability_02/effects/state_heal.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Artesia.Alt6" modpriority="100"
+		passiveeffect="../alt6/ability_02/effects/state.effect"
+	>
+		<modifier key="artesia_Mode2" modpriority="101"
+			passiveeffect="../alt6/ability_02/effects/state_heal.effect"
+		/>
+	</altavatar>
+	
+	<modifier key="artesia_Mode2" modpriority="101"
+		passiveeffect="effects/state_heal.effect"
+	/>
+</state>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bephelgor_Ability4_Aura"
+
+	icon="icon.tga"
+	serverentity="true"
+>
+
+	<onactivatepreimpact>
+		<hasmodifier entity="this_inflictor_entity" name="Balphagore_ult_notready">
+			<setvar0 a="combat_manacost" b="20" op="mult" />
+			<reducecooldown entity="this_spawner_entity" duration="var0" />
+		</hasmodifier>
+		<else>
+			<setvar0 a="combat_manacost" b="source_maxmana" op="div" />
+			<setvar0 a="var0" b="0.5" op="mult" />
+			<setvar0 a="var0" b="100" op="mult" />
+			<compare a="result" b="1" op="gt">
+				<spawnprojectile name="Projectile_Bephelgor_Ability4_Manaleech" source="this_owner_entity" target="this_inflictor_entity" noresponse="true" />
+			</compare>
+			<addcharges count="var0" entity="this_spawner_entity" />
+			<starttimer duration="30000" entity="this_spawner_entity" />
+			<expirestate name="State_Bephelgor_Ability4_Removecharges" target="this_inflictor_entity" />
+		</else>
+	</onactivatepreimpact>
+	
+	<altavatar key="Hero_Bephelgor.Alt4"
+		icon="../alt4/ability_04/icon.tga"
+	/>
+</state>

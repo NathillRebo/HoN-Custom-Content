@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="default_1.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model" >
+
+	<anim name="idle" clip="clips/default_1.clip" loop="true" blendtime="500">
+		<startevent cmd="StopEffect 1"/>
+		<startevent cmd="StopEffect 2"/>
+	</anim>
+	
+	<anim name="portrait" clip="clips/portrait.clip" loop="true" fps="15"/> 
+	
+	<anim name="item_1" clip="clips/item_1.clip"/>
+
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="30"/>
+
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="20" loop="true">
+		<startevent cmd="StartEffect effects/body.effect 1"/>
+		<frameevent frame="7" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2500 0.3"/>
+		<frameevent frame="7" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="22" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2500 0.3"/>
+		<frameevent frame="22" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="37" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2500 0.3"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="52" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2500 0.3"/>
+		<frameevent frame="52" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		
+		<frameevent frame="14" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="27" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="43" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="58" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+
+		<frameevent frame="7" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="14" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="22" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="27" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="43" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="52" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="58" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="ability_4_run" clip="clips/ability_4_run.clip"  loop="true">
+		<startevent cmd="StartEffect effects/body.effect 1"/>
+
+		<frameevent frame="3" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2500 0.3"/>
+		<frameevent frame="3" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2500 0.3"/>
+		<frameevent frame="6" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+
+		<frameevent frame="15" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 0 2500 0.3"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+
+		<frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="8" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="6" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="11" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="20" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="taunt_1" clip="clips/taunt_1.clip"/>
+
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="-1">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_foley.wav 400 2000 1"/>
+		<frameevent frame="27" cmd="PlaySoundLinear /shared/sounds/footsteps/giant_%.wav 400 2500 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_grunt.wav 400 2000 1"/>
+		<startevent cmd="StopEffect 1"/>
+	</anim>
+
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="27">
+		<frameevent frame="6" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="24">
+		<frameevent frame="9" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="10" cmd="PlaySoundLinear sounds/attack_grunt_%.wav 400 2000 1"/>
+	</anim>
+
+	<anim name="ability_1" clip="clips/ability_1.clip">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/beast_grunt_1.wav 400 2000 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/vox_1.wav 400 2000 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/vox_1.wav 400 2000 .5"/>
+	</anim>
+
+	<anim name="ability_3" clip="clips/ability_3.clip" fps="25">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/beast_grunt_2.wav 400 2000 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/vox_3_%.wav 400 2000 1"/>
+	</anim>
+	
+	<anim name="ability_4" clip="clips/ability_1.clip" fps="30">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/vox_4.wav 400 2500 1"/>
+		<frameevent frame="10" cmd="StartEffect ability_04/effects/cast2.effect"/>
+	</anim>
+
+</model>

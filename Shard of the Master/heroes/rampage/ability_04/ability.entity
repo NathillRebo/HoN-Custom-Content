@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Rampage4"
+
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="470"
+	castactiontime="470"
+	casteffect="effects/vocal.effect"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	targetscheme="enemy_heroes"
+	casteffecttype="Physical Push"
+	novoiceresponse="true"
+	
+	range="200"
+	manacost="150,200,250"
+	cooldowntime="100000,85000,70000"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+>
+	<onframe />
+
+	<onimpact>
+		<unbind />
+		<applystate name="State_Rampage_Ability4" inflictor="source_entity" target="target_entity" duration="2500,3000,3500" pushentity="true" />
+		<applystate name="State_Rampage_Ability4_Self" target="this_owner_entity" duration="2500,3000,3500" />
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		range="250"
+		targetradius="275"
+		targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+	>
+		<onimpact>
+			<areaofeffect
+				radius="275"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Physical Push"
+			>
+				<unbind />
+				<applystate name="State_Rampage_Ability4" inflictor="source_entity" target="target_entity" duration="2500,3000,3500" pushentity="true" />
+				<applystate name="State_Rampage_Ability4_Self" target="this_owner_entity" duration="2500,3000,3500" />
+			</areaofeffect>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Rampage.Alt3" modpriority="100"
+		casteffect="../alt3/ability_04/effects/vocal.effect"
+	/>
+	
+	<altavatar key="Hero_Rampage.Alt4" modpriority="100"
+		casteffect="../alt4/ability_04/effects/vocal.effect"
+	/>
+	
+	<altavatar key="Hero_Rampage.Alt5" modpriority="100"
+		casteffect="../alt5/ability_04/effects/vocal.effect"
+	/>
+	
+	<altavatar key="Hero_Rampage.Alt6" modpriority="100"
+		casteffect="../alt6/ability_04/effects/vocal.effect"
+	>
+		<onimpact>
+			<unbind />
+			<applystate name="State_Rampage_Ability4" inflictor="source_entity" target="target_entity" duration="2500,3000,3500" pushentity="true" />
+			<applystate name="State_Rampage_Ability4_Alt6_Art" target="source_entity" duration="2500,3000,3500" proxy="target_entity" />
+			<applystate name="State_Rampage_Ability4_Self" target="this_owner_entity" duration="2500,3000,3500" />
+		</onimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt7" modpriority="100"
+		casteffect="../alt7/ability_04/effects/vocal.effect"
+	>
+		<onimpact>
+			<unbind />
+			<applystate name="State_Rampage_Ability4" inflictor="source_entity" target="target_entity" duration="2500,3000,3500" pushentity="true" />
+			<applystate name="State_Rampage_Ability4_Alt7_Art" target="source_entity" duration="2500,3000,3500" proxy="target_entity" />
+			<applystate name="State_Rampage_Ability4_Self" target="this_owner_entity" duration="2500,3000,3500" />
+		</onimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt8" modpriority="100"
+		casteffect="../alt8/ability_04/effects/vocal.effect"
+	>
+		<onimpact>
+			<unbind />
+			<applystate name="State_Rampage_Ability4" inflictor="source_entity" target="target_entity" duration="2500,3000,3500" pushentity="true" />
+			<applystate name="State_Rampage_Ability4_Alt8_Art" target="source_entity" duration="2500,3000,3500" proxy="target_entity" />
+			<applystate name="State_Rampage_Ability4_Self" target="this_owner_entity" duration="2500,3000,3500" />
+		</onimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt9" modpriority="100"
+		casteffect="../alt9/ability_04/effects/vocal.effect"
+	/>
+	
+	<altavatar key="Hero_Rampage.Alt10" modpriority="100"
+		casteffect="../alt8/ability_04/effects/vocal.effect"
+	>
+		<onimpact>
+			<unbind />
+			<applystate name="State_Rampage_Ability4" inflictor="source_entity" target="target_entity" duration="2500,3000,3500" pushentity="true" />
+			<applystate name="State_Rampage_Ability4_Alt10_Art" target="source_entity" duration="2500,3000,3500" proxy="target_entity" />
+			<applystate name="State_Rampage_Ability4_Self" target="this_owner_entity" duration="2500,3000,3500" />
+		</onimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt11" modpriority="100"
+		casteffect="../alt11/ability_04/effects/vocal.effect"
+	>
+		<onimpact>
+			<unbind />
+			<applystate name="State_Rampage_Ability4" inflictor="source_entity" target="target_entity" duration="2500,3000,3500" pushentity="true" />
+			<applystate name="State_Rampage_Ability4_Alt10_Art" target="source_entity" duration="2500,3000,3500" proxy="target_entity" />
+			<applystate name="State_Rampage_Ability4_Self" target="this_owner_entity" duration="2500,3000,3500" />
+		</onimpact>
+	</altavatar>
+	
+	<altavatar key="Hero_Rampage.Alt13" modpriority="100"
+		casteffect="../alt13/ability_04/effects/vocal.effect"
+	/>
+	
+	<altavatar key="Hero_Rampage.Alt14" modpriority="100"
+		casteffect="../alt14/ability_04/effects/vocal.effect"
+	/>
+	
+	<modifier key="soccer" modpriority="150" 
+		baselevel="1"
+		maxlevel="1"
+		manacost="30"
+		cooldowntime="20000"
+	>
+		<onimpact>
+			<cantarget effecttype="Push">
+				<unbind />
+			</cantarget>
+			<applystate name="State_Rampage_Ability4" inflictor="source_entity" target="target_entity" duration="2500" pushentity="true" />
+			<applystate name="State_Rampage_Ability4_Self" target="this_owner_entity" duration="2500" proxy="stack_entity" />
+			<resetcooldown />
+			<startcooldown duration="20000" />
+		</onimpact>	
+	</modifier>
+</ability>

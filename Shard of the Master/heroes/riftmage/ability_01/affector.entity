@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Riftmage_Ability1"
+	
+	radius="350"
+	impacteffect=""
+	effect="effects/hole.effect"
+
+	visibility="allies"
+	
+	impactdelay="1500"
+	targetselection="all"
+	targetscheme="enemy_nonboss_units"
+	
+	effecttype="Magic"
+>
+	<onspawn>
+		<playeffect effect="effects/hole_pulse.effect" source="this_position" target="" occlude="true" />	
+	</onspawn>
+
+	<onimpact>
+		<cantarget effecttype="Push">
+			<distance source="this_position" />
+			<!-- Subtracting 20 from distance so it will end up 20 units away -->
+			<evaluate a="result" b="20" op="sub" />
+			<evaluate a="result" b="400" op="min" />
+			<setvar0 a="result" b="-5" op="mult" />
+			
+			<!-- Check to see if the force is positive; if yes, then static pull force -->
+			<compare a="var0" b="0" op="ge">
+				<push force="-70" duration="200" source="this_entity" />
+			</compare>
+			<else>
+				<push force="var0" duration="200" source="this_entity" />
+			</else>
+		</cantarget>
+		
+		<applystate name="State_Riftmage_Ability1" duration="200" />
+		<damage effecttype="Magic" amount="110,160,200,240" />
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost">
+		<onimpact>
+			<areaofeffect
+				radius="350"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype=""
+				center="target_position"
+			>
+			</areaofeffect> <!-- Checks nearby enemies -->
+			<setvar1 a="result" />
+			
+			<areaofeffect
+				radius="350"
+				targetselection="all"
+				targetscheme="enemy_heroes"
+				effecttype=""
+			>
+			</areaofeffect>
+			<evaluate a="result" b="3" op="mult"/>
+			<setvar1 a="var1" b="result" op="add"/>
+			<cantarget effecttype="Push">
+				<distance source="this_position" />
+				<!-- Subtracting 20 from distance so it will end up 20 units away -->
+				<evaluate a="result" b="20" op="sub" />
+				<evaluate a="result" b="400" op="min" />
+				<setvar0 a="result" b="-5" op="mult" />
+				
+				<!-- Check to see if the force is positive; if yes, then static pull force -->
+				<compare a="var0" b="0" op="ge">
+					<push force="-70" duration="200" source="this_entity" />
+				</compare>
+				<else>
+					<push force="var0" duration="200" source="this_entity" />
+				</else>
+			</cantarget>
+			
+			<applystate name="State_Riftmage_Ability1" duration="200" />
+			<evaluate a="var1" b="100" op="mult"/>
+			<evaluate a="result" b="200" op="add"/>
+			<applystate name="State_Stunned" duration="result" />
+			<damage effecttype="Magic" amount="110,160,200,240" />
+			
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Riftmage.Alt2" modpriority="1"
+		effect="/heroes/riftmage/alt2/ability_01/effects/hole.effect"
+	>
+		<onspawn>
+			<playeffect effect="/heroes/riftmage/alt2/ability_01/effects/hole_pulse.effect" source="this_position" target="" occlude="true" />	
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Riftmage.Alt3" modpriority="1"
+		effect="/heroes/riftmage/alt3/ability_01/effects/hole.effect"
+	>
+		<onspawn>
+			<playeffect effect="/heroes/riftmage/alt3/ability_01/effects/hole_pulse.effect" source="this_position" target="" occlude="true" />	
+		</onspawn>
+	</altavatar>
+	
+	<altavatar key="Hero_Riftmage.Alt4" modpriority="1"
+		effect="/heroes/riftmage/alt4/ability_01/effects/hole.effect"
+	>
+		<onspawn>
+			<playeffect effect="/heroes/riftmage/alt4/ability_01/effects/hole_pulse.effect" source="this_position" target="" occlude="true" />	
+		</onspawn>
+			
+		<modifier key="Alt4_Ability1_Upgrade"
+			effect="/heroes/riftmage/alt4/ability_01/effects/hole_upgrade.effect"
+		>
+			<onspawn>
+				<playeffect effect="/heroes/riftmage/alt4/ability_01/effects/hole_pulse_upgrade.effect" source="this_position" target="" occlude="true" />	
+			</onspawn>
+		</modifier>
+	</altavatar>
+	
+	<altavatar key="Hero_Riftmage.Alt5" modpriority="1"
+		effect="/heroes/riftmage/alt5/ability_01/effects/hole.effect"
+	>
+		<onspawn>
+			<playeffect effect="/heroes/riftmage/alt5/ability_01/effects/hole_pulse.effect" source="this_position" target="" occlude="true" />	
+		</onspawn>
+	</altavatar>
+
+</affector>

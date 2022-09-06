@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="default_1.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model" >
+
+	<anim name="idle" clip="clips/default_1.clip" loop="true" blendtime="500">
+	<startevent cmd="PlaySoundLoopingLinear sounds/idle.wav 0 500 0.3 1 100 300"/>
+		<startevent cmd="StopEffect 1"/>
+		<startevent cmd="StopEffect 2"/>
+	</anim>
+	
+	<anim name="portrait" clip="clips/portrait_1.clip" loop="true"/> 
+	
+	<anim name="item_1" clip="clips/taunt_1.clip"/>
+
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="26">
+     <frameevent frame="1" cmd="PlaySoundLinear sounds/bored.wav 0 500 1"/>
+	</anim>
+
+
+	<anim name="walk_1" clip="clips/walk_1.clip"  loop="true">
+	<startevent cmd="PlaySoundLoopingLinear sounds/drive.wav 0 500 0.5 3 300 300"/>
+	<endevent cmd="StopSound 3"/>
+
+	<startevent cmd="StartEffect effects/walk.effect 1"/>
+	</anim>
+	
+	<anim name="ability_4_run" clip="clips/ability_4_run.clip"  loop="true">
+		<startevent cmd="StartEffect effects/walk.effect 1"/>
+	
+	<startevent cmd="PlaySoundLoopingLinear sounds/drive.wav 0 1300 0.5 4 300 300"/>
+	<endevent cmd="StopSound 3"/>
+	<endevent cmd="StopSound 4"/>
+	</anim>
+	
+	<anim name="taunt_1" clip="clips/taunt_1.clip"/>
+
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="-1">
+		<startevent cmd="StopSound 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_grunt.wav 400 2000 1"/>
+		<frameevent frame="10" cmd="PlaySoundLinear sounds/death_foley.wav 400 2000 1"/>
+		<frameevent frame="10" cmd="PlaySoundLinear sounds/ab2_%.wav 400 2000 1"/>
+		<startevent cmd="StopEffect 1"/>
+	</anim>
+
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="60">
+		<frameevent frame="28" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="60">
+		<frameevent frame="24" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="25" cmd="PlaySoundLinear sounds/attack_grunt_%.wav 400 2000 1"/>
+	</anim>
+
+	<anim name="ability_1" clip="clips/ability_1.clip">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/ab_1.wav 1300 2000 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/vox_1.wav 1300 2000 1"/>
+	</anim>
+
+	<anim name="ability_3" clip="clips/ability_3.clip" fps="70">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/attack_grunt_%.wav 400 2000 .65"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/ab2_%.wav 400 2000 1"/>
+	</anim>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="30">
+	</anim>
+
+<!--   old ability 4 stuff
+	<anim name="ability_4" clip="clips/ability_4.clip">
+		<frameevent frame="1" cmd="PlaySoundLinear ability_04/sounds/cast.wav 400 2500 .85"/>
+	</anim>
+	
+	<anim name="ability_4impact" clip="clips/ability_4impact.clip">
+		<frameevent frame="1" cmd="PlaySoundLinear ability_04/sounds/cast2.wav 400 2500 1"/>
+	</anim>
+-->	
+</model>

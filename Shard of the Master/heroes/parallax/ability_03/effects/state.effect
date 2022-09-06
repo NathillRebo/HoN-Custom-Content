@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="fireshield" deferred="true" useentityeffectscale="true" showoutlines="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/gunblade/ability_02/sounds/cast.wav"
+			/>
+			
+			<sound
+			    soundloop="true"
+				fadein="1000"
+				fadeout="1000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".8"
+				sample="/heroes/gunblade/ability_02/sounds/loop.wav"
+			/>
+
+			<model
+				bone="_bone_center"
+				startcolor="0 .5 .65"
+				endcolor="0 0 0"
+				position="0 0 0"
+				model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				expirelife="125"
+				startscale=".225"
+				endscale="0"
+				yawspeed="180"
+				pitchspeed="180"
+			>
+			</model>
+
+			<model
+				bone="_bone_center"
+				startcolor=".3 .3 .35"
+				endcolor="0 0 0"
+				position="0 0 0"
+				model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				expirelife="125"
+				startscale=".265"
+				endscale="0"
+				yawspeed="180"
+				pitchspeed="180"
+			>
+			</model>
+
+			<model
+				bone="_bone_center"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				anim="idle"
+				expirelife="125"
+				startscale="1.4"
+				endscale="0"
+				yawspeed="540"
+				pitchspeed="540"
+			>
+				<template name="trails">
+					<trailemitter
+						bone="{bone01}"
+						spawnrate="100"
+						particlelife="750"
+						texpostime="750"
+						texposscale="0.0"
+						texstretchscale=".4"
+						position="0 0 0"
+						material="/shared/effects/materials/arrow_trail.material"
+					>
+						<particle
+							startcolor="0 .35 .5"
+							midcolor="0 .1 .25"
+							endcolor="0 0 0"
+							startsize="5"
+							midsize="2.5"
+							endsize="1"
+							midsizepos="0.2"
+					 />
+					</trailemitter>
+					
+					<billboard
+						bone="{bone01}"
+						expirelife="125"
+						startcolor="0 .5 .75"
+						endcolor="0 0 0"
+						startsize="13"
+						endsize="0"
+						position="0 0 0"
+						material="/shared/effects/materials/whitedot.material"
+						lockup="true"
+						pitch="90"
+					/>
+					
+					<billboard
+						bone="{bone01}"
+						expirelife="125"
+						startcolor="0 .5 .75"
+						endcolor="0 0 0"
+						startsize="3"
+						endsize="0"
+						position="0 0 0"
+						material="/shared/effects/materials/whitedot.material"
+						lockup="true"
+						pitch="90"
+					/>
+					
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"/>
+				<instance name="trails" bone01="_bone_fx_03"/>
+				<instance name="trails" bone01="_bone_fx_05"/>
+			</model>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				color="0 .125 .3"
+				midcolor=".1"
+				endcolor="0 .125 .3"
+				startsize="200"
+				midsize="100"
+				endsize="200"
+				startalpha="0"
+				midalpha=".75"
+				endalpha="0"				
+				depthbias="-50"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				loop="true"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				expirelife="650"
+				startcolor=".125 .125 .125"
+				endcolor="0 0 0"
+				size="50"				
+				depthbias="-50"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+	
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_ShadowBlade1"
+ 
+	icon="icon.tga"
+	statuseffecttooltip="State_ShadowBlade_Ability1"
+	
+	anim="ability_1"
+	casttime="100"
+	castactiontime="100"
+	casteffect="effects/cast.effect"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	casteffecttype=""
+	
+	frontqueue="true"
+	
+	targetradius="300"
+	
+	manacost="75,85,95,105"
+	cooldowntime="10000"
+>
+
+	<onimpact>
+		<applystate name="State_ShadowBlade_Ability1_Morph" target="source_entity" duration="15000" />
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<damage effecttype="Magic" amount="70,120,170,220" />
+			<applystate name="State_ShadowBlade_Ability1" duration="2500,3000,3500,4000" />
+		</areaofeffect>
+		
+		<!-- VFX -->
+		<hasavatarkey name="Hero_ShadowBlade.Alt4">
+			<playeffect effect="../alt4/ability_01/effects/aoe.effect" source="source_position" target="" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_ShadowBlade.Alt6">
+				<playeffect effect="../alt6/ability_01/effects/aoe.effect" source="source_position" target="" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_ShadowBlade.Alt7">
+					<playeffect effect="../alt7/ability_01/effects/aoe.effect" source="source_position" target="" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/aoe.effect" source="source_position" target="" occlude="true" />
+				</else>			
+			</else>
+		</else>
+	</onimpact>
+	
+	<altavatar key="Hero_ShadowBlade.Alt2" modpriority="1"
+		casteffect="/heroes/shadowblade/alt2/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt3" modpriority="1"
+		casteffect="/heroes/shadowblade/alt3/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt4" modpriority="1"
+		casteffect="/heroes/shadowblade/alt4/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt5" modpriority="1"
+		casteffect="/heroes/shadowblade/alt5/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt6" modpriority="1"
+		casteffect="/heroes/shadowblade/alt6/ability_01/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt7" modpriority="1"
+	    icon="/heroes/shadowblade/alt7/ability_01/icon.tga"
+		casteffect="/heroes/shadowblade/alt7/ability_01/effects/cast.effect"
+	/>
+	
+</ability>

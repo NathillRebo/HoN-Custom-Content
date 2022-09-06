@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_PollywogPriest_Ability2"
+
+	icon="../icons/ability_2.tga"
+	passiveeffect="effects/body.effect"
+	
+	disarmed="true"
+	silenced="true"
+	perplexed="true"
+	restrained="true"
+	movespeedslow="1"
+
+	morphpriority="101"
+	morphmodel="effects/model.mdf"
+	morphpreglobalscale=".9"
+	morphmodelscale="1.0"
+	morpheffectscale="1.0"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	modifierkey="iamsheeped"
+
+	negativeeffect="polymorphed"
+>
+	<onframe />
+	
+	<onattackedpreimpact priority="-9999">
+		<setvalue name="combat_evasion" a="0" />
+	</onattackedpreimpact>
+	
+	<onattackedpredamage priority="-9999">
+		<setvalue name="combat_deflection" a="0" />
+	</onattackedpredamage>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onexpired>
+			<areaofeffect
+				radius="325"
+				targetselection="random"
+				targetscheme="visible_enemy_heroes"
+				effecttype="Magic"
+				ignore="this_owner_entity"
+				maxtotalimpacts="1"
+			>
+				<playeffect effect="/heroes/pollywogpriest/alt2/ability_02/effects/impact.effect" source="target_entity" target="" />
+				<killillusions />
+				<dispel type="StatusStealth" />
+				<applystate name="State_PollywogPriest_Ability2" duration="1250,2000,2750,3500" />
+				<breakchannel entity="target_entity" />
+				
+				<!-- Art -->
+				<hasavatarkey name="Hero_PollywogPriest.Alt2">
+					<playeffect effect="/heroes/pollywogpriest/alt2/ability_02/effects/impact.effect" source="target_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_PollywogPriest.Alt4">
+						<playeffect effect="/heroes/pollywogpriest/alt4/ability_02/effects/impact.effect" source="target_entity" target="" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_PollywogPriest.Alt5">
+							<playeffect effect="/heroes/pollywogpriest/alt5/ability_02/effects/impact.effect" source="target_entity" target="" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_PollywogPriest.Alt7">
+								<playeffect effect="/heroes/pollywogpriest/alt7/ability_02/effects/impact.effect" source="target_entity" target="" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/impact.effect" source="target_entity" target="" />
+							</else>	
+						</else>
+					</else>
+				</else>		
+			</areaofeffect>
+		</onexpired>
+	</modifier>
+	
+	
+	<altavatar key="Hero_PollywogPriest.Alt2" modpriority="1"
+		morphmodel="/heroes/pollywogpriest/alt2/ability_02/high.mdf"
+		passiveeffect="/heroes/pollywogpriest/alt2/ability_02/effects/body.effect"
+		morphpreglobalscale="1.85"
+	/>
+	
+	<altavatar key="Hero_PollywogPriest.Alt4" modpriority="1"
+		morphmodel="/heroes/pollywogpriest/alt4/ability_02/effects/model.mdf"
+		morphpreglobalscale="2"
+		morphmodelscale="1.0"
+		morpheffectscale="1.0"
+		passiveeffect=""
+	/>
+	
+	<altavatar key="Hero_PollywogPriest.Alt5" modpriority="1"
+		morphmodel="/heroes/pollywogpriest/alt5/ability_02/effects/model.mdf"
+		passiveeffect="/heroes/pollywogpriest/alt2/ability_02/effects/body.effect"
+		morphpreglobalscale="1.4"
+	/>
+	
+	<altavatar key="Hero_PollywogPriest.Alt6" modpriority="1"
+		morphmodel="/heroes/pollywogpriest/alt6/ability_02/effects/model.mdf"
+		passiveeffect="/heroes/pollywogpriest/alt6/ability_02/effects/body.effect"
+		morphpreglobalscale=".9"
+	/>
+	
+	<altavatar key="Hero_PollywogPriest.Alt7" modpriority="1"
+	    icon="../alt7/ability_02/icon.tga"
+		morphmodel="/heroes/pollywogpriest/alt7/ability_02/effects/model.mdf"
+		passiveeffect="/heroes/pollywogpriest/alt7/ability_02/effects/body.effect"
+		morphpreglobalscale=".9"
+	>
+		<modifier key="pollywogpriestAlt7_Ability2_Upgrade"
+		    icon="../alt7/ability_02/icon_u.tga"
+			morphmodel="/heroes/pollywogpriest/alt7/ability_02/effects/model_upgrade.mdf"
+		/>
+	</altavatar>
+</state>

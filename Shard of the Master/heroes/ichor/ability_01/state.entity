@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ichor_Ability1"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	movespeedslow="0.3"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	dynamicprecache="effects/impact2.effect"
+>
+	<oninflict>
+		<setscriptvalue name="impact2_effect" value="effects/impact2.effect" entity="this_entity" />
+	</oninflict>
+
+	<onframe />
+	
+	<ondamaged>
+		<cantarget targetscheme="nonneutral_enemy_units">
+			<damageeffecttype effecttype="DOT" />
+			<else>
+				<!-- Base heal amount -->
+				<evaluate source="target_entity" a="source_missinghealth" />
+				<evaluate a="result" b="0.02" op="mult" />
+				<setvar0 a="result" b="15,25,35,45" op="add" />
+				
+				<!-- Apply heal limiter state if they do not have it on them, otherwise apply reduced healing -->
+				<hasmodifier name="ichor_Q_limiter" entity="target_entity">
+					<heal source="this_inflictor_entity" a="0.5" b="var0" op="mult" />
+				</hasmodifier>
+				<else>
+					<heal source="this_inflictor_entity" a="1" b="var0" op="mult" />
+					<applystate name="State_Ichor_Ability1_Limiter" source="this_inflictor_entity" target="target_entity" duration="1200" />
+				</else>
+				
+				<!-- Dynamic visual effects -->
+				<getscriptvalue name="impact2_effect" destvar="str0" entity="this_entity" />
+				<playeffectdynamic effect="str0" source="target_entity" target="target_entity" occlude="true" />
+				<playeffect effect="effects/heal.effect" source="target_entity" target="" />
+			</else>
+		</cantarget>
+	</ondamaged>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<ondamaged>
+			<cantarget targetscheme="nonneutral_enemy_units">
+				<damageeffecttype effecttype="DOT" />
+				<else>
+					<!-- Base heal amount -->
+					<evaluate source="target_entity" a="source_missinghealth" />
+					<evaluate a="result" b="0.02" op="mult" />
+					<setvar0 a="result" b="15,25,35,45" op="add" />
+					<heal source="this_inflictor_entity" a="1" b="var0" op="mult" />
+					
+					<!-- Dynamic visual effects -->
+					<getscriptvalue name="impact2_effect" destvar="str0" entity="this_entity" />
+					<playeffectdynamic effect="str0" source="target_entity" target="target_entity" occlude="true" />
+					<playeffect effect="effects/heal.effect" source="target_entity" target="" />
+				</else>
+			</cantarget>
+		</ondamaged>
+	</modifier>
+	
+	<altavatar key="Hero_Ichor.Alt"
+		passiveeffect="../alt/ability_01/effects/state.effect"
+		dynamicprecache="../alt/ability_01/effects/impact2.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact2_effect" value="../alt/ability_01/effects/impact2.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Ichor.Alt2"
+		passiveeffect="../alt2/ability_01/effects/state.effect"
+		dynamicprecache="../alt2/ability_01/effects/impact2.effect"
+	>
+		<oninflict>
+			<setscriptvalue name="impact2_effect" value="../alt2/ability_01/effects/impact2.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+</state>

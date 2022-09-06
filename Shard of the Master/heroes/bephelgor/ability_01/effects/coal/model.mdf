@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="coal.model" type="K2" high="coal.model" med="coal.model" low="coal.model">
+
+	<anim name="idle" clip="clips/default_1.clip" loop="true">
+	</anim>	
+		
+</model>

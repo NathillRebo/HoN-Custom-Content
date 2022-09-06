@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Javaras2"
+	
+	icon="icon.tga"
+	
+	anim="ability_2"
+	casttime="650"
+	castactiontime="250"
+	casteffect="cast.effect"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	targetradius="350"
+	targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+	activatescheme="movement"
+	
+	manacost="65"
+	cooldowntime="10000"
+	
+	allowoutofrangecast="true"
+	range="600,700,800,900"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	showrangeandradiusintooltip="true"
+>	
+	<onimpact>
+		<teleport interpolate="false" target="target_position" />
+		<disjoint target="source_entity" />
+		<unbind target="source_entity" />
+		
+		<spawnaffector name="Affector_Javaras_Ability2" target="target_position" />
+	</onimpact>
+	
+	<altavatar key="Hero_Javaras.Alt4"
+		casteffect="../alt4/ability_02/effects/cast.effect"
+	>
+		<modifier key="Shroud_Set_Bonus" modpriority="100"
+			casteffect="../alt4/ability_02/effects/cast_boosted.effect"
+		/>
+	</altavatar>	
+	
+	<altavatar key="Hero_Javaras.Alt5"
+		casteffect="../alt5/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Javaras.Alt6"
+		casteffect="../alt6/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Javaras.Alt7"
+		casteffect="../alt7/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Javaras.Alt8"
+		casteffect="../alt8/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Javaras.Alt9"
+		casteffect="../alt9/ability_02/effects/cast.effect"
+	/>
+	
+	<modifier key="soccer" modpriority="150" 
+		baselevel="0"
+		maxlevel="1"
+		range="650" 
+		manacost="30"
+		cooldowntime="7000"
+		statuseffecttooltip=""
+		statuseffecttooltip2=""
+	>
+		<onimpact>
+			<comparetiledefinition name="outside" target="this_owner_entity" entity="this_owner_entity" source="this_owner_entity" position="target_position">
+				<popup name="miss" target="this_owner_entity" />
+				<givemana amount="30" entity="this_owner_entity" target="this_owner_entity" />
+				<reducecooldown entity="this_entity" duration="6500" />
+			</comparetiledefinition>
+			<else>
+				<comparetiledefinition name="inside" target="this_owner_entity" entity="this_owner_entity" source="this_owner_entity" position="target_position">
+					<popup name="miss" target="this_owner_entity" />
+					<givemana amount="30" entity="this_owner_entity" target="this_owner_entity" />
+					<reducecooldown entity="this_entity" duration="6500" />
+				</comparetiledefinition>
+				<else>
+					<teleport interpolate="false" target="target_position" />
+					<areaofeffect
+						radius="500"
+						targetselection="all"
+						targetscheme="ally_heroes"
+						effecttype=""
+						center="target_position"
+						ignore="source_entity"
+					>
+						<applystate name="State_Javaras_Ability2" duration="7000" target="target_entity" />
+					</areaofeffect>
+					<applystate name="State_Javaras_Ability2_Self" duration="7000" target="source_entity" />
+					<disjoint target="source_entity" />
+					<unbind target="source_entity" />
+				</else>
+			</else>
+		</onimpact>	
+	</modifier>
+	
+</ability>

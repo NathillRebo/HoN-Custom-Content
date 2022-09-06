@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+  <definitions>
+    <particlesystem name="system0" space="world" scale="1">
+		<model
+			model="hands/hands.mdf"
+			parentskeleton="true"
+			material="../water.material"
+			inheritparentmodifiers="true"
+		/> 
+
+		<skeletonemitter
+			minparticlelife="400"
+			maxparticlelife="600"
+			spawnrate="30"
+			material="/shared/effects/materials/bubble_add.material"
+			minspeed="5"
+			maxspeed="10"
+			drag="0.02"
+			gravity="25"
+			offsetsphere="10"
+			inheritvelocity=".25"
+			expirelife="1000"
+		>
+			<particle
+				turn="1"
+				heightdistort=".25"
+				minscale="0.25"
+				maxscale="0.75"
+				startcolor="0"
+				midcolor=".5 1 1"
+				endcolor="0"
+				lockup="true"
+				size="4"
+			/>
+		</skeletonemitter>
+		
+		<terrainemitter
+			spawnrate="5"
+			minparticlelife="3500"
+			maxparticlelife="4500"
+			material="/shared/effects/materials/ring_reveal_gradient_01.material"
+			depthbias="-50"
+			offsetsphere="0"
+		>
+			<particle
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+				size="180"
+				minstartscale=".75" maxstartscale=".95"
+				endscale="1.1"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"
+				startframe="0"
+				endframe=".65"
+				minstartparam=".3"
+				maxstartparam=".4"
+				endparam=".7"
+				color="1 1 1"
+				anchor="1"
+			/>
+		</terrainemitter>
+	
+		<terrainemitter
+			spawnrate="1"
+			minparticlelife="2500"
+			maxparticlelife="3500"
+			material="/shared/effects/materials/refract_ripples.material"
+			depthbias="-50"
+			offsetsphere="0"
+		>
+			<particle
+				maxangle="360"
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+				size="160"
+				minstartscale=".25" maxstartscale=".5"
+				endscale="1.5"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"
+				startframe="0"
+				endframe=".75"
+				minstartparam=".0"
+				maxstartparam=".1"
+				endparam=".8"
+				color="1"
+				anchor="1"
+			/>
+		</terrainemitter>
+		
+		<groundsprite				
+			color=".75 1 1"
+			alpha=".5"
+			size="100"
+			expirelife="500"					
+			material="/shared/effects/materials/ground_whitedot.material"			
+		/>
+		
+    </particlesystem>
+  </definitions>
+  <thread>
+    <spawnparticlesystem particlesystem="system0" instance="instance0" />
+    <waitfordeath instance="instance0" />
+  </thread>
+</effect>

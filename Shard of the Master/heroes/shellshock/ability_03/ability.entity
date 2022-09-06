@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Shellshock3"
+	
+	icon="icon.tga"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	actiontype="passive"
+>
+	<aura state="State_Shellshock_Ability3_Ally" radius="600" targetscheme="ally_heroes" ignoreinvulnerable="true" />
+	<aura state="State_Shellshock_Ability3_Enemy" radius="600" targetscheme="enemy_heroes" effecttype="Magic" ignoreinvulnerable="true" />
+	
+	<onlearn>
+		<playeffect effect="/heroes/shellshock/ability_03/effects/on_learn_sound.effect" target="target_entity" />
+	</onlearn>
+
+	<ondeath>
+		<cantarget targetscheme="ally_nonillusion_nonmimic_nonpet_heroes" target="source_entity">
+			<spawnunit name="Gadget_Shellshock_Ability3_Null" target="source_position" proxy="this_entity" pushentity="true" />
+			<setproxy target="stack_entity" />
+		</cantarget>
+	</ondeath>
+
+	<onrespawn>
+		<delete target="this_proxy_entity" />
+	</onrespawn>
+
+	<onframe />
+	
+	<onimpact/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		actiontype="self_position"
+		manacost="100"
+		cooldowntime="120000"
+		casteffecttype="Magic"
+		casteffect="sound.effect"
+		targetscheme="all_units"
+		targetradius="600"
+		frontqueue="true"
+		inheritmovement="true"
+		noninterrupting="true"	
+		nobreakchannel="true"
+		nonaggressive="true"
+	>
+		<onimpact>
+			<areaofeffect
+				radius="600"
+				targetselection="all"
+				targetscheme="all_units"
+				effecttype="Magic"
+				ignoreinvulnerable="true"
+			>
+				<applystate name="State_Shellshock_Shard" duration="1250" />
+				<dispel type="StatusDebuff" />
+				<playeffect effect="impact.effect" source="target_entity" target="target_entity"/>
+			</areaofeffect>
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Shellshock.Alt">
+		<onlearn>
+			<playeffect effect="/heroes/shellshock/alt/ability_03/effects/on_learn_sound.effect" target="target_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Shellshock.Alt3">
+		<onlearn>
+			<playeffect effect="/heroes/shellshock/alt3/ability_03/effects/on_learn_sound.effect" target="target_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Shellshock.Alt4">
+		<onlearn>
+			<playeffect effect="/heroes/shellshock/alt3/ability_03/effects/on_learn_sound.effect" target="target_entity" />
+		</onlearn>
+	</altavatar>
+
+</ability>

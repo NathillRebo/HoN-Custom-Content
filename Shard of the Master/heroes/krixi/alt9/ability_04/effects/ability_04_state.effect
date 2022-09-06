@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="moon_beam">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0 .15 .3"
+				endcolor="0"
+				expirelife="1300"
+				size="75"
+				yaw="180"
+				depthbias="-30"
+				
+				position="0 0 0"
+			/>
+			
+			<controller yawspeed="-60"  directionalspace="global" expirelife="1000"  >
+				<template name="moon" >	
+					<billboard
+						material="/shared/effects/materials/krixi_q_add.material"
+						startcolor=".75"
+						endcolor="0"
+						expirelife="1300"
+						size="15"
+						depthbias="-30"
+						position="{position}"
+						yawspeed="100"
+						
+					/>
+				</template>
+				<instance name="moon" position="0 -20 35" />
+				<instance name="moon" position="0 20 35" />
+				<instance name="moon" position="20 0 35" />
+				<instance name="moon" position="-20 0 35" />
+			</controller>
+
+
+			<controller yawspeed="60" directionalspace="global" expirelife="1000">
+				
+				<sound
+					soundloop="true"
+					fadein="500"
+					fadeout="1250"
+					sample="../../sounds/ab4_mu.wav"
+					volume="0.4"
+					linearfalloff="true"
+					falloffstart="1500"
+					falloffend="2500"
+				/>
+				
+				<groundsprite
+
+					directionalspace="local"
+					expirelife="1000"
+					delay="0"
+					
+					timenudge="0"
+					material="/shared/effects/materials/krixi_q_add.material"
+					size="20"
+
+					startcolor=".6 .6 .6"
+					endcolor="0 0 0"
+					
+					lockright="1"
+
+					loop="1"
+				/>
+			</controller>
+
+
+			<controller yawspeed="-40" directionalspace="global" expirelife="1000">
+				<groundsprite
+					expirelife="1000"
+					life="1500"
+					delay="0"
+					timenudge="0"
+					material="/shared/effects/materials/krixi_q_add.material"
+					directionalspace="local"
+					size="40"
+
+					startcolor="0"
+					midcolor=".5"
+					endcolor="0"
+					midcolorpos=".5"
+			
+					lockright="1"
+					
+					loop="1"
+
+				/>
+			</controller>
+
+
+
+
+	
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

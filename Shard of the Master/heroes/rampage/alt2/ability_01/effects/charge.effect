@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+	<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume="1"
+				sample="../../ability_01/sounds/cast3.wav"
+			/>
+
+			<trailemitter
+				bone="_bone_fx_02"				
+				spawnrate="45"
+				particlelife="700"
+				texpostime="700"
+				texposscale="0"
+				texstretchscale="1.0"
+				material="/ui/common/models/unicorn/rainbow_trail.material"
+				subframepos="true"
+			>
+				<particle
+				
+					scale="4"
+					startcolor="1 1 1"
+					midcolorpos=".2 .2 .2"
+					endcolor="0 0 0"					
+				/>
+			</trailemitter>	
+			
+			<twopointtrailemitter
+				bone_a="_bone_overhead"
+				bone_b="_bone_center"
+				
+				
+				spawnrate="75"
+				particlelife="1000"
+				texpostime="1000"
+				texposscale="0"
+				texstretchscale="1.0"
+				material="/ui/common/models/unicorn/rainbow_trail.material"
+				subframepos="true"
+			>
+				<particle
+					startcolor="1 1 1"
+					midcolorpos=".2 .2 .2"
+					endcolor="0 0 0"					
+				/>
+			</twopointtrailemitter>		
+	
+			<twopointtrailemitter
+				bone_a="Bip02 R Calf"
+				bone_b="Bip02 L Calf"
+				
+				
+				spawnrate="75"
+				particlelife="1000"
+				texpostime="1000"
+				texposscale="0"
+				texstretchscale="1.0"
+				material="/ui/common/models/unicorn/rainbow_trail.material"
+				subframepos="true"
+			>
+				<particle
+					startcolor="1 1 1"
+					midcolorpos=".2 .2 .2"
+					endcolor="0 0 0"					
+				/>
+			</twopointtrailemitter>		
+
+			<terrainemitter
+				spawnrate="7"
+				particlelife="3000"
+				gravity="0"
+				offsetsphere="75 75 10"
+				position="0 110 10"
+				
+			>
+				<particle
+				>
+					<model
+						life="3000"
+						color="1 1 1"
+						model="rainbow_flowers/model.mdf"
+						anim="default_1"
+						minscale="1.05"
+						maxscale="1.25"
+						expirelife="500"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+					/>
+				</particle>
+			</terrainemitter>
+			
+			<terrainemitter
+				spawnrate="7"
+				particlelife="3000"
+				gravity="0"
+				offsetsphere="125 125 0"
+				position="0 110 10"
+				
+			>
+				<particle
+				>
+					<model
+						life="3000"
+						color="1 1 1"
+						model="colored_petals/model.mdf"
+						anim="default_2"
+						minscale=".25"
+						maxscale=".3"
+						expirelife="500"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+					/>
+				</particle>
+			</terrainemitter>
+
+
+			<simpleemitter
+				bone="_bone_fx_02"
+				spawnrate="1"
+				particlelife="1000"
+				gravity="0"
+				speed="0.0"
+				acceleration="0.0"
+				position="0 0 0"
+				offsetsphere="0 0 0"
+				material="/shared/effects/materials/blink.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".75 .75 .75"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="45"
+					minstartsize="75"
+					maxstartsize="85"
+					endsize="25"
+					lockup="true"
+					pitch="90"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+			<billboard
+				bone="_bone_fx_02"
+				position="0 0 0"
+				size="32"
+				expirelife="350"
+				startcolor=".5 0 .5"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<billboard
+				bone="_bone_fx_02"
+				position="0 0 0"
+				size="12"
+				expirelife="350"
+				startcolor="1 1 1"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+			/>			
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				spawnrate="1115"
+				count="15"
+				gravity="0"
+				minparticlelife="600"
+				maxparticlelife="1000"
+				offsetsphere="35 35 25"
+				speed="221"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						position="0 0 0"
+						life="500"
+						anim="idle"
+						model="butterfly/butterfly.mdf"
+						minscale="1.05"
+						maxscale="1.45"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".85"
+						lockup="1"
+						lockright="1"
+						pitch="0"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>		
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				spawnrate="5"
+				gravity="-25"
+				minparticlelife="600"
+				maxparticlelife="1000"
+				offsetsphere="35 35 25"
+				speed="123"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						position="0 0 0"
+						life="500"
+						anim="idle"
+						model="butterfly/butterfly.mdf"
+						minscale="1.05"
+						maxscale="1.45"
+						color="1 1 1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".85"
+						lockup="1"
+						lockright="1"
+						pitch="0"
+						minyaw="0"
+						maxyaw="360"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_fx_02"
+				spawnrate="33"
+				particlelife="300"
+				gravity="2"
+				speed="220.0"
+				acceleration="0.0"
+				position="0 0 0"
+				offsetsphere="0 0 0"
+				material="/shared/effects/materials/blink.material"
+			>
+				<particle
+					anchor="0"
+					color="1 1 1"
+					startscale="10"
+					endscale="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter			
+				spawnrate="30"				
+				particlelife="800"			
+				gravity="0"
+				speed="51"		
+				position="0 0 50"
+				material="/shared/effects/materials/star_11.material"
+				offsetsphere="25 25 55"				
+			>
+				<particle 
+					startcolor="1 1 1"
+					midcolor="1 1 1"
+					endcolor=".1 .1 .1"
+					midcolorpos=".4"
+
+					startframe="0"
+					endframe="1"
+					
+					minstartsize="11"
+					maxstartsize="111"
+					
+					endsize="0"
+					startalpha="0"
+					
+					endalpha="0"				
+					lockright="1"
+				/>
+			</simpleemitter>			
+
+			<simpleemitter			
+				bone="_bone_star"
+				spawnrate="30"				
+				particlelife="800"			
+				gravity="0"
+				speed="51"		
+				position="0 0 30"
+				material="/shared/effects/materials/star_05.material"
+				offsetsphere="25 25 55"				
+			>
+				<particle 
+					startcolor="1 1 1"
+					midcolor="1 1 1"
+					endcolor=".1 .1 .1"
+					midcolorpos=".4"
+					startframe="0"
+					endframe="1"
+					minstartsize="11"
+					maxstartsize="111"
+					endsize="0"
+					startalpha="0"
+					endalpha="0"				
+					lockright="1"
+				/>
+			</simpleemitter>
+						
+			<simpleemitter			
+				bone="_bone_star"
+				spawnrate="33"				
+				particlelife="800"			
+				gravity="0"
+				speed="51"		
+				position="0 0 50"
+				material="/shared/effects/materials/star_07.material"
+				offsetsphere="25 25 55"				
+			>
+				<particle 
+					startcolor="1 1 1"
+					midcolor="1 1 1"
+					endcolor=".1 .1 .1"
+					midcolorpos=".4"
+					startframe="0"
+					endframe="1"
+					minstartsize="31"
+					maxstartsize="111"
+					endsize="0"
+					startalpha="0"
+					endalpha="0"				
+					lockright="1"
+				/>
+			</simpleemitter>				
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

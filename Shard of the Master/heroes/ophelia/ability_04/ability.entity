@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ophelia4"
+
+	icon="icon.tga"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	anim="ability_4"
+	casttime="800"
+	castactiontime="300"
+
+	actiontype="global"
+	casteffecttype="SuperiorMagic GlobalAbility"
+	targetscheme="ally_heroes"
+	
+	novoiceresponse="true"
+	
+	manacost="200,300,400"
+	cooldowntime="120000"
+	
+	dynamicprecache="effects/cast.effect,effects/cast2.effect,effects/cast_self.effect,effects/cast_boost.effect"
+>
+	<onlearn>
+		<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+		<setscriptvalue name="cast2_effect" value="effects/cast2.effect" entity="this_entity" />
+		<setscriptvalue name="castself_effect" value="effects/cast_self.effect" entity="this_entity" />
+		<setscriptvalue name="castboost_effect" value="effects/cast_boost.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onaction>
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="cast2_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_entity" occlude="true" />
+		<getscriptvalue name="castself_effect" destvar="str1" entity="this_entity" />
+		<playeffectdynamic effect="str1" source="target_entity" occlude="true" />
+		
+		<!--voice over for ability use -->
+		<hasavatarkey name="Hero_Ophelia.Alt" >
+			<playeffect effect="/heroes/ophelia/alt/ability_04/effects/cast2.effect"/>
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Ophelia.Alt2" >
+				<playeffect effect="/heroes/ophelia/alt2/ability_04/effects/cast2.effect"/>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Ophelia.Alt3" >
+					<playeffect effect="/heroes/ophelia/alt3/ability_04/effects/cast2.effect"/>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Ophelia.Alt4" >
+						<playeffect effect="/heroes/ophelia/alt4/ability_04/effects/cast2.effect"/>
+					</hasavatarkey>
+					<else>
+					<hasavatarkey name="Hero_Ophelia.Alt5" >
+						<playeffect effect="/heroes/ophelia/alt5/ability_04/effects/cast2.effect"/>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Ophelia.Alt6" >
+							<playeffect effect="/heroes/ophelia/alt6/ability_04/effects/cast2.effect"/>
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/cast2.effect"/>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</else>
+	</onaction>
+
+	<onimpact>
+		<heal a="200,300,400" />
+		<hasmodifier name="shardofthemaster_boost" target="source_entity">
+			<dispel type="StatusDebuff" target="target_entity" />
+			<dispel type="StatusDisable" target="target_entity" />
+		</hasmodifier>
+		
+		<areaofeffect
+			center="source_entity"
+			global="true"
+			targetscheme="my_other_units"
+			targetselection="all"
+			effecttype="SuperiorMagic"
+		>
+			<heal a="600,900,1200" />
+			<hasmodifier name="shardofthemaster_boost" target="source_entity">
+				<dispel type="StatusDebuff" target="target_entity" />
+				<dispel type="StatusDisable" target="target_entity" />
+			</hasmodifier>
+			
+			<!-- Dynamic visual effects -->
+			<getscriptvalue name="cast_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" source="target_entity" occlude="true" />
+		</areaofeffect>		
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="cast_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_entity" occlude="true" />
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"/>
+	
+	<altavatar key="Hero_Ophelia.Alt"
+		dynamicprecache="../alt/ability_04/effects/cast.effect,../alt/ability_04/effects/cast2.effect,../alt/ability_04/effects/cast_self.effect,../alt/ability_04/effects/cast_boost.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt/ability_04/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="cast2_effect" value="../alt/ability_04/effects/cast2.effect" entity="this_entity" />
+			<setscriptvalue name="castself_effect" value="../alt/ability_04/effects/cast_self.effect" entity="this_entity" />
+			<setscriptvalue name="castboost_effect" value="../alt/ability_04/effects/cast_boost.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Ophelia.Alt2"
+		dynamicprecache="effects/cast.effect,../alt2/ability_04/effects/cast2.effect,../alt2/effects/rotn_set.effect,../alt2/ability_04/effects/cast_self.effect,../alt2/ability_04/effects/cast_boost.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+			
+			<hasmodifier name="Neutral_Effects">
+				<setscriptvalue name="cast2_effect" value="../alt2/effects/rotn_set.effect" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setscriptvalue name="cast2_effect" value="../alt2/ability_04/effects/cast2.effect" entity="this_entity" />
+			</else>
+			
+			<setscriptvalue name="castself_effect" value="../alt2/ability_04/effects/cast_self.effect" entity="this_entity" />
+			<setscriptvalue name="castboost_effect" value="../alt2/ability_04/effects/cast_boost.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Ophelia.Alt3"
+		dynamicprecache="../alt3/ability_04/effects/cast.effect,../alt3/ability_04/effects/cast2.effect,../alt3/ability_04/effects/cast_self.effect,../alt3/ability_04/effects/cast_boost.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt3/ability_04/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="cast2_effect" value="../alt3/ability_04/effects/cast2.effect" entity="this_entity" />			
+			<setscriptvalue name="castself_effect" value="../alt3/ability_04/effects/cast_self.effect" entity="this_entity" />
+			<setscriptvalue name="castboost_effect" value="../alt3/ability_04/effects/cast_boost.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Ophelia.Alt4"
+		dynamicprecache="../alt4/ability_04/effects/cast.effect,../alt4/ability_04/effects/cast2.effect,../alt4/ability_04/effects/cast_self.effect,../alt4/ability_04/effects/cast_boost.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt4/ability_04/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="cast2_effect" value="../alt4/ability_04/effects/cast2.effect" entity="this_entity" />			
+			<setscriptvalue name="castself_effect" value="../alt4/ability_04/effects/cast_self.effect" entity="this_entity" />
+			<setscriptvalue name="castboost_effect" value="../alt4/ability_04/effects/cast_boost.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Ophelia.Alt5"
+		dynamicprecache="../alt5/ability_04/effects/cast.effect,../alt5/ability_04/effects/cast2.effect,../alt5/ability_04/effects/cast_self.effect,../alt5/ability_04/effects/cast_boost.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt5/ability_04/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="cast2_effect" value="../alt5/ability_04/effects/cast2.effect" entity="this_entity" />			
+			<setscriptvalue name="castself_effect" value="../alt5/ability_04/effects/cast_self.effect" entity="this_entity" />
+			<setscriptvalue name="castboost_effect" value="../alt5/ability_04/effects/cast_boost.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Ophelia.Alt6"
+		dynamicprecache="../alt6/ability_04/effects/cast.effect,../alt6/ability_04/effects/cast2.effect,../alt6/ability_04/effects/cast_self.effect,../alt6/ability_04/effects/cast_boost.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt6/ability_04/effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="cast2_effect" value="../alt6/ability_04/effects/cast2.effect" entity="this_entity" />			
+			<setscriptvalue name="castself_effect" value="../alt6/ability_04/effects/cast_self.effect" entity="this_entity" />
+			<setscriptvalue name="castboost_effect" value="../alt6/ability_04/effects/cast_boost.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Ophelia.pog_skin"
+		dynamicprecache="effects/cast.effect,effects/cast2.effect,effects/cast_self.effect,../alt4/ability_04/effects/cast_boost.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="cast2_effect" value="effects/cast2.effect" entity="this_entity" />
+			<setscriptvalue name="castself_effect" value="effects/cast_self.effect" entity="this_entity" />
+			<setscriptvalue name="castboost_effect" value="../alt4/ability_04/effects/cast_boost.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Ophelia.Classic"
+		dynamicprecache="effects/cast.effect,effects/cast2.effect,effects/cast_self.effect,../alt4/ability_04/effects/cast_boost.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+			<setscriptvalue name="cast2_effect" value="effects/cast2.effect" entity="this_entity" />
+			<setscriptvalue name="castself_effect" value="effects/cast_self.effect" entity="this_entity" />
+			<setscriptvalue name="castboost_effect" value="../alt4/ability_04/effects/cast_boost.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	
+</ability>

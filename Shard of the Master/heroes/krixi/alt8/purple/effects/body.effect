@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			<!-- <simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="25"
+				offsetradial="20"
+				offsetdirection="0 0 1"
+				offsetradialangle="90"
+				material="/shared/effects/materials/sparks_reveal_white.material"
+				minparticlelife="800"
+				maxparticlelife="1600"
+				gravity="-2"
+				collide="0"
+				depthbias="10"
+				inheritvelocity="0"
+			>
+				<particle
+					maxangle="360"
+					minsize="30"
+					maxsize="40"
+					startframe=".25"
+					endframe="1"
+					startcolor=".95 .5 0" endcolor="5"
+					alpha=".75"
+				/>
+			</simpleemitter> -->
+			
+				<simpleemitter
+					bone="_bone_centerofchest"
+					spawnrate="40"
+					offsetradial="28"
+					offsetdirection="0 0 1"
+					offsetradialangle="90"
+					material="/shared/effects/materials/ring_01_reveal.material"
+					minparticlelife="300"
+					maxparticlelife="500"
+					gravity="-2"
+					collide="0"
+					depthbias="10"
+					inheritvelocity="0"
+				>
+					<particle
+						color=".9 0 1"
+						startsize="0"
+						endsize="7"
+						midsizepos=".25"
+						startframe="0"
+						endframe="1"
+					>
+						<billboard
+							life="250"
+							material="/shared/effects/materials/glow_01.material"
+							startcolor="1.75 0 1"
+							endcolor="0"
+							startsize="0"
+							endsize="15"
+							midsizepos=".25"
+						/>
+						<billboard
+							life="250"
+							material="/shared/effects/materials/glow_01.material"
+							startcolor="1"
+							endcolor="0"
+							startsize="0"
+							endsize="7"
+							midsizepos=".25"
+						/>
+					</particle>
+				</simpleemitter>
+			
+				<simpleemitter
+					bone="_bone_centerofchest"
+					spawnrate="15"
+					offsetradial="20"
+					offsetdirection="0 0 1"
+					offsetradialangle="90"
+					material="/shared/effects/materials/sparks_reveal_white.material"
+					
+					minparticlelife="800"
+					maxparticlelife="1600"
+					gravity="2"
+					collide="0"
+					depthbias="10"
+					inheritvelocity="0"
+				>
+					<particle
+						maxangle="360"
+						startcolor="2 1 2"
+						midcolor="1.75 0 2"
+						endcolor="1.75 0 2"
+						midcolorpos=".5"
+						startframe=".2"
+						endframe="1"
+						minsize="30"
+						maxsize="60"
+						startscale=".5"
+						minendscale="1.5"
+						maxendscale="3"
+					/>
+				</simpleemitter>
+				
+	
+			<billboard
+				bone="_bone_centerofchest"	
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".1 0 .25" midcolor=".3 .15 .4" endcolor=".1 0 .25"
+				size="50"
+				depthbias="-100"
+				life="2000" loop="true"
+			/>
+			
+			<model
+				bone="Box19" roll="90" pitch="180"
+				startscale=".42"  midscale=".5" endscale=".42"
+				model="/heroes/krixi/alt8/effects/model.mdf"
+				material="/shared/effects/materials/shell4.material"
+				alpha="1" 
+				startcolor=".75 0 1" midcolor="1 .55 0" endcolor=".75 0 1"
+				inheritparentmodifiers="true"
+				inheritparentalpha="true"
+				life="550" loop="true"
+			/>
+		
+		<template name="trails">
+			<trailemitter
+				bone="{bone}"
+				position="0 0 0" 
+				spawnrate="10"
+				particlelife="400"
+				acceleration="0"
+				material="/shared/effects/materials/spirit_smoke.material"
+				depthbias="-10"
+				texpostime="600"
+				texposscale="0"
+				texstretchscale="1"
+				gravity="0" 
+				subframepose="1"
+			>
+				<particle 
+					startsize="5" endsize="1" midsizepos=".75"
+					scale="4"
+					startcolor="1 .75 0" endcolor=".5 0 1" midcolorpos=".35"
+					turn="true" 
+					anchor="true"
+				>
+				</particle>
+				
+			</trailemitter>
+		</template>
+		<instance name="trails" bone="Bone002"  />
+		<instance name="trails" bone="Bone001" />
+		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="slow" useentityeffectscale="1" deferred="true">
+	<definitions>
+	
+		<modifier
+			expirelife="500"
+			startcolor=".15"
+			endcolor="1"
+		/> 
+		
+	<particlesystem name="system0" space="world" scale="1">
+	
+		<model
+			parentmodel="1"
+			parentskeleton="1"
+			expirelife="500"
+			startcolor=".05 .2 .1"
+			endcolor="0"
+			material="/shared/effects/materials/shell_rim_white.material"
+		/>
+			
+			<skeletonemitter
+				minparticlelife="400"
+				maxparticlelife="600"
+				spawnrate="100"
+				material="/shared/effects/materials/bub.material"
+				minspeed="5"
+				maxspeed="10"
+				drag="0.02"
+				gravity="30"
+				offsetsphere="15"
+				inheritvelocity=".25"
+			>
+				<particle
+					turn="1"
+					width="7"
+					size="20"
+					minscale="0.25"
+					maxscale="0.75"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					color="0"
+					lockup="true"
+				/>
+			</skeletonemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				minparticlelife="400"
+				maxparticlelife="600"
+				spawnrate="100"
+				material="/shared/effects/materials/bub.material"
+				minspeed="5"
+				maxspeed="10"
+				drag="0.02"
+				gravity="30"
+				offsetsphere="30"
+				inheritvelocity=".25"
+			>
+				<particle
+					turn="1"
+					width="7"
+					size="20"
+					minscale="0.25"
+					maxscale="0.75"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					color="0"
+					lockup="true"
+				/>
+			</simpleemitter>
+			<!--
+			<simpleemitter
+				bone="_bone_centerofchest"
+				offsetsphere="10"
+				spawnrate="10"
+				particlelife="1000"
+			>
+				<particle
+					anchor="1"
+				>
+					<groundsprite
+						life="1000"
+						startalpha=".35"
+						midalpha=".35"
+						endalpha="0"
+						startsize="50"
+						endsize="100"
+						maxyaw="360"
+						startcolor=".4"
+						endcolor=".2"
+						material="/shared/effects/materials/puddle_02.material"
+					/>
+				</particle>
+			</simpleemitter>
+			-->
+			
+			<simpleemitter
+				bone="_bone_origin"
+				spawnrate="4"
+				particlelife="1000"
+				position="0 0 10"
+				material="/shared/effects/materials/refract_swell.material"
+			>
+				<particle
+					lockup="1"
+					pitch="90"
+					startalpha=".35"
+					endalpha="0"
+					startsize="0"
+					endsize="350"
+					param=".1"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_origin"
+				spawnrate="5"
+				particlelife="1500"
+				position="0 0 10"
+				material="/shared/effects/materials/corona_01.material"
+			>
+				<particle
+					lockup="1"
+					pitch="90"
+					startalpha=".35"
+					endalpha="0"
+					startsize="0"
+					endsize="170"
+					startcolor="0 .8 0"
+					endcolor="0"
+					anchor="1"
+				/>
+				<particle
+					lockup="1"
+					pitch="90"
+					startalpha=".35"
+					endalpha="0"
+					startsize="0"
+					endsize="170"
+					startcolor=".4 0 .8"
+					endcolor="0"
+					anchor="1"
+				/>
+				<particle
+					lockup="1"
+					pitch="90"
+					startalpha=".35"
+					endalpha="0"
+					startsize="0"
+					endsize="170"
+					startcolor="0 0 .8"
+					endcolor="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_origin"
+				spawnrate="5"
+				particlelife="1500"
+				position="0 0 10"
+				material="/shared/effects/materials/corona_06_blend.material"
+			>
+				<particle
+					lockup="1"
+					pitch="90"
+					startalpha=".7"
+					endalpha="0"
+					startsize="0"
+					endsize="170"
+					color="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			
+			
+			<simpleemitter
+				bone="_bone_origin"
+				spawnrate="5"
+				particlelife="1500"
+				position="0 0 10"
+				material="/shared/effects/materials/whitedot_blend.material"
+			>
+				<particle
+					lockup="1"
+					pitch="90"
+					startalpha=".35"
+					endalpha="0"
+					startsize="0"
+					endsize="250"
+					startcolor=".05 0 .1"
+					endcolor="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			
+	
+	</particlesystem>
+	</definitions>
+	<thread>
+		<spawnmodifier instance="instance0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Riptide_Ability2_Puddles"
+
+	radius="350"
+	lifetime="-1"
+	effect="effects/puddle.effect"
+	targetselection="all"
+	targetscheme="all_heroes"
+	effecttype=""
+
+	ignoreinvulnerable="true"
+	center="this_entity"
+>
+	<onspawn>
+		<compare a="param" b="1" op="eq">
+			<areaofeffect
+				center="this_entity"
+				radius="350"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<applystate name="State_Riptide_Ability2_Silence" target="target_entity" duration="1500,2000,2500,3000" />
+				<damage effecttype="Magic" amount="40,60,80,100" />
+			</areaofeffect>
+		</compare>
+	</onspawn>
+	
+	<onframeimpact>
+		<entitytype type="Hero_Riptide">
+			<hasmodifier entity="target_entity" name="riptide_ult_active" />
+			<else>
+				<pushability name="Ability_Riptide3" />
+				<setparam source="stack_entity" a="source_level" />
+				<compare a="param" b="1" op="ge">
+					<applystate name="State_Riptide_Ability3" target="target_entity" duration="3000" continuous="true" timeout="frametime" statelevel="param" />
+				</compare>
+			</else>
+		</entitytype>
+	</onframeimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onframeimpact>
+			<entitytype type="Hero_Riptide">
+				<hasmodifier entity="target_entity" name="riptide_ult_active" />
+				<else>
+					<pushability name="Ability_Riptide3" />
+					<setparam source="stack_entity" a="source_level" />
+					<compare a="param" b="1" op="ge">
+						<applystate name="State_Riptide_Ability3" target="target_entity" duration="3000" continuous="true" timeout="frametime" statelevel="param" />
+					</compare>
+				</else>
+			</entitytype>
+			<else>
+				<cantarget targetscheme="enemy_units">
+					<applystate name="State_Riptide_Shard" target="target_entity" duration="3000" continuous="true" timeout="frametime" statelevel="param" />
+				</cantarget>
+			</else>
+		</onframeimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Riptide.Alt"
+		effect="../alt/ability_02/effects/puddle.effect"
+	/>
+	
+	<altavatar key="Hero_Riptide.Alt2"
+		effect="../alt2/ability_02/effects/puddle.effect"
+	/>
+	
+	<altavatar key="Hero_Riptide.Alt3"
+		effect="../alt3/ability_02/effects/puddle.effect"
+	/>
+	
+	<altavatar key="Hero_Riptide.Alt4"
+		effect="../alt4/ability_02/effects/puddle.effect"
+	/>
+	<altavatar key="Hero_Riptide.Alt5"
+		effect="../alt4/ability_02/effects/puddle.effect"
+	/>
+	<altavatar key="Hero_Riptide.Alt6"
+		effect="../alt6/ability_02/effects/puddle.effect"
+	/>
+	
+	<altavatar key="Hero_Riptide.Alt7"
+		effect="../alt7/ability_02/effects/puddle.effect"
+	/>
+	
+	<altavatar key="Hero_Riptide.Alt8"
+		effect="../alt8/ability_02/effects/puddle.effect"
+	/>
+</affector>

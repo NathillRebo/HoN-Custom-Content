@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+	<definitions>
+	
+		<modifier
+			life="200"
+			name="modifier0"
+			startcolor="1"
+			midcolor=".125 .25 .5"
+			endcolor="1"
+			midcolorpos=".2"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1.0">
+			
+			<sound
+			    norestart="true"
+				channel="9473"
+		        life="1000"
+				soundloop="true"
+				fadein="100"
+				fadeout="600"
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="800"
+				volume=".3"
+				sample="../../sounds/fulcrum_beat_loop.wav"
+			/>
+			
+			<model
+				life="400"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor=".075 .125 .25"
+				endcolor="0 0 0"
+				midcolorpos=".25"
+				material="/shared/effects/materials/shell6.material"
+				startalpha="1"
+				endalpha="10"
+			/>
+
+		</particlesystem>
+		
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

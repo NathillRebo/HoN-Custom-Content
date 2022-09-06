@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Kraken_Ability1_Shard"
+
+	radiusstart="110"
+	radiusend="110"
+	speed="1250"
+	flyheight="1000"
+	
+	lifetime="720"
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	persist="true"
+	
+	effect="projectile.effect"
+	impacteffect="effects/impact.effect"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="110,160,210,260" />
+		<applystate name="State_Kraken_Ability1" duration="3000" />
+	</onimpact>
+	
+	<altavatar key="Hero_Defiler.Alt2" modpriority="1"
+		effect="../alt2/ability_01/effects/ability.effect"
+		impacteffect="../alt2/ability_01/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt3" modpriority="1"
+		effect="../alt3/ability_01/effects/ability.effect"
+		impacteffect="../alt3/ability_01/effects/impact.effect"
+	>
+		<modifier key="Alt3_Voice"
+			effect="../alt3/ability_01/effects/ability_ult.effect"
+			impacteffect="../alt3/ability_01/effects/impact_ult.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Defiler.Alt4" modpriority="1"
+		effect="../alt4/ability_01/effects/ability.effect"
+		impacteffect="../alt4/ability_01/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt5" modpriority="1"
+		effect="../alt5/ability_01/effects/ability.effect"
+		impacteffect="../alt5/ability_01/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.Alt6" modpriority="1"
+		effect="../alt6/ability_01/effects/ability.effect"
+		impacteffect="../alt6/ability_01/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Defiler.set_ascension" modpriority="1"
+		effect="../set_ascension/ability_01/effects/ability.effect"
+		impacteffect="../set_ascension/ability_01/effects/impact.effect"
+	/>
+</affector>

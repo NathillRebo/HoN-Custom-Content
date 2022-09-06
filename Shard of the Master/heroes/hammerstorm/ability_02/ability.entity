@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Hammerstorm2"
+
+	icon="icon.tga"
+	statuseffecttooltip="State_Hammerstorm_Ability2"
+	
+	anim="ability_3"
+	casttime="1"
+	castactiontime="0"
+	casteffect="effects/cast.effect"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="self_position"
+	targetradius="600"
+	targetmaterial="/shared/materials/area_cast_legion_indicator.material"
+	casteffecttype=""
+	targetscheme="ally_units"
+
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nonaggressive="true"
+	
+	manacost="25"
+	cooldowntime="18000,16000,14000,12000"
+	
+	armor="2,4,6,8"
+>
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		nosilence="true"
+		nostun="true"
+		noforce="true"
+		targetradius="700"
+	/>
+	
+	<onimpact>
+		<spawnaffector name="Affector_Hammerstorm_Ability2" target="target_position" />
+	</onimpact>
+		
+	<altavatar key="Hero_Hammerstorm.Alt" modpriority="1"
+		casteffect="../alt/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt2" modpriority="1"
+		casteffect="../alt2/ability_02/effects/cast.effect"
+	/>
+	
+	<modifier key="Alt2_Sin_Set_Bonus" modpriority="2"
+		casteffect="../alt2/sin_set_bonus/ability_02/effects/cast.effect"
+	>
+	</modifier>
+		
+	<altavatar key="Hero_Hammerstorm.Alt3" modpriority="1"
+		casteffect="../alt3/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt4" modpriority="1"
+		casteffect="../alt4/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt6" modpriority="1"
+		casteffect="../alt6/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt7" modpriority="1"
+		casteffect="../alt7/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt8" modpriority="1"
+		casteffect="../alt8/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt9" modpriority="1"
+		casteffect="../alt9/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt10" modpriority="1"
+		casteffect="../alt10/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt11" modpriority="1"
+		icon="/heroes/Hammerstorm/alt11/ability_02/icon.tga"
+		casteffect="../alt11/ability_02/effects/cast.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt12" modpriority="1"
+		casteffect="../alt12/ability_02/effects/cast.effect"
+	/>
+	
+	<modifier key="Combo_efx_hammerstorm" modpriority="1"
+		casteffect="../alt12/ability_02/effects/cast_combo.effect"
+	/>
+	
+	<altavatar key="Hero_Hammerstorm.Alt13" modpriority="1"
+		casteffect="../alt13/ability_02/effects/cast.effect"
+	/>
+</ability>

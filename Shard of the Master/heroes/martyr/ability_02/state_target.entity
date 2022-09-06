@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Martyr_Ability2_Target"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="false"
+	maxcharges="100"
+>
+	<onframe>
+		<evaluate a="accumulator" b="target_maxhealth" op="div" />
+		<evaluate a="result" b="100" op="mult" />
+		<evaluate a="result" b="100" op="min" />
+		<setcharges entity="this_entity" a="result" />
+	</onframe>
+	
+	<ondamaged>
+		<accumulatedamage scale="0.55,0.70,0.85,1" />
+		<scaledamage scale="0.45,0.30,0.15,0" />
+	</ondamaged>
+
+	<onexpired>
+		<compare a="accumulator" b="0" op="gt">
+			<cantarget ignoreinvulnerable="false">
+				<!-- Minimum HP Threshold -->
+				<setvar0 a="target_maxhealth" b="0.07" op="mult" />
+				
+				<!-- Only incur Health Loss if the target's health is greater than the minimum threshold -->
+				<compare a="target_health" b="var0" op="gt">
+					<!-- Health adjustment is based off the target's Magic Armor -->
+					<calculatedamage amount="accumulator" effecttype="Magic" />
+					<setvar1 a="result" />
+					
+					<!-- Manually set target Health if below HP threshold -->
+					<evaluate a="target_health" b="var1" op="sub" />
+					<compare a="result" b="var0" op="lt">
+						<evaluate a="target_health" b="var0" op="sub" />
+						<changehealth b="result" op="sub" />
+					</compare>
+					<else>
+						<changehealth b="var1" op="sub" />
+					</else>
+				</compare>
+				<hasmodifier name="shardofthemaster_boost">
+					<applystate name="State_Martyr_Ability2_Shard" duration="4000" charges="charges" />
+					<setaccumulator value="charges" entity="stack_entity" />
+				</hasmodifier>
+			</cantarget>
+		</compare>
+		
+		<!-- VFX -->
+		<hasavatarkey name="Hero_Martyr.Alt4">
+			<playeffect effect="../alt4/ability_02/effects/end_impact.effect" target="target_entity" source="target_entity" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Martyr.Alt6">
+				<playeffect effect="../alt6/ability_02/effects/end_impact.effect" target="target_entity" source="target_entity" />
+			</hasavatarkey>
+			<else>
+				<playeffect effect="effects/end_impact.effect" target="target_entity" source="target_entity" />
+			</else>
+		</else>
+	</onexpired>
+	
+	<altavatar key="Hero_Martyr.Alt4" modpriority="1"
+		passiveeffect="../alt4/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Martyr.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Martyr.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_02/effects/state.effect"
+	/>
+	
+</state>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bushwack_Ability2_Shard"
+	
+	totaldamagemultiplier="0.4"
+	
+	effecttype="StatusBuff"
+	icon="icon.tga"
+>		
+	<onattackimpact>
+		<expire/>
+	</onattackimpact>
+</state>

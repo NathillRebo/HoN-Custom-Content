@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Zephyr_Ability4_Self"
+	
+	ishidden="true"
+	
+	impactinterval="1000"
+>
+	<onimpact>
+		<hasmodifier name="ult_boost" entity="source_entity">
+			<addcharges entity="this_proxy_entity" count="0" />
+			<compare a="result" b="6,8,10,12" op="eq">
+				<!-- Update the timer -->
+				<starttimer entity="this_proxy_entity" duration="10" />
+			</compare>
+			<spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="6,8,10,12" />
+		</hasmodifier>
+		<else>
+			<addcharges entity="this_proxy_entity" count="0" />
+			<compare a="result" b="2,4,6,8" op="eq">
+				<!-- Update the timer -->
+				<starttimer entity="this_proxy_entity" duration="10" />
+			</compare>
+			<spawnunit name="Pet_Zephyr_Ability2" target="source_entity" maxactive="2,4,6,8" />
+		</else>
+		
+	</onimpact>
+	
+	<oninflict>
+		<changeduration b="100" op="min" />
+	</oninflict>
+
+	<modifier key="Zephyr_Ability2_1" modpriority="50"
+	>
+		<oninflict>
+			<setlevel value="1" />
+		</oninflict>
+		
+		<onrefresh>
+			<setlevel value="1" />
+		</onrefresh>
+	</modifier>
+	
+	<modifier key="Zephyr_Ability2_2" modpriority="60"
+		description="true"
+	>
+		<oninflict>
+			<setlevel value="2" />
+		</oninflict>
+		
+		<onrefresh>
+			<setlevel value="2" />
+		</onrefresh>
+	</modifier>
+	
+	<modifier key="Zephyr_Ability2_3" modpriority="70"
+		description="true"
+	>
+		<oninflict>
+			<setlevel value="3" />
+		</oninflict>
+		
+		<onrefresh>
+			<setlevel value="3" />
+		</onrefresh>
+	</modifier>
+	
+	<modifier key="Zephyr_Ability2_4" modpriority="80"
+		description="true"
+	>
+		<oninflict>
+			<setlevel value="4" />
+		</oninflict>
+		
+		<onrefresh>
+			<setlevel value="4" />
+		</onrefresh>
+	</modifier>
+</state>

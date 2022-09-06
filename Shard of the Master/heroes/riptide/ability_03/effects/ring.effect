@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+		<!--
+			<groundsprite
+				material="/shared/effects/materials/corona_07_ground.material"
+				size="550"
+				color=".05 .1 .1"
+			/>
+		-->
+		
+			<groundsprite
+				life="500"
+				material="/shared/effects/materials/outsplash_ground.material"
+				size="500"
+				color="0.3 0.6 0.7"
+				startalpha="0"
+				endalpha="0.38"
+			/>
+		
+			<groundsprite
+				delay="500"
+				life="3600"
+				material="/shared/effects/materials/outsplash_ground.material"
+				startsize="500"
+				midsize="575"
+				endsize="500"
+				color="0.3 0.6 0.7"
+				alpha="0.38"
+				loop="true"
+			/>
+			
+			<simpleemitter
+				spawnrate="1"
+				particlelife="3250"
+			>
+				<particle
+					anchor="1"
+				>
+					<groundsprite
+						life="3250"
+						material="/shared/effects/materials/outsplash_ground.material"
+						startsize="240"
+						endsize="640"
+						color="0.6"
+						
+						startalpha="0"
+						midalphapos="0.125"
+						midalpha="0.25"
+						endalpha="0"
+						minyaw="0"
+						maxyaw="360"
+					/>
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

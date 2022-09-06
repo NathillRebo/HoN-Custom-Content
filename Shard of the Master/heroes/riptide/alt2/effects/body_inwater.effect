@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+  <definitions>
+	
+    <particlesystem name="system0" space="world" >
+
+		<model
+			model="../in_water/water_body/model.mdf"
+			material="water/water.material"
+			parentskeleton="true"
+			parentalpha="true"
+			inheritparentmodifiers="false"
+		>
+		</model>
+	  
+		<model
+			directionalspace="global"
+			bone="Bip01"
+			position="0 0 -10"
+			yawspeed="200"
+			model="/heroes/riptide/effects/ult_form/effects/water.mdf"
+			material="water/water.material"
+			parentskeleton="false"
+			inheritparentmodifiers="false"
+			parentalpha="true"
+			scale="1"
+		>
+		</model>
+
+	</particlesystem>
+	  
+	<particlesystem name="system2" space="entity" >
+	
+		<!-- fish -->
+			
+		<template name="fish">
+			<model
+				position="0 0 0"
+				minscale=".1"
+				maxscale=".5"
+				model="../ability_03/effects/fish/model.mdf"
+				anim="idle"
+				expirelife="1000"
+				startcolor="{color}"
+				endcolor="0"
+				
+				startalpha="1"
+				endalpha="0"
+				
+				minyawspeed="0"
+				maxyawspeed="100"
+				pitchspeed="0"
+			>
+			</model>
+		</template>
+		
+		<simpleemitter
+			count="80"
+			spawnrate="20"
+			offsetsphere="10 10 40"
+			depthbias="0"
+			position="0 0 30"
+			direction="0 0 1"
+			minangle="70"
+			maxangle="110"
+		>	
+			<particle
+			>				
+				<instance name="fish" color=".8 .2 .3"/>				
+			</particle>	
+
+			<particle
+			>				
+				<instance name="fish" color=".8 .4 .9"/>					
+			</particle>
+			
+			<particle
+			>				
+				<instance name="fish" color=".8 .8 .4"/>					
+			</particle>
+			
+			<particle
+			>				
+				<instance name="fish" color=".5 .8 .4"/>					
+			</particle>
+		</simpleemitter>
+	
+	</particlesystem>
+	  
+	<particlesystem name="system1" space="world" scale="1">
+	
+			<template name="falling_fish">
+				<model
+					position="0 0 5"
+					minscale=".1"
+					maxscale=".5"
+					expirelife="1000"
+					model="../ability_01/effects/fish/model.mdf"
+					anim="wiggle"
+					startcolor="{color}"
+					endcolor="0"
+					
+					startalpha="1"
+					endalpha="0"
+					
+					minyaw="-180"
+					maxyaw="180"
+					minyawspeed="100"
+					maxyawspeed="500"
+					minpitchspeed="100"
+					maxpitchspeed="500"
+				>
+				</model>
+			</template>
+		
+			<simpleemitter
+				spawnrate="7"
+				offsetsphere="30"
+				particlelife="1500"
+				depthbias="-120"
+				position="0 0 50"
+				direction="0 0 1"
+				minspeed="20"
+				maxspeed="75"
+				gravity="50"
+				collide="1"
+				minangle="70"
+				maxangle="110"
+			>	
+				<particle
+				>				
+					<instance name="falling_fish" color=".8 .4 .5"/>				
+				</particle>	
+
+				<particle
+				>				
+					<instance name="falling_fish" color=".8 .4 .9"/>					
+				</particle>
+				
+				<particle
+				>				
+					<instance name="falling_fish" color=".8 .8 .4"/>					
+				</particle>
+				
+				<particle
+				>				
+					<instance name="falling_fish" color=".5 .8 .4"/>					
+				</particle>
+			</simpleemitter>
+		
+			<!-- ground effects -->
+			<groundsprite
+				position="0 -5 0"
+				expirelife="500"
+				material="/shared/effects/materials/water_puddle.material"
+				size="30"
+				color="0"
+				startalpha="1"
+				endalpha="0"
+			/>
+
+			<terrainemitter
+				position="0 -5 0"
+				spawnrate="2"
+				minparticlelife="900"
+				maxparticlelife="1200"
+				material="/shared/effects/materials/outsplash_add.material"
+				depthbias="-10"
+			>
+				<particle
+					maxangle="360"
+					life="600"
+					startsize="50"
+					minendsize="75"
+					maxendsize="100"
+					startcolor="0"
+					midcolor=".5"
+					endcolor="0"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					anchor="1"
+				/>
+			</terrainemitter>
+
+			<terrainemitter
+				position="0 -5 0"
+				spawnrate="2"
+				minparticlelife="900"
+				maxparticlelife="1200"
+				material="/shared/effects/materials/refract_outsplash.material"
+				depthbias="-1"
+			>
+				<particle
+					maxangle="360"
+					life="600"
+					startsize="50"
+					minendsize="120"
+					maxendsize="150"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					anchor="1"
+					startparam="0"
+					midparam=".05"
+					endparam="0"
+				/>
+			</terrainemitter>
+			
+			<!-- body splashes -->
+			<template name="splashes">
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					gravity="5"
+					spawnrate="{spawnrate}"
+					minparticlelife="400"
+					maxparticlelife="600"
+					offsetsphere="{offsetsphere}"
+					material="/shared/effects/materials/whitewater_02.material"
+					depthbias="55"
+					inheritvelocity=".1"
+					particlescale="{scale}"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor="0 0 0"
+						midcolor=".3 .4 .5"
+						endcolor="0 0 0"
+						minstartscale="2"
+						maxstartscale="3"
+						maxendscale="20"
+						minendscale="12"
+						startalpha="0"
+						midalpha="0.25"
+						midalphapos="0.2"
+						endalpha="0"
+					/>
+				</twopointemitter>
+			</template>
+
+			<instance name="splashes" bone_a="" bone_b="_bone_center" spawnrate="50" offsetsphere="25" scale="1" />
+			<instance name="splashes" bone_a="_bone_center" bone_b="_bone_centerofchest" spawnrate="30" offsetsphere="15" scale="1" />
+			<instance name="splashes" bone_a="_bone_centerofchest" bone_b="_bone_righthand" spawnrate="10" offsetsphere="5" scale=".5" />
+			<instance name="splashes" bone_a="_bone_centerofchest" bone_b="_bone_lefthand" spawnrate="10" offsetsphere="5" scale=".5" />
+
+
+			
+			<template name="splashes01">
+				<simpleemitter
+					bone="{bone}"
+					gravity="-1"
+					spawnrate="15"
+					minparticlelife="600"
+					maxparticlelife="850"
+					offsetsphere="25 25 0"
+					material="/shared/effects/materials/water_spray_add.material"
+					depthbias="-55"
+					inheritvelocity="-0.1"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor=".125"
+						midcolor=".25"
+						endcolor=".125"
+						size="1"
+						minstartscale="5"
+						maxstartscale="10"
+						minendscale="15"
+						maxendscale="20"
+						startalpha="0"
+						midalpha=".15"
+						midalphapos="0.2"
+					
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="splashes01" bone="_bone_origin"/>
+			<instance name="splashes01" bone="Bip01"/>
+
+			
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0"
+				midcolor=".5 1 2"
+				endcolor="0"
+				material="/shared/effects/materials/shell4.material"
+				startalpha="1"
+				endalpha="0"
+				startsize="1.15"
+				endsize="1.05"
+				life="1000"
+			/>
+						
+			<template name="splashes02">
+				<simpleemitter
+					bone="{bone}"
+					gravity="-1"
+					spawnrate="5"
+					minparticlelife="350"
+					maxparticlelife="500"
+					offsetsphere="25 25 0"
+					material="/shared/effects/materials/whitewater_02.material"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor="0 0 0"
+						midcolor="0 .5 1"
+						endcolor="0 0 0"
+						size="2"
+						minstartscale="6"
+						maxstartscale="8"
+						maxendscale="20"
+						minendscale="12"
+						startalpha="0"
+						midalpha="0.25"
+						midalphapos="0.2"
+						endalpha="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					gravity="-1"
+					spawnrate="10"
+					minparticlelife="350"
+					maxparticlelife="500"
+					offsetsphere="25 25 0"
+					material="/shared/effects/materials/whitewater_02.material"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor="0 0 0"
+						midcolor=".25 .25 .25"
+						endcolor="0 0 0"
+						size="2"
+						minstartscale="6"
+						maxstartscale="8"
+						maxendscale="20"
+						minendscale="12"
+						startalpha="0"
+						midalpha="0.25"
+						midalphapos="0.2"
+						endalpha="0"
+						startanchor="1"
+						endanchor="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					gravity="-1"
+					spawnrate="10"
+					minparticlelife="350"
+					maxparticlelife="500"
+					offsetsphere="25 25 0"
+					material="/shared/effects/materials/refract_outsplash.material"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						color="1 1 1"
+						param=".5"
+						size="2"
+						minstartscale="10"
+						maxstartscale="12"
+						maxendscale="35"
+						minendscale="40"
+						startalpha="0"
+						midalpha="1"
+						midalphapos="0.2"
+						endalpha="0"
+						startanchor="1"
+						endanchor="0"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="splashes02" bone="Bip01"/>
+			<instance name="splashes02" bone="_bone_origin"/>
+
+			<template name="splashes03">
+				<simpleemitter
+					bone="{bone}"
+					gravity="-1"
+					spawnrate="10"
+					minparticlelife="600"
+					maxparticlelife="850"
+					offsetsphere="25 25 0"
+					material="/shared/effects/materials/wave.material"
+					depthbias="-55"
+					inheritvelocity="-0.1"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor="0 0 0"
+						midcolor=".2"
+						endcolor="0 0 0"
+						size="2"
+						minstartscale="5"
+						maxstartscale="10"
+						minendscale="15"
+						maxendscale="20"
+						startalpha="0"
+						midalpha=".15"
+						midalphapos="0.2"
+						endalpha="0"
+						anchor="1"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="splashes03" bone="_bone_centerofchest"/>
+			<instance name="splashes03" bone="_bone_origin"/>
+		
+			<!-- Constellation -->
+			
+			<template name="star">
+				<billboard					
+					bone="{bone}"
+					color="1 .8 .5"
+					position="0 0 0"
+					
+					alpha="1"
+								
+					size="8"
+								
+					material="/shared/effects/materials/star_03.material"
+				/>
+			</template>
+			
+			<template name="beam">
+				<beam
+					bone_a="{a}"
+					bone_b="{b}"
+					
+					size="5"
+					
+					color=".1 .8 .8"
+					
+					alpha="1"
+					material="/shared/effects/materials/whitedot.material"
+					framespeed="5"
+				/>
+			</template>
+			
+			<controller bone="_bone_centerofchest">
+				<model
+					parentskeleton="false"
+					position="0 15 0"
+					scale="1"
+					anim="rest"
+					model="constellation/model.mdf"
+					inheritparentmodifiers="true"
+					parentalpha="true"
+					pitch="250"
+				>
+				
+					<instance name="star" bone="_bone_constellation015"/>
+					<instance name="star" bone="_bone_constellation016"/>
+					<instance name="star" bone="_bone_constellation017"/>
+					<instance name="star" bone="_bone_constellation018"/>
+					<instance name="star" bone="_bone_constellation019"/>
+					<instance name="star" bone="_bone_constellation020"/>
+					<instance name="star" bone="_bone_constellation021"/>
+					<instance name="star" bone="_bone_constellation022"/>
+					<instance name="star" bone="_bone_constellation023"/>
+					<instance name="star" bone="_bone_constellation024"/>
+					<instance name="star" bone="_bone_constellation025"/>
+					<instance name="star" bone="_bone_constellation026"/>
+					<instance name="star" bone="_bone_constellation027"/>
+					<instance name="star" bone="_bone_constellation028"/>
+				</model>
+			</controller>
+
+		</particlesystem>
+	  
+  </definitions>
+  <thread>
+    <spawnparticlesystem particlesystem="system0" instance="instance0" />
+	<spawnparticlesystem particlesystem="system1" instance="instance1" />
+	<spawnparticlesystem particlesystem="system2" instance="instance2" />
+    <waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+	<waitfordeath instance="instance2" />
+  </thread>
+</effect>

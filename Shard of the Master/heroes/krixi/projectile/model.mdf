@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="glaive.max" file="model.model" type="K2" >
+	<skin name="default">
+		<reference material="material.material"/>
+    </skin>
+	<skin name="silver">
+		<reference material="silver/material.material"/>
+    </skin>
+	<skin name="gold">
+		<reference material="gold/material.material"/>
+    </skin>
+	
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" blendtime="0"/>
+</model>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bubbles_Ability3"
+
+	icon="icon.tga"
+	
+	passiveeffect="effects/state.effect"
+	invulnerable="true"
+
+	nothreat="true"
+	effecttype=""
+>
+	<onframe />
+	
+	<altavatar key="Hero_Bubbles.Alt2" modpriority="1"
+		icon="/heroes/bubbles/alt2/ability_03/icon.tga"
+	/>
+
+	<modifier key="krosmode" modpriority="100"
+		morphmodel="/heroes/bubbles/model.mdf"
+
+		morphpriority="100"
+	/>
+	
+	<modifier key="shardofthemaster_boost">
+		<onframe>
+			<setvar1 a="600" b="frametime" op="mult" />
+			
+			<pushability source="this_owner_entity" slot="0" />
+			<reducecooldown entity="stack_entity" duration="var1" />
+			<pushability source="this_owner_entity" slot="1" />
+			<reducecooldown entity="stack_entity" duration="var1" />
+			<pushability source="this_owner_entity" slot="3" />
+			<reducecooldown entity="stack_entity" duration="var1" />
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_Bubbles.Alt9" modpriority="1"
+		passiveeffect="/heroes/bubbles/alt9/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.Alt10" modpriority="1"
+		passiveeffect="/heroes/bubbles/alt10/ability_03/effects/state.effect"
+	>
+		<onexpired>
+			<playeffect effect="/heroes/bubbles/alt10/ability_03/effects/sound_done.effect" source="target_position" occlude="true" />
+		</onexpired>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt11" modpriority="1"
+		passiveeffect="/heroes/bubbles/alt11/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.Alt12" modpriority="1"
+	    icon="/heroes/bubbles/alt12/ability_03/icon.tga"
+		passiveeffect="/heroes/bubbles/alt12/ability_03/effects/state.effect"
+	>
+		<modifier key="Night_Set_BubblesAlt12"
+			icon="/heroes/bubbles/alt13/ability_03/icon.tga"
+			passiveeffect="/heroes/bubbles/alt13/ability_03/effects/state.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt13" modpriority="1"
+	    icon="/heroes/bubbles/alt13/ability_03/icon.tga"
+		passiveeffect="/heroes/bubbles/alt13/ability_03/effects/state.effect"
+	>
+		<modifier key="Night_Set_BubblesAlt13"
+			icon="/heroes/bubbles/alt12/ability_03/icon.tga"
+			passiveeffect="/heroes/bubbles/alt12/ability_03/effects/state.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Bubbles.Alt14" modpriority="1"
+		passiveeffect="/heroes/bubbles/alt14/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Bubbles.Alt15" modpriority="1"
+		passiveeffect="/heroes/bubbles/alt15/ability_03/effects/state.effect"
+	/>
+
+	<altavatar key="Hero_Bubbles.trophy_skin03" modpriority="1"
+		passiveeffect="/heroes/bubbles/trophy_skin/ability_03/effects/state03.effect"
+	/>
+</state>

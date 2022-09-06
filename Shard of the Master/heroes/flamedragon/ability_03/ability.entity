@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_FlameDragon3"
+	
+	icon="icon.tga"
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	statuseffecttooltip="State_FlameDragon_Ability3"
+	
+	actiontype="passive"
+>
+	
+	<ondamage>
+		<damageeffecttype effecttype="DOT" />
+		<else>
+			<cantarget targetscheme="enemy_units">
+				<!-- Q is the damage source -->
+				<entitytype type="Affector_FlameDragon_Ability1" target="inflictor_entity">
+					<setaccumulator value="1" />
+				</entitytype>
+				
+				<!-- If any of the above conditions pass true, apply the E DoT state -->
+				<compare a="accumulator" b="1" op="eq">
+					<applystate name="State_FlameDragon_Ability3" duration="4000" pushentity="true" />
+
+					<!-- Set max number of DoT state spreads per main application -->
+					<changeaccumulator b="1" op="add" entity="stack_entity" />
+				</compare>
+				<setaccumulator value="0" />
+			</cantarget>
+		</else>
+	</ondamage>
+	
+	<onattackimpact>
+		<cantarget targetscheme="enemy_units">
+			<applystate name="State_FlameDragon_Ability3" duration="4000" pushentity="true" />
+			
+			<!-- Set max number of DoT state spreads per main application -->
+			<setaccumulator value="4" entity="stack_entity" />
+		</cantarget>
+	</onattackimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100" cooldowntime="7000" frontqueue="true">
+		<onattackpreimpact>
+			<canactivate>
+				<startcooldown />
+				<areaofeffect
+					radius="250"
+					targetselection="all"
+					targetscheme="enemy_units"
+					effecttype="Physical"
+					ignore="target_entity"
+				>
+					<attack targetscheme="enemy_units" source="source_entity" />
+				</areaofeffect>
+			</canactivate>
+		</onattackpreimpact>
+	</modifier>
+</ability>

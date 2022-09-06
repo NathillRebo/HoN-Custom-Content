@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="/heroes/bephelgor/alt3/sounds/vox_1.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".4"
+				sample="../sounds/cast2.wav"
+			/>
+
+			<simpleemitter
+				delay="500"
+				life="2400"
+				startspawnrate="200"
+				endspawnrate="0"
+				minparticlelife="500"
+				maxparticlelife="1500"
+				gravity="0"
+				minspeed="1000"
+				maxspeed="3500"
+				drag="0.015"
+				angle="70"
+				offsetsphere="15"
+				position="0 0 50"
+				direction="0 1 0"
+				material="/shared/effects/materials/smoke_particle.material"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color=".2 .3 .1"
+					maxanglespeed="30"
+					startsize="100"
+					endsize="175"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"
+				 />
+
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					color=".4 .8 .2"
+					maxanglespeed="50"
+					startsize="100"
+					endsize="175"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"
+				 />
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="2"
+				particlelife="3000"
+				acceleration="0.0"
+				minspeed="0"
+				maxspeed="25"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				position="0 100 0"
+				offsetsphere="0 175 0"
+			>
+				<particle
+					turn="1"
+				>
+					<model
+						position="0 0 0"
+						minlife="2000"
+						maxlife="3500"
+						anim="idle"
+						model="trash/model.mdf"
+						material="trash/material.material"
+						minscale=".5"
+						maxscale=".9"
+						startcolor=".75 1 .6"
+						endcolor=".35 .55 .2"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".9"
+
+						minyaw="-30"
+						maxyaw="30"
+					>
+					
+						<simpleemitter
+							bone="Box10"
+							spawnrate="30"
+							minparticlelife="750"
+							maxparticlelife="1500"
+							gravity="-10"
+							speed="10"
+							drag="0.07"
+							acceleration="0.0"
+							mintimenudge="0"
+							maxtimenudge="1000"
+							position="0 0 30"
+							material="/shared/effects/materials/smoke_particle.material"
+							offsetsphere="150 150 15"
+							inheritvelocity=".5"
+						>
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-30"
+								color=".3 .3 .1"
+								maxanglespeed="30"
+								startsize="100"
+								endsize="200"
+								startalpha="0"
+								midalpha=".5"
+								endalpha="0"
+								midalphapos=".2"
+								startanchor="0"
+								endanchor="0"
+							 />
+
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-50"
+								color=".8 .8 .2"
+								maxanglespeed="50"
+								startsize="100"
+								endsize="200"
+								startalpha="0"
+								midalpha=".5"
+								endalpha="0"
+								midalphapos=".2"
+								startanchor="0"
+								endanchor="0"
+							 />
+						</simpleemitter>
+					
+					
+					
+						<template name="goo">
+							<beam
+								expirelife="500"
+								bone_a="{a}"
+								bone_b="{b}"
+								startcolor=".5 1 0"
+								endcolor="0 0 0"
+								size="{sizez}"
+								startalpha="1"
+								endalpha="0"
+								position="0 0 0"
+								position_b="0 0 0"
+								material="/shared/effects/materials/goo.material"
+							/>
+						</template>
+						
+						<instance name="goo" a="Box01" b="Box02" sizez="50"/>
+						<instance name="goo" a="Box03" b="Box04" sizez="50"/>
+						<instance name="goo" a="Box05" b="Box06" sizez="20"/>
+						<instance name="goo" a="Box07" b="Box08" sizez="50"/>
+						<instance name="goo" a="Box09" b="Box10" sizez="50"/>
+						<instance name="goo" a="Box10" b="Box11" sizez="50"/>
+
+					</model>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter	
+				delay="400"				
+				spawnrate="100"				
+				particlelife="500"
+				gravity="0"				
+				minspeed="6500"
+				maxspeed="8500"
+				drag="0.016"
+				angle="70"
+				offsetsphere="15"
+				position="0 50 85"
+				direction="0 1 0"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity=".5"
+			>
+				<particle			
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".7"
+					startcolor=".4 .8 1"
+					midcolor=".25 .75 0"
+					endcolor="0 0 0"
+					midcolorpos="0.1"
+					heightdistort=".02"
+					startsize="40"
+					endsize="180"
+					turn="1"					
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="400"				
+				spawnrate="200"				
+				particlelife="700"
+				gravity="0"				
+				minspeed="6500"
+				maxspeed="8500"
+				drag="0.016"
+				angle="70"
+				offsetsphere="15"
+				position="0 65 85"
+				direction="0 1 0"
+				material="/shared/effects/materials/flame.material"
+			>
+				<particle					
+					startcolor=".4 .8 1"
+					midcolor=".2 .4 0"
+					endcolor="0 0 0"
+					midcolorpos="0.1"
+					heightdistort=".02"
+					startsize="40"
+					endsize="180"
+					turn="1"					
+				/>
+			</simpleemitter>	
+
+			<simpleemitter
+				delay="500"
+				life="2500"
+				startspawnrate="150"
+				endspawnrate="0"
+				minparticlelife="500"
+				maxparticlelife="2000"
+				gravity="0"
+				minspeed="1000"
+				maxspeed="3500"
+				drag="0.01"
+				angle="70"
+				offsetsphere="15"
+				position="0 0 50"
+				direction="0 1 0"
+				material="/shared/effects/materials/blood1.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-250"
+					maxanglespeed="250"
+					turn="1"
+					startcolor="0 1 0"
+					midcolor="0 1 0"
+					endcolor="0"
+					midcolorpos="0.1"
+					startscale="50"
+					minendscale="2"
+					maxendscale="11"
+					startstickiness="0"
+					minendstickiness="0.0"
+					maxendstickiness="0"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos="0.1"
+				/>
+			</simpleemitter>
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		
+		<waitfordeath instance="instance0"/>
+	
+	</thread>
+
+</effect>

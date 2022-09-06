@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect >
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<billboard
+				startcolor="0 1 1"
+				endcolor="0"
+				startsize="0"
+				endsize="600"
+				position="0 0 70"
+				life="300"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				startcolor="0 1 1"
+				endcolor="0"
+				startsize="0"
+				endsize="400"
+				position="0 0 70"
+				life="300"
+				material="/shared/effects/materials/corona_07.material"
+			/>
+			
+			<billboard
+				delay="100"
+				startcolor="0 1 1"
+				endcolor="0"
+				startsize="0"
+				endsize="400"
+				position="0 0 70"
+				life="300"
+				material="/shared/effects/materials/corona_07.material"
+			/>
+			
+			<billboard
+				delay="200"
+				startcolor="0 1 1"
+				endcolor="0"
+				startsize="0"
+				endsize="400"
+				position="0 0 70"
+				life="300"
+				material="/shared/effects/materials/corona_07.material"
+			/>
+			
+			<simpleemitter
+				life="200"
+				spawnrate="100"
+				minparticlelife="200"
+				maxparticlelife="400"
+				minspeed="200"
+				maxspeed="300"
+				particlecolor="1"
+				offsetsphere="50"
+				position="0 0 50"
+				material="/shared/effects/materials/beer_splash.material"
+			>
+				<particle
+					color="0 1 0"
+					startsize="30"
+					endsize="80"
+					turn="1"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="1 .5 0"
+					startsize="30"
+					endsize="80"
+					turn="1"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="0 1 1"
+					startsize="30"
+					endsize="80"
+					turn="1"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+				<particle
+					color="1 0 1"
+					startsize="30"
+					endsize="80"
+					turn="1"
+					minscale=".5"
+					maxscale="1.5"
+				/>
+			</simpleemitter>
+			
+			<terrainemitter
+				delay="50"
+				count="20"
+				range="100"
+				particlelife="5000"
+				depthbias="-3"
+				material="/shared/effects/materials/goop_reveal_ground_blend.material"
+			>
+				<particle
+					lockup="1"
+					pitch="90"
+					maxangle="360"
+					color="0 1 1"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					startsize="0"
+					midsize="80"
+					midsizepos=".075"
+					endsize="80"
+					minscale="1"
+					maxscale="2"
+				/>
+				<particle
+					lockup="1"
+					pitch="90"
+					maxangle="360"
+					color="1 .5 0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					startsize="0"
+					midsize="80"
+					midsizepos=".075"
+					endsize="80"
+					minscale="1"
+					maxscale="2"
+				/>
+				<particle
+					lockup="1"
+					pitch="90"
+					maxangle="360"
+					color="1 0 1"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					startsize="0"
+					midsize="80"
+					midsizepos=".075"
+					endsize="80"
+					minscale="1"
+					maxscale="2"
+				/>
+				<particle
+					lockup="1"
+					pitch="90"
+					maxangle="360"
+					color="0 1 0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					startsize="0"
+					midsize="80"
+					midsizepos=".075"
+					endsize="80"
+					minscale="1"
+					maxscale="2"
+				/>
+			</terrainemitter>
+					
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

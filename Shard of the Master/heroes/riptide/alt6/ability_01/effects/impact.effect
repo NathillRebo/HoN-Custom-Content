@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true" >
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="3">
+          
+		  <sound
+				linearfalloff="true" 
+				falloffstart="600"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/riptide/ability_01/sounds/cast.wav"
+			/>
+			
+			<sound
+			    forcestereo="true"
+			    delay="250"
+				linearfalloff="true" 
+				falloffstart="600"
+				falloffend="1300"
+				volume="1"
+				sample="../../sounds/ab1_cast.wav"
+			/>
+			
+			<template name="spout">	
+			
+				<groundsprite
+					life="2000"
+					material="/shared/effects/materials/earth_cracks_add_blue.material"
+					position="{position}"
+					startalpha=".5"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".5"
+					scale=".5"
+				/>
+
+				<simpleemitter
+					life="750"
+					minparticlelife="1000"
+					maxparticlelife="1500"
+					spawnrate="90"
+					maxspeed="700"
+					gravity="5"
+					direction="0 0 1"
+					drag="0.075"
+					material="/shared/effects/materials/snowflake.material"
+					offsetsphere="0 0 0"
+					minangle="10"
+					maxangle="25"
+					depthbias="0"
+					position="{position}"
+				>
+					<particle
+						minangle="0"
+						maxangle="180"
+						minanglespeed="-60"
+						maxanglespeed="60"
+						startsize="5"
+						midsize="7"
+						endsize="0"
+						color="1"
+						startalpha="1"
+						midalpha=".5"
+						endalpha="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					life="750"
+					minparticlelife="1000"
+					maxparticlelife="1500"
+					spawnrate="20"
+					maxspeed="700"
+					gravity="5"
+					direction="0 0 1"
+					drag="0.075"
+					material="/shared/effects/materials/mistletoe_1.material"
+					offsetsphere="0 0 0"
+					minangle="10"
+					maxangle="25"
+					depthbias="0"
+					position="{position}"
+				>
+					<particle
+						minangle="0"
+						maxangle="180"
+						minanglespeed="-60"
+						maxanglespeed="60"
+						startsize="7"
+						midsize="7"
+						endsize="0"
+						color="1"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					life="750"
+					minparticlelife="1000"
+					maxparticlelife="1500"
+					spawnrate="20"
+					maxspeed="700"
+					gravity="5"
+					direction="0 0 1"
+					drag="0.05"
+					material="/shared/effects/materials/whitecircle_blend.material"
+					offsetsphere="0 0 0"
+					minangle="10"
+					maxangle="25"
+					depthbias="0"
+					position="{position}"
+				>
+					<particle
+						minangle="0"
+						maxangle="180"
+						minanglespeed="-60"
+						maxanglespeed="60"
+						startsize="1"
+						midsize="1"
+						endsize="0"
+						color="1 0 0"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						depthbias="-100"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					life="500"
+					minparticlelife="250"
+					maxparticlelife="500"
+					spawnrate="250"
+					maxspeed="300"
+					gravity="0"
+					direction="0 0 -1"
+					drag="0.045"
+					material="/shared/effects/materials/phantom_white.material"
+					offsetsphere="0 0 25"
+					minangle="10"
+					maxangle="25"
+					depthbias="0"
+					position="{position}"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-180"
+						maxanglespeed="180"
+						startsize="10"
+						endsize="20"
+						color=".5 .65 .75"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					life="750"
+					minparticlelife="1000"
+					maxparticlelife="1500"
+					spawnrate="70"
+					maxspeed="700"
+					gravity="5"
+					direction="0 0 1"
+					drag="0.075"
+					material="/shared/effects/materials/water_spray_add.material"
+					offsetsphere="0 0 0"
+					minangle="0"
+					maxangle="25"
+					depthbias="0"
+					position="{position}"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-180"
+						maxanglespeed="180"
+						startsize="10"
+						midsize="15"
+						endsize="25"
+						startcolor="0"
+						midcolor=".25 .25 .37"
+						endcolor="0"
+						startalpha="0"
+						midalpha=".75"
+						endalpha="0"
+						midalphapos=".2"
+					/>
+				</simpleemitter>
+
+				<billboard
+					life="2000"
+					position="{position}"
+					material="/shared/effects/materials/whitedot.material"
+					startcolor=".3"
+					endcolor="0 0 0"
+					startsize="100"
+					endsize="100"
+					depthbias="-25"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+				/>
+
+			</template>	
+	
+		<simpleemitter
+			count="1"
+			particlelife="5000"
+		>
+			<particle>
+				<instance name="spout" position="0 0 0" position2="0 0 50" position3="0 0 75" position4="0 0 100"/>	
+			</particle>
+		</simpleemitter>
+		
+		<simpleemitter
+				count="1"
+				spawnrate="5"
+				particlelife="3500"				
+			>
+				<particle>
+					
+					<model
+						position="0 0 0"
+						maxlife="3000"
+						name="emitter0"
+						anim="idle"
+						model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+						scale=".2hq"
+						color=".5"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						minyaw="0"
+						maxyaw="360"
+					>
+					</model>
+
+				</particle>
+			</simpleemitter>
+		
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

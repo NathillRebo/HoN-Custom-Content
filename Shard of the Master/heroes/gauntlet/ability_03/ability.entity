@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Gauntlet3"
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_Gauntlet_Ability3"
+	statuseffecttooltip2="State_Gauntlet_Ability3_Self"
+	
+	baselevel="1"
+	maxlevel="5"
+	
+	requiredlevel="0,1,3,5,7"
+	actiontype="no_target,passive"
+	
+	maxcharges="0,25,30,35,40"
+	modifierkey="gauntlet_slowfist"
+	
+	disabled="true,false"
+>
+	<onattackimpact />
+	
+	<onimpact />
+	
+	<onlearn>
+		<setcharges a="0" />
+	</onlearn>
+
+	<onframe>
+		<compare a="charges" b="0,25,30,35,40" op="eq">
+			<setaccumulator value="0" op="min" />
+		</compare>
+		<else>
+			<setaccumulator value="accumulator" valueb="frametime" valueop="add" />
+		</else>
+
+		<compare a="accumulator" b="0,0.80,0.60,0.40,0.20" op="gt">
+			<setaccumulator value="0" />
+			<addcharges count="1" />
+		</compare>
+	</onframe>
+
+	<onattackimpact>
+		<compare a="level" b="1" op="gt">
+			<cantarget targetscheme="enemy_units" effecttype="Physical">
+				<setvar0 a="target_attackdamage" b="charges" op="mult" />
+				<setvar0 a="var0" b="0.01" op="mult" />
+				
+				<applystate name="State_Gauntlet_Ability3" owner="this_owner_entity" duration="4000" pushentity="true" />
+				<addcharges entity="stack_entity" count="charges" timed="true" />
+				<applystate name="State_Gauntlet_Ability3_Enemy_Damage" owner="this_owner_entity" duration="4000" pushentity="true" />
+				<addcharges entity="stack_entity" count="var0" timed="true" />
+				<applystate name="State_Gauntlet_Ability3_Self" target="source_entity" owner="this_owner_entity" duration="4000" pushentity="true" />
+				<addcharges entity="stack_entity" count="var0" timed="true" />
+				
+				<cantarget targetscheme="enemy_heroes_and_bosses">
+					<hasmodifier name="shardofthemaster_boost" target="source_entity">
+						<evaluate a="charges" b="0.5" op="mult" />
+						<setcharges a="charges" b="result" op="sub" />
+					</hasmodifier>
+					<else>
+						<setcharges a="0" />
+					</else>
+				</cantarget>
+			</cantarget>
+		</compare>
+	</onattackimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="101"/>
+	
+	<modifier key="Gauntlet_W1" modpriority="100"
+		cooldowntype="Gauntlet_Grapple"
+		actiontype="target_position"
+		disabled="false"
+		
+		castactiontime="0"
+		
+		noresponse="true"
+		range="800"
+		targetradius="80"
+		
+		novoiceresponse="true"		
+		showlinecast="true"
+		linecastrange="880"
+		linecastwidth="80"
+		
+		showrangeandradiusintooltip="true"
+	>
+		<onimpact>
+			<setpos0 position="source_position" positionend="target_position" positionmodifier="pointonline" positionvalue="100" />
+			<useability slot="1" target="pos0" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Gauntlet_W2" modpriority="100"
+		cooldowntype="Gauntlet_Grapple"
+		actiontype="target_position"
+		disabled="false"
+		
+		castactiontime="0"
+		
+		noresponse="true"
+		range="900"
+		targetradius="80"
+		
+		novoiceresponse="true"		
+		showlinecast="true"
+		linecastrange="980"
+		linecastwidth="80"
+		
+		showrangeandradiusintooltip="true"
+	>
+		<onimpact>
+			<setpos0 position="source_position" positionend="target_position" positionmodifier="pointonline" positionvalue="100" />
+			<useability slot="1" target="pos0" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Gauntlet_W3" modpriority="100"
+		cooldowntype="Gauntlet_Grapple"
+		actiontype="target_position"
+		disabled="false"
+		
+		castactiontime="0"
+		
+		noresponse="true"
+		range="1000"
+		targetradius="80"
+		
+		novoiceresponse="true"		
+		showlinecast="true"
+		linecastrange="1080"
+		linecastwidth="80"
+		
+		showrangeandradiusintooltip="true"
+	>
+		<onimpact>
+			<setpos0 position="source_position" positionend="target_position" positionmodifier="pointonline" positionvalue="100" />
+			<useability slot="1" target="pos0" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Gauntlet_W4" modpriority="100"
+		cooldowntype="Gauntlet_Grapple"
+		actiontype="target_position"
+		disabled="false"
+		
+		castactiontime="0"
+		
+		noresponse="true"
+		range="1100"
+		targetradius="80"
+		
+		novoiceresponse="true"		
+		showlinecast="true"
+		linecastrange="1180"
+		linecastwidth="80"
+		
+		showrangeandradiusintooltip="true"
+	>
+		<onimpact>
+			<setpos0 position="source_position" positionend="target_position" positionmodifier="pointonline" positionvalue="100" />
+			<useability slot="1" target="pos0" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Gauntlet.Alt4"
+		icon="../alt4/ability_03/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Gauntlet.Alt10"
+		icon="../alt10/ability_03/icon.tga"
+	/>
+</ability>

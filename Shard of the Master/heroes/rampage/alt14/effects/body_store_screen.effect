@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="0">
+	<definitions>
+		<particlesystem name="system1" space="world" scale="1">
+
+			<simpleemitter
+				life="500"
+				count="30"
+				minparticlelife="300"
+				maxparticlelife="500"
+				offsetsphere="0"
+				minspeed="80"
+				maxspeed="300"
+				drag="0.1"
+				material="/shared/effects/materials/graffiti_03_reveal.material"
+				position="1 0 18"
+				gravity="5"
+			>
+				<template name="color">
+					<particle 
+						minangle="0"
+						maxangle="360"			
+						color="{color}"
+						maxanglespeed="10"
+						minanglespeed="-10"
+						startsize="10"
+						endsize="15"			
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						minscale=".5"
+						maxscale="4"
+						startframe="0"
+						endframe="1"
+					/>
+  				</template>
+				<instance name="color" color="2 0 .5"/>
+				<instance name="color" color="2 0 2"/>
+				<instance name="color" color="2 0 0"/>
+				<instance name="color" color=".3 2 0"/>
+				<instance name="color" color="0 2 2"/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="500"
+				count="30"
+				minparticlelife="300"
+				maxparticlelife="500"
+				offsetsphere="0"
+				minspeed="80"
+				maxspeed="300"
+				drag="0.1"
+				material="/shared/effects/materials/spark_12.material"
+				position="1 0 18"
+				gravity="5"
+			>
+				<template name="color">
+					<particle 
+						minangle="0"
+						maxangle="360"			
+						color="{color}"
+						maxanglespeed="10"
+						minanglespeed="-10"
+						size="3"			
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						minscale=".5"
+						maxscale="2"
+						startframe="0"
+						endframe="1"
+					/>
+  				</template>
+				<instance name="color" color="2 0 .5"/>
+				<instance name="color" color="2 0 2"/>
+				<instance name="color" color="2 0 0"/>
+				<instance name="color" color=".3 2 0"/>
+				<instance name="color" color="0 2 2"/>
+			</simpleemitter>
+			
+			<billboard
+				life="300"
+				material="/shared/effects/materials/graffiti_ram01_reveal.material"
+				size="50"
+				lockup="true"
+				lockright="true"
+				pitch="0"
+				depthbias="-50"
+				color="1"
+				startalpha="1"
+				endalpha="0"
+				midalphapos=".8"
+				anchor="1"
+				position="1 0 18"
+				startframe="1"
+				endframe="0"
+			/>
+			<billboard
+				life="200"
+				material="/shared/effects/materials/graffiti_ram01_reveal.material"
+				startsize="30"
+				endsize="80"
+				lockup="true"
+				lockright="true"
+				pitch="0"
+				depthbias="-50"
+				color="1"
+				startalpha="1"
+				endalpha="0"
+				midalphapos=".8"
+				anchor="1"
+				position="1 0 18"
+				startframe="1"
+				endframe="0"
+			/>
+			
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system1" />
+		<waitfordeath  instance="instance0"/>
+	</thread>
+</effect>
+<!-- [min|max][start|mid|end]property[speed][pos] -->

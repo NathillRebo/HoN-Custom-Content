@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			expirelife="500"
+			startcolor="0.7"
+			endcolor="0.9"
+		/>
+
+		<particlesystem name="system0" space="world" scale="0.7">
+
+			<model
+				bone="_bone_center"
+				model="/heroes/artesia/projectile/effects/orb/orb.mdf"
+				material="/shared/effects/materials/shell2.material"
+				anim="idle"
+				color="0 0 0.6"
+				scale=".285"
+				yawspeed="270"
+				pitchspeed="270"
+				life="4000"
+				directionalspace="local"
+				loop="true"
+			/>
+
+			<model
+				bone="_bone_center"
+				model="lightning_shield/model.mdf"
+				anim="idle"
+				color="0 0.5 1.5"
+				startscale="1.1"
+				midscale="1.1"
+				endscale="1.1"
+				life="4000"
+				position="0 0 0"
+				directionalspace="local"
+				yawspeed="90"
+				pitchspeed="90"
+				startalpha=".55"
+				endalpha="0"
+				loop="true"
+			>
+
+				<template name="flashes">
+
+					<beam
+						expirelife="250"
+						bone_b="{zboneb}"
+						bone_a="{zbonea}"
+						size="100"
+						color="0"
+						alpha="1"
+						material="/shared/effects/materials/black_energy.material"
+						framespeed="5"
+					/>
+				
+					<beam
+						expirelife="250"
+						bone_b="{zboneb}"
+						bone_a="{zbonea}"
+						size="70"
+						startcolor="0 0 1"
+						endcolor="0 0 0"
+						alpha="1"
+						material="/shared/effects/materials/femme_lightning_02.material"
+						framespeed="8"
+					/>
+				</template>
+
+				<instance name="flashes" zboneb="_bone_fx_67" zbonea="_bone_fx_69" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_69" zbonea="_bone_fx_68" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_68" zbonea="_bone_fx_70" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_70" zbonea="_bone_fx_67" zpos="0 0 0"/>
+			
+				<instance name="flashes" zboneb="_bone_fx_57" zbonea="_bone_fx_63" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_63" zbonea="_bone_fx_61" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_61" zbonea="_bone_fx_58" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_58" zbonea="_bone_fx_57" zpos="0 0 0"/>
+			
+				<instance name="flashes" zboneb="_bone_fx_37" zbonea="_bone_fx_35" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_35" zbonea="_bone_fx_32" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_32" zbonea="_bone_fx_31" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_31" zbonea="_bone_fx_37" zpos="0 0 0"/>
+
+				<instance name="flashes" zboneb="_bone_fx_44" zbonea="_bone_fx_42" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_42" zbonea="_bone_fx_43" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_43" zbonea="_bone_fx_41" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_41" zbonea="_bone_fx_44" zpos="0 0 0"/>
+
+				<instance name="flashes" zboneb="_bone_fx_62" zbonea="_bone_fx_64" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_64" zbonea="_bone_fx_46" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_46" zbonea="_bone_fx_65" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_65" zbonea="_bone_fx_47" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_47" zbonea="_bone_fx_45" zpos="0 0 0"/>
+
+				<instance name="flashes" zboneb="_bone_fx_52" zbonea="_bone_fx_40" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_40" zbonea="_bone_fx_72" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_72" zbonea="_bone_fx_48" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_48" zbonea="_bone_fx_73" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_73" zbonea="_bone_fx_71" zpos="0 0 0"/>
+
+				<instance name="flashes" zboneb="_bone_fx_80" zbonea="_bone_fx_66" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_66" zbonea="_bone_fx_28" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_28" zbonea="_bone_fx_76" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_76" zbonea="_bone_fx_29" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_29" zbonea="_bone_fx_30" zpos="0 0 0"/>
+
+				<instance name="flashes" zboneb="_bone_fx_36" zbonea="_bone_fx_38" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_38" zbonea="_bone_fx_54" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_54" zbonea="_bone_fx_39" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_39" zbonea="_bone_fx_55" zpos="0 0 0"/>
+				<instance name="flashes" zboneb="_bone_fx_55" zbonea="_bone_fx_56" zpos="0 0 0"/>
+
+			</model>
+
+			
+			
+			
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="3"
+				particlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				offsetsphere="0 10 10"
+				material="/shared/effects/materials/heathaze.material"
+				inheritvelocity=".5"
+			>
+				<particle 
+					angle="180"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="0 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".5"
+					startsize="75" 
+					endsize="100"
+				/>
+			</simpleemitter>
+
+			
+			
+			
+			
+
+		</particlesystem>
+
+	</definitions>
+
+   <thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<waitfordeath instance="instance0" />
+   </thread>
+
+</effect>

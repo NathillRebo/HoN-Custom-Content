@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Electrician_Ability1"
+	
+	icon="icon.tga"
+	passiveeffect="effects/entrap.effect"
+	
+	revealed="true"
+	sighted="true"
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	frozen="true"
+	immobilized="true"
+	
+	effecttype="StatusDebuff"
+	
+	modifierkey="channeled_stun_ability"
+
+	negativeeffect="suppressed"
+>
+	<oninflict>
+		<pushability name="Ability_Electrician1" />
+		<getrange entity="stack_entity" />
+		<setaccumulator value="result" valueb="200" valueop="add" />
+	</oninflict>
+	
+	<onframe>
+		<damage effecttype="Magic DOT" amount="60" b="frametime" op="mult"  />		
+		<distance />
+		<compare a="result" b="accumulator" op="ge">
+			<expire />
+		</compare>
+		
+		<targettype type="stunned" target="source_entity">
+			<expire />
+		</targettype>
+		<else>
+			<targettype type="silenced" target="source_entity">
+				<expire />
+			</targettype>
+		</else>
+		
+		<targettype type="alive" target="source_entity" />
+		<else>
+			<expire />
+		</else>
+		
+		<cantarget target="target_entity" ignoreinvulnerable="false" />
+		<else>
+			<expire />
+		</else>
+	</onframe>
+	
+	<onexpired>
+		<expirestate name="State_Electrician_Ability1_Self" target="source_entity" />
+		<hidechannelbar toolname="Ability_Electrician1" target="source_entity" />
+		<playanim name="idle" target="target_entity" />
+	</onexpired>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onframe>
+			<evaluate a="source_maxmana" b="0.03" op="mult"/>
+			<evaluate a="result" b="60" op="add"/>
+			<evaluate a="result" b="frametime" op="mult"/>
+			<damage effecttype="Magic DOT" amount="1" b="result" op="mult"  />	
+			<distance />
+			<compare a="result" b="accumulator" op="ge">
+				<expire />
+			</compare>
+			
+			<targettype type="stunned" target="source_entity">
+				<expire />
+			</targettype>
+			<else>
+				<targettype type="silenced" target="source_entity">
+					<expire />
+				</targettype>
+			</else>
+			
+			<targettype type="alive" target="source_entity" />
+			<else>
+				<expire />
+			</else>
+			
+			<cantarget target="target_entity" ignoreinvulnerable="false" />
+			<else>
+				<expire />
+			</else>
+		</onframe>
+	</modifier>
+	
+	<altavatar key="Hero_Electrician.Alt2" modpriority="1"
+		passiveeffect="/heroes/electrician/alt2/ability_01/effects/entrap.effect"
+	/>
+	
+	<altavatar key="Hero_Electrician.Alt4" modpriority="1"
+		passiveeffect="/heroes/electrician/alt4/ability_01/effects/entrap.effect"
+	/>
+	
+	<altavatar key="Hero_Electrician.Alt5" modpriority="1"
+		passiveeffect="/heroes/electrician/alt5/ability_01/effects/entrap.effect"
+	/>
+	
+	<altavatar key="Hero_Electrician.Alt6" modpriority="1"
+		passiveeffect="/heroes/electrician/alt6/ability_01/effects/entrap.effect"
+	/>
+</state>

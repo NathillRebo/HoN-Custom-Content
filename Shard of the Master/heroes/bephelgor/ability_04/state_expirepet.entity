@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bephelgor_Ability4_ExpirePet"
+
+	icon="icon.tga"
+	passiveeffect=""
+	revealed="false"
+	sighted="true"
+	ishidden="true"
+	
+	effecttype=""
+>
+	
+	<ondeath>
+		<kill target="this_proxy_entity" source="" />
+	</ondeath>
+	
+	<aura
+		gadget="Gadget_Bephelgor_Ability4"
+		radius="0"
+		targetscheme="self"
+	/>
+
+	<altavatar key="Hero_Bephelgor.Alt4"
+		icon="../alt4/ability_04/icon.tga"
+	/>
+	
+</state>

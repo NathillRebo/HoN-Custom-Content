@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world"  scale="1">
+			
+			<sound
+			    life="5000"
+				linearfalloff="true" 
+				falloffstart="700"
+				falloffend="1300"
+				volume="1"
+				sample="../../sounds/ab4_cast.wav"
+			/>
+			
+			<controller bone="_bone_weaponattach" >
+				<billboard
+					position="0 0 10"
+					life="2000"
+					size="70"
+					height="50"
+					color=".5"
+					framespeed="3"
+					depthbias="-50"
+					material="/shared/effects/materials/femme_lightning_01.material"
+				/>
+				
+				<billboard
+					position="0 0 10"
+					life="2000"
+					size="70"
+					height="150"
+					color=".25 .5 1"
+					framespeed="2"
+					depthbias="-50"
+					material="/shared/effects/materials/femme_lightning_01.material"
+				/>
+
+				<billboard
+					position="0 0 10"
+					life="2000"
+					size="70"
+					color=".25 1 1"
+					framespeed="3"
+					depthbias="-50"
+					material="/shared/effects/materials/sound_wave.material"
+				/>
+			</controller>
+			
+			
+			<controller bone="_bone_fx_01">
+				<simpleemitter
+					position="0 10 0"
+					directionalspace="local"
+					particledirectionalspace="local"
+					life="2000"
+					spawnrate="15"
+					direction="0 1 0"
+					angle="0"
+					speed="100"
+					particlelife="200"
+					material="/shared/effects/materials/corona_07.material"
+				>
+					<particle
+						lockup="1"
+						lockright="1"
+						turn="1"
+						startcolor="0 2 0"
+						endcolor="0"
+						startsize="20"
+						endsize="50"
+						anchor="1"
+						scale="1"
+					/>
+				</simpleemitter>
+			</controller>
+			
+			<controller bone="_bone_fx_02">
+				<simpleemitter
+					position="0 10 0"
+					directionalspace="local"
+					particledirectionalspace="local"
+					life="2000"
+					spawnrate="15"
+					direction="0 1 0"
+					angle="0"
+					speed="100"
+					particlelife="200"
+					material="/shared/effects/materials/corona_07.material"
+				>
+					<particle
+						lockup="1"
+						lockright="1"
+						turn="1"
+						startcolor="0 2 0"
+						endcolor="0"
+						startsize="20"
+						endsize="50"
+						anchor="1"
+						scale="1"
+					/>
+				</simpleemitter>
+			</controller>
+			
+			<controller bone="_bone_fx_03">
+				<simpleemitter
+					position="0 10 0"
+					directionalspace="local"
+					particledirectionalspace="local"
+					life="2000"
+					spawnrate="15"
+					direction="0 1 0"
+					angle="0"
+					speed="100"
+					particlelife="200"
+					material="/shared/effects/materials/corona_07.material"
+				>
+					<particle
+						lockup="1"
+						lockright="1"
+						turn="1"
+						startcolor="0 2 0"
+						endcolor="0"
+						startsize="20"
+						endsize="50"
+						anchor="1"
+						scale="1"
+					/>
+				</simpleemitter>
+			</controller>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

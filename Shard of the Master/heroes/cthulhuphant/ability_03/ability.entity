@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Cthulhuphant3"
+
+	icon="icon.tga"
+	
+	casttime="800"
+	castactiontime="300"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	passiveeffect="effects/state.effect"
+
+	actiontype="passive"
+	targetradius="2000"
+>
+	<onattackedpredamage>
+		<!-- Distance constraint -->
+		<distance />
+		<compare a="result" b="2000" op="le">
+			<cantarget targetscheme="enemy_units">
+				<applystate name="State_Cthulhuphant_Ability3" target="target_entity" duration="100" />
+			</cantarget>
+		</compare>
+	</onattackedpredamage>
+
+	<ondamaged>
+		<!-- Distance constraint -->
+		<distance />
+		<compare a="result" b="2000" op="le">
+			<cantarget targetscheme="enemy_units">
+				<!-- Front_Angle = 180 - Back_Angle -->
+				<evaluate a="back_impact_angle" />
+				<compare a="result" b="115" op="ge">
+					<applystate name="State_Cthulhuphant_Ability3_Regen" target="source_entity" duration="2000" />
+				</compare>
+			
+				<!-- Return Damage -->
+				<currentdamageeffecttype effecttype="Returned" />
+				<else>
+					<damageeffecttype effecttype="DOT" />
+					<else>
+						<damageeffecttype effecttype="Physical">
+							<!-- Return damage value -->
+							<setvar0 a="source_strength" b="0.2,0.3,0.4,0.5" op="mult" />
+							<targettype type="illusion" target="source_entity">
+								<setvaro a="var0" b="0.33" op="mult" />
+								<targettype type="hero">
+									<damage effecttype="Physical Returned DOT" amount="1" b="var0" op="mult" />
+								</targettype>
+								<else>
+									<damage effecttype="Physical Returned DOT" amount="2" b="var0" op="mult" />
+								</else>
+							</targettype>
+							<else>
+								<targettype type="hero">
+									<damage effecttype="Physical Returned DOT" amount="1" b="var0" op="mult" />
+								</targettype>
+								<else>
+									<damage effecttype="Physical Returned DOT" amount="2" b="var0" op="mult" />
+								</else>
+							</else>
+							
+							
+							<!-- Art Stuff -->
+							<hasavatarkey name="Hero_Cthulhuphant.Alt5">										
+								<playeffect effect="../alt5/ability_03/effects/reflect.effect" source="target_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Cthulhuphant.Alt6">										
+									<playeffect effect="../alt6/ability_03/effects/reflect.effect" source="target_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Cthulhuphant.Alt7">								
+										<hasmodifier name="Night_Set_CthulhuphantAlt7" >
+											<playeffect effect="../alt8/ability_03/effects/reflect.effect" source="target_entity" />
+										</hasmodifier>
+										<else>
+											<playeffect effect="../alt7/ability_03/effects/reflect.effect" source="target_entity" />
+										</else>
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Cthulhuphant.Alt8">									
+											<hasmodifier name="Night_Set_CthulhuphantAlt8" >
+												<playeffect effect="../alt7/ability_03/effects/reflect.effect" source="target_entity" />
+											</hasmodifier>
+											<else>
+												<playeffect effect="../alt8/ability_03/effects/reflect.effect" source="target_entity" />
+											</else>
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Cthulhuphant.trophy_skin03">										
+												<playeffect effect="../ability_03/effects/reflect_trophy_skin03.effect" source="target_entity" />
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Cthulhuphant.Alt9">										
+													<playeffect effect="../alt9/ability_03/effects/reflect.effect" source="target_entity" />
+												</hasavatarkey>
+												<else>
+													<playeffect effect="../ability_03/effects/reflect.effect" source="target_entity" />
+												</else>
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>	
+						</damageeffecttype>
+						<else>
+							<damageeffecttype effecttype="SuperiorPhysical">
+								<!-- Return damage value -->
+							<setvar0 a="source_strength" b="0.2,0.3,0.4,0.5" op="mult" />
+							<targettype type="illusion" target="source_entity">
+								<setvaro a="var0" b="0.33" op="mult" />
+								<targettype type="hero">
+									<damage effecttype="Physical Returned DOT" amount="1" b="var0" op="mult" />
+								</targettype>
+								<else>
+									<damage effecttype="Physical Returned DOT" amount="2" b="var0" op="mult" />
+								</else>
+							</targettype>
+							<else>
+								<targettype type="hero">
+									<damage effecttype="Physical Returned DOT" amount="1" b="var0" op="mult" />
+								</targettype>
+								<else>
+									<damage effecttype="Physical Returned DOT" amount="2" b="var0" op="mult" />
+								</else>
+							</else>
+								
+								<!-- Same Art Stuff -->
+								<hasavatarkey name="Hero_Cthulhuphant.Alt5">										
+									<playeffect effect="../alt5/ability_03/effects/reflect.effect" source="target_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Cthulhuphant.Alt6">										
+										<playeffect effect="../alt6/ability_03/effects/reflect.effect" source="target_entity" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Cthulhuphant.Alt7">									
+											<hasmodifier name="Night_Set_CthulhuphantAlt7" >
+												<playeffect effect="../alt8/ability_03/effects/reflect.effect" source="target_entity" />
+											</hasmodifier>
+											<else>
+												<playeffect effect="../alt7/ability_03/effects/reflect.effect" source="target_entity" />
+											</else>
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Cthulhuphant.Alt8">
+												<hasmodifier name="Night_Set_CthulhuphantAlt8" >
+													<playeffect effect="../alt7/ability_03/effects/reflect.effect" source="target_entity" />
+												</hasmodifier>
+												<else>
+													<playeffect effect="../alt8/ability_03/effects/reflect.effect" source="target_entity" />
+												</else>
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Cthulhuphant.trophy_skin03">										
+													<playeffect effect="../ability_03/effects/reflect_trophy_skin03.effect" source="target_entity" />
+												</hasavatarkey>
+												<else>
+													<playeffect effect="../ability_03/effects/reflect.effect" source="target_entity" />
+												</else>
+											</else>
+										</else>
+									</else>		
+								</else>			
+							</damageeffecttype>
+						</else>					
+					</else>
+				</else>
+			</cantarget>
+		</compare>
+	</ondamaged>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<ondamaged>
+			<!-- Distance constraint -->
+			<distance />
+			<compare a="result" b="2000" op="le">
+				<cantarget targetscheme="enemy_units">
+					<!-- Front_Angle = 180 - Back_Angle -->
+					<evaluate a="back_impact_angle" />
+					<compare a="result" b="115" op="ge">
+						<applystate name="State_Cthulhuphant_Ability3_Regen" target="source_entity" duration="4000" />
+					</compare>
+				
+					<!-- Return Damage -->
+					<currentdamageeffecttype effecttype="Returned" />
+					<else>
+						<damageeffecttype effecttype="DOT" />
+						<else>
+							<damageeffecttype effecttype="Physical">
+								<!-- Return damage value -->
+								<setvar0 a="source_strength" b="0.2,0.3,0.4,0.5" op="mult" />
+								<targettype type="illusion" target="source_entity">
+									<setvaro a="var0" b="0.33" op="mult" />
+									<targettype type="hero">
+										<damage effecttype="Physical Returned DOT" amount="1" b="var0" op="mult" />
+									</targettype>
+									<else>
+										<damage effecttype="Physical Returned DOT" amount="2" b="var0" op="mult" />
+									</else>
+								</targettype>
+								<else>
+									<targettype type="hero">
+										<damage effecttype="Physical Returned DOT" amount="1" b="var0" op="mult" />
+									</targettype>
+									<else>
+										<damage effecttype="Physical Returned DOT" amount="2" b="var0" op="mult" />
+									</else>
+								</else>
+								
+								
+								<!-- Art Stuff -->
+								<hasavatarkey name="Hero_Cthulhuphant.Alt5">										
+									<playeffect effect="../alt5/ability_03/effects/reflect.effect" source="target_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Cthulhuphant.Alt6">										
+										<playeffect effect="../alt6/ability_03/effects/reflect.effect" source="target_entity" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Cthulhuphant.Alt7">								
+											<hasmodifier name="Night_Set_CthulhuphantAlt7" >
+												<playeffect effect="../alt8/ability_03/effects/reflect.effect" source="target_entity" />
+											</hasmodifier>
+											<else>
+												<playeffect effect="../alt7/ability_03/effects/reflect.effect" source="target_entity" />
+											</else>
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Cthulhuphant.Alt8">									
+												<hasmodifier name="Night_Set_CthulhuphantAlt8" >
+													<playeffect effect="../alt7/ability_03/effects/reflect.effect" source="target_entity" />
+												</hasmodifier>
+												<else>
+													<playeffect effect="../alt8/ability_03/effects/reflect.effect" source="target_entity" />
+												</else>
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Cthulhuphant.trophy_skin03">										
+													<playeffect effect="../ability_03/effects/reflect_trophy_skin03.effect" source="target_entity" />
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Cthulhuphant.Alt9">										
+														<playeffect effect="../alt9/ability_03/effects/reflect.effect" source="target_entity" />
+													</hasavatarkey>
+													<else>
+														<playeffect effect="../ability_03/effects/reflect.effect" source="target_entity" />
+													</else>
+												</else>
+											</else>
+										</else>
+									</else>
+								</else>	
+							</damageeffecttype>
+							<else>
+								<damageeffecttype effecttype="SuperiorPhysical">
+									<!-- Return damage value -->
+								<setvar0 a="source_strength" b="0.2,0.3,0.4,0.5" op="mult" />
+								<targettype type="illusion" target="source_entity">
+									<setvaro a="var0" b="0.33" op="mult" />
+									<targettype type="hero">
+										<damage effecttype="Physical Returned DOT" amount="1" b="var0" op="mult" />
+									</targettype>
+									<else>
+										<damage effecttype="Physical Returned DOT" amount="2" b="var0" op="mult" />
+									</else>
+								</targettype>
+								<else>
+									<targettype type="hero">
+										<damage effecttype="Physical Returned DOT" amount="1" b="var0" op="mult" />
+									</targettype>
+									<else>
+										<damage effecttype="Physical Returned DOT" amount="2" b="var0" op="mult" />
+									</else>
+								</else>
+									
+									<!-- Same Art Stuff -->
+									<hasavatarkey name="Hero_Cthulhuphant.Alt5">										
+										<playeffect effect="../alt5/ability_03/effects/reflect.effect" source="target_entity" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Cthulhuphant.Alt6">										
+											<playeffect effect="../alt6/ability_03/effects/reflect.effect" source="target_entity" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Cthulhuphant.Alt7">									
+												<hasmodifier name="Night_Set_CthulhuphantAlt7" >
+													<playeffect effect="../alt8/ability_03/effects/reflect.effect" source="target_entity" />
+												</hasmodifier>
+												<else>
+													<playeffect effect="../alt7/ability_03/effects/reflect.effect" source="target_entity" />
+												</else>
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Cthulhuphant.Alt8">
+													<hasmodifier name="Night_Set_CthulhuphantAlt8" >
+														<playeffect effect="../alt7/ability_03/effects/reflect.effect" source="target_entity" />
+													</hasmodifier>
+													<else>
+														<playeffect effect="../alt8/ability_03/effects/reflect.effect" source="target_entity" />
+													</else>
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Cthulhuphant.trophy_skin03">										
+														<playeffect effect="../ability_03/effects/reflect_trophy_skin03.effect" source="target_entity" />
+													</hasavatarkey>
+													<else>
+														<playeffect effect="../ability_03/effects/reflect.effect" source="target_entity" />
+													</else>
+												</else>
+											</else>
+										</else>		
+									</else>			
+								</damageeffecttype>
+							</else>					
+						</else>
+					</else>
+				</cantarget>
+			</compare>
+		</ondamaged>
+	</modifier>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt5" modpriority="1"
+		passiveeffect="../alt5/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt6" modpriority="1"
+		passiveeffect="../alt6/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt7" modpriority="1"
+	    icon="/heroes/cthulhuphant/alt7/ability_03/icon.tga"
+		passiveeffect="../alt7/ability_03/effects/state.effect"
+	>
+		<modifier key="Night_Set_CthulhuphantAlt7"
+			icon="/heroes/cthulhuphant/alt8/ability_03/icon.tga"
+			passiveeffect="../alt8/ability_03/effects/state.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt8" modpriority="1"
+	    icon="/heroes/cthulhuphant/alt8/ability_03/icon.tga"
+		passiveeffect="../alt8/ability_03/effects/state.effect"
+	>
+		<modifier key="Night_Set_CthulhuphantAlt8"
+			icon="/heroes/cthulhuphant/alt7/ability_03/icon.tga"
+			passiveeffect="../alt7/ability_03/effects/state.effect"
+		/> 
+	</altavatar>
+	
+	<altavatar key="Hero_Cthulhuphant.trophy_skin03" modpriority="1"
+		passiveeffect="effects/state_trophy_skin03.effect"
+	/>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt9" modpriority="1"
+	    icon="/heroes/cthulhuphant/alt9/ability_03/icon.tga"
+		passiveeffect="../alt9/ability_03/effects/state.effect"
+	/>
+</ability>

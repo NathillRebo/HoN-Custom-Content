@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+						
+			<sound
+			    soundloop="true"
+				fadein="500"
+				fadeout="1000"
+			    sound2d="true"
+				norestart="true"
+				channel="47723"
+				linearfalloff="true" 
+				volume="1"
+				sample="../sounds/rain_storm_loop.wav"
+			/>
+			
+			
+			 <sound
+			    sound2d="true"
+				norestart="true"
+				channel="47725"
+				linearfalloff="true" 
+				volume="1"
+				sample="../sounds/cast.wav"
+			/>
+			
+			<sound
+			    sound2d="true"
+				soundloop="true"
+				fadein="1000"
+				fadeout="500"
+				norestart="true"
+				channel="47727"
+				linearfalloff="true" 
+				volume="1"
+				sample="../sounds/heartbeat_of_the_storm.wav"
+			/>
+			
+			<!--
+			<groundsprite
+				life="2000"
+				size="1000000"
+				material="water.material"
+				color=".25"
+				startalpha="0"
+				endalpha="1"
+				param=".05"
+			/>
+			<groundsprite
+				expirelife="1000"
+				delay="2000"
+				size="1000000"
+				material="water.material"
+				color=".25"
+				startalpha="1"
+				endalpha="0"
+				param=".05"
+			/>
+			-->
+			<!--
+			<groundsprite
+				life="2000"
+				size="1000000"
+				material="water_norefract.material"
+				color=".5"
+				startalpha="0"
+				endalpha="1"
+				param=".2"
+			/>
+			<groundsprite
+				expirelife="1000"
+				delay="2000"
+				size="1000000"
+				material="water_norefract.material"
+				color=".5"
+				startalpha="1"
+				endalpha="0"
+				param=".2"
+			/>
+			-->
+			
+			<precipemitter
+				count="2000"
+				minspeed="850"
+				maxspeed="1250"
+				direction="-.4 .10 -1.0"
+				angle="0"
+				material="/shared/effects/materials/rain_overlay.material"
+				drawdistance="550.0"
+			>
+				<particle
+					angle="180"
+					turn="1"
+					minwidth="1.5"
+					maxwidth="3"
+					height="19"
+					lockup="true"
+					color="1"
+				/>
+			</precipemitter>
+			
+		<!--
+			<groundsprite
+				size="1000000"
+				material="/shared/effects/materials/refract_pinch.material"
+				color="1"
+				alpha="1"
+				param=".05"
+			/>
+			-->
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

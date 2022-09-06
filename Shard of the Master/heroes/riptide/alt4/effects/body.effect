@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+  <definitions>
+    <particlesystem name="system0" space="world" >
+		
+			<terrainemitter
+				minparticlelife="400"
+				maxparticlelife="600"
+				spawnrate="15"
+				material="/shared/effects/materials/refract_ring_depth.material"
+				range="50"
+				depthbias="-5"
+				expirelife="1000"
+			>
+				<particle
+					turn="1"
+					angle="180"
+					minstartscale="1"
+					maxstartscale="2"
+					minendscale="4"
+					maxendscale="8"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					midcolor=".75 1 1"
+				/>
+			</terrainemitter>
+			
+			<skeletonemitter
+				minparticlelife="400"
+				maxparticlelife="600"
+				spawnrate="30"
+				material="/shared/effects/materials/bubble_add.material"
+				minspeed="5"
+				maxspeed="10"
+				drag="0.02"
+				gravity="15"
+				offsetsphere="10"
+				inheritvelocity=".25"
+				expirelife="1000"
+			>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					minscale="0.25"
+					maxscale="0.75"
+					startcolor="0"
+					midcolor=".5 1 1"
+					endcolor="0"
+					lockup="true"
+				/>
+			</skeletonemitter>
+			
+			<skeletonemitter
+				minparticlelife="700"
+				maxparticlelife="900"
+				spawnrate="20"
+				material="/shared/effects/materials/petal_blend.material"
+				minspeed="5"
+				maxspeed="10"
+				drag="0.02"
+				gravity="2"
+				offsetsphere="0"
+				inheritvelocity=".25"
+				expirelife="1000"
+			>
+				<particle
+					size="2"
+					width="3.5"
+					minscale=".5"
+					maxscale="1"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					color="1 .25 .25"
+				/>
+				
+				<particle
+					size="2"
+					width="3.5"
+					minscale=".5"
+					maxscale="1"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					color="1 0 0"
+				/>
+				
+				<particle
+					size="2"
+					width="3.5"
+					minscale=".5"
+					maxscale="1"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					color=".5 0 0"
+				/>
+				
+				<particle
+					size="2"
+					width="3.5"
+					minscale=".5"
+					maxscale="1"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".8"
+					color="1 .5 .5"
+				/>
+			</skeletonemitter>
+			
+			<simpleemitter
+				bone="_bone_lefthand"
+				minparticlelife="400"
+				maxparticlelife="600"
+				spawnrate="60"
+				material="/shared/effects/materials/water_spray_add.material"
+				minspeed="5"
+				maxspeed="10"
+				drag="0.02"
+				gravity="3"
+				expirelife="1000"
+				offsetsphere="5"
+			>
+				<particle
+					minstartscale="1"
+					maxstartscale="2"
+					minendscale="3"
+					maxendscale="6"
+					startcolor="0"
+					midcolor=".25 .5 .5"
+					endcolor="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_righthand"
+				minparticlelife="400"
+				maxparticlelife="600"
+				spawnrate="60"
+				material="/shared/effects/materials/water_spray_add.material"
+				minspeed="5"
+				maxspeed="10"
+				drag="0.02"
+				expirelife="1000"
+				gravity="3"
+				offsetsphere="5"
+			>
+				<particle
+					minstartscale="1"
+					maxstartscale="2"
+					minendscale="3"
+					maxendscale="6"
+					startcolor="0"
+					midcolor=".25 .5 .5"
+					endcolor="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+					bone="_bone_origin"
+					gravity="-1"
+					spawnrate="10"
+					minparticlelife="600"
+					maxparticlelife="850"
+					offsetsphere="25 25 0"
+					material="/shared/effects/materials/wave.material"
+					depthbias="-55"
+					inheritvelocity="-0.1"
+					expirelife="1000"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor="0 0 0"
+						midcolor=".2"
+						endcolor="0 0 0"
+						size="2"
+						minstartscale="5"
+						maxstartscale="10"
+						minendscale="15"
+						maxendscale="20"
+						startalpha="0"
+						midalpha=".15"
+						midalphapos="0.2"
+						endalpha="0"
+						anchor="1"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="_bone_origin"
+					gravity="-1"
+					spawnrate="30"
+					minparticlelife="600"
+					maxparticlelife="850"
+					offsetsphere="25 25 0"
+					material="/shared/effects/materials/water_spray_add.material"
+					depthbias="-55"
+					expirelife="1000"
+					inheritvelocity="-0.1"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor="0"
+						midcolor=".25"
+						endcolor="0"
+						size="1"
+						minstartscale="5"
+						maxstartscale="10"
+						minendscale="15"
+						maxendscale="20"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="_bone_origin"
+					gravity="-1"
+					spawnrate="10"
+					minparticlelife="350"
+					maxparticlelife="500"
+					offsetsphere="25 25 0"
+					expirelife="1000"
+					material="/shared/effects/materials/whitewater_02.material"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor="0 0 0"
+						midcolor="0 .5 1"
+						endcolor="0 0 0"
+						size="2"
+						minstartscale="6"
+						maxstartscale="8"
+						maxendscale="20"
+						minendscale="12"
+						startalpha="0"
+						midalpha="0.25"
+						midalphapos="0.2"
+						endalpha="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="_bone_origin"
+					gravity="-1"
+					spawnrate="20"
+					minparticlelife="350"
+					maxparticlelife="500"
+					offsetsphere="25 25 0"
+					expirelife="1000"
+					material="/shared/effects/materials/whitewater_02.material"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor="0 0 0"
+						midcolor=".25 .25 .25"
+						endcolor="0 0 0"
+						size="2"
+						minstartscale="6"
+						maxstartscale="8"
+						maxendscale="20"
+						minendscale="12"
+						startalpha="0"
+						midalpha="0.25"
+						midalphapos="0.2"
+						endalpha="0"
+						startanchor="1"
+						endanchor="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="_bone_origin"
+					gravity="-1"
+					spawnrate="10"
+					minparticlelife="350"
+					maxparticlelife="500"
+					offsetsphere="25 25 0"
+					expirelife="1000"
+					material="/shared/effects/materials/refract_outsplash.material"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						color="1 1 1"
+						param=".05"
+						size="2"
+						minstartscale="10"
+						maxstartscale="12"
+						maxendscale="35"
+						minendscale="40"
+						startalpha="0"
+						midalpha="1"
+						midalphapos="0.2"
+						endalpha="0"
+						startanchor="1"
+						endanchor="0"
+					/>
+				</simpleemitter>
+
+
+
+
+			
+			<template name="splashes">
+
+
+				<twopointemitter
+					bone_a="{bone_a}"
+					bone_b="{bone_b}"
+					gravity="5"
+					spawnrate="{spawnrate}"
+					minparticlelife="400"
+					maxparticlelife="600"
+					offsetsphere="{offsetsphere}"
+					material="/shared/effects/materials/whitewater_02.material"
+					depthbias="55"
+					inheritvelocity=".5"
+					expirelife="1000"
+					particlescale="{scale}"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor="0 0 0"
+						midcolor=".3 .4 .5"
+						endcolor="0 0 0"
+						minstartscale=".25"
+						maxstartscale="1"
+						maxendscale="20"
+						minendscale="12"
+						startalpha="0"
+						midalpha="0.25"
+						midalphapos="0.2"
+						endalpha="0"
+					/>
+				</twopointemitter>
+			</template>
+
+			<instance name="splashes" bone_a="_bone_centerofchest" bone_b="_bone_righthand" spawnrate="10" offsetsphere="5" scale=".25" />
+			<instance name="splashes" bone_a="_bone_centerofchest" bone_b="_bone_lefthand" spawnrate="10" offsetsphere="5" scale=".25" />
+
+    </particlesystem>
+  </definitions>
+  <thread>
+    <spawnparticlesystem particlesystem="system0" instance="instance0" />
+    <waitfordeath instance="instance0" />
+  </thread>
+</effect>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shaman_Ability3_Shard"
+
+	icon="icon.tga"
+	passiveeffect=""
+
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+	incomingdamagemultiplier="-1"
+>
+
+</state>

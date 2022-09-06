@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Prophet3"
+
+	icon="icon.tga"
+	
+	statuseffecttooltip="State_Prophet_Ability3_Debuff"
+	
+	anim="ability_3"
+	casttime="200"
+	castactiontime="100"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	
+	casteffecttype="Magic"
+	
+	manacost="90,100,110,120"
+	cooldowntime="12000"
+	
+	range="600"
+	showareacast="true"
+	
+>
+	<onimpact>
+		<spawnprojectile name="Projectile_Prophet_Ability3" target="target_entity" />
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onabilityimpact>
+			<areaofeffect
+				radius="605"
+				targetselection="all"
+				targetscheme="ally_heroes"
+				effecttype="Magic"
+			>
+				<applystate name="State_Prophet_Shard" duration="10000" target="target_entity" />
+			</areaofeffect>
+		</onabilityimpact>
+	</modifier>
+	
+</ability>

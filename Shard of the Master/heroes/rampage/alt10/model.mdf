@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="default_1.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model" >
+
+	<anim name="idle" clip="clips/default_1.clip" loop="true" blendtime="500">
+		<startevent cmd="StopEffect 1"/>
+		<startevent cmd="StopEffect 2"/>
+	</anim>
+	
+	<anim name="portrait" clip="clips/default_1.clip" loop="true"/> 
+	
+	<anim name="item_1" clip="clips/taunt_1.clip"/>
+
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="26">
+	</anim>
+
+	<anim name="walk_1" clip="clips/walk_1.clip"  loop="true">
+	<startevent cmd="StartEffect effects/move_sound.effect 2"/>
+		<endevent cmd="StopEffect 2" />
+		<startevent cmd="StartEffect effects/walk.effect 1"/>
+
+     <frameevent frame="3" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	 
+	 <frameevent frame="3" cmd="PlaySoundLinear sounds/paw_%.wav 0 800 1"/>
+	 <frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="ability_4_run" clip="clips/ability_4_run.clip"  loop="true">
+	 <startevent cmd="StartEffect effects/move_sound.effect 2"/>
+	 <frameevent frame="3" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	 <frameevent frame="3" cmd="PlaySoundLinear sounds/paw_%.wav 0 800 1"/>
+	 <frameevent frame="3" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<endevent cmd="StopEffect 2" />
+		<startevent cmd="StartEffect effects/body.effect 1"/>
+		<endevent cmd="StopSound 3"/>
+		<endevent cmd="StopSound 4"/>
+	</anim>
+	
+	<anim name="taunt_1" clip="clips/taunt_1.clip"/>
+
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="-1" fps="40">
+		<startevent cmd="StopSound 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_grunt.wav 400 2000 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/ab2_3.wav 400 2000 1"/>
+		<startevent cmd="StopEffect 1"/>
+	</anim>
+
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="110">
+		<frameevent frame="17" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="17" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav 400 2000 .15"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="110">
+		<frameevent frame="16" cmd="PlaySoundLinear /shared/sounds/attacks/attack_heavy_%.wav 400 2000 .65"/>
+		<frameevent frame="16" cmd="PlaySoundLinear /heroes/hiro/sounds/attack_%.wav 400 2000 .15"/>
+		<frameevent frame="18" cmd="PlaySoundLinear sounds/attack_grunt_%.wav 400 2000 1"/>
+	</anim>
+
+	<anim name="ability_1" clip="clips/ability_1.clip">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/ab1.wav 1300 2000 .5"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/ab1_vox.wav 1300 2000 1"/>
+	</anim>
+
+	<anim name="ability_3" clip="clips/ability_3.clip" fps="100">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/ab2_vox_%.wav 400 2000 .65"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/ab2_%.wav 400 2000 1"/>
+	</anim>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="30">
+	<frameevent frame="1" cmd="PlaySoundLinear sounds/ab4.wav 400 2500 1"/>
+	<frameevent frame="1" cmd="PlaySoundLinear sounds/ab4.wav 400 2500 1"/>
+	</anim>
+
+</model>

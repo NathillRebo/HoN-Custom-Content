@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Zephyr_Shard"
+
+	radius="250"
+	
+	targetselection="all"
+	lifetime="3000"
+	impactinterval="50"
+	targetscheme="enemy_units"
+	effecttype="Push"
+
+	effect="effects/area.effect"
+	canturn="false"
+	persist="true"
+	
+>
+	<onimpact>
+		<push force="250" duration="150" source="this_entity" />
+	</onimpact>
+</affector>

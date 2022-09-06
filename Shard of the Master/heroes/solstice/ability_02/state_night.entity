@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Ability2_Night"
+
+	icon="icon_b.tga"
+	
+	passiveeffect="effects/state_frenzy.effect"
+	
+	damage="15,30,45,60"
+	movespeed="15,30,45,60"
+	allowtransfer="true"
+	effecttype="StatusBuff"
+>
+	
+	<modifier key="shardofthemaster_boost" modpriority="101">
+		<onattackingdamageevent>
+			<setvar1 a="damage_attempted" b="2.2627" op="mult"/>
+			<changeduration b="var1" op="add" />
+		</onattackingdamageevent>
+	</modifier>
+	
+	<altavatar key="Hero_Solstice.Alt" modpriority="1"
+		passiveeffect="/heroes/solstice/alt/ability_02/effects/state_frenzy.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt6" modpriority="1"
+		passiveeffect="/heroes/solstice/alt6/ability_02/effects/state_frenzy.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt7" modpriority="1"
+		passiveeffect="/heroes/solstice/alt7/ability_02/effects/state_frenzy.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt9" modpriority="1"
+		passiveeffect="/heroes/solstice/alt9/ability_02/effects/state_frenzy.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt10" modpriority="1"
+		passiveeffect="/heroes/solstice/alt10/ability_02/effects/state_frenzy.effect"
+	/>
+	
+</state>

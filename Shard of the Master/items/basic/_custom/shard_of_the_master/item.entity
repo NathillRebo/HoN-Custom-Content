@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_ShardOfTheMaster"
+	
+	icon="icon.tga"
+	cost="1100"
+	actiontype="self_position"
+	casttime="0"
+	castactiontime="0"
+	noninterrupting="true"
+	nobreakchannel="true"
+	frontqueue="true"
+	
+	maxcharges="999"
+	
+	category="consumable"
+	initialcharges="1"
+	chargecost="1"
+	rechargeable="true"
+	destroyonempty="true"
+	allowsharing="true"
+	allowtransfer="true"
+	
+	cooldowntime="0"
+	cooldowntype=""
+	manacost="0"
+	
+	responsetype="Item_NonInterrupting Order_NonInterrupting"
+	canusewardslot="true"
+	
+	initialstock="1"
+	maxstock="1"
+	restockdelay="1000"
+	initialstockdelay="900000"
+>
+	<onimpact>
+		<applystate name="State_ShardOfTheMaster" target="this_owner_entity" continuous="true" pushentity="true" />
+	</onimpact>
+</item>

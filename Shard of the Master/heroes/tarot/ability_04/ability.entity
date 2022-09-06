@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Tarot4"
+	
+	icon="icon.tga"
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	actiontype="passive"
+
+	modifierkey="Tarot_UltActive"
+>
+	
+	<onlearn>
+		<setaccumulator value="0.084744" />
+	</onlearn>
+	
+	<onattackimpact />
+	
+	<onattackstart>
+		<!-- Chance = 25% -->
+		<!-- Source for numbers: https://dota2.gamepedia.com/Random_distribution -->
+		<canactivate>
+			<cantarget targetscheme="enemy_units">
+				<!-- Marked target gives +10% Critical Chance if Far Scry is active -->
+				<hasmodifier entity="source_entity" name="Tarot_focusedontarget">
+					<pushability name="Ability_Tarot2" />
+					<compare a="stack_proxy_entity" b="target_entity" op="eq"> <!-- Attacking the marked target -->
+						<setvar0 a="accumulator" b="0.073239" op="add" /> <!-- Add extra instance of pseudo-RNG (adjusts it to the 35% Crit Chance value instead of 25% only for this attack instance -->
+						
+						<chance threshold="var0">
+							<addcritical chance="1.0" multiplier="2.0,2.8,3.6" />
+							<setaccumulator value="0.084744" />
+							<applystate name="State_Tarot_Ability4_Effect" target="target_entity" duration="1000" />
+						</chance>
+						<else>
+							<setaccumulator value="accumulator" valueb="0.084744" valueop="add" /> <!-- Subtract the bonus chance if Crit fails (to not carry the Crit chance over to other targets) -->
+						</else>
+					</compare>
+					<else> <!-- Not attacking the marked target -->
+						<chance threshold="accumulator">
+							<addcritical chance="1.0" multiplier="2.0,2.8,3.6" />
+							<setaccumulator value="0.084744" />
+							<applystate name="State_Tarot_Ability4_Effect" target="target_entity" duration="1000" />
+						</chance>
+						<else>
+							<setaccumulator value="accumulator" valueb="0.084744" valueop="add" />
+						</else>
+					</else>
+				</hasmodifier>
+				<else> <!-- Default -->
+					<chance threshold="accumulator">
+						<addcritical chance="1.0" multiplier="2.0,2.8,3.6" />
+						<setaccumulator value="0.084744" />
+						<applystate name="State_Tarot_Ability4_Effect" target="target_entity" duration="1000" />
+					</chance>
+					<else>
+						<setaccumulator value="accumulator" valueb="0.084744" valueop="add" />
+					</else>
+				</else>
+			</cantarget>
+		</canactivate>
+	</onattackstart>
+	
+	<onimpact/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		anim=""
+		casttime="0"
+		castactiontime="0"
+		actiontype="target_position"
+		targetradius="800"
+		range="20000"
+		manacost="0"
+		cooldowntime="60000"
+		
+		showareacast="true"
+		areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+		
+		showrangeandradiusintooltip="true"
+		
+		dynamicprecache="effects/affector.effect,effects/affector_glow.effect"
+		targetmaterial="/shared/materials/area_cast_indicator_simple.material"
+	>
+		<onimpact>
+			<spawnunit name="Gadget_Tarot_Shard_Reveal" count="1" target="target_position" />
+		</onimpact>
+	</modifier>
+</ability>

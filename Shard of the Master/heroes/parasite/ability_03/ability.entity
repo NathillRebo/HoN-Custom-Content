@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Parasite3"
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_Parasite_Ability3"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	actiontype="passive"
+	
+	modifierkey="Parasite_Passive_1,Parasite_Passive_2,Parasite_Passive_3,Parasite_Passive_4"
+>
+	<onattackingpredamage>
+		<combatsupertype supertype="attack">
+			<combateffecttype effecttype="Attack">
+				<cantarget targetscheme="enemy_nonboss_units">
+					<applystate name="State_Parasite_Ability3" owner="this_owner_entity" duration="3000" proxy="source_entity" pushentity="true" />
+				</cantarget>
+			</combateffecttype>
+		</combatsupertype>
+	</onattackingpredamage>
+	
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack">
+			<combateffecttype effecttype="Attack">
+				<damageeffecttype effecttype="DOT" />
+				<else>
+					<condition target="target_entity" test="hasstate State_Parasite_Ability3">
+						<evaluate a="1" b="0.06,0.12,0.18,0.24" op="add" />
+						<setvalue name="damage_attempted" a="damage_attempted" b="result" op="mult" />
+					</condition>
+				</else>
+			</combateffecttype>
+		</combatsupertype>
+	</onattackingdamageevent>
+
+	<onattackimpact />
+	
+	<onattackeddamageevent>
+		<condition target="target_entity" test="hasstate State_Parasite_Ability3">
+			<evaluate a="1" b="0.06,0.12,0.18,0.24" op="sub" />
+			<setvalue name="damage_attempted" a="damage_attempted" b="result" op="mult" />
+		</condition>
+	</onattackeddamageevent>
+	
+	<onimpact/>
+	
+	<onframe/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		actiontype="target_self"
+		frontqueue="true"
+		inheritmovement="true"
+		noninterrupting="true"
+		nobreakchannel="true"
+		noresponse="true"
+		noshuffle="true"
+		manacost="0"
+		cooldowntime="30000"
+		anim=""
+		casttime="0"
+		castactiontime="0"
+		healthregenpercharge="1.5"
+		targetradius="600"
+	>
+		<onframe>
+			<setaccumulator value="0" />
+			<areaofeffect
+				radius="1650"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype=""
+			>
+				<condition test="hasstate State_Parasite_Ability3">
+					<setaccumulator value="accumulator" valueb="1" valueop="add" />
+				</condition>
+			</areaofeffect>
+			
+			<setcharges a="accumulator" />
+		</onframe>
+		
+		<onimpact>
+			<areaofeffect
+				center="source_entity"
+				radius="600"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<applystate name="State_Parasite_Ability3" duration="3000" />
+			</areaofeffect>					
+			<playeffect effect="effects/impact.effect" source="source_position" target="" />	
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Parasite.Alt5"
+		icon="../alt5/ability_03/icon.tga"
+	>
+		<modifier key="Alt5_Ability3_Upgrade"
+			icon="../alt5/ability_03/icon_upgrade.tga"
+		/>
+	</altavatar>
+</ability>
