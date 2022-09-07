@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ra2"
+
+	icon="icon.tga"
+	
+	anim="ability_2"
+	casttime="0"
+	castactiontime="0"
+	targetradius="375"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_self"
+	
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nonaggressive="true"
+	
+	manacost=""
+	cooldowntime="13000,11000,9000,7000"
+	modifierkey="ra2"
+	
+	healthregen="0.7,1.4,2.1,2.8"
+>
+	<modifier key="ult_boost" modpriority="101"/>
+	
+	<onimpact>
+		<applystate name="State_Ra_Ability2_Self" duration="1500" />
+	</onimpact>
+	
+	<onrespawn>
+		<!-- Revival from R -->
+		<hasmodifier entity="source_entity" name="Raultinitial">
+			<evaluate a=".05" b="source_maxhealth" op="mult" />
+			<setvar0 a="60,100,140,180" b="result" op="add" />
+			<spawnaffector name="Affector_Ra_Ability2" target="source_entity" param="var0" />			
+			
+			<!-- R skill level modifiers -->
+			<hasmodifier entity="source_entity" name="Rault1">
+				<popup name="Ra" a="var0" b="1.1" op="mult" target="source_entity" />
+			</hasmodifier>
+			<hasmodifier entity="source_entity" name="Rault2">
+				<popup name="Ra" a="var0" b="1.2" op="mult" target="source_entity" />
+			</hasmodifier>
+			<hasmodifier entity="source_entity" name="Rault3">
+				<popup name="Ra" a="var0" b="1.3" op="mult" target="source_entity" />
+			</hasmodifier>
+		</hasmodifier>
+		
+		<hasmodifier entity="source_entity" name="Raultinitial_Alt2">
+			<evaluate a=".05" b="source_maxhealth" op="mult" />
+			<setvar0 a="60,100,140,180" b="result" op="add" />
+			<spawnaffector name="Affector_Ra_Ability2" target="source_entity" param="var0" />		
+			
+			<!-- R skill level modifiers -->
+			<hasmodifier entity="source_entity" name="Rault1">
+				<popup name="Ra" a="var0" b="1.1" op="mult" target="source_entity" />
+			</hasmodifier>
+			<hasmodifier entity="source_entity" name="Rault2">
+				<popup name="Ra" a="var0" b="1.2" op="mult" target="source_entity" />
+			</hasmodifier>
+			<hasmodifier entity="source_entity" name="Rault3">
+				<popup name="Ra" a="var0" b="1.3" op="mult" target="source_entity" />
+			</hasmodifier>
+		</hasmodifier>
+		
+		<hasmodifier entity="source_entity" name="Raultinitial_Alt3">
+			<evaluate a=".05" b="source_maxhealth" op="mult" />
+			<setvar0 a="60,100,140,180" b="result" op="add" />
+			<spawnaffector name="Affector_Ra_Ability2" target="source_entity" param="var0" />		
+			
+			<!-- R skill level modifiers -->
+			<hasmodifier entity="source_entity" name="Rault1">
+				<popup name="Ra" a="var0" b="1.1" op="mult" target="source_entity" />
+			</hasmodifier>
+			<hasmodifier entity="source_entity" name="Rault2">
+				<popup name="Ra" a="var0" b="1.2" op="mult" target="source_entity" />
+			</hasmodifier>
+			<hasmodifier entity="source_entity" name="Rault3">
+				<popup name="Ra" a="var0" b="1.3" op="mult" target="source_entity" />
+			</hasmodifier>
+		</hasmodifier>
+	</onrespawn>
+	
+	<modifier key="AmunRaRefresherOrb" modpriority="100"
+		disabled="true"
+	>
+	</modifier>
+	
+	<altavatar key="Hero_Ra.Alt5"
+		icon="../alt5/ability_02/icon.tga"
+	/>
+	
+</ability>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Talent25"
+
+	passiveeffect=""
+	icon="/items/basic/ophelias_pact/icon.tga"
+	ishidden="true"
+	
+	effecttype=""
+	
+	deathpersist="true"
+>
+	<onframe>
+		<compare a="target_level" b="25" op="ge">
+			<entitytype type="Hero_Accursed">
+				<addcharges/>
+				<applystate name="State_TalentAccursed25" target="this_owner_entity" continuous="true" pushentity="true" />
+			</entitytype>
+			
+			<expire/>
+		</compare>
+	</onframe>
+</state>

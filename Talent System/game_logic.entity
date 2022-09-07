@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gamelogic
+	name="Game_Logic"
+>
+<!-- ============================================================================= -->
+<!-- Caldavar -->
+<!-- ============================================================================= -->
+
+	<modifier key="caldavar_map" modpriority="110">
+		<onstartprematch>
+			<setgamehaspostmatch value="true" />
+			<hasmodifier name="solosame" entity="source_entity">
+				<!-- Spawns the 1v1 Logic if 1v1 mode is enabled -->
+				<!-- To Do: spawn at a different location, this is just a test -->
+				<setent0 name="treeoflife" />
+				<spawnunit name="Gadget_SoloMode_Logic" source="ent0" target="ent0" />
+				<foreachplayer>
+					<setoverlayinterface entity="target_entity" name="game_objectives" />
+					<clientuitrigger entity="target_entity" name="Onev1_Map_Objectives" />
+					<clientuitrigger entity="target_entity" name="tipOneDisplay" />
+					
+					<pushhero />
+					
+					<applystate name="State_Talent10" target="stack_entity" continuous="true" pushentity="true" />
+					<giveitem name="Item_Spyglass" source="stack_entity" target="stack_entity" /> <!-- Give a free anti-AoE-lag item -->
+					
+					<!-- Item restrictions in this mode -->
+					<setplayershopmode target="target_entity" mode="1" clearpreviousitems="true" hasitems="true" items="Item_Spyglass" />
+				</foreachplayer>
+			</hasmodifier>
+			<else>
+				<hasmodifier name="solodiff" entity="source_entity">
+					<!-- Spawns the 1v1 Logic if 1v1 mode is enabled -->
+					<!-- To Do: spawn at a different location, this is just a test -->
+					<setent0 name="treeoflife" />
+					<spawnunit name="Gadget_SoloMode_Logic" source="ent0" target="ent0" />
+					<foreachplayer>
+						<setoverlayinterface entity="target_entity" name="game_objectives" />
+						<clientuitrigger entity="target_entity" name="Onev1_Map_Objectives" />
+						<clientuitrigger entity="target_entity" name="tipOneDisplay" />
+						
+						<pushhero />
+						<applystate name="State_Talent10" target="stack_entity" continuous="true" pushentity="true" />
+						<giveitem name="Item_Spyglass" source="stack_entity" target="stack_entity" /> <!-- Give a free anti-AoE-lag item -->
+						
+						<!-- Item restrictions in this mode -->
+						<setplayershopmode target="target_entity" mode="1" clearpreviousitems="true" hasitems="true" items="Item_Spyglass" />
+					</foreachplayer>
+				</hasmodifier>
+				<else>
+					<hasmodifier name="gated" entity="source_entity" >
+						<foreachplayer>
+							<setoverlayinterface entity="target_entity" name="game_objectives" />
+							<clientuitrigger entity="target_entity" name="Caldavar_Reborn_Map_Objectives" />
+							<clientuitrigger entity="target_entity" name="tipOneDisplay" />
+							
+							<pushhero />
+							<applystate name="State_Talent10" target="stack_entity" continuous="true" pushentity="true" />
+							<giveitem name="Item_Spyglass" source="stack_entity" target="stack_entity" /> <!-- Give a free anti-AoE-lag item -->
+							
+							<!-- Item restrictions in this mode -->
+							<setplayershopmode target="target_entity" mode="1" clearpreviousitems="true" hasitems="true" items="Item_Spyglass" />
+						</foreachplayer>
+					</hasmodifier>
+					<else>
+						<foreachplayer>
+							<setoverlayinterface entity="target_entity" name="game_objectives" />
+							<clientuitrigger entity="target_entity" name="Caldavar_Reborn_Map_Objectives" />
+							<clientuitrigger entity="target_entity" name="tipOneDisplay" />
+							
+							<pushhero />
+							<applystate name="State_Talent10" target="stack_entity" continuous="true" pushentity="true" />
+							<giveitem name="Item_Spyglass" source="stack_entity" target="stack_entity" /> <!-- Give a free anti-AoE-lag item -->
+							
+							<!-- Item restrictions in this mode -->
+							<setplayershopmode target="target_entity" mode="1" clearpreviousitems="true" hasitems="true" items="Item_Spyglass" />
+						</foreachplayer>
+					</else>
+				</else>
+			</else>
+		</onstartprematch>
+		
+		<onstartmatch>
+			<pushentitybyname name="treeoflife" />
+			
+			<!-- Unit and cliffwalking aura around Level 3 Towers at start of game -->
+			<evaluate a="2" />
+			<setvar0 a="result" b="60000" op="mult" />
+			<areaofeffect
+				global="true"
+				targetscheme="all_Towers"
+				targetselection="all"
+				effecttype=""
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<compare a="target_level" b="3" op="eq">
+					<applystate name="State_Tower3_AllyLaneCreep_Aura" duration="var0" target="target_entity" owner="target_entity" />
+				</compare>
+			</areaofeffect>
+			
+			<!-- Neutral creep push immunity at start of game -->
+			<evaluate a="2" />
+			<setvar0 a="result" b="60000" op="mult" />
+			<applystate name="State_Boss_NeutralStart_Aura" duration="var0" target="stack_entity" owner="stack_entity" />					
+			
+			<!-- Make the bosses immune at the start of the game -->
+			<areaofeffect
+				global="true"
+				targetscheme="boss"
+				targetselection="all"
+				effecttype=""
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>				
+				<entitytype type="Neutral_Kongor" source="target_entity" target="target_entity" /> <!-- Excludes "real" Kongor for old FoC map (still includes Golem Boss Kongor) -->
+				<else>
+					<evaluate a="6" />
+					<setvar0 a="result" b="60000" op="mult" />
+					
+					<applystate name="Reborn_State_GolemBoss_Immune" duration="var0" target="target_entity" owner="target_entity" />
+					
+					<!-- Spawn visual timer -->
+					<spawnunit name="Reborn_Gadget_GolemBoss_RespawnTimer" source="target_entity" target="target_entity" offsetspace="target_entity" offset="90 190 0" />
+				</else>
+			</areaofeffect>
+		</onstartmatch>
+	</modifier>
+	
+	
+<!-- ============================================================================= -->
+<!-- Core Pool -->
+<!-- ============================================================================= -->
+	
+	<modifier key="gated" modpriority="90">
+		<onstartmatch>
+			<pushentitybyname name="treeoflife" />
+			<areaofeffect
+				global="true"
+				targetscheme="boss"
+				targetselection="all"
+				effecttype=""
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<!-- Make the bosses immune at the start of the game -->
+				<evaluate a="6" />
+				<setvar0 a="result" b="60000" op="mult" />
+				
+				<applystate name="Reborn_State_GolemBoss_Immune" duration="var0" target="target_entity" owner="target_entity" />
+			</areaofeffect>
+		</onstartmatch>
+	</modifier>
+	
+
+<!-- ============================================================================= -->
+<!-- Darkwood Vale -->
+<!-- ============================================================================= -->
+
+	<modifier key="darkwood_vale" modpriority="110">
+		<onstartprematch>
+			<foreachplayer>
+				<setoverlayinterface entity="target_entity" name="game_objectives" />
+				<clientuitrigger entity="target_entity" name="Darkwood_Vale_Objectives" />
+				<clientuitrigger entity="target_entity" name="tipOneDisplay" />
+				
+				<pushhero />
+				<applystate name="State_Talent10" target="stack_entity" continuous="true" pushentity="true" />
+				<giveitem name="Item_Spyglass" source="stack_entity" target="stack_entity" /> <!-- Give a free anti-AoE-lag item -->
+				
+				<!-- Item restrictions in this mode -->
+				<setplayershopmode target="target_entity" mode="1" clearpreviousitems="true" hasitems="true" items="Item_Spyglass" />
+			</foreachplayer>
+		</onstartprematch>
+	</modifier>
+
+<!-- ============================================================================= -->
+<!-- Grimms Crossing -->
+<!-- ============================================================================= -->
+
+	<modifier key="grimms_crossing" modpriority="110">
+		<onstartprematch>
+			<foreachplayer>
+				<setoverlayinterface entity="target_entity" name="game_objectives" />
+				<clientuitrigger entity="target_entity" name="Grimms_Crossing_Objectives" />
+				<clientuitrigger entity="target_entity" name="tipOneDisplay" />
+				
+				<pushhero />
+				<applystate name="State_Talent10" target="stack_entity" continuous="true" pushentity="true" />
+				<giveitem name="Item_Spyglass" source="stack_entity" target="stack_entity" /> <!-- Give a free anti-AoE-lag item -->
+				
+				<!-- Item restrictions in this mode -->
+				<setplayershopmode target="target_entity" mode="1" clearpreviousitems="true" hasitems="true" items="Item_Spyglass" />
+			</foreachplayer>
+		</onstartprematch>
+	</modifier>
+
+<!-- ============================================================================= -->
+<!-- Mid Wars -->
+<!-- ============================================================================= -->
+
+	<modifier key="OnlyMidMap" modpriority="110">
+		<onstartprematch>
+			<setgamehaspostmatch value="true" />
+			<!-- Apply the Backdoor Protection System -->
+			<pushentitybyname name="treeoflife" />
+			<applystate name="State_BackdoorProtection_Global" continuous="true" target="stack_entity" owner="stack_entity" />
+			<pushentitybyname name="sacshrine" />
+			<applystate name="State_BackdoorProtection_Global" continuous="true" target="stack_entity" owner="stack_entity" />
+			
+			<!-- Apply custom protection to Mid Wars barracks as well -->
+			<pushentitybyname name="good_melee2" />
+			<applystate name="State_BackdoorProtection_Global" continuous="true" target="stack_entity" owner="stack_entity" />
+			<pushentitybyname name="good_ranged2" />
+			<applystate name="State_BackdoorProtection_Global" continuous="true" target="stack_entity" owner="stack_entity" />
+			<pushentitybyname name="bad_melee2" />
+			<applystate name="State_BackdoorProtection_Global" continuous="true" target="stack_entity" owner="stack_entity" />
+			<pushentitybyname name="bad_ranged2" />
+			<applystate name="State_BackdoorProtection_Global" continuous="true" target="stack_entity" owner="stack_entity" />
+
+			<!-- Mid Wars Beta -->
+			<hasmodifier name="midwars_beta" entity="source_entity">
+				<pushentitybyname name="treeoflife" />
+				<applystate name="State_MidWarsBeta_Aura" continuous="true" target="stack_entity" owner="stack_entity" />
+				<pushentitybyname name="sacshrine" />
+				<applystate name="State_MidWarsBeta_Aura" continuous="true" target="stack_entity" owner="stack_entity" />
+			</hasmodifier>
+
+			<!-- Blitz Mode -->
+			<hasmodifier name="rapidfire">
+				<!-- Legion affector spawn point -->
+				<setpos0 worldpos="4175 3920 0" />
+				<!-- Hellbourne affector spawn point -->
+				<setpos1 worldpos="11700 10700 0" />
+
+				<pushentitybyname name="treeoflife" />
+				<spawnaffector name="Affector_BlitzMode_CreepCount" source="stack_entity" owner="stack_entity" team="1" target="pos0" />
+				<pushentitybyname name="sacshrine" />
+				<spawnaffector name="Affector_BlitzMode_CreepCount" source="stack_entity" owner="stack_entity" team="2" target="pos1" />
+			</hasmodifier>
+			
+			<foreachplayer>
+				<pushhero />
+				<applystate name="State_Talent10" target="stack_entity" continuous="true" pushentity="true" />
+				<applystate name="State_MidWars_Respawn" continuous="true" target="stack_entity" owner="stack_entity" />
+				<giveitem name="Item_Spyglass" source="stack_entity" target="stack_entity" /> <!-- Give a free anti-AoE-lag item -->
+				<selectentity source="stack_entity" targets="stack_entity" centercamera="true" /> <!-- Center each player's camera on their own hero -->
+				
+				<!-- Item restrictions in this mode -->
+				<setplayershopmode target="target_entity" mode="1" clearpreviousitems="true" hasitems="true" items="Item_IoynStone|Item_Spyglass" />
+				
+				<hasmodifier name="midwars_pbt" entity="source_entity">
+					<!-- Give 340 experience to set each hero to level 3 -->
+					<giveexperience amount="340" source="stack_entity" target="stack_entity" />
+					
+					<giveitem name="Item_HomecomingStone" source="stack_entity" target="stack_entity" /> <!-- Give a free Homecoming Stone -->
+				</hasmodifier>
+				<else>
+					<!-- Give 340 experience to set each hero to level 3 -->
+					<giveexperience amount="340" source="stack_entity" target="stack_entity" />
+				</else>
+				
+				<setoverlayinterface entity="target_entity" name="game_objectives" />
+				<hasmodifier name="midwars_beta" entity="source_entity">
+					<clientuitrigger entity="target_entity" name="Midwars_Beta_Objectives" />
+					<clientuitrigger entity="target_entity" name="tipOneDisplay" />
+				</hasmodifier>
+				<else>
+					<hasmodifier name="gated" entity="source_entity" >						
+						<clientuitrigger entity="target_entity" name="Midwars_Reborn_Objectives" />
+						<clientuitrigger entity="target_entity" name="tipOneDisplay" />
+					</hasmodifier>
+					<else>
+						<clientuitrigger entity="target_entity" name="Midwars_Objectives" />
+						<clientuitrigger entity="target_entity" name="tipOneDisplay" />
+					</else>
+				</else>
+			</foreachplayer>
+		</onstartprematch>
+
+		<onstartmatch>
+			<!-- Extra Siege Creep Spawn ; minutes to seconds to ms -->
+			<evaluate a="10" />
+			<setvar0 a="result" b="60000" op="mult" />
+			
+			<pushentitybyname name="treeoflife" />
+			<applystate name="State_MidWars_SiegeDelay" duration="var0" target="stack_entity" owner="stack_entity" />
+			<pushentitybyname name="sacshrine" />
+			<applystate name="State_MidWars_SiegeDelay" duration="var0" target="stack_entity" owner="stack_entity" />
+			
+			<hasmodifier name="midwars_pbt" entity="source_entity">
+				<areaofeffect
+					global="true"
+					targetscheme="boss"
+					targetselection="all"
+					effecttype=""
+					ignoreinvulnerable="true"
+					source="stack_entity"
+					center="stack_entity"
+				>
+					<!-- Make the bosses immune at the start of the game -->
+					<evaluate a="6" />
+					<setvar0 a="result" b="60000" op="mult" />
+					
+					<applystate name="Reborn_State_GolemBoss_Immune" duration="var0" target="target_entity" owner="target_entity" />
+				</areaofeffect>
+			</hasmodifier>
+			
+			
+			<!-- Mid Wars Beta -->
+			<hasmodifier name="midwars_beta" entity="source_entity">
+				<!-- Sudden Death Timer: minutes to seconds to ms
+				<evaluate a="15" />
+				<setvar0 a="result" b="60000" op="mult" />
+
+				Apply sudden death timer state on Legion main base
+				<pushentitybyname name="treeoflife" />
+				<applystate name="State_MidWarsBeta_SuddenDeathTimer" duration="var0" target="stack_entity" owner="stack_entity" />
+				-->
+			</hasmodifier>
+		</onstartmatch>
+	</modifier>
+
+<!-- ============================================================================= -->
+<!-- Watchtower -->
+<!-- ============================================================================= -->
+
+	<modifier key="watch_tower" modpriority="110">
+		<onstartprematch>
+			<foreachplayer>
+				<setoverlayinterface entity="target_entity" name="game_objectives" />
+				<clientuitrigger entity="target_entity" name="Watch_Tower_Objectives" />
+				<clientuitrigger entity="target_entity" name="tipOneDisplay" />
+				
+				<pushhero />
+				<applystate name="State_Talent10" target="stack_entity" continuous="true" pushentity="true" />
+				<giveitem name="Item_Spyglass" source="stack_entity" target="stack_entity" /> <!-- Give a free anti-AoE-lag item -->
+				
+				<!-- Item restrictions in this mode -->
+				<setplayershopmode target="target_entity" mode="1" clearpreviousitems="true" hasitems="true" items="Item_Spyglass" />
+			</foreachplayer>
+		</onstartprematch>
+	</modifier>
+
+<!-- ============================================================================= -->
+<!-- Blitz/Rapidfire -->
+<!-- ============================================================================= -->
+
+	<modifier key="rapidfire" modpriority="90">
+		<onstartprematch>
+			<foreachplayer>
+				<pushhero />
+				<applystate name="State_Talent10" target="stack_entity" continuous="true" pushentity="true" />
+				<giveitem name="Item_Spyglass" source="stack_entity" target="stack_entity" /> <!-- Give a free anti-AoE-lag item -->
+				
+				<!-- Item restrictions in this mode -->
+				<setplayershopmode target="target_entity" mode="1" clearpreviousitems="true" hasitems="true" items="Item_Spyglass" />
+				
+				<applystate name="State_urf" target="stack_entity" continuous="true" />
+			</foreachplayer>
+		</onstartprematch>
+	</modifier>
+
+<!-- ============================================================================= -->
+<!-- 1v1 Mid Only Caldavar -->
+<!-- ============================================================================= -->
+
+	<modifier key="1v1midmap" modpriority="110">
+		<onstartprematch>
+			<foreachplayer>
+				<setoverlayinterface entity="target_entity" name="game_objectives" />
+				<clientuitrigger entity="target_entity" name="Onev1_Map_Objectives" />
+				<clientuitrigger entity="target_entity" name="tipOneDisplay" />
+				
+				<pushhero />
+				<applystate name="State_Talent10" target="stack_entity" continuous="true" pushentity="true" />
+				<giveitem name="Item_Spyglass" source="stack_entity" target="stack_entity" /> <!-- Give a free anti-AoE-lag item -->
+				
+				<!-- Item restrictions in this mode -->
+				<setplayershopmode target="target_entity" mode="1" clearpreviousitems="true" hasitems="true" items="Item_Spyglass" />
+			</foreachplayer>
+		</onstartprematch>
+	</modifier>
+
+
+<!-- ============================================================================= -->
+<!-- Team Deathmatch -->
+<!-- ============================================================================= -->
+
+	<modifier key="team_deathmatch" modpriority="100">
+		<onstartprematch>
+			<!-- Team score goal and if the game has a post match-->
+			<setteamscoregoal value="18" dontendmatch="true" />
+			<setgamehaspostmatch value="true" />
+
+			<!-- Setting gold and experience for the first fight -->
+			<foreachplayer>
+				<pushhero />
+				<applystate name="State_Talent10" target="stack_entity" continuous="true" pushentity="true" />
+				
+				<giveitem name="Item_Spyglass" source="stack_entity" target="stack_entity" /> <!-- Give a free anti-AoE-lag item -->
+				<givegold source="stack_entity" target="stack_entity" amount="540" />
+				<giveexperience source="stack_entity" target="stack_entity" amount="500" />
+				<applystate name="State_Team_Deathmatch_Disabled" target="stack_entity" continuous="true" />
+				<applystate name="State_Team_Deathmatch_NoEXP" target="stack_entity" continuous="true" />
+				
+				<!-- Item restrictions in this mode -->
+				<setplayershopmode target="target_entity" mode="1" clearpreviousitems="true" hasitems="true" items="Item_HomecomingStone|Item_FlyingCourier|Item_Spyglass" />
+				
+				<setoverlayinterface entity="target_entity" name="game_objectives" />
+				<clientuitrigger entity="target_entity" name="Team_Deathmatch_Objectives" />
+				<clientuitrigger entity="target_entity" name="tipOneDisplay" />
+			</foreachplayer>
+			
+			<pushentitybyname name="Master_NeutralGadget" />
+			<applystate name="State_Team_Deathmatch_KillCredit_Propagate" target="stack_entity" continuous="true" />
+		</onstartprematch>
+
+		<onstartmatch>
+			<startround
+				roundlength="0"
+				haspreround="true"
+				preroundlength="30000"
+				haspostround="true"
+				postroundlength="3000"
+			/>
+		</onstartmatch>
+
+		<onstartpreround>
+			<foreachplayer>
+				<!-- Show the Preparation Phase timer for each player -->
+				<pushhero />
+				<showchannelbar duration="30000" source="stack_entity" target="stack_entity" entity="stack_entity" toolname="Ability_AutomatedCourier" />
+
+				<refreshabilities source="stack_entity" target="stack_entity" />
+				<refreshinventoryitems source="stack_entity" target="stack_entity" />
+
+				<foreachitem source="stack_entity"> <!-- Check for bottle to refill it -->
+					<entitytype type="Item_Bottle" source="target_entity" target="target_entity">
+						<setactivemodifierkey entity="target_entity" name="bottle_3" />
+					</entitytype>
+				</foreachitem>
+			</foreachplayer>
+			
+			<!-- Kill all neutrals -->
+			<pushentitybyname name="Master_NeutralGadget" />
+			<areaofeffect
+				global="true"
+				targetscheme="neutral_nonboss_units"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<kill source="" target="target_entity" />
+			</areaofeffect>
+		</onstartpreround>
+
+		<onstartround>
+			<!-- Kill all neutrals -->
+			<pushentitybyname name="Master_NeutralGadget" />
+			<areaofeffect
+				global="true"
+				targetscheme="neutral_nonboss_units"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<kill source="" target="target_entity" />
+			</areaofeffect>
+			
+			<!-- Spawn the neutrals -->
+			<spawnneutrals />
+
+			<!-- Put the stun state on Neutrals -->
+			<pushentitybyname name="Master_NeutralGadget" />
+			<areaofeffect
+				global="true"
+				targetscheme="neutral_nonboss_units"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<applystate name="State_Team_Deathmatch_NeutralStop" source="stack_entity" target="target_entity" continuous="true" />
+			</areaofeffect>
+
+			<!-- Teleport everyone into the play area -->
+			<pushentitybyname name="Legion_TeleportTarget" />
+			<spawnunit name="Gadget_Team_Deathmatch_HookRoot" source="stack_entity" target="stack_position" count="1" pushentity="true" />
+			<areaofeffect
+				global="true"
+				targetscheme="ally_units"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<applystate name="State_Team_Deathmatch_Hook" spawner="target_entity" inflictor="target_entity" source="target_entity" target="stack_entity" proxy="target_entity" continuous="true" stack="true" statelevel="2" />
+				<preventrespawn value="true" entity="target_entity" />
+			</areaofeffect>
+
+			<pushentitybyname name="Hellbourne_TeleportTarget" />
+			<spawnunit name="Gadget_Team_Deathmatch_HookRoot" source="stack_entity" target="stack_position" count="1" pushentity="true" />
+			<areaofeffect
+				global="true"
+				targetscheme="ally_units"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<applystate name="State_Team_Deathmatch_Hook" spawner="target_entity" inflictor="target_entity" source="target_entity" target="stack_entity" proxy="target_entity" continuous="true" stack="true" statelevel="2" />
+				<preventrespawn value="true" entity="target_entity" />
+			</areaofeffect>
+
+			<pushentitybyname name="Master_NeutralGadget" />
+			<applystate name="State_Team_Deathmatch_RoundTrack" target="stack_entity" continuous="true" />
+			<revivetrees target="stack_position" radius="5000" />
+			
+			<!-- Apply camera state for logic -->
+			<applystate name="State_Team_Deathmatch_Cameralogic" source="stack_entity" target="stack_entity" continuous="true" />
+			
+			<!-- Remove disabled state aura -->
+			<expirestate name="State_Team_Deathmatch_Aura_Disable" target="stack_entity" />
+		</onstartround>
+
+		<onstartpostround>
+			<!-- Adding gold and experience -->
+			<foreachplayer>
+				<pushhero />
+				<compare a="round" b="1" op="eq">
+					<!-- Gold and exp for round 2 -->
+					<givegold source="stack_entity" target="stack_entity" amount="1595" />
+					<giveexperience source="stack_entity" target="stack_entity" amount="1500" />
+				</compare>
+				<else>
+					<compare a="round" b="2" op="eq">
+						<!-- Gold and exp for round 3 -->
+						<givegold source="stack_entity" target="stack_entity" amount="1950" />
+						<giveexperience source="stack_entity" target="stack_entity" amount="3400" />
+					</compare>
+					<else>
+						<compare a="round" b="3" op="eq">
+							<!-- Gold and exp for round 4 -->
+							<givegold source="stack_entity" target="stack_entity" amount="3410" />
+							<giveexperience source="stack_entity" target="stack_entity" amount="3600" />
+						</compare>
+						<else>
+							<compare a="round" b="4" op="eq">
+								<!-- Gold and exp for round 5 -->
+								<givegold source="stack_entity" target="stack_entity" amount="4950" />
+								<giveexperience source="stack_entity" target="stack_entity" amount="4500" />
+							</compare>
+							<else>
+								<compare a="round" b="5" op="eq">
+									<!-- Gold and exp for round 6 -->
+									<givegold source="stack_entity" target="stack_entity" amount="5250" />
+									<giveexperience source="stack_entity" target="stack_entity" amount="7400" />
+								</compare>
+								<else>
+									<compare a="round" b="6" op="eq">
+										<!-- Gold and exp for round 7 -->
+										<givegold source="stack_entity" target="stack_entity" amount="8000" />
+										<giveexperience source="stack_entity" target="stack_entity" amount="11500" />
+									</compare>
+									<else>
+
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+
+				<preventrespawn value="false" entity="stack_entity" />
+				
+				<!-- Ability exception fixes -->
+				<pushability name="Ability_MonkeyKing1" source="stack_entity" />
+				<compare a="stack_entity" b="0" op="ne">
+					<deactivatemodifierkey name="monkeyking_Q_disabled" entity="stack_entity" />
+				</compare>
+				<popentity />
+				
+				<!-- For future abilities ; remember to <popentity /> at the end -->			
+			</foreachplayer>
+			
+			<pushentitybyname name="Master_NeutralGadget" />
+			<areaofeffect
+				global="true"
+				targetscheme="all_playercontrolled_units_deadalive"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<!-- Expire all of the round states -->
+				<expirestate name="State_Team_Deathmatch_OutOfBounds" target="target_entity" />
+				<expirestate name="State_Team_Deathmatch_Reveal" target="target_entity" />
+				<expirestate name="State_Team_Deathmatch_Burn" target="target_entity" />
+				
+				<!-- Expire other states -->
+				<expirestate name="State_Circe_Ability4_Mimic" target="target_entity" />
+				<expirestate name="State_Maliken_Ability4" target="target_entity" />
+				<expirestate name="State_SandWraith_Ability1_Path" target="target_entity" />
+				<expirestate name="State_Klanx_Ability2" target="target_entity" />
+				
+				<!-- Toggle off certain abilities & items -->
+				<toggleoff name="Ability_Devourer2" source="target_entity" target="target_entity" />
+				<toggleoff name="Ability_Electrician2" source="target_entity" target="target_entity" />
+				<toggleoff name="Ability_Oogie2" source="target_entity" target="target_entity" />
+				<toggleoff name="Ability_Parallax4" source="target_entity" target="target_entity" />
+				<toggleoff name="Ability_Scout1" source="target_entity" target="target_entity" />
+				<toggleoff name="Ability_Shellshock4" source="target_entity" target="target_entity" />
+				<toggleoff name="Ability_Skrap3" source="target_entity" target="target_entity" />				
+				<toggleoff name="Ability_Xalynx4" source="target_entity" target="target_entity" />
+				<toggleoff name="Ability_Yogi4" source="target_entity" target="target_entity" />
+				
+				<toggleoff name="Item_Insanitarius" source="target_entity" target="target_entity" />
+			</areaofeffect>
+			
+			<!-- Revive the dead ones (using the legion one here because why not, it doesn't matter) -->
+			<pushentitybyname name="Legion_SpawnPoint" />
+			<areaofeffect
+				global="true"
+				targetscheme="all_corpses"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<expirestate name="State_Team_Deathmatch_OutOfBounds" target="target_entity" />
+				
+				<applystate name="State_Team_Deathmatch_Disabled" target="target_entity" continuous="true" />
+				<setrespawntime a="0" />
+			</areaofeffect>
+			
+			<areaofeffect
+				global="true"
+				targetscheme="all_heroes_deadalive"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<expirestate name="State_Team_Deathmatch_OutOfBounds" target="target_entity" />
+				
+				<!-- Re-disable all hero units ; this includes heropets & is why we need this AoE event -->
+				<applystate name="State_Team_Deathmatch_Disabled" target="target_entity" continuous="true" />
+			</areaofeffect>
+			
+			<!-- Delete all projectiles to avoid teleportation/displacement bugs -->
+			<areaofeffect
+				global="true"
+				targetscheme="projectiles"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<delete target="target_entity" source="" />
+			</areaofeffect>
+			
+			<!-- Teleport everyone back into their bases -->
+			<setpos0 name="Legion_SpawnPoint" />
+			<pushentitybyname name="Legion_TeleportTarget" />
+			<expirestate name="State_Team_Deathmatch_Reveal_Aura" target="stack_entity" />
+			<areaofeffect
+				global="true"
+				targetscheme="ally_units"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<unbind target="target_entity" />
+				<disjoint target="target_entity" />
+				<teleport source="target_entity" target="pos0" interpolate="false" />
+				
+				<!-- Exclusions for Stop commands to prevent Follow bugs -->
+				<entitytype type="Pet_EmeraldWarden" target="target_entity" />
+				<else>
+					<order command="stop" force="true" target="target_entity" source="target_entity" />
+				</else>
+				
+				<!-- Expire other states -->
+				<expirestate name="State_Circe_Ability4_Mimic" target="target_entity" />
+				<expirestate name="State_SandWraith_Ability1_Path" target="target_entity" />
+				<expirestate name="State_Klanx_Ability2" target="target_entity" />
+			</areaofeffect>
+
+			<setpos1 name="Hellbourne_SpawnPoint" />
+			<pushentitybyname name="Hellbourne_TeleportTarget" />
+			<expirestate name="State_Team_Deathmatch_Reveal_Aura" target="stack_entity" />
+			<areaofeffect
+				global="true"
+				targetscheme="ally_units"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<unbind target="target_entity" />
+				<disjoint target="target_entity" />
+				<teleport source="target_entity" target="pos1" interpolate="false" />
+				
+				<!-- Exclusions for Stop commands to prevent Follow bugs -->
+				<entitytype type="Pet_EmeraldWarden" target="target_entity" />
+				<else>
+					<order command="stop" force="true" target="target_entity" source="target_entity" />
+				</else>
+				
+				<!-- Expire other states -->
+				<expirestate name="State_Circe_Ability4_Mimic" target="target_entity" />
+				<expirestate name="State_SandWraith_Ability1_Path" target="target_entity" />
+				<expirestate name="State_Klanx_Ability2" target="target_entity" />
+			</areaofeffect>
+
+			<!-- Expire burn aura propagation state, and remove all wards -->
+			<pushentitybyname name="Master_NeutralGadget" />
+			
+			<!-- Have to do this AoE event a second time for mimics & illusions -->
+			<areaofeffect
+				global="true"
+				targetscheme="all_playercontrolled_units_deadalive"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<!-- Kill all mimics, including Deadlift's revived minions -->
+				<targettype type="mimic" source="target_entity" target="target_entity">
+					<expirestate name="State_Team_Deathmatch_Disabled" source="target_entity" />
+					<kill target="target_entity" source="" />
+				</targettype>
+				<else>
+					<!-- Kill all illusions, including Deadlift's revived minions -->
+					<targettype type="illusion" source="target_entity" target="target_entity">
+						<expirestate name="State_Team_Deathmatch_Disabled" source="target_entity" />
+						<kill target="target_entity" source="" />
+					</targettype>
+				</else>
+			</areaofeffect>
+			
+			<!-- Apply disabled state aura -->
+			<applystate name="State_Team_Deathmatch_Aura_Disable" source="stack_entity" target="stack_entity" continuous="true" />
+			
+			<expirestate name="State_Team_Deathmatch_Aura_Propagate" target="stack_entity" />			
+			<expirestate name="State_Team_Deathmatch_Lethal_Aura_Propagate" target="stack_entity" />			
+			<areaofeffect
+				global="true"
+				targetscheme="SightAndInvisWards"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<kill source="" target="target_entity" />
+			</areaofeffect>
+
+			<!-- Kill all neutrals -->
+			<pushentitybyname name="Master_NeutralGadget" />
+			<areaofeffect
+				global="true"
+				targetscheme="neutral_nonboss_units"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<kill source="" target="target_entity" />
+			</areaofeffect>
+
+			<!-- Kill all player controlled neutrals -->
+			<areaofeffect
+				global="true"
+				targetscheme="player_controlled_nonhero_units"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<!-- Exclusion list to prevent some bugs from occurring -->
+				
+				<!-- Nitro's turret gadget -->
+				<entitytype type="Gadget_Nitro_Turret" source="target_entity" target="target_entity" />
+				<else>
+					<!-- Emerald Warden's Gawain pet -->
+					<entitytype type="Pet_EmeraldWarden" source="target_entity" target="target_entity" />
+					<else>
+						<entitytype type="Pet_Klanx_Ability3" source="target_entity" target="target_entity" />
+						<else>
+							<kill source="" target="target_entity" />
+						</else>
+					</else>
+				</else>
+			</areaofeffect>
+			
+			<!-- Kill Gemini's Fire/Ice pets -->
+			<areaofeffect
+				global="true"
+				targetscheme="all_catz"
+				targetselection="all"
+				ignoreinvulnerable="true"
+				source="stack_entity"
+				center="stack_entity"
+			>
+				<expirestate name="State_Team_Deathmatch_Disabled" source="target_entity" />
+				<kill target="target_entity" source="" />
+			</areaofeffect>
+		</onstartpostround>
+
+		<onendround>			
+			<!-- Before the final round -->
+			<compare a="round" b="6" op="eq">
+				<advanceround />
+				<chatmessage message="tdm_last_round_alert" important="true" />				
+			</compare>
+			<else>
+				<pushentitybyname name="Legion_TeleportTarget" />
+				<setvar1 source="stack_entity" a="source_team_score" />
+
+				<pushentitybyname name="Hellbourne_TeleportTarget" />
+				<setvar2 source="stack_entity" a="source_team_score" />
+
+				<compare a="round" b="7" op="lt">
+					<advanceround />
+
+					<compare a="var1" b="13" op="ge">
+						<compare a="var2" b="13" op="ge">
+							<!-- Both can win -->
+							<chatmessage message="tdm_both_points_alert" important="true" />
+						</compare>
+						<else>
+							<evaluate a="18" b="var1" op="sub" />
+							<chatmessage message="tdm_legion_points_alert" important="true" paramvalue="result" />
+						</else>
+					</compare>
+					<else>
+						<compare a="var2" b="13" op="ge">
+							<evaluate a="18" b="var1" op="sub" />
+							<chatmessage message="tdm_hellbourne_points_alert" important="true" paramvalue="result" />
+						</compare>
+					</else>
+				</compare>
+				<else>			
+					<compare a="var1" b="var2" op="gt">
+						<setteamscore team="1" value="18" />
+					</compare>
+					<else>
+						<compare a="var2" b="var1" op="gt">
+							<setteamscore team="2" value="18" />
+						</compare>
+						<else>
+							<random min="1" max="2" />
+							<compare a="result" b="1" op="eq">
+								<setteamscore team="2" value="18" />
+							</compare>
+							<else>
+								<setteamscore team="1" value="18" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</onendround>
+		
+		<onconcede>
+			<!-- Game ends! -->
+			<pushentitybyname name="Legion_TeleportTarget" />
+			<setvar1 source="stack_entity" a="source_team_score" />
+
+			<pushentitybyname name="Hellbourne_TeleportTarget" />
+			<setvar2 source="stack_entity" a="source_team_score" />
+			
+			<compare a="var1" b="var2" op="gt">
+				<setteamscore team="1" value="18" />
+			</compare>
+			<else>
+				<compare a="var2" b="var1" op="gt">
+					<setteamscore team="2" value="18" />
+				</compare>
+				<else>
+					<random min="1" max="2" />
+					<compare a="result" b="1" op="eq">
+						<setteamscore team="2" value="18" />
+					</compare>
+					<else>
+						<setteamscore team="1" value="18" />
+					</else>
+				</else>
+			</else>
+		</onconcede>
+		
+		<onteammetscoregoal>
+			<pushentitybyname name="Master_NeutralGadget" />
+			<!-- Victory effect -->
+			<playeffect effect="/triggers/custom_maps/capturetheflag/effects/celebration.effect" source="stack_position" target="" />
+			<applystate name="State_Team_Deathmatch_Aura_EndTeleport_Propagate" source="stack_entity" target="stack_entity" continuous="true" />
+		</onteammetscoregoal>
+	</modifier>
+</gamelogic>

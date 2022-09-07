@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Oogie_Ability2"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	
+	effecttype=""
+	allowtransfer=""
+	impactinterval="1000"
+	movespeedmultiplier="0.05,0.1,0.15,0.2"
+	
+	modifierkey="Oogiemana2"
+>
+	<modifier key="ult_boost" modpriority="100"
+		impactinterval="650"
+		movespeedmultiplier="0.1,0.15,0.2,0.25"
+	/>
+	<oninflict>
+		<setvar0 a="source_maxmana" b="0.02,0.03,0.04,0.05" op="mult" />
+		<setvar1 a="var0" b="10,20,30,40" op="add" />
+		
+		<popup name="Ra" a="var1" target="source_entity" />
+		<areaofeffect
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			targetselection="all"
+			radius="300"
+			maximpactspertarget="1"
+		>
+			<damage effecttype="Magic DOT" a="0" b="var1" op="add" />
+			
+			<!-- VFX -->
+			<hasavatarkey name="Hero_Oogie.Alt4">
+				<playeffect effect="/heroes/oogie/alt4/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Oogie.trophy_skin01">
+					<playeffect effect="/heroes/oogie/trophy_skin/model_01/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Oogie.trophy_skin02">
+						<playeffect effect="/heroes/oogie/trophy_skin/model_02/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Oogie.trophy_skin03">
+							<playeffect effect="/heroes/oogie/trophy_skin/model_03/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+						</hasavatarkey>
+						<else>
+							<playeffect effect="effects/state_enemy.effect" source="target_entity" target="source_entity" />
+						</else>
+					</else>
+				</else>
+			</else>
+		</areaofeffect>
+	</oninflict>
+		
+	<onframe>
+		<evaluate a="source_maxmana" b="0.04" op="mult" />
+		<compare a="source_mana" b="result" op="le" >
+			<expire />
+		</compare>
+	</onframe>
+	
+	<onimpact>
+		<evaluate a="source_maxmana" b="0.04" op="mult" />
+		<compare a="source_mana" b="result" op="ge" >
+			<setvar2 a="0.02,0.03,0.04,0.05" b="0.04" op="div" /> <!-- Used to obtain 1/2/3/4% of Max Mana -->
+
+			<setvar0 a="source_maxmana" b="0.04" op="mult" />
+			<takemana target="this_owner_entity" amount="var0" triggeractionscript="false" costovertime="true" />
+			<setvar0 a="result" b="var2" op="mult" />
+			<setvar1 a="var0" b="10,20,30,40" op="add" />
+			
+			<popup name="Ra" a="var1" target="source_entity" />
+			<areaofeffect
+				targetscheme="enemy_units"
+				effecttype="Magic"
+				targetselection="all"
+				radius="300"
+				maximpactspertarget="1"
+			>
+				<damage effecttype="Magic DOT" a="0" b="var1" op="add" />
+				
+				<!-- VFX -->
+				<hasavatarkey name="Hero_Oogie.Alt4">
+					<playeffect effect="/heroes/oogie/alt4/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Oogie.trophy_skin01">
+						<playeffect effect="/heroes/oogie/trophy_skin/model_01/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Oogie.trophy_skin02">
+							<playeffect effect="/heroes/oogie/trophy_skin/model_02/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Oogie.trophy_skin03">
+								<playeffect effect="/heroes/oogie/trophy_skin/model_03/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/state_enemy.effect" source="target_entity" target="source_entity" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</areaofeffect>
+		</compare>
+	</onimpact>
+	
+	<onexpired>
+		<toggleoff name="Ability_Oogie2" />
+	</onexpired>
+	
+	<altavatar key="Hero_Oogie.Alt"
+		passiveeffect="/heroes/oogie/alt/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.Alt2"
+		passiveeffect="/heroes/oogie/alt2/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.Alt3"
+		passiveeffect="/heroes/oogie/alt3/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.Alt4"
+		passiveeffect="/heroes/oogie/alt4/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.Alt5"
+		passiveeffect="/heroes/oogie/alt5/ability_02/effects/state_self.effect"
+	>
+		<modifier key="primalultalt5"
+			passiveeffect="/heroes/oogie/alt5/ability_02/effects/state_self_ult.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Oogie.trophy_skin01"
+		passiveeffect="/heroes/oogie/trophy_skin/model_01/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.trophy_skin02"
+		passiveeffect="/heroes/oogie/trophy_skin/model_02/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Oogie.trophy_skin03"
+		passiveeffect="/heroes/oogie/trophy_skin/model_03/ability_02/effects/state_self.effect"
+	/>
+	
+	<modifier key="Oogie_Ult1" modpriority="100"
+	>
+		<oninflict>
+			<setvar0 a="source_maxmana" b="0.02,0.03,0.04,0.05" op="mult" />
+			<setvar1 a="var0" b="10,20,30,40" op="add" />
+			
+			<popup name="Ra" a="var1" target="source_entity" />
+			<areaofeffect
+				targetscheme="enemy_units"
+				effecttype="Magic"
+				targetselection="all"
+				radius="300"
+				maximpactspertarget="1"
+			>
+				<damage effecttype="Magic DOT" a="0" b="var1" op="add" />
+				
+				<!-- VFX -->
+				<hasavatarkey name="Hero_Oogie.Alt4">
+					<playeffect effect="/heroes/oogie/alt4/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Oogie.trophy_skin01">
+						<playeffect effect="/heroes/oogie/trophy_skin/model_01/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Oogie.trophy_skin02">
+							<playeffect effect="/heroes/oogie/trophy_skin/model_02/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Oogie.trophy_skin03">
+								<playeffect effect="/heroes/oogie/trophy_skin/model_03/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/state_enemy.effect" source="target_entity" target="source_entity" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</areaofeffect>
+			<condition test="hasstate State_Oogie_Ability4" target="this_owner_entity" >
+				<heal target="this_owner_entity" a="var0" b="0.4" op="mult" />
+			</condition>
+		</oninflict>
+			
+		<onimpact>
+			<setvar0 a="source_maxmana" b="0.04" op="mult" />
+			<compare a="source_mana" b="var0" op="ge" >
+				<setvar2 a="0.02,0.03,0.04,0.05" b="0.04" op="div" /> <!-- Used to obtain 1/2/3/4% of Max Mana -->
+
+				<setvar0 a="source_maxmana" b="0.04" op="mult" />
+				<takemana target="this_owner_entity" amount="var0" triggeractionscript="false" costovertime="true" />
+				<setvar0 a="result" b="var2" op="mult" />
+				<setvar1 a="var0" b="10,20,30,40" op="add" />
+				
+				<popup name="Ra" a="var1" target="source_entity" />
+				<areaofeffect
+					targetscheme="enemy_units"
+					effecttype="Magic"
+					targetselection="all"
+					radius="300"
+					maximpactspertarget="1"
+				>
+					<damage effecttype="Magic DOT" a="0" b="var1" op="add" />
+					
+					<!-- VFX -->
+					<hasavatarkey name="Hero_Oogie.Alt4">
+						<playeffect effect="/heroes/oogie/alt4/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Oogie.trophy_skin01">
+							<playeffect effect="/heroes/oogie/trophy_skin/model_01/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Oogie.trophy_skin02">
+								<playeffect effect="/heroes/oogie/trophy_skin/model_02/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Oogie.trophy_skin03">
+									<playeffect effect="/heroes/oogie/trophy_skin/model_03/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="effects/state_enemy.effect" source="target_entity" target="source_entity" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</areaofeffect>
+				<condition test="hasstate State_Oogie_Ability4" target="this_owner_entity" >
+					<heal target="this_owner_entity" a="var0" b="0.4" op="mult" />
+				</condition>
+			</compare>
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Oogie_Ult2" modpriority="100"
+	>
+		<oninflict>
+			<setvar0 a="source_maxmana" b="0.02,0.03,0.04,0.05" op="mult" />
+			<setvar1 a="var0" b="10,20,30,40" op="add" />
+			
+			<popup name="Ra" a="var1" target="source_entity" />
+			<areaofeffect
+				targetscheme="enemy_units"
+				effecttype="Magic"
+				targetselection="all"
+				radius="300"
+				maximpactspertarget="1"
+			>
+				<damage effecttype="Magic DOT" a="0" b="var1" op="add" />
+				
+				<!-- VFX -->
+				<hasavatarkey name="Hero_Oogie.Alt4">
+					<playeffect effect="/heroes/oogie/alt4/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Oogie.trophy_skin01">
+						<playeffect effect="/heroes/oogie/trophy_skin/model_01/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Oogie.trophy_skin02">
+							<playeffect effect="/heroes/oogie/trophy_skin/model_02/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Oogie.trophy_skin03">
+								<playeffect effect="/heroes/oogie/trophy_skin/model_03/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/state_enemy.effect" source="target_entity" target="source_entity" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</areaofeffect>
+			<condition test="hasstate State_Oogie_Ability4" target="this_owner_entity" >
+				<heal target="this_owner_entity" a="var0" b="0.5" op="mult" />
+			</condition>
+		</oninflict>
+			
+		<onimpact>
+			<setvar0 a="source_maxmana" b="0.04" op="mult" />
+			<compare a="source_mana" b="var0" op="ge" >
+				<setvar2 a="0.02,0.03,0.04,0.05" b="0.04" op="div" /> <!-- Used to obtain 1/2/3/4% of Max Mana -->
+
+				<setvar0 a="source_maxmana" b="0.04" op="mult" />
+				<takemana target="this_owner_entity" amount="var0" triggeractionscript="false" costovertime="true" />
+				<setvar0 a="result" b="var2" op="mult" />
+				<setvar1 a="var0" b="10,20,30,40" op="add" />
+				
+				<popup name="Ra" a="var1" target="source_entity" />
+				<areaofeffect
+					targetscheme="enemy_units"
+					effecttype="Magic"
+					targetselection="all"
+					radius="300"
+					maximpactspertarget="1"
+				>
+					<damage effecttype="Magic DOT" a="0" b="var1" op="add" />
+					
+					<!-- VFX -->
+					<hasavatarkey name="Hero_Oogie.Alt4">
+						<playeffect effect="/heroes/oogie/alt4/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Oogie.trophy_skin01">
+							<playeffect effect="/heroes/oogie/trophy_skin/model_01/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Oogie.trophy_skin02">
+								<playeffect effect="/heroes/oogie/trophy_skin/model_02/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Oogie.trophy_skin03">
+									<playeffect effect="/heroes/oogie/trophy_skin/model_03/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="effects/state_enemy.effect" source="target_entity" target="source_entity" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</areaofeffect>
+				<condition test="hasstate State_Oogie_Ability4" target="this_owner_entity" >
+					<heal target="this_owner_entity" a="var0" b="0.5" op="mult" />
+				</condition>
+			</compare>
+		</onimpact>
+	</modifier>
+	
+	<modifier key="Oogie_Ult3" modpriority="100"
+	>
+		<oninflict>
+			<setvar0 a="source_maxmana" b="0.02,0.03,0.04,0.05" op="mult" />
+			<setvar1 a="var0" b="10,20,30,40" op="add" />
+			
+			<popup name="Ra" a="var1" target="source_entity" />
+			<areaofeffect
+				targetscheme="enemy_units"
+				effecttype="Magic"
+				targetselection="all"
+				radius="300"
+				maximpactspertarget="1"
+			>
+				<damage effecttype="Magic DOT" a="0" b="var1" op="add" />
+				
+				<!-- VFX -->
+				<hasavatarkey name="Hero_Oogie.Alt4">
+					<playeffect effect="/heroes/oogie/alt4/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Oogie.trophy_skin01">
+						<playeffect effect="/heroes/oogie/trophy_skin/model_01/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Oogie.trophy_skin02">
+							<playeffect effect="/heroes/oogie/trophy_skin/model_02/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Oogie.trophy_skin03">
+								<playeffect effect="/heroes/oogie/trophy_skin/model_03/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+							</hasavatarkey>
+							<else>
+								<playeffect effect="effects/state_enemy.effect" source="target_entity" target="source_entity" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</areaofeffect>
+			<condition test="hasstate State_Oogie_Ability4" target="this_owner_entity" >
+				<heal target="this_owner_entity" a="var0" b="0.6" op="mult" />
+			</condition>
+		</oninflict>
+			
+		<onimpact>
+			<setvar0 a="source_maxmana" b="0.04" op="mult" />
+			<compare a="source_mana" b="var0" op="ge" >
+				<setvar2 a="0.02,0.03,0.04,0.05" b="0.04" op="div" /> <!-- Used to obtain 1/2/3/4% of Max Mana -->
+
+				<setvar0 a="source_maxmana" b="0.04" op="mult" />
+				<takemana target="this_owner_entity" amount="var0" triggeractionscript="false" costovertime="true" />
+				<setvar0 a="result" b="var2" op="mult" />
+				<setvar1 a="var0" b="10,20,30,40" op="add" />
+				
+				<popup name="Ra" a="var1" target="source_entity" />
+				<areaofeffect
+					targetscheme="enemy_units"
+					effecttype="Magic"
+					targetselection="all"
+					radius="300"
+					maximpactspertarget="1"
+				>
+					<damage effecttype="Magic DOT" a="0" b="var1" op="add" />
+					
+					<!-- VFX -->
+					<hasavatarkey name="Hero_Oogie.Alt4">
+						<playeffect effect="/heroes/oogie/alt4/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Oogie.trophy_skin01">
+							<playeffect effect="/heroes/oogie/trophy_skin/model_01/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Oogie.trophy_skin02">
+								<playeffect effect="/heroes/oogie/trophy_skin/model_02/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Oogie.trophy_skin03">
+									<playeffect effect="/heroes/oogie/trophy_skin/model_03/ability_02/effects/state_enemy.effect" source="target_entity" target="source_entity" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="effects/state_enemy.effect" source="target_entity" target="source_entity" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</areaofeffect>
+				<condition test="hasstate State_Oogie_Ability4" target="this_owner_entity" >
+					<heal target="this_owner_entity" a="var0" b="0.6" op="mult" />
+				</condition>
+			</compare>
+		</onimpact>	
+	</modifier>
+	
+</state>

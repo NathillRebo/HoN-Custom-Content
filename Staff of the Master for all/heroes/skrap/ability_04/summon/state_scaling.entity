@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Skrap_Ability4_Scaling"
+
+	icon="icon.tga"
+	passiveeffect=""
+
+	effecttype=""
+	allowtransfer="false"
+	
+	damagepercharge="1"
+	armorpercharge="0.15"
+	maxhealthpercharge="10"
+>
+	<oninflict>
+		<!-- Scale Vorax with charges per 30 seconds -->
+		<setcharges target="this_entity" a="time" b="0.0000333333" op="mult" />
+	</oninflict>
+	<modifier key="ult_boost"
+		healthregenpercharge="0.1"
+	/>
+</state>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Accursed2"
+
+	statuseffecttooltip="State_Accursed_Ability2"
+	icon="icon.tga"
+	passiveeffect=""
+	
+	anim="ability_2"
+	casttime="700"
+	castactiontime="150"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	targetscheme="ally_units"
+	manacost="100,105,110,115"
+	cooldowntime="18000,15000,12000,9000"
+	casteffecttype="SuperiorMagic"
+	
+	range="700"
+	targetradius="700"
+
+	doubleactivate="true"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	showrangeandradiusintooltip="true"
+
+	targetpriorities="ally_heroes"
+>
+	<modifier key="shardofthemaster_boost" modpriority="333"/>
+	<modifier key="talent20_2" modpriority="334">
+		<onframe>
+			<hasmodifier name="shardofthemaster_boost">
+				<setactivemodifierkey name="shardofthemaster_boost_p_20_2" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setactivemodifierkey name="talent20_2" entity="this_entity" />
+			</else>
+		</onframe>
+	</modifier>
+	<modifier key="shardofthemaster_boost_p_20_2" modpriority="335"/>
+	<modifier key="talent25_2" modpriority="336">
+		<onframe>
+			<hasmodifier name="shardofthemaster_boost">
+				<hasmodifier name="talent20_2">
+					<setactivemodifierkey name="shardofthemaster_boost_p_20_2_p_25_2" entity="this_entity" />
+				</hasmodifier>
+				<else>
+					<setactivemodifierkey name="shardofthemaster_boost_p_25_2" entity="this_entity" />
+				</else>
+			</hasmodifier>
+			<else>
+				<hasmodifier name="talent20_2">
+					<setactivemodifierkey name="talent20_2_p_25_2" entity="this_entity" />
+				</hasmodifier>
+				<else>
+					<setactivemodifierkey name="talent25_2" entity="this_entity" />
+				</else>
+			</else>
+		</onframe>
+	</modifier>
+	<modifier key="talent20_2_p_25_2" modpriority="337"/>
+	<modifier key="shardofthemaster_boost_p_25_2" modpriority="338"/>
+	<modifier key="shardofthemaster_boost_p_20_2_p_25_2" modpriority="339"/>
+	
+	<onimpact>
+		<dispel type="StatusDebuff" />
+		<dispel type="StatusDisable" />
+		<applystate name="State_Accursed_Ability2" duration="15000" />
+		
+		<!-- Apply Accursed's Sear -->
+		<hasmodifier name="Accursed_E_Leveled" >
+			<pushability name="Ability_Accursed3" />
+			<setvar0 a="source_level" source="stack_entity" />
+			<applystate name="State_Accursed_Ability3_Buff" target="target_entity" duration="4500" statelevel="var0" />
+		</hasmodifier>
+	</onimpact>
+	
+	<altavatar key="Hero_Accursed.Alt" modpriority="1"
+		icon="/heroes/accursed/alt/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt3" modpriority="1"
+		icon="/heroes/accursed/alt3/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt7" modpriority="1"
+	    icon="/heroes/accursed/alt7/ability_02/icon.tga"
+	/>
+	
+</ability>

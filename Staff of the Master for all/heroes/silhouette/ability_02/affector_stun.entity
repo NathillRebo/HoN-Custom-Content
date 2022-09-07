@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Silhouette_Ability2_Stun"
+
+	radius="120"
+	arc="180"
+	maximpactspertarget="1"
+	lifetime="-1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+
+>
+	<onimpact>
+		<applystate name="State_Stunned" duration="1000" />
+		<damage effecttype="Magic" amount="80,130,180,230" />
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="149">
+		<onimpact>
+			<applystate name="State_Stunned" duration="1000" />
+			<damage effecttype="Magic" amount="80,130,180,230" />
+			
+			<cantarget effecttype="Push">
+				<push force="1044" duration="400" source="this_entity" />
+			</cantarget>
+		</onimpact>	
+	</modifier>
+	
+	<modifier key="soccer" modpriority="150">
+		<onimpact>
+			<applystate name="State_Stunned" duration="1000" />
+			<damage effecttype="Magic" amount="80" />
+		</onimpact>	
+	</modifier>
+	
+</affector>

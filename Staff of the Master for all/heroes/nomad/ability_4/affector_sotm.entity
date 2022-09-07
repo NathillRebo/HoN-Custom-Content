@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Nomad_Ability4_Sotm"
+
+	radiusstart="200"
+	radiusend="200"
+	speed="1180"
+	
+	lifetime="700"
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	persist="true"
+	
+	effect="effects/affector.effect"
+	impacteffect="effects/ult_impact.effect"
+>
+	<onimpact>
+		<applystate name="State_Stunned" duration="1200" />
+		<damage effecttype="Magic" amount="150,270,390" />
+	</onimpact>
+	
+	<altavatar key="Hero_Nomad.Alt3"
+		effect="effects/affector_alt3.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt5">
+		<modifier key="Virtue_Set_Bonus" modpriority="1"
+			effect="../alt5/ability_4/effects/affector.effect"
+			impacteffect="../alt5/ability_4/effects/ult_impact.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt6"
+		effect="../alt6/ability_4/effects/affector.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt7"
+		effect="../alt7/ability_4/effects/affector.effect"
+		impacteffect="../alt7/ability_4/effects/ult_impact.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt8"
+		effect="../alt8/ability_04/effects/affector.effect"
+		impacteffect="../alt8/ability_04/effects/ult_impact.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt9"
+		effect="../alt9/ability_04/effects/affector.effect"
+		impacteffect="../alt9/ability_04/effects/ult_impact.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt11"
+		effect="../alt11/ability_04/effects/affector.effect"
+		impacteffect="../alt11/ability_04/effects/ult_impact.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt12"
+		effect="../alt12/ability_04/effects/affector.effect"
+		impacteffect="../alt12/ability_04/effects/ult_impact.effect"
+	>
+		<modifier key="nomadAlt12_Ability4_Upgrade"
+		    effect="../alt12/ability_04/effects/affector_upgrade.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Nomad.Alt13"
+		effect="../alt13/ability_04/effects/affector.effect"
+		impacteffect="../alt13/ability_04/effects/ult_impact.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt14"
+		effect="../alt14/ability_04/effects/affector.effect"
+		impacteffect="../alt14/ability_04/effects/ult_impact.effect"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt15"
+		effect="../alt13/ability_04/effects/affector.effect"
+		impacteffect="../alt13/ability_04/effects/ult_impact.effect"
+	/>
+</affector>

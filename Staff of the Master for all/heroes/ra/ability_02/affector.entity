@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Ra_Ability2"
+
+	radiusstart="50"
+	radiusend="375"
+	
+	innerradiusoffset="100"
+	
+	lifetime="200"
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	persist="true"
+	impacteffect="effects/impact.effect"
+	effect="effects/explosion.effect"
+	destroytrees="true"
+>
+	<onimpact>
+		<targettype type="hero" />
+		<else>
+			<!-- Set non-hero damage reduction here -->
+			<setparam a="param" b="0.75" op="mult" />
+		</else>
+		<damage effecttype="Magic" amount="1" b="param" op="mult" />
+		<applystate name="State_Ra_Ability2_Enemy" duration="3000" />
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onimpact>
+			<targettype type="hero" />
+			<else>
+				<!-- Set non-hero damage reduction here -->
+				<setparam a="param" b="0.75" op="mult" />
+			</else>
+			<damage effecttype="Magic" amount="1" b="param" op="mult" />
+			<applystate name="State_Ra_Ability2_Stunned" duration="1250" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Ra.Alt3" modpriority="1"
+		effect="../alt3/ability_02/effects/explosion.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt5" modpriority="1"
+		effect="../alt5/ability_02/effects/explosion.effect"
+		impacteffect="../alt5/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt6" modpriority="1"
+		effect="../alt6/ability_02/effects/explosion.effect"
+		impacteffect="../alt6/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt7" modpriority="1"
+		effect="../alt7/ability_02/effects/explosion.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt8" modpriority="1"
+		effect="../alt8/ability_02/effects/explosion.effect"
+		impacteffect="../alt8/ability_02/effects/impact.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt9" modpriority="1"
+		effect="../alt9/ability_02/effects/explosion.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt10" modpriority="1"
+		effect="../alt10/ability_02/effects/explosion.effect"
+		impacteffect="../alt10/ability_02/effects/impact.effect"
+	/>
+</affector>

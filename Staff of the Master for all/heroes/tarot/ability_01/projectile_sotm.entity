@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Tarot_Ability1_Sotm"
+
+	speed="1500"
+	
+	model="/shared/models/invis.mdf"
+	traileffect="../hd_tarot/ability_01/effects/trail.effect"
+
+	modelscale="2.5"
+	deatheffect=""
+
+	effectscale="1"
+	impacteffect=""
+>
+	<onspawn>
+		<applystate name="State_Tarot_No_Orb" target="this_owner_entity" proxy="this_entity" duration="250" />
+	</onspawn>
+	
+	<onimpact>
+		<compare a="charges" b="0" op="eq"> <!-- Initial impact -->
+			<compare a="target_entity" b="this_proxy_entity" op="eq"> <!-- Primary target -->
+				<combatevent effecttype="AbilityBasedProjectile">
+					<onimpact>			
+						<hasavatarkey name="Hero_Tarot.Alt">
+							<playeffect effect="/heroes/tarot/alt/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+						    <playeffect effect="/heroes/tarot/alt/ability_01/effects/impact_first.effect" source="target_position" target="target_position" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Tarot.Alt4">
+								<playeffect effect="/heroes/tarot/alt4/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+								<playeffect effect="/heroes/tarot/alt4/ability_01/effects/impact_first.effect" source="target_position" target="target_position" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Tarot.Alt5">
+									<playeffect effect="/heroes/tarot/alt5/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+									<playeffect effect="/heroes/tarot/alt5/ability_01/effects/impact_first.effect" source="target_position" target="target_position" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Tarot.Alt6">
+										<playeffect effect="/heroes/tarot/alt6/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+										<playeffect effect="/heroes/tarot/alt6/ability_01/effects/impact_first.effect" source="target_position" target="target_position" occlude="true" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Tarot.Alt7">
+											<playeffect effect="/heroes/tarot/alt7/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+											<playeffect effect="/heroes/tarot/alt7/ability_01/effects/impact_first.effect" source="target_position" target="target_position" occlude="true" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Tarot.Alt8">
+												<playeffect effect="/heroes/tarot/alt8/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+												<playeffect effect="/heroes/tarot/alt8/ability_01/effects/impact_first.effect" source="target_position" target="target_position" occlude="true" />
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Tarot.Alt9">
+													<playeffect effect="/heroes/tarot/alt9/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+													<playeffect effect="/heroes/tarot/alt6/ability_01/effects/impact_first.effect" source="target_position" target="target_position" occlude="true" />
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Tarot.Alt10">
+														<playeffect effect="/heroes/tarot/alt10/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+														<playeffect effect="/heroes/tarot/alt5/ability_01/effects/impact_first.effect" source="target_position" target="target_position" occlude="true" />
+													</hasavatarkey>
+													<else>
+														<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+														<playeffect effect="effects/impact_first.effect" source="target_position" target="target_position" occlude="true" />
+													</else>
+												</else>
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+						
+						<!-- Critical time! -->
+						<pushability name="Ability_Tarot4" />
+						<setvar0 a="source_level" source="stack_entity" />
+
+						<!-- Crit chance -->
+						<hasmodifier entity="source_entity" name="Tarot_UltActive">
+							<setparam a="0.20" />
+							<hasmodifier entity="source_entity" name="Tarot_focusedontarget">
+								<pushability name="Ability_Tarot2" />
+								<compare a="stack_proxy_entity" b="target_entity" op="eq">
+									<setparam a="0.30" />
+								</compare>
+							</hasmodifier>
+						</hasmodifier>
+						<else>
+							<setparam a="0.0" />
+						</else>
+
+						<chance threshold="param">
+							<!-- Crit damage multiplier -->
+							<!-- y = 0.75x + 1.25 -->
+							<evaluate a="var0" b="0.75" op="mult" />
+							<setvar1 a="result" b="1.25" op="add" />
+
+							<!-- Base Damage -->
+							<evaluate a="source_attackdamage" b="0.75" op="mult" />
+							<evaluate a="result" b="var1" op="mult" />
+							<setvar2 a="result" b="30,60,90,120" op="add" />
+
+							<damage effecttype="Physical" amount="1" b="var2" op="mult" />
+							<setparam a="result" />
+							<popup name="critical" a="var2" source="target_entity" target="target_entity" />
+						</chance>
+						<else>
+							<!-- Normal Damage -->
+							<evaluate a="source_attackdamage" b="0.75" op="mult" />
+							<evaluate a="result" b="30,60,90,120" op="add" />
+							<damage effecttype="Physical" amount="1" b="result" op="mult" />
+							<setparam a="result" />
+						</else>
+						
+						<!-- Movement Speed Slow -->
+						<cantarget effecttype="Magic">
+							<applystate name="State_Tarot_Ability1" duration="4000" />
+						</cantarget>
+						
+						<!-- AOE Damage -->
+						<areaofeffect
+							radius="250"
+							targetselection="all"
+							targetscheme="enemy_units"
+							effecttype="Physical"
+							center="this_proxy_position"
+							ignore="target_entity"
+						>
+							<!-- VFX -->
+							<hasavatarkey name="Hero_Tarot.Alt">
+			                   <playeffect effect="/heroes/tarot/alt/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Tarot.Alt4">
+								   <playeffect effect="/heroes/tarot/alt4/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Tarot.Alt5">
+									   <playeffect effect="/heroes/tarot/alt5/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Tarot.Alt6">
+									   		<playeffect effect="/heroes/tarot/alt6/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Tarot.Alt7">
+												<playeffect effect="/heroes/tarot/alt7/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Tarot.Alt8">
+													<playeffect effect="/heroes/tarot/alt8/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Tarot.Alt9">
+														<playeffect effect="/heroes/tarot/alt9/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+													</hasavatarkey>
+													<else>
+														<hasavatarkey name="Hero_Tarot.Alt10">
+															<playeffect effect="/heroes/tarot/alt10/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+														</hasavatarkey>
+														<else>
+															<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+														</else>
+													</else>
+												</else>
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>							
+							<damage effecttype="Physical" amount="1" b="param" op="mult" />
+
+							<cantarget effecttype="Magic">
+								<applystate name="State_Tarot_Ability1" duration="4000" />
+							</cantarget>
+						</areaofeffect>
+
+						<!-- Bounce to next target -->
+						<setent0 entity="this_proxy_entity" />
+						<areaofeffect
+							radius="650"
+							targetselection="random"
+							targetscheme="visible_enemy_units"
+							effecttype="Physical"
+							center="this_proxy_position"
+							ignore="target_entity"
+						>
+							<compare a="source_entity" b="this_proxy_entity" op="eq" source="ent0"> <!-- If we have not yet found a target -->
+								<hasmodifier name="Tarot3_Tethered" entity="target_entity"> <!-- Prioritize tethered target via Bound by Fate -->
+									<distance source="this_proxy_entity" target="target_entity" />
+									<compare a="result" b="1000" op="le">
+										<retarget source="this_entity" target="target_entity" />
+										<setcharges a="1" />
+									</compare>
+									<setproxy entity="this_entity" target="target_entity" />
+								</hasmodifier>
+							</compare>
+						</areaofeffect>
+						<compare a="source_entity" b="this_proxy_entity" op="eq" source="ent0"> <!-- If we have not yet found a target -->
+							<areaofeffect
+								radius="650"
+								targetselection="random"
+								targetscheme="visible_enemy_units"
+								effecttype="Physical"
+								center="this_proxy_position"
+								ignore="target_entity"
+								maxtotalimpacts="1"
+							>
+								<distance source="this_proxy_entity" target="target_entity" />
+								<compare a="result" b="1000" op="le">
+									<retarget source="this_entity" target="target_entity" />
+									<setcharges a="1" />
+								</compare>
+								<setproxy entity="this_entity" target="target_entity" />
+							</areaofeffect>
+						</compare>
+					</onimpact>
+				</combatevent>
+			</compare>
+			<else>
+				<!-- Bounce to next target -->	
+				<compare a="charges" b="4,6,8,10" op="lt">
+					<setent0 entity="this_proxy_entity" />
+					<areaofeffect
+						radius="650"
+						targetselection="random"
+						targetscheme="visible_enemy_units"
+						effecttype=""
+						center="this_position"
+						ignore="this_proxy_entity"
+					>
+						<compare a="source_entity" b="this_proxy_entity" op="eq" source="ent0"> <!-- If we have not yet found a target -->
+							<hasmodifier name="Tarot3_Tethered" entity="target_entity"> <!-- Prioritize tethered target via Bound by Fate -->
+								<distance source="this_proxy_entity" target="target_entity" />
+								<compare a="result" b="1000" op="le">
+									<retarget source="this_entity" target="target_entity" />
+									<setcharges a="1" />
+								</compare>
+								<setproxy entity="this_entity" target="target_entity" />
+							</hasmodifier>
+						</compare>
+					</areaofeffect>
+					<compare a="source_entity" b="this_proxy_entity" op="eq" source="ent0"> <!-- If we have not yet found a target -->
+						<areaofeffect
+							radius="650"
+							targetselection="random"
+							targetscheme="visible_enemy_units"
+							effecttype="Physical"
+							center="this_position"
+							ignore="this_proxy_entity"
+							maxtotalimpacts="1"
+						>
+							<distance source="this_proxy_entity" target="target_entity" />
+							<compare a="result" b="1000" op="le">
+								<retarget source="this_entity" target="target_entity" />
+								<setcharges a="1" />
+							</compare>
+							<setproxy entity="this_entity" target="target_entity" />
+						</areaofeffect>
+					</compare>
+				</compare>
+			</else>
+		</compare>
+		<else>
+			<!-- VFX -->
+			<hasavatarkey name="Hero_Tarot.Alt">
+				<playeffect effect="/heroes/tarot/alt/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Tarot.Alt4">
+					<playeffect effect="/heroes/tarot/alt4/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Tarot.Alt5">
+						<playeffect effect="/heroes/tarot/alt5/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Tarot.Alt6">
+							<playeffect effect="/heroes/tarot/alt6/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Tarot.Alt7">
+								<playeffect effect="/heroes/tarot/alt7/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Tarot.Alt8">
+									<playeffect effect="/heroes/tarot/alt8/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Tarot.Alt9">
+										<playeffect effect="/heroes/tarot/alt9/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Tarot.Alt10">
+											<playeffect effect="/heroes/tarot/alt10/ability_01/effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+										</hasavatarkey>
+										<else>
+											<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" occlude="true" />
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+			
+			<compare a="target_team" b="source_team" op="ne">
+				<!-- Critical time! -->
+				<pushability name="Ability_Tarot4" />
+				<setvar0 a="source_level" source="stack_entity" />
+
+				<!-- Crit chance -->
+				<hasmodifier entity="source_entity" name="Tarot_UltActive">
+					<setparam a="0.20" />
+					<hasmodifier entity="source_entity" name="Tarot_focusedontarget">
+						<pushability name="Ability_Tarot2" />
+						<compare a="stack_proxy_entity" b="target_entity" op="eq">
+							<setparam a="0.30" />
+						</compare>
+					</hasmodifier>
+				</hasmodifier>
+				<else>
+					<setparam a="0.0" />
+				</else>
+				
+				<chance threshold="param">
+					<!-- Crit damage multiplier -->
+					<!-- y = 0.75x + 1.25 -->
+					<evaluate a="var0" b="0.75" op="mult" />
+					<setvar1 a="result" b="1.25" op="add" />
+
+					<evaluate a="charges" b="6" op="mult" />
+					<evaluate a="result" b="10,20,30,40" op="add" />
+					<setvar2 a="result" b="var1" op="mult" />
+					
+					<areaofeffect
+						radius="200"
+						targetselection="all"
+						targetscheme="enemy_units"
+						effecttype="Physical"
+						center="target_entity"
+					>
+						<damage effecttype="Physical" amount="1" b="var2" op="mult" />
+						<popup name="critical" a="var2" source="target_entity" target="target_entity" />
+					</areaofeffect>
+				</chance>
+				<else>
+					<!-- Normal Damage -->
+					<evaluate a="charges" b="6" op="mult" />
+					<evaluate a="result" b="10,20,30,40" op="add" />
+					
+					<areaofeffect
+						radius="200"
+						targetselection="all"
+						targetscheme="enemy_units"
+						effecttype="Physical"
+						center="target_entity"
+					>
+						<damage effecttype="Physical" amount="1" b="result" op="mult" />
+					</areaofeffect>
+				</else>
+			</compare>		
+
+			<!-- Bounce to next target -->	
+			<compare a="charges" b="4,6,8,10" op="ge" />
+			<else>
+				<setent0 entity="this_proxy_entity" />
+				<areaofeffect
+					radius="650"
+					targetselection="random"
+					targetscheme="visible_enemy_units"
+					effecttype="Physical"
+					center="this_position"
+					ignore="target_entity"
+				>
+					<compare a="source_entity" b="this_proxy_entity" op="eq" source="ent0"> <!-- If we have not yet found a target -->
+						<hasmodifier name="Tarot3_Tethered" entity="target_entity"> <!-- Prioritize tethered target via Bound by Fate -->
+							<distance source="this_proxy_entity" target="target_entity" />
+							<compare a="result" b="1000" op="le">
+								<retarget source="this_entity" target="target_entity" />
+								<setcharges a="charges" b="1" op="add" />
+							</compare>
+							<setproxy entity="this_entity" target="target_entity" />
+						</hasmodifier>
+					</compare>
+				</areaofeffect>
+				<compare a="source_entity" b="this_proxy_entity" op="eq" source="ent0"> <!-- If we have not yet found a target -->
+					<areaofeffect
+						radius="650"
+						targetselection="random"
+						targetscheme="visible_enemy_units"
+						effecttype="Physical"
+						center="this_position"
+						ignore="target_entity"
+						maxtotalimpacts="1"
+					>
+						<distance source="this_proxy_entity" target="target_entity" />
+						<compare a="result" b="1000" op="le">
+							<retarget source="this_entity" target="target_entity" />
+							<setcharges a="charges" b="1" op="add" />
+						</compare>
+						<setproxy entity="this_entity" target="target_entity" />
+					</areaofeffect>
+				</compare>
+			</else>
+		</else>
+	</onimpact>
+
+	<altavatar key="Hero_Tarot.Alt"
+		traileffect="../alt/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt2"
+		traileffect="../alt2/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt3"
+		traileffect="../alt3/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt4"
+		traileffect="../alt4/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt5"
+		traileffect="../alt5/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt6"
+		traileffect="../alt6/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt7"
+		traileffect="../alt7/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt8"
+		traileffect="../alt8/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt9"
+		traileffect="../alt9/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Tarot.Alt10"
+		traileffect="../alt10/ability_01/effects/trail.effect"
+	/>
+</projectile>

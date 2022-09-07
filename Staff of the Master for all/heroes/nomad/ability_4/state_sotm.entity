@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nomad_Ability4_Sotm"
+
+	icon="icon.tga"
+	passiveeffect=""
+	immobilized="true"
+	disarmed="true"
+	silenced="true"
+	effecttype=""
+>
+	<oninflict>
+		<addcharges count="2" />
+		<hasmodifier name="Virtue_Set_Bonus">
+			<playeffect effect="../alt5/ability_4/effects/cast_self.effect" target="source_entity" source="source_entity" />
+		</hasmodifier>
+		<else>
+			<hasavatarkey name="Hero_Nomad.Alt6">
+				<playeffect effect="../alt6/ability_4/effects/cast_self.effect" target="source_entity" source="source_entity" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Nomad.Alt7">
+					<playeffect effect="../alt7/ability_4/effects/cast_self.effect" target="source_entity" source="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Nomad.Alt8">
+						<playeffect effect="../alt8/ability_04/effects/cast_self.effect" target="source_entity" source="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Nomad.Alt9">
+							<playeffect effect="../alt9/ability_04/effects/cast_self.effect" target="source_entity" source="source_entity" />
+						</hasavatarkey>
+							<else>
+							<hasavatarkey name="Hero_Nomad.Alt11">
+								<playeffect effect="../alt11/ability_04/effects/cast_self.effect" target="source_entity" source="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Nomad.Alt12">
+									<hasavatarkey name="nomadAlt12_Ability4_Upgrade">
+										<playeffect effect="../alt12/ability_04/effects/cast_self_upgrade.effect" target="source_entity" source="source_entity" />
+									</hasavatarkey>
+									<else>
+										<playeffect effect="../alt12/ability_04/effects/cast_self.effect" target="source_entity" source="source_entity" />
+									</else>
+								</hasavatarkey>	
+								<else>
+									<hasavatarkey name="Hero_Nomad.Alt13">
+										<playeffect effect="../alt13/ability_04/effects/cast_self.effect" target="source_entity" source="source_entity" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Nomad.Alt14">
+											<playeffect effect="../alt14/ability_04/effects/cast_self.effect" target="source_entity" source="source_entity" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Nomad.Alt15">
+												<playeffect effect="../alt13/ability_04/effects/cast_self.effect" target="source_entity" source="source_entity" />
+											</hasavatarkey>
+											<else>
+									<playeffect effect="effects/cast_self.effect" target="source_entity" source="source_entity" />
+								</else>	
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+				</else>
+			</else>
+		</else>
+	</oninflict>
+
+	<onattackedpreimpact priority="1" ignoreresponsetype="Staccato">
+		<cantarget targetscheme="enemy_heroes_deadalive" ignoreinvulnerable="true" >
+			<negate>
+				<currentdamageeffecttype effecttype="DOT" />
+				<else>
+					<hasavatarkey name="Hero_Nomad.Alt">
+						<playeffect effect="effects/spin_alt.effect" target="source_entity" source="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Nomad.Alt2">
+							<playeffect effect="effects/spin_alt2.effect" target="source_entity" source="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Nomad.Alt3">
+								<playeffect effect="effects/spin_alt3.effect" target="source_entity" source="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Nomad.Alt4">
+									<playeffect effect="effects/spin_alt4.effect" target="source_entity" source="source_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Nomad.Alt5">
+										<playeffect effect="effects/spin_alt5.effect" target="source_entity" source="source_entity" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Nomad.Alt6">
+											<playeffect effect="effects/spin_alt6.effect" target="source_entity" source="source_entity" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Nomad.Alt7">
+												<playeffect effect="../alt7/ability_4/effects/spin.effect" target="source_entity" source="source_entity" />
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Nomad.Alt8">
+													<playeffect effect="../alt8/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Nomad.Alt9">
+														<playeffect effect="../alt9/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+													</hasavatarkey>
+													<else>
+														<hasavatarkey name="Hero_Nomad.Alt11">
+															<playeffect effect="../alt11/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+														</hasavatarkey>
+														<else>
+															<hasavatarkey name="Hero_Nomad.Alt12">
+																<playeffect effect="../alt12/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+															</hasavatarkey>
+															<else>
+																<hasavatarkey name="Hero_Nomad.Alt13">
+																	<playeffect effect="../alt13/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+																</hasavatarkey>
+																<else>
+																	<hasavatarkey name="Hero_Nomad.Alt14">
+																		<playeffect effect="../alt14/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+																	</hasavatarkey>
+																	<else>
+																		<hasavatarkey name="Hero_Nomad.Alt15">
+																			<playeffect effect="../alt15/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+																		</hasavatarkey>
+																		<else>
+																<playeffect effect="effects/spin.effect" target="source_entity" source="source_entity" />
+															</else>
+														</else>
+													</else>
+												</else>
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+							</else>
+						</else>
+					</else>
+					<spawnaffector name="Affector_Nomad_Ability4_Sotm" target="source_position" distance="175" param="1" />
+					<dispel type="StatusDebuff" target="source_entity" />
+					<dispel type="StatusDisable" target="source_entity" />
+					<removecharge />
+					<compare a="charges" b="0" op="eq">
+						<expire />
+					</compare>
+				</else>
+			</negate>
+		</cantarget>
+	</onattackedpreimpact>
+	
+	<ondamaged priority="1" ignoreresponsetype="Staccato">
+		<cantarget targetscheme="enemy_heroes_deadalive" ignoreinvulnerable="true" >
+			<currentdamageeffecttype effecttype="DOT" />
+			<else>
+				<scaledamage scale="0" />
+				<playanim name="ability_4_2" target="source_entity" />
+				<hasavatarkey name="Hero_Nomad.Alt">
+					<playeffect effect="effects/spin_alt.effect" target="source_entity" source="source_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Nomad.Alt2">
+						<playeffect effect="effects/spin_alt2.effect" target="source_entity" source="source_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Nomad.Alt3">
+							<playeffect effect="effects/spin_alt3.effect" target="source_entity" source="source_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Nomad.Alt4">
+								<playeffect effect="effects/spin_alt4.effect" target="source_entity" source="source_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Nomad.Alt5">
+									<playeffect effect="effects/spin_alt5.effect" target="source_entity" source="source_entity" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Nomad.Alt6">
+										<playeffect effect="effects/spin_alt6.effect" target="source_entity" source="source_entity" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_Nomad.Alt7">
+											<playeffect effect="../alt7/ability_4/effects/spin.effect" target="source_entity" source="source_entity" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_Nomad.Alt8">
+												<playeffect effect="../alt8/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+											</hasavatarkey>
+											<else>
+												<hasavatarkey name="Hero_Nomad.Alt9">
+													<playeffect effect="../alt9/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+												</hasavatarkey>
+												<else>
+													<hasavatarkey name="Hero_Nomad.Alt11">
+														<playeffect effect="../alt11/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+													</hasavatarkey>
+													<else>
+														<hasavatarkey name="Hero_Nomad.Alt12">
+															<playeffect effect="../alt12/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+														</hasavatarkey>
+														<else>
+															<hasavatarkey name="Hero_Nomad.Alt13">
+																<playeffect effect="../alt13/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+															</hasavatarkey>
+															<else>
+															<hasavatarkey name="Hero_Nomad.Alt14">
+																<playeffect effect="../alt14/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+															</hasavatarkey>
+																<else>
+																	<hasavatarkey name="Hero_Nomad.Alt15">
+																		<playeffect effect="../alt13/ability_04/effects/spin.effect" target="source_entity" source="source_entity" />
+																	</hasavatarkey>
+																	<else>
+															<playeffect effect="effects/spin.effect" target="source_entity" source="source_entity" />
+														</else>
+													</else>	
+												</else>
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+						</else>
+					</else>
+				</else>
+				<spawnaffector name="Affector_Nomad_Ability4_Sotm" target="source_position" distance="175" param="1" />
+				<dispel type="StatusDebuff" target="source_entity" />
+				<dispel type="StatusDisable" target="source_entity" />
+				<removecharge />
+				<compare a="charges" b="0" op="eq">
+					<expire />
+				</compare>
+			</else>
+		</cantarget>
+	</ondamaged>
+	
+	<onexpired>
+		<expirestate name="State_Hydromancer_Ability1" />
+		<applystate name="State_Nomad_Ability4_Shield" target="source_entity" duration="5000" />
+	</onexpired>
+	
+	<altavatar key="Hero_Nomad.Alt7"
+		icon="../alt7/ability_4/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt11"
+		icon="../alt11/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt12"
+		icon="../alt12/ability_04/icon.tga"
+	>
+		<modifier key="nomadAlt12_Ability4_Upgrade"
+			icon="../alt12/ability_04/icon_u.tga"
+		/>
+	</altavatar>
+	
+</state>

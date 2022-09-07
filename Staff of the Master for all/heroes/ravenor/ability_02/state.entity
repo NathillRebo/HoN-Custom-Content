@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ravenor_Ability2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	
+	attackspeed="0.6,0.9,1.2,1.5"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<modifier key="iamsheeped" modpriority="100"
+		passiveeffect=""
+	/>
+	
+	<oninflict>
+		<addcharges count="2" />
+	</oninflict>
+	
+	<modifier key="ult_boost" modpriority="101"
+		attackspeed="1.2,1.5,1.8,2.1"
+	>
+		<oninflict>
+			<addcharges count="3" />
+		</oninflict>
+	</modifier>
+	
+	<onattackimpact>
+		<cantarget targetscheme="enemy_buildings" >
+			<removecharge />
+			<spawnaffector name="Affector_Ravenor_Ability2" target="target_entity" ignore="target_entity" />
+		</cantarget>
+		
+		<cantarget targetscheme="enemy_units" >
+			<removecharge />
+			<damage effecttype="Magic" amount="50,75,100,125" />
+			<spawnaffector name="Affector_Ravenor_Ability2" target="target_position" ignore="target_entity" />
+			<hasavatarkey name="Hero_Ravenor.Alt5" >
+				<hasmodifier name="Alt5_Collection">
+					<playeffect effect="../alt5/ability_02/effects/lightning_collection.effect" source="target_entity" target="" />
+				</hasmodifier>
+				<else>
+					<playeffect effect="effects/lightning.effect" source="target_entity" target="" />
+				</else>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Ravenor.Alt6" >
+					<playeffect effect="../alt6/ability_02/effects/lightning.effect" source="target_entity" target="" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Ravenor.Alt7" >
+						<playeffect effect="../alt7/ability_02/effects/lightning.effect" source="target_entity" target="" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Ravenor.Alt8" >
+							<playeffect effect="../alt8/ability_02/effects/lightning.effect" source="target_entity" target="" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Ravenor.Alt9" >
+								<playeffect effect="../alt9/ability_02/effects/lightning.effect" source="target_entity" target="" />
+							</hasavatarkey>
+							<else>
+							<playeffect effect="effects/lightning.effect" source="target_entity" target="" />
+						</else>
+					</else>
+				</else>
+			</else>
+			</else>
+		</cantarget>
+		
+		<compare a="charges" b="0" op="eq" >
+			<expire />
+		</compare>
+	</onattackimpact>
+
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="iamsheeped">
+			<setactivemodifierkey entity="this_entity" name="iamsheeped" />
+		</hasmodifier>
+		<else>
+			<setactivemodifierkey entity="this_entity" name="" />
+		</else>
+	</onframe>
+
+	
+	<altavatar key="Hero_Ravenor.Alt" modpriority="1"
+		passiveeffect="/heroes/ravenor/alt/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Ravenor.Alt2" modpriority="1"
+		passiveeffect="/heroes/ravenor/alt2/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Ravenor.Alt3" modpriority="1"
+		passiveeffect="/heroes/ravenor/alt3/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Ravenor.Alt4" modpriority="1"
+		passiveeffect="/heroes/ravenor/alt4/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Ravenor.Alt5" modpriority="1"
+		passiveeffect="/heroes/ravenor/alt5/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Ravenor.Alt6" modpriority="1"
+		passiveeffect="/heroes/ravenor/alt6/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Ravenor.Alt7" modpriority="1"
+		passiveeffect="/heroes/ravenor/alt7/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Ravenor.Alt8" modpriority="1"
+		passiveeffect="/heroes/ravenor/alt8/ability_02/effects/state_self.effect"
+	    icon="/heroes/ravenor/alt8/ability_02/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Ravenor.Alt9" modpriority="1"
+		passiveeffect="/heroes/ravenor/alt9/ability_02/effects/state_self.effect"
+	/>
+</state>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_TalentAccursed20_3"
+
+	ishidden="true"
+	
+	strength="20"
+	
+	deathpersist="true"
+
+	effecttype=""
+	allowtransfer="false"
+>
+	<onframe />
+</state>

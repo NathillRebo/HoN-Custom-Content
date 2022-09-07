@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Skrap_Ability4"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	mapicon="vorax.tga"
+	mapiconsize="0.06"
+	portraitcampos= "0 50 0"
+
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1"
+	modelscale="2.5"
+	effectscale="1.26"
+	boundsheight="110"
+	boundsradius="40"
+	selectionradius="100"
+	targetoffset="0 0 64"
+	infoheight="250"
+
+	iscontrollable="false"
+	unitwalking="true"
+
+	movespeed="325"
+	turnrate="540"
+	turnsmoothing="0.05"
+	tiltfactor="1"
+	tiltspeed="60"
+
+	maxhealth="2000,3500,5000"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+
+	armor="10"
+	magicarmor="10"
+	immunity="BossImmunity"
+
+	cancarryitems="false"
+	inventory0=""
+	inventory1="Ability_Vorax2"
+	inventory2=""
+	inventory3=""
+
+	attackduration="1200"
+	attackactiontime="850"
+	attackcooldown="1350"
+	attackdamagemin="100,120,140"
+	attackdamagemax="100,120,140"
+	attacknumanims="2"
+	attackoffset="60 60 100"
+	attackprojectile=""
+	attackrange="128"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Melee"
+
+	aggrorange="120"
+	sightrangeday="1800"
+	sightrangenight="800"
+	
+	goldbountymin="100,150,200"
+	goldbountymax="100,150,200"
+	experiencebounty="100,150,200"
+	
+	deniablepercent="0.5"
+	
+	lifetime="180000"
+
+	corpsetime="2000"
+	corpsefadetime="10000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	unittype="golem ElitePet"
+>
+
+	<onspawn>
+		<setvar0 a="source_team" />
+		<compare a="var0" b="1" op="eq">
+			<spawnunit name="Gadget_Skrap_Ability4_Sight" target="target_position" team="2" bind="this_entity" source="this_entity" />
+		</compare>
+		<compare a="var0" b="2" op="eq">
+			<spawnunit name="Gadget_Skrap_Ability4_Sight" target="target_position" team="1" bind="this_entity" source="this_entity" />
+		</compare>
+		<applystate name="State_Skrap_Ability4_Spawn" target="this_entity" source="source_entity" duration="3300" />
+		<applystate name="State_Skrap_Ability4_Scaling" target="this_entity" continuous="true" />
+	</onspawn>
+
+	<onattackstart propagatetoillusions="false">
+		<targettype type="building">
+			<!--
+			<random min="1" max="2" />
+			<compare a="result" b="1" op="eq">
+				<playanim target="source_entity" name="attack_tower_1" speed="source_attackspeed"/>
+			</compare>
+			<else>
+				<playanim target="source_entity" name="attack_tower_2" speed="source_attackspeed"/>
+			</else>
+			-->
+			<applystate name="State_Skrap_Ability4_Towers" target="target_entity" duration="2000" />
+		</targettype>
+		<else>
+			<spawnunit name="Gadget_Skrap_Ability4_Leash" target="source_position" />
+		</else>
+	</onattackstart>
+
+	<onattack propagatetoillusions="false">
+		<targettype type="building">
+			<setvar0 a="source_maxhealth" b="12" op="div" />
+			<damage target="source_entity" amount="1" b="var0" op="mult" />
+		</targettype>
+		<cantarget targetscheme="LaneCreeps">
+			<kill target="target_entity" />
+		</cantarget>
+	</onattack>
+
+	<onkill>
+		<cantarget targetscheme="enemy_non_player_controlled_creeps">
+			<distance source="this_entity" target="this_owner_entity" />
+			<compare a="result" b="1500" op="gt">
+				<kill goldbountymult="0.65" />
+			</compare>
+		</cantarget>
+	</onkill>
+
+	<onframe>
+		<areaofeffect
+			radius="600"
+			targetselection="closest"
+			targetscheme="enemy_buildings"
+			effecttype=""
+			center="this_entity"
+			ignoreinvulnerable="false"
+			maxtotalimpacts="1"
+		>
+			<order command="attack" source="source_entity" target="target_entity" force="true" forceduration="4000" />
+		</areaofeffect>
+		<compare a="result" b="1" op="ge">
+			<!-- Disable Vorax's Rock Throw -->
+			<pushability source="this_entity" name="Ability_Vorax2" />
+			<setactivemodifierkey name="vorax_ability2_disabled" entity="stack_entity" />
+		</compare>
+		<else>
+			<!-- Enable Vorax's Rock Throw -->
+			<pushability source="this_entity" name="Ability_Vorax2" />
+			<setactivemodifierkey name="" entity="stack_entity" />
+			<areaofeffect
+				radius="150"
+				targetselection="closest"
+				targetscheme="visible_enemy_units"
+				effecttype=""
+				center="this_entity"
+				ignoreinvulnerable="false"
+				maxtotalimpacts="1"
+			>
+				<order command="attack" source="source_entity" target="target_entity" />
+			</areaofeffect>
+		</else>
+	</onframe>
+	
+	<onkilled>
+		<hasavatarkey name="Hero_Skrap.Alt" >
+			<playeffect effect="/heroes/skrap/alt/ability_04/summon/effects/vorax_dead_vo.effect" source="source_owner_entity" target="source_owner_entity" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Skrap.Alt2" >
+				<playeffect effect="/heroes/skrap/alt2/ability_04/summon/effects/vorax_dead_vo.effect" source="source_owner_entity" target="source_owner_entity" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Skrap.Alt3" >
+					<playeffect effect="/heroes/skrap/alt3/ability_04/summon/effects/vorax_dead_vo.effect" source="source_owner_entity" target="source_owner_entity" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/vorax_dead_vo.effect" source="source_owner_entity" target="source_owner_entity" occlude="true" />
+				</else>
+			</else>
+		</else>
+		<pushability source="this_owner_entity" name="Ability_Skrap4" />
+		
+		<setactivemodifierkey name="" entity="stack_entity" />
+
+		<areaofeffect
+			targetscheme="waypoints"
+			effecttype=""
+			targetselection="all"
+			global="true"
+			maxtotalimpacts=""
+			maximpactspertarget="1"
+			ignoreinvulnerable="true"
+		>
+			<kill target="target_entity" source="" />
+		</areaofeffect>
+	</onkilled>
+
+	<onexpired>
+		<hasavatarkey name="Hero_Skrap.Alt" >
+			<playeffect effect="/heroes/skrap/alt/ability_04/summon/effects/vorax_dead_vo.effect" source="source_owner_entity" target="source_owner_entity" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Skrap.Alt2" >
+				<playeffect effect="/heroes/skrap/alt2/ability_04/summon/effects/vorax_dead_vo.effect" source="source_owner_entity" target="source_owner_entity" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Skrap.Alt3" >
+					<playeffect effect="/heroes/skrap/alt3/ability_04/summon/effects/vorax_dead_vo.effect" source="source_owner_entity" target="source_owner_entity" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/vorax_dead_vo.effect" source="source_owner_entity" target="source_owner_entity" occlude="true" />
+				</else>
+			</else>
+		</else>
+		<pushability source="this_owner_entity" name="Ability_Skrap4" />
+		
+		<setactivemodifierkey name="" entity="stack_entity" />
+
+		<areaofeffect
+			targetscheme="waypoints"
+			effecttype=""
+			targetselection="all"
+			global="true"
+			maxtotalimpacts=""
+			maximpactspertarget="1"
+			ignoreinvulnerable="true"
+		>
+			<kill target="target_entity" source="" />
+		</areaofeffect>
+	</onexpired>
+	
+	<modifier key="golem_growth20" modpriority="80"
+		modelscale="2.6"
+		infoheight="260"
+	/>
+
+	<modifier key="golem_growth30" modpriority="81"
+		modelscale="2.7"
+		infoheight="270"
+	/>
+
+	<modifier key="golem_growth40" modpriority="82"
+		modelscale="2.8"
+		infoheight="280"
+	/>
+
+	<modifier key="golem_growth50" modpriority="83"
+		modelscale="2.9"
+		infoheight="290"
+	/>
+
+	<modifier key="golem_growth_max" modpriority="84"
+		modelscale="3"
+		infoheight="300"
+	/>
+
+	<modifier key="capture_the_flag" modpriority="101"
+		iscontrollable="true"
+		aggrorange="600"
+	>	
+
+		<onkill/>
+
+		<onframe />
+
+		<onkilled>
+			<play2dsound sample="/heroes/cthulhuphant/alt4/sounds/vox_1.wav" channel="10" volume="3.0" dampen="1" sourceonly="false" targetonly="false" />
+			<playeffect effect="../../ability_01/effects/explosion.effect" target="source_position" source="source_position" />
+			<pushability source="this_owner_entity" name="Ability_Skrap4" />
+			
+			<setactivemodifierkey name="" entity="stack_entity" />
+		</onkilled>
+
+		<onexpired>
+			<play2dsound sample="/heroes/cthulhuphant/alt4/sounds/vox_1.wav" channel="10" volume="3.0" dampen="1" sourceonly="false" targetonly="false" />
+			<playeffect effect="../../ability_01/effects/explosion.effect" target="source_position" source="source_position" />
+			<pushability source="this_owner_entity" name="Ability_Skrap4" />
+			
+			<setactivemodifierkey name="" entity="stack_entity" />
+		</onexpired>
+	</modifier>
+
+	<modifier key="the_grimm_hunt" modpriority="101"
+		iscontrollable="true"
+		aggrorange="600"
+	>	
+
+		<onkill/>
+
+		<onframe />
+
+		<onkilled>
+			<play2dsound sample="/heroes/cthulhuphant/alt4/sounds/vox_1.wav" channel="10" volume="3.0" dampen="1" sourceonly="false" targetonly="false" />
+			<playeffect effect="../../ability_01/effects/explosion.effect" target="source_position" source="source_position" />
+			<pushability source="this_owner_entity" name="Ability_Skrap4" />
+			
+			<setactivemodifierkey name="" entity="stack_entity" />
+		</onkilled>
+
+		<onexpired>
+			<play2dsound sample="/heroes/cthulhuphant/alt4/sounds/vox_1.wav" channel="10" volume="3.0" dampen="1" sourceonly="false" targetonly="false" />
+			<playeffect effect="../../ability_01/effects/explosion.effect" target="source_position" source="source_position" />
+			<pushability source="this_owner_entity" name="Ability_Skrap4" />
+			
+			<setactivemodifierkey name="" entity="stack_entity" />
+		</onexpired>
+	</modifier>
+	
+	<modifier key="team_deathmatch" modpriority="101"
+		iscontrollable="true"
+		aggrorange="600"
+	>	
+
+		<onkill/>
+
+		<onframe />
+
+		<onkilled>
+			<play2dsound sample="/heroes/cthulhuphant/alt4/sounds/vox_1.wav" channel="10" volume="3.0" dampen="1" sourceonly="false" targetonly="false" />
+			<playeffect effect="../../ability_01/effects/explosion.effect" target="source_position" source="source_position" />
+			<pushability source="this_owner_entity" name="Ability_Skrap4" />
+			
+			<setactivemodifierkey name="" entity="stack_entity" />
+		</onkilled>
+
+		<onexpired>
+			<play2dsound sample="/heroes/cthulhuphant/alt4/sounds/vox_1.wav" channel="10" volume="3.0" dampen="1" sourceonly="false" targetonly="false" />
+			<playeffect effect="../../ability_01/effects/explosion.effect" target="source_position" source="source_position" />
+			<pushability source="this_owner_entity" name="Ability_Skrap4" />
+			
+			<setactivemodifierkey name="" entity="stack_entity" />
+		</onexpired>
+	</modifier>
+	
+	<modifier key="ult_boost" modpriority="100"
+		healthregen="20,35,50"
+	/>
+	
+
+	<altavatar key="Hero_Skrap.Alt"
+		model="/heroes/skrap/alt/ability_04/summon/model.mdf"
+		passiveeffect="/heroes/skrap/alt/ability_04/summon/effects/body.effect"
+
+		icon="/heroes/skrap/alt/ability_04/summon/icon.tga"
+		portrait="/heroes/skrap/alt/ability_04/summon/icon.tga"
+		portraitcampos= "-20 100 -10"
+	
+		preglobalscale="1"
+		modelscale="2.2"
+		effectscale="1.2"
+	>
+		<modifier key="golem_growth20" modpriority="80"
+			modelscale="2.3"
+			infoheight="260"
+		/>
+
+		<modifier key="golem_growth30" modpriority="81"
+			modelscale="2.4"
+			infoheight="270"
+		/>
+
+		<modifier key="golem_growth40" modpriority="82"
+			modelscale="2.5"
+			infoheight="280"
+		/>
+
+		<modifier key="golem_growth50" modpriority="83"
+			modelscale="2.6"
+			infoheight="290"
+		/>
+
+		<modifier key="golem_growth_max" modpriority="84"
+			modelscale="2.7"
+			infoheight="300"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Skrap.Alt2"
+		model="/heroes/skrap/alt2/ability_04/summon/model.mdf"
+		passiveeffect="/heroes/skrap/alt2/ability_04/summon/effects/body.effect"
+
+		icon="/heroes/skrap/alt2/ability_04/summon/icon.tga"
+		portrait="/heroes/skrap/alt2/ability_04/summon/icon.tga"
+		portraitcampos= "-10 100 -15"
+
+		preglobalscale="1"
+		modelscale="2"
+		effectscale="1.25"
+	>
+		<modifier key="golem_growth20" modpriority="80"
+			modelscale="2.1"
+			infoheight="260"
+		/>
+
+		<modifier key="golem_growth30" modpriority="81"
+			modelscale="2.2"
+			infoheight="270"
+		/>
+
+		<modifier key="golem_growth40" modpriority="82"
+			modelscale="2.3"
+			infoheight="280"
+		/>
+
+		<modifier key="golem_growth50" modpriority="83"
+			modelscale="2.4"
+			infoheight="290"
+		/>
+
+		<modifier key="golem_growth_max" modpriority="84"
+			modelscale="2.5"
+			infoheight="300"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Skrap.Alt3"
+		model="/heroes/skrap/alt3/ability_04/summon/model.mdf"
+		passiveeffect="/heroes/skrap/alt3/ability_04/summon/effects/body.effect"
+
+		icon="/heroes/skrap/alt3/ability_04/summon/icon.tga"
+		portrait="/heroes/skrap/alt3/ability_04/summon/icon.tga"
+		portraitcampos= "-10 100 -15"
+
+		preglobalscale="1.1"
+		modelscale="2.2"
+		effectscale="1.25"
+		
+		deathanim="death_%"
+		deathnumanims="4"
+	>
+		<modifier key="golem_growth20" modpriority="80"
+			modelscale="2.3"
+			infoheight="260"
+		/>
+
+		<modifier key="golem_growth30" modpriority="81"
+			modelscale="2.4"
+			infoheight="270"
+		/>
+
+		<modifier key="golem_growth40" modpriority="82"
+			modelscale="2.5"
+			infoheight="280"
+		/>
+
+		<modifier key="golem_growth50" modpriority="83"
+			modelscale="2.6"
+			infoheight="290"
+		/>
+
+		<modifier key="golem_growth_max" modpriority="84"
+			modelscale="2.7"
+			infoheight="300"
+		/>
+	</altavatar>
+
+</pet>

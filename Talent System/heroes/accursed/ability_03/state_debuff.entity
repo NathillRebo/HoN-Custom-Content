@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Accursed_Ability3_Debuff"
+
+	icon="icon.tga"
+
+	passiveeffect="state.effect"
+	
+	movespeedslow="0.05,0.10,0.15,0.20"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<onattackedpreimpact>
+		<combateffecttype effecttype="AbilityBasedProjectile BindingProjectile" />
+		<else>
+			<cantarget source="this_inflictor_entity" targetscheme="ally_units" effecttype="Buff">
+				<applystate name="State_Accursed_Ability3_Buff" duration="4500" />
+			</cantarget>
+		</else>
+	</onattackedpreimpact>
+	
+	<onframe />
+	
+	<altavatar key="Hero_Accursed.Alt" modpriority="1"
+		icon="/heroes/accursed/alt/ability_03/icon.tga"
+	>
+		<onattackedpreimpact>
+			<combateffecttype effecttype="AbilityBasedProjectile BindingProjectile" />
+			<else>
+				<cantarget source="this_inflictor_entity" targetscheme="ally_units" effecttype="Buff">
+					<applystate name="State_Accursed_Ability3_Buff" duration="4500" />
+				</cantarget>
+			</else>
+		</onattackedpreimpact>
+		
+		<onframe />
+	</altavatar>
+	
+	<modifier key="talent20_1" modpriority="100"
+		movespeedslow="0.11,0.16,0.21,0.26"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt3" modpriority="90"
+		icon="/heroes/accursed/alt3/ability_03/icon.tga"
+		passiveeffect="/heroes/accursed/alt3/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt4" modpriority="90"
+		passiveeffect="/heroes/accursed/alt4/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt5" modpriority="90"
+		passiveeffect="/heroes/accursed/alt5/ability_03/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt6" modpriority="90"
+		passiveeffect="/heroes/accursed/alt6/ability_03/effects/state.effect"
+	/>
+	
+    <altavatar key="Hero_Accursed.Alt7" modpriority="90"
+		passiveeffect="../alt7/ability_03/effects/state.effect"
+		icon="/heroes/accursed/alt7/ability_03/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Accursed.Alt8" modpriority="90"
+		passiveeffect="../alt8/ability_03/effects/state.effect"
+	/>
+	
+</state>

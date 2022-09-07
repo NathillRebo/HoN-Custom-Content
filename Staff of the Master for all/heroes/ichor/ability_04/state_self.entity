@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ichor_Ability4_Self"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	modifierkey="Ichor_Ult_Active"
+	
+	dynamicprecache="effects/state_end_sound.effect"
+	impactinterval="1000"
+>
+	
+	<aura 
+		gadget="Gadget_Ichor_Ability4"
+		radius="0"
+		targetscheme="self"
+	/>
+	
+	<oninflict>
+		<setscriptvalue name="state_end_sound_effect" value="effects/state_end_sound.effect" entity="this_entity" />
+	</oninflict>
+	
+	<onframe>
+		<!-- Count for ally Attack Speed mechanics -->
+		<areaofeffect
+			radius="500"
+			targetselection="all"
+			targetscheme="other_ally_nonillusion_nonmimic_nonpet_heroes"
+			effecttype=""
+			center="source_entity"
+			maximpactspertarget="1"
+			maxtotalimpacts="4"
+		>
+		</areaofeffect>
+		<setvar0 a="result" />
+
+		<areaofeffect
+			radius="500"
+			targetselection="all"
+			targetscheme="ally_heroes"
+			effecttype=""
+			center="source_entity"
+		>
+			<applystate name="State_Ichor_Ability4" target="target_entity" continuous="true" timeout="frametime" pushentity="true" />
+			<setcharges entity="stack_entity" a="var0" />
+		</areaofeffect>
+	</onframe>
+	
+	<onimpact>
+		<!-- var0 = Base Heal Value -->
+		<evaluate a="source_maxhealth" b="0.01,0.015,0.02" op="mult" />
+		<setvar0 a="result" b="20" op="add" />
+		
+		<!-- Damage enemy non-hero units -->
+		<areaofeffect
+			radius="500"
+			targetselection="all"
+			targetscheme="enemy_nonhero_units"
+			effecttype=""
+			center="source_entity"
+		>
+			<damage effecttype="DOT" amount="25,30,35" />
+		</areaofeffect>
+		
+		<!-- Damage enemy heroes -->
+		<areaofeffect
+			radius="500"
+			targetselection="all"
+			targetscheme="enemy_heroes"
+			effecttype=""
+			center="source_entity"
+		>
+			<damage effecttype="DOT" amount="25,30,35" />
+		</areaofeffect>
+		
+		<!-- +0.4x effect per enemy after 1 enemy affected -->
+		<setvar1 a="result" />
+		<compare a="var1" b="0" op="gt">
+			<evaluate a="result" b="3" op="min" />
+			<evaluate a="result" b="1" op="sub" />
+			<evaluate a="result" b="0.4" op="mult" />
+			<setvar1 a="result" b="1" op="add" />
+			
+			<!-- Heal self -->
+			<evaluate a="var1" b="var0" op="mult" />
+			<heal a="result" b="1" op="mult" target="source_entity" />
+			
+			<!-- Heal allies based on conditions -->
+			<areaofeffect
+				radius="500"
+				targetselection="all"
+				targetscheme="other_ally_heroes"
+				effecttype=""
+				center="source_entity"
+			>
+				<!-- "Weak" heal effect -->
+				<hasmodifier name="ichor_W_ally" entity="target_entity" />
+				<else>
+					<hasmodifier name="ichor_E_ally" entity="target_entity" />
+					<else>
+						<evaluate a="var1" b="var0" op="mult" />
+						<heal a="result" b="0.5" op="mult" />
+					</else>
+				</else>
+			</areaofeffect>
+			
+			<!-- Heal ally heroes who have Ichoric Mark on them -->
+			<areaofeffect
+				radius="1200"
+				targetselection="all"
+				targetscheme="other_ally_heroes"
+				effecttype=""
+				center="source_entity"
+			>
+				<!-- "Strong" heal effect -->
+				<hasmodifier name="ichor_E_ally" entity="target_entity">
+					<evaluate a="var1" b="var0" op="mult" />
+					<heal a="result" b="1" op="mult" />
+				</hasmodifier>
+			</areaofeffect>
+		</compare>
+	</onimpact>
+	
+	<modifier key="ult_boost">
+		<onimpact>
+			<!-- var0 = Base Heal Value -->
+			<evaluate a="source_maxhealth" b="0.01,0.015,0.02" op="mult" />
+			<setvar0 a="result" b="20" op="add" />
+			
+			<!-- Damage enemy non-hero units -->
+			<areaofeffect
+				radius="500"
+				targetselection="all"
+				targetscheme="enemy_nonhero_units"
+				effecttype=""
+				center="source_entity"
+			>
+				<damage effecttype="DOT" amount="25,30,35" />
+			</areaofeffect>
+			
+			<!-- Damage enemy heroes -->
+			<areaofeffect
+				radius="500"
+				targetselection="all"
+				targetscheme="enemy_heroes"
+				effecttype=""
+				center="source_entity"
+			>
+				<damage effecttype="DOT" amount="25,30,35" />
+			</areaofeffect>
+			
+			<!-- +0.4x effect per enemy after 1 enemy affected -->
+			<setvar1 a="result" />
+			<addcharges count="var1"/>
+			<compare a="var1" b="0" op="gt">
+				<evaluate a="result" b="3" op="min" />
+				<evaluate a="result" b="1" op="sub" />
+				<evaluate a="result" b="0.4" op="mult" />
+				<setvar1 a="result" b="1" op="add" />
+				
+				<!-- Heal self -->
+				<evaluate a="var1" b="var0" op="mult" />
+				<heal a="result" b="1" op="mult" target="source_entity" />
+				
+				<!-- Heal allies based on conditions -->
+				<areaofeffect
+					radius="500"
+					targetselection="all"
+					targetscheme="other_ally_heroes"
+					effecttype=""
+					center="source_entity"
+				>
+					<!-- "Weak" heal effect -->
+					<hasmodifier name="ichor_W_ally" entity="target_entity" />
+					<else>
+						<hasmodifier name="ichor_E_ally" entity="target_entity" />
+						<else>
+							<evaluate a="var1" b="var0" op="mult" />
+							<heal a="result" b="0.5" op="mult" />
+						</else>
+					</else>
+				</areaofeffect>
+				
+				<!-- Heal ally heroes who have Ichoric Mark on them -->
+				<areaofeffect
+					radius="1200"
+					targetselection="all"
+					targetscheme="other_ally_heroes"
+					effecttype=""
+					center="source_entity"
+				>
+					<!-- "Strong" heal effect -->
+					<hasmodifier name="ichor_E_ally" entity="target_entity">
+						<evaluate a="var1" b="var0" op="mult" />
+						<heal a="result" b="1" op="mult" />
+					</hasmodifier>
+				</areaofeffect>
+			</compare>
+		</onimpact>
+		
+		<onexpired>
+			<getscriptvalue name="state_end_sound_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" target="source_entity" occlude="true" />
+			
+			<areaofeffect
+				radius="500"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype=""
+				center="source_entity"
+			>
+				<damage effecttype="" amount="15" b="charges" op="mult" />
+			</areaofeffect>
+		</onexpired>
+	</modifier>
+	
+	<onexpired>
+		<getscriptvalue name="state_end_sound_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="source_entity" occlude="true" />
+	</onexpired>
+	
+	<altavatar key="Hero_Ichor.Alt"
+		dynamicprecache="../alt/ability_04/effects/state_end_sound.effect"
+		icon="../alt/ability_04/icon.tga"
+	>
+		<oninflict>
+			<setscriptvalue name="state_end_sound_effect" value="../alt/ability_04/effects/state_end_sound.effect" entity="this_entity" />
+		</oninflict>
+	</altavatar>
+	
+	<altavatar key="Hero_Ichor.Alt2"
+		icon="../alt2/ability_04/icon.tga"
+	>
+	</altavatar>
+	
+</state>

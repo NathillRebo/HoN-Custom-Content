@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Nitro1"
+ 
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="1000"
+	castactiontime="200"
+	casteffect="effects/cast.effect"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	activatescheme="canattack"
+	actiontype="attack"
+	targetscheme="enemy_units"
+	casteffecttype="Attack"
+	projectile="Projectile_Nitro_Ability1"
+	manacost="12"
+	cooldowntime="0"
+	range="600"
+
+	targetpriorities="enemy_heroes"
+	
+	doubleactivate="true"
+>
+
+	<onattack>
+		<!-- Required to allow the skill to stack with Attack Modifiers -->
+		<setvalue name="combat_attackability" a="0" />
+	</onattack>
+	
+	<onimpact>
+		<getyaw source="this_owner_entity" target="target_entity" />
+		<setvar2 a="result" />
+		
+		<!-- Spawn a shrapnel -->
+		<random min="0" max="100" /> <!-- Random angle in a 100 degree cone behind the enemy -->
+		<setvar0 a="result" b="50" op="sub" /> <!-- Center the angle -->
+		<setaccumulator value="var2" valueb="var0" valueop="add" />
+		<!-- Adjust the angle to be within the bounds of -180 to +180 -->
+		<compare a="accumulator" b="-180" op="lt">
+			<setaccumulator value="accumulator" valueb="360" valueop="add" />
+		</compare>
+		<else>
+			<compare a="accumulator" b="180" op="gt">
+				<setaccumulator value="accumulator" valueb="360" valueop="sub" />
+			</compare>
+		</else>
+		<random min="100" max="300" /> <!-- Distance from target to shrapnel -->
+		<setvar0 a="result" />
+		<spawnunit name="Pet_Nitro_Ability1_Shrapnel" source="this_owner_entity" owner="this_owner_entity" target="target_entity" facing="target_entity" angle="accumulator" pushentity="true" maxactive="21" />
+		<setpos0 position="stack_entity" offsetspace="stack_entity" offset="0 100 0" />
+		<setpos0 position="stack_entity" positionend="pos0" positionmodifier="pointonline" positionvalue="var0" />
+		<teleport source="stack_entity" target="pos0" />
+		
+		<!-- Spawn a shrapnel -->
+		<random min="0" max="100" /> <!-- Random angle in a 100 degree cone behind the enemy -->
+		<setvar0 a="result" b="50" op="sub" /> <!-- Center the angle -->
+		<setaccumulator value="var2" valueb="var0" valueop="add" />
+		<!-- Adjust the angle to be within the bounds of -180 to +180 -->
+		<compare a="accumulator" b="-180" op="lt">
+			<setaccumulator value="accumulator" valueb="360" valueop="add" />
+		</compare>
+		<else>
+			<compare a="accumulator" b="180" op="gt">
+				<setaccumulator value="accumulator" valueb="360" valueop="sub" />
+			</compare>
+		</else>
+		<random min="100" max="300" /> <!-- Distance from target to shrapnel -->
+		<setvar0 a="result" />
+		<spawnunit name="Pet_Nitro_Ability1_Shrapnel" source="this_owner_entity" owner="this_owner_entity" target="target_entity" facing="target_entity" angle="accumulator" pushentity="true" maxactive="21" />
+		<setpos0 position="stack_entity" offsetspace="stack_entity" offset="0 100 0" />
+		<setpos0 position="stack_entity" positionend="pos0" positionmodifier="pointonline" positionvalue="var0" />
+		<teleport source="stack_entity" target="pos0" />
+		
+		<!-- Spawn a shrapnel -->
+		<random min="0" max="100" /> <!-- Random angle in a 100 degree cone behind the enemy -->
+		<setvar0 a="result" b="50" op="sub" /> <!-- Center the angle -->
+		<setaccumulator value="var2" valueb="var0" valueop="add" />
+		<!-- Adjust the angle to be within the bounds of -180 to +180 -->
+		<compare a="accumulator" b="-180" op="lt">
+			<setaccumulator value="accumulator" valueb="360" valueop="add" />
+		</compare>
+		<else>
+			<compare a="accumulator" b="180" op="gt">
+				<setaccumulator value="accumulator" valueb="360" valueop="sub" />
+			</compare>
+		</else>
+		<random min="100" max="300" /> <!-- Distance from target to shrapnel -->
+		<setvar0 a="result" />
+		<spawnunit name="Pet_Nitro_Ability1_Shrapnel" source="this_owner_entity" owner="this_owner_entity" target="target_entity" facing="target_entity" angle="accumulator" pushentity="true" maxactive="30" />
+		<setpos0 position="stack_entity" offsetspace="stack_entity" offset="0 100 0" />
+		<setpos0 position="stack_entity" positionend="pos0" positionmodifier="pointonline" positionvalue="var0" />
+		<teleport source="stack_entity" target="pos0" />
+	</onimpact>
+	
+	<modifier key="nitro_ability4_Active" modpriority="80"
+		manacost="6"
+	>	
+	</modifier>
+	
+	<onframe>
+		<!-- Use binary to figure out the modifier to apply -->
+		<!-- Combinations: 000, 001, 011, 010, 110, 100, 101, 111 -->
+		<!-- Counting from right-to-left (LSB): Jade Spire = 1, Faux Bow = 2, Wingbow = 4 -->
+		<setaccumulator value="0" />
+		<hasmodifier name="alt_JadeSpire" entity="source_entity">
+			<changeaccumulator b="1" op="add" />
+		</hasmodifier>		
+		<hasmodifier name="alt_FauxBow" entity="source_entity">
+			<changeaccumulator b="2" op="add" />
+		</hasmodifier>		
+		<hasmodifier name="alt_Wingbow" entity="source_entity">
+			<changeaccumulator b="4" op="add" />
+		</hasmodifier>		
+		
+		<!-- Perform combination check here -->
+		<!-- All 3 items, Wingbow takes priority in combination with Jade Spire -->
+		<compare a="accumulator" b="7" op="ge">
+			<setactivemodifierkey name="alt_JadeSpire_and_Wingbow" entity="this_entity" />
+		</compare>
+		<else>
+			<!-- Wingbow vs. Faux Bow -->
+			<compare a="accumulator" b="6" op="eq">
+				<setactivemodifierkey name="alt_Wingbow" entity="this_entity" />
+			</compare>
+			<else>
+				<!-- Wingbow & Jade Spire -->
+				<compare a="accumulator" b="5" op="eq">
+					<setactivemodifierkey name="alt_JadeSpire_and_Wingbow" entity="this_entity" />
+				</compare>
+				<else>
+					<!-- Wingbow -->
+					<compare a="accumulator" b="4" op="eq">
+						<setactivemodifierkey name="alt_JWingbow" entity="this_entity" />
+					</compare>
+					<else>
+						<!-- Faux Bow and Jade Spire -->
+						<compare a="accumulator" b="3" op="eq">
+							<setactivemodifierkey name="alt_JadeSpire_and_FauxBow" entity="this_entity" />
+						</compare>
+						<else>
+							<!-- Faux Bow -->
+							<compare a="accumulator" b="2" op="eq">
+								<setactivemodifierkey name="alt_FauxBow" entity="this_entity" />
+							</compare>
+							<else>
+								<!-- Jade Spire -->
+								<compare a="accumulator" b="1" op="eq">
+									<setactivemodifierkey name="alt_JadeSpire" entity="this_entity" />
+								</compare>
+								<else>
+									<!-- No conditions match -->
+									<setactivemodifierkey name="" entity="this_entity" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onframe>
+	
+	<modifier key="alt_JadeSpire" modpriority="1"
+		range="450"
+	>
+	</modifier>
+	
+	<modifier key="alt_FauxBow" modpriority="2"
+		range="700"
+	>
+	</modifier>
+
+	<modifier key="alt_Wingbow" modpriority="3"
+		range="750"
+	>
+	</modifier>	
+	
+	<modifier key="alt_JadeSpire_and_FauxBow" modpriority="4"
+		range="550"
+	>
+	</modifier>
+	
+	<modifier key="alt_JadeSpire_and_Wingbow" modpriority="5"
+		range="600"
+	>
+	</modifier>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onimpact>
+			<getyaw source="this_owner_entity" target="target_entity" />
+			<setvar2 a="result" />
+			
+			<!-- Spawn a shrapnel -->
+			<random min="0" max="100" /> <!-- Random angle in a 100 degree cone behind the enemy -->
+			<setvar0 a="result" b="50" op="sub" /> <!-- Center the angle -->
+			<setaccumulator value="var2" valueb="var0" valueop="add" />
+			<!-- Adjust the angle to be within the bounds of -180 to +180 -->
+			<compare a="accumulator" b="-180" op="lt">
+				<setaccumulator value="accumulator" valueb="360" valueop="add" />
+			</compare>
+			<else>
+				<compare a="accumulator" b="180" op="gt">
+					<setaccumulator value="accumulator" valueb="360" valueop="sub" />
+				</compare>
+			</else>
+			<random min="100" max="300" /> <!-- Distance from target to shrapnel -->
+			<setvar0 a="result" />
+			<spawnunit name="Pet_Nitro_Ability1_Shrapnel_Sotd" source="this_owner_entity" owner="this_owner_entity" target="target_entity" facing="target_entity" angle="accumulator" pushentity="true" maxactive="32" />
+			<setpos0 position="stack_entity" offsetspace="stack_entity" offset="0 100 0" />
+			<setpos0 position="stack_entity" positionend="pos0" positionmodifier="pointonline" positionvalue="var0" />
+			<teleport source="stack_entity" target="pos0" />
+			
+			<!-- Spawn a shrapnel -->
+			<random min="0" max="100" /> <!-- Random angle in a 100 degree cone behind the enemy -->
+			<setvar0 a="result" b="50" op="sub" /> <!-- Center the angle -->
+			<setaccumulator value="var2" valueb="var0" valueop="add" />
+			<!-- Adjust the angle to be within the bounds of -180 to +180 -->
+			<compare a="accumulator" b="-180" op="lt">
+				<setaccumulator value="accumulator" valueb="360" valueop="add" />
+			</compare>
+			<else>
+				<compare a="accumulator" b="180" op="gt">
+					<setaccumulator value="accumulator" valueb="360" valueop="sub" />
+				</compare>
+			</else>
+			<random min="100" max="300" /> <!-- Distance from target to shrapnel -->
+			<setvar0 a="result" />
+			<spawnunit name="Pet_Nitro_Ability1_Shrapnel_Sotd" source="this_owner_entity" owner="this_owner_entity" target="target_entity" facing="target_entity" angle="accumulator" pushentity="true" maxactive="32" />
+			<setpos0 position="stack_entity" offsetspace="stack_entity" offset="0 100 0" />
+			<setpos0 position="stack_entity" positionend="pos0" positionmodifier="pointonline" positionvalue="var0" />
+			<teleport source="stack_entity" target="pos0" />
+			
+			<!-- Spawn a shrapnel -->
+			<random min="0" max="100" /> <!-- Random angle in a 100 degree cone behind the enemy -->
+			<setvar0 a="result" b="50" op="sub" /> <!-- Center the angle -->
+			<setaccumulator value="var2" valueb="var0" valueop="add" />
+			<!-- Adjust the angle to be within the bounds of -180 to +180 -->
+			<compare a="accumulator" b="-180" op="lt">
+				<setaccumulator value="accumulator" valueb="360" valueop="add" />
+			</compare>
+			<else>
+				<compare a="accumulator" b="180" op="gt">
+					<setaccumulator value="accumulator" valueb="360" valueop="sub" />
+				</compare>
+			</else>
+			<random min="100" max="300" /> <!-- Distance from target to shrapnel -->
+			<setvar0 a="result" />
+			<spawnunit name="Pet_Nitro_Ability1_Shrapnel_Sotd" source="this_owner_entity" owner="this_owner_entity" target="target_entity" facing="target_entity" angle="accumulator" pushentity="true" maxactive="43" />
+			<setpos0 position="stack_entity" offsetspace="stack_entity" offset="0 100 0" />
+			<setpos0 position="stack_entity" positionend="pos0" positionmodifier="pointonline" positionvalue="var0" />
+			<teleport source="stack_entity" target="pos0" />
+		</onimpact>
+	</modifier>
+</ability>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Gunblade2"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	anim="ability_2"
+	casttime="0"
+	castactiontime="0"
+	
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nonaggressive="true"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	actiontype="no_target"
+	targetscheme="self"
+	manacost="65"
+	cooldowntime="18000"
+	casteffecttype="Magic"
+
+>
+	<onimpact>
+		<applystate target="source_entity" name="State_Gunblade_Ability2" duration="8000" />
+	</onimpact>
+	
+	<altavatar key="Hero_Gunblade.Alt8" 
+		icon="../alt8/ability_02/icon.tga"
+	>
+	</altavatar>
+	<modifier key="ult_boost" modpriority="100"
+		nosilence="true"
+		nostun="true"
+		noforce="true"
+	>
+		<onimpact>
+			<dispel type="StatusDebuff" target="source_entity" />
+			<dispel type="StatusDisable" target="source_entity" />
+			<applystate target="source_entity" name="State_Gunblade_Ability2" duration="8000" />
+		</onimpact>
+	</modifier>
+</ability>

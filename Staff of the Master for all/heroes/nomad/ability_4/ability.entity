@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Nomad4"
+
+	
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+	casteffect=""
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	actiontype="target_self"
+	
+	manacost="100,125,150"
+	cooldowntime="60000,50000,40000"
+	
+	range="1000"
+	targetradius="200"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<applystate name="State_Nomad_Ability4" target="source_entity" duration="1000" />
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onimpact>
+			<applystate name="State_Nomad_Ability4_Sotm" target="source_entity" duration="1000" />
+		</onimpact>
+	</modifier>
+	
+	<altavatar key="Hero_Nomad.Alt7"
+		icon="../alt7/ability_4/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Nomad.Alt11"
+		icon="../alt11/ability_04/icon.tga"
+	/>
+	<altavatar key="Hero_Nomad.Alt12"
+		icon="../alt12/ability_04/icon.tga"
+	>
+	<modifier key="nomadAlt12_Ability4_Upgrade"
+		icon="../alt12/ability_04/icon_u.tga"
+					/>
+	</altavatar>
+</ability>

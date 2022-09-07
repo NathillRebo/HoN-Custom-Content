@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Adrenaline1"
+
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="250"
+	castactiontime="100"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	casteffecttype="Magic"
+	targetscheme="enemy_heroes"
+
+	manacost="65,80,95,110"
+	cooldowntime="2700"
+
+	range="650,700,750,800"
+	forcerange="650,700,750,800"
+	targetradius="120"
+	allowoutofboundscast="true"
+	showrangeandradiusintooltip="true"
+	
+	showlinecast="true"
+	linecastrange="770,820,870,920"
+	linecastwidth="120"
+	
+	passiveeffect=""
+	
+	checkcostinvalidvoice="nomanasound"
+	checkcostinvalidstr="error_low_mana"
+	
+	dynamicprecache="effects/cast.effect"
+>
+	<onlearn>
+		<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onimpact>
+		<spawnprojectile name="Projectile_Adrenaline_Ability1" source="source_entity" target="target_position" offsetspace="source_entity" offset="0 100 0" pushentity="true" />
+		
+		<!-- Dynamic VFX -->
+		<hasmodifier name="kinesis_Thoughtsteal" entity="source_entity" />
+		<else>
+			<getscriptvalue name="cast_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" source="source_entity" occlude="true" />
+		</else>
+	</onimpact>
+	
+	<modifier key="adrenaline_Q_1" modpriority="100"
+		manacost="55,65,75,85"
+		cooldowntime="2100"
+	/>
+	
+	<modifier key="adrenaline_Q_2" modpriority="100"
+		manacost="45,50,55,60"
+		cooldowntime="1500"
+	/>
+	
+	<modifier key="ult_boost" modpriority="101">
+		<ondamaged>
+			<setvar1 a="damage_attempted" b="1.9358" op="mult"/>
+			<reducecooldown duration="var1" />
+		</ondamaged>
+	</modifier>
+	
+	<altavatar key="Hero_Adrenaline.Alt"
+	    icon="/heroes/adrenaline/alt/ability_01/icon.tga"
+		dynamicprecache="../alt/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt2"
+	    icon="/heroes/adrenaline/alt2/ability_01/icon.tga"
+		dynamicprecache="../alt2/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt2/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt3"
+		dynamicprecache="../alt3/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt3/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt4"
+		dynamicprecache="../alt4/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt4/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt5"
+	    icon="/heroes/adrenaline/alt5/ability_01/icon.tga"
+		dynamicprecache="../alt5/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt5/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+	<altavatar key="Hero_Adrenaline.Alt6"
+		dynamicprecache="../alt6/ability_01/effects/cast.effect"
+	>
+		<onlearn>
+			<setscriptvalue name="cast_effect" value="../alt6/ability_01/effects/cast.effect" entity="this_entity" />
+		</onlearn>
+	</altavatar>
+	
+</ability>

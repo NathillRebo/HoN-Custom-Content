@@ -1,0 +1,35 @@
+//
+// TALENTS GO HERE
+//
+
+custom_ui_button_TalentAccursed10_1_title			^oHealth Regen +5^*
+custom_ui_button_TalentAccursed10_1_body				
+custom_ui_button_TalentAccursed10_2_title			^oAgility +13^*
+custom_ui_button_TalentAccursed10_2_body				As a result, it increases your Armor by 1.82 and Attack Speed by 13
+custom_ui_button_TalentAccursed10_3_title			^oMove Speed +10^*
+custom_ui_button_TalentAccursed10_3_body				
+
+custom_ui_button_TalentAccursed15_1_title			^oCauterize +50 Damage/Healing^*
+custom_ui_button_TalentAccursed15_1_body				Increased to 150/200/250/300.
+custom_ui_button_TalentAccursed15_2_title			^oAttack Damage +30^*
+custom_ui_button_TalentAccursed15_2_body				
+custom_ui_button_TalentAccursed15_3_title			^oSear Active +2.75% Health per second^*
+custom_ui_button_TalentAccursed15_3_body				Increased to 8/12/16/20 + 3.15/3.35/3.55/3.75% of your Max Health per second
+
+custom_ui_button_TalentAccursed20_1_title			^oSear Passive +6% Move Speed Slow^*
+custom_ui_button_TalentAccursed20_1_body				Increased to 11/16/21/26%
+custom_ui_button_TalentAccursed20_2_title			^oFire Shield +70 Attack Speed and +20 Move Speed^*
+custom_ui_button_TalentAccursed20_2_body				
+custom_ui_button_TalentAccursed20_3_title			^oStrength +20^*
+custom_ui_button_TalentAccursed20_3_body				
+
+custom_ui_button_TalentAccursed25_1_title			^oCauterize attacks enemies^*
+custom_ui_button_TalentAccursed25_1_body				Cauterize executes a melee attack against the target if it is an enemy (even if executing at range), resulting in additional Physical Damage equal to your Attack Damage and applying on-attack and on-hit effects.
+custom_ui_button_TalentAccursed25_2_title			^oFire Shield +100 Health/Damage^*
+custom_ui_button_TalentAccursed25_2_body				Increased to 210/240/270/300
+custom_ui_button_TalentAccursed25_3_title			^oFlame Consumption -20 seconds Cooldown^*
+custom_ui_button_TalentAccursed25_3_body				Reduced to 40 seconds
+
+// 
+// END OF TALENTS
+//

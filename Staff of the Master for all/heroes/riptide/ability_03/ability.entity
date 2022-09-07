@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Riptide3"
+	statuseffecttooltip="State_Riptide_Ability3"
+
+	icon="icon.tga"
+
+	anim="ability_1"
+	casttime="500"
+	castactiontime="300"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="self_position"
+	targetradius="350"
+	
+	manacost="20"
+	cooldowntime="30000"
+	
+	noshuffle="true"
+>
+	<onimpact>
+		<hasavatarkey name="Hero_Riptide.Alt6" >
+			<playeffect effect="../alt6/ability_03/effects/splash.effect" source="this_owner_position" occlude="true" />
+		</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Riptide.Alt8">
+					<playeffect effect="../alt8/ability_03/effects/splash.effect" source="this_owner_position" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<playeffect effect="effects/splash.effect" source="this_owner_position" occlude="true" />
+				</else>
+			</else>
+		<spawnunit name="Gadget_Riptide_Ability3" target="this_owner_position" maxactive="1" />
+	</onimpact>
+	
+	<onframe>
+		<targettype type="alive" target="source_entity">
+			<comparetiledefinition name="water" position="source_entity">
+				<applystate name="State_Riptide_Ability3" target="source_entity" duration="3000" continuous="true" timeout="frametime" />
+			</comparetiledefinition>
+			<else>
+				<hasmodifier entity="source_entity" name="riptide_ult_active">
+					<applystate name="State_Riptide_Ability3" target="source_entity" duration="3000" continuous="true" timeout="frametime" />
+				</hasmodifier>
+			</else>
+		</targettype>
+	</onframe>
+	
+	<altavatar key="Hero_Riptide.Alt"
+		icon="../alt/ability_03/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_Riptide.Alt7"
+		icon="../alt7/ability_03/icon.tga"
+	>
+	</altavatar>
+	<modifier key="ult_boost" modpriority="100">
+		<onimpact>
+			<hasavatarkey name="Hero_Riptide.Alt6" >
+				<playeffect effect="../alt6/ability_03/effects/splash.effect" source="this_owner_position" occlude="true" />
+			</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Riptide.Alt8">
+						<playeffect effect="../alt8/ability_03/effects/splash.effect" source="this_owner_position" occlude="true" />
+					</hasavatarkey>
+					<else>
+						<playeffect effect="effects/splash.effect" source="this_owner_position" occlude="true" />
+					</else>
+				</else>
+			<spawnunit name="Gadget_Riptide_Ability3" target="this_owner_position" maxactive="4" />
+		</onimpact>
+	</modifier>
+</ability>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hantumon_Ability2_Staff"
+
+	icon="icon.tga"
+	
+	effecttype="StatusBuff"
+	attackspeed="2"
+>
+</state>

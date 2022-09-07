@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Hantumon2"
+
+	icon="icon.tga"
+
+	anim="ability_2_start"
+	casttime="1000"
+	castactiontime="300"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	targetscheme="all_other_units"
+	casteffecttype="Physical"
+	activatescheme="movement"
+
+	manacost="50"
+	cooldowntime="20000,15000,10000,5000"
+
+	range="700"
+
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+
+	targetpriorities="enemy_heroes,ally_heroes"
+>
+
+	<onimpact>
+		<teleport interpolate="false" facetarget="true" specifyangle="true" angle="180" />
+
+		<!-- Art for allies -->
+		<cantarget targetscheme="ally_units">
+			<hasavatarkey name="Hero_Hantumon.Alt5">
+				<playeffect effect="../alt5/ability_02/effects/egg.effect" source="source_entity" target="target_entity" />
+			</hasavatarkey>
+			<else>
+			<hasavatarkey name="Hero_Hantumon.Alt9">
+				<playeffect effect="../alt9/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+			</hasavatarkey>
+				<else>
+				<hasavatarkey name="Hero_Hantumon.Alt10">
+					<playeffect effect="../alt10/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+				</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Hantumon.Alt11">
+							<hasmodifier name="Night_Set_Hantumon">
+								<playeffect effect="../alt12/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+							</hasmodifier>
+							<else>
+								<playeffect effect="../alt11/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+							</else>
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Hantumon.Alt12">								
+								<hasmodifier name="Night_Set_Hantumon">									
+									<playeffect effect="../alt11/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+								</hasmodifier>
+								<else>
+									<playeffect effect="../alt12/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+								</else>
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Hantumon.Alt13">
+									<playeffect effect="../alt13/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="effects/warpin.effect" source="source_entity" target="target_entity" />
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</cantarget>
+
+		<cantarget targetscheme="enemy_units">
+			<bonusdamageadd a="30,60,90,120" target="source_entity" />
+			<condition test="target_angle ge 105">
+				<pushability name="Ability_Hantumon3" />
+				<setvar0 a="source_level" source="stack_entity" />
+				<bonusdamageadd target="source_entity" a="var0" b="0.25" op="mult" />
+			</condition>
+
+			<attack />
+			<order command="attack" />
+
+			<!-- Art -->
+			<hasmodifier name="Alt4_UpgradedPounce">
+				<playanim name="ability_2_attack_ult" target="source_entity" />
+			</hasmodifier>
+				<else>
+				<hasavatarkey name="Hero_Hantumon.Alt9">
+					<playeffect effect="../alt9/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+				</hasavatarkey>
+					<else>
+					<hasavatarkey name="Hero_Hantumon.Alt10">
+						<playeffect effect="../alt10/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+					</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Hantumon.Alt11">
+								<hasmodifier name="Night_Set_Hantumon">
+									<playeffect effect="../alt12/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+								</hasmodifier>
+								<else>
+									<playeffect effect="../alt11/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+								</else>
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Hantumon.Alt12">
+									<hasmodifier name="Night_Set_Hantumon">									
+										<playeffect effect="../alt11/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+									</hasmodifier>
+									<else>
+										<playeffect effect="../alt12/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+									</else>
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_Hantumon.Alt13">
+										<playeffect effect="../alt13/ability_02/effects/warpin.effect" source="source_entity" target="target_entity" />
+									</hasavatarkey>
+									<else>
+										<playanim name="ability_2_attack" variations="1" length="400" target="source_entity" />
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			<playeffect effect="effects/ability_02.effect" source="target_entity" target="" />
+
+			<hasavatarkey name="Hero_Hantumon.Alt4" >
+				<hasmodifier name="Alt4_Collection">
+					<playeffect effect="../alt4/ability_02/effects/shockwave.effect" source="source_position" target="source_position" />
+				</hasmodifier>
+				<else>
+					<hasmodifier name="Alt4_Collection_Mask">
+						<playeffect effect="../alt4/ability_02/effects/shockwave.effect" source="source_position" target="source_position" />
+					</hasmodifier>
+				</else>
+			</hasavatarkey>
+			<hasavatarkey name="Hero_Hantumon.Alt5">
+				<playeffect effect="../alt5/ability_02/effects/egg.effect" source="source_entity" target="target_entity" />
+			</hasavatarkey>
+		</cantarget>
+		
+		<hasmodifier name="ult_boost">
+			<applystate name="State_Hantumon_Ability2_Staff" duration="2000" target="source_entity"/>
+		</hasmodifier>
+	</onimpact>
+
+	<modifier key="Alt4_UpgradedPounce" modpriority="1"
+		anim="ability_2_start_ult"
+	/>
+	<modifier key="ult_boost" modpriority="100"/>
+	
+	<altavatar key="Hero_Hantumon.Alt11" 
+	    icon="/heroes/hantumon/alt11/ability_02/icon.tga" 
+	>	
+	    <modifier key ="Night_Set_Hantumon"
+		    icon="/heroes/hantumon/alt12/ability_02/icon.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Hantumon.Alt12" 
+	    icon="/heroes/hantumon/alt12/ability_02/icon.tga" 
+	>
+	    <modifier key ="Night_Set_Hantumon"
+		    icon="/heroes/hantumon/alt11/ability_02/icon.tga"
+		/>
+	</altavatar>
+	
+</ability>

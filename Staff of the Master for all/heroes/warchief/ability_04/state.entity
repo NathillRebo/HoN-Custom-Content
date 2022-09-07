@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Warchief_Ability4"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	
+	movespeedmultiplier="0.05"
+	
+	manaregen="10,20,30"
+
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<aura state="State_Warchief_Ability4_Aura" radius="900" targetscheme="other_ally_heroes" ignoreinvulnerable="true" />
+	
+	<!-- 4x increased cooldown speed instead of 3x when on self -->
+	<onframe>				
+		<!-- var1 is the Cooldown Reduction Rate converted to a pure time value -->
+		<!-- var1 = frametime * Cooldown_Reduction_Rate(x) * 1000 - 1000 -->		
+		<setvar0 a="3.5" /> <!-- Cooldown_Reduction_Rate(x) -->
+		
+		<setvar1 a="var0" b="1000" op="mult" />
+		<setvar1 a="var1" b="1000" op="sub" />
+		<setvar1 a="frametime" b="var1" op="mult" />
+		
+		<pushability source="this_owner_entity" slot="0" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_owner_entity" slot="1" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_owner_entity" slot="2" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		
+		<foreachitem source="this_owner_entity">
+			<!-- Will not work for Warchief's items that have a 3s cooldown or less -->
+			<getcooldown target="target_entity" />
+			<compare a="result" b="3" op="gt">
+				<reducecooldown entity="target_entity" duration="var1" />
+			</compare>
+		</foreachitem>
+	</onframe>
+	
+	<altavatar key="Hero_Warchief.Alt" modpriority="1"
+		passiveeffect="../alt/ability_04/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_Warchief.Alt2" modpriority="1"
+		passiveeffect="../alt2/ability_04/effects/state_self.effect"
+	/>
+	
+	<modifier key="ult_boost">
+		<onindirectkill propagatetoillusions="false" >
+			<targettype type="hero">
+				<targettype type="enemy">
+					<targettype type="illusion" />
+					<else>               
+						<targettype type="mimic" />
+						<else> 
+							<targettype type="self" />
+							<else>
+								<targettype type="heropet" />
+								<else>
+									<areaofeffect
+										radius="900"
+										targetselection="all"
+										targetscheme="ally_mana_units"
+										ignoreinvulnerable="true"
+									>
+										<givemana amount="350" />
+										<pushability source="target_entity" slot="0" />
+										<reducecooldown entity="stack_entity" duration="4750" />
+										<pushability source="target_entity" slot="1" />
+										<reducecooldown entity="stack_entity" duration="4750" />
+										<pushability source="target_entity" slot="2" />
+										<reducecooldown entity="stack_entity" duration="4750" />
+									</areaofeffect>
+								</else>
+							</else>
+						</else>
+					</else>
+				</targettype>
+			</targettype>
+		</onindirectkill>
+		
+		<onkill propagatetoillusions="false" >
+			<targettype type="hero">
+				<targettype type="enemy">
+					<targettype type="illusion" />
+					<else>               
+						<targettype type="mimic" />
+						<else> 
+							<targettype type="self" />
+							<else>
+								<targettype type="heropet" />
+								<else>
+									<areaofeffect
+										radius="900"
+										targetselection="all"
+										targetscheme="ally_mana_units"
+										ignoreinvulnerable="true"
+									>
+										<givemana amount="350" />
+										<pushability source="target_entity" slot="0" />
+										<reducecooldown entity="stack_entity" duration="4750" />
+										<pushability source="target_entity" slot="1" />
+										<reducecooldown entity="stack_entity" duration="4750" />
+										<pushability source="target_entity" slot="2" />
+										<reducecooldown entity="stack_entity" duration="4750" />
+									</areaofeffect>
+								</else>
+							</else>
+						</else>
+					</else>
+				</targettype>
+			</targettype>
+		</onkill>
+		
+		<onassist propagatetoillusions="false" >
+			<targettype type="hero">
+				<targettype type="enemy">
+					<targettype type="illusion" />
+					<else>                
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<areaofeffect
+									radius="900"
+									targetselection="all"
+									targetscheme="ally_mana_units"
+									ignoreinvulnerable="true"
+								>
+									<givemana amount="350" />
+									<pushability source="target_entity" slot="0" />
+									<reducecooldown entity="stack_entity" duration="4750" />
+									<pushability source="target_entity" slot="1" />
+									<reducecooldown entity="stack_entity" duration="4750" />
+									<pushability source="target_entity" slot="2" />
+									<reducecooldown entity="stack_entity" duration="4750" />
+								</areaofeffect>
+							</else>
+						</else>
+					</else>
+				</targettype>
+			</targettype>
+		</onassist>
+	</modifier>
+	
+</state>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_TalentAccursed15"
+
+	icon="icon.tga"
+	passiveeffect=""
+	ishidden="true"
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	deathpersist="true"
+	
+	modifierkey="talent_accursed10"
+>
+	<oninflict>
+		<setscriptvalue name="custom_button_TalentAccursed15_1_selected" value="0" entity="this_owner_entity" />
+		<setscriptvalue name="custom_button_TalentAccursed15_2_selected" value="0" entity="this_owner_entity" />
+		<setscriptvalue name="custom_button_TalentAccursed15_3_selected" value="0" entity="this_owner_entity" />
+	</oninflict>
+	
+	<onrefresh />
+	
+	<onframe>
+		<scriptcondition entity="this_owner_entity" name="custom_button_TalentAccursed15_1_selected" value="1">
+			<applystate name="State_TalentAccursed15_1" target="this_owner_entity" continuous="true" />
+			
+			<setaccumulator value="1" />
+		</scriptcondition>
+		<else>
+			<scriptcondition entity="this_owner_entity" name="custom_button_TalentAccursed15_2_selected" value="1">
+				<applystate name="State_TalentAccursed15_2" target="this_owner_entity" continuous="true" />
+				
+				<setaccumulator value="1" />
+			</scriptcondition>
+			<else>
+				<scriptcondition entity="this_owner_entity" name="custom_button_TalentAccursed15_3_selected" value="1">
+					<applystate name="State_TalentAccursed15_3" target="this_owner_entity" continuous="true" />
+					
+					<setaccumulator value="1" />
+				</scriptcondition>
+			</else>
+		</else>
+		
+		<compare a="accumulator" b="0" op="eq">
+			<hasmodifier entity="this_owner_entity" name="ui_hideCustomButtons">
+				<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_TalentAccursed15_1_hide" />
+				<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_TalentAccursed15_2_hide" />
+				<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_TalentAccursed15_3_hide" />
+			</hasmodifier>
+			<else>
+				<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_TalentAccursed15_1" />
+				<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_TalentAccursed15_2" />
+				<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_TalentAccursed15_3" />
+			</else>
+		</compare>
+		<else>
+			<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_TalentAccursed15_1_hide" />
+			<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_TalentAccursed15_2_hide" />
+			<clientuitrigger entity="this_owner_entity" source="this_owner_entity" target="this_owner_entity" name="custom_button_TalentAccursed15_3_hide" />
+			
+			<expire />
+			<applystate name="State_Talent20" target="this_owner_entity" continuous="true" pushentity="true" />
+		</else>
+	</onframe>
+</state>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Warchief4"
+
+	statuseffecttooltip="State_Warchief_Ability4_Aura"
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="800"
+	castactiontime="200"
+	casteffect=""
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	actiontype="self_position"
+	targetscheme="ally_heroes"
+	targetradius="900"
+	
+	manacost="100"
+	cooldowntime="140000,110000,80000"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<applystate name="State_Warchief_Ability4" target="this_owner_entity" duration="12000" pushentity="true" />
+		
+		<!-- Sound: This is only meant to be heard by the team so it is easier to hear the ability being active on the team -->
+		<hasavatarkey name="Hero_Warchief.Alt">
+			<playeffect effect="/heroes/warchief/alt/ability_04/effects/sound_loop.effect" target="this_owner_entity" duration="12000" visibility="allies" />
+			<playeffect effect="/heroes/warchief/alt/ability_04/effects/sound_duration.effect" target="this_owner_entity" duration="12000" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Warchief.Alt2">
+				<playeffect effect="/heroes/warchief/alt2/ability_04/effects/sound_loop.effect" target="this_owner_entity" duration="12000" visibility="allies" />
+				<playeffect effect="/heroes/warchief/alt2/ability_04/effects/sound_duration.effect" target="this_owner_entity" duration="12000" />
+			</hasavatarkey>
+			<else>				
+				<playeffect effect="effects/sound_loop.effect" target="this_owner_entity" duration="12000" visibility="allies" />
+				<playeffect effect="effects/sound_duration.effect" target="this_owner_entity" duration="12000" />
+			</else>
+	   </else>
+	</onimpact>
+	<modifier key="ult_boost"/>
+</ability>

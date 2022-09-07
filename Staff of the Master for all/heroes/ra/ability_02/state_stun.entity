@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ra_Ability2_Stunned"
+	
+	stunned="true"
+	allowtransfer="true"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+
+	effecttype="StatusDisable"
+
+	negativeeffect="stunned"
+>
+	<onexpired>
+		<applystate name="State_Ra_Ability2_Enemy" duration="3000" />
+	</onexpired>
+	
+	<altavatar key="Hero_Ra.Alt5"
+		passiveeffect="../alt5/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt6"
+		passiveeffect="../alt6/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt8"
+		passiveeffect="../alt8/ability_02/effects/state.effect"
+	/>
+	
+	<altavatar key="Hero_Ra.Alt10"
+		passiveeffect="../alt10/ability_02/effects/state.effect"
+	/>
+	
+</state>

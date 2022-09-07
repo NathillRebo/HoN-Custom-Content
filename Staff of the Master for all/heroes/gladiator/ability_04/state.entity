@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Gladiator_Ability4"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	movespeedmultiplier="0.10"
+
+	effecttype=""
+>
+	<modifier key="ult_boost"
+		stunneddurationmultiplier="-0.2"
+		debuffdurationmultiplier="-0.2"
+	/>
+	
+	<onframe />
+
+	<ondamaged>
+		<accumulatedamage scale="0.50" />
+		<scaledamage scale="0.50" />
+	</ondamaged>
+
+	<onexpired>
+		<targettype type="alive">
+			<evaluate a="accumulator" b="-1" op="mult" />
+			
+			<!-- b="5,6,7" in this field to match up with the state duration of 5/6/7 seconds -->
+			<evaluate a="result" b="5,6,7" op="div" />
+			<setvar0 a="result" b="frametime" op="mult" />
+			<compare a="result" b="0" op="lt">
+				<applystate name="State_Gladiator_Ability4_Damage" target="this_owner_entity" duration="5000,6000,7000" pushentity="true" />
+				<setaccumulator entity="stack_entity" value="var0" />
+			</compare>
+		</targettype>
+	</onexpired>
+	
+	<altavatar key="Hero_Gladiator.Alt2" modpriority="1"
+		icon="../alt2/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt3" modpriority="1"
+		icon="../alt3/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Gladiator.Alt4" modpriority="1"
+		icon="../alt4/ability_04/icon.tga"
+	/>
+	
+</state>

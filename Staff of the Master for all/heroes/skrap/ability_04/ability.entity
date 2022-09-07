@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Skrap4"
+	
+	icon="icon.tga"
+	
+	anim=""
+	casttime="0"
+	castactiontime="0"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	noresponse="true"
+	nonaggressive="true"
+
+	casteffect=""
+	ignoreinvulnerable="true"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	
+	manacost="200,300,400"
+	dontspendmanacost="true"
+	cooldowntime="160000,150000,140000"
+	
+	range="99999"
+	showrangeandradiusintooltip="true"
+	showareacast="false"
+	dontshowhovercast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+>
+	<checkcost propagatetoillusions="false">
+		<compare a="source_mana" b="200,300,400" op="lt">
+			<hasmodifier entity="this_entity" name="golem_lane_choice">
+				<play2dsound sample="/heroes/skrap/ability_04/sounds/close_ui.wav" channel="11" volume="1.0" dampen="0.8" sourceonly="true" targetonly="false" />
+				<setactivemodifierkey name="" entity="this_entity" />
+				<clientuitrigger entity="source_entity" target="source_entity" name="rattletrap_lane_choice_closed" />
+				<expirestate name="State_Skrap_Ability4_Laneselect" source="source_entity" target="source_entity" />
+			</hasmodifier>
+		</compare>
+	</checkcost>
+
+	<onlearn>
+		<starttimer duration="1" /> <!-- Circe-related bugfix when cloning Skrap with an active Golem unit -->
+		<hasavatarkey name="Hero_Skrap.Alt" />
+		<else>
+			<hasavatarkey name="Hero_Skrap.Alt2" />
+			<else>	
+				<hasavatarkey name="Hero_Skrap.Alt3" />
+				<else>	
+					<play2dsound sample="/heroes/skrap/ability_04/sounds/ab4_learn.wav" channel="11" volume="0.8" dampen="0.5" sourceonly="true" targetonly="false" />
+					<delayannouncer duration="4410" sourceonly="true"/>
+					<pausevoiceovers duration="4410" />
+				</else>
+			</else>
+ 		</else>
+	</onlearn>
+	
+	<ontimer>
+		<!-- Circe-related bugfix when cloning Skrap with an active Golem unit -->
+		<setactivemodifierkey name="" entity="this_entity" />
+	</ontimer>
+
+	<onimpact>
+		<resetcooldown />
+		<!-- Probably have to do a compare for "none" and spawn the controllable one. <getlanestart0 lane="none" /> will return the correct base spawn point -->
+		<setscriptvalue name="rattletrap_lane_selected_1" value="0" entity="source_entity" />
+		<setscriptvalue name="rattletrap_lane_selected_2" value="0" entity="source_entity" />
+		<setscriptvalue name="rattletrap_lane_selected_3" value="0" entity="source_entity" />
+		<setscriptvalue name="rattletrap_lane_close" value="0" entity="source_entity" />
+		<applystate name="State_Skrap_Ability4_Laneselect" target="source_entity" duration="-1" proxy="this_entity" />
+		<clientuitrigger entity="source_entity" target="source_entity" name="rattletrap_lane_choice" />
+		<play2dsound sample="/heroes/skrap/ability_04/sounds/open_ui.wav" channel="10" volume="3.0" dampen="0.8" sourceonly="true" targetonly="false" />
+		<setactivemodifierkey name="golem_lane_choice" entity="this_entity" />
+	</onimpact>
+
+	<modifier key="golem_lane_choice" priority="90"
+	>
+		<onimpact>
+			<resetcooldown />
+			<play2dsound sample="/heroes/skrap/ability_04/sounds/close_ui.wav" channel="11" volume="1.0" dampen="0.8" sourceonly="true" targetonly="false" />
+			<setactivemodifierkey name="" entity="this_entity" />
+			<clientuitrigger entity="source_entity" target="source_entity" name="rattletrap_lane_choice_closed" />
+			<expirestate name="State_Skrap_Ability4_Laneselect" source="source_entity" target="source_entity" />
+		</onimpact>
+	</modifier>
+
+	<modifier key="golem_summoned" priority="100"
+		disabled="true"
+	/>
+	
+	<modifier key="team_deathmatch" modpriority="101"
+	>	
+
+		<checkcost propagatetoillusions="false" />
+		
+		<onlearn>
+			<starttimer duration="1" /> <!-- Circe-related bugfix when cloning Skrap with an active Golem unit -->
+		</onlearn>
+		
+		<onimpact>
+			<spawnunit name="Pet_Skrap_Ability4" target="source_position" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="ult_boost" modpriority="100"/>
+	
+	<modifier key="krosmode" priority="1">
+		<onlearn>
+			<starttimer duration="1" /> <!-- Circe-related bugfix when cloning Skrap with an active Golem unit -->
+		</onlearn>
+	</modifier>
+
+</ability>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Circe_Ability1_Sotm"
+
+	speed="1500"
+	gravity="0"
+
+	modelscale="1.2"
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+	effectscale="1.2"
+	impacteffect=""
+
+	flying="true"
+	flyheight="120"
+	
+	touchradius="85"
+	touchradiusdiradjust="true"
+	maxtouchespertarget="1"
+	touchtargetscheme="enemy_heroes"
+	toucheffecttype=""
+>
+	<ontouch>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<cantarget effecttype="Magic" >
+					<applystate name="State_Circe_Ability1_Immobilized" target="target_entity" duration="2000,2500,3000,3500" pushentity="true" stack="true" />
+					<addcharges count="1" entity="stack_entity" />
+					<damage amount="80,140,200,260" effecttype="Magic" />
+					<spawnunit name="Gadget_Circe_Ability1_Reveal_Linger" count="1" target="target_position" />
+				</cantarget>
+				<hasavatarkey name="Hero_Circe.Alt" >
+					<playeffect effect="/heroes/circe/alt/ability_01/effects/impact.effect" source="target_entity" target="target_entity" />
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Circe.Alt2" >
+						<playeffect effect="/heroes/circe/alt2/ability_01/effects/impact.effect" source="target_entity" target="target_entity" />
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Circe.Alt3" >
+							<playeffect effect="/heroes/circe/alt3/ability_01/effects/impact.effect" source="target_entity" target="target_entity" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Circe.Alt4" >
+								<playeffect effect="/heroes/circe/alt4/ability_01/effects/impact.effect" source="target_entity" target="target_entity" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_Circe.Alt5" >
+									<playeffect effect="/heroes/circe/alt5/ability_01/effects/impact.effect" source="target_entity" target="target_entity" />
+								</hasavatarkey>
+								<else>
+									<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" />
+								</else>
+							</else>	
+						</else>
+					</else>
+				</else>
+			</onimpact>
+		</combatevent>
+	</ontouch>
+
+	<altavatar key="Hero_Circe.Alt"
+		traileffect="/heroes/circe/alt/ability_01/effects/trail.effect"
+	/>
+
+	<altavatar key="Hero_Circe.Alt2"
+		traileffect="/heroes/circe/alt2/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Circe.Alt3"
+		traileffect="/heroes/circe/alt3/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Circe.Alt4"
+		traileffect="/heroes/circe/alt4/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Circe.Alt5"
+		traileffect="/heroes/circe/alt5/ability_01/effects/trail.effect"
+	/>
+</projectile>

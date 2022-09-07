@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Accursed_Ability3"
+
+	radius="400"
+	lifetime="4000"
+	
+	targetscheme="enemy_units_and_self"
+	targetselection="all"
+	effecttype=""
+	
+	persist="true"
+>
+	
+	<onframeimpact>
+		<pushability name="Ability_Accursed3" />
+		<setvar0 a="source_level" source="stack_entity" />
+		
+		<cantarget targetscheme="enemy_units" effecttype="Magic">
+			<damage effecttype="Magic DOT" amount="10,20,30,40" b="frametime" op="mult" />
+			
+			<!-- Apply Accursed's Sear -->
+			<applystate name="State_Accursed_Ability3_Debuff" target="target_entity" duration="2000" statelevel="var0" />
+		</cantarget>
+		<else>
+			<cantarget targetscheme="self">
+				<evaluate a="target_maxhealth" b="0.004,0.006,0.008,0.01" op="mult" />
+				<evaluate a="8,12,16,20" b="result" op="add" />
+				<heal a="result" b="frametime" op="mult" />
+				
+				<!-- Apply Accursed's Sear -->
+				<applystate name="State_Accursed_Ability3_Buff" target="target_entity" duration="4500" statelevel="var0" />
+			</cantarget>
+		</else>
+	</onframeimpact>
+	<modifier key="talent15_3" modpriority="100">
+		<onframeimpact>
+			<pushability name="Ability_Accursed3" />
+			<setvar0 a="source_level" source="stack_entity" />
+			
+			<cantarget targetscheme="enemy_units" effecttype="Magic">
+				<damage effecttype="Magic DOT" amount="10,20,30,40" b="frametime" op="mult" />
+				
+				<!-- Apply Accursed's Sear -->
+				<applystate name="State_Accursed_Ability3_Debuff" target="target_entity" duration="2000" statelevel="var0" />
+			</cantarget>
+			<else>
+				<cantarget targetscheme="self">
+					<evaluate a="target_maxhealth" b="0.0315,0.0335,0.0355,0.0375" op="mult" />
+					<evaluate a="8,12,16,20" b="result" op="add" />
+					<heal a="result" b="frametime" op="mult" />
+					
+					<!-- Apply Accursed's Sear -->
+					<applystate name="State_Accursed_Ability3_Buff" target="target_entity" duration="4500" statelevel="var0" />
+				</cantarget>
+			</else>
+		</onframeimpact>
+	</modifier>
+</affector>
