@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_BookOfStrength"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	deathpersist="true"
+	
+	effecttype=""
+	
+	strengthpercharge="1"
+	magicarmorpercharge="0.22"
+>
+</state>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_BookOfAgility"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	deathpersist="true"
+	
+	effecttype=""
+	
+	agilitypercharge="1"
+	movespeedpercharge="0.45"
+	maxmovespeedpercharge="0.45"
+>
+</state>
