@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Darla_Ability4"
+
+	radius="580"
+	lifetime="7050"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	destroytrees="true"
+	impacteffect=""
+	impactinterval="233"
+	impactdelay="225"
+	
+	effect="effects/area.effect"
+>
+	<onspawn>
+		<!-- Set max number of waves here -->
+		<setparam a="30" />
+	</onspawn>
+	
+	<oninterval>
+		<setparam a="param" b="1" op="sub" />
+	</oninterval>
+
+	<onimpact>
+		<!-- Damage -->
+		<setvar0 a="15,30,45" />
+		
+		<compare a="param" b="0" op="ge">
+			<applystate name="State_Darla_Ability4" duration="350" />
+			<damage effecttype="Magic" amount="1" b="var0" op="mult" />
+		</compare>
+	</onimpact>
+	
+</affector>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_DarlaAttack"
+
+	speed="1330"
+	gravity="3000"
+	
+	modelscale="0.75"
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+	
+	effectscale="0.5"
+	
+	canturn="true"
+>
+</projectile>

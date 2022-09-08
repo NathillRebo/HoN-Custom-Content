@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Darla2"
+
+	
+	icon="icon.tga"	
+	anim="ability_1"
+	casttime="125"
+	castactiontime="0"
+	casteffect="effects/cast.effect"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	statuseffecttooltip="State_Darla_Ability2"
+
+	actiontype="self_position"
+	targetscheme="ally_heroes"
+	
+	manacost="50,50,50,50"
+	cooldowntime="25000,25000,25000,25000"
+	
+	targetradius="1000"
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<spawnaffector name="Affector_Darla_Ability2" target="source_entity" />
+	</onimpact>
+</ability>

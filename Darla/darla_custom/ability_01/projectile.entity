@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Darla_Ability1"
+
+	speed="10000"
+	
+	gravity="0"
+
+	modelscale="0"
+	model="/shared/models/invis.mdf"
+
+	effectscale="1"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_position" target="" occlude="true" />
+		<spawnaffector name="Affector_Darla_Ability1" source="this_position" target="this_position" pushentity="true" />
+	</onimpact>
+	
+	<onimpact>
+		<areaofeffect
+			radius="150"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			source="source_entity"
+			center="target_position"
+		>
+			<applystate name="State_Darla_Ability1_Enemy" target="target_entity" duration="180,270,360,450" />
+			<setvar0 a="source_attackdamage" b="0.2,0.4,0.6,0.8" op="mult" />
+			<damage effecttype="Magic" amount="60,70,80,90" b="var0" op="add" />
+			<spawnprojectile name="Projectile_Darla_Ability1_Toss" source="target_entity" target="target_entity" bind="target_entity" ignoretargetoffset="true" noresponse="true" />
+		</areaofeffect>
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_position" target="" occlude="true" />
+	</onimpact>
+
+</projectile>

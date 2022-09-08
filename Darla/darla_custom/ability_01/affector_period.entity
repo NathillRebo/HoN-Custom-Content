@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Darla_Ability1"
+
+	lifetime="180,270,360,450"
+	radiusstart="0"
+	radiusend="150"
+
+	effect=""
+>
+	<onimpact>
+		<areaofeffect
+			radius="150"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			center="this_position"
+		>
+			<applystate name="State_Darla_Ability1_Enemy" duration="180,270,360,450" />
+		</areaofeffect>
+		<spawnprojectile name="Projectile_Darla_Ability1_Toss" source="target_entity" target="target_entity" bind="target_entity" ignoretargetoffset="true" noresponse="true" />
+	</onimpact>
+
+</affector>

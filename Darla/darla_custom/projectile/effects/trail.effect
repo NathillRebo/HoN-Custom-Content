@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".75" >
+			
+			<billboard
+				size="50"
+				color=".5 .25 .125"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				size="60"
+				color="1 .5 .5"
+				rollspeed="90"
+				material="/shared/effects/materials/bubble_add.material"
+			/>
+			
+			<billboard
+				size="60"
+				color=".75 .375 .375"
+				rollspeed="90"
+				material="/shared/effects/materials/color_ring.material"
+			/>
+			<!--
+			<billboard
+				directionalspace="local"
+				position="20 20 0"
+				size="30"
+				color="2"
+				rollspeed="90"
+				material="/shared/effects/materials/bubble_add.material"
+			/>
+			
+			<billboard
+				directionalspace="local"
+				position="-20 -20 0"
+				size="15"
+				color="2"
+				rollspeed="90"
+				material="/shared/effects/materials/bubble_add.material"
+			/>
+			-->
+			
+			<trailemitter
+				position="0 30 0"
+				directionalspace="local"
+				spawnrate="50"
+				particlelife="200"
+				texpostime="1000"
+				texposscale="0"
+				texstretchscale="1"	
+				material="/shared/effects/materials/rainbow_mane.material"
+			>
+				<particle
+					startcolor=".1 .375 .375"
+					endcolor="0"
+					startsize="50"
+					endsize="30"
+				/>
+			</trailemitter>
+			
+			<trailemitter
+				position="0 30 0"
+				directionalspace="local"
+				spawnrate="50"
+				particlelife="100"
+				texpostime="1000"
+				texposscale="0"
+				texstretchscale="1"	
+				material="/shared/effects/materials/beam.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".5 .25 .25"
+					midcolorpos=".2 .1 .1"
+					endcolor="0"
+					startsize="30"
+					endsize="30"
+				/>
+			</trailemitter>
+			
+			<simpleemitter
+				spawnrate="100"
+				particlelife="210"
+				material="/shared/effects/materials/twirl_02.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".3 .35 .15"
+					midcolorpos=".25"
+					endcolor="0"
+					size="27"
+					maxangle="360"
+					minscale="1"
+					maxscale="2"
+				/>
+				<particle
+					startcolor="0"
+					midcolor=".3 .35 .35"
+					midcolorpos=".25 .125 .125"
+					endcolor="0"
+					size="27"
+					maxangle="360"
+					minscale="1"
+					maxscale="2"
+				/>
+				<!-- invisible particles -->
+				<particle
+					startcolor="0"
+					midcolor="0"
+					endcolor="0"
+				/>
+				<particle
+					startcolor="0"
+					midcolor="0"
+					endcolor="0"
+				/>
+				<particle
+					startcolor="0"
+					midcolor="0"
+					endcolor="0"
+				/>
+				<particle
+					startcolor="0"
+					midcolor="0"
+					endcolor="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="40"
+				particlelife="150"
+				offsetsphere="30"
+				material="/shared/effects/materials/flare_01.material"
+			>
+				<particle
+					startcolor="1 .5 .5"
+					endcolor="0"
+					size="7"
+					maxangle="360"
+					minscale="1"
+					maxscale="2"
+				/>
+			</simpleemitter>
+			
+			
+			
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

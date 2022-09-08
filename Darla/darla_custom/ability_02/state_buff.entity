@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Darla_Ability2"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_ally.effect"
+
+	attackspeed="0.15,0.25,0.35,0.45"
+	movespeedmultiplier="0.15,0.25,0.35,0.45"
+	castspeed="0.15,0.25,0.35,0.45"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+</state>

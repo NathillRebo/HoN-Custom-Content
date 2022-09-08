@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Darla_Ability2"
+
+	radius="1000"
+
+	targetselection="all"
+	targetscheme="ally_heroes"
+	effecttype=""
+	
+	dynamicprecache="effects/land.effect"
+>
+	<onspawn>
+		<setscriptvalue name="land_effect" value="effects/land.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<applystate name="State_Darla_Ability2" duration="7000" />
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="land_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="source_position" source="source_position" occlude="true" />
+	</onimpact>
+</affector>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.25" >
+		
+			<billboard
+				bone="_bone_centerofchest"
+				life="300"
+				startcolor="1.5 .75 .35"
+				endcolor="0"
+				startsize="0"
+				endsize="200"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="300"
+				startcolor="1 2 2"
+				endcolor="0"
+				startsize="0"
+				endsize="150"
+				rollspeed="300"
+				material="/shared/effects/materials/rainbow_add.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="300"
+				param=".35"
+				startalpha="1"
+				endalpha="0"
+				startsize="0"
+				endsize="200"
+				material="/shared/effects/materials/refract_swell.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="350"
+				startcolor=".7 1 .5"
+				endcolor="0"
+				startsize="0"
+				endsize="100"
+				rollspeed="300"
+				material="/shared/effects/materials/corona_01.material"
+			/>
+			<billboard
+				bone="_bone_centerofchest"
+				life="400"
+				startcolor=".7 1 .5"
+				endcolor="0"
+				startsize="0"
+				endsize="70"
+				rollspeed="300"
+				material="/shared/effects/materials/corona_06.material"
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="50"
+				delay="200"
+				particlelife="200"
+				minspeed="300"
+				maxspeed="550"
+				drag=".015"
+				material="/shared/effects/materials/flare_01.material"
+			>
+				<particle
+					startcolor=".5 .75 .75"
+					endcolor="0"
+					size="10"
+				/>
+			</simpleemitter>
+					
+			
+			
+				
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

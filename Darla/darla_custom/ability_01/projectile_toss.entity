@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Darla_Ability1_Toss"
+
+	gravity="1400,2100,2800,3500"
+	lifetime="180,270,360,450"
+	useexactlifetime="true"
+>
+</projectile>

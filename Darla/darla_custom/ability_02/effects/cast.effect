@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="local" scale=".2">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".85"
+				sample="../sounds/cast.wav"
+			/>	
+
+			<template name="streak">
+			<controller bone="{bone}" >
+				<trailemitter
+					spawnrate="50"
+					life="600"
+					particlelife="600"
+					texpostime="600"
+					
+					startparticlecolor="1 0.5 0.5"
+					endparticlecolor="0"
+					
+					texposscale="0.0"
+					texstretchscale=".4"
+					position="{position}"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						 startcolor="1 .5 .5"
+						 midcolor="1 .5 0"
+						 endcolor="0 .5 .5"
+						 startsize="80"
+						 midsize="80"
+						 endsize="30"
+						 midsizepos="0.2"
+				 />
+				</trailemitter>		
+
+
+			<!--
+				<simpleemitter
+					life="600"
+					spawnrate="44"				
+					particlelife="300"							
+					position="{position}"
+					material="/shared/effects/materials/refract_swell.material"				
+					particledirectionalspace="local"
+					offsetdirection="0 0 0"
+					offsetradial="0"
+					param=".4"
+				>
+
+					<particle 		
+						startsize="320"				
+						endsize="0"				
+						param="0.01"
+						startalpha=".3"
+						midalpha=".3"
+						endalpha="0"
+						midalphapos=".5"					
+						
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						flare="0"
+						yaw="00"
+					
+					/>
+				</simpleemitter>
+
+
+				<simpleemitter
+					life="700"
+					spawnrate="44"				
+					particlelife="400"								
+					position="{position}"
+					
+				
+					startparticlecolor="1"
+					endparticlecolor="0"
+					material="/shared/effects/materials/shieldstarfish.material"				
+					particledirectionalspace="local"
+					offsetdirection="0 0 0"
+					offsetradial="0"
+				>
+
+					<particle 
+						minangle="-15"
+						maxangle="-15"
+						minanglespeed="0"
+						startcolor="1 1 0"
+						endcolor="0 .7 1"
+						maxanglespeed="00"
+						startframe="0"
+						endframe="1"
+										
+						startsize="200"				
+						endsize="0"				
+
+						startalpha=".3"
+						midalpha=".3"
+						endalpha="0"
+						midalphapos=".5"					
+						
+						lockup="true"
+						lockright="1"
+						pitch="0"
+						flare="0"
+						yaw="00"
+					
+					/>
+				</simpleemitter>		
+				-->
+			</controller>
+				
+			</template>
+
+			<instance name="streak" bone="Bone028" position="0 0 0"/>
+			<instance name="streak" bone="Bone025" position="0 0 0"/>
+			<instance name="streak" bone="Bone015" position="0 0 0"/>
+			<instance name="streak" bone="Bone019" position="0 0 0"/>
+			
+			<billboard			
+				life="1100"
+				bone="_bone_centerofchest"
+				size="1205"						
+				material="/shared/effects/materials/whitedot.material"				
+				startcolor="0 0 0" 
+				midcolor=".3 .1 .05"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				depthbias="-60"
+			/>				
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Darla_Custom"
+
+	team="Legion"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.5"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+	infoheight="185"
+
+	category="magic"
+	difficulty="3.5"
+
+	solorating="0"
+	junglerating="0"
+	carryrating="5"
+	supportrating="5"
+	initiatorrating="0"
+	gankerrating="0"
+	pusherrating="0"
+	rangedrating="5"
+	meleerating="0"
+	
+	movespeed="290"
+	turnrate="450"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-1.4"
+	magicarmor="5"
+
+	inventory0="Ability_Darla1"
+	inventory1="Ability_Darla2"
+	inventory2="Ability_Darla3"
+	inventory3="Ability_Darla4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory7=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="400"
+	attackcooldown="1700"
+	attackdamagemin="26"
+	attackdamagemax="30"
+	attacknumanims="2"
+	attackoffset="30 100 120"
+	attackprojectile="Projectile_DarlaAttack"
+	attackrange="500"
+	attackstarteffect=""
+	attackactioneffect="projectile\effects\attack_sound.effect"
+	attackimpacteffect="projectile\effects\impact.effect"
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Agility"
+	strength="16"
+	strengthperlevel="1.0"
+	agility="22"
+	agilityperlevel="2.5"
+	intelligence="21"
+	intelligenceperlevel="2.4"
+	
+	previewmodel="preview.mdf"
+	previewpos="0 0 -50"
+	previewangles="0 0 0"
+	previewscale="1.4"
+	
+	storemodel="preview.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.4"
+	
+	corpsetime="1000"
+	corpsefadetime="500"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+>
+	<recommendeditem name="Item_Critical1" /> 2625
+	<recommendeditem name="Item_Weapon3" /> 4200
+	<recommendeditem name="Item_JadeSpire" /> 4800
+	<recommendeditem name="Item_Damage9" /> 5600
+	<recommendeditem name="Item_Evasion" /> 5700
+	
+	<onframe>
+		<compare a="source_movespeed" b="350" op="gt" >
+			<activatemodifierkey entity="this_entity" name="Meridiana_Movespeed"/>
+		</compare>
+		<else>
+			<deactivatemodifierkey name="Meridiana_Movespeed"/>
+		</else>
+	</onframe>
+	
+	<modifier key="Meridiana_Movespeed" modpriority="100"
+		walkanim="walk_2"
+	/>
+</hero>

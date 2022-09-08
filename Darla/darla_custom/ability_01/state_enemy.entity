@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Darla_Ability1_Enemy"
+	
+	icon="icon.tga"
+	ishidden="true"
+	
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	impactinterval="180,270,360,450"
+	
+>
+</state>
