@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_GuardianStone_Active"
+
+	icon="icon.tga"
+	passiveeffect="active.effect"
+	immunitytype="AstrolabeImmunity"
+	
+	healthregen="3"
+
+	effecttype=""
+>
+	<oninflict>
+		<heal a="215" />
+	</oninflict>
+</state>

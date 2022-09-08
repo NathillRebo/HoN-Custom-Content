@@ -1,0 +1,15 @@
+// Item_Custom_GuardianStone
+Item_Custom_GuardianStone_name									Guardian Stone
+Item_Custom_GuardianStone_description							Applies a ^oHealth Regeneration aura^* to nearby allies. This aura does not stack with itself or items it builds into. Heals 20 Health per second to allies that are below 20% of their max Health.
+Item_Custom_GuardianStone_description_simple					Heals Health and Mana, Powerful Health Regen for the wounded
+Item_Custom_GuardianStone_search_terms							heal,aura,healthregeneration,strength,agility,intelligence,regeneration,mana,energy
+Item_Custom_GuardianStone_effect_header							Rejuvenated Effect(s)
+Item_Custom_GuardianStone_shop_categories						Filter_Strength,Filter_Agility,Filter_Intelligence,Filter_Regeneration,Filter_Activatable,Filter_Booster,Filter_Modifier
+Item_Custom_GuardianStone_IMPACT_effect							Heals allies in radius for ^o215 Health and 200 Mana^* instantly. Healing can be applied once every 25 seconds and shares this limit with other Astrolabe-based items.
+
+// State_GuardianStone_Aura
+State_GuardianStone_Aura_name									Guardian Aura
+State_GuardianStone_Aura_description							Heals 20 Health per second if below 20% Health.
+
+// State_GuardianStone_Active
+State_GuardianStone_Active_name									Guardian Active

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_GuardianStone_Aura"
+	
+	icon="icon.tga"
+	passiveeffect="aura.effect"
+	
+	effecttype="StatusBuff"
+>
+	<modifier key="healthregen_aura" modpriority="7" exclusive="true"
+		healthregen="3"
+	>
+		<onframe>
+			<evaluate a="target_health" b="target_maxhealth" op="div"/>
+			<compare a="result" b="0.2" op="le">
+				<heal a="20" b="frametime" op="mult"/>
+			</compare>
+		</onframe>
+	</modifier>
+</state>

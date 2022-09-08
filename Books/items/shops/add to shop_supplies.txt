@@ -1,0 +1,8 @@
+﻿
+	<item name="Item_Custom_BookOfAgility" /> 300
+	<item name="Item_Custom_BookOfIntelligence" /> 300
+	<item name="Item_Custom_BookOfStrength" /> 300
+	<item name="Item_Custom_BookOfCourage" /> 500
+	<item name="Item_Custom_BookOfCunning" /> 500
+	<item name="Item_Custom_BookOfValor" /> 500
+	<item name="Item_Custom_BookOfPower" /> 700

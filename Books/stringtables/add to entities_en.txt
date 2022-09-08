@@ -1,0 +1,66 @@
+
+// Item_Custom_BookOfStrength
+Item_Custom_BookOfStrength_name									Book of Strength
+Item_Custom_BookOfStrength_description							Permanently increases Strength and Magic Armor slightly.
+Item_Custom_BookOfStrength_search_terms							permanent,book,strength,of,magicarmor
+Item_Custom_BookOfStrength_description_simple					Permanently increases Strength and Magic Armor slightly.
+Item_Custom_BookOfStrength_effect_header						
+Item_Custom_BookOfStrength_shop_categories						Filter_Strength,Filter_Armor
+
+// State_BookOfStrength
+State_BookOfStrength_name										Books of Strength Bought
+
+// Item_Custom_BookOfAgility
+Item_Custom_BookOfAgility_name									Book of Agility
+Item_Custom_BookOfAgility_description							Permanently increases Agility and Move Speed slightly.
+Item_Custom_BookOfAgility_search_terms							permanent,book,agility,of,movespeed,speed
+Item_Custom_BookOfAgility_description_simple					Permanently increases Agility and Move Speed slightly.
+Item_Custom_BookOfAgility_effect_header						
+Item_Custom_BookOfAgility_shop_categories						Filter_Agility,Filter_Mobility
+
+// State_BookOfAgility
+State_BookOfAgility_name										Books of Agility Bought
+
+// Item_Custom_BookOfIntelligence
+Item_Custom_BookOfIntelligence_name								Book of Intelligence
+Item_Custom_BookOfIntelligence_description						Permanently increases Intelligence and Spell Damage slightly.
+Item_Custom_BookOfIntelligence_search_terms						permanent,book,intelligence,of,amp,spellamp,damage,spelldamage
+Item_Custom_BookOfIntelligence_description_simple				Permanently increases Intelligence and Spell Damage slightly.
+Item_Custom_BookOfIntelligence_effect_header						
+Item_Custom_BookOfIntelligence_shop_categories					Filter_Intelligence
+
+// State_BookOfIntelligence
+State_BookOfIntelligence_name									Books of Intelligence Bought
+State_BookOfIntelligence_description							Each stack increases spell damage by 0.45%. Stacks additively with other books and multiplicatively with other sources.
+
+// Item_Custom_BookOfCourage
+Item_Custom_BookOfCourage_name									Book of Courage
+Item_Custom_BookOfCourage_description							Permanently increases Strength, Intelligence, Magic Armor and Spell Damage slightly.
+Item_Custom_BookOfCourage_search_terms							permanent,book,intelligence,of,amp,spellamp,damage,spelldamage,strength,magicarmor
+Item_Custom_BookOfCourage_description_simple					Permanently increases Strength, Intelligence, Magic Armor and Spell Damage slightly.
+Item_Custom_BookOfCourage_effect_header						
+Item_Custom_BookOfCourage_shop_categories						Filter_Intelligence,Filter_Strength,Filter_Armor
+
+// Item_Custom_BookOfCunning
+Item_Custom_BookOfCunning_name									Book of Cunning
+Item_Custom_BookOfCunning_description							Permanently increases Agility, Intelligence, Move Speed and Spell Damage slightly.
+Item_Custom_BookOfCunning_search_terms							permanent,book,intelligence,of,amp,spellamp,damage,spelldamage,agility,movespeed,speed
+Item_Custom_BookOfCunning_description_simple					Permanently increases Agility, Intelligence, Move Speed and Spell Damage slightly.
+Item_Custom_BookOfCunning_effect_header						
+Item_Custom_BookOfCunning_shop_categories						Filter_Intelligence,Filter_Agility,Filter_Mobility
+
+// Item_Custom_BookOfValor
+Item_Custom_BookOfValor_name									Book of Valor
+Item_Custom_BookOfValor_description								Permanently increases Agility, Strength, Move Speed and Magic Armor slightly.
+Item_Custom_BookOfValor_search_terms							permanent,book,of,strength,magicarmor,agility,movespeed,speed
+Item_Custom_BookOfValor_description_simple						Permanently increases Agility, Strength, Move Speed and Magic Armor slightly.
+Item_Custom_BookOfValor_effect_header						
+Item_Custom_BookOfValor_shop_categories							Filter_Strength,Filter_Armor,Filter_Agility,Filter_Mobility
+
+// Item_Custom_BookOfPower
+Item_Custom_BookOfPower_name									Book of Power
+Item_Custom_BookOfPower_description								Permanently increases Agility, Intelligence, Strength, Move Speed, Spell Damage and Magic Armor slightly.
+Item_Custom_BookOfPower_search_terms							permanent,book,intelligence,of,strength,magicarmor,agility,movespeed,speed,amp,spellamp,damage,spelldamage
+Item_Custom_BookOfPower_description_simple						Permanently increases Agility, Intelligence, Strength, Move Speed, Spell Damage and Magic Armor slightly.
+Item_Custom_BookOfPower_effect_header						
+Item_Custom_BookOfPower_shop_categories							Filter_Strength,Filter_Armor,Filter_Agility,Filter_Mobility,Filter_Intelligence

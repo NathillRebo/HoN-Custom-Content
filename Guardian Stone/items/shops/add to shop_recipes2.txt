@@ -1,0 +1,2 @@
+
+	<item name="Item_Custom_GuardianStone" /> 4200

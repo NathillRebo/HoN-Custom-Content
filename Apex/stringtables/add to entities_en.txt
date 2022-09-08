@@ -1,0 +1,7 @@
+// Item_Custom_Apex
+Item_Custom_Apex_name											Apex
+Item_Custom_Apex_description									Increases damage dealt by ^o10%^*.
+Item_Custom_Apex_description_simple								Increases all damage dealt.
+Item_Custom_Apex_search_terms									apex,strength,agility,intelligence,damage,allstat
+Item_Custom_Apex_shop_flavor									You have now reached absolute power!
+Item_Custom_Apex_shop_categories								Filter_Strength,Filter_Agility,Filter_Intelligence

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Apex"
+
+	icon="icon.tga"
+	
+	cost="1050"
+	components="Item_Confluence Item_Confluence"
+
+	actiontype="passive"
+
+	strength="25"
+	agility="25"
+	intelligence="25"
+	
+	modifierkey="alt_Apex"
+	effectkey0="effect_Apex"
+>
+	<modifier key="custom_apex" modpriority="10" exclusive="true">
+		<onattackingdamageevent>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.1" op="mult" />
+		</onattackingdamageevent>
+	</modifier>
+</item>
