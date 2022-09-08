@@ -1,0 +1,45 @@
+
+// Hero_Darla_Custom
+Hero_Darla_Custom_name											Darla
+Hero_Darla_Custom_role											Darla is a late game hero that deals high area damage from afar and brings a lot of utility to her team. She is capable of gaining gold from her Pilfer ability, allowing her to either farm quickly or pass the creeps to her partner and still wear reasonable gear.
+
+// Ability_Darla1
+Ability_Darla1_name												Blast Fire
+Ability_Darla1_description										Darla blasts the chosen area, dealing ^o{60,70,80,90} plus {20%,40%,60%,80%} of her Attack Damage as Magic Damage^* to enemies hit and ^oknocking them up for {0.18,0.27,0.36,0.45} seconds^*. \n\n^gStaff of the Master^* reduces cooldown by 2 seconds and cast time by 20%.
+Ability_Darla1_description_simple								Darla blasts the chosen area, dealing ^o{60,70,80,90} plus {20%,40%,60%,80%} of her Attack Damage as Magic Damage^* to enemies hit and ^oknocking them up for {0.18,0.27,0.36,0.45} seconds^*. \n\n^gStaff of the Master^* reduces cooldown by 2 seconds and cast time by 20%.\n\n^444BOOM, babe!
+Ability_Darla1_effect_header
+Ability_Darla1_tooltip_flavor									BOOM, babe!
+Ability_Darla1_IMPACT_effect									Darla blasts the chosen area, dealing ^o{60,70,80,90} plus {20%,40%,60%,80%} of her Attack Damage as Magic Damage^* to enemies hit and ^oknocking them up for {0.18,0.27,0.36,0.45} seconds^*. \n\n^gStaff of the Master^* reduces cooldown by 2 seconds and cast time by 20%.
+Ability_Darla1_name:ult_boost									Rain Fire
+Ability_Darla1_description:ult_boost							Darla blasts the chosen area, dealing ^o{60,70,80,90} plus {20%,40%,60%,80%} of her Attack Damage as Magic Damage^* to enemies hit and ^oknocking them up for {0.18,0.27,0.36,0.45} seconds^*. \n\n^gStaff of the Master^* reduces cooldown by 2 seconds and cast time by 20%.
+Ability_Darla1_description_simple:ult_boost						Darla blasts the chosen area, dealing ^o{60,70,80,90} plus {20%,40%,60%,80%} of her Attack Damage as Magic Damage^* to enemies hit and ^oknocking them up for {0.18,0.27,0.36,0.45} seconds^*. \n\n^gStaff of the Master^* reduces cooldown by 2 seconds and cast time by 20%.\n\n^444BOOM, babe!
+Ability_Darla1_IMPACT_effect:ult_boost							Darla blasts the chosen area, dealing ^o{60,70,80,90} plus {20%,40%,60%,80%} of her Attack Damage as Magic Damage^* to enemies hit and ^oknocking them up for {0.18,0.27,0.36,0.45} seconds^*. \n\n^gStaff of the Master^* reduces cooldown by 2 seconds and cast time by 20%.
+
+// Ability_Darla2
+Ability_Darla2_name												Raise Morale
+Ability_Darla2_description										Darla rallies herself and nearby allied heroes, ^oincreasing their attack speed, movement speed and casting speed by {15%,25%,35%,45%} for 7 seconds^*.
+Ability_Darla2_description_simple								Darla rallies herself and nearby allied heroes, ^oincreasing their attack speed, movement speed and casting speed by {15%,25%,35%,45%} for 7 seconds^*.\n\n^444The last to attack will walk the plank!
+Ability_Darla2_effect_header
+Ability_Darla2_tooltip_flavor									The last to attack will walk the plank!
+Ability_Darla2_IMPACT_effect									Darla rallies herself and nearby allied heroes, ^oincreasing their attack speed, movement speed and casting speed by {15%,25%,35%,45%} for 7 seconds^*.
+
+// State_Darla_Ability2									
+State_Darla_Ability2_name										High Morale
+
+// Ability_Darla3
+Ability_Darla3_name												Pilfer
+Ability_Darla3_name:shardofthemaster_boost						^pPilfer^*
+Ability_Darla3_description										When off cooldown, next damage instance deals an additional ^o{5,30,55,80} Magic Damage^* and ^osteals {10,13,16,19} Gold^* from the target. Attacking a non-player unit will still grant you Gold.
+Ability_Darla3_description_simple								When off cooldown, next damage instance deals an additional ^o{5,30,55,80} Magic Damage^* and ^osteals {10,13,16,19} Gold^* from the target. Attacking a non-player unit will still grant you Gold.\n\n^pShard of the Master^* reduces cooldown to {7,6.25,5.5,4.75} seconds.\n\n^444Don't spend it all at once...
+Ability_Darla3_description_simple:shardofthemaster_boost		When off cooldown, next damage instance deals an additional ^o{5,30,55,80} Magic Damage^* and ^osteals {10,13,16,19} Gold^* from the target. Attacking a non-player unit will still grant you Gold.\n\n^44Don't spend it all at once...
+Ability_Darla3_effect_header
+Ability_Darla3_tooltip_flavor									Don't spend it all at once...
+Ability_Darla3_IMPACT_effect									When off cooldown, next damage instance deals an additional ^o{5,30,55,80} Magic Damage^* and ^osteals {10,13,16,19} Gold^* from the target. Attacking a non-player unit will still grant you Gold.
+
+// Ability_Darla4
+Ability_Darla4_name												Cannon Barage
+Ability_Darla4_description										Bombards targeted area for 7 seconds, ^orevealing it, dealing {450,900,1350} Magic Damage over its duration and slowing enemies' Movement Speed by {30%,45%,60%}^* while they remain inside.
+Ability_Darla4_description_simple								Bombards targeted area for 7 seconds, ^orevealing it, dealing {450,900,1350} Magic Damage over its duration and slowing enemies' Movement Speed by {30%,45%,60%}^* while they remain inside.\n\n^444Balthasar, do you see their formations? I don't want to!
+Ability_Darla4_effect_header
+Ability_Darla4_tooltip_flavor									Balthasar, do you see their formations? I don't want to!
+Ability_Darla4_IMPACT_effect									Bombards targeted area for 7 seconds, ^orevealing it, dealing {450,900,1350} Magic Damage over its duration and slowing enemies' Movement Speed by {30%,45%,60%}^* while they remain inside.
