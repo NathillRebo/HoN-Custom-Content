@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+			
+			<sound
+				    dampen="0.5"
+				    channelid="storeaud"
+					sound2d="true"
+					volume=".7"
+					sample="../sounds/store_audio.wav"
+				/>	
+				
+			<sound
+			        delay="4900"
+				    dampen="0.5"
+				    channelid="storeaudv"
+					sound2d="true"
+					volume=".7"
+					sample="../sounds/voice/attack_4.wav"
+				/>
+			
+			<simpleemitter
+				delay="750"
+				life="650"
+				bone="Bone055"
+				spawnrate="30"
+				particlelife="200"
+				minspeed="0"
+				maxspeed="5"
+				depthbias="0"
+				material="/shared/effects/materials/card_tarot_9_yellow.material"				
+			>
+				<particle 
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					size="6"
+					height="10"
+					lockup="1"
+					lockright="1"
+					directionalspace="local"
+					minroll="0"
+					maxroll="360"
+					minyaw="0"
+					maxyaw="360"
+					minpitch="0"
+					maxpitch="360"
+				/>
+			</simpleemitter>
+			
+			<trailemitter
+				delay="750"
+				life="650"
+				bone="Bone055"
+				spawnrate="100"
+				particlelife="400"
+				material="/shared/effects/materials/fire_scrolling_trail.material"
+				texposscale="0"
+				texstretchscale="1"
+			>
+				<particle
+					startsize="5"
+					endsize="0"
+					startcolor="0 1 0.67"
+					midcolor="0 1 0.67"
+					endcolor="0"
+					midcolorpos=".1"
+				/>
+			</trailemitter>
+					
+			<simpleemitter
+				delay="750"
+				life="650"
+				bone="Bone055"
+				spawnrate="60"
+				particlelife="300"
+				gravity="-2"
+				minspeed="12"
+				maxspeed="15"
+				depthbias="0"
+				material="/shared/effects/materials/fire_09.material"
+				offsetsphere="4"					
+				direction="0 .5 0"	
+			>
+				<particle 
+					startcolor="1"
+					midcolor="1"
+					endcolor="0 0 0"
+					startsize="4"
+					endsize="0"
+					startheight="4"
+					midheight="2"
+					endheight="3"
+					turn="1"
+					heightdistort="0.02"									
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="750"
+				life="650"
+				bone="Bone055"
+				spawnrate="130"
+				particlelife="300"
+				gravity="-2"
+				minspeed="12"
+				maxspeed="15"
+				depthbias="0"
+				material="/shared/effects/materials/fire_11.material"
+				offsetsphere="4"					
+				direction="0 .5 0"	
+			>
+				<particle 
+					startcolor="1"
+					midcolor="1"
+					endcolor="0 0 0"
+					startsize="4"
+					endsize="0"	
+					startheight="4"
+					midheight="2"
+					endheight="3"
+					turn="1"
+					heightdistort="0.02"									
+				/>
+			</simpleemitter>
+			
+			<light
+				bone="Bone049"		
+				scale="1"
+				color="0 1 0.67"
+				
+			/>
+			
+			
+				<controller name="yingyang" bone="Bone049" delay="3200"
+					scale=".18"
+					position="0 0 0" 
+					lockup="1" lockright="1"
+				>	
+					<simpleemitter
+						timenudge="1000"
+						spawnrate="4"
+						minparticlelife="750"
+						maxparticlelife="1250"
+						depthbias="-30"
+						material="/shared/effects/materials/twirl_03.material"
+					>
+						<particle
+							maxangle="360"
+							startcolor="0"
+							midcolor="0 1 0.67"
+							endcolor="0"
+							midcolorpos=".35"
+							startsize="10"
+							minendsize="30"
+							maxendsize="40"
+							scale="5"
+							anchor="1"
+							minanglespeed="200"
+							maxanglespeed="50"
+						/>
+					</simpleemitter>
+	
+					<simpleemitter
+						spawnrate="30"
+						minparticlelife="400" maxparticlelife="700"
+						minspeed="0" maxspeed="20" drag=".05" gravity="-1"
+						material="/shared/effects/materials/fire.material"
+						offsetsphere="1"
+						depthbias="-10"
+						direction="0 0 0"
+						inheritvelocity="0"
+					>
+						<particle
+							startcolor="1" midcolor="1" endcolor="0"
+							maxangle="360"
+							startsize="100" minendsize="110" maxendsize="140" midsizepos=".3" scale="1"
+							startalpha="0" midalpha=".9" endalpha="0" midalphapos=".25"
+						/>
+					</simpleemitter>
+					<simpleemitter
+						spawnrate="8"
+						minparticlelife="550" maxparticlelife="700"
+						minspeed="0" maxspeed="20" drag=".05" gravity="-1"
+						material="/shared/effects/materials/fire_add2.material"
+						offsetsphere="1"
+						depthbias="-10"
+						direction="0 0 0"
+						inheritvelocity="0"
+					>
+						<particle
+							startcolor="0" midcolor="1" endcolor="0" midcolorpos=".25"
+							maxangle="360" 
+							startsize="100" minendsize="110" maxendsize="20" midsizepos=".3" scale=".95"
+							startalpha="0" midalpha=".6" endalpha="0" midalphapos=".25"
+						/>
+					</simpleemitter>
+					<simpleemitter
+						spawnrate="8"
+						minparticlelife="600" maxparticlelife="800"
+						minspeed="0" maxspeed="20" drag=".05" gravity="-1"
+						material="/shared/effects/materials/good_tower_02_reveal.material"
+						offsetsphere="1"
+						depthbias="-15"
+						direction="0 0 0"
+						inheritvelocity="0"
+					>
+						<particle
+							startcolor="1" midcolor="0.3" endcolor="0" midcolorpos=".25"
+							maxangle="360" 
+							startsize="100" minendsize="110" maxendsize="100" midsizepos=".3" scale="1.2"
+							startalpha="0" midalpha="1" endalpha="1" midalphapos=".25"
+							startframe="0" midframe=".4" endframe="1"
+						/>
+					</simpleemitter>
+					<simpleemitter
+						delay="800"
+						spawnrate="25"
+						minparticlelife="400" maxparticlelife="700"
+						minspeed="0" maxspeed="20" drag=".05" gravity="-1"
+						material="/shared/effects/materials/fire_add2.material"
+						offsetsphere="1"
+						depthbias="-10"
+						direction="0 0 0"
+						inheritvelocity="0"
+					>
+						<particle
+							startcolor="0" midcolor="1" endcolor="0" midcolorpos=".25"
+							maxangle="360" 
+							startsize="70" minendsize="110" maxendsize="140" midsizepos=".3" scale=".7"
+							startalpha="1" midalpha=".9" endalpha="0" midalphapos=".25" anchor="1"
+						/>
+					</simpleemitter>
+					
+					<billboard
+						delay="1000"
+						color="1" alpha=".8"
+						size="55"
+						roll="-4.5"
+						rollspeed="250"	depthbias="0"
+						pitch="-15"
+						material="/shared/effects/materials/tarot_taichi.material"
+					/>
+					
+					<billboard
+						life="1100"
+						color="1" 
+						startalpha="0"
+						midalpha=".8"
+						endalpha="0"
+						midalphapos=".8"
+						startsize="0"
+						midsize="55"
+						endsize="160"
+						midsizepos=".8"
+						rollspeed="250"	depthbias="0"
+						pitch="-15"
+						material="/shared/effects/materials/tarot_taichi.material"
+					/>
+				
+				</controller>
+				
+			<template name="streamer" >
+				<controller
+					bone="Bone049" delay="3100"
+				>					
+					<controller
+						position="0 0 0"
+						bone="Bone049"
+						minlife="1000"
+						maxlife="2000"
+						loop="true"
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-200"
+						maxyawspeed="200"
+						minrollspeed="-200"
+						maxrollspeed="200"
+						minpitchspeed="-200"
+						maxpitchspeed="200"
+						startscale="1"
+						midscale="2"
+						endscale="1"
+					>
+						<trailemitter
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="100"
+							particlelife="450"
+							depthbias="-100"
+							material="/shared/effects/materials/fire_scrolling_trail.material"
+							texposscale="0"
+							texstretchscale="1"
+						>
+							<particle
+								startcolor="1"
+								midcolor="1"
+								endcolor="0"
+								midcolorpos=".3"
+								startsize="0"
+								minmidsize="1"
+								maxmidsize="1.5"
+								endsize="0"
+							/>
+						</trailemitter>
+					</controller>
+				</controller>
+			</template>
+			
+			<instance name="streamer" />
+			<instance name="streamer" />
+			<instance name="streamer" />
+			<instance name="streamer" />
+			<instance name="streamer" />
+			<instance name="streamer" />
+			<instance name="streamer" />
+			<instance name="streamer" />
+	
+			
+		</particlesystem>
+		
+		<particlesystem name="system1" space="entity"  scale="1.2"  >
+		
+
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+      	<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

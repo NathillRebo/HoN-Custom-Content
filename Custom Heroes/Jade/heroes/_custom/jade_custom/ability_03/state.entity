@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_Jade3_Self" 
+
+    icon="icon.tga" 
+    passiveeffect="effects/state_self.effect" 
+
+    effecttype="" 
+    alwaystransmitdata="true" 
+	disarmed="true"
+	armor="1,2,3,4"
+	magicarmor="1,2,3,4"
+> 
+    <onframe>
+		<setvar0 a="2.25" /> <!-- Cooldown_Reduction_Rate(x) -->
+		
+		<setvar1 a="var0" b="1000" op="mult" />
+		<setvar1 a="var1" b="1000" op="sub" />
+		<setvar1 a="frametime" b="var1" op="mult" />
+		
+		<pushability source="this_owner_entity" slot="0" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+    </onframe> 
+     
+    <onexpired> 
+        <expirestate name="State_Jade3_Enemy" target="this_proxy_entity" /> 
+    </onexpired> 
+</state>  

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<modifier
+			life="20000"
+			alpha="0"
+		/>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<simpleemitter
+				bone="_bone_center"
+				position="0 0 50"
+				count="1"
+				particlelife="2000"
+			>
+				<particle>
+					<light
+						life="1500"
+						startcolor="0 1 .67"
+						midcolor="0 1 .67"
+						endcolor="0"
+						midcolorpos=".1"
+						startfalloffend="150"
+						endfalloffend="100"
+					/>
+				</particle>
+			</simpleemitter>
+			<controller
+				bone="_bone_centerofchest" scale="1.6"
+			>
+				<simpleemitter
+					count="1"
+					particlelife="150"
+					material="/shared/effects/materials/ring_01_reveal.material"
+				>
+					<particle
+						color="0 1 .67"
+						startsize="0"
+						endsize="100"
+						midsizepos=".25"
+						startframe="0"
+						endframe="1"
+					>
+						<billboard
+							life="150"
+							material="/shared/effects/materials/glow_01.material"
+							startcolor="0 1 .67"
+							endcolor="0"
+							startsize="0"
+							endsize="75"
+							midsizepos=".25"
+						/>
+						
+						<billboard
+							life="150"
+							material="/shared/effects/materials/glow_01.material"
+							startcolor="0 1 .67"
+							endcolor="0"
+							startsize="0"
+							endsize="50"
+							midsizepos=".25"
+						/>
+					</particle>
+				</simpleemitter>
+			
+				<simpleemitter
+					mincount="5"
+					maxcount="10"
+					minparticlelife="400"
+					maxparticlelife="600"
+					material="/shared/effects/materials/sparks_reveal.material"
+				>
+					<particle
+						maxangle="360"
+						startcolor="0"
+						midcolor="0 1 .67"
+						endcolor="1"
+						midcolorpos=".25"
+						startframe=".2"
+						endframe="1"
+						minsize="30"
+						maxsize="40"
+						startscale="1"
+						minendscale="2"
+						maxendscale="4"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					spawnrate="1000"
+					count="10"
+					particlelife="1000"
+					offsetsphere="100"
+					material="/shared/effects/materials/sparks_reveal.material"
+				>
+					<particle
+						maxangle="360"
+						startcolor="0 0 0"
+						midcolor="0 1 .67"
+						endcolor="0"
+						midcolorpos=".25"
+						minsize="30"
+						maxsize="45"
+						anchor=".5"
+						startframe=".3"
+						endframe="1"
+						startstickiness="1"
+						endstickiness="0"
+						minscale="1"
+						maxscale="2"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					spawnrate="1000"
+					count="2"
+					particlelife="1000"
+					offsetsphere="100"
+					material="/shared/effects/materials/sparks_reveal_white_blend.material"
+				>
+					<particle
+						maxangle="360"
+						startcolor="0 1 .67"
+						endcolor="0"
+						midcolorpos=".25"
+						minsize="30"
+						maxsize="45"
+						anchor=".5"
+						startframe=".3"
+						endframe="1"
+						startstickiness="1"
+						endstickiness="0"
+						minscale="1"
+						maxscale="2"
+					/>
+				</simpleemitter>
+			</controller>
+			
+			<billboard
+				bone="_bone_center"
+				life="500"
+				material="/shared/effects/materials/refract_ring.material"
+				startsize="0"
+				endsize="300"
+				midsizepos=".2"
+				startparam="0.1"
+				endparam="0"
+				lockup="true"
+				lockright="true"
+				pitch="-90"
+				position="0 0 50"
+			/>
+			
+			<controller scale=".75" bone="_bone_centerofchest">
+				<simpleemitter
+					mincount="16"
+					maxcount="20"
+					particlelife="2000"
+					direction="0 0 1"
+					directionalspace="global"
+					minangle="90"
+					maxangle="90"
+					gravity="-5"
+					minspeed="200"
+					maxspeed="450"
+					drag="0.02"
+				>
+					<particle
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-600"
+						maxyawspeed="600"
+						minrollspeed="-600"
+						maxrollspeed="600"
+						minpitchspeed="-600"
+						maxpitchspeed="600"
+						minscale="2"
+						maxscale="2.5"
+					>
+						<trailemitter
+							minlife="1111"
+							maxlife="1852"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="541"
+							material="/shared/effects/materials/glow_02.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor="0 1 0"
+								midcolor="0 1 .67"
+								endcolor="0 1 1"
+								startsize="0"
+								minmidsize="2"
+								maxmidsize="3"
+								endsize="0"
+							/>
+						</trailemitter>
+						<trailemitter
+							minlife="1111"
+							maxlife="1852"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="500"
+							material="/shared/effects/materials/fire_scrolling_trail.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor="1"
+								midcolor="1"
+								endcolor="1"
+								startsize="0"
+								minmidsize="4"
+								maxmidsize="6"
+								endsize="0"
+							/>
+						</trailemitter>
+					</particle>
+				</simpleemitter>
+			</controller>
+			
+			<controller scale=".85">
+				<simpleemitter
+					bone="_bone_centerofchest"
+					life="1069"
+					spawnrate="1500"
+					count="15"
+					minparticlelife="700"
+					maxparticlelife="1000"
+					speed="25"
+					offsetsphere="70"
+					material="/shared/effects/materials/dust_smoke_02.material"
+					angle="0"
+				>
+					<particle
+						scale=".5"
+						color="0"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-90"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					bone="_bone_centerofchest"
+					life="1069"
+					spawnrate="650"
+					count="15"
+					minparticlelife="500"
+					maxparticlelife="1000"
+					gravity="0"
+					minspeed="0"
+					maxspeed="1000"
+					drag="0.06"
+					offsetsphere="17"
+					depthbias="-30"
+					material="/shared/effects/materials/bad_healing_smoke_12.material"
+				>
+					<particle
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						turn="1"
+						startcolor="0 1 .67"
+						endcolor="0 1 .67"
+						size="15"
+						startstickiness="0"
+						minendstickiness="0.3"
+						maxendstickiness="1"
+						minendscale="4"
+						maxendscale="10"
+						startalpha=".3"
+						midalpha="1"
+						midalphapos="0.1"
+						endalpha="0"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					life="1800"
+					spawnrate="100"
+					bone="_bone_centerofchest"
+					count="15"
+					minparticlelife="1"
+					maxparticlelife="1200"			
+					gravity="24"
+					minspeed="200"
+					maxspeed="600"
+					drag=".01"
+					material="/shared/effects/materials/spark_10.material"
+					offsetsphere="1"
+					minangle="-10"
+					maxangle="40"
+					direction="0 0 1"
+					directionalspace="global"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						startcolor="1"
+						midcolor="0 1 .67"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						minstartsize="18"
+						maxstartsize="26"
+						midsize="12"
+						endsize="6"
+						scale=".5"
+						startalpha="0"
+						midalpha=".7"
+						endalpha="0"
+						midalphapos=".5"
+						startstickiness=".3"
+						endstickiness="0"
+						turn="true"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					minangle="-90"
+					maxangle="-90"
+					bone="_bone_centerofchest"
+					life="1069"
+					spawnrate="650"
+					count="30"
+					minparticlelife="230"
+					maxparticlelife="700"
+					speed="120"
+					drag="0.02"
+					offsetsphere="5"
+					depthbias="-40"
+					material="/shared/effects/materials/phantom_smoke_04.material"
+				>
+					<particle
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						turn="1"
+						startcolor="1 1 1"
+						midcolorpos="0.2"
+						midcolor="0 1 .67"
+						endcolor="0"
+						size="30"
+						startstickiness="0"
+						maxendstickiness="1"
+						minendscale="6"
+						maxendscale="10"
+						startalpha=".3"
+						midalpha="1"
+						midalphapos="0.1"
+						endalpha="0"
+					/>
+				</simpleemitter>
+			</controller>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" />
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+	</thread>
+</effect>

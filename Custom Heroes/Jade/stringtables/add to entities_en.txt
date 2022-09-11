@@ -1,0 +1,42 @@
+
+// Hero_Jade_Custom
+Hero_Jade_Custom_name											Jade
+Hero_Jade_Custom_role											Jade ia an anti-attacker hero, capable of withstanding enemy attacks and disarming her foe for a long time. While not being a carry hero herself, she can deal somewhat consistent damage with her Soulflare.
+
+// Ability_Jade1
+Ability_Jade1_name												Soulflare
+Ability_Jade1_description										Jade sends out a wave of spiritual flames to damage her foes.
+Ability_Jade1_description_simple								Jade sends out a wave of spiritual flames in the chosen line. Upon colliding with an enemy, the wave explodes, dealing ^o{80,140,200,260} Magic Damage^* and ^oslowing enemies hit by 50%^* for 1 second.\n\n^444They come in blue too!
+Ability_Jade1_effect_header
+Ability_Jade1_tooltip_flavor									They come in blue too!
+Ability_Jade1_IMPACT_effect										Upon colliding with an enemy, the flames explode, dealing ^o{80,140,200,260} Magic Damage^* and slowing enemies hit by ^o50% for 1^* second.
+
+// Ability_Jade2
+Ability_Jade2_name												Defiance
+Ability_Jade2_name:shardofthemaster_boost						^pDefiance^*
+Ability_Jade2_description										Jade's force of will allows her to deflect some attacks.
+Ability_Jade2_description_simple								Jade shields herself from the next ^o{1,2,3,4} attacks^*, causing them to do no damage and ^ostun the attacker for 0.7 seconds^*.\n\n^pShard of the Master^* deals 125 Magic Damage to the attackers.\n\n^444Be careful! You wouldn't want to hurt my pretty face!
+Ability_Jade2_description_simple:shardofthemaster_boost			Jade shields herself from the next ^o{1,2,3,4} attacks^*, causing them to do no damage and ^ostun the attacker for 0.7 seconds^*^p, dealing them 125 Magic Damage^*.\n\n^444Be careful! You wouldn't want to hurt my pretty face!
+Ability_Jade2_effect_header
+Ability_Jade2_tooltip_flavor									Be careful! You wouldn't want to hurt my pretty face!
+Ability_Jade2_IMPACT_effect										Deflected attacks ^odeal do damage and stun the attacker for 0.7 seconds^*. Lasts 9 seconds and can deflect ^oup to {1,2,3,4} attacks^*.
+
+// Ability_Jade3
+Ability_Jade3_name												Spirit Link
+Ability_Jade3_description										Jade connects to the chosen enemy.
+Ability_Jade3_description_simple								Jade forms a link between herself and the chosen enemy, ^odisarming both of them^* and ^ostealing {1,2,3,4} Armor and Magic Armor^* from the target for 5 seconds or until the link is broken by moving far away from eachother. While connected to an enemy this way, ^oSoulflare refreshes 125% faster^*.\n\n^444Let's grab each other's hands!
+Ability_Jade3_effect_header
+Ability_Jade3_tooltip_flavor									Let's grab each other's hands!
+Ability_Jade3_IMPACT_effect										While connected this way, the target loses ^o{1,2,3,4} Armor and Magic Armor and is disarmed^*, while Jade gains ^o{1,2,3,4} Armor and Magic Armor and refreshes Soulflare 125% faster, but also is disarmed^*. The connection lasts 5 seconds or until one of the units moves 825 units away from the other.
+
+// Ability_Jade4
+Ability_Jade4_name												Inner Flame
+Ability_Jade4_name:ult_boost									^gHeavenly Determination^*
+Ability_Jade4_description										Jade's fervor allows her to cast more deadly spells more often for as long as she damages enemies.
+Ability_Jade4_description2										^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Also increases Health Regen and Mana Regen by up to 10, depending on her missing Health.
+Ability_Jade4_description_simple								Whenever Jade deals Non-DOT spell damage to an enemy, she reduces cooldowns of her abilities by ^o{0.1,0.2,0.3} seconds^*. Also increases spell damage dealt by up to ^o{30,65,100}%^*, depending on her missing Health.\n\n^gStaff of the Master^* increases Health Regen and Mana Regen by up to 10, depending on her missing Health.\n\n^444I'm... Not... Done... Yet...!
+Ability_Jade4_description_simple:ult_boost						Whenever Jade deals Non-DOT spell damage to an enemy, she reduces cooldowns of her abilities by ^o{0.1,0.2,0.3} seconds^*. Also increases spell damage dealt by up to ^o{30,65,100}%^* ^and Health Regen and Mana Regen by up to 10^*, depending on her missing Health.\n\n^444I'm... Not... Done... Yet...!
+Ability_Jade4_effect_header
+Ability_Jade4_tooltip_flavor									I'm... Not... Done... Yet...!
+Ability_Jade4_IMPACT_effect										Each enemy dealt damage by her Non-DOT spell damage reduces cooldowns of her abilities by ^o{0.1,0.2,0.3} seconds^*. Also increases spell damage dealt by up to ^o{30,65,100}%^*, depending on her missin Health.
+Ability_Jade4_IMPACT_effect:ult_boost							Each enemy dealt damage by her Non-DOT spell damage reduces cooldowns of her abilities by ^o{0.1,0.2,0.3} seconds^*. Also increases spell damage dealt by up to ^o{30,65,100}%^* ^gand Health Regen and Mana Regen by up to 10^*, depending on her missing health.

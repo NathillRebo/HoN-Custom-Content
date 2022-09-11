@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<trailemitter
+				timenudge="1000"
+				spawnrate="246"
+				particlelife="200"
+				material="/shared/effects/materials/swoosh_add.material"
+				texposscale="0"
+				texstretchscale="1"
+			>
+				<particle
+					startsize="8"
+					endsize="0"
+					startcolor="0"
+					midcolor="0 1 .5"
+					endcolor="0"
+					midcolorpos=".1"
+				/>
+			</trailemitter>
+			
+			<trailemitter
+				timenudge="1000"
+				spawnrate="246"
+				particlelife="500"
+				material="/shared/effects/materials/blob_add.material"
+				texposscale="0"
+				texstretchscale="1"
+			>
+				<particle
+					startsize="20"
+					endsize="0"
+					startcolor="1"
+					midcolor="1"
+					endcolor="0"
+					midcolorpos=".1"
+				/>
+			</trailemitter>
+					
+			<simpleemitter
+				timenudge="1000"
+				spawnrate="491"
+				particlelife="250"
+				material="/shared/effects/materials/sparks_reveal.material"
+				maxspeed="31"
+				inheritvelocity="0.1"
+				limitinheritvelocity="20"
+				drag="0.02"
+				gravity="-1"
+			>
+				<particle
+					maxangle="360"
+					startcolor="0"
+					midcolor="1"
+					endcolor="0 1 .5"
+					midcolorpos=".25"
+					minsize="20"
+					maxsize="35"
+					startframe=".3"
+					endframe="1"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

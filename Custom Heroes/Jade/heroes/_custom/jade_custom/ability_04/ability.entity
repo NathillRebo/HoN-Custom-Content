@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Jade4"
+
+	icon="icon.tga"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="passive"
+>
+	<onframe>
+		<evaluate a="1" b="source_health_percent" op="sub" />
+		<evaluate a="100" b="result" op="mult" />
+		<setvar0 a="result" />
+		<setcharges a="var0" />
+	</onframe>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<evaluate a="1" b="source_health_percent" op="sub" />
+			<evaluate a="0.3,0.65,1" b="result" op="mult" />
+			<evaluate a="1" b="result" op="add" />
+			<setvalue name="damage_attempted" a="damage_attempted" b="result" op="mult" />
+			<damageeffecttype effecttype="Returned" />
+			<else>
+				<damageeffecttype effecttype="DOT" />
+				<else>		
+					<pushability name="Ability_Jade1" />
+					<reducecooldown duration="100,200,300" entity="stack_entity" />
+					<pushability name="Ability_Jade2" />
+					<reducecooldown duration="100,200,300" entity="stack_entity" />
+					<pushability name="Ability_Jade3" />
+					<reducecooldown duration="100,200,300" entity="stack_entity" />
+				</else>
+			</else>
+		</else>
+	</onattackingdamageevent>
+	<modifier key="ult_boost" modpriority="100"
+		manaregenpercharge="0.1"
+		healthregenpercharge="0.1"
+	>
+	</modifier>
+</ability>

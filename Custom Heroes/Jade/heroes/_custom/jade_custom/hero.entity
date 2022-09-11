@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Jade_Custom"
+
+	team="Legion"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+		
+	passiveeffect="effects/body.effect"
+	deatheffect="effects/death.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.6"
+	modelscale="1.2"
+	effectscale="1"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 80"
+
+	infoheight="190"
+	
+	category="physical"
+	difficulty="3.5"
+
+	solorating="5"
+	junglerating="0"
+	carryrating="3"
+	supportrating="5"
+	initiatorrating="0"
+	gankerrating="0"
+	pusherrating="3"
+	rangedrating="5"
+	meleerating="0"
+	
+	movespeed="295"
+	turnrate="720"
+	turnsmoothing="0.05"
+	
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-0.23"
+	magicarmor="5.0"
+
+	inventory0="Ability_Jade1"
+	inventory1="Ability_Jade2"
+	inventory2="Ability_Jade3"
+	inventory3="Ability_Jade4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="300"
+	attackcooldown="1700"
+	attackdamagemin="20"
+	attackdamagemax="24"
+	attacknumanims="2"
+	attackoffset="-5 80 105"
+	attackprojectile="Projectile_Jade_Attack"
+	attackrange="500"
+	attackstarteffect=""
+	attackactioneffect="projectile/impact.effect"
+	attackimpacteffect="projectile/impact.effect"
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="700"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+	
+	corpsetime="8000"
+	corpsefadetime="0"
+	corpsefadeeffect=""
+
+	primaryattribute="Agility"
+	strength="16"
+	strengthperlevel="1.6"
+	agility="23"
+	agilityperlevel="2.5"
+	intelligence="20"
+	intelligenceperlevel="2.3"
+	
+	previewmodel="preview.mdf"
+	previewpos="0 0 -60"
+	previewangles="0 0 0"
+	previewscale="1.65"
+
+	storemodel="preview.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.86"
+	
+	portraitcampos="13 -45 25"
+	portraitangles="0 0 0"
+> 
+	<recommendeditem name="Item_SpellShards" /> 2000
+	<recommendeditem name="Item_Nuke" /> 2540
+	<recommendeditem name="Item_Silence" /> 4725
+	<recommendeditem name="Item_JadeSpire" /> 4800
+	<recommendeditem name="Item_GrimoireOfPower" /> 5200
+	<recommendeditem name="Item_Evasion" /> 5700
+	<recommendeditem name="Item_SandScepter" /> 5900
+	
+</hero>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Jade1"
+
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="600"
+	castactiontime="250"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	casteffect="effects/cast.effect"
+	
+	manacost="45"
+	cooldowntime="9000,8000,7000,6000"
+
+	range="950"
+	forcerange="950"
+	allowoutofboundscast="true"
+	targetradius="120"
+	
+	showlinecast="true"
+	linecastrange="950"
+	linecastwidth="120"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<spawnprojectile name="Projectile_Jade1" source="source_entity" target="target_position" bind="stack_entity" proxy="stack_entity" offset="0 140 0" />
+	</onimpact>
+</ability>

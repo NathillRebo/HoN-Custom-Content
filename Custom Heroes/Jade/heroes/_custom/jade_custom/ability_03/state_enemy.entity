@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_Jade3_Enemy" 
+
+    icon="icon.tga" 
+    passiveeffect="effects/link.effect" 
+    effecttype="StatusDebuff" 
+    alwaystransmitdata="true" 
+	disarmed="true"
+	armor="-1,-2,-3,-4"
+	magicarmor="-1,-2,-3,-4"
+> 
+	<oninflict>
+		<pushability name="Ability_Jade3" source="this_proxy_entity" />
+		<getrange entity="stack_entity" />
+		<setaccumulator value="result" valueb="150" valueop="add" />
+	</oninflict>
+	
+	<onframe>
+		<distance target="target_entity" source="this_inflictor_entity" />
+		<compare a="result" b="accumulator" op="gt">
+			<expirestate name="State_Jade3_Self" target="this_inflictor_entity" /> 
+			<expire /> 
+		</compare>
+	</onframe> 
+
+	<onexpired> 
+		<expirestate name="State_Jade3_Self" target="this_inflictor_entity" /> 
+	</onexpired>
+</state>

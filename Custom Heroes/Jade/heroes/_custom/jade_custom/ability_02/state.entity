@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statenetaccum
+	name="State_Jade2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype=""
+	allowtransfer=""
+	
+	displaylevel="true"
+	
+	shield="true"
+>	
+	<oninflict>
+		<addcharges count="1,2,3,4" timed="true" />
+	</oninflict>
+	
+	<onattackedpredamage>
+		<combateffecttype effecttype="Attack">
+			<targettype type="gadget" />
+			<else>
+				<setvalue name="combat_deflection" a="combat_deflection" b="99999" op="max" />
+				<applystate name="State_Stunned" duration="700" />
+				<setcharges a="charges" b="1" op="sub" />
+				<compare a="charges" b="0" op="eq">
+					<expire/>
+				</compare>
+			</else>
+		</combateffecttype>
+	</onattackedpredamage>
+
+	<modifier key="shardofthemaster_boost">
+		<onattackedpredamage>
+			<combateffecttype effecttype="Attack">
+				<targettype type="gadget" />
+				<else>
+					<setvalue name="combat_deflection" a="combat_deflection" b="99999" op="max" />
+					<applystate name="State_Stunned" duration="700" />
+					<damage amount="125" effecttype="Magic" />
+					<setcharges a="charges" b="1" op="sub" />
+					<compare a="charges" b="0" op="eq">
+						<expire/>
+					</compare>
+				</else>
+			</combateffecttype>
+		</onattackedpredamage>
+	</modifier>
+</statenetaccum>

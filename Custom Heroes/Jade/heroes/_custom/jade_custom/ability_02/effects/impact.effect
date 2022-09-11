@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect persistent="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".8">
+					<sound
+				linearfalloff="true" 
+				falloffstart="100"
+				falloffend="1300"
+				volume=".8"
+				sample="/heroes/gunblade/ability_02/sounds/impact_%.wav"
+			/>
+
+			<billboard
+				delay="0"
+				life="250"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".25"
+				endparam="0"
+				startsize="0"
+				endsize="550"
+				depthbias="-100"
+				position="0 0 20"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+
+			<billboard
+			bone="_bone_centerofchest"
+				delay="0"
+				material="/shared/effects/materials/bulb_add.material"				
+				startcolor="0 .25 .5"				
+				endcolor="0 0 0"
+				life="250"	
+				position="0 0 0"
+				startsize="100"
+				endsize="225"
+				depthbias="-150"			
+			/>
+			
+			<billboard
+			bone="_bone_centerofchest"
+				delay="100"
+				material="/shared/effects/materials/bulb_add.material"				
+				startcolor="0 .25 .5"						
+				endcolor="0 0 0"
+				life="250"	
+				position="0 0 0"
+				startsize="100"
+				endsize="225"
+				depthbias="-150"			
+			/>
+			
+			<billboard
+			bone="_bone_centerofchest"
+				delay="200"
+				material="/shared/effects/materials/bulb_add.material"				
+				startcolor="0 .06 .12"				
+				endcolor="0 0 0"
+				life="250"	
+				position="0 0 0"
+				startsize="100"
+				endsize="225"
+				depthbias="-150"			
+			/>
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+	<waitfordeath instance="instance0"/>
+</thread>
+</effect>
