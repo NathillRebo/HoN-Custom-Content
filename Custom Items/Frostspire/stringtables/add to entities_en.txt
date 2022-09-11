@@ -1,0 +1,10 @@
+// Item_Custom_Frostspire
+Item_Custom_Frostspire_name										Frostspire
+Item_Custom_Frostspire_description								Spell damage slows your enemies by ^o{12,15,18}%^* for 1 second. ^rCan be upgraded 2 times^*.
+Item_Custom_Frostspire_description_simple						Spell damage slows.\n^rCan be upgraded 2 time^*.
+Item_Custom_Frostspire_search_terms								frostspire,frost,spire,fs,health,hp,hitpoints,hits,slow,intelligence,life,spellpower,spell,amplifying
+Item_Custom_Frostspire_shop_flavor								Allows you to channel freezing energy.
+Item_Custom_Frostspire_shop_categories							Filter_Booster,Filter_Intelligence
+
+// State_FrostspireSlow
+State_FrostspireSlow_name										Frostspire Slow

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_FrostspireSlow"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	movespeedslow="0.12,0.15,0.18"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+</state>
