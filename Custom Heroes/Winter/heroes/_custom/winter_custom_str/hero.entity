@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_zzz_Winter"
+
+	team="Legion"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	deatheffect=""
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.75"
+	modelscale="1.0"
+	effectscale="0.99"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 92"
+	portraitcampos="32 -38 35"
+
+	category="protective"
+	difficulty="2.5"
+
+	solorating="2"
+	junglerating="0"
+	carryrating="0"
+	supportrating="5"
+	initiatorrating="0"
+	gankerrating="0"
+	pusherrating="2"
+	rangedrating="5"
+	meleerating="0"
+	
+	movespeed="305"
+	turnrate="450"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="1"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="0.5"
+	magicarmor="5"
+
+	inventory0="Ability_Winter1"
+	inventory1="Ability_Winter2"
+	inventory2="Ability_Winter3"
+	inventory3="Ability_Winter4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="600"
+	attackactiontime="300"
+	attackcooldown="1700"
+	attackdamagemin="29"
+	attackdamagemax="33"
+	attacknumanims="2"
+	attackoffset="0 30 110"
+	attackprojectile="Projectile_Shaman_Attack"
+	attackrange="100"
+	attackstarteffect="projectile/effects/cast.effect"
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Strength"
+	strength="22"
+	strengthperlevel="2.6"
+	agility="16"
+	agilityperlevel="1"
+	intelligence="19"
+	intelligenceperlevel="2.5"
+
+	corpsetime="5000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	previewmodel="preview.mdf"
+	previewpos="0 0 -50"
+	previewangles="0 0 0"
+	previewscale="1.5"
+	
+	storemodel="preview.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.75"
+> 
+	<recommendeditem name="Item_SacrificialStone" /> 4300
+	<recommendeditem name="Item_Protect" /> 4600
+	<recommendeditem name="Item_GrimoireOfPower" /> 5200
+	<recommendeditem name="Item_RestorationStone" /> 5425
+	<recommendeditem name="Item_Dawnbringer" /> 6600
+	
+</hero>

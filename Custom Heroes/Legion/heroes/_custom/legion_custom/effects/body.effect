@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			expirelife="25"
+			startcolor="1 1 1"
+			endcolor="1 1 1"
+			startalpha="1"
+			endalpha="0"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1.3">
+
+			<template name="trails">
+				<twopointtrailemitter
+					bone_a="{bone01}"
+					bone_b="{bone02}"
+					spawnrate="25"
+					particlelife="650"
+					gravity="5"
+					subframepose="1"
+					drag="0.01"
+					speed="100"
+					direction="0 -1 0"
+					texpostime="650"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/black_trail.material"
+					startparticlealpha="1"
+					endparticlealpha="0"
+					depthbias="50"
+				>
+					<particle
+						color="0 0 0"
+						startalpha=".5"
+						endalpha="0"
+						size="250"
+					/>
+				</twopointtrailemitter>
+			</template>
+
+			<instance name="trails" bone01="Bip01 L Clavicle" bone02="Bip01 L Forearm"/>
+			<instance name="trails" bone01="Bip01 R Clavicle" bone02="Bip01 R Forearm"/>
+
+			<simpleemitter
+				bone="Box02"
+				spawnrate="10"
+				particlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				offsetsphere="25 25 0"
+				material="/shared/effects/materials/heathaze.material"
+				depthbias="20"
+			>
+				<particle
+					angle="180"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="1 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".5"
+					startsize="150" 
+					endsize="200"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				position="0 -12 0"
+				bone="_bone_head"
+				spawnrate="10"
+				offsetsphere="35"
+				particlelife="3000"
+				depthbias="-120"
+			>
+				<particle>
+					<groundsprite
+						loop="false"
+						material="/shared/effects/materials/blood_pool_02.material"
+						life="1000"
+						size="20"
+						minscale="1"
+						maxscale="5"
+						minyaw="-360"
+						maxyaw="360"
+						startcolor="0 0 0"
+						endcolor="0 0 0"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						minendscale="1"
+						maxenscale="1"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<groundsprite
+				position="0 -25 0"
+				expirelife="250"
+				material="/shared/effects/materials/blood_pool_02.material"
+				size="32"
+				scale="5"
+				minyaw="-360"
+				maxyaw="360"
+				startcolor="0 0 0"
+				endcolor="0 0 0"
+				startalpha="1"
+				endalpha="0"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				expirelife="1500"
+				startcolor=".075 0 .1"
+				endcolor="0 0 0"
+				size="200"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-60"
+				minroll="-180"
+				maxroll="180"
+				rollspeed="-360"
+				loop="true"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				expirelife="1500"
+				startcolor=".05 0 .1"
+				endcolor="0 0 0"
+				size="50"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-60"
+				minroll="-180"
+				maxroll="180"
+				rollspeed="-360"
+				loop="true"
+			/>
+
+			<template name="effect">
+				<billboard
+					bone="{bone}"
+					expirelife="150"
+					startcolor=".05 0 .1"
+					endcolor="0 0 0"
+					size="75"
+					position="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					directionalspace="local"
+					depthbias="-100"
+					minroll="-180"
+					maxroll="180"
+					rollspeed="-360"
+				/>
+			
+				<billboard
+					bone="{bone}"
+					expirelife="150"
+					startcolor=".15 0 .35"
+					endcolor="0 0 0"
+					size="50"
+					position="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					directionalspace="local"
+					depthbias="-100"
+					minroll="-180"
+					maxroll="180"
+					rollspeed="-360"
+				/>
+
+				<billboard
+					bone="{bone}"
+					expirelife="150"
+					startcolor=".2 .15 .15"
+					endcolor="0 0 0"
+					size="15"
+					position="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					directionalspace="local"
+					depthbias="-100"
+					minroll="-180"
+					maxroll="180"
+					rollspeed="-360"
+				/>
+
+			</template>
+  
+			<instance name="effect" bone="_bone_fx_01"/>
+
+			
+			<billboard
+				position="-25 -50 10"
+				life="2000"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0 0 0"
+				midcolor=".05 0 0"
+				endcolor="0 0 0"
+				size="75"
+				depthbias="-100"
+				loop="true"
+			/>
+			
+			<billboard
+				position="30 -50 10"
+				life="2000"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0 0 0"
+				midcolor=".05 0 0"
+				endcolor="0 0 0"
+				size="75"
+				depthbias="-100"
+				loop="true"
+			/>
+			
+			<billboard
+				position="0 15 10"
+				life="2000"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0 0 0"
+				midcolor=".05 0 0"
+				endcolor="0 0 0"
+				size="75"
+				depthbias="-100"
+				loop="true"
+			/>
+			
+			<simpleemitter
+				spawnrate="75"
+				gravity="-5"
+				speed="0"
+				drag="0"
+				position="0 -35 35"
+				minparticlelife="250"
+				maxparticlelife="500"
+				offsetsphere="50 50 50"
+				material="/shared/effects/materials/bubble_blend.material"
+			>
+				<particle
+					startsize="0"
+					minendsize="10"
+					maxendsize="15"
+					color=".35"
+					startalpha="1"
+					endalpha="0"
+				/>
+				<particle
+					startsize="0"
+					minendsize="10"
+					maxendsize="25"
+					color=".15"
+					startalpha="1"
+					endalpha="0"
+				/>
+				<particle
+					startsize="0"
+					minendsize="10"
+					maxendsize="12"
+					color=".35 0 0"
+					startalpha=".75"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+</effect>

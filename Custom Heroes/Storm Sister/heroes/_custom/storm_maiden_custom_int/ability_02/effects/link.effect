@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true" useentityeffectscale="true">
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale=".225">
+		
+			<sound
+				soundloop="true"
+				fadein="100"
+				fadeout="200"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".65"
+				sample="../sounds/state.wav"
+			/>
+
+			<template name="link">
+				<beam
+					delay="500"
+					expirelife="500"
+					owner_a="source"
+					owner_b="target"
+					bone_a="{bone1}"
+					bone_b="{bone2}"
+					size="250"
+					color=".23 .65 1"
+					framespeed="1.75"
+					material="/shared/effects/materials/femme_lightning_10.material"
+				>
+				</beam>
+				
+				<billboard
+					bone="{bone2}"
+					material="/shared/effects/materials/femme_lightning_10.material"
+					size="500"
+					startcolor=".23 .65 1"
+					endcolor="0"
+					expirelife="200"
+					depthbias="-40"
+				/>
+			</template>
+			
+			<instance name="link" bone1="_bone_centerofchest" bone2="_bone_centerofchest" size="30" startframe=".2" framespeed="3"/>
+			<instance name="link" bone1="_bone_centerofchest" bone2="_bone_centerofchest" size="32" startframe=".5" framespeed="4.5"/>
+
+			<trackeremitter
+				spawnrate="5"
+				bone="_bone_centerofchest"
+				owner="source"
+				targetbone="_bone_centerofchest"
+				targetowner="target"
+				tracktype="distance"
+				trackspeed="250"
+				drag="0"
+				particlelife="3000"
+				gravity="0"
+				minspeed="4000"
+				maxspeed="6000"
+				acceleration="0"
+				startparticlecolor="1 1 1"
+				endparticlecolor="0 0 0"
+				expirelife="250"
+				
+			>
+				<particle>
+
+					<model
+						name="skeleton"
+						model="/shared/effects/models/side_to_side/model.mdf"
+						anim="idle"
+						pitch="0"
+						yaw="90"
+						scale="2"
+					>
+						<simpleemitter
+							bone="_bone_fx_01"
+							spawnrate="50"
+							particlelife="500"
+							gravity="-5"
+							speed="200"
+							drag=".1"
+							acceleration="0"
+							position="0 0 0"
+							material="/shared/effects/materials/femme_lightning_10.material"
+							offsetsphere="6 6 6"
+							minangle="0"
+							maxangle="360"
+						>
+							<particle 
+								minangle="0"
+								maxangle="0"
+								minanglespeed="0"
+								maxanglespeed="0"
+								startcolor="0 0 0"
+								midcolor=".23 .65 1"
+								endcolor="0 0 0"
+								midcolorpos=".2"
+								startframe="0"
+								endframe="1"
+								startsize="75"
+								midsize="50"
+								endsize="5"
+								startalpha="0"
+								midalpha=".7"
+								endalpha="0"
+								midalphapos=".5"
+								turn="true"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							bone="_bone_fx_01"
+							spawnrate="65"
+							minparticlelife="400"
+							maxparticlelife="600"
+							position="0 0 0"
+							material="/shared/effects/materials/smoke_particle.material"
+							offsetsphere="30 30 30"
+							direction="0 0 0"
+							inheritvelocity="0"
+						>
+							<particle 
+								minangle="-15"
+								maxangle="-15"
+								minanglespeed="0"
+								color=".23 .65 1"
+								startsize="300"
+								midsize="250"
+								endsize="300"
+								midsizepos=".3"
+								startalpha=".2"
+								endalpha="0"
+								/>
+						</simpleemitter>
+
+					</model>
+
+					<model
+						bone="_bone_centerofchest"
+						name="skeleton"
+						model="/shared/effects/models/side_to_side/model.mdf"
+						anim="idle"
+						pitch="0"
+						yaw="270"
+						scale="1"
+					>
+					
+						<simpleemitter
+							depthbias="-55"
+							spawnrate="75"
+							particlelife="400"
+							offsetsphere="40"
+							angle="10"
+							speed="10"
+							material="/shared/effects/materials/femme_lightning_10.material"
+						>
+							<particle
+								startcolor=".23 .65 1"
+								endcolor="0"
+								startsize="120"
+								endsize="0"
+								maxangle="360"
+								minendscale="2"
+								maxendscale="4"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							depthbias="-55"
+							spawnrate="45"
+							minparticlelife="1000"
+							maxparticlelife="1250"
+							offsetsphere="30"
+							angle="10"
+							speed="30"
+							material="/shared/effects/materials/femme_lightning_10.material"
+						>
+							<particle
+								startcolor=".23 .65 1"
+								endcolor="0"
+								startsize="90"
+								endsize="145"
+								maxangle="360"
+								minendscale="2"
+								maxendscale="4"
+								endstickiness="0"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							depthbias="-55"
+							spawnrate="45"
+							minparticlelife="750"
+							maxparticlelife="1250"
+							offsetsphere="50 50 50"
+							angle="10"
+							speed="30"
+							material="/shared/effects/materials/femme_lightning_10.material"
+						>
+							<particle
+								startcolor=".23 .65 1"
+								endcolor="0"
+								startsize="50"
+								endsize="65"
+								maxangle="360"
+								minendscale="2"
+								maxendscale="4"
+								endstickiness="0"
+							/>
+						</simpleemitter>
+
+						<trailemitter
+							life="1000"
+							spawnrate="40"
+							particlelife="1000"
+							texpostime="1000"
+							texposscale="0"
+							texstretchscale=".4"
+							material="/shared/effects/materials/femme_lightning_10.material"
+							subframepos="true"
+							startparticlecolor=".23 .65 1"
+							endparticlecolor="0 0 0"
+						>
+							<particle
+								startcolor="1 1 1"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								startsize="10"
+								midsize="125"
+								endsize="10"
+								midsizepos="0.2"
+							/>
+						</trailemitter>
+						
+						<trailemitter
+							life="1000"
+							spawnrate="40"
+							particlelife="1000"
+							texpostime="1000"
+							texposscale="0"
+							texstretchscale=".4"
+							material="/shared/effects/materials/femme_lightning_10.material"
+							subframepos="true"
+							startparticlecolor=".23 .65 1"
+							endparticlecolor="0 0 0"
+						>
+							<particle
+								startcolor="1 1 1"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								startsize="10"
+								midsize="125"
+								endsize="10"
+								midsizepos="0.2"
+							/>
+						</trailemitter>
+						
+						<trailemitter
+							life="1000"
+							spawnrate="40"
+							particlelife="1000"
+							texpostime="1000"
+							texposscale="0"
+							texstretchscale=".4"
+							material="/shared/effects/materials/femme_lightning_10.material"
+							subframepos="true"
+							startparticlecolor=".23 .65 1"
+							endparticlecolor="0 0 0"
+						>
+							<particle
+								startcolor="1 1 1"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								startsize="10"
+								midsize="70"
+								endsize="10"
+								midsizepos="0.2"
+							/>
+						</trailemitter>
+
+
+					</model>
+				</particle>
+			</trackeremitter>
+
+			<simpleemitter
+				life="1000"
+				bone="_bone_centerofchest"
+				owner="source"
+				depthbias="-55"
+				spawnrate="20"
+				minparticlelife="1000"
+				maxparticlelife="1250"
+				offsetsphere="50 50 50"
+				angle="10"
+				speed="30"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				loop="true"
+			>
+				<particle
+					startcolor=".23 .65 1"
+					endcolor="0"
+					startsize="50"
+					endsize="100"
+					maxangle="360"
+					minendscale="2"
+					maxendscale="3"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+		<particlesystem name="system1" space="world" scale=".15">
+
+			<simpleemitter
+				life="1000"
+				bone="_bone_centerofchest"
+				owner="source"
+				depthbias="-55"
+				spawnrate="20"
+				minparticlelife="1000"
+				maxparticlelife="1250"
+				offsetsphere="50 50 50"
+				angle="10"
+				speed="30"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				loop="true"
+			>
+				<particle
+					startcolor=".23 .65 1"
+					endcolor="0"
+					startsize="75"
+					endsize="120"
+					maxangle="360"
+					minendscale="2"
+					maxendscale="3"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+			<billboard
+				material="/shared/effects/materials/femme_lightning_10.material"
+				bone="_bone_center"
+				owner="source"
+				expirelife="500"
+				startcolor=".23 .65 1"
+				endcolor=".23 .65 1"
+				startalpha=".5"
+				endalpha="0"
+				position="0 0 10"
+				size="500"
+				depthbias="-150"
+				pitchspeed="360"
+				lockup="true"
+				pitch="90"
+			/>
+			
+			<billboard
+				material="/shared/effects/materials/femme_lightning_10.material"
+				bone="_bone_center"
+				owner="source"
+				expirelife="500"
+				startcolor=".23 .65 1"
+				endcolor=".23 .65 1"
+				startalpha=".5"
+				endalpha="0"
+				position="0 0 10"
+				size="500"
+				depthbias="-150"
+				pitchspeed="-360"
+				lockup="true"
+				pitch="-90"
+			/>
+
+			<billboard
+				material="/shared/effects/materials/femme_lightning_10.material"
+				bone="_bone_center"
+				owner="source"
+				expirelife="500"
+				startcolor=".23 .65 1"
+				endcolor=".23 .65 1"
+				startalpha=".5"
+				endalpha="0"
+				position="0 0 10"
+				size="400"
+				depthbias="-150"
+				pitchspeed="360"
+				lockup="true"
+				pitch="90"
+			/>
+			
+			<billboard
+				material="/shared/effects/materials/femme_lightning_10.material"
+				bone="_bone_center"
+				owner="source"
+				expirelife="500"
+				startcolor=".23 .65 1"
+				endcolor=".23 .65 1"
+				startalpha=".5"
+				endalpha="0"
+				position="0 0 10"
+				size="400"
+				depthbias="-150"
+				pitchspeed="-360"
+				lockup="true"
+				pitch="-90"
+			/>
+			
+		</particlesystem>
+		
+		<particlesystem name="system2" space="entity" scale=".35">
+			
+			<model
+				owner="source"
+				life="100"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0 0 0"
+				midcolor=".23 .65 1"
+				endcolor="0 0 0"
+				startscale="1"
+				midscale="1.05"
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				startalpha="0"
+				endalpha="10"
+				loop="true"
+			/>
+			
+		</particlesystem>
+	  
+	  
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <spawnparticlesystem instance="instance1" particlesystem="system1" />
+      <spawnparticlesystem instance="instance2" particlesystem="system2" />
+      <waitfordeath instance="instance0" />
+      <waitfordeath instance="instance1" />
+      <waitfordeath instance="instance2" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Felhound2"
+
+	icon="icon.tga"
+	
+	passiveeffect=""
+	effecttype="StatusBuff"
+	
+	allowtransfer="true"
+	
+	damage="16,32,48,64"
+>
+</state>

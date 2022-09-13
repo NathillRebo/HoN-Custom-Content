@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Nereid1"
+
+	lifetime="375"
+	useexactlifetime="true"
+	gravity="1475"
+
+	model="../projectile/model.mdf"
+	modelscale="1.7"
+	traileffect="../projectile/effects/trail.effect"
+	impacteffect="../projectile/effects/impact.effect"
+	
+	dynamicprecache="effects/impact.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<spawnaffector name="Affector_Nereid1" target="target_position" />
+		<spawnaffector name="Affector_Nereid1_Root" target="target_position" />
+		
+		<!-- Dynamic VFX -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_position" target="" occlude="true" />
+	</onimpact>
+</projectile>

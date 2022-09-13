@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statenetaccum
+	name="State_Nova2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype=""
+	allowtransfer=""
+	
+	displaylevel="true"
+	
+	shield="true"
+	maxaccumulator="105,140,175,210"
+>	
+	<oninflict>
+		<setaccumulator value="105,140,175,210" />
+	</oninflict>
+	
+	<modifier key="shardofthemaster_boost"
+		maxaccumulator="250,285,320,355"
+	>
+		<oninflict>
+			<setaccumulator value="250,285,320,355" />
+		</oninflict>
+		
+		<onattackingdamageevent>
+			<combatsupertype supertype="attack" >
+				<evaluate a="damage_attempted" b="0.33,0.44,0.55,0.66" op="mult"/>
+				<evaluate a="accumulator" b="result" op="add"/>
+				<setvar0 a="result"/>
+				<changeduration b="var0" op="add" />
+				<evaluate a="var0" b="250,285,320,355" op="min"/>
+				<setaccumulator value="result"/>
+				<playeffect effect="effects/heal.effect" source="source_entity"/>
+			</combatsupertype>
+		</onattackingdamageevent>
+		
+	</modifier>
+
+	<ondamaged>
+		<damageeffecttype effecttype="DOT" />
+		<else>
+			<targettype type="enemy">
+				<playeffect effect="effects/impact.effect" source="source_entity"/>
+			</targettype>
+		</else>
+		
+		<setvar0 a="source_damage" b="1" op="mult" />
+		<compare a="var0" b="accumulator" op="ge">
+			<evaluate a="var0" b="accumulator" op="sub" />
+			<changedamage b="result" op="min" />
+			<expire />
+		</compare>
+		<else>
+			<changedamage b="0" op="mult" />
+			<evaluate a="accumulator" b="var0" op="sub" />
+			<setaccumulator value="result" />
+		</else>
+	</ondamaged>
+	
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" >
+			<evaluate a="damage_attempted" b="0.33,0.44,0.55,0.66" op="mult"/>
+			<evaluate a="accumulator" b="result" op="add"/>
+			<setvar0 a="result"/>
+			<changeduration b="var0" op="add" />
+			<evaluate a="var0" b="105,140,175,210" op="min"/>
+			<setaccumulator value="result"/>
+			<playeffect effect="effects/heal.effect" source="source_entity"/>
+		</combatsupertype>
+	</onattackingdamageevent>
+	
+	<onattackedpostimpact>
+		<targettype type="enemy">
+			<playeffect effect="effects/impact.effect" source="source_entity" />
+		</targettype>
+	</onattackedpostimpact>
+	
+	<onexpired>
+		<playeffect effect="effects/state_expire.effect" source="source_entity"/>
+	</onexpired>
+</statenetaccum>

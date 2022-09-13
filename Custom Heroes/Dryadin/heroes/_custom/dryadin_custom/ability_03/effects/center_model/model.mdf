@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="" file="high.model" type="K2" >
+
+	<anim name="spawn_1" clip="spawn_1.clip" loop="0" fps="90">
+	</anim>
+	
+	<anim name="idle" clip="idle.clip" loop="1"/>
+	
+</model>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Boudica2_Buff"
+
+	icon="icon.tga"
+	passiveeffect="effects/buff.effect"
+
+	basedamagemultiplierpercharge="0.10,0.15,0.20,0.25"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+</state>

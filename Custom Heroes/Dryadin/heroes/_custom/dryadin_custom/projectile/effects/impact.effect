@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1.1">
+		
+			<sound
+				maxdelay="100"
+				volume=".8"
+				sample="/shared/sounds/impacts/impact_flesh_%.wav"
+				linearfalloff="true"
+				falloffstart="0" 
+				falloffend="2500" 
+			/>
+
+			<sound
+				volume=".2"
+				sample="/heroes/emerald_warden/sounds/impact.wav"
+				linearfalloff="true"
+				falloffstart="0" 
+				falloffend="2500" 
+			/>
+			
+			<simpleemitter
+				count="15"
+				bone="_bone_centerofchest"
+				spawnrate="150"
+				minparticlelife="250"
+				maxparticlelife="550"
+				speed="300"
+				drag="0.10"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="10 10 10"
+				position="0 0 0"
+				depthbias="25"
+			>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					width="1"
+					startscale="11"
+					minendscale="0"
+					maxendscale="5"
+					startcolor=".2 0 .25"
+					midcolor=".2 0 .25"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor="1 0 1"
+				midcolor=".2 0 .2"
+				midcolorpos="0.25"
+				endcolor="0"
+				startsize="150"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="350"
+				param="0.1"	
+				startsize="50"
+				endsize="225"
+				startalpha="0"
+				midalpha=".65"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>

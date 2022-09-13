@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Vermilion3"
+
+	lifetime="750"
+	useexactlifetime="true"
+	gravity="0"
+
+	model="/shared/models/invis.mdf"
+	modelscale="1"
+	traileffect=""
+	impacteffect="effects/ability_01.effect"
+	dynamicprecache="effects/ability_01.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/ability_01.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<spawnaffector name="Affector_Vermilion3" target="target_position" />
+		<!-- Dynamic VFX -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_position" target="" occlude="true" />
+	</onimpact>
+</projectile>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect persistent="1" name="deathExplosionLarge" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".7" >
+
+		<model
+			life="500"
+			bone="_bone_centerofchest"
+			position="0 0 0"
+			expirelife="500"
+			name="emitter0" 
+			anim="idle"
+			model="/shared/effects/models/circle_of_bones/model.mdf"
+			scale="1"
+			startcolor="0 0 0"
+			midcolor="0 0 0"
+			endcolor="0 0 0"
+			midcolorpos=".75"
+			startalpha="0"
+			midalpha="0"
+			endalpha="0"
+			midalphapos=".4"
+			rollspeed="3000"
+		>
+		
+			<template name="trails">
+				<trailemitter
+					name="trail01"
+					position="0 0 0"
+					bone="{bone}"
+					spawnrate="217"
+					particlelife="400"
+					subframepose="1"
+					texpostime="1000"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/soul_projectile_white2.material"
+				>
+					<particle
+						startcolor=".2 0 0"
+						endcolor="0 0 0"
+						startalpha="1"
+						midalpha="0"
+						endalpha="0"
+						size="20"
+					/>
+				</trailemitter>
+					<trailemitter
+					directionalspace="local"
+					bone="{bone}"
+					spawnrate="3250"
+					particlelife="400"
+					direction="0 1 -1"
+					angle="0"
+					minspeed="50" maxspeed="100"
+					drag=".5"
+					texpostime="500"
+					texposscale="0"
+					mintexstretchscale=".1" maxtexstretchscale="1.5"
+					material="/shared/effects/materials/light_trail.material"
+					gravity="-1"
+					size="2"
+				>
+					<particle
+						startcolor="1 .275 .275" 
+						endcolor="0"
+						size="10"
+					/>
+				</trailemitter>
+			</template>
+			
+			<instance name="trails" bone="_bone_fx_01"/>
+			<instance name="trails" bone="_bone_fx_02"/>
+			<instance name="trails" bone="_bone_fx_03"/>
+			<instance name="trails" bone="_bone_fx_04"/>
+			<instance name="trails" bone="_bone_fx_05"/>
+			
+		</model>
+		
+		
+		<template name="hand_trail">
+				<trailemitter
+					life="500"
+					directionalspace="local"
+					bone="{bone}"
+					spawnrate="3250"
+					particlelife="400"
+					direction="{direction}"
+					angle="0"
+					minspeed="50" maxspeed="100"
+					drag=".5"
+					texpostime="500"
+					texposscale="0"
+					mintexstretchscale=".1" maxtexstretchscale="1.5"
+					material="/shared/effects/materials/light_trail.material"
+					gravity="-1"
+					position="{position=0 0 0}"
+					size="2"
+				>
+					<particle
+						startcolor="1 .275 .275" 
+						endcolor="0"
+						size="10"
+					/>
+				</trailemitter>
+			</template>
+			<instance name="hand_trail" bone="_bone_lefthand"  direction="0 -1 -1" />
+			<instance name="hand_trail" bone="_bone_rightheand"  direction="0 1 -1" position="-5 -5 0"/>
+			<instance name="hand_trail" bone="_bone_leftfoot"  direction="0 1 -1" position="0 -5 2"/>
+			<instance name="hand_trail" bone="_bone_rightfoot"  direction="0 1 -1" position="3 3 0"/>
+			<!-- <instance name="hand_trail" bone="_bone_leftheand"  direction="0 -1 -1" /> -->
+
+
+      </particlesystem>
+   </definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" />
+	
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+	
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

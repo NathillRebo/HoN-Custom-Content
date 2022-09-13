@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Pandora4"
+
+	lifetime="500"
+	useexactlifetime="true"
+	gravity="0"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+	deatheffect="effects/death.effect"
+	
+	impacteffect="effects/impact.effect"
+	
+	canturn="true"
+	flying="true"
+	flyheight="100"
+	
+	curve="0"
+
+	touchradius="100"
+	maxtouchespertarget="1"
+	touchtargetscheme="enemy_units"
+	toucheffecttype="Magic"
+	touchradiusdiradjust="true"
+	
+	dynamicprecache="effects/impact.effect,effects/death.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<ontouch>
+		<damage effecttype="Magic" amount="35"/>
+		<random min="0" max="11" />
+			<setvar0 a="result" b="1" op="mult"/>
+			<compare a="var0" b="0" op="eq">
+				<applystate name="State_PandoraCurse1" duration="30000" statelevel="param"/>
+			</compare>
+			<else>
+				<compare a="var0" b="1" op="eq">
+					<applystate name="State_PandoraCurse2" duration="30000" statelevel="param" />
+				</compare>
+				<else>
+					<compare a="var0" b="2" op="eq">
+						<applystate name="State_PandoraCurse3" duration="30000" statelevel="param" />
+					</compare>
+					<else>
+						<compare a="var0" b="3" op="eq">
+							<applystate name="State_PandoraCurse4" duration="30000" statelevel="param" />
+						</compare>
+						<else>
+							<compare a="var0" b="4" op="eq">
+								<applystate name="State_PandoraCurse5" duration="30000" statelevel="param" />
+							</compare>
+							<else>
+								<compare a="var0" b="5" op="eq">
+									<applystate name="State_PandoraCurse6" duration="30000" statelevel="param" />
+								</compare>
+								<else>
+									<compare a="var0" b="6" op="eq">
+										<applystate name="State_PandoraCurse7" duration="30000" statelevel="param" />
+									</compare>
+									<else>
+										<compare a="var0" b="7" op="eq">
+											<applystate name="State_PandoraCurse8" duration="30000" statelevel="param" />
+										</compare>
+										<else>
+											<compare a="var0" b="8" op="eq">
+												<applystate name="State_PandoraCurse9" duration="30000" statelevel="param" />
+											</compare>
+											<else>
+												<compare a="var0" b="9" op="eq">
+													<applystate name="State_PandoraCurse10" duration="30000" statelevel="param" />
+												</compare>
+												<else>
+													<applystate name="State_PandoraCurse11" duration="30000" statelevel="param" />
+												</else>
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+		<getscriptvalue name="death_effect" destvar="str1" entity="this_entity" />
+		<playeffectdynamic effect="str1" target="this_position" source="this_position" occlude="true" />
+	</ontouch>
+
+	<onimpact>
+		<damage effecttype="Magic" amount="35"/>
+		<random min="0" max="11" />
+			<setvar0 a="result" b="1" op="mult"/>
+			<compare a="var0" b="0" op="eq">
+				<applystate name="State_PandoraCurse1" duration="30000" statelevel="param"/>
+			</compare>
+			<else>
+				<compare a="var0" b="1" op="eq">
+					<applystate name="State_PandoraCurse2" duration="30000" statelevel="param" />
+				</compare>
+				<else>
+					<compare a="var0" b="2" op="eq">
+						<applystate name="State_PandoraCurse3" duration="30000" statelevel="param" />
+					</compare>
+					<else>
+						<compare a="var0" b="3" op="eq">
+							<applystate name="State_PandoraCurse4" duration="30000" statelevel="param" />
+						</compare>
+						<else>
+							<compare a="var0" b="4" op="eq">
+								<applystate name="State_PandoraCurse5" duration="30000" statelevel="param" />
+							</compare>
+							<else>
+								<compare a="var0" b="5" op="eq">
+									<applystate name="State_PandoraCurse6" duration="30000" statelevel="param" />
+								</compare>
+								<else>
+									<compare a="var0" b="6" op="eq">
+										<applystate name="State_PandoraCurse7" duration="30000" statelevel="param" />
+									</compare>
+									<else>
+										<compare a="var0" b="7" op="eq">
+											<applystate name="State_PandoraCurse8" duration="30000" statelevel="param" />
+										</compare>
+										<else>
+											<compare a="var0" b="8" op="eq">
+												<applystate name="State_PandoraCurse9" duration="30000" statelevel="param" />
+											</compare>
+											<else>
+												<compare a="var0" b="9" op="eq">
+													<applystate name="State_PandoraCurse10" duration="30000" statelevel="param" />
+												</compare>
+												<else>
+													<applystate name="State_PandoraCurse11" duration="30000" statelevel="param" />
+												</else>
+											</else>
+										</else>
+									</else>
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+		<getscriptvalue name="death_effect" destvar="str1" entity="this_entity" />
+		<playeffectdynamic effect="str1" target="this_position" source="this_position" occlude="true" />
+	</onimpact>
+</projectile>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_VermilionAttack"
+
+	speed="1250"
+	gravity="0"
+
+	modelscale="2"
+	
+	model="/heroes/prophet/alt9/projectile/effects/staff/model.mdf"
+	traileffect="/heroes/prophet/alt9/projectile/effects/trail.effect"
+	impacteffect="/heroes/prophet/alt9/projectile/effects/impact.effect"
+>
+</projectile>

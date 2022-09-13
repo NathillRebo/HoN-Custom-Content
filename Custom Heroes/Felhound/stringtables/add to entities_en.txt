@@ -1,0 +1,48 @@
+
+// Hero_Felhound_Custom
+Hero_Felhound_Custom_name										Felhound
+Hero_Felhound_Custom_role										Felhound is a hard carry that requires a bit of setup to become a killing machine, even without many items. His power spikes when he acquires his ultimate ability - killing a few creeps will make him much more deadly than any other hero.
+
+// Ability_Felhound1
+Ability_Felhound1_name											Mana Burn
+Ability_Felhound1_description									Felhound's infernal ferocity manifests in a jolt of negative energy, that is particularly effective against those who use magic.
+Ability_Felhound1_description_simple							Felhound blasts target enemy, burning ^o{80,160,240,320} Mana^* from the target. The mana combusts, dealing Magic Damage equal to the mana that was burned.\n\n^444I learned this from a felstalker!
+Ability_Felhound1_effect_header
+Ability_Felhound1_tooltip_flavor								I learned this from a felstalker!
+Ability_Felhound1_IMPACT_effect									The enemy loses ^o{80,160,240,320} Mana^*, while also taking Magic Damage equal to the mana that was burned this way.
+
+// Ability_Felhound2
+Ability_Felhound2_name											Butcher's Blades
+Ability_Felhound2_description									Felhound's ferocity makes him more dangerous in combat than most foes. When notably furious, no armor can save from his attacks!
+Ability_Felhound2_description_simple							Passively increases ^oAttack Damage by {8,16,24,32}^*. Activate to triple the bonus for 6 seconds.\n\n^444Time to eat!
+Ability_Felhound2_effect_header
+Ability_Felhound2_tooltip_flavor								Time to eat!
+Ability_Felhound2_IMPACT_effect									Passively increases ^oAttack Damage by {8,16,24,32}^*. Activate to triple the bonus for 6 seconds.
+
+// State_Felhound2
+State_Felhound2_name											Butcher's Blades
+
+// Ability_Felhound3
+Ability_Felhound3_name											Take Down
+Ability_Felhound3_name:shardofthemaster_boost					^pTake Down^*
+Ability_Felhound3_description									Felhound leaps at his enemies with fury and rage, rending his foes on landing.
+Ability_Felhound3_description_simple							Felhound leaps at the target, dealing it ^o{90,140,190,240} Physical Damage^* and causing it to ^otake {14,18,22,26}% more damage^* for 3 seconds.\n\n^pShard of the Master^* makes this ability also hit all enemies around the target.\n\n^444Straight at you!
+Ability_Felhound3_description_simple:shardofthemaster_boost		Felhound leaps at the target, dealing ^o{90,140,190,240} Physical Damage^* ^pto all enemies within radius and causing them^* to ^otake {14,18,22,26}% more damage^* for 3 seconds.\n\n^444Straight at you!
+Ability_Felhound3_effect_header
+Ability_Felhound3_tooltip_flavor								Straight at you!
+Ability_Felhound3_IMPACT_effect									The enemy takes ^o{90,140,190,240} Physical Damage^* and takes ^o{14,18,22,26}% more damage^* for 3 seconds.
+
+// State_Felhound3_Debuff
+State_Felhound3_Debuff_name										Taken Down
+
+// Ability_Felhound4
+Ability_Felhound4_name											Killing Frenzy
+Ability_Felhound4_name:ult_boost								^gMurder Fiesta^*
+Ability_Felhound4_description									Felhound becomes more and more deadly for as long as he is killing.
+Ability_Felhound4_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Increases maximum charges to 15 and increases their duration to 15 seconds.
+Ability_Felhound4_description_simple							On kill, increases ^oAgility by {2,3,4}^* and ^oMovement Speed by {4,5,6}^* for 10 seconds. Stacks up to 10 times.\n\n^gStaff of the Master^* increases duration to 15 seconds and maximum charges to 15 seconds.\n\n^444MASTA KILLA!!!
+Ability_Felhound4_description_simple:ult_boost					On kill, increases ^oAgility by {2,3,4}^* and ^oMovement Speed by {4,5,6}^* for ^g15^* seconds. Stacks up to ^g15^* times.\n\n^444MASTA KILLA!!!
+Ability_Felhound4_effect_header
+Ability_Felhound4_tooltip_flavor								MASTA KILLA!!!
+Ability_Felhound4_IMPACT_effect									On kill, increases ^oAgility by {2,3,4}^* and ^oMovement Speed by {4,5,6}^* for 10 seconds. Stacks up to 10 times.
+Ability_Felhound4_IMPACT_effect:ult_boost						On kill, increases ^oAgility by {2,3,4}^* and ^oMovement Speed by {4,5,6}^* for ^g15^* seconds. Stacks up to ^g15^* times.

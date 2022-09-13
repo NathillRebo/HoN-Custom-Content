@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Valor4"
+	
+	passiveeffect="effects/state.effect"
+	icon="icon.tga"
+	
+	attackspeed="0.25,0.3,0.35"
+	movespeedmultiplier="0.25,0.3,0.35"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+</state>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Pandora1"
+
+	speed="1300"
+	gravity="5000"
+
+	modelscale="1"
+	model="effects/orb/orb.mdf"
+	traileffect="effects/trail.effect"
+
+	effectscale="1"
+	impacteffect="projectile/effects/ability_01_impact.effect"
+
+>
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<spawnaffector name="Affector_Pandora1" target="this_position" />
+			</onimpact>
+		</combatevent>
+	</onimpact>
+</projectile>

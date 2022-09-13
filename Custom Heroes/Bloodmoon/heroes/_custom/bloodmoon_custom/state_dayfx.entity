@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_DayFX"
+	
+	passiveeffect=""
+	deathpersist="true"
+	
+	ishidden="true"
+	icon="icon.tga"
+	
+	propagatetoillusions="true"
+	modifierkey="Day_Solstice"
+>
+	<oninflict>
+			<hasavatarkey name="Hero_Solstice.Alt7">
+			<playeffect effect="alt7/day_change.effect" target="source_entity" ignoreculling="true"/>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Solstice.Alt8">
+				<playeffect effect="alt8/day_change.effect" target="source_entity" ignoreculling="true"/>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Solstice.Alt9">
+					<playeffect effect="alt9/day_change.effect" target="source_entity" ignoreculling="true"/>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Solstice.Alt10">
+						<playeffect effect="alt10/day_change.effect" target="source_entity" ignoreculling="true"/>
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_Solstice.Alt11">
+								<playeffect effect="alt11/day_change.effect" target="source_entity" ignoreculling="true" />
+							</hasavatarkey>
+					</else>
+				</else>
+			</else>
+			</else>
+			<pausevoiceovers duration="3500" />
+	</oninflict>
+	
+	<!-- This state now does nothing but wait for night to come... -->
+	<onframe />
+
+	<!-- Switch to night state -->
+	<modifier key="solstice_night" condition="night" modpriority="102">
+		<onframe>
+			<!-- Do not switch automatically when Sotm is present -->
+			<hasmodifier entity="this_owner_entity" name="ult_boost" />
+			<else>
+				<applystate name="State_Solstice_NightFX" continuous="true" ignoreinvulnerable="true"/>
+				<expire/>
+			</else>
+		</onframe>
+	</modifier>
+	
+	<modifier key="ult_boost" modpriority="100"
+		
+		modifierkey2="Day_Solstice_Ult"
+	>	
+		<onframe>
+			<hasmodifier entity="this_owner_entity" name="ult_boost" />
+			<else>
+				<deactivatemodifierkey name="ult_boost" />
+			</else>
+			<activatemodifierkey name="checked" />
+		</onframe>    
+	</modifier>
+	
+	<modifier key ="checked" modpriority="101">
+		<onframe />
+	</modifier>
+</state>

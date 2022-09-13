@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Alexandrite_Paragon_Ally_Spot"
+
+	icon=""
+	passiveeffect=""
+	propagatetoillusions="false"
+	effecttype=""
+	ishidden="true"
+>
+ <onframe>
+	<areaofeffect
+    radius="950"
+    targetscheme="ally_heroes"
+    targetselection="all"
+    ignoreinvulnerable="true"
+   >
+   <hasmodifier entity="target_entity" name="Jeraziah_Sound">
+   <playeffect effect="spot_jera.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Ally_Spot" source="source_entity" />
+   <expire />
+    </hasmodifier>
+	<else>
+	<hasmodifier entity="target_entity" name="Paragon_Sound_Em">
+   <playeffect effect="spot_paragon.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Ally_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   	<else>
+	<hasmodifier entity="target_entity" name="Paragon_Sound_Zircon">
+   <playeffect effect="spot_paragon.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Ally_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	   	<hasmodifier entity="target_entity" name="Paragon_Sound_Sapphire">
+   <playeffect effect="spot_paragon.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Ally_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	   <hasmodifier entity="target_entity" name="Paragon_Sound_Topaz">
+   <playeffect effect="spot_paragon.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Ally_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	   <hasmodifier entity="target_entity" name="Paragon_Sound_Garnet">
+   <playeffect effect="spot_paragon.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Ally_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	   <hasmodifier entity="target_entity" name="Paragon_Sound_Para">
+   <playeffect effect="spot_paragon.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Ally_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	   <hasmodifier entity="target_entity" name="Paragon_Sound_Tourmaline">
+   <playeffect effect="spot_paragon.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Ally_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	   <hasmodifier entity="target_entity" name="Paragon_Sound_Lapis">
+   <playeffect effect="spot_paragon.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Ally_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	   <hasmodifier entity="target_entity" name="Paragon_Sound_Bloodstone">
+   <playeffect effect="spot_paragon.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Ally_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	   <hasmodifier entity="target_entity" name="Paragon_Sound_Carnelian">
+   <playeffect effect="spot_paragon.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Ally_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	   <hasmodifier entity="target_entity" name="Paragon_Sound_Spectrum">
+   <playeffect effect="spot_paragon.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Ally_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	   <hasmodifier entity="target_entity" name="Paragon_Sound_Rift">
+   <playeffect effect="spot_paragon.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Ally_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	</else>
+	</else>
+	</else>
+	</else>
+	</else>
+	</else>
+	</else>
+	</else>
+	</else>
+	</else>
+	</else>
+	</else>
+	</else>
+   </areaofeffect>
+   </onframe>
+
+</state>

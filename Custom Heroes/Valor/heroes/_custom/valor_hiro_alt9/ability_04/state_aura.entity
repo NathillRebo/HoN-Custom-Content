@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Valor4_Aura"
+	
+	passiveeffect="effects/state.effect"
+	icon="icon.tga"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<aura name="Valor4_Aura" state="State_Valor4_Secondary" radius="600" targetscheme="ally_units" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+</state>

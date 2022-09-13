@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1">
+		
+
+			<model
+				position="0 0 0"
+				expirelife="500"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale="1"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				rollspeed="180"
+				roll="45"
+			>
+				<template name="trails">
+					<trailemitter
+
+						spawnrate="50"
+						particlelife="300"
+						texpostime="300"
+						texposscale="0.0"
+						texstretchscale=".4"
+						position="{zpos}"
+						material="/shared/effects/materials/arrow_trail.material"
+					>
+						<particle
+							startcolor=".5"
+							midcolor="0 .35 .5"
+							endcolor="0 0 0"
+							startsize="6"
+							midsize="14"
+							endsize="1"
+							midsizepos="0.2"
+					 />
+					</trailemitter>	
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01" zpos="10 0 0"/>
+				<instance name="trails" bone01="_bone_fx_03" zpos="-10 0 0"/>
+				<instance name="trails" bone01="_bone_fx_05" zpos="0 0 0"/>
+			</model>
+
+			<model
+				position="0 0 0"
+				expirelife="50"
+				name="emitter0" 
+				anim="idle"
+				model="ice/model.mdf"
+				material="/shared/effects/materials/shell2.material"
+				startscale="1"
+				endscale="0"
+				color="1 2 3"
+				startalpha=".65"
+				endalpha="0"
+				rollspeed="1500"
+			>
+				<billboard
+					bone="_bone_fx_01"
+					material="/shared/effects/materials/flare_03.material"
+					position="0 0 0"
+					size="1406"
+					startcolor=".1 .2 .3"
+					endcolor="0 0 0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					yaw="0"
+					depthbias="25"
+				/>
+				
+				<billboard
+					bone="_bone_fx_01"
+					material="/shared/effects/materials/flare_03.material"
+					position="0 0 0"
+					size="703"
+					startcolor=".1 .2 .3"
+					endcolor="0 0 0"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					yaw="90"
+					depthbias="25"
+				/>
+			</model>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<simpleemitter
+				spawnrate="500"
+				minparticlelife="150"
+				maxparticlelife="300"
+				offsetsphere="25 25 8"
+				minspeed="10.0"
+				maxspeed="30"
+				direction="0 0 1"
+				material="/shared/effects/materials/snowflake.material"
+			>
+				<particle
+					maxangle="359"
+					maxanglespeed="30"
+					minanglespeed="-30"
+					minscale="18"
+					maxscale="35"
+					startcolor="1 1 1"
+					midcolor="1 1 1"
+					endcolor=".35 .7 1"
+					midcolorpos=".25"
+					startalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+				/>
+			</simpleemitter> 
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<simpleemitter
+				count="1"
+				spawnrate="1000"
+				particlelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle
+					startcolor="0 .15 .5"
+					endcolor="0 0 0"
+					startsize="351"
+					endsize="1054"
+					param="0.5"
+					startalpha=".3"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".75"
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="1"
+				spawnrate="1000"
+				particlelife="250"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle
+					startcolor=".3 .7 1"
+					endcolor="0 0 0"
+					startsize="176"
+					endsize="351"
+					param="0.5"
+					startalpha=".3"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".75"
+					lockup="true"
+					lockright="1"
+					pitch="0"
+					flare="0"
+					yaw="00"
+				/>
+			</simpleemitter>
+
+			
+			
+			
+			
+			
+
+		</particlesystem>
+	</definitions>
+	
+<thread>
+	<spawnparticlesystem instance="instance1" particlesystem="system0" />
+	<spawnmodifier instance="instance0"/>
+	<waitfordeath  instance="instance0"/>
+	<waitfordeath  instance="instance1"/>
+</thread>
+</effect>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Srikandi_W"
+
+	speed="1260"
+	gravity="800"
+
+	modelscale=".5"
+	model="/shared/models/invis.mdf"
+
+	traileffect="effects/arrow_trail_w.effect"
+	impacteffect="effects/impact_w.effect"
+>	
+</projectile>

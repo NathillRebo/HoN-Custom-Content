@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ardent2_Self"
+	
+	icon="icon.tga"
+	passiveeffect="effects/charging.effect"
+	impactinterval="3000"
+	armor="2,4,6,8"
+	magicarmor="2,4,6,8"
+>
+	<onimpact>
+		<!-- Damage calculation -->
+		<setvar0 a="75,125,175,225" b="1" op="mult" />
+		<spawnaffector name="Affector_Ardent2" target="source_entity" param="var0" />
+		<hasmodifier name="shardofthemaster_boost">
+			<spawnaffector name="Affector_Ardent2_Shard" target="source_entity" param="var0" />
+		</hasmodifier>
+	</onimpact>
+</state>

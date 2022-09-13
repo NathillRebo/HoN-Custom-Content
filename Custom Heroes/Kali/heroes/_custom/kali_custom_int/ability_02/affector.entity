@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Kali2"
+
+	radius="525"
+	arc="60"
+	
+	lifetime="50"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	maximpactspertarget="1"
+
+	effect="effects/impact.effect"
+	
+>
+	<onspawn>
+		<!-- Explosion art -->
+		<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="0 300 0" />
+		<playeffect effect="effects/explosion.effect" source="pos0" target="" occlude="true" />
+	</onspawn>
+
+	<onimpact>
+		<damage effecttype="Magic" source="this_owner_entity" target="target_entity" amount="90,150,210,270" />
+		<applystate name="State_Kali2" target="target_entity" duration="1800,1900,2000,2100" proxy="proxy_entity"/>
+	</onimpact>
+	
+</affector>

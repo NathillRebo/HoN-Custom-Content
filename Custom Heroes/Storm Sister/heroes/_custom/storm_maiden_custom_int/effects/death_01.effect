@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="Sandy Death">
+	<definitions>
+		<modifier
+			life="1000"
+			name="modifier0"
+			startalpha="1"
+			midalpha="0"
+			endalpha="0"
+		/>
+	<particlesystem name="system0" space="world" scale=".7">
+		<simpleemitter
+			life="1000"
+			bone="_bone_centerofchest"
+			spawnrate="10"
+			minparticlelife="600"
+			maxparticlelife="850"
+			gravity="0"
+			material="/shared/effects/materials/cloud_blend.material"
+			offsetsphere="20 20 5"
+			depthbias="-55"
+			minspeed="50"
+			maxspeed="100"
+			drag="0.5"
+		>
+			<particle
+				maxangle="360"
+				minanglespeed="-50"
+				maxanglespeed="50"
+				startsize="15"
+				endsize="22"
+				color=".5 .6 .7"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				minscale="5.5"
+				maxscale="8.3"
+			/>
+		</simpleemitter>
+		<simpleemitter
+			life="1000"
+			bone="_bone_centerofchest"
+			spawnrate="10"
+			minparticlelife="550"
+			maxparticlelife="750"
+			gravity="0"
+			material="/shared/effects/materials/phantom_smoke_04.material"
+			offsetsphere="20 20 5"
+			depthbias="-55"
+			minspeed="50"
+			maxspeed="100"
+			drag="0.5"
+		>
+			<particle
+				maxangle="360"
+				minanglespeed="-50"
+				maxanglespeed="50"
+				startsize="15"
+				endsize="22"
+				startcolor=".5 .6 .7"
+				endcolor="0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				minscale="5.5"
+				maxscale="8.3"
+			/>
+		</simpleemitter>
+		<simpleemitter	
+			life="1000"			
+			bone="_bone_centerofchest"
+			spawnrate="30"
+			minparticlelife="700"		
+			maxparticlelife="900"		
+			offsetsphere="50 50 5"
+			material="/shared/effects/materials/bubble_add.material"	
+			depthbias="-60"	
+			gravity="35"
+			position="0 0 0"
+		>
+			<particle	
+				color=".6 .8 .8"
+				startsize="2.5"
+				endsize="0"
+				startscale="2.5"
+				endscale="3"		
+				startheightdistort=".2"		
+				lockup="1"
+			/> 
+			<particle	
+				color=".6 .7 .8"
+				startsize="2.5"
+				endsize="0"
+				startscale="2.5"
+				endscale="3"		
+				startheightdistort=".2"		
+				lockup="1"
+			/> 
+		</simpleemitter> 
+		<simpleemitter
+			life="1000"
+			bone="_bone_centerofchest"
+			spawnrate="10"
+			minparticlelife="650"
+			maxparticlelife="950"
+			gravity="0"
+			material="/shared/effects/materials/smoke_particle.material"
+			offsetsphere="20 20 5"
+			depthbias="-55"
+			minspeed="50"
+			maxspeed="100"
+			drag="0.5"
+		>
+			<particle
+				minangle="0"
+				maxangle="360"
+				minanglespeed="-50"
+				maxanglespeed="50"
+				startsize="25"
+				endsize="45"
+				color=".6 .8 .9"
+				startalpha="0"
+				midalpha=".3"
+				endalpha="0"
+				minscale="4.5"
+				maxscale="6.3"
+			/>
+		</simpleemitter>
+		<billboard
+			delay="1000"
+			life="500"
+			color="1.0 1.0 1.0"
+			midalphapos="0.25"
+			startparam="0.03"
+			endparam="0.0"
+			startsize="250"
+			endsize="50"
+			startalpha="0"
+			midalpha=".9"
+			endalpha="0"
+			depthbias="-49"
+			position="0 0 260"
+			material="/shared/effects/materials/refract_pinch.material"
+			lockup="0"
+			pitch="0"
+		/>
+    </particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<waitfordeath instance="instance0" />
+	<wait duration="20000"/>
+	<!-- <die /> -->
+</thread>
+</effect>
+<!-- [min|max][start|mid|end]property[speed][position] -->

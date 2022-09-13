@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Alexandrite_Paragon_Sound_Initiator"
+
+	icon=""
+	passiveeffect=""
+	propagatetoillusions="false"
+	effecttype=""
+	ishidden="true"
+>
+ <onexpired>
+			<areaofeffect
+				global="true"
+				targetscheme="all_heroes"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+				<hasmodifier entity="target_entity" name="Brunhilde_Sound" propagatetoillusions="false">
+					<compare a="source_team" b="target_team" op="ne">
+						<applystate name="State_Alexandrite_Paragon_Enemy_Spot" target="source_entity" duration="150000"/>
+					</compare>
+					<else>
+					</else>
+				</hasmodifier>
+				<else>
+					<hasmodifier entity="target_entity" name="Jeraziah_Sound" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="eq">
+								<applystate name="State_Alexandrite_Paragon_Ally_Spot" target="source_entity" duration="150000"/>
+							</compare>
+						<else>
+						</else>
+					</hasmodifier>
+				<else>
+					<hasmodifier entity="target_entity" name="Ursa_Sound" propagatetoillusions="false">
+						<compare a="source_team" b="target_team" op="ne">
+							<applystate name="State_Alexandrite_Paragon_Enemy_Spot" target="source_entity" duration="150000"/>
+						</compare>
+						<else>
+						</else>
+					</hasmodifier>
+					<else>
+					<hasmodifier entity="target_entity" name="Ursa_Sound_Uschi" propagatetoillusions="false">
+						<compare a="source_team" b="target_team" op="ne">
+							<applystate name="State_Alexandrite_Paragon_Enemy_Spot" target="source_entity" duration="150000"/>
+						</compare>
+						<else>
+						</else>
+					</hasmodifier>
+				<else>
+					<hasmodifier entity="target_entity" name="Paragon_Sound_Em" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="eq">
+								<applystate name="State_Alexandrite_Paragon_Ally_Spot" target="source_entity" duration="150000"/>
+							</compare>
+						</hasmodifier>
+						<else>
+						<hasmodifier entity="target_entity" name="Paragon_Sound_Sapphire" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="eq">
+								<applystate name="State_Alexandrite_Paragon_Ally_Spot" target="source_entity" duration="150000"/>
+							</compare>
+							</hasmodifier>
+						<else>
+						<hasmodifier entity="target_entity" name="Paragon_Sound_Topaz" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="eq">
+								<applystate name="State_Alexandrite_Paragon_Ally_Spot" target="source_entity" duration="150000"/>
+							</compare>
+							</hasmodifier>
+						<else>
+						<hasmodifier entity="target_entity" name="Paragon_Sound_Garnet" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="eq">
+								<applystate name="State_Alexandrite_Paragon_Ally_Spot" target="source_entity" duration="150000"/>
+							</compare>
+							</hasmodifier>
+						<else>
+						<hasmodifier entity="target_entity" name="Paragon_Sound_Para" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="eq">
+								<applystate name="State_Alexandrite_Paragon_Ally_Spot" target="source_entity" duration="150000"/>
+							</compare>
+							</hasmodifier>
+						<else>
+						<hasmodifier entity="target_entity" name="Paragon_Sound_Tourmaline" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="eq">
+								<applystate name="State_Alexandrite_Paragon_Ally_Spot" target="source_entity" duration="150000"/>
+							</compare>
+							</hasmodifier>
+						<else>
+						<hasmodifier entity="target_entity" name="Paragon_Sound_Lapis" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="eq">
+								<applystate name="State_Alexandrite_Paragon_Ally_Spot" target="source_entity" duration="150000"/>
+							</compare>
+							</hasmodifier>
+						<else>
+						<hasmodifier entity="target_entity" name="Paragon_Sound_Bloodstone" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="eq">
+								<applystate name="State_Alexandrite_Paragon_Ally_Spot" target="source_entity" duration="150000"/>
+							</compare>
+							</hasmodifier>
+						<else>
+						<hasmodifier entity="target_entity" name="Paragon_Sound_Carnelian" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="eq">
+								<applystate name="State_Alexandrite_Paragon_Ally_Spot" target="source_entity" duration="150000"/>
+							</compare>
+							</hasmodifier>
+						<else>
+						<hasmodifier entity="target_entity" name="Paragon_Sound_Spectrum" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="eq">
+								<applystate name="State_Alexandrite_Paragon_Ally_Spot" target="source_entity" duration="150000"/>
+							</compare>
+						</hasmodifier>
+						<else>
+						<hasmodifier entity="target_entity" name="Paragon_Sound_Rift" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="eq">
+								<applystate name="State_Alexandrite_Paragon_Ally_Spot" target="source_entity" duration="150000"/>
+							</compare>
+						<else>
+						</else>
+					</hasmodifier>
+					<else>
+					<hasmodifier entity="target_entity" name="Paragon_Sound_Zircon" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="eq">
+								<applystate name="State_Alexandrite_Paragon_Ally_Spot" target="source_entity" duration="150000"/>
+							</compare>
+						<else>
+						</else>
+					</hasmodifier>
+				<else>
+				<hasmodifier entity="target_entity" name="MasterOfArms_Magnetic_Alt7" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="ne">
+								<applystate name="State_Alexandrite_Paragon_Enemy_Spot" target="source_entity" duration="150000"/>
+							</compare>
+						<else>
+						</else>
+					</hasmodifier>
+				<else>
+				<hasmodifier entity="target_entity" name="MasterOfArms_Electrical_Alt7" propagatetoillusions="false">
+							<compare a="source_team" b="target_team" op="ne">
+								<applystate name="State_Alexandrite_Paragon_Enemy_Spot" target="source_entity" duration="150000"/>
+							</compare>
+						<else>
+						</else>
+					</hasmodifier>
+				<else>
+			    </else>
+			    </else>
+			    </else>
+			    </else>
+			    </else>
+				</else>
+				</else>
+			    </else>
+			    </else>
+			    </else>
+			    </else>
+			    </else>
+				</else>
+				</else>
+			    </else>
+				</else>
+				</else>				
+				</else>	
+			</areaofeffect>
+   </onexpired>
+
+</state>

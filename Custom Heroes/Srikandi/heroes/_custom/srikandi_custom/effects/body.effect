@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="world" scale=".35">
+
+		<template name="fire">
+			
+			
+			<twopointemitter
+				bone_a="{bone_a}"
+				bone_b="{bone_b}"
+				spawnrate="75"
+				particlelife="600"
+				angle="0.0"
+				offsetsphere="7"
+				material="/shared/effects/materials/soul_projectile2.material"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					maxanglespeed="360"
+					minanglespeed="-360"
+					color=".5"
+					startsize="15"
+					endsize="0"
+					startanchor="1"
+					endanchor=".75"
+					startalpha="1"
+					endalpha="0"
+				 />	
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="{bone_a}"
+				bone_b="{bone_b}"
+				spawnrate="75"
+				particlelife="600"
+				angle="0.0"
+				offsetsphere="7"
+				material="/shared/effects/materials/flame.material"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					maxanglespeed="360"
+					minanglespeed="-360"
+					color=".5"
+					startsize="15"
+					endsize="0"
+					startanchor="1"
+					endanchor=".75"
+					startalpha="1"
+					endalpha="0"
+				 />	
+			</twopointemitter>
+				
+		</template>
+		
+		<instance name="fire" bone_a="_bone_weapon3" bone_b="Box002" size="25"/>
+		<instance name="fire" bone_a="Box002" bone_b="_bone_weapon1" size="25"/>
+	-->	
+		<template name="beam02">
+		<beam
+				bone_a="{bone_a}"
+				bone_b="{bone_b}"
+				material="/shared/effects/materials/glow_02.material"
+				size="{size}"
+				color=".75 .25 -1"
+			/>
+		</template>
+		
+		<instance name="beam02" bone_a="_bone_weapon3" bone_b="Box002" size="35"/>
+		<instance name="beam02" bone_a="Box002" bone_b="_bone_weapon1" size="35"/>
+		<instance name="beam02" bone_a="_bone_back001" bone_b="_bone_back002" size="15"/>
+		<instance name="beam02" bone_a="_bone_back003" bone_b="_bone_back004" size="15"/>
+		
+		<template name="beam">
+		<beam
+				bone_a="{bone_a}"
+				bone_b="{bone_b}"
+				material="/shared/effects/materials/glow_02.material"
+				size="{size}"
+				color=".75 .25 -1"
+			/>
+		</template>
+		
+		<instance name="beam" bone_a="_bone_weapon3" bone_b="Box002" size="5"/>
+		<instance name="beam" bone_a="Box002" bone_b="_bone_weapon1" size="5"/>
+		<instance name="beam" bone_a="_bone_back001" bone_b="_bone_back002" size="1"/>
+		<instance name="beam" bone_a="_bone_back003" bone_b="_bone_back004" size="1"/>
+		
+		<template name="glow">
+				<billboard
+					bone="{bone}"
+					position="0 0 0"
+					expirelife="250"
+					startcolor=".4 .2 0"
+					endcolor="0 0 0"
+					size="50"
+					rollspeed="-1250"
+					depthbias="-10"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+				
+				<billboard
+					bone="{bone}"
+					position="0 0 0"
+					expirelife="250"
+					startcolor=".25"
+					endcolor="0 0 0"
+					size="14"
+					rollspeed="-1250"
+					depthbias="-10"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+				<billboard
+					bone="{bone}"
+					material="/shared/effects/materials/blink.material"
+					startcolor="0 0 0"
+					midcolor=".2"
+					endcolor="0"
+					maxroll="360"
+					size="50"
+					depthbias="-25"
+					life="1000"
+					directionalspace="local"
+					rollspeed="-50"
+					loop="true"
+				/>
+			</template>
+			
+			<instance name="glow" bone="_bone_weapon1"/>
+			<instance name="glow" bone="_bone_weapon3"/>
+			
+		<controller bone="_bone_origin" >
+		<simpleemitter				
+				position="0 0 50"
+				spawnrate="32"
+				minspeed="35"
+				maxspeed="100"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				offsetsphere="50 50 50"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity="-0.1"
+				depthbias="-10"
+				directionalspace="local"
+				particledirectionalspace="local"
+				direction="0 0 -1"
+				gravity="5"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					color=".5"
+					minsize="100"
+					maxsize="125"
+					endsize="150"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".5"
+					startanchor="1"
+					endanchor=".75"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter		
+				position="0 0 50"
+				spawnrate="2"			
+				particlelife="500"			
+				gravity="-2"
+				speed="20"
+				drag=".01"
+				depthbias="-200"
+				material="/shared/effects/materials/refract_wellwave.material"
+				offsetsphere="10 10 10"
+				minangle="-265"
+				maxangle="265"
+				direction="0 0 -1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="100"
+					endsize="125"
+					param=".0141151"
+					startalpha="0.0"
+					midalpha="1"
+					endalpha="0"
+					startanchor="1"
+					endanchor="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="100"
+				position="0 0 50"
+				particlelife="600"
+				speed="310"
+				drag="0.07"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="20 20 50"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					startcolor=".4 .1 .1"
+					endcolor="0"
+					maxanglespeed="30"
+					startsize="25"
+					endsize="100"
+					midalphapos=".3"
+					startanchor="1"
+					endanchor=".75"					
+				 />	
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="100"
+				position="0 0 50"
+				particlelife="600"
+				speed="310"
+				drag="0.07"
+				material="/shared/effects/materials/soul_projectile2.material"
+				offsetsphere="20 20 50"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					maxanglespeed="360"
+					minanglespeed="-360"
+					color=".5"
+					startsize="50"
+					endsize="0"
+					startanchor="1"
+					endanchor=".75"
+					startalpha="1"
+					endalpha="0"
+				 />	
+			</simpleemitter>
+
+			
+			</controller>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />		
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Cyclops4"
+
+	icon="icon.tga"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	casteffect="effects/state_begin.effect"
+
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	novoiceresponse="true"
+	nonaggressive="true"
+	anim="ability_4"
+
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="60000,40000,20000"
+	manacost="130"
+	noresponse="true"
+
+	nosilence="true"
+	nostun="true"
+	noforce="true"
+	
+	deflection="8,16,24"
+	deflectionchance=".8"
+	
+	modifierkey=""
+>
+	<onimpact>
+		<dispel type="StatusDebuff" target="source_entity" />
+		<dispel type="StatusDisable" target="source_entity" />
+		<clearforcedorders target="source_entity" />
+		<applystate name="State_Cyclops4" target="source_entity" duration="1000,1500,2000" />
+	</onimpact>
+	
+	<onattackingdamageevent>
+		<targettype type="enemy_buildings" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.05,1.1,1.15" op="mult" />
+		</else>
+	</onattackingdamageevent>
+
+	<modifier key="ult_boost" modpriority="100"/>
+</ability>

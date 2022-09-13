@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1" deferred="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+			
+			<sound
+				volume=".5"
+				sample="/heroes/circe/ability_01/sounds/state_loop.wav"
+				linearfalloff="true"
+				falloffstart="1000"		
+				falloffend="1300" 
+			/>
+			
+			<model
+				name="ababa"
+				directionalspace="global"
+				model="cage/model.mdf"
+				scale="2.5"
+				anim="idle"
+				material="/heroes/circe/material.material"
+				expirelife="250"
+				startalpha="1"
+				endalpha="0"
+			>
+				<template name="smokey_stuff" >
+					<twopointemitter
+						bone_a="{a}"
+						bone_b="{b}"
+						spawnrate="15"
+						minparticlelife="300"
+						maxparticlelife="800"
+						gravity="-2"
+						material="/shared/effects/materials/phantom_white.material"
+						depthbias="-5"
+					>
+						<particle
+							maxangle="360"
+							minanglespeed="-6"
+							maxanglespeed="6"
+							color="0 0 0"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+							startsize="0"
+							midsizepos=".35"
+							minendsize="16"
+							maxendsize="45"
+						/>
+					</twopointemitter>
+				</template>
+				
+				<instance name="smokey_stuff" a="Bone037" b="_bone_fx_01" />
+				<instance name="smokey_stuff" a="Bone002" b="_bone_fx_02" />
+				<instance name="smokey_stuff" a="Bone007" b="_bone_fx_03" />
+				<instance name="smokey_stuff" a="Bone012" b="_bone_fx_04" />
+				<instance name="smokey_stuff" a="Bone017" b="_bone_fx_05" />
+				<instance name="smokey_stuff" a="Bone022" b="_bone_fx_06" />
+				<instance name="smokey_stuff" a="Bone027" b="_bone_fx_07" />
+				<instance name="smokey_stuff" a="Bone032" b="_bone_fx_08" />
+			</model>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>
+<!-- [min|max][start|mid|end]property[speed][position] -->

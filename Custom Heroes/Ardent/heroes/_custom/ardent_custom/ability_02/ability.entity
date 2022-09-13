@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ardent2"
+
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="0"
+	castactiontime="0"
+	targetradius="450"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_self"
+	
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nonaggressive="true"
+	
+	manacost="55"
+	cooldowntime="15000,13000,11000,9000"
+	
+>
+	<onimpact>
+		<applystate name="State_Ardent2_Self" duration="3000" />
+	</onimpact>
+	<modifier key="shardofthemaster_boost" modpriority="100"/>
+</ability>

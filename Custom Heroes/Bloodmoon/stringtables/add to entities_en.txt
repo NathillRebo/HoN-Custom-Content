@@ -1,0 +1,54 @@
+
+// Hero_Bloodmoon_Custom
+Hero_Bloodmoon_Custom_name										Bloodmoon
+Hero_Bloodmoon_Custom_role
+
+// Ability_Bloodmoon1
+Ability_Bloodmoon1_name											Feather Step
+Ability_Bloodmoon1_description									Bloodmoon teleports through the target and makes a grievious attack against it.
+Ability_Bloodmoon1_description_simple							Bloodmoon teleports through the target and makes an attack against it with a bonus of ^o+{10,40,70,100} to its Damage^*. Enemy is ^oimmobilized for 0.6 seconds^* after teleport.\n\n^444There is no escape.
+Ability_Bloodmoon1_effect_header
+Ability_Bloodmoon1_tooltip_flavor								There is no escape.
+Ability_Bloodmoon1_IMPACT_effect								The attack deals an additional ^o{10,40,70,100} Damage^* and leaves the target ^oimmobilized for 0.6 seconds^*.
+
+// Ability_Bloodmoon2
+Ability_Bloodmoon2_name											Harvest
+Ability_Bloodmoon2_description									Bloodmoon harvests the lifeforce of enemies around her, regainin health herself in the process.
+Ability_Bloodmoon2_description_simple							loodmoon deals ^o{18,35,52,69} Magic Damage^* per second to enemies around her and heals for ^o{5,9,13,17} Health^* per second for each enemy. Lasts 4 seconds.\n\n^444Begone, foul fiends!
+Ability_Bloodmoon2_effect_header
+Ability_Bloodmoon2_tooltip_flavor								Begone, foul fiends!
+Ability_Bloodmoon2_IMPACT_effect								Enemies that are within Harvest's range take ^o{18,35,52,69} Magic Damage^* and heal Bloodmoon for ^o{5,9,13,17} Health^* per second for as long as they remain within range. Lasts 4 seconds.
+
+// State_Bloodmoon2_Self
+State_Bloodmoon2_Self_name										Harvest
+State_Bloodmoon2_Self_description								Dealing {18,35,52,69} Magic Damage per second to enemies around.\nHealing {5,9,13,17} Health per second per enemy within radius.
+
+// State_Bloodmoon2_Enemy
+State_Bloodmoon2_Enemy_name										Harvested
+State_Bloodmoon2_Enemy_description								Taking {18,35,52,69} Magic Damage per second.\nHealing Bloodmoon for {5,9,13,17} Health per second.
+
+// Ability_Bloodmoon3
+Ability_Bloodmoon3_name											Demon Quelling
+Ability_Bloodmoon3_name:shardofthemaster_boost					^pDemon Quelling^*
+Ability_Bloodmoon3_description									Bloodmoon expels the demons from the target, leaving her foes dizzy.
+Ability_Bloodmoon3_description_simple							Bloodmoon tethers to the target for 2 seconds, draining ^o{30,55,80,105} Health and Mana^* per second. When the tether finishes, the target is also ^ostunned for {0.75,0.8,0.85,0.9} seconds^*.\n\nThe tether can be broken by moving out of its range.\n\n^pShard of the Master^* causes the link to drain 4 Armor, 4 Magic Armor and 35% Movement Speed from the target.\n\n^444Ugh, who put this in you? Have a little respect for yourself. 
+Ability_Bloodmoon3_description_simple:shardofthemaster_boost	Bloodmoon tethers to the target for 2 seconds, draining ^o{30,55,80,105} Health and Mana^* per second^p, while also stealing 4 Armor, 4 Magic Armor and 35% Movement Speed for the duration^*. When the tether finishes, the target is also ^ostunned for {0.75,0.8,0.85,0.9} seconds^*.\n\nThe tether can be broken by moving out of its range.\n\n^444Ugh, who put this in you? Have a little respect for yourself. 
+Ability_Bloodmoon3_effect_header
+Ability_Bloodmoon3_tooltip_flavor								Ugh, who put this in you? Have a little respect for yourself. 
+Ability_Bloodmoon3_IMPACT_effect								The tether drains ^o{30,55,80,105} Health and Mana^* per second and lasts for 2 seconds or until the target moves 465 units away from Bloodmoon. Enemies that are tethered for the full duration are also ^ostunned for {0.75,0.8,0.85,0.9} seconds^*.
+
+// Ability_Bloodmoon4
+Ability_Bloodmoon4_name											The Hunt
+Ability_Bloodmoon4_name:ult_boost								^gThe Reaping^*
+Ability_Bloodmoon4_description									Bloodmoon charges at a distant target with lightning speed, dealing a deadly blow upon reaching it.
+Ability_Bloodmoon4_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Upon reaching your traget, reduce incoming damage, stun duration and debuff duration by 65% for 2 seconds.
+Ability_Bloodmoon4_description_simple							Bloodmoon charges at a distant enemy, dealing ^o{230,440,650} Physical Damage^* upon reaching her target.\n\n^gStaff of the Master^* causes Bloodmoon to reduce incoming damage, stun duration and debuff duration by 65% for 2 seconds after reaching her target.\n\n^444YOU ARE NOT PREPARED
+Ability_Bloodmoon4_description_simple:ult_boost					Bloodmoon charges at a distant enemy, dealing ^o{230,440,650} Physical Damage^* upon reaching her target ^gand causing her to reduce incoming damage, stun duration and debuff duration by 65% for 2 seconds^*.\n\n^444YOU ARE NOT PREPARED
+Ability_Bloodmoon4_effect_header
+Ability_Bloodmoon4_tooltip_flavor								YOU ARE NOT PREPARED
+Ability_Bloodmoon4_IMPACT_effect								The attack deals {230,440,650} Physical damage once she reaches her target.
+Ability_Bloodmoon4_IMPACT_effect:ult_boost						The attack deals {230,440,650} Physical damage once she reaches her target ^gand causes her to reduce incoming damage, stun duration and debuff duration by 65% for 2 seconds^*.
+
+// State_Bloodmoon4_Shield
+State_Bloodmoon4_Shield_name									Reaper's Shroud
+State_Bloodmoon4_Shield_description								-65% Damage Taken

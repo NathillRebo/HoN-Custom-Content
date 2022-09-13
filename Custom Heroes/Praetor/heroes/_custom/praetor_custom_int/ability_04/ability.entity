@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Praetor4"
+	
+	icon="icon.tga"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	actiontype="passive"
+>
+	<onattackingdamageevent>
+		<setvar0 a="damage_attempted" b="0.25,0.35,0.45" op="mult"/>
+		<compare a="target_mana" b="var0" op="lt">
+			<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="add" />
+		</compare>
+		<else>
+			<takemana amount="var0" />	
+		</else>
+	</onattackingdamageevent>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onattackingdamageevent>
+			<evaluate a="source_intelligence" b="target_intelligence" op="sub"/>
+			<evaluate a="result" b="0" op="max"/>
+			<evaluate a="result" b="0.003" op="mult"/>
+			<evaluate a="result" b="0.25,0.35,0.45" op="add"/>
+			<setvar0 a="damage_attempted" b="result" op="mult"/>
+			<compare a="target_mana" b="var0" op="lt">
+				<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="add" />
+			</compare>
+			<else>
+				<takemana amount="var0" />	
+			</else>
+		</onattackingdamageevent>
+	</modifier>
+</ability>

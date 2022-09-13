@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect entityeffectscale="true" deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".45">			
+			<simpleemitter
+				life="300"
+				position="0 0 0"
+				spawnrate="50"
+				minparticlelife="400"
+				maxparticlelife="600"
+				gravity="3"
+				material="/shared/effects/materials/spark_10.material"
+				offsetsphere="10 10 10"
+				direction="0 0 0"
+				minangle="0"
+				maxangle="180"
+				minspeed="90"
+				maxspeed="120"
+				directionalspace="local"
+				inheritvelocity="0.05"
+				
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-70"
+					maxanglespeed="70"
+					size="35"
+					startcolor="0"
+					midcolor="2"
+					endcolor="0 0 0"	
+					midcolorpos=".4"					
+					startalpha="0"
+					midalpha="2"
+					endalpha="0"
+					midalphapos=".75"
+					minscale=".5"
+					maxscale=".9"
+				/>
+			</simpleemitter>
+			
+
+			<simpleemitter
+				gravity="-20"
+				spawnrate="25"
+				minparticlelife="400"
+				maxparticlelife="650"
+				offsetsphere="15 15 0"
+				material="/shared/effects/materials/heathaze.material"
+				depthbias="0"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"		
+					color="1"
+					param=".5"
+					size="3"
+					minstartscale="20"
+					maxstartscale="24"
+					maxendscale="70"
+					minendscale="80"
+					startalpha="0"
+					midalpha=".2"
+					midalphapos="0.2"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<trailemitter
+				directionalspace="local"
+				spawnrate="60"
+				particlelife="800"
+				texpostime="0"
+				texposscale="0"
+				texstretchscale="1"
+				material="/shared/effects/materials/wave_trail.material"
+				position="0 70 0"
+			>
+				<particle
+					startcolor="1 .3 0"
+					midcolor="1 .1 0"
+					endcolor=".8 0 0"
+					size="70"
+					midcolorpos=".4"
+				/>
+			</trailemitter>
+
+			<template name="streak">
+				<trailemitter
+					name="trail02"
+					spawnrate="60"
+					startminparticlelife="{life}"
+					startmaxparticlelife="{life}"
+					endminparticlelife="1"
+					endmaxparticlelife="1" 
+					texpostime="{life}"
+					texposscale="0"
+					texstretchscale="1"
+					position="{position}"
+					material="/shared/effects/materials/arrow_trail_blend.material"
+				>
+					<particle
+						startcolor=".8 .5 0"
+						endcolor=".8 .3 0"
+						startsize="5"
+						midcolorpos=".2"
+						midsize="3"
+						endsize=".5"
+					/>
+				</trailemitter>
+				<trailemitter
+					name="trail02"
+					spawnrate="60"
+					startminparticlelife="{life}"
+					startmaxparticlelife="{life}"
+					endminparticlelife="1"
+					endmaxparticlelife="1" 
+					texpostime="{life}"
+					texposscale="0"
+					texstretchscale="1"
+					position="{position}"
+					material="/shared/effects/materials/arrow_trail.material"
+				>
+					<particle
+						startcolor=".8 .2 0"
+						endcolor=".8 0 0"
+						startsize="5"
+						midcolorpos=".2"
+						midsize="3"
+						endsize=".5"
+					/>
+				</trailemitter>
+			</template>
+			<instance name="streak" life="250" position="-35 0 0"/>
+			
+			<instance name="streak" life="450" position="0 0 0"/>
+			
+			<instance name="streak" life="250" position="35 0 0"/>
+
+			<billboard
+				life="0"
+				color=".3 .75 1"
+				size="200"
+				material="/shared/effects/materials/whitedot.material"
+				bone="staff"
+				position="0 25 0"
+			/>
+			
+			
+			<simpleemitter
+				gravity="-20"
+				spawnrate="30"
+				minparticlelife="500"
+				maxparticlelife="600"
+				offsetsphere="50 50 0"
+				material="/shared/effects/materials/whitedot.material"
+				depthbias="-15"
+				
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"		
+					startcolor="1 0 0"
+					midcolor="1 .3 0"
+					endcolor="1 .3 0"
+					size=".5"
+					minstartscale="1"
+					maxstartscale="1"
+					maxendscale="25"
+					minendscale="15"
+					startalpha="0"
+					midalpha="0.25"
+					midalphapos="0.2"
+					endalpha="0"
+					startanchor="1"
+					endanchor="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

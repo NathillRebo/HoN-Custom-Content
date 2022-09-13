@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system1" space="local" scale="1">
+				<simpleemitter
+					bone="_bone_centerofchest"
+					position="0 0 0"
+					material="/shared/effects/materials/sparks_reveal.material"
+					spawnrate="20"
+					particlelife="750"
+					gravity="-5"
+					speed="30"
+					inheritvelocity="0.05"
+					offsetsphere="30"
+					drag="0.1"
+				>
+					<particle
+						color="1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						maxangle="90"
+						startsize="40"
+						minendsize="55"
+						maxendsize="60"
+						startframe=".3"
+						endframe="1"
+						scale=".8"
+					/>
+				</simpleemitter>
+				
+					
+					
+					
+				<simpleemitter
+					bone="_bone_centerofchest"
+					position="0 0 0"
+					material="/shared/effects/materials/snowflake.material"
+					spawnrate="50"
+					particlelife="650"
+					gravity="-5"
+					speed="30"
+					inheritvelocity="0.05"
+					offsetsphere="30"
+					drag="0.1"
+				>
+					<particle
+						color="1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						maxangle="90"
+						size="20"
+						startframe=".3"
+						endframe="1"
+						minscale=".2"
+						maxscale=".65"
+					/>
+				</simpleemitter>
+				
+				
+			
+				
+				<billboard
+					bone="_bone_centerofchest"
+					material="/shared/effects/materials/whitedot.material"
+					size="125"
+					depthbias="-50"
+					rollspeed="-100"
+					color="0 0 .15"
+					endcolor="0"
+					expirelife="200"
+				/>
+
+				<template name="glow">
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="15"
+					particlelife="850"
+					gravity="-5"
+					speed="10"
+					drag=".01"
+					acceleration="0.0"
+					position="0 0 0"
+					offsetsphere="15"
+					material="/shared/effects/materials/water_spray_add.material"
+					direction="0 0 -1"
+					offsetdirection="0 0 0"
+					offsetradial="0 0 0"
+				>
+					<particle 
+						minangle="-360"
+						maxangle="360"
+						angle="180"
+						startcolor="0"
+						midcolor=".3"
+						endcolor="0"
+						startsize="30"
+						midsize="15"
+						minendsize="40"
+						maxendsize="60"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						midalphapos=".2"
+					/>
+				</simpleemitter>
+				
+				
+					<billboard
+						bone="{bone}"
+						material="/shared/effects/materials/whitedot.material"
+						size="50"
+						depthbias="-50"
+						rollspeed="-100"
+						color="0 .1 .5"
+						endcolor="0"
+						expirelife="200"
+					/>
+					
+					<model
+						bone="{bone}"
+						model="/heroes/behemoth/ability_02/effects/ring.mdf"
+						scale=".18"
+						startcolor=".35"
+						yawspeed="149"
+						rollspeed="360"
+						endcolor="0"
+						expirelife="200"	
+					/>
+					
+					<model
+						bone="{bone}"
+						model="/heroes/behemoth/ability_02/effects/ring.mdf"
+						scale=".18"
+						startcolor=".35"
+						yawspeed="149"
+						rollspeed="-360"
+						endcolor="0"
+						expirelife="200"	
+					/>
+				</template>
+
+				<instance name="glow" bone="_bone_lefthand"/>
+				<instance name="glow" bone="_bone_righthand"/>
+
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

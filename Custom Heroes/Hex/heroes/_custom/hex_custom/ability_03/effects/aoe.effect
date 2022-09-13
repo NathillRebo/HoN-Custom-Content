@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true">
+
+	<definitions>
+		<particlesystem name="system0" space="world" scale="0.75">
+
+			<sound
+				volume="1"
+				sample="../../summon/sounds/spawn.wav"
+				linearfalloff="true"
+				falloffstart="200"
+				falloffend="1400"
+			/>
+
+			<!-- Summon Star FX -->
+
+			<groundsprite
+				life="6000"
+				material="/shared/effects/materials/star2_add.material"
+				size="900"
+				startcolor=".15 .29 .56"
+				midcolor=".22 .44 .84"
+				endcolor="0 0 0"
+				position="-115 0 0"
+				yaw="108"
+			/>
+
+			<light
+				life="1150"
+				startcolor="6 1.8 0"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="200"
+				falloffend="300"
+				position="0 0 50"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<camerashake2 scale="11.0" radius="1200" duration="500" frequency="22" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+
+
+
+
+
+
+

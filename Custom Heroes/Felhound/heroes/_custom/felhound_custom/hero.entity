@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Felhound_Custom"
+	
+	team="Hellbourne"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+
+	preglobalscale="2.025"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="44"
+	targetoffset="0 0 64"
+	infoheight="160"
+
+	category="physical"
+	difficulty="1"
+
+	solorating="0"
+	junglerating="1"
+	carryrating="5"
+	supportrating="1"
+	initiatorrating="0"
+	gankerrating="0"
+	pusherrating="2"
+	rangedrating="0"
+	meleerating="5"
+
+	movespeed="300"
+	turnrate="540"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-0.75"
+	magicarmor="5"
+
+	inventory0="Ability_Felhound1"
+	inventory1="Ability_Felhound2"
+	inventory2="Ability_Felhound3"
+	inventory3="Ability_Felhound4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="400"
+	attackcooldown="1700"
+	attackdamagemin="26"
+	attackdamagemax="30"
+	attacknumanims="3"
+	attackoffset="0 0 0"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Agility"
+	strength="19"
+	strengthperlevel="1.9"
+	agility="24"
+	agilityperlevel="2.8"
+	intelligence="13"
+	intelligenceperlevel="1.3"
+
+	previewmodel="preview.mdf"
+	previewpos="0 0 -50"
+	previewangles="0 0 0"
+	previewscale="2.0"
+	portraitcampos="10 10 10"
+
+	storemodel="preview.mdf"
+	storepos="0 0 -17"
+	storeangles="0 0 0"
+	storescale="1.8"
+
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	deathtime="1000"
+	corpsetime="4000"
+	corpsefadetime="5000"
+> 
+	<recommendeditem name="Item_Critical1" /> 2625
+	<recommendeditem name="Item_Madfreds_BrassKnuckles" /> 4150
+	<recommendeditem name="Item_Damage10" /> 4750
+	<recommendeditem name="Item_ManaBurn2" />  5200
+	<recommendeditem name="Item_Damage9" /> 5600
+	<recommendeditem name="Item_Dawnbringer" /> 6600
+	
+</hero>

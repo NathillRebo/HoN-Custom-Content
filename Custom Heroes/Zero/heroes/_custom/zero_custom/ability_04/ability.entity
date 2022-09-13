@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Zero4"
+
+	icon="icon.tga"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	casteffect="active.effect"
+
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	novoiceresponse="true"
+	nonaggressive="true"
+	anim=""
+
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="180000,130000,80000"
+	noresponse="true"
+
+	modifierkey=""
+>
+	<onimpact>
+		<setvar0 a="source_maxmana" b="1" op="mult" />
+		<applystate name="State_Zero4" duration="2000,2500,3000" target="source_entity"/>
+		<givemana amount="var0" />
+	</onimpact>
+	<onmanareduction>
+		<setvar0 a="18.88" b="combat_manacost" op="mult" />
+		<reducecooldown duration="var0" />	
+	</onmanareduction>
+</ability>

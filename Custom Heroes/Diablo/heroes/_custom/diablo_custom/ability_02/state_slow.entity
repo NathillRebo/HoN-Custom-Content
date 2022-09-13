@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Diablo2"
+
+	icon="icon.tga"
+	
+	passiveeffect=""
+	effecttype="Push"
+	stunned="true"
+	
+	unitwalking="true"
+	restrained="true"
+
+	negativeeffect="slowed"
+	
+	modifierkey="kraken_Whirlpool"
+>
+	<onframe>
+		<push force="-2200" frame="true" source="source_entity" />
+	</onframe>
+	
+</state>

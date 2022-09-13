@@ -1,0 +1,37 @@
+
+// Hero_zzz_Valor
+Hero_zzz_Valor_name												Valor
+
+// Ability_Valor1
+Ability_Valor1_name												Decimate
+Ability_Valor1_description_simple								Valor slashes through her foes, dealing ^o{60,80,100,120} Magic Damage plus {18,23,28,33} per enemy hit^*.\n\n^444That's all you've got?!
+
+// Ability_Valor2
+Ability_Valor2_name												Confound
+Ability_Valor2_description_simple								Valor dashes in the chosen direction, dealing ^o{80,140,200,260} Magic Damage^* to enemies she passes through and ^oTaunting them for ^o{1.4,1.7,2,2.3} seconds^*.\n\n^444I'm here!
+
+// Ability_Valor3
+Ability_Valor3_name												Feint
+Ability_Valor3_name:shardofthemaster_boost						^pFeint^*
+Ability_Valor3_description_simple								When off cooldown, your next attack deals an additional ^o{40,70,100,130} Magic Damage^* and grants you a ^o{40,70,100,130} Health Shield^* for ^o3 seconds^*.\n\n^pShard of the Master^* grants 100% Slow Resistance while the shield holds.\n\n^444Too easy.
+Ability_Valor3_description_simple:shardofthemaster_boost		When off cooldown, your next attack deals an additional ^o{40,70,100,130} Magic Damage^* and grants you a ^o{40,70,100,130} Health Shield^* for ^o3 seconds^*^p, which grants 100% Slow Resistance while it lasts^*.\n\n^444Too easy.
+
+// State_Valor3
+State_Valor3_name												Feint Shield
+State_Valor3_description										{40,70,100,130} Health Shield
+
+// Ability_Valor4
+Ability_Valor4_name												Call to Arms
+Ability_Valor4_name:ult_boost									^gCall to Arms^*
+Ability_Valor4_description_simple								Valor rallies units around her, granting them ^o{25,30,35} Attack Speed and ^o{25,30,35}% Movement Speed^* for 6 seconds, while also providing an aura with the same bonuses. Units affected by the initial cast and the aura gain double benefits.\n\n^gStaff of the Master^* cleanses stuns and disables from units affected by the initial cast. Also slightly reduces mana cost and cooldown.\n\n^444Zerg Rush!
+Ability_Valor4_description_simple:ult_boost						Valor rallies units around her, ^gcleansing stuns and debuffs from them^* and granting them ^o{25,30,35} Attack Speed and ^o{25,30,35}% Movement Speed^* for 6 seconds, while also providing an aura with the same bonuses. Units affected by the initial cast and the aura gain double benefits.\n\n^444Zerg Rush!
+
+// State_Valor4
+State_Valor4_name												Rallied!
+
+// State_Valor4_Aura
+State_Valor4_Aura_name											Call to Arms
+State_Valor4_Aura_description									Provides an aura, which grants {25,30,35} Attack Speed and {25,30,35}% Movement Speed
+
+// State_Valor4_Secondary
+State_Valor4_Secondary_name										Called to Arms

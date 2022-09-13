@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Nereid2"
+
+	icon="icon.tga"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	casteffect=""
+
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	novoiceresponse="true"
+	nonaggressive="true"
+	anim="ability_1"
+
+	casttime="0"
+	castactiontime="0"
+	manacost="75,85,95,105"
+	cooldowntime="13000,12000,11000,10000"
+	noforce="true"
+
+	modifierkey=""
+>
+	<onimpact>
+		<applystate name="State_Nereid2" target="source_entity" duration="5000" />
+	</onimpact>
+	
+	<onattackimpact>
+		<reducecooldown duration="1000"/>
+	</onattackimpact>
+</ability>

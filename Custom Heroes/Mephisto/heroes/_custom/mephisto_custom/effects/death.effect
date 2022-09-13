@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+	
+		<modifier
+			life="10000"
+			color=".7"
+			startalpha="1"
+			midalpha="0"
+			endalpha="0"
+			midalphapos=".15"
+		/>
+
+		<particlesystem name="system0" space="entity" scale=".65">
+		
+			<!-- these emitters are for the fountain portion -->
+			<simpleemitter
+				count="1"
+				life="100"
+				position="0 0 0"
+			>
+				<particle
+				>
+					<model
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".044"
+						life="5500"
+						model="death.mdf"
+						material="stone/material.material"
+						anim="death_1"
+						scale="1.5"
+						color="1 0 0"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="1"
+				life="100"
+				position="0 0 3"
+			>
+				<particle
+				>
+					<model
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".8"
+						life="5500"
+						model="death.mdf"
+						material="stone/material.material"
+						anim="death_1"
+						scale="1.5"
+						color="1 0 0"
+					/>
+				</particle>
+			</simpleemitter>
+
+			
+			<template name="fountain">
+				<controller bone="{bone}" pitch="270" delay="1100">							
+
+				<simpleemitter		
+					spawnrate="1"
+					particlelife="2000"
+					life="2000"
+					speed="10"
+					drag="0"
+					offsetsphere="40 40 0"
+					acceleration="0"
+					material="/shared/effects/materials/refract_waterring.material"
+				>
+
+					<particle
+						color="1.0 1.0 1.0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam=".05"
+						endparam="0.00"
+						startsize="11"
+						endsize="0"
+						depthbias="0"
+						position="0 0 4"
+						lockup="true"
+
+					/>
+				</simpleemitter>	
+
+				<meshemitter
+					mesh="{mesh}"
+					spawnrate="100"
+					life="2000"
+					gravity="18"
+					speed="200"
+					drag="0"
+					minangle="0"
+					maxangle="10"
+					position="0 0 0"
+					particlelife="900"
+					material="/shared/effects/materials/refract_stream.material"					
+				>
+					<particle 
+						param=".2"			
+						startsize="3"
+						endsize="33"				
+						color="1 1 1"
+						turn="1"
+
+						
+					/>
+				</meshemitter>
+
+				<meshemitter		
+					mesh="{mesh}"
+					spawnrate="100"		
+					gravity="18"
+					speed="400"
+					life="2000"
+					drag="0"
+					minangle="0"
+					maxangle="40"
+					position="0 0 0"
+					particlelife="200"
+					material="/shared/effects/materials/refract_stream.material"			
+				>
+					<particle 
+						param=".2"			
+						startsize="6"
+						endsize="6"				
+						color="1 1 1"
+						turn="1"
+					/>
+				</meshemitter>
+
+				<meshemitter		
+					mesh="{mesh}"
+					spawnrate="20"		
+					gravity="18"
+					speed="200"
+					drag="0"
+					life="2000"
+					minangle="0"
+					maxangle="10"
+					position="0 0 10"
+					particlelife="700"
+					material="/shared/effects/materials/water_spray_blend.material"			
+				>
+					<particle 
+						param=".2"			
+						startsize="0"
+						endsize="112"				
+						color="1 1 1"
+						startalpha="1"
+						endalpha="0"
+						turn="1"
+						startwidthdistort=".5"
+						endheightdesitort="0"					
+					/>
+				</meshemitter>
+				</controller>
+			</template>
+			
+			<instance name="fountain" bone="_bone_mouth" mesh="_invis_lion01"/>
+
+			<!-- this is for the crumbling -->	
+		<!-- 	<simpleemitter	
+					delay="2000"
+					spawnrate="30"
+					life="1250"						
+					position="0 0 10"
+					minparticlelife="2000"			
+					maxparticlelife="3500"	
+					depthbias="-10"			
+					material="/shared/effects/materials/smoke_particle.material"			
+					offsetsphere="15 15 15"
+					minspeed="0"
+					maxspeed="50"
+					minangle="0"
+					maxangle="12"
+					direction="0 0 1"
+					gravity="10"
+					drag=".005"
+				>
+					<particle 
+						minangle="-25"
+						maxangle="25"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						color=".45 .2 .1"
+						startsize="100"
+						endsize="150"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+			</simpleemitter>
+				
+				
+			<simpleemitter	
+				delay="2000"
+				spawnrate="25"
+				life="2000"						
+				position="0 0 80"
+				minparticlelife="2000"			
+				maxparticlelife="3500"	
+				depthbias="-10"			
+				material="/shared/effects/materials/smoke_particle.material"			
+				offsetsphere="15 15 15"
+				minspeed="0"
+				maxspeed="50"
+				minangle="0"
+				maxangle="12"
+				direction="0 0 1"
+				gravity="10"
+				drag=".005"
+			>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".45 .2 .1"
+					startsize="100"
+					endsize="150"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter	
+				delay="2000"
+				spawnrate="30"
+				life="2000"						
+				position="0 0 90"
+				minparticlelife="2000"			
+				maxparticlelife="3500"	
+				depthbias="-10"			
+				material="/shared/effects/materials/smoke_particle.material"			
+				offsetsphere="25 25 15"
+				minspeed="0"
+				maxspeed="25"
+				minangle="0"
+				maxangle="12"
+				direction="0 0 1"
+				gravity="10"
+				drag=".005"
+			>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".45 .2 .1"
+					startsize="100"
+					endsize="150"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter	
+				delay="2000"
+				spawnrate="30"
+				life="2000"						
+				position="0 50 50"
+				minparticlelife="2000"			
+				maxparticlelife="3500"	
+				depthbias="-10"			
+				material="/shared/effects/materials/smoke_particle.material"			
+				offsetsphere="25 25 15"
+				minspeed="0"
+				maxspeed="25"
+				minangle="0"
+				maxangle="12"
+				direction="0 0 1"
+				gravity="10"
+				drag=".005"
+			>
+				<particle 
+					minangle="-25"
+					maxangle="25"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".45 .2 .1"
+					startsize="100"
+					endsize="150"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".1"
+				/>
+			</simpleemitter> -->
+			
+
+			<simpleemitter
+				spawnrate="20"
+				particlelife="1500"
+				minangle="0"
+				maxangle="90"
+				position="-12 0 60"
+				offsetsphere="50 50 50"
+				delay="2000"
+				life="2400"
+			>	
+				<particle
+				>
+
+					<debris
+						color="1 0 0"
+						scale=".3"
+						life="2000"
+						model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+						material="/heroes/midas/alt3/effects/stone/material.material"
+						minspeed="1000"
+						maxspeed="2000"
+						angle="12"
+						minrotationspeed="100.0"
+						maxrotationspeed="300.0"
+						gravity="50"
+						direction="0 0 0"
+						collide="true"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0"
+						midalphapos="0.7"
+						bounce="0.7"
+						reflect="0.6"
+					/>
+					
+				</particle>								
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="10"
+				particlelife="1700"
+				minangle="0"
+				maxangle="90"
+				position="-12 0 60"
+				offsetsphere="50 50 50"
+				delay="2000"
+				life="2400"
+			>	
+				<particle
+				>
+
+					<debris
+						color="1 0 0"
+						scale=".5"
+						life="2000"
+						model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+						material="/heroes/midas/alt3/effects/stone/material.material"
+						minspeed="1000"
+						maxspeed="2000"
+						angle="12"
+						minrotationspeed="100.0"
+						maxrotationspeed="300.0"
+						gravity="50"
+						direction="0 0 0"
+						collide="true"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0"
+						midalphapos="0.7"
+						bounce="0.7"
+						reflect="0.6"
+					/>
+					
+				</particle>								
+			</simpleemitter>
+			
+			<simpleemitter	
+					delay="2000"
+					spawnrate="30"
+					life="2800"						
+					position="-12 0 90"
+					minparticlelife="2000"			
+					maxparticlelife="3500"	
+					depthbias="-10"			
+					material="/shared/effects/materials/dust_puff.material"			
+					offsetsphere="30 30 30"
+					minspeed="0"
+					maxspeed="50"
+					minangle="0"
+					maxangle="12"
+					direction="0 0 1"
+					gravity="10"
+					drag=".005"
+				>
+					<particle 
+						minangle="-25"
+						maxangle="25"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						color=".45 .35 .35"
+						startsize="100"
+						endsize="150"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+			</simpleemitter>
+		<!-- 	
+			<simpleemitter	
+					delay="2000"
+					spawnrate="5"
+					life="2000"						
+					position="0 0 90"
+					minparticlelife="2000"			
+					maxparticlelife="3500"	
+					depthbias="-10"			
+					material="/shared/effects/materials/dust_rock.material"			
+					offsetsphere="30 30 30"
+					minspeed="0"
+					maxspeed="50"
+					minangle="0"
+					maxangle="12"
+					direction="0 0 1"
+					gravity="10"
+					drag=".005"
+				>
+					<particle 
+						minangle="-25"
+						maxangle="25"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						color=".45 .2 .1"
+						startsize="100"
+						endsize="150"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+			</simpleemitter>
+			
+			<simpleemitter	
+					delay="2000"
+					spawnrate="50"
+					life="2000"						
+					position="0 0 90"
+					minparticlelife="2000"			
+					maxparticlelife="3500"	
+					depthbias="-10"			
+					material="/shared/effects/materials/dust_smoke_10.material"			
+					offsetsphere="30 30 30"
+					minspeed="0"
+					maxspeed="50"
+					minangle="0"
+					maxangle="12"
+					direction="0 0 1"
+					gravity="10"
+					drag=".005"
+				>
+					<particle 
+						minangle="-25"
+						maxangle="25"
+						minanglespeed="-100"
+						maxanglespeed="100"
+						color=".45 .2 .1"
+						startsize="100"
+						endsize="150"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						midalphapos=".1"
+					/>
+			</simpleemitter> -->
+			
+		</particlesystem>
+		
+		<instance name="fountain" bone="_bone_mouth" mesh="_invis_lion01"/>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier instance="instance1"/>
+		<waitfordeath instance="instance0"/>
+		<spawnmodel instance="instance2"/>
+	</thread>
+
+</effect>

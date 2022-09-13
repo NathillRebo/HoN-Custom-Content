@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+				linearfalloff="true" 
+				falloffstart="200"
+				falloffend="1300"
+				volume=".3"
+				sample="/heroes/babayaga/sounds/impact_%.wav"
+			/>
+			
+						<sound
+				linearfalloff="true" 
+				falloffstart="200"
+				falloffend="1300"
+				volume=".4"
+				sample="/heroes/diseasedrider/sounds/impact_%.wav"
+			/>
+
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="200"
+				falloffend="1300"
+				volume=".3"
+				sample="/heroes/defiler/sounds/impact.wav"
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="2000"
+				count="15"
+				minparticlelife="250"
+				maxparticlelife="750"
+				gravity="13"
+				minspeed="150"
+				maxspeed="550"
+				drag=".15"
+				offsetsphere="50"
+				material="/shared/effects/materials/blood1.material"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color=".5 0 0"
+					maxanglespeed="20"
+					minanglespeed="-120"
+					startsize="20"
+					minendsize="75"
+					maxendsize="125"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					endstickiness=".3"
+				/>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color=".25 0 0"
+					maxanglespeed="20"
+					minanglespeed="-120"
+					startsize="20"
+					minendsize="75"
+					maxendsize="125"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					endstickiness=".3"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor=".5 0 .65"
+				midcolor=".25 0 .35"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="220"
+				endsize="0"
+				depthbias="-25"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="250"
+				param="0.1"
+				startsize="175"
+				endsize="100"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

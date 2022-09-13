@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_TombGuardian4"
+
+	icon="icon.tga"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="passive"
+	damagepercharge="0.2,0.45,0.7"
+	lifesteal="0.11,0.13,0.15"
+>
+
+	<onframe>
+		<evaluate a="1" b="source_health_percent" op="sub" />
+		<evaluate a="100" b="result" op="mult" />
+		<setvar0 a="result" />
+		<setcharges a="var0" />
+	</onframe>
+	
+	<onattackimpact>
+		<cantarget targetscheme="enemy_units">
+			<compare a="combat_attackability" b="0" op="eq">
+				<playeffect effect="/shared/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+			</compare>
+		</cantarget>
+	</onattackimpact>
+
+	<onattackpredamage>
+		<cantarget targetscheme="enemy_units">
+			<compare a="bounce_count" b="2" op="lt">
+				<compare a="combat_attackability" b="0" op="eq" />
+				<else>
+					<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.11,-0.13,-0.15" op="add" />
+				</else>
+			</compare>
+		</cantarget>
+		<else>
+			<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.11,-0.13,-0.15" op="add" />
+		</else>
+	</onattackpredamage>
+
+	<modifier key="ult_boost" modpriority="100"
+		healthregenpercharge="0.12"
+	>
+	</modifier>
+</ability>

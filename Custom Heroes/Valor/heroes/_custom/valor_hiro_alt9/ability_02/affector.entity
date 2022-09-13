@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Valor2"
+
+	radius="125"
+	lifetime="1150"
+	arcstart="180"
+	arcmid="360"
+	arcend="360"
+	arcmidpos="0.15"
+	
+	destroytrees="true"
+	
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="all_other_nonboss_units"
+	effecttype="Magic"
+>
+
+	<onimpact>
+		<targettype type="enemy">
+			<applystate name="State_Valor2_Enemy" duration="1400,1700,2000,2300" proxy="proxy_entity"/>
+			
+			<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity" />
+			
+			<damage effecttype="Magic" amount="80,140,200,260" />
+		</targettype>
+	</onimpact>
+</affector>

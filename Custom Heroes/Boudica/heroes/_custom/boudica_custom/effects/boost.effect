@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".9">		
+			<controller bone="Bip01 Spine1">
+				<model
+					position="0 -15 0"
+					roll="90"
+					pitch="10"
+					scale=".9"
+					yaw="-10"
+					model="axes/model.mdf"
+					material="../material.material"
+					inheritparentmodifiers="true"
+					parentalpha="true"
+					parentteamcolor="true"
+				/>
+			</controller>		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

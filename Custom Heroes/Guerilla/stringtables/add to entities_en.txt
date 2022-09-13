@@ -1,0 +1,42 @@
+
+// Hero_Guerilla_Custom
+Hero_Guerilla_Custom_name										Guerilla
+Hero_Guerilla_Custom_role										Guerilla is a hit-n-run hero, capable of dealing short bursts of damage and retreating into safety to prepare for another attack. His innate regenerations and lower health and mana further encourage this tactic.
+
+// Ability_Guerilla1
+Ability_Guerilla1_name											Smoke Cover
+Ability_Guerilla1_name:ult_boost								^gCover Zone^*
+Ability_Guerilla1_description									Creates a zone of smoke, which makes allied units inside ^oinvisible (even while attacking)^* and grants them ^o20% Movement speed bonus^*, both benefits lasting for as long as these units are inside. Lasts ^o{1,1.6,2.2,2.8} seconds^*.
+Ability_Guerilla1_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Creates a second zone of smoke at your current location when using this ability.
+Ability_Guerilla1_description_simple							Creates a zone of smoke, which makes allied units inside ^oinvisible (even while attacking)^* and grants them ^o20% Movement speed bonus^*, both benefits lasting for as long as these units are inside. Lasts ^o{1,1.6,2.2,2.8} seconds^*.\n\n^gStaff of the Master^* also causes the ability to create one zone of smoke at your current position.\n\n^444Can't touch me!
+Ability_Guerilla1_description_simple:ult_boost					Creates a zone of smoke at the chosen location ^gand at your current location^*, which makes allied units inside ^oinvisible (even while attacking)^* and grants them ^o20% Movement speed bonus^*, both benefits lasting for as long as these units are inside. Lasts ^o{1,1.6,2.2,2.8} seconds^*.\n\n^444Can't touch me!
+Ability_Guerilla1_effect_header
+Ability_Guerilla1_tooltip_flavor								Can't touch me!
+Ability_Guerilla1_IMPACT_effect									Creates a zone of smoke, which makes allied units inside ^oinvisible (even while attacking)^* and grants them ^o20% Movement speed bonus^*, both benefits lasting for as long as these units are inside. Lasts ^o{1,1.6,2.2,2.8} seconds^*.
+Ability_Guerilla1_IMPACT_effect:ult_boost						Creates a zone of smoke at the chosen location ^gand at your current location^*, which makes allied units inside ^oinvisible (even while attacking)^* and grants them ^o20% Movement speed bonus^*, both benefits lasting for as long as these units are inside. Lasts ^o{1,1.6,2.2,2.8} seconds^*.
+
+// Ability_Guerilla2
+Ability_Guerilla2_name											Piercing Round
+Ability_Guerilla2_description									Guerilla fires a piercing round at his enemy, dealing ^o{70,120,170,220} Physical Damage^* and reducing the enemy's ^oArmor by {5,6,7,8}^* for 9 seconds.
+Ability_Guerilla2_description_simple							Guerilla fires a piercing round at his enemy, dealing ^o{70,120,170,220} Physical Damage^* and reducing the enemy's ^oArmor by {5,6,7,8}^* for 9 seconds.\n\n^444Right between the eyes!
+Ability_Guerilla2_effect_header
+Ability_Guerilla2_tooltip_flavor								Right between the eyes!
+Ability_Guerilla2_IMPACT_effect									Guerilla fires a piercing round at his enemy, dealing ^o{70,120,170,220} Physical Damage^* and reducing the enemy's ^oArmor by {5,6,7,8}^* for 9 seconds.
+
+// Ability_Guerilla3
+Ability_Guerilla3_name											Fire in the Hole
+Ability_Guerilla3_name:shardofthemaster_boost					^pFire in the Hole^*
+Ability_Guerilla3_description									When off cooldown, your next attack deals an additional ^o{40%,60%,80%,100%} of your Attack Damage as Physical Damage^* to the target and enemies within 225 units of it. Attacks reduce the remaining cooldown by 1 second.
+Ability_Guerilla3_description_simple							When off cooldown, your next attack deals an additional ^o{40%,60%,80%,100%} of your Attack Damage as Physical Damage^* to the target and enemies within 225 units of it. Attacks reduce the remaining cooldown by 1 second.\n\n^pShard of the Master^* also causes this attack to reduce Movement Speed, Attack Speed and Casting Speed by 30% for 1 second to enemies hit.\n\n^444Nuke 'em!
+Ability_Guerilla3_description_simple:shardofthemaster_boost		When off cooldown, your next attack deals an additional ^o{40%,60%,80%,100%} of your Attack Damage as Physical Damage^* to the target and enemies within 225 units of it^p, while also slowing their Attack Speed, Movement Speed and Casting Speed by 30% for 1.25 seconds^*. Attacks reduce the remaining cooldown by 1 second.\n\n^444Nuke 'em!
+Ability_Guerilla3_effect_header
+Ability_Guerilla3_tooltip_flavor								Nuke 'em!
+Ability_Guerilla3_IMPACT_effect									When off cooldown, your next attack deals an additional {40%,60%,80%,100%} of your Attack Damage as Magic Damage to the target and enemies within 225 units of it. Attacks reduce the remaining cooldown by 1 second.
+
+// Ability_Guerilla4
+Ability_Guerilla4_name											Guerilla Tactics
+Ability_Guerilla4_description									When enemies have no sight of Guerilla, he gains a bonus of ^o{6,12,18} to Health Regen, {3,6,9} to Mana Regen, {30,60,90} to Movement Speed and {50,100,150} to Attack Range^*.\n\nActivate to turn yourself ^oinvisible for {4,8,12} seconds^*.
+Ability_Guerilla4_description_simple							When enemies have no sight of Guerilla, he gains a bonus of ^o{6,12,18} to Health Regen, {3,6,9} to Mana Regen, {30,60,90} to Movement Speed and {50,100,150} to Attack Range^*.\n\nActivate to turn yourself ^oinvisible for {4,8,12} seconds^*.\n\n^444Or Gorilla Tactics, if you prefer.
+Ability_Guerilla4_effect_header
+Ability_Guerilla4_tooltip_flavor								Or Gorilla Tactics, if you prefer.
+Ability_Guerilla4_IMPACT_effect									When enemies have no sight of Guerilla, he gains a bonus of ^o{6,12,18} to Health Regen, {3,6,9} to Mana Regen, {30,60,90} to Movement Speed and {50,100,150} to Attack Range^*.\n\nActivate to turn yourself ^oinvisible for {4,8,12} seconds^*.

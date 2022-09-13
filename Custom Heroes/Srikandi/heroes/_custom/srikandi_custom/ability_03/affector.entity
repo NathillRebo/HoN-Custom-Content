@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Srikandi_Ability3"
+
+	radius="225"
+	
+	lifetime="500"
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	
+	impactdelay="500"
+	
+	persist="true"
+>
+	<onexpired>
+		<playeffect effect="effects/aoe1.effect" source="this_position" target="" occlude="true" />
+	</onexpired>
+	
+	<onimpact>
+		<applystate name="State_Srikandi_Ability3" duration="2000,3000,4000,5000" />
+		<damage effecttype="Magic" amount="85,160,235,310" />
+	</onimpact>
+	
+</affector>

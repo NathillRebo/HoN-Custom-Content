@@ -1,0 +1,24 @@
+
+// Hero_zzz_Carmilla
+Hero_zzz_Carmilla_name											Carmilla
+Hero_zzz_Carmilla_description									Though melee, Carmilla deals great amount of Magic Damage through Hemoplague, which is her main source of damage. Her other abilities allow her to land Hemoplague more often, easier, an further amplify the damage it will take. 
+
+// Ability_Carmilla1
+Ability_Carmilla1_name											Hemoplague
+Ability_Carmilla1_name:shardofthemaster_boost					^pHemoplague^*
+Ability_Carmilla1_description_simple							Carmilla throws cursed blood in the chosen direction, dealing ^o{40,50,60,70} Magic Damage^* to enemies hit and applying a stack of Hemoplague to them for 10 seconds. When the effect ends, the target takes ^o{9,10,11,12} Magic Damage, multiplied by the squared number of charges on the target^*.\n\n^pShard of the Master^* causes Hemoplague to reduce movement speed. Reduces cooldown.\n\n^444Spread the love and all diseases associated with it!
+Ability_Carmilla1_description_simple:shardofthemaster_boost		Carmilla throws cursed blood in the chosen direction, dealing ^o{40,50,60,70} Magic Damage^* to enemies hit and applying a stack of Hemoplague to them for 10 seconds^p, which reduces Movement Speed by 3%^*. When the effect ends, the target takes ^o{9,10,11,12} Magic Damage, multiplied by the squared number of charges on the target^*.\n\n^444Spread the love and all diseases associated with it!
+
+// Ability_Carmilla2
+Ability_Carmilla2_name											Vampiric Seal
+Ability_Carmilla2_description_simple							Carmilla marks her target, revealing it, silencing and reducing Magic Armor by ^o{4,5,6,7}^* for ^o{3,4,5,6} seconds^*.\n\n^444Has its use in dating too.
+
+// Ability_Carmilla3
+Ability_Carmilla3_name											Allure
+Ability_Carmilla3_description_simple							Carmilla deals ^o{75,145,215,285} Magic Damage^* and ^oCharms enemies hit for {1.55,1.65,1.75,1.85} seconds^*. Charmed enemies are compelled to move to the caster for the duration, without attacking or casting spells.\n\n^444Cast in at the start of the date and she's all yours!
+
+// Ability_Carmilla4
+Ability_Carmilla4_name											Ascendent Form
+Ability_Carmilla4_name:ult_boost								^gAscendent Form^*
+Ability_Carmilla4_description_simple							Carmilla transforms for ^o15^* seconds, gaining ^oUnitwalking^*, ^o{20,40,60}% increased Movement Speed^*, ^o100% Casting Speed^*, ^o100% Cooldown Refresh Speed^* and ^o{5,15,25} Strength, Agility and Intelligence^*. Killing units during this time extends the remaining duration.\n\n^gStaff of the Master^* causes Ascendent Form to grant bonus Strength, Agility and Intelligence upon killing units.\n\n^444Allow me to introduce my friend to you...
+Ability_Carmilla4_description_simple:ult_boost					Carmilla transforms for ^o15^* seconds, gaining ^oUnitwalking^*, ^o{20,40,60}% increased Movement Speed^*, ^o100% Casting Speed^*, ^o100% Cooldown Refresh Speed^* and ^o{5,15,25} Strength, Agility and Intelligence^*. Killing units during this time extends the remaining duration ^gand increases the Strength, Agility and Intelligence bonus until the effect ends^*.\n\n^444Allow me to introduce my friend to you...

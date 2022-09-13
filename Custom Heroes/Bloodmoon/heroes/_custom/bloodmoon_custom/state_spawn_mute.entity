@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Spawn_Mute"
+	
+	deathpersist="true"
+	
+	ishidden="true"
+	icon="icon.tga"
+	
+	propagatetoillusions="true"
+	modifierkey="Solstice_Spawn_Mute"
+>
+
+</state>

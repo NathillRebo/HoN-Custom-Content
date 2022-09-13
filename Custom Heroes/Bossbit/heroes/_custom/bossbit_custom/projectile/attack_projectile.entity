@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Artillery"
+
+	speed="2000"
+	gravity="0"
+	modelscale=".25"
+	model="/shared/models/invis.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+
+	<altavatar key="Hero_Artillery.Alt6" modpriority="90"
+		impacteffect="../alt6/projectile/effects/impact.effect"
+		traileffect="../alt6/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Artillery.Alt7" modpriority="90"
+		modelscale=".75"
+		model="/heroes/emerald_warden/ability_01/effects/arrows/arrow.mdf"
+		impacteffect="../alt7/projectile/effects/impact.effect"
+		traileffect="../alt7/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Artillery.Alt8" modpriority="90"
+		traileffect="../alt8/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Artillery.set_ascension" modpriority="90"
+	    impacteffect="../set_ascension/projectile/effects/impact.effect"
+		traileffect="../set_ascension/projectile/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Artillery.Alt11" modpriority="90"
+	    impacteffect="../alt11/projectile/effects/impact.effect"
+		traileffect="../alt11/projectile/effects/trail.effect"
+	/>	
+	
+	<altavatar key="Hero_Artillery.Alt12" modpriority="90"
+		modelscale="1.5"
+		model="../alt12/projectile/effects/arrow.mdf"
+		impacteffect="../alt12/projectile/effects/impact.effect"
+		traileffect="../alt12/projectile/effects/trail.effect"
+	/>
+	
+</projectile>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Vermilion1"
+	
+	icon="icon.tga"
+	
+	anim="ability_2"
+	casttime="0"
+	castactiontime="0"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	targetscheme="ally_units"
+	casteffecttype="SuperiorMagic"
+	casteffect="cast.effect"
+	impacteffect="impact.effect"
+	
+	manacost="25,35,45,55"
+	cooldowntime="8000"
+	
+	range="800"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	targetpriorities="ally_heroes"
+>
+	<aura name="vermilionaura" state="State_Vermilion1" radius="525" targetscheme="ally_heroes" ignoreinvulnerable="true" />
+	<onimpact>
+		<compare a="target_entity" b="source_entity" op="eq">
+			<heal a="70,140,210,280" />
+			<playeffect effect="impact.effect" source="target_entity" target="" />
+		</compare>
+		<else>
+			<heal a="50,100,150,200" target="target_entity"/>
+			<playeffect effect="impact.effect" source="target_entity" target="" />
+			<heal a="50,100,150,200" target="source_entity"/>
+			<playeffect effect="impact.effect" source="source_entity" target="" />
+		</else>
+	</onimpact>
+</ability>

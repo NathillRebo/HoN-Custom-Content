@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Mistletoe3_Strike"
+
+	ishidden="true"
+
+	impactinterval="100"
+>
+	<oninflict>
+		<setaccumulator value="2" />
+	</oninflict>
+	
+	<onimpact>
+		<cantarget targetscheme="enemy_units" source="this_owner_entity" target="this_proxy_entity">
+			<setaccumulator value="1" />
+			<attack source="this_owner_entity" target="this_proxy_entity" startcooldown="false" />
+		</cantarget>
+	</onimpact>
+	
+	<onattack>
+		<compare a="accumulator" b="1" op="eq">
+			<addattackimpactactions>
+				<applystate name="State_Mistletoe3_Slow" target="this_proxy_entity" duration="700" />
+			</addattackimpactactions>
+			<setaccumulator value="0" />
+		</compare>
+	</onattack>
+	
+	<onexpired>
+		<!-- Resets cooldown of Twin Blades if you don't get a chance to attempt your second autoattack -->
+		<compare a="accumulator" b="2" op="eq">
+			<pushability source="this_owner_entity" slot="2" />
+			<reducecooldown entity="stack_entity" duration="18000" />
+		</compare>
+	</onexpired>
+</state>

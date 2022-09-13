@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+		<modifier
+			color="1 1 1"
+			alpha="1"
+		/>
+		<particlesystem name="system0" space="world" scale=".75">
+			<model
+				life="3500"
+				parentmodel="1"
+				parentskeleton="1"
+				color="1"
+				alpha="1"
+			/>
+			<model
+				life="3500"
+				parentmodel="1"
+				parentskeleton="1"
+				startcolor=".5 0 0"
+				endcolor=".5 0 0"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				material="/heroes/warchief/alt/ability_02/effects/material.material"
+			/>
+			
+			<skeletonemitter
+				life="2500"
+				minparticlelife="400"
+				maxparticlelife="600"
+				startspawnrate="100" endspawnrate="1"
+				material="/shared/effects/materials/blood_drop_red.material"
+				minspeed="5"
+				maxspeed="10"
+				drag="0.02"
+				gravity="10"
+				offsetsphere="10"
+				
+			>
+				<particle
+					turn="1"
+					heightdistort=".1"
+					minscale="1"
+					maxscale="2"
+					startcolor=".7"
+					midcolor=".5"
+					endcolor=".2 0 0"
+					lockup="true"
+				/>
+			</skeletonemitter>
+		
+			<simpleemitter
+				delay="2400"
+				count="30"
+				minparticlelife="700"
+				maxparticlelife="1200"
+				gravity="20"
+				minspeed="300"
+				maxspeed="500"
+				drag=".015"
+				maxangle="20"
+				material="/shared/effects/materials/blood_drop_red.material"
+				offsetsphere="5 5 5"
+				
+				position="0 0 0"
+			>
+				<particle 					
+					startcolor=".7"
+					midcolor=".5"
+					endcolor=".2 0 0"
+					startheightdistort=".02"
+					startsize="2"
+					midsize="3"
+					endsize="1"
+					scale="3"
+					turn="1"
+				/>
+			</simpleemitter>
+			
+		
+	
+			<simpleemitter
+				delay="1700"
+				count="100"
+				minparticlelife="700"
+				maxparticlelife="1500"
+				material="/shared/effects/materials/blood_pool_white.material"
+				offsetsphere="85"
+				position="0 0 0"
+			>
+				<particle
+					minscale="1"
+					maxscale="3"
+					lockup="true"
+					lockright="true"
+					pitch="90"
+					startcolor="0" midcolor=".2 0 0" endcolor="0"
+					startalpha="0" midalpha="1"
+					endalpha="0"
+					startsize="5"
+					endsize="10"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				delay="300"
+				life="2500"
+				spawnrate="5"
+				minparticlelife="1300"
+				maxparticlelife="1800"
+				material="/shared/effects/materials/resin_puddle.material"
+				offsetsphere="5"
+				position="0 -0 0"
+			>
+				<particle
+				startcolor=".5 0 0"
+				endcolor="0 0 0"
+				startsize="50"
+				endsize="150"
+				minscale="1"
+				maxscale="1.5"
+				maxangle="360"
+				startalpha=".8"
+				midalpha=".8"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<spawnmodifier instance="instance0"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+	</thread>
+
+</effect>

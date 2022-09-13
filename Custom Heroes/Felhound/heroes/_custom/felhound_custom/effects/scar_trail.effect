@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" ignorebasescale="true" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".65">
+
+			<!-- Fissure -->
+			<simpleemitter
+				timenudge="100"
+				spawnrate="12"
+				particlelife="1000"
+				direction="0 1 0"
+				angle="0"
+				speed=".1"
+				offsetsphere="0 0 2"
+			>
+				<template name="fizzur">
+					<particle
+						turn="true"
+					>
+						<controller
+							life="800"
+							maxdelay="200"
+						>
+							<model
+								minlife="450"
+								maxlife="550"
+								startalpha="1"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".4"
+								position="0 0 -8"
+								minstartscale=".2"
+								maxstartscale=".4"
+								minmidscale=".7"
+								maxmidscale=".8"
+								minendscale=".6"
+								maxendscale=".7"
+								model="/shared/effects/models/fissure/model.mdf"
+								color="{color}"
+								anim="open_fast"
+								minyaw="-20"
+								maxyaw="20"
+							/>
+							<debris
+								position="0 0 5"
+								minlife="400"
+								maxlife="500"
+								model="/shared/effects/models/debris/debris.mdf"
+								material="/shared/effects/models/debris/debris_noshadow.material"
+								direction="0 0 1"
+								minspeed="300"
+								maxspeed="800"
+								drag="0.01"
+								gravity="50"
+								collide="1"
+								minangle="45"
+								maxangle="80"
+								minscale=".2"
+								maxscale=".4"
+								startcolor="5 1 0"
+								midcolor="1 .2 .15"
+								endcolor=".3 .1 .1"
+								startalpha="1"
+								midalpha="1"
+								endalpha="0"
+							/>
+						</controller>
+					</particle>
+				</template>
+				<instance name="fizzur" color=".9 .5 .4" />
+				<instance name="fizzur" color=".8 .3 .2" />
+				<instance name="fizzur" color=".4 .2 .1" />
+				<instance name="fizzur" color=".3 .2 .1" />
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="70"
+				minparticlelife="500"
+				maxparticlelife="1500"			
+				gravity="-5"
+				minspeed="10"
+				maxspeed="50"
+				drag=".05"
+				material="/shared/effects/materials/spark_10.material"
+				offsetsphere="20"
+				minangle="70"
+				maxangle="90"
+				direction="0 0 1"
+				directionalspace="global"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="0"
+					midcolor="1 .75 .5"
+					endcolor="0 0 0"
+					midcolorpos=".3"
+					minstartsize="15"
+					maxstartsize="30"
+					endsize="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				delay="350"
+				spawnrate="6"
+				particlelife="1000"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+					<groundsprite
+						minlife="700"
+						maxlife="800"
+						material="/shared/effects/materials/fire_ground.material"
+						minsize="40"
+						maxsize="80"
+						startcolor="1"
+						midcolor="1"
+						endcolor="0"
+						midcolorpos=".15"
+						startalpha="0"
+						midalpha="1.25"
+						endalpha="0"
+						midalphapos=".4"
+						directionalspace="local"
+						maxyaw="180"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="6"
+				particlelife="1000"
+			>
+				<template name="groundglow">
+					<particle>
+						<billboard
+							lockup="true"
+							lockright="true"
+							pitch="-90"
+							depthbias="-1"
+							minlife="600"
+							maxlife="750"
+							material="/shared/effects/materials/explosion.material"
+
+							color="{color}"
+
+							minsize="2"
+							maxsize="3"
+							
+							startscale="0"
+							midscale="20"
+							endscale="20"
+							midscalepos=".25"
+							
+							startcolor="0"
+							midcolor="1"
+							endcolor="0"
+							midcolorpos=".2"
+							maxroll="360"
+						/>
+					</particle>
+				</template>
+
+				<instance name="groundglow" color="1 .9 .7" />
+				<instance name="groundglow" color="1 .75 .5" />
+				<instance name="groundglow" color="1 0 0" />
+				<particle/> <!-- chance for no glow -->
+
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

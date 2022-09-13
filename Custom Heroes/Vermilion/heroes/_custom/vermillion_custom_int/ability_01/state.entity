@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vermilion1"
+
+	icon="icon.tga"
+	passiveeffect=""
+	displaylevel="true"
+	healthregen="2,3,4,5"
+>
+</state>

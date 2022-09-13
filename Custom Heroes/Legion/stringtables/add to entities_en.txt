@@ -1,0 +1,42 @@
+
+// Hero_Legion_Custom
+Hero_Legion_Custom_name											Legion
+Hero_Legion_Custom_role											Legion is a very durable caster, who consumes creeps to increase his own max Health and quickly clean the jungle. Later in the game, he can use his durability to take the beating for his team, while also retaliating with deadly efficiency.
+
+// Ability_Legion1
+Ability_Legion1_name											Absorb
+Ability_Legion1_name:ult_boost									^gAbsorb^*
+Ability_Legion1_description										Legion adds the target to his legion.
+Ability_Legion1_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Also increases Health Regen by 2% of bonus Max Health from this ability.
+Ability_Legion1_description_simple								Legion consumes the target, healing himself for ^o{80,150,220,290} Health^* and increasing his own ^omax Health permanently by 2% of target's max Health^*.\n\n^gStaff of the Master^* also increases Health Regen by 2% of bonus Max Health from this ability.\n\n^444You cannot defeat me, so join me...
+Ability_Legion1_description_simple:ult_boost					Legion consumes the target, healing himself for ^o{80,150,220,290} Health^* and increasing his own ^omax Health permanently by 2% of target's max Health^* ^gand Health Regen by 0.04% of that creature's Max Health^*.\n\n^444You cannot defeat me, so join me...
+Ability_Legion1_effect_header
+Ability_Legion1_tooltip_flavor									You cannot defeat me, so join me...
+Ability_Legion1_IMPACT_effect									The target dies instantly, heals Legion for ^o{80,150,220,290} Health^* and has its ^omax Health permanently increased by 2% of target's max Health^*.
+Ability_Legion1_IMPACT_effect:ult_boost							The target dies instantly, heals Legion for ^o{80,150,220,290} Health^* and has its ^omax Health permanently increased by 2% of target's max Health^* ^gand Health Regen by 0.04% of that creature's Max Health^*.
+
+// Ability_Legion2
+Ability_Legion2_name											Mortal Coil
+Ability_Legion2_description										Legion launches a bolt of negative energy at his enemy.
+Ability_Legion2_description_simple								Legion fires a bolt of negative energy at his target, dealing ^o{90,165,240,315} Magic Damage^* and ^oStunning it for {1.8,1.9,2,2.1} seconds^*.\n\n^444Boo!
+Ability_Legion2_effect_header
+Ability_Legion2_tooltip_flavor									Boo!
+Ability_Legion2_IMPACT_effect									On hit, the target takes ^o{90,165,240,315} Magic Damage^* and is ^oStunned for {1.8,1.9,2,2.1} seconds^*.
+
+// Ability_Legion3
+Ability_Legion3_name											Necrofire
+Ability_Legion3_description										Legion blasts target area with necrofire, which burns for 5 seconds.
+Ability_Legion3_description_simple								Legion blasts target area, dealing ^o{50,85,120,155} Magic Damage^* to enemies hit. The area then starts buring for 5 seconds, dealing ^o{8,16,24,32} Magic Damage^* per second and reducing ^oArmor by {1,2,3,4}^*.\n\n^444This is no regular fire! Mwahahaha!
+Ability_Legion3_effect_header
+Ability_Legion3_tooltip_flavor									This is no regular fire! Mwahahaha!
+Ability_Legion3_IMPACT_effect									Enemies directily hit take ^o{50,85,120,155} Magic Damage^*, while enemies standing in the area take ^o{8,16,24,32} Magic Damage^* per second and have their ^oArmor reduced by {1,2,3,4}^*.
+
+// Ability_Legion4
+Ability_Legion4_name											Death's Rebuke
+Ability_Legion4_name:shardofthemaster_boost						^pDeath's Rebuke^*
+Ability_Legion4_description										Legion's many bodies absorb some damage, causing him to take ^o{5,10,15}%^* reduced damage and store them as charges, up to ^o{350,625,900}^*.
+Ability_Legion4_description_simple								Passively reduces damage taken by ^o{5,10,15}%^* and stores it as charges, up to ^o{350,625,900}^*. Activate to remove all charges and deal Magic Damage equal to charges removed.\n\n^pShard of the Master^* also stuns enemies hit for up to {1.05,1.875,2.7} seconds, depending on the number of charges.\n\n^444Two bodies are better than one! Well, a dozen of them are even better.
+Ability_Legion4_description_simple:shardofthemaster_boost		Passively reduces damage taken by ^o{5,10,15}%^* and stores it as charges, up to ^o{350,625,900}^*. Activate to remove all charges and deal Magic Damage equal to charges removed ^pand stun enemies hit for up to {1.05,1.875,2.7} seconds, depending on the number of charges removed^*.\n\n^444Two bodies are better than one! Well, a dozen of them are even better.
+Ability_Legion4_effect_header
+Ability_Legion4_tooltip_flavor									Two bodies are better than one! Well, a dozen of them are even better.
+Ability_Legion4_IMPACT_effect									On activate, spend all charges to deal Magic Damage equal to charges removed.

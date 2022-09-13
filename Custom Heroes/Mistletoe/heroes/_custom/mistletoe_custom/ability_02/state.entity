@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Mistletoe2"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	
+	effecttype=""
+	allowtransfer=""
+	impactinterval="1000"
+	
+	modifierkey="Mistletoemana2"
+>
+	<oninflict>
+		<setvar0 a="11,22,33,44" b="1" op="mult" />
+		<areaofeffect
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			targetselection="all"
+			radius="350"
+			maximpactspertarget="1"
+		>
+			<damage effecttype="Magic DOT" a="0" b="var0" op="add" />
+			<applystate name="State_Mistletoe2_Debuff" duration="1500" />
+			<playeffect effect="effects/state_enemy.effect" source="target_entity" target="source_entity" />
+		</areaofeffect>
+	</oninflict>
+		
+	<onframe>
+	</onframe>
+	
+	<onimpact>
+		<compare a="source_mana" b="13,16,19,22" op="le" >
+			<expire />
+		</compare>
+		<else>
+			<setvar0 a="11,22,33,44" b="1" op="mult" />
+			<takemana amount="13,16,19,22" triggeractionscript="true" />
+			<areaofeffect
+				targetscheme="enemy_units"
+				effecttype="Magic"
+				targetselection="all"
+				radius="350"
+				maximpactspertarget="1"
+			>
+				<damage effecttype="Magic DOT" a="0" b="var0" op="add" />
+				<applystate name="State_Mistletoe2_Debuff" duration="1500" />
+				<playeffect effect="effects/state_enemy.effect" source="target_entity" target="source_entity" />
+			</areaofeffect>
+		</else>
+	</onimpact>
+	
+	<onexpired>
+		<toggleoff name="Ability_Mistletoe2" />
+	</onexpired>
+	
+</state>

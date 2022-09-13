@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale=".8">
+		
+			<model
+				life="1000"
+				parentskeleton="true"
+				model="model/model.mdf"
+				startcolor="0 0 0"
+				midcolor=".75 0 2.75"
+				endcolor="0 0 0"
+				midcolorpos=".25"
+				startscale="1"
+				midscale="1"
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell2.material"
+				loop="true"
+			/>
+		
+<!--
+			<beam
+				expirelife="250"
+				bone_a="Box021"
+				bone_b="Box018"
+				startsize="35"
+				endsize="0"
+				color="1 .5 .25"
+				alpha="1"
+				material="/shared/effects/materials/femme_lightning_02.material"
+				framespeed="3"
+			/>
+			
+			<beam
+				expirelife="250"
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weaponattach"
+				startsize="35"
+				endsize="0"
+				color="1 .5 .25"
+				alpha="1"
+				material="/shared/effects/materials/femme_lightning_02.material"
+				framespeed="3"
+			/>
+
+			<billboard
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/whitedot.material"
+				color=".35 .2 .1"
+				size="50"
+			/>
+
+			<simpleemitter
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="400"
+				particlelife="300"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					heightdistort="0.01"
+					turn="1"
+					startcolor=".75 .5 .2"
+					endcolor="0 0 0"
+					startsize="3"
+					endsize="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/phantom_smoke_06.material"
+				spawnrate="60"
+				particlelife="300"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					roll="180"
+					heightdistort="0.01"
+					turn="1"
+					startcolor="0 0 0"
+					midcolor=".3 .1 0"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					startsize="36"
+					endsize="20"
+				/>
+			</simpleemitter>
+
+			<beam
+				expirelife="250"
+				bone_a="Box021"
+				bone_b="Box018"
+				startsize="35"
+				endsize="0"
+				color="1 .5 .25"
+				alpha="1"
+				material="/shared/effects/materials/femme_lightning_02.material"
+				framespeed="3"
+			/>
+			
+			<beam
+				expirelife="250"
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weaponattach"
+				startsize="35"
+				endsize="0"
+				color="1 .5 .25"
+				alpha="1"
+				material="/shared/effects/materials/femme_lightning_02.material"
+				framespeed="3"
+			/>
+
+
+			<simpleemitter
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/phantom_smoke_06.material"
+				spawnrate="60"
+				particlelife="300"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					roll="180"
+					heightdistort="0.01"
+					turn="1"
+					startcolor="0 0 0"
+					midcolor=".3 .1 0"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					startsize="36"
+					endsize="20"
+				/>
+			</simpleemitter>
+-->
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+
+	</thread>
+
+</effect>

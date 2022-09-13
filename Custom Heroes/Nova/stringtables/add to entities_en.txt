@@ -1,0 +1,24 @@
+
+// Hero_zzz_Nova
+Hero_zzz_Nova_name												Nova
+Hero_zzz_Nova_description										Nova is an elusive hero, who is most dangerous when grouped up, as she both gains tremendous amount of Agility and is slippery enough to avoid most dangers effectively, but also suffers in 1v1 skirmishes, where her ultimate doesn't grant that much.
+
+// Ability_Nova1
+Ability_Nova1_name												Galactic Storm
+Ability_Nova1_description_simple								Nova summons a galactic storm at the chosen location for 3 seconds. Enemies inside are dealt ^o{20,40,60,80} Magic Damage per second^* and lose ^o{10,20,30,40} Mana per second^*.\n\n^444This is kinda shocking!
+
+// Ability_Nova2
+Ability_Nova2_name												Plasma Shield
+Ability_Nova2_name:shardofthemaster_boost						^pPlasma Shield^*
+Ability_Nova2_description_simple								Nova surrounds herself with a shield that lasts 4 seconds and absorbs up to ^o{105,140,175,210} damage^*. While the shield is active, it turns ^o{33,44,55,66}% of attack damage dealt^* to a shield.\n\n^pShard of the Master^* increases shield durability.\n\n^444Everything's better with a Plasma Shield.
+Ability_Nova2_description_simple:shardofthemaster_boost			Nova surrounds herself with a shield that lasts 4 seconds and absorbs up to ^p{250,185,320,355} damage^*. While the shield is active, it turns ^o{33,44,55,66}% of attack damage dealt^* to a shield.\n\n^444Everything's better with a Plasma Shield.
+
+// Ability_Nova3
+Ability_Nova3_name												Warp Out
+Ability_Nova3_name:ult_boost									^gPhase Out^*
+Ability_Nova3_description_simple								Nova warps out of this world, becoming invulnerable and invisible, but also disarmed and silenced. While warped out this way, her Movement Speed increases by ^o{25,30,35,40}%^*. Lasts ^o{2.5,3,3.5,4} seconds^*.\n\n^gStaff of the Master^* greatly increases move speed bonus and also increases max move speed bonus.\n\n^444Solves most of the problems, including the social ones.
+Ability_Nova3_description_simple:ult_boost						Nova warps out of this world, becoming invulnerable and invisible, but also disarmed and silenced. While warped out this way, her Movement Speed increases by ^g{100,105,110,115}% and her Max Movement Speed increases by 400^*. Lasts ^o{2.5,3,3.5,4} seconds^*.\n\n^444Solves most of the problems, including the social ones.
+
+// Ability_Nova4
+Ability_Nova4_name												Resonating Power
+Ability_Nova4_description_simple								Nova gains ^o{5,10,15}^* Agility per allied hero within radius, including herself.\n\n^444Group mid everyone!

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="impact" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+
+		<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2300"
+				minvolume="0.15" 
+				maxvolume="0.35" 
+				sample="../../sounds/imp_%.wav"
+			/>
+
+
+			
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitecircle_blend.material"
+				startcolor=".1 0 .2"
+				endcolor="0 0 0"
+				life="200"
+				startsize="70"
+				endsize="0"
+				depthbias="-50"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/corona_08_blend.material"
+				startcolor=".8 0 1"
+				endcolor="0 0 0"
+				life="300"
+				startsize="0"
+				endsize="100"
+				lockup="1"
+				pitch="90"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+			/>		
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/corona_06.material"
+				startcolor=".6 0 .8"
+				endcolor="0 0 0"
+				life="300"
+				startsize="0"
+				endsize="100"
+				lockup="1"
+				pitch="90"
+			/>		
+			
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="1 .5 1"
+				endcolor="0 0 0"
+				life="100"
+				startsize="50"
+				endsize="150"
+				depthbias="-50"
+			/>
+
+			<simpleemitter
+					position="0 0 0"
+					life="600"
+					offsetsphere="5"
+					count="20"
+					minparticlelife="500"
+					maxparticlelife="800"
+					direction="0 0 1"
+					directionalspace="global"
+					minspeed="150"
+					maxspeed="300"
+					drag="0.02"
+					maxangle="40"
+				>
+					<particle
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-800"
+						maxyawspeed="800"
+						minrollspeed="-800"
+						maxrollspeed="800"
+						minpitchspeed="-800"
+						maxpitchspeed="800"
+						minscale="1"
+						maxscale="1.5"
+					>
+						<trailemitter
+							minlife="750"
+							maxlife="1050"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="5 0 0"
+							spawnrate="100"
+							minparticlelife="400"
+							maxparticlelife="600"
+							material="/shared/effects/materials/trail_01_blend.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor="1 0 1"
+								midcolor=".1 0 .2"
+								endcolor="0"
+								startalpha=".8"
+								endalpha="0"
+								startsize="0"
+								midsize="10"
+								endsize="0"
+							/>
+						</trailemitter>
+					</particle>
+				</simpleemitter>
+
+      </particlesystem>
+   </definitions>
+   <thread>
+      <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

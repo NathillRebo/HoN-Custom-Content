@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hunter_Ability2"
+	
+	icon="icon.tga"
+	
+	passiveeffect=""
+	
+	effecttype=""
+>
+	<onkilled>
+		<targettype type="illusion" target="source_entity" />
+		<else>
+			<targettype type="heropet" target="source_entity" />
+			<else>
+				<setvar0 a="source_maxhealth" />
+				<heal source="this_inflictor_entity" a="0.15,0.3,0.45,0.6" b="var0" op="mult" target="this_inflictor_entity"/>
+				<playeffect effect="bath.effect" source="this_inflictor_entity" target="" />
+			</else>
+		</else>
+	</onkilled>
+</state>

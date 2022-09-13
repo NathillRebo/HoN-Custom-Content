@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Hex4"
+
+	radius="145"
+	
+	lifetime="-1"
+	destroytrees="true"
+>
+	<onimpact />
+</affector>

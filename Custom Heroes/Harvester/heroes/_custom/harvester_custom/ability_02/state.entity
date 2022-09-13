@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dread2"
+
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	silenced="true"
+	negativeeffect="silenced"
+>
+	<modifier key="shardofthemaster_boost"
+		armor="-4"
+	/>
+</state>

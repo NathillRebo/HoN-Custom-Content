@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<!-- body effects -->
+		
+		<particlesystem name="system0" space="world" scale=".2424">
+
+			<template name="fire">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="10"
+					minparticlelife="200"
+					maxparticlelife="900"
+					gravity="-8"
+					speed="30"
+					drag="0"
+					material="/shared/effects/materials/soul_projectile_blue.material"
+					offsetsphere="30 30 30"
+					angle="90"
+					position="0 0 0"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						startcolor="1 1 1"
+						midcolor="0 .5 1"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						startsize="15"
+						midsize="30"
+						endsize="125"
+						startalpha="0"
+						midalpha=".3"
+						endalpha="0"
+						startanchor="1"
+						endanchor=".4"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="fire" bone="Bip01 Spine" />
+			<instance name="fire" bone="Bip01 Spine1" />
+			<instance name="fire" bone="Bip01 Spine2" />
+			<instance name="fire" bone="Bip01 Neck" />
+			<instance name="fire" bone="Bip01 Head" />
+
+			<template name="fire">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="15"
+					minparticlelife="200"
+					maxparticlelife="900"
+					gravity="-8"
+					speed="30"
+					drag="0"
+					material="/shared/effects/materials/soul_projectile_blue.material"
+					offsetsphere="15 15 15"
+					angle="90"
+					position="0 0 0"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						startcolor="1 1 1"
+						midcolor="0 .5 1"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						startsize="15"
+						midsize="30"
+						endsize="100"
+						startalpha="0"
+						midalpha=".3"
+						endalpha="0"
+						startanchor="1"
+						endanchor="1"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="fire" bone="Bip01 L Thigh" />
+			<instance name="fire" bone="Bip01 L Calf" />
+			<instance name="fire" bone="Bip01 L Foot" />
+			<instance name="fire" bone="Bip01 R Thigh" />
+			<instance name="fire" bone="Bip01 R Calf" />
+			<instance name="fire" bone="Bip01 R Foot" />
+			<instance name="fire" bone="Bip01 L UpperArm" />
+			<instance name="fire" bone="Bip01 L Forearm" />
+			<instance name="fire" bone="Bip01 L Hand" />
+			<instance name="fire" bone="Bip01 R UpperArm" />
+			<instance name="fire" bone="Bip01 R Forearm" />
+			<instance name="fire" bone="Bip01 R Hand" />
+			
+			<template name="fire">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="15"
+					minparticlelife="200"
+					maxparticlelife="900"
+					gravity="-8"
+					speed="30"
+					drag="0"
+					material="/shared/effects/materials/soul_projectile_blue.material"
+					offsetsphere="10 10 10"
+					angle="90"
+					position="0 0 0"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						startcolor="1 1 1"
+						midcolor="0 .5 1"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						startsize="15"
+						midsize="30"
+						endsize="100"
+						startalpha="0"
+						midalpha=".3"
+						endalpha="0"
+						startanchor="1"
+						endanchor="1"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="fire" bone="Bip01 L Foot" />
+			<instance name="fire" bone="Bip01 R Foot" />
+			<instance name="fire" bone="Bip01 L Toe" />
+			<instance name="fire" bone="Bip01 R Toe" />
+
+
+
+			<simpleemitter
+				bone="_bone_center"
+				position="0 0 0"
+				spawnrate="5"
+				depthbias="25"
+				minparticlelife="400"
+				maxparticlelife="600"
+				offsetsphere="0 0 0"
+				angle="40"
+				speed="2"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor="0 0 0"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					startsize="100"
+					endsize="150"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-30"
+					maxanglespeed="30"
+					minendscale="3"
+					maxendscale="4"
+					startalpha="1"
+					endalpha="0"
+					startanchor="1"
+					endanchor="0"
+			 	/>
+			</simpleemitter>
+			
+			<skeletonemitter
+				spawnrate="35"
+				particlelife="550"
+				offsetsphere="35 35 35"
+				material="/shared/effects/materials/dust_smoke_10.material"
+				inheritvelocity="-0.1"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					startcolor="0 0 0"
+					endcolor="-1 -1 -1"
+					minsize="100"
+					maxsize="140"
+					endsize="300"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".15"
+				/>
+			</skeletonemitter>
+
+			<simpleemitter
+				bone="_bone_center"
+				spawnrate="15"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				minspeed="0"
+				maxspeed="300"
+				drag="0.03"
+				offsetsphere="0 0 25"
+				position="0 0 0"
+				angle="20"
+				gravity="-2"
+				material="/shared/effects/materials/pyroclast_02.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startcolor="0 0 0"
+					endcolor="-1 -1 -1"
+					minstartsize="10"
+					maxstartsize="500"
+					endsize="250"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".15"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="3"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 15"
+				offsetsphere="50 50 25"
+				material="/shared/effects/materials/heathaze.material"
+				inheritvelocity=".1"
+				depthbias="-35"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="1 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="25" 
+					endsize="600"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="2"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 25"
+				offsetsphere="50 50 25"
+				material="/shared/effects/materials/heathaze.material"
+				inheritvelocity=".1"
+				depthbias="-35"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="1 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="25" 
+					endsize="600"
+				/>
+			</simpleemitter>
+
+<!--
+			<terrainemitter
+				delay="0"
+				spawnrate="6"
+				particlelife="1500"
+				range="20"
+			>
+				<particle>
+				
+					<billboard
+						minlife="500"
+						maxlife="1000"
+						delay="0"
+						position="0 0 0"
+						material="/shared/effects/materials/whitedot.material"
+						minsize="200"
+						maxsize="250"
+						depthbias="-25"
+						startcolor="0 0 0"
+						midcolor="0 0 .5"
+						endcolor="0 0 0"
+						midcolorpos=".25"
+						expirelife="250"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+
+					<billboard
+						minlife="500"
+						maxlife="1000"
+						delay="0"
+						position="0 0 0"
+						material="/shared/effects/materials/starlight.material"
+						minsize="200"
+						maxsize="250"
+						depthbias="-25"
+						startcolor=".1"
+						midcolor="0 .1 .35"
+						endcolor="0 0 0"
+						midcolorpos=".25"
+						expirelife="250"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+					/>
+				</particle>
+			</terrainemitter>
+-->
+			
+			<billboard
+				bone="_bone_weapon3"
+				position="0 0 0"
+				expirelife="250"
+				startcolor="0 0 1"
+				endcolor="0 0 0"
+				size="75"
+				rollspeed="-1250"
+				depthbias="-10"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_weapon3"
+				position="0 0 0"
+				expirelife="250"
+				startcolor=".35"
+				endcolor="0 0 0"
+				size="25"
+				rollspeed="-1250"
+				depthbias="-10"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<billboard
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/blink.material"
+				startcolor="0 0 0"
+				midcolor="0 .25 .5"
+				endcolor="0 0 0"
+				maxroll="360"
+				size="135"
+				depthbias="-25"
+				life="1000"
+				directionalspace="local"
+				rollspeed="-50"
+				loop="true"
+			/>
+			
+			<template name="rings">
+				<billboard
+					expirelife="250"
+					bone="{bone}"
+					startcolor="0 .25 .5"
+					midcolor="0 .25 1"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+					size="65"
+					position="0 0 0"
+					material="../../ability_01/effects/material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="500"
+					pitch="90"
+					yawspeed="360"
+				/>
+				
+				<billboard
+					expirelife="250"
+					bone="{bone}"
+					startcolor="0 .25 .5"
+					midcolor="0 .25 1"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+					size="65"
+					position="0 0 0"
+					material="../../ability_01/effects/material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="500"
+					pitch="90"
+					yawspeed="-360"
+				/>
+			</template>
+			<instance name="rings" bone="_bone_weapon3"/>
+
+			<billboard
+				life="2000"
+				loop="true"
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				startcolor="0 0 0"
+				midcolor="0 0 .75"
+				endcolor="0 0 0"
+				size="250"
+				rollspeed="-1250"
+				depthbias="-10"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+		</particlesystem>
+		
+		<!-- ability effects -->
+		
+		<particlesystem name="state1" space="world" scale=".555">
+
+			<template name="fire">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="10"
+					minparticlelife="200"
+					maxparticlelife="900"
+					gravity="-8"
+					speed="30"
+					drag="0"
+					material="/shared/effects/materials/soul_projectile_blue.material"
+					offsetsphere="30 30 30"
+					angle="90"
+					position="0 0 0"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						startcolor=".5 .5 .5"
+						midcolor="0 .25 .5"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						startsize="15"
+						midsize="30"
+						endsize="125"
+						startalpha="0"
+						midalpha=".3"
+						endalpha="0"
+						startanchor="1"
+						endanchor=".4"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="fire" bone="Bip01 Spine" />
+			<instance name="fire" bone="Bip01 Spine1" />
+			<instance name="fire" bone="Bip01 Spine2" />
+			<instance name="fire" bone="Bip01 Neck" />
+			<instance name="fire" bone="Bip01 Head" />
+
+			<template name="fire">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="15"
+					minparticlelife="200"
+					maxparticlelife="900"
+					gravity="-8"
+					speed="30"
+					drag="0"
+					material="/shared/effects/materials/soul_projectile_blue.material"
+					offsetsphere="15 15 15"
+					angle="90"
+					position="0 0 0"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						startcolor=".5 .5 .5"
+						midcolor="0 .25 .5"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						startsize="15"
+						midsize="30"
+						endsize="100"
+						startalpha="0"
+						midalpha=".3"
+						endalpha="0"
+						startanchor="1"
+						endanchor="1"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="fire" bone="Bip01 L Thigh" />
+			<instance name="fire" bone="Bip01 L Calf" />
+			<instance name="fire" bone="Bip01 L Foot" />
+			<instance name="fire" bone="Bip01 R Thigh" />
+			<instance name="fire" bone="Bip01 R Calf" />
+			<instance name="fire" bone="Bip01 R Foot" />
+			<instance name="fire" bone="Bip01 L UpperArm" />
+			<instance name="fire" bone="Bip01 L Forearm" />
+			<instance name="fire" bone="Bip01 L Hand" />
+			<instance name="fire" bone="Bip01 R UpperArm" />
+			<instance name="fire" bone="Bip01 R Forearm" />
+			<instance name="fire" bone="Bip01 R Hand" />
+			
+			<template name="fire">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="15"
+					minparticlelife="200"
+					maxparticlelife="900"
+					gravity="-8"
+					speed="30"
+					drag="0"
+					material="/shared/effects/materials/soul_projectile_blue.material"
+					offsetsphere="10 10 10"
+					angle="90"
+					position="0 0 0"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						startcolor=".5 .5 .5"
+						midcolor="0 .25 .5"
+						endcolor="0 0 0"
+						midcolorpos=".2"
+						startsize="15"
+						midsize="30"
+						endsize="100"
+						startalpha="0"
+						midalpha=".3"
+						endalpha="0"
+						startanchor="1"
+						endanchor="1"
+					/>
+				</simpleemitter>
+			</template>
+
+			<instance name="fire" bone="Bip01 L Foot" />
+			<instance name="fire" bone="Bip01 R Foot" />
+			<instance name="fire" bone="Bip01 L Toe" />
+			<instance name="fire" bone="Bip01 R Toe" />
+
+			<simpleemitter
+				bone="_bone_center"
+				position="0 0 0"
+				spawnrate="5"
+				depthbias="25"
+				minparticlelife="400"
+				maxparticlelife="600"
+				offsetsphere="0 0 0"
+				angle="40"
+				speed="2"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor="0 0 0"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					startsize="100"
+					endsize="150"
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-30"
+					maxanglespeed="30"
+					minendscale="3"
+					maxendscale="4"
+					startalpha="1"
+					endalpha="0"
+					startanchor="1"
+					endanchor="0"
+			 	/>
+			</simpleemitter>
+			
+
+			<simpleemitter
+				bone="_bone_origin"
+				spawnrate="5"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				minspeed="0"
+				maxspeed="300"
+				drag="0.03"
+				offsetsphere="25 25 0"
+				position="0 0 0"
+				angle="20"
+				gravity="-2"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle
+					maxangle="360"
+					startcolor=".1 .1 .1"
+					midcolor="0 .1 .25"
+					endcolor="0 0 0"
+					midcolorpos=".75"
+					minstartsize="150"
+					maxstartsize="250"
+					endsize="250"
+				/>
+			</simpleemitter>
+
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="3"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 15"
+				offsetsphere="50 50 25"
+				material="/shared/effects/materials/heathaze.material"
+				inheritvelocity=".1"
+				depthbias="-35"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="1 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="25" 
+					endsize="600"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="2"
+				minparticlelife="750"
+				maxparticlelife="1000"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 25"
+				offsetsphere="50 50 25"
+				material="/shared/effects/materials/heathaze.material"
+				inheritvelocity=".1"
+				depthbias="-35"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="1 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="25" 
+					endsize="600"
+				/>
+			</simpleemitter>
+
+			<billboard
+				bone="_bone_weapon3"
+				position="0 0 0"
+				expirelife="250"
+				startcolor="0 0 1"
+				endcolor="0 0 0"
+				size="75"
+				rollspeed="-1250"
+				depthbias="-10"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_weapon3"
+				position="0 0 0"
+				expirelife="250"
+				startcolor=".35"
+				endcolor="0 0 0"
+				size="25"
+				rollspeed="-1250"
+				depthbias="-10"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<billboard
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/blink.material"
+				startcolor="0 0 0"
+				midcolor="0 .25 .5"
+				endcolor="0 0 0"
+				maxroll="360"
+				size="135"
+				depthbias="-25"
+				life="1000"
+				directionalspace="local"
+				rollspeed="-50"
+				loop="true"
+			/>
+			
+			<template name="rings">
+				<billboard
+					expirelife="250"
+					bone="{bone}"
+					startcolor="0 .25 .5"
+					midcolor="0 .25 1"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+					size="65"
+					position="0 0 0"
+					material="../../ability_01/effects/material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="500"
+					pitch="90"
+					yawspeed="360"
+				/>
+				
+				<billboard
+					expirelife="250"
+					bone="{bone}"
+					startcolor="0 .25 .5"
+					midcolor="0 .25 1"
+					endcolor="0 0 0"
+					midcolorpos=".25"
+					size="65"
+					position="0 0 0"
+					material="../../ability_01/effects/material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="500"
+					pitch="90"
+					yawspeed="-360"
+				/>
+			</template>
+			<instance name="rings" bone="_bone_weapon3"/>
+
+			<billboard
+				life="2000"
+				loop="true"
+				bone="_bone_centerofchest"
+				position="0 0 0"
+				startcolor="0 0 0"
+				midcolor="0 0 .75"
+				endcolor="0 0 0"
+				size="250"
+				rollspeed="-1250"
+				depthbias="-10"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+		</particlesystem>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		<particlesystem name="state2" space="entity" scale="1">
+<!--
+			<model
+				expirelife="500"
+				parentskeleton="true"
+				color="1 1.75 5"
+				startalpha=".75"
+				endalpha="0"
+				scale="1"
+				model="staff/model.mdf"
+			/>
+-->
+			
+			<simpleemitter
+				bone="_bone_weapon3"
+				position="0 0 0"
+				spawnrate="25"
+				drag="0"
+				minparticlelife="450"
+				maxparticlelife="750"
+				gravity="-1"
+				speed="0"
+				offsetsphere="0 0 0"
+				direction="0 0 1"
+				material="/shared/effects/materials/light_rays2.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor="0 .25 1"
+					endcolor="0 0 0"
+					midcolorpos=".35"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startsize="100"
+					endsize="100"
+					midsizepos=".4"
+					width="10"
+					minheight="100"
+					maxheight="150"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos="0.25"
+					startanchor="1"
+					endanchor="1"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		<particlesystem name="state3" space="entity" scale="1">
+		
+			<groundsprite
+				life="2000"
+				material="/shared/effects/materials/manaeye.material"
+				startsize="65"
+				midsize="75"
+				endsize="65"
+				color="0 0 .35"
+				maxyaw="360"
+				loop="true"
+			/>
+			
+			<groundsprite
+				life="2000"
+				material="/shared/effects/materials/manaeye.material"
+				startsize="50"
+				midsize="75"
+				endsize="50"
+				color="0 .1 .5"
+				maxyaw="360"
+				loop="true"
+			/>
+			
+			<billboard
+				position="0 0 10"
+				expirelife="250"
+				startcolor="0 .175 .55"
+				endcolor="0 0 0"
+				midcolorpos=".25"
+				size="165"
+				material="../../ability_01/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				depthbias="-35"
+				rollspeed="360"
+			/>
+			
+		</particlesystem>
+
+		
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="state1" />
+		<spawnparticlesystem instance="instance2" particlesystem="state2" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<waitfordeath instance="instance2" />
+	</thread>
+
+</effect>

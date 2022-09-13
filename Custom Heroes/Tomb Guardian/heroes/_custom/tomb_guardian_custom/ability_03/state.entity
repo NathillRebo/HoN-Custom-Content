@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_TombGuardian3"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	
+	effecttype=""
+	allowtransfer=""
+	impactinterval="1500"
+>
+	<oninflict>
+		<setvar0 a="source_health" b="0.06,0.07,0.08,0.09" op="mult" />
+		<damage effecttype="Magic DOT" a="0" b="var0" op="add" target="source_entity"/>
+		
+		<popup name="Ra" a="var0" target="source_entity" />
+		<areaofeffect
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			targetselection="all"
+			radius="400"
+			maximpactspertarget="1"
+		>
+			<damage effecttype="Magic DOT" a="0" b="var0" op="add" />
+			
+			<!-- VFX -->
+			<playeffect effect="effects/state_enemy.effect" source="target_entity" target="source_entity" />
+		</areaofeffect>
+	</oninflict>
+	
+	<onimpact>
+		<setvar0 a="source_health" b="0.06,0.07,0.08,0.09" op="mult" />
+		<damage effecttype="Magic DOT" a="0" b="var0" op="add" target="source_entity"/>
+		
+		<popup name="Ra" a="var0" target="source_entity" />
+		<areaofeffect
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			targetselection="all"
+			radius="400"
+			maximpactspertarget="1"
+		>
+			<damage effecttype="Magic DOT" a="0" b="var0" op="add" />
+			
+			<!-- VFX -->
+			<playeffect effect="effects/state_enemy.effect" source="target_entity" target="source_entity" />
+		</areaofeffect>
+	</onimpact>
+	
+	<onexpired>
+		<toggleoff name="Ability_TombGuardian3" />
+	</onexpired>
+</state>

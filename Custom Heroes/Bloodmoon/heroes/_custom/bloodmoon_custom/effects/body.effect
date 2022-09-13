@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.6">
+	
+			<billboard
+				life="2000"
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+				startcolor="0 0 0"
+				midcolor=".2 .1 0"
+				endcolor="0 0 0"
+				size="250"
+				depthbias="-100"
+				loop="true"
+			/>
+			<simpleemitter
+				count="75"
+				bone="_bone_centerofchest"
+				spawnrate="1000"
+				minparticlelife="250"
+				maxparticlelife="500"
+				direction="0 0 1"
+				minangle="95"
+				maxangle="125"
+				gravity="-2"
+				minspeed="0"
+				maxspeed="300"
+				drag="0.05"
+				offsetsphere="15"
+				material="/shared/effects/materials/fire_blue.material"
+				inheritvelocity="2"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startsize="50"
+					endsize="100"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					color="0.4 0.1 0.00"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				spawnrate="200"
+				count="10"
+				particlelife="1000"
+				gravity="-55"
+				speed="40"
+				drag=".08"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/dust_smoke_05.material"
+				offsetsphere="20 20 70"
+				minangle="90"
+				maxangle="-90"
+			>
+				<particle
+					startcolor="0 0 0" midcolor=".5" endcolor="0" midcolorpos=".1"
+					startalpha=".8" midalpha=".8" endalpha="0" midalphapos=".6"
+					startframe="0"
+					endframe="1"
+					startwidth="15" midwidth="12" endwidth="3"
+					midwidthpos=".5"
+					startheight="0" endheight="400"
+					lockup="true"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="2000"
+				minparticlelife="500" maxparticlelife="1000"
+				count="80"
+				depthbias="-5"
+				material="/shared/effects/materials/refract_gush.material"
+			>
+				<particle
+					startcolor=".1" midcolor=".3" endcolor="0"
+					startalpha="1"
+					endalpha="0"
+					minangle="0" maxangle="360"
+					minanglespeed="0" maxanglespeed="0"
+					width="8"
+					startheight="0" endheight="120"
+					flare="true"
+					turn="true"
+				/>
+			</simpleemitter>
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor=".35 .08 0.00"
+				midcolor=".25 0 0"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="175"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor=".35"
+				endcolor="0"
+				startsize="175"
+				endsize="0"
+				depthbias="-75"
+				material="/shared/effects/materials/flare_03.material"
+			/>
+			<billboard
+				bone="_bone_centerofchest"
+				life="350"
+				param="0.1"
+				startsize="50"
+				endsize="150"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

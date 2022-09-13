@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Valor2"
+
+	icon="icon.tga"
+	ishidden="true"
+
+	effecttype=""
+	
+	disarmed="true"
+	unitwalking="true"
+	immobilized="true"
+>
+	<onframe />
+	
+	<altavatar key="Hero_Cthulhuphant.Alt7"
+		icon="/heroes/cthulhuphant/alt7/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt8"
+		icon="/heroes/cthulhuphant/alt8/ability_01/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt9"
+		icon="/heroes/cthulhuphant/alt9/ability_01/icon.tga"
+	/>
+	
+</state>

@@ -1,0 +1,35 @@
+
+// Hero_zzz_StormSister											
+Hero_zzz_StormSister_name										Storm Sister
+Hero_zzz_StormSister_description								Storm Sister is a carry, who excels in dealing damage, both area of effect and single target. Her ultimate grants her a massive spike of power at the cost of damaging herself, thus items with life drain or health regen are good on her. Can be played as a suicider, killing as many enemies as she can before dying.
+
+// Ability_StormSister1
+Ability_StormSister1_name										Lightning Strike
+Ability_StormSister1_description_simple							Storm Sister calls down the lightning at the chosen area. After 1 second, enemies in the chosen area are dealt ^o{100,180,260,340} Magic Damage^*, are stunned for ^o{0.7,0.8,0.9,1} seconds^* and ^ohave their Buffs removed^*.\n\n^444The sky is falling.
+
+// Ability_StormSister2
+Ability_StormSister2_name										Storm Grasp
+Ability_StormSister2_name:shardofthemaster_boost				^pStorm Grasp^*
+Ability_StormSister2_description_simple							Storm Sister forms a link between her and the target, stealing ^o{1,2,3,4} Armor and Magic Armor^* for up to 4 seconds, while also reducing the target's ^oMovement Speed by ^o{20,30,40,50}%^* and dealing ^o{25,50,75,100} Magic Damage per second^*. The link can be broken by moving away from the target.\n\n^pShard of the Master^* heals you 170 Health over the duration.\n\n^444Free hugs for everyone!
+Ability_StormSister2_description_simple:shardofthemaster_boost	Storm Sister forms a link between her and the target, stealing ^o{1,2,3,4} Armor and Magic Armor^* for up to 4 seconds, while also reducing the target's ^oMovement Speed by ^o{20,30,40,50}%^* and dealing ^o{25,50,75,100} Magic Damage per second^*. The link can be broken by moving away from the target ^pand heals Storm Sister for 170 Health over the duration^*.\n\n^444Free hugs for everyone!
+
+// State_StormSister2_Enemy
+State_StormSister2_Enemy_name									Storm Grasped
+State_StormSister2_Enemy_description							Taking {25,50,75,100} Magic Damage per second.
+
+// State_StormSister2_Self
+State_StormSister2_Self_name									Storm Grasp
+
+// Ability_StormMaiden3
+Ability_StormMaiden3_name										Tempest Storm
+Ability_StormMaiden3_description_simple							Storm Sister debuffs the target, causing it to take ^o{20,35,50,65} Magic Damage^* per second for 4 seconds. This damage bounces to five other targets within range everytime it ticks.\n\n^444Electrifying!
+
+// Ability_StormSister4
+Ability_StormSister4_name										Overcharge
+Ability_StormSister4_name:ult_boost								^gUnlimited Power^*
+Ability_StormSister4_description_simple							Storm Sister overcharges herself, dealing ^o{60,85,110} Magic Damage per second to herself^*, but also increasing Attack Speed, Movement Speed, Casting Speed, Stun Resistance, Debuff Resistance and Slow Resistance by ^o{25,50,75}%^* and Mana Regen by ^o{25,50,75}^*.\n\n^gStaff of the Master^* causes you to fire chain lightnings while overcharged.\n\n^444Unlimited Power!
+Ability_StormSister4_description_simple:ult_boost				Storm Sister overcharges herself, dealing ^o{60,85,110} Magic Damage per second to herself^*, but also increasing Attack Speed, Movement Speed, Casting Speed, Stun Resistance, Debuff Resistance and Slow Resistance by ^o{25,50,75}%^* and Mana Regen by ^o{25,50,75}^*^g, while dealing 50 Magic Damage to a random enemy per 0.75 seconds (bouncing to five other targets)^*.\n\n^444Unlimited Power!
+
+// State_StormSister4_Self
+State_StormSister4_Self_name									Infinite Power
+State_StormSister4_Self_description								Takes {60,85,110} Magic Damage per second

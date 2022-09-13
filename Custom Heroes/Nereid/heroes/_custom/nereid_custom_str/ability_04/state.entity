@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nereid4"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	healthregenpercharge="4.5,8.5,12.5"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+	maxcharges="4"
+>
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" />
+	</onrefresh>
+	<modifier key="ult_boost" modpriority="100"
+		attackspeedpercharge="0.2"
+	/>
+</state>

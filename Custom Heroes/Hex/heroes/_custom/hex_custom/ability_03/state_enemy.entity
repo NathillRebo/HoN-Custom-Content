@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hex3"
+
+	icon="icon.tga"
+	passiveeffect=""
+	movespeedslowpercharge="0.0035,0.0047,0.0059,0.0071"
+	attackspeedslowpercharge="0.0035,0.0047,0.0059,0.0071"
+>	
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+</state>

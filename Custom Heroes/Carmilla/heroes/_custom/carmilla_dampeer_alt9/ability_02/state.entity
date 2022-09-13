@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Carmilla2"
+
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	
+	silenced="true"
+	perplexed="true"
+	revealed="true"
+	sighted="true"
+	magicarmor="-4,-5,-6,-7"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="silenced"
+>
+	<onframe>
+		<compare a="this_proxy_entity" b="0" op="eq">
+			<spawnunit name="Gadget_Silence_Item" target="target_position" fixedposition="true" pushentity="true" />
+			<setproxy target="stack_entity" />
+		</compare>
+		<else>
+			<distance source="this_proxy_entity" target="target_entity" />
+			<compare a="result" b="85" op="ge">
+				<spawnunit name="Gadget_Silence_Item" target="target_position" fixedposition="true" pushentity="true" />
+				<setproxy target="stack_entity" />
+			</compare>
+		</else>
+	</onframe>
+</state>

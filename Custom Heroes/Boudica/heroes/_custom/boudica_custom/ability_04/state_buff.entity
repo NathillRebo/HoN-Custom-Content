@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Boudica4_Shard"
+
+	icon="icon.tga"
+	passiveeffect="effects/buff.effect"
+
+	attackspeed="0.2"
+	movespeedmultiplier="0.2"
+	stunneddurationmultiplier="-0.2"
+	debuffdurationmultiplier="-0.2"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+</state>

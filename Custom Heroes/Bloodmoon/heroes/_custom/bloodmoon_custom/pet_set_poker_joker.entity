@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_Poker_Joker"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="/shared/effects/taunts/poker/model/joker.mdf"
+	skin=""
+		
+	passiveeffect="alt11/effects/set_pet_body.effect"
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	canturn="1"
+	
+	preglobalscale="12"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="64"
+	boundsradius="16"
+	isselectable="false"
+	iscontrollable="false"
+	selectionradius="40"
+	targetoffset="0 200 0"
+	
+	maxhealth="100"
+	armor="0"
+	healthregen="0"
+	invulnerable="true"
+	nothreat="true"
+
+	movespeed="100"
+	maxmovespeed="1000"
+	turnrate="500"
+	turnsmoothing="0.05"
+
+	flying="false"
+
+	cancarryitems="false"
+	unitwalking="true"
+	cliffwalking="true"
+	treewalking="true"
+	buildingwalking="true"
+	
+	deathtime="0"
+	corpsetime="0"
+
+	immunity="GadgetImmunity"
+	
+	canattack="false"
+	ismobile="true"
+	
+	attacktype="melee"
+	combattype="Hero"
+	
+	drawonmap="false"
+	sightrangeday="0"
+	sightrangenight="0"
+	clearvision="false"
+	
+	unittype="MiniPet AntiTP no_Overhead_Visuals"
+	
+	followrange="125"
+	
+	inheritvisibilityfromowner="true"
+	noblockneutralspawn="true" 
+>
+	<onspawn>
+		<order command="follow" source="this_entity" target="this_owner_entity"/>
+		<applystate name="State_Blackwal_Pet_Speed" target="this_entity" continuous="true" />
+	</onspawn>
+	
+	<onframe>
+		<compare source="this_owner_entity" a="source_entity" b="0" op="eq">
+			<delete/>
+		</compare>
+		<targettype type="alive" target="this_owner_entity" />
+		<else>
+			<kill source="" />
+		</else>
+
+		<distance source="this_entity" target="this_owner_entity" />
+		<setvar0 a="result" />
+		<compare a="var0" b="206" op="lt">
+			<order command="hold" source="this_entity" target="source_position"/>
+		</compare>
+		<compare a="var0" b="205" op="gt">
+			<order command="move" source="this_entity" target="this_owner_entity"/>
+		</compare>
+		<compare a="var0" b="600" op="gt">
+			<teleport source="this_entity" target="this_owner_entity" interpolate="false" />
+		</compare>
+		<setvar1 a="var0" b="0.1" op="mult" />
+		<applystate name="State_Blackwal_Pet_Speed" target="this_entity" continuous="true" pushentity="true" />
+		<setcharges entity="stack_entity" a="var1" />
+
+		<condition test="not_hasorder">
+			<order command="hold" source="this_entity" target="source_position"/>
+		</condition>
+	</onframe>
+
+	<onorderdisjointed>
+		<order command="hold" source="this_entity" target="source_position" />
+	</onorderdisjointed>
+</pet>

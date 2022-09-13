@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Cyclops4"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	stunneddurationmultiplier="-1"
+	debuffdurationmultiplier="-1"
+	slowresistance="1.0"
+>
+
+	<modifier key="ult_boost" modpriority="100"
+		attackspeed="0.9"
+	/>
+</state>

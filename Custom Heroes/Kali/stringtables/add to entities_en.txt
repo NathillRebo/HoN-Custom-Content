@@ -1,0 +1,39 @@
+
+// Hero_zzz_Kali
+Hero_zzz_Kali_name												Kali
+Hero_zzz_Kali_description										Kali is a spellcaster who can take a lot of beating thanks to her passive spell lifesteal, but requires careful positioning as to not take too much at once. Her Rage and Frenzy allow her to control enemy positions, while Destruction allows her to effectively enter the fray or reposition.
+
+// Ability_Kali1
+Ability_Kali1_name												Rage
+Ability_Kali1_description_simple								Kali curses the target, causing it to take ^o{9,18,27,36} Magic Damage per second^* and have its Movement Speed reduced by ^o{10,15,20,25}%^* for 30 seconds. The effect ends early if the target manages to kill a non-illusion unit.\n\n^444Let the Hunger Games begin!
+
+// State_Kali1
+State_Kali1_name												Frenzy
+State_Kali1_description											Takes {15,28,41,54} Magic Damage per second. Ends upon killing a non-illusion unit.
+
+// Ability_Kali2
+Ability_Kali2_name												Frenzy
+Ability_Kali2_description_simple								Kali frenzies enemies in front of her, dealing them ^o{90,150,210,270} Magic damage^*, reducing their Attack Damage by ^o{25,30,35,40}%^* and causing them to attack her for ^o{1.8,1.9,2,2.1} seconds^*.\n\n^444Blood for the Blood Goddess! Bones for the Bone Altar!
+
+// State_Kali2
+State_Kali2_name												Frenzy
+State_Kali2_description											Forced to attack Kali.
+
+// Ability_Kali3
+Ability_Kali3_name												Destruction
+Ability_Kali3_name:shardofthemaster_boost						^pDestruction^*
+Ability_Kali3_description_simple								Kali increases her Movement Speed by ^o75% for 1.5 seconds^*. After the effect expires, she deals ^o{90,160,230,300} Magic Damage^* to enemies around her and reduces their Movement Speed by ^o50% for 1.5 seconds^*.\n\n^pShard of the Master^* reduces cooldown of this ability by 1 second whenever you kill an unit.\n\n^444Not the Land Descruction though. 
+Ability_Kali3_description_simple:shardofthemaster_boost			Kali increases her Movement Speed by ^o75% for 1.5 seconds^*. After the effect expires, she deals ^o{90,160,230,300} Magic Damage^* to enemies around her and reduces their Movement Speed by ^o50% for 1.5 seconds^*.\n^pCooldown of this ability is reduced by 1 second every time you kill an unit.^*\n\n^444Not the Land Descruction though. 
+
+// State_Kali3
+State_Kali3_name												Destruction
+State_Kali3_description											Deals {90,160,230,300} Magic Damage to nearby enemies upon expiration and slows them by 50% for 1.5 seconds.
+
+// State_Kali3_Slow
+State_Kali3_Slow_name											Destructed
+
+// Ability_Kali4
+Ability_Kali4_name												Bloodlust
+Ability_Kali4_name:ult_boost									^gBloodlust^*
+Ability_Kali4_description_simple								Passively grants ^o{10,15,20}% Magic Lifesteal^*. Taking damage builds charges - ^o1 charge per {9,8,7} damage taken^*. Upon reaching 100 charges, removes all disables and debuffs from Kali and sets the charges to 0.\n\n^gStaff of the Master^* reduces remaining cooldowns of your basic abilities by 2.5 seconds whenever Bloodlust procs.\n\n^444Also known as Heroism.
+Ability_Kali4_description_simple:ult_boost						Passively grants ^o{10,15,20}% Magic Lifesteal^*. Taking damage builds charges - ^o1 charge per {9,8,7} damage taken^*. Upon reaching 100 charges, removes all disables and debuffs from Kali^g, reduces remaining cooldowns of her basic abilities by 2.5 seconds^* and sets the charges to 0.\n\n^444Also known as Heroism.

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Mephisto4"
+
+	radius="450"
+	lifetime="250"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="SuperiorMagic"
+	maximpactspertarget="1"
+>
+	<onimpact>
+		<applystate name="State_Stunned" duration="1500,1750,2000" />
+		<damage effecttype="Magic" amount="350,525,700" />
+	</onimpact>
+</affector>

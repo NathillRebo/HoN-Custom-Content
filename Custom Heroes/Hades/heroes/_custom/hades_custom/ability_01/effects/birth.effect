@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<modifier 
+			name="modifier0"
+			startcolor="97 .84 1"
+			midcolor=".73 .63 1"
+			midcolorpos="0.5"
+			endcolor=".73 .63 1"
+			startalpha="1"
+			midalpha="1"
+			endalpha="1"
+			midalphapos=".9"
+			life="750"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+			<simpleemitter
+			speed="340"
+			count="22"
+			spawnrate="400"
+			life="2500"
+			particlelife="2500"
+			position="0 0 100"
+			minangle="0"
+			maxangle="180"
+		>
+			<particle>
+				<model
+					model="bones.mdf"
+					life="2500"
+					startscale=".5"
+					
+					endscale="2"
+					anim="idle"
+					position="0 0 50"
+				
+				>
+				<twopointtrailemitter		
+						
+						name="trail01"
+						bone_a="_bone_02"
+						bone_b="_bone_01"
+						spawnrate="30"
+						life="1300"
+						particlelife="1300"
+						startparticlecolor="1 1 1"
+						endparticlecolor="0 0 0"
+						startparticlealpha="1"
+						endparticlealpha="0"
+						texpostime="1300"
+						texposscale="0"
+						texstretchscale="1"				
+						material="/shared/effects/materials/soul_projectile.material"
+					>
+						<particle 				
+								
+							startcolor="1 1 1"
+							endcolor="1 1 1"
+							
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+						/>
+					</twopointtrailemitter>		
+				</model>		
+			
+			</particle>
+		</simpleemitter>
+		
+			<simpleemitter
+				count="1"
+				offsetsphere="0 0 0"
+				spawnrate="1000"
+				particlelife="2500"
+			>
+				<particle>
+					<model
+					position="0 0 10"
+						life="2250"
+						model="model.mdf"
+						anim="idle"
+						startcolor=".73 .63 1"
+						midcolor=".73 .63 1"
+						endcolor=".73 .63 1"
+						midcolorpos=".5"
+						expirelife="500"
+						startalpha=".75"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".5"
+					>
+						<template name="redTrails">
+							<simpleemitter
+							life="500"
+								bone="{bone}"
+								position="0 10 0"
+								spawnrate="25"
+								particlelife="500"
+								gravity="0"
+								offsetsphere="0 0 0"
+								drag="0"
+								acceleration="0"
+								direction="0 0 0"
+								material="/shared/effects/materials/bad_healing_smoke_12.material"
+							>
+								<particle 
+									startcolor=".04 .03 .08"
+									midcolor=".04 .03 .08"
+									endcolor="-0.73 -0.63 -1"
+									midcolorpos="0.5"
+									minangle="0"
+									maxangle="360"
+									startsize="35"
+									midsize="20"
+									endsize="5"
+									midsizepos=".8"
+									startalpha=".75"
+									midalpha=".75"
+									endalpha="0"
+									anchor=".25"
+								/>
+							</simpleemitter>
+						</template>
+						
+						<instance name="redTrails" bone="Box24"/>
+						<instance name="redTrails" bone="Box29"/>
+						<instance name="redTrails" bone="Box23"/>
+						
+						<template name="Trails">
+							<simpleemitter
+								bone="{bone}"
+								life="500"
+								position="0 10 0"
+								spawnrate="25"
+								particlelife="500"
+								gravity="0"
+								offsetsphere="0 0 0"
+								drag="0"
+								acceleration="0"
+								direction="0 0 0"
+								material="/shared/effects/materials/phantom_smoke_04.material"
+							>
+								<particle 
+									startcolor=".3 .26 .68"
+									endcolor="0 0 0"
+									midcolorpos="0.5"
+									minangle="0"
+									maxangle="360"
+									startsize="35"
+									midsize="20"
+									endsize="5"
+									midsizepos=".8"
+									startalpha="0"
+									midalpha=".25"
+									endalpha="0"
+									anchor=".25"
+								/>
+							</simpleemitter>
+						</template>
+						
+						<instance name="Trails" bone="Box24"/>
+						<instance name="Trails" bone="Box29"/>
+						<instance name="Trails" bone="Box23"/>
+					
+					</model>
+				</particle>
+			</simpleemitter>
+
+
+			<twopointemitter
+				timenudge="2000"
+				life="500"
+				depthbias="-30"
+				bone_a="Bip01 Spine"
+				bone_b="Box05"
+				spawnrate="30"
+				particlelife="850"
+				offsetsphere="50"
+				speed="25.0"
+				material="/shared/effects/materials/dust.material"
+				expirelife="1000"
+				startparticlealpha="0"
+				midparticlealpha="0"
+				endparticlealpha="1"
+			>
+				<particle
+					startcolor=".10 .08 .22"
+					endcolor="-0.73 -0.63 -1"
+					midcolorpos="0.3"
+					startalpha=".25"
+					endalpha="0"
+					maxangle="360"
+					startsize="20"
+					endsize="120"
+					startanchor="1"
+					endanchor="0"
+			/>
+			</twopointemitter>
+
+			<twopointemitter
+				life="300"
+				depthbias="-30"
+				bone_a="Bip01 Spine"
+				bone_b="Box05"
+				spawnrate="100"
+				minparticlelife="200"
+				maxparticlelife="850"
+				offsetsphere="60"
+				speed="25.0"
+				material="/shared/effects/materials/phantom_smoke_03.material"
+				expirelife="1000"
+				startparticlealpha="0"
+				midparticlealpha="0"
+				endparticlealpha="1"
+			>
+				<particle
+					startcolor=".1 .08 .22"
+					midcolor=".31 .27 .71"
+					endcolor="0"
+					midcolorpos="0.3"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					startsize="20"
+					endsize="120"
+					startanchor="1"
+					endanchor="0"
+				/>
+				<particle
+					startcolor="0"
+					midcolor=".31 .27 .71"
+					endcolor="00"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					maxangle="360"
+					startsize="20"
+					endsize="120"
+					startanchor="1"
+					endanchor="0"
+				/>
+			</twopointemitter>
+
+			<simpleemitter
+				expirelife="1000"
+				startparticlealpha="0"
+				midparticlealpha="0"
+				endparticlealpha="1"
+				life="500"
+				bone="Bip01 Spine"
+				spawnrate="40"
+				minparticlelife="1"
+				maxparticlelife="750"
+				offsetsphere="50 50 30"
+				gravity="-1"
+				minspeed="70"
+				maxspeed="140"							
+				direction="0 0 1"
+				minangle="-40"
+				maxangle="40"
+				material="/shared/effects/materials/spark_10.material"
+			>			
+				<particle
+					startcolor=".34 .3 .77"
+					endcolor="0 0 0"
+					minsize="7"
+					maxsize="25"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+				/>
+				<particle
+					startcolor=".22 .19 .49"
+					endcolor="0 0 0"
+					minsize="15"
+					maxsize="25"
+					minangle="-360"
+					maxangle="1"
+					minanglespeed="110"
+					maxanglespeed="-110"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				expirelife="2000"
+				life="250"
+				offsetsphere="75 75 15"
+				bone="Bip01 Spine"
+				spawnrate="15"
+				minparticlelife="300"
+				maxparticlelife="750"
+				speed="30"
+				material="/shared/effects/materials/refract_outsplash.material"
+			>
+				<particle
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					startsize="120"
+					endsize="450"
+					param=".1"
+					depthbias="-50"
+					stickiness="0"
+					endstickiness="1"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+     	 	<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+
+</effect>

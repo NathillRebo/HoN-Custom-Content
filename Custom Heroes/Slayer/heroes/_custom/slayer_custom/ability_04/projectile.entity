@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Slayer4"
+
+	gravity="5000"
+	lifetime="909"
+	useexactlifetime="true"
+
+	modelscale="1.0"
+	model=""
+	deatheffect=""
+	canturn="false"
+	flying="false"
+	flyheight="0"
+>
+	<onimpact>
+		
+		<playeffect effect="effects/impact.effect" target="source_entity" source="source_entity"/>
+		<areaofeffect
+			radius="250"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Physical"
+		>
+			<applystate name="State_Slayer4_Debuff" duration="5000" />
+			<evaluate a="0.2,0.25,0.3" b="target_health" op="mult" />
+			<damage effecttype="Physical" amount="1" b="result" op="mult" />
+		</areaofeffect>
+		<applystate name="State_Slayer4_Buff" target="this_source_entity" duration="5000" />
+	</onimpact>
+</projectile>

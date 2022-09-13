@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_PandoraCurse4"
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	displaylevel="true"
+	allowtransfer="true"
+	effecttype="StatusDebuff"
+	
+	stunneddurationmultiplierpercharge="0.04,0.07,0.10,0.13"
+	debuffdurationmultiplierpercharge="0.04,0.07,0.10,0.13"
+>
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onframe>
+			<setvar0 a="2.64" b="frametime" op="mult" />
+			<setvar0 a="var0" b="charges" op="mult" />
+			<damage target="this_owner_entity" effecttype="Magic DOT" amount="1" b="var0" op="mult" />
+		</onframe>
+	</modifier>
+</state>

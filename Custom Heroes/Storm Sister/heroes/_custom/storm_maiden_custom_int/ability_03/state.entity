@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_StormSister3"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	impactinterval="1000"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="20,35,50,65" />
+		<spawnaffector name="Affector_StormSister3" proxy="target_entity" />
+	</onimpact>
+</state>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Hex4"
+
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="1450"
+	castactiontime="450"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_position"
+	targetscheme="enemy_units"
+	
+	casteffecttype="Magic"
+	casteffect="effects/cast.effect"
+	
+	manacost="350,500,650"
+	cooldowntime="115000,100000,85000"
+	range="1100"
+	targetradius="145"
+
+	forcerange="955"
+	allowoutofboundscast="true"
+	
+	showlinecast="true"
+	linecastrange="1100"
+	linecastwidth="145"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<spawnunit name="Gadget_Hex4" target="source_position" pushentity="true" />
+		<spawnprojectile name="Projectile_Hex4" target="target_position" bind="stack_entity" param="1000,2000,3000" pushentity="true" offset="0 125 0" />
+		<spawnaffector name="Affector_Hex4" target="stack_entity" />
+	</onimpact>
+	<modifier key="ult_boost" modpriority="100"
+		range="1600"
+		targetradius="200"
+		linecastrange="1600"
+		linecastwidth="200"
+		forcerange="1400"
+		casteffect="effects/cast_sotm.effect"
+	>
+		<onimpact>
+			<spawnunit name="Gadget_Hex4_Sotm" target="source_position" pushentity="true" />
+			<spawnprojectile name="Projectile_Hex4_Sotm" target="target_position" bind="stack_entity" param="1000,2000,3000" pushentity="true" offset="0 125 0" />
+			<spawnaffector name="Affector_Hex4_Sotm" target="stack_entity" />
+		</onimpact>
+	</modifier>
+</ability>

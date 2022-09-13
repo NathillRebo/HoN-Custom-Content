@@ -1,0 +1,49 @@
+
+// Hero_Zero_Custom
+Hero_Zero_Custom_name											Zero
+Hero_Zero_Custom_role											Zero is a carry that scales with maximum mana. Capable of sustaing herself effectively, most efficient when she is able to spend her mana and cast her Biotic Shell frequently.
+
+// Ability_Zero1
+Ability_Zero1_name												Plasma
+Ability_Zero1_name:ult_boost									^gOvercharged Plasma^*
+Ability_Zero1_description										Zero empowers her attacks with plasma ^tat the cost of 4% of her max Mana per attack^*.
+Ability_Zero1_description2										^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Bonus damage is dealt also to all enemy units within 275 range of the target.
+Ability_Zero1_description_simple								^tCosts 4% of max Mana per attack^*\nZero empowers her attacks, causing them to deal bonus ^oMagic Damage equal to {4}% of your Max Mana^*.\n\nPassively increases Intelligence by {6,12,18,24}.\n\n^gStaff of the Master^* makes this bonus damage AoE.\n\n^444You owe me nuclear material!
+Ability_Zero1_description_simple:ult_boost						^tCosts 4% of max Mana per attack^*\nZero empowers her attacks, causing them to deal bonus ^oMagic Damage equal to {4}% of your Max Mana^* ^gto enemies in a small radius^*.\n\nPassively increases Intelligence by {6,12,18,24}.\n\n^444You owe me nuclear material!
+Ability_Zero1_effect_header
+Ability_Zero1_tooltip_flavor									You owe me nuclear material!
+Ability_Zero1_IMPACT_effect										These attacks deal an additional ^oMagic Damage equal to {4}% of your Max Mana^* to the target.
+Ability_Zero1_IMPACT_effect:ult_boost							These attacks deal an additional ^oMagic Damage equal to {4}% of your Max Mana^* to the target ^gand enemies around it^*.
+
+// Ability_Zero2
+Ability_Zero2_name												Power Surge
+Ability_Zero2_name:shardofthemaster_boost						^pPower Surge^*
+Ability_Zero2_description										Zero surges herself with biotic energies ^tat the cost of 10% of her max Mana^*.
+Ability_Zero2_description_simple								^tCosts 10% of max Mana to activate^*\nZero heals 10% of her max Mana as Health^* and gains ^O{20,30,40,50}% Attack Speed and Movement Speed^* for 4 seconds.\n\n^pShard of the Master^* passively steals 0.8% max Mana from attacked enemies.\n\n^444Let's get it started!
+Ability_Zero2_description_simple:shardofthemaster_boost			^tCosts 10% of max Mana to activate^*\nZero heals 10% of her max Mana as Health^* and gains ^O{20,30,40,50}% Attack Speed and Movement Speed^* for 4 seconds.\n\n^pPassively your attacks steal 0.8% of target's Max Mana from them.\n\n^444Let's get it started!
+Ability_Zero2_effect_header
+Ability_Zero2_tooltip_flavor									Let's get it started!
+Ability_Zero2_IMPACT_effect										This causes her to regain ^o10% of her max Mana as Health^* and gain ^o{20,30,40,50}% Attack Speed and Movement Speed^* for 4 seconds.
+
+//State_Zero2
+State_Zero2_name												Power Surged
+
+// Ability_Zero3
+Ability_Zero3_name												Megablast
+Ability_Zero3_description										Zero fires a bolt of overcharged plasma at an enemy
+Ability_Zero3_description_simple								^tCosts 7% of max Mana to activate^*\nZero fires a bolt at an enemy. On hit, it explodes, dealing ^o13% of her max Mana as Magic Damage^*, reducing ^oMovement Speed by {15,20,25,30}%^* and ^oMagic Armor by {1,2,3,4}^* for 3 seconds.\n\n^444Better than Kiloblast, weaker than Gigablast.
+Ability_Zero3_effect_header
+Ability_Zero3_tooltip_flavor									Better than Kiloblast, weaker than Gigablast.
+Ability_Zero3_IMPACT_effect										It explodes upon reaching its target, dealing ^o13% of her max Mana as Magic Damage^*, reducing ^oMovement Speed by {15,20,25,30}%^* and ^oMagic Armor by {1,2,3,4}^* for 3 seconds.
+
+// Ability_Zero4
+Ability_Zero4_name												Biotic Shell
+Ability_Zero4_description										Zero surrounds herself with impenetrable shield.
+Ability_Zero4_description_simple								Zero surrounds herself in a shell, which ^oreduces damage taken to 0 for {2,2.5,3} seconds^*, while also ^orefilling her mana^*.\n\nSpending mana on an ability reduces cooldown by 1 second per 50 mana spent.\n\n^444Ready for another round!
+Ability_Zero4_effect_header
+Ability_Zero4_tooltip_flavor									Ready for another round!
+Ability_Zero4_IMPACT_effect										The shield ^orestores all of her mana^* instantly, and then ^oreduces incoming damage to 0 for {2,2.5,3} seconds^*.\n\nSpending mana on an ability reduces cooldown by 1 second per 50 mana spent.
+
+// State_Zero4
+State_Zero4_name												Biotic Shield
+State_Zero4_description											Damage taken reduced to 0.

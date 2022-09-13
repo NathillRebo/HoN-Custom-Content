@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_StormSister4"
+
+	radius="500"
+	
+	impactdelay="200"
+	maximpactsperinterval="1"
+	maximpactspertarget="1"
+	targetscheme="visible_enemy_units"
+	targetselection="closest"
+	effecttype="Magic"
+	persist="true"
+	
+	impacteffect="effects/chain_impact.effect"
+	linkeffect="effects/chain_lightning_link.effect"
+>
+	<onimpact>
+		<targettype type="alive" source="this_proxy_entity" target="this_proxy_entity">
+			<chain count="6"/>
+		</targettype>
+		<else>
+			<!-- 1 less chain if the target is already dead -->
+			<chain count="5"/>
+		</else>
+		<compare a="target_entity" b="proxy_entity" op="eq" />
+		<else>
+			<damage effecttype="Magic" amount="50" />
+		</else>
+	</onimpact>
+</affector>

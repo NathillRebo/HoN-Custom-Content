@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Diablo1"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	
+	effecttype=""
+	allowtransfer=""
+	impactinterval="250"
+	movespeedmultiplier="0.07,0.1,0.13,0.16"
+	maxmovespeed="35,55,75,95"
+	
+	modifierkey="DiabloMana2"
+>
+	<oninflict>
+	</oninflict>
+	
+	<onimpact>
+		<compare a="source_mana" b="5.25,6.25,7.25,8.25" op="ge" >
+			<takemana target="this_owner_entity" amount="5.25,6.25,7.25,8.25" triggeractionscript="true" costovertime="true" />
+			<spawnunit name="Gadget_Diablo1" count="1" owner="this_owner_entity" target="this_owner_position" pushentity="true"/>
+		</compare>
+		<else>
+			<expire/>
+		</else>
+	</onimpact>
+	
+	<onexpired>
+		<toggleoff name="Ability_Diablo1" />
+	</onexpired>
+</state>

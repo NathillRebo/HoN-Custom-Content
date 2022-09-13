@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Cerberus4"
+
+	speed="900"
+	gravity="0"
+	
+	flying="true"
+	flyheight="48"
+
+	modelscale="1.2"
+	model="effects/model.mdf"
+
+	impacteffect=""
+	invalideffect=""
+	traileffect="effects/trail.effect"
+	
+	dynamicprecache="effects/impact.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<!-- Deal damage and apply state if the target is still valid -->
+		<combatevent source="source_entity" target="this_proxy_entity" effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<areaofeffect
+					radius="200"
+					targetselection="all"
+					targetscheme="enemy_units"
+					effecttype="Magic"
+					center="target_position"
+				>
+					<applystate name="State_Cerberus4" duration="1000" />
+					<damage effecttype="Magic" amount="50,100,150"/>
+				</areaofeffect>
+			</onimpact>
+		</combatevent>
+		
+		<!-- Dynamic visual impact effect -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="this_proxy_entity" source="this_proxy_entity" occlude="true" />
+
+		<!-- Bounce -->
+		<compare a="param" b="0" op="gt">
+			<setvar0 a="param" b="1" op="sub" />
+			<compare a="this_proxy_entity" b="0" op="ne">
+				<areaofeffect
+					radius="600"
+					maxtotalimpacts="1"
+					targetselection="random"
+					targetscheme="nonstealth_enemy_units"
+					center="this_position"
+					ignore="this_proxy_entity"
+				>
+					<spawnprojectile name="Projectile_Cerberus4" source="this_position" target="target_position" proxy="target_entity" param="var0" />
+				</areaofeffect>
+			</compare>
+			<else>
+				<areaofeffect
+					radius="600"
+					maxtotalimpacts="1"
+					targetselection="random"
+					targetscheme="nonstealth_enemy_units"
+					center="this_position"
+				>
+					<spawnprojectile name="Projectile_Cerberus4" source="this_position" target="target_position" proxy="target_entity" param="var0" />
+				</areaofeffect>
+			</else>
+		</compare>
+	</onimpact>
+	<modifier key="ult_boost" modpriority="100" effectdescription="true" >
+		<onimpact>
+			<!-- Deal damage and apply state if the target is still valid -->
+			<combatevent source="source_entity" target="this_proxy_entity" effecttype="AbilityBasedProjectile">
+				<onimpact>
+					<areaofeffect
+						radius="200"
+						targetselection="all"
+						targetscheme="enemy_units"
+						effecttype="Magic"
+						center="target_position"
+					>
+						<applystate name="State_Cerberus4" duration="1000" />
+						<damage effecttype="Magic" amount="50,100,150"/>
+					</areaofeffect>
+				</onimpact>
+			</combatevent>
+			
+			<!-- Dynamic visual impact effect -->
+			<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" target="this_proxy_entity" source="this_proxy_entity" occlude="true" />
+
+			<!-- Bounce -->
+			<compare a="param" b="0" op="gt">
+				<setvar0 a="param" b="1" op="sub" />
+				<compare a="this_proxy_entity" b="0" op="ne">
+					<areaofeffect
+						radius="600"
+						maxtotalimpacts="1"
+						targetselection="random"
+						targetscheme="nonstealth_enemy_units"
+						center="this_position"
+						ignore="this_proxy_entity"
+					>
+						<spawnprojectile name="Projectile_Cerberus4" source="this_position" target="target_position" proxy="target_entity" param="var0" />
+					</areaofeffect>
+					<areaofeffect
+						radius="600"
+						maxtotalimpacts="1"
+						targetselection="random"
+						targetscheme="nonstealth_enemy_units"
+						center="this_position"
+						ignore="this_proxy_entity"
+					>
+						<spawnprojectile name="Projectile_Cerberus4" source="this_position" target="target_position" proxy="target_entity" param="var0" />
+					</areaofeffect>
+				</compare>
+				<else>
+					<areaofeffect
+						radius="600"
+						maxtotalimpacts="1"
+						targetselection="random"
+						targetscheme="nonstealth_enemy_units"
+						center="this_position"
+					>
+						<spawnprojectile name="Projectile_Cerberus4" source="this_position" target="target_position" proxy="target_entity" param="var0" />
+					</areaofeffect>
+					
+					<areaofeffect
+						radius="600"
+						maxtotalimpacts="1"
+						targetselection="random"
+						targetscheme="nonstealth_enemy_units"
+						center="this_position"
+					>
+						<spawnprojectile name="Projectile_Cerberus4" source="this_position" target="target_position" proxy="target_entity" param="var0" />
+					</areaofeffect>
+				</else>
+			</compare>
+		</onimpact>
+	</modifier>
+</projectile>

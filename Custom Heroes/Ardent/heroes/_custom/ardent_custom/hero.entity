@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Ardent_Custom"
+
+	team="Legion"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="2.1"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+
+	category="physical"
+	difficulty="2"
+
+	solorating="4"
+	junglerating="0"
+	carryrating="1"
+	supportrating="5"
+	initiatorrating="3"
+	gankerrating="0"
+	pusherrating="0"
+	rangedrating="3"
+	meleerating="0"
+	
+	movespeed="295"
+	turnrate="450"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="0.06"
+	magicarmor="5"
+
+	inventory0="Ability_Ardent1"
+	inventory1="Ability_Ardent2"
+	inventory2="Ability_Ardent3"
+	inventory3="Ability_Ardent4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory7=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="400"
+	attackcooldown="1700"
+	attackdamagemin="28"
+	attackdamagemax="33"
+	attacknumanims="5"
+	attackoffset="0 100 70"
+	attackprojectile="Projectile_Custom_ArdentAttack"
+	attackrange="475"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Agility"
+	strength="20"
+	strengthperlevel="2.1"
+	agility="22"
+	agilityperlevel="2.6"
+	intelligence="15"
+	intelligenceperlevel="1.4"
+	
+	previewmodel="preview.mdf"
+	previewpos="0 0 -50"
+	previewangles="0 0 0"
+	previewscale="1.8"
+	
+	storemodel="preview.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.85"
+	
+	corpsetime="2000"
+	corpsefadetime="2000"
+	corpsefadeeffect=""
+	
+	portraitcampos="27 -50 15"
+	portraitangles="20 0 0"
+>
+	<recommendeditem name="Item_Excruciator" /> 3725
+	<recommendeditem name="Item_FrostfieldPlate" /> 4600
+	<recommendeditem name="Item_Protect" /> 4600
+	<recommendeditem name="Item_Immunity" /> 4825
+	<recommendeditem name="Item_DaemonicBreastplate" /> 5600
+	<recommendeditem name="Item_Evasion" /> 5700
+	<recommendeditem name="Item_Sasuke" /> 6200
+	
+</hero>

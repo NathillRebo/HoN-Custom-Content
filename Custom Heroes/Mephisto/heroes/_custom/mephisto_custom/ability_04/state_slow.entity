@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Mephisto4_Slow"
+
+	icon="icon.tga"
+	
+	passiveeffect=""
+	effecttype="Push"
+	movespeedslow="0.5"
+	
+	unitwalking="true"
+	restrained="true"
+
+	negativeeffect="slowed"
+	
+	modifierkey="kraken_Whirlpool"
+>
+	<onframe>
+		<push force="-1800" frame="true" source="source_entity" />
+	</onframe>
+	
+</state>

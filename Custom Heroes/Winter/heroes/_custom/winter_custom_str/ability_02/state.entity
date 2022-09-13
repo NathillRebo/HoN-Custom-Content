@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Winter2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	stunned="true"
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<oninflict>
+		<setaccumulator value="0" />
+		<setcharges a="200,300,400,500" entity="this_entity" /> <!-- Shield health as charges -->
+	</oninflict>
+
+	<onrefresh>
+		<setaccumulator value="0" />
+		<setcharges a="200,300,400,500" entity="this_entity" /> <!-- Shield health as charges -->
+	</onrefresh>
+	
+	<ondamaged>
+		<absorbdamage max="200,300,400,500">
+			<expire />
+		</absorbdamage>
+		
+		<!-- Shield health as charges -->
+		<evaluate a="200,300,400,500" b="accumulator" op="sub" />
+		<evaluate a="result" b="0" op="max" />
+		<setcharges a="result" entity="this_entity" />
+	</ondamaged>
+	
+	<onexpired>
+		<playeffect effect="effects/ability.effect" source="source_entity" target="" />
+		<spawnaffector name="Affector_Winter2" owner="this_inflictor_entity" target="target_position" />
+	</onexpired>
+	
+	<onframe />
+	<modifier key="shardofthemaster_boost" modpriority="101"
+		healthregen="160"
+	/>
+</state>

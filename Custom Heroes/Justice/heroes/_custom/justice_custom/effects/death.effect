@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="1" useentityeffectscale="1">
+
+<definitions>
+	<particlesystem name="system0" space="world" scale="1">
+
+		
+		<simpleemitter
+			spawnrate="1000"
+			count="1"
+			particlelife="750"
+			gravity="0"
+			speed="0"
+			drag="0"
+			acceleration="0"
+			position="0 0 0"
+			material="/shared/effects/materials/phantom_black.material"
+			offsetsphere="0 0 0"
+		>
+			<particle>
+				<model
+					life="5000"
+					model="/heroes/xalynx/ability_04/effects/model.mdf"
+					anim="up"
+					startscale="1" midscale="35" enscale="35" midscalepos=".25"
+					expirelife="500"
+					startparticlealpha="1"
+					endparticlealpha="0"
+					minyaw="0"
+					maxyaw="360"
+					yawspeed="360"
+					position="0 0 50"
+					directionalspace="world"
+				>
+
+					<template name="spirits">
+						<twopointtrailemitter
+							life="1000"
+							bone_a="{bone01}"
+							bone_b="{bone02}"
+							spawnrate="30"
+							minparticlelife="500"
+							maxparticlelife="500"
+							texpostime="400"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/reveal_trail_gradient_scavenger_smear.material"
+							minexpirelife="200"
+							maxexpirelife="500"
+							
+						>
+							<particle
+								alpha="1"
+								startframe="0"
+								midframe=".7"
+								endframe="0"
+								midframepos=".25"
+								param=".5"
+							/>
+						</twopointtrailemitter>
+					</template>
+					
+					<instance name="spirits" bone01="_bone_01" bone02="_bone_02" />
+					<instance name="spirits" bone01="_bone_05" bone02="_bone_06" />
+					<instance name="spirits" bone01="_bone_07" bone02="_bone_08" />
+					<instance name="spirits" bone01="_bone_11" bone02="_bone_12" />
+					
+				</model>
+				
+			</particle>
+		</simpleemitter>
+
+		<billboard
+			life="600"
+			delay="0"
+			position="0 0 40"
+			material="/shared/effects/materials/phantom_black.material"
+			startsize="120"
+			endsize="0"
+			color=".5 .5 .5"
+			
+			midcolorpos=".1"
+			expirelife="250"
+			depthbias="-52"
+		/>
+			
+		<billboard
+			life="600"
+			delay="0"
+			position="0 0 60"
+			material="/shared/effects/materials/phantom_black.material"
+			startsize="150"
+			endsize="0"
+			color=".5 .5 .5"
+			
+			midcolorpos=".1"
+			expirelife="250"
+			depthbias="-52"
+		/>
+		
+		<billboard
+			life="100"
+			delay="0"
+			position="0 0 50"
+			material="/shared/effects/materials/phantom_black.material"
+			startsize="250"
+			endsize="50"
+			color="1 1 1 "
+			
+			midcolorpos=".1"
+			expirelife="250"
+			depthbias="-52"
+		/>
+			
+		<groundsprite
+			delay="100"
+			life="4400"
+			material="/shared/effects/materials/earth_cracks_02.material"
+			startsize="80"
+			endsize="80"		
+			startalpha=".8"
+			midalpha=".8"
+			endalpha="0"
+			maxyaw="360"
+			position="-40 0 0"
+		/>	
+	
+	</particlesystem>
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

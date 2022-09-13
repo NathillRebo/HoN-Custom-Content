@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Vermilion4"
+	
+	icon="icon.tga"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	actiontype="passive"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<applystate name="State_Vermilion4" duration="15000" />
+		</else>
+	</onattackingdamageevent>
+	<onabilityimpact>
+		<pushability source="this_owner_entity" slot="0" />
+		<reducecooldown entity="stack_entity" duration="900,1204,1508" />
+		<pushability source="this_owner_entity" slot="1" />
+		<reducecooldown entity="stack_entity" duration="900,1204,1508" />
+		<pushability source="this_owner_entity" slot="2" />
+		<reducecooldown entity="stack_entity" duration="900,1204,1508" />
+	</onabilityimpact>
+	<modifier key="ult_boost" modpriority="101">
+		<onabilityimpact>
+			<pushability source="this_owner_entity" slot="0" />
+			<reducecooldown entity="stack_entity" duration="900,1204,1508" />
+			<pushability source="this_owner_entity" slot="1" />
+			<reducecooldown entity="stack_entity" duration="900,1204,1508" />
+			<pushability source="this_owner_entity" slot="2" />
+			<reducecooldown entity="stack_entity" duration="900,1204,1508" />
+			<areaofeffect
+				targetselection="all"
+				targetscheme="ally_heroes"
+				radius="525"
+				effecttype=""
+				ignoreinvulnerable="true"
+			>
+				<pushability source="target_entity" slot="0" />
+				<reducecooldown entity="stack_entity" duration="497" />
+				<pushability source="target_entity" slot="1" />
+				<reducecooldown entity="stack_entity" duration="497" />
+				<pushability source="target_entity" slot="2" />
+				<reducecooldown entity="stack_entity" duration="497" />
+				<pushability source="target_entity" slot="3" />
+				<reducecooldown entity="stack_entity" duration="497" />
+			</areaofeffect>
+		</onabilityimpact>
+	</modifier>
+</ability>

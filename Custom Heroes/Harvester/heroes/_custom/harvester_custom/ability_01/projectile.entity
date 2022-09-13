@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Dread1"
+
+	speed="1200"
+	gravity="0"
+	lifetime="1000"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	traileffect="effects/trail.effect"
+	canturn="1"
+	flying="true"
+	flyheight="100"
+	deatheffect="effects/death.effect"
+	
+	touchradius="80"
+	touchradiusdiradjust="true"
+	maxtouches="1"
+	touchtargetscheme="enemy_units"
+	toucheffecttype="Magic"
+>
+	<ontouch>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<cantarget effecttype="Magic">
+					<damage effecttype="Magic" amount="100,170,240,310" />
+					<applystate name="State_Stunned" duration="1300,1400,1500,1600" proxy="this_owner_entity" />
+				</cantarget>
+			</onimpact>
+		</combatevent>
+
+		<kill target="this_entity" source="" />
+	</ontouch>
+
+</projectile>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Cthulhuphant_Ability3"
+
+	icon="icon.tga"
+	ishidden="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	incominghealmultiplier="-0.3,-0.4,-0.5,-0.6"
+>
+	<onframe />
+	
+	<altavatar key="Hero_Cthulhuphant.Alt7" modpriority="1"
+	    icon="/heroes/cthulhuphant/alt7/ability_03/icon.tga"
+	>
+		<modifier key="Night_Set_CthulhuphantAlt7"
+			icon="/heroes/cthulhuphant/alt8/ability_03/icon.tga"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt8" modpriority="1"
+	    icon="/heroes/cthulhuphant/alt8/ability_03/icon.tga"
+	>
+		<modifier key="Night_Set_CthulhuphantAlt8"
+			icon="/heroes/cthulhuphant/alt7/ability_03/icon.tga"
+		/> 
+	</altavatar>
+	
+	<altavatar key="Hero_Cthulhuphant.Alt9" modpriority="1"
+	    icon="/heroes/cthulhuphant/alt9/ability_03/icon.tga"
+	/>
+	
+</state>

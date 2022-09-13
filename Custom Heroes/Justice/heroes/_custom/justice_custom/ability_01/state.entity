@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Justice1"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	impactinterval="1000"
+	damage="40,65,90,115"
+	
+	effecttype=""
+	
+	dynamicprecache="effects/day_impact.effect"
+>	
+	<onattack>
+		<setscriptvalue name="day_effect" value="day_impact.effect" entity="this_entity" />
+		<setaccumulator value="40,65,90,115" /> <!-- Damage -->
+		<cantarget targetscheme="enemy_units">
+			<addattackpreimpactactions>
+				<bonusdamageadd target="" a="var0"  /> <!-- Add bonus damage to your attack -->
+				<setvar0 a="var0" b="source_attackdamage" op="add" /> <!-- Calculate damage specifically for lifesteal -->
+				<calculatedamage amount="var0" effecttype="Physical" />
+				<heal target="source_entity" a="8,13,18,23" />
+				<spawnaffector name="Affector_Justice1" source="source_entity" target="source_entity" proxy="target_entity" ignore="target_entity" />
+			</addattackpreimpactactions>
+			<!-- VFX -->
+			<getscriptvalue name="day_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" source="target_entity" occlude="true" />
+			<expire/>
+		</cantarget>
+	</onattack>
+	
+	
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="iamsheeped">
+			<activatemodifierkey entity="this_entity" name="iamsheeped" />
+		</hasmodifier>
+		<else>
+			<deactivatemodifierkey entity="this_entity" name="" />
+		</else>
+	</onframe>
+	
+	<modifier key="iamsheeped" modpriority="9999"
+		passiveeffect=""
+	/>
+</state>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Hex4"
+
+	speed="3000"
+	gravity="0"
+
+	modelscale="1.25"
+	model="/shared/models/invis.mdf"
+	
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+	deatheffect="effects/death.effect"
+	
+	canturn="false"
+	flying="true"
+	flyheight="70"
+	
+	touchradius="145"
+	maxtouchespertarget="1"
+	touchtargetscheme="enemy_units"
+	toucheffecttype="Magic"
+	touchradiusdiradjust="true"
+	
+	lifetime="Ability_Hex4"
+	
+	dynamicprecache="effects/impact.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<ontouch>
+		<damage effecttype="Magic" amount="250,475,700"/>
+		<applystate name="State_Stunned" duration="param" />
+		<cantarget targetscheme="enemy_heroes">
+			<setparam a="param" b="1000" op="add" />
+		</cantarget>
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+	</ontouch>
+</projectile>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statenetaccum
+	name="State_Bossbit_Debuff_2"
+
+	icon="icon.tga"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	movespeedslow="0.14,0.21,0.28,0.35"
+>	
+</statenetaccum>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1" >
+						
+			<sound
+			    life="5000"
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".5"
+				sample="../sounds/cast_trail.wav"
+			/>
+			
+			<beam
+				expirelife="200"
+				bone_a="_bone_altweapon1"
+				bone_b="_bone_altweapon3"
+				size="80"
+				material="/shared/effects/materials/whitedot.material"
+				startalpha="1"
+				endalpha="0"
+				startcolor=".25 .05 .075"
+				endcolor="0 0 0"
+			/>
+			
+			<beam
+				expirelife="200"
+				bone_a="_bone_altweapon3"
+				bone_b="_bone_altweaponattach"
+				size="80"
+				material="/shared/effects/materials/whitedot.material"
+				startalpha="1"
+				endalpha="0"
+				startcolor=".25 0 .025"
+				endcolor="0 0 0"
+			/>
+			
+		
+			<simpleemitter
+				timenudge="100"
+				spawnrate="15"
+				particlelife="400"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale="1"
+						minlife="400"
+						maxlife="400"
+						model="../../model.mdf"
+						anim="ability_1_trail"
+						material="../../material_noshadow.material"
+						color="1.5 1 1.25"
+						startalpha=".35"
+						endalpha="0"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+			
+			<template name="swoosh_trail">
+				<trailemitter
+					bone="{bone}"
+					spawnrate="40"
+					particlelife="500"
+					material="/shared/effects/materials/swoosh_add.material"
+					texposscale="0"
+					texstretchscale="1"
+				>
+					<particle
+						startcolor="0"
+						midcolor=".125 0 .025"
+						endcolor="0"
+						size="20"
+					/>
+				</trailemitter>
+			</template>
+				
+			<instance name="swoosh_trail" bone="_bone_altweapon1" />
+			<instance name="swoosh_trail" bone="Bone009" />
+			<instance name="swoosh_trail" bone="Bone010" />
+			<instance name="swoosh_trail" bone="Bone011" />
+			<instance name="swoosh_trail" bone="Bone012" />
+			<instance name="swoosh_trail" bone="_bone_rightfoot" />
+			<instance name="swoosh_trail" bone="_bone_leftfoot" />
+			
+			<trailemitter
+				bone="_bone_altweapon3"
+				spawnrate="40"
+				particlelife="300"
+				material="/shared/effects/materials/flux_trail.material"
+				texposscale="0"
+				texstretchscale="1"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".85 .35 .25"
+					endcolor="0"
+					midcolorpos=".1"
+					size="25"
+				/>
+			</trailemitter>
+			
+			<billboard
+				expirelife="200"
+				bone="_bone_altweapon3"
+				size="200"
+				material="/shared/effects/materials/flare_05.material"
+				startcolor=".6 .35 .4"
+				endcolor="0 0 0"
+				depthbias="-10"
+			/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

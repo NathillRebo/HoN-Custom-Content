@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Winter_Chill"
+	
+	icon="icon.tga"
+	passiveeffect="effects/impact.effect"
+	
+	movespeedslowstart="1"
+	movespeedslowend="0"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+</state>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Diablo4"
+	
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="600"
+	castactiontime="100"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_entity"
+	targetscheme="all_units"
+	casteffecttype="SuperiorMagic"
+	
+	manacost="150,175,200"
+	cooldowntime="60000"
+	
+	range="800"
+	
+	showrangeandradiusintooltip="true"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+>
+	<onimpact>
+		<applystate name="State_Diablo4" duration="7000" />
+		<dispel type="StatusBuff" />
+	</onimpact>
+</ability>

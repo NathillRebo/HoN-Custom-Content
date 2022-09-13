@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Guerilla3_Shard"
+
+	icon="icon.tga"
+	displaylevel="true"
+	passiveeffect=""
+	
+	attackspeedslow="0.3"
+	movespeedslow="0.3"
+	castspeed="-0.3"
+>
+    <altavatar key="Hero_Chronos.Alt8" 
+		icon="../alt8/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt9" 
+		icon="../alt9/ability_04/icon.tga"
+	/>
+	
+	<altavatar key="Hero_Chronos.Alt11" 
+		icon="/heroes/chronos/alt11/ability_04/icon.tga"
+	/>
+	
+</state>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hex1_Debuff"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_debuff.effect"
+	
+	
+	allowtransfer="true"
+	
+	silenced="true"
+	
+	movespeedslowstart="0.85"
+	movespeedslowend="0.0"
+
+	negativeeffect="silenced"
+	
+	effecttype="StatusDebuff"
+	
+	modifierkey=""
+>
+</state>

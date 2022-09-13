@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Slayer4"
+	
+	icon="icon.tga"
+	
+	anim="bored_1"
+	casttime="801"
+	castactiontime="800"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_position"
+	activatescheme="movement"
+	casteffecttype="Physical"
+	targetscheme="enemy_units"
+	targetradius="250"
+	targetmaterial="/shared/materials/area_cast_indicator_pointed.material"
+	
+	manacost="150"
+	cooldowntime="130000,115000,100000"
+
+	novoiceresponse="true"
+	
+	range="775"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	showrangeandradiusintooltip="true"
+	doubleactivate="true"
+>
+	<onimpact>
+		<applystate name="State_Slayer4_Buff" target="source_entity" duration="5909" />
+		<spawnprojectile name="Projectile_Slayer4" source="source_entity" target="target_position" bind="source_entity" bindturn="true" bindstate="State_Slayer4_Bind" noresponse="true" />		
+		<disjoint target="source_entity" />
+	</onimpact>
+	
+	<ondoubleactivate>
+		<useability slot="3" target="source_entity" />
+	</ondoubleactivate>
+</ability>

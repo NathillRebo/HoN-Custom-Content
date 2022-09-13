@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_TombGuardian1_Charger"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	movespeedslow="1"
+	
+	effecttype=""
+>	
+	<ondeath>
+		<pushability source="this_proxy_entity" name="Ability_TombGuardian1" />
+		<addcharges entity="stack_entity" count="1" />
+	</ondeath>
+</state>

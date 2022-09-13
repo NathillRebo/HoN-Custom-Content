@@ -1,0 +1,54 @@
+
+// Hero_Slayer_Custom
+Hero_Slayer_Custom_name											Slayer
+Hero_Slayer_Custom_role											Slayer is a semi-carry, who trades survivability and constant damage with mobility and utility. Her array of debuffs leave her foes with reduced damage, armor and movement speed.
+
+// Ability_Slayer1
+Ability_Slayer1_name											Elusive Offense
+Ability_Slayer1_description										Slayer dashes forward, passing through enemies, then eventually dashes a second time.
+Ability_Slayer1_description_simple								Slayer dashes in the chosen line, dealing ^o{50,90,130,170} Physical Damage^* to enemies she passes through. For the next 2 seconds, can be activated again for free.\n\n^444If only the heels weren't slowing me down..
+Ability_Slayer1_effect_header
+Ability_Slayer1_tooltip_flavor									If only the heels weren't slowing me down..
+Ability_Slayer1_IMPACT_effect									Enemies she passes through take ^o{50,90,130,170} Physical Damage^*. Can be activated a second time for free within 2 seconds.
+
+// Ability_Slayer2
+Ability_Slayer2_name											Slice and Dice
+Ability_Slayer2_name:shardofthemaster_boost						^pSlice and Dice^*
+Ability_Slayer2_description										Slayer strikes with both weapons at once, hitting enemies in front of her twice.
+Ability_Slayer2_description_simple								Slayer cleaves through enemies in front of her, dealing ^o{10,35,60,85} + Attack Damage as Physical Damage^* to enemies hit, counting as a real auto-attack. This attack hits twice.\n\n^pShard of the Master^* also disarms enemies hit for 1.2 seconds.\n\n^444Double the weapons to double the fun!
+Ability_Slayer2_description_simple:shardofthemaster_boost		Slayer cleaves through enemies in front of her, dealing ^o{10,35,60,85} + Attack Damage as Physical Damage^* to enemies hit ^pand Disarming them for 1.2 seconds^*, counting as a real auto-attack. This attack hits twice.\n\n^444Double the weapons to double the fun!
+Ability_Slayer2_effect_header
+Ability_Slayer2_tooltip_flavor									Double the weapons to double the fun!
+Ability_Slayer2_IMPACT_effect									Enemies hit take ^o{10,35,60,85} + Attack Damage as Physical Damage^*, which counts as an auto-attack. Enemies are hit twice.
+
+// Ability_Slayer3
+Ability_Slayer3_name											Overwhelm
+Ability_Slayer3_name:ult_boost									^gOverwhelm^*
+Ability_Slayer3_description										Slayer's attacks are brutal to the opponent, leaving them at disadvantage.
+Ability_Slayer3_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Increases the maximum number of stacks per target to 8.
+Ability_Slayer3_description_simple								Whenever Slayer hits an enemy with an attack, she reduces her target's ^oAttack Damage by {4,6,8,10}^* for 5 seconds and increases her own by that much. Stacks up to three times on a single unit.\n\n^gStaff of the Master^* allows this effect to stack up to 8 times on a single target.\n\n^444I'm not defenseless. But you are!
+Ability_Slayer3_description_simple:ult_boost					Whenever Slayer hits an enemy with an attack, she reduces her target's ^oAttack Damage by {4,6,8,10}^* for 5 seconds and increases her own by that much. Stacks up to ^geight^* times on a single unit.\n\n^444I'm not defenseless. But you are!
+Ability_Slayer3_effect_header
+Ability_Slayer3_tooltip_flavor									I'm not defenseless. But you are!
+Ability_Slayer3_IMPACT_effect									These attacks reduce the target's ^oAttack Damage by {4,6,8,10}^* for 5 seconds and increases her own by that much. Stacks up to three times on a single unit.
+Ability_Slayer3_IMPACT_effect:ult_boost							These attacks reduce the target's ^oAttack Damage by {4,6,8,10}^* for 5 seconds and increases her own by that much. Stacks up to ^geight^* times on a single unit.
+
+// State_Slayer3_Buff
+State_Slayer3_Buff_name											Overwhelming
+
+// State_Slayer3_Debuff
+State_Slayer3_Debuff_name										Overwhelmed
+
+// Ability_Slayer4
+Ability_Slayer4_name											Signature Move
+Ability_Slayer4_description										Slayer makes her signature move and leaps high into the air, crashing at the chosen location.
+Ability_Slayer4_description_simple								Slayer leaps at the chosen location, dealing ^o{20,25,30}% of enemy's current Health as Physical Damage^*, slowing their ^oMovement Speed reduced by {15,20,25}%^* and their ^oArmor and Magic Armor reduced by 5^* for 5 seconds, while granting herself a bonus of ^o+{15,20,25}% to her Movement Speed^* and ^o+5 to her Armor and Magic Armor^* for 5 seconds.\n\n^444At least you'll die having a nice view!
+Ability_Slayer4_effect_header
+Ability_Slayer4_tooltip_flavor									At least you'll die having a nice view!
+Ability_Slayer4_IMPACT_effect									Enemies hit take damage equal to ^o{20,25,30}% of their current Health as Physical Damage^*, have their ^oMovement Speed reduced by {15,20,25}%^* and their ^oArmor and Magic Armor reduced by 5^* for 5 seconds, while she gains a bonus of ^o+{15,20,25}% to her Movement Speed^* and ^o+5 to her Armor and Magic Armor^* for 5 seconds.
+
+// State_Slayer4_Buff
+State_Slayer4_Buff_name											Signature Move
+
+// State_Slayer4_Debuff
+State_Slayer4_Debuff_name										Signature Move

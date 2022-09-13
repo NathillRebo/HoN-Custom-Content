@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+			<!-- eye flames -->
+			<template name="eyes">
+				<simpleemitter
+					spawnrate="15"
+					minparticlelife="250"
+					maxparticlelife="1500"			
+					gravity="-1"
+					maxspeed="10"
+					drag=".003"
+					bone="{bone}"
+					position="{position}"
+					material="/shared/effects/materials/fire_add.material"
+					offsetsphere="1"
+					minangle="0"
+					maxangle="10"
+					direction="0 -1 1"
+				>
+					<particle 
+						minangle="-45"
+						maxangle="45"
+						color=".3 0 .7"
+						startsize="2"
+						midsize="4"
+						endsize="1"
+						startanchor="1"
+						endanchor=".75"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					spawnrate="8"
+					minparticlelife="250"
+					maxparticlelife="500"
+					gravity="-8"
+					maxspeed="10"
+					drag=".003"
+					depthbias="-30"
+					bone="{bone}"
+					position="{position}"
+					material="/shared/effects/materials/whitedot.material"
+					offsetsphere=".5"
+					minangle="0"
+					maxangle="20"
+					direction="0 -1 1"
+				>
+					<particle 
+						minangle="-45"
+						maxangle="45"
+						startalpha=".3"
+						startcolor=".3 0 .6"
+						midcolor=".1 0 .5"
+						endcolor="0"
+						startsize="0"
+						midsize="5"
+						endsize="2"
+						startanchor="1"
+						endanchor=".75"
+					/>
+				</simpleemitter>
+			
+				<simpleemitter
+					spawnrate="5"
+					particlelife="1000"
+					gravity="-10"
+					maxspeed="5"
+					drag=".02"
+					bone="{bone}"
+					position="{position}"
+					material="/shared/effects/materials/heathaze.material"
+					offsetsphere="1"
+					direction="0 -1 1"
+				>
+					<particle 
+						startparam=".01"
+						endparam="0"
+						startsize="5"
+						midsize="10"
+						endsize="5"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".3"
+						depthbias="-5"
+						startanchor="1"
+						endanchor=".75"
+					/>
+				</simpleemitter>		
+			
+				<billboard
+					bone="{bone}"
+					position="{position}"
+					color=".1 .05 .3"
+					size="10"
+					depthbias="-20"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+			</template>
+			
+			<instance name="eyes" bone="_bone_lefteye" position="0 0 -3"/>
+			<instance name="eyes" bone="_bone_righteye" position="0 0 -3"/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

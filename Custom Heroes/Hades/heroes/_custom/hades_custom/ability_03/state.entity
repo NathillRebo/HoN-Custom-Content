@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hades3"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	damage="-12,-18,-24,-30"
+	
+	effecttype=""
+>
+	<altavatar key="Hero_Soulstealer.Alt5"
+		icon="../alt5/ability_03/icon.tga"
+	>
+	</altavatar>
+	
+</state>

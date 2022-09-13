@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="fireshield" deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale=".75">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="700"
+				falloffend="700" 
+				volume="0.5" 
+				sample="/heroes/accursed/ability_02/sounds/ability_02_cast.wav"
+			/>
+
+			<!-- shield -->
+
+				<model 
+					anim="idle"
+					startalpha="1"
+					endalpha="0"
+					model="shield.mdf"
+					color="1 1 1"
+					scale="1"
+					yawspeed="80"
+					expirelife="500"
+					position="0 0 10"
+				>	
+					<template name="Fire">
+						<billboard
+							expirelife="200"
+							bone="{bone1}"
+							startcolor="0 .75 1"
+							endcolor="0 0 0"
+							size="150"
+							depthbias="0"
+							material="/shared/effects/materials/flare_01.material"
+							lockup="true"
+							pitch="90"
+						/>
+
+						<billboard
+							expirelife="200"
+							bone="{bone1}"
+							startcolor=".5 .8 1"
+							endcolor="0 0 0"
+							size="50"
+							maxroll="360"
+							material="/shared/effects/materials/blink.material"
+							lockup="true"
+							pitch="90"
+							life="100"
+							loop="true"
+						/>
+					</template>
+
+					<instance name="Fire" bone1="_bone_fx03" />
+					<instance name="Fire" bone1="_bone_fx01"/>	
+					<instance name="Fire" bone1="_bone_fx02"/>
+
+				</model>	
+				<model
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="0 1 3"
+				midcolor="0 1 3"
+				endcolor="0"
+				material="/shared/effects/materials/shell6.material"
+				startalpha=".5"
+				endalpha="0"
+				life="4000"
+			/>
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume="0.35"
+				sample="/shared/sounds/items/item_intelligence8_impact.wav"
+			/>
+
+			<billboard
+				delay="240"
+				life="350"
+				color="1 1 1"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam="0.1"
+				endparam="0.0"	
+				startsize="0"
+				endsize="300"
+				midsizepos=".4"
+				depthbias="-20"
+				position="0 0 50"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="true"
+				pitch="90"
+			/>	
+
+			<debris
+				position="0 0 40"
+				delay="300"
+				scale=".7"
+				life="3000"
+				model="debris.mdf"
+				anim="idle"	
+				minspeed="100.0"
+				maxspeed="400.0"
+				minrotationspeed="500.0"
+				maxrotationspeed="800.0"
+				gravity="20.0"
+				minangle="0"
+				color="1 1.5 2"
+				maxangle="90"
+				collide="true"
+				bounce="0.7"
+				reflect="0.6"
+				animpose="false"
+			/>
+			
+			<simpleemitter
+				delay="180"	
+				bone="_bone_centerofchest"
+				count="2"										
+				particlelife="2600"	
+				material="/shared/effects/materials/smoke_01.material"
+				offsetsphere="50 50 50"
+				minangle="0"
+				maxangle="360"
+				gravity="-2"
+				speed="10"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="100"
+					color=".2 .3 .35"
+					midcolorpos=".7"
+					maxanglespeed="0"
+					startsize="5"						
+					endsize="180"					
+					startalpha="0"
+					midalpha=".6"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			<simpleemitter
+					life="1500"
+					bone="_bone_centerofchest"
+					position="0 20 0"
+					material="/shared/effects/materials/phantom_smoke_04.material"
+					spawnrate="10"
+					particlelife="650"
+					gravity="-2"
+					speed="30"
+					inheritvelocity="0.21"
+					offsetsphere="28 28 28"
+					drag="0.1"
+				>
+					<particle
+						maxangle="360"
+						startcolor="0"
+						midcolor=".5"
+						endcolor="0"
+						midcolorpos=".2"
+						startsize="83"
+						endsize="124"
+						weight="4"
+					/>
+					<particle
+						maxangle="360"
+						startcolor="0"
+						midcolor=".5"
+						endcolor="0"
+						midcolorpos=".2"
+						startsize="83"
+						endsize="96"
+						weight="1"
+					/>
+				</simpleemitter>
+				<simpleemitter
+					life="1500"
+					bone="_bone_centerofchest"
+					position="0 30 0"		
+					spawnrate="5"
+					particlelife="500"
+					gravity="0"
+					offsetsphere="0 0 0"
+					drag="0"
+					acceleration="0"
+					direction="0 0 0"
+					material="/shared/effects/materials/phantom_smoke_04.material"
+				>
+					<particle 
+						startcolor="0"
+						midcolor="0 .2 1"
+						endcolor="0"
+						midcolorpos="0.4"
+						maxangle="360"
+						startsize="165"
+						midsize="41"
+						endsize="28"
+						midsizepos=".8"
+						minanglespeed="-90"
+						maxanglespeed="90"
+						anchor=".25"
+					/>			
+				</simpleemitter>
+				
+				<simpleemitter
+					life="1500"
+					bone="_bone_centerofchest"
+					position="0 20 0"
+					material="/shared/effects/materials/sparks_reveal.material"
+					spawnrate="100"
+					particlelife="750"
+					gravity="-1"
+					speed="30"
+					inheritvelocity="0.05"
+					offsetsphere="10 10 10"
+					drag="0.1"
+				>
+					<particle
+						color="1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						maxangle="90"
+						startsize="110"
+						minendsize="151"
+						maxendsize="165"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startframe=".3"
+						endframe="1"
+						scale="1"
+					/>
+				</simpleemitter>
+				
+					
+					
+					
+				<simpleemitter
+					life="1500"
+					bone="_bone_centerofchest"
+					position="0 20 0"
+					material="/shared/effects/materials/snowflake.material"
+					spawnrate="20"
+					particlelife="650"
+					gravity="-1"
+					speed="30"
+					inheritvelocity="0.05"
+					offsetsphere="28 28 28"
+					drag="0.1"
+				>
+					<particle
+						color="1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						maxangle="90"
+						size="55"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startframe=".3"
+						endframe="1"
+						minscale=".5"
+						maxscale="1.2"
+					/>
+				</simpleemitter>
+	
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

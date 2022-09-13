@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ardent4"
+
+	icon="icon.tga"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	passiveeffect=""
+
+	actiontype="passive"
+>
+	<onattackedpredamage>
+		<applystate name="State_Ardent4" target="source_entity" duration="7000" />
+		<playeffect effect="effects/impact.effect" source="target_entity" />
+		<areaofeffect
+			radius="210"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<damage effecttype="Magic Returned DOT" amount="10,20,30" b="1" op="mult"/>
+		</areaofeffect>
+	</onattackedpredamage>
+	<modifier key="ult_boost" modpriority="100"/>
+</ability>

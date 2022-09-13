@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".5">
+	
+			<trailemitter
+				spawnrate="50"
+				particlelife="300"
+				texpostime="300"
+			 	texposscale="0.0"
+			 	texstretchscale="1"
+				position="0 40 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					 startcolor=".20 0 .3"
+					 midcolor="0 .15 .3"
+					 endcolor="0 0 0"
+					 midcolorpos=".75"
+					 startsize="80"
+					 midsize="20"
+					 endsize="10"
+					 midsizepos="0.2"
+			 />
+
+			</trailemitter>		
+		
+			<twopointtrailemitter
+				life="1000"
+				bone_a="Bone005"
+				bone_b="Bone006"
+				spawnrate="300"
+				particlelife="300"
+				material="/shared/effects/materials/dragon.material"
+			>
+				<particle 
+					alpha="1.0"
+					startcolor="0 .7 1" 
+					midcolor="0 .7 1"
+					midcolorpos=".75"
+					endcolor="0 0 0"
+				/>				
+			</twopointtrailemitter>
+			
+			<twopointtrailemitter
+				life="1000"
+				bone_a="Bone008"
+				bone_b="Bone009"
+				spawnrate="300"
+				particlelife="200"
+				material="/shared/effects/materials/dragon.material"
+			>
+				<particle 
+					alpha="1.0"
+					startcolor="0 .7 1" 
+					midcolor="0 .7 1"
+					midcolorpos=".75"
+					endcolor="0 0 0"
+				/>				
+			</twopointtrailemitter>
+
+			<simpleemitter
+				spawnrate="20"
+				expirelife="100"
+				offsetsphere="45"
+				maxspeed="20"
+				inheritvelocity=".025"
+				particlelife="700"
+			>
+				<particle
+				scale=".15"
+				>
+					<model
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						life="650"
+						anim="idle"
+						model="/heroes/geomancer/ability_04/effects/shard/model.mdf"
+						material="../../effects/crystal.material"
+						color="0 .8 1"
+						midscalepos=".8"
+						startalpha=".7"
+						midalpha=".7"
+						endalpha="0"
+					>
+						<billboard
+							position="0 0 5"
+							size="70"
+							life="650"
+							startcolor="0"
+							midcolor="0 .15 .3"
+							endcolor="0"
+							depthbias="-25"
+							material="/shared/effects/materials/whitedot.material"
+						/>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

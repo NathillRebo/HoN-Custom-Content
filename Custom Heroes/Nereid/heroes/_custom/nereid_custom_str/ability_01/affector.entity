@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Nereid1"
+
+	radius="200"	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	destroytrees="true"
+	impactdelay="0"
+	impacteffect=""
+	
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="85,145,205,265" />
+	</onimpact>
+</affector>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="body" deferred="true">
+	<definitions>
+
+		<particlesystem name="firepet" space="entity" scale="0.8">
+		
+			<model	
+				model="back_energy/model.mdf"
+				parentskeleton="true"
+				parentalpha="true"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				scale="3"
+				depthbias="-200"
+				color=".1 0 .1"
+			/>
+			
+			<template name="back_emitters">
+				<twopointemitter
+					spawnrate="10"
+					bone_a="{a}"
+					bone_b="{b}"
+					offsetsphere="5"
+					minparticlelife="600"
+					maxparticlelife="800"
+					material="/shared/effects/materials/phantom_white.material"
+					maxspeed="40"
+					direction="0 0 1"
+					angle="60"
+					gravity="-3"
+				>
+					<template name="smokey_particle">
+						<particle
+							maxangle="360"
+							startcolor="1"
+							midcolor="{color}"
+							endcolor="-0.1"
+							midcolorpos=".25"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".3"
+							minstartscale="5"
+							maxstartscale="12"
+							minendscale="16"
+							maxendscale="32"
+							minanchor=".5"
+							maxanchor=".75"
+						/>
+					</template>
+					<instance name="smokey_particle" color=".4 0 .8"/>
+					<instance name="smokey_particle" color=".8 0 .8"/>
+					<instance name="smokey_particle" color=".8 0 .4"/>
+				</twopointemitter>
+				<twopointemitter
+					minspawnrate="2"
+					maxspawnrate="3"
+					bone_a="{a}"
+					bone_b="{b}"
+					offsetsphere="5"
+					minparticlelife="600"
+					maxparticlelife="800"
+					material="/shared/effects/materials/skull.material"
+					minspeed="20"
+					maxspeed="30"
+					direction="0 0 1"
+					angle="60"
+					gravity="-12"
+				>
+					<template name="skull_particle">
+						<particle
+							turn="1"
+							startcolor="0"
+							endcolor="{color}"
+							midcolorpos=".25"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".3"
+							minstartscale="6"
+							maxstartscale="8"
+							minendscale="16"
+							maxendscale="20"
+							minanchor=".85"
+							maxanchor="1"
+						/>
+					</template>
+					<instance name="skull_particle" color=".4 0 .8"/>
+					<instance name="skull_particle" color=".8 0 .8"/>
+					<instance name="skull_particle" color=".8 0 .4"/>
+				</twopointemitter>
+			</template>
+			
+			<instance name="back_emitters" a="_bone_fx_01" b="_bone_fx_02" />
+			<instance name="back_emitters" a="_bone_fx_02" b="_bone_fx_03" />
+			<instance name="back_emitters" a="_bone_fx_03" b="_bone_fx_04" />
+			
+			
+			
+			<model
+				position="50 -35 0"
+				model="../firepet/model.mdf"
+				material="../material_fire.material"
+				anim="idle"
+			>
+				<model	
+					model="back_energy/model.mdf"
+					anim="idle"
+					color="2.5 1.5 .2"
+				/>
+				
+				<billboard
+					bone="_bone_centerofchest"
+					material="/shared/effects/materials/whitedot.material"
+					scale="3"
+					depthbias="-200"
+					color=".15 .05 .025"
+				/>
+				
+				<template name="back_emitters">
+					<twopointemitter
+						spawnrate="10"
+						bone_a="{a}"
+						bone_b="{b}"
+						offsetsphere="5"
+						minparticlelife="600"
+						maxparticlelife="800"
+						material="/shared/effects/materials/phantom_white.material"
+						maxspeed="40"
+						direction="0 0 1"
+						angle="60"
+						gravity="-3"
+					>
+						<template name="smokey_particle">
+							<particle
+								maxangle="360"
+								startcolor="1"
+								midcolor="{color}"
+								endcolor="-0.1"
+								midcolorpos=".25"
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".3"
+								minstartscale="5"
+								maxstartscale="12"
+								minendscale="16"
+								maxendscale="32"
+								minanchor=".5"
+								maxanchor=".75"
+							/>
+						</template>
+						<instance name="smokey_particle" color=".8 .2 0"/>
+						<instance name="smokey_particle" color=".8 0 0"/>
+						<instance name="smokey_particle" color=".8 0 .2"/>
+					</twopointemitter>
+					<twopointemitter
+						minspawnrate="2"
+						maxspawnrate="3"
+						bone_a="{a}"
+						bone_b="{b}"
+						offsetsphere="5"
+						minparticlelife="600"
+						maxparticlelife="800"
+						material="/shared/effects/materials/skull.material"
+						minspeed="80"
+						maxspeed="160"
+						drag="0.04"
+						direction="0 0 1"
+						minangle="60"
+						maxangle="90"
+						gravity="-12"
+					>
+						<template name="skull_particle">
+							<particle
+								turn="1"
+								startcolor="0"
+								endcolor="{color}"
+								midcolorpos=".25"
+								startalpha="0"
+								midalpha=".5"
+								endalpha="0"
+								midalphapos=".3"
+								minstartscale="6"
+								maxstartscale="8"
+								minendscale="16"
+								maxendscale="20"
+								minanchor=".85"
+								maxanchor="1"
+							/>
+						</template>
+						<instance name="skull_particle" color=".8 .2 0"/>
+						<instance name="skull_particle" color=".8 0 0"/>
+						<instance name="skull_particle" color=".8 0 .2"/>
+					</twopointemitter>
+				</template>
+				
+				<instance name="back_emitters" a="_bone_fx_01" b="_bone_fx_02" />
+				<instance name="back_emitters" a="_bone_fx_02" b="_bone_fx_03" />
+				<instance name="back_emitters" a="_bone_fx_03" b="_bone_fx_04" />
+			</model>
+		</particlesystem>
+		
+		<particlesystem name="frostpet" space="entity" scale="0.8">
+			<model
+				position="-50 -35 0"
+				model="../frostpet/model.mdf"
+				material="../material_ice.material"
+				anim="idle"
+			>
+				<model	
+					model="back_energy/model.mdf"
+					anim="idle"
+					color=".2 2.5 2.5"
+				/>
+				
+				<billboard
+					bone="_bone_centerofchest"
+					material="/shared/effects/materials/whitedot.material"
+					scale="3"
+					depthbias="-200"
+					color=".05 .075 .1"
+				/>
+				
+				<template name="back_emitters">
+					<twopointemitter
+						spawnrate="10"
+						bone_a="{a}"
+						bone_b="{b}"
+						offsetsphere="5"
+						minparticlelife="600"
+						maxparticlelife="800"
+						material="/shared/effects/materials/phantom_white.material"
+						maxspeed="40"
+						direction="0 0 1"
+						angle="60"
+						gravity="-3"
+					>
+						<template name="smokey_particle">
+							<particle
+								maxangle="360"
+								startcolor="1"
+								midcolor="{color}"
+								endcolor="-0.1"
+								midcolorpos=".25"
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".3"
+								minstartscale="5"
+								maxstartscale="12"
+								minendscale="16"
+								maxendscale="32"
+								minanchor=".5"
+								maxanchor=".75"
+							/>
+						</template>
+						<instance name="smokey_particle" color="0 .2 .8"/>
+						<instance name="smokey_particle" color="0 0 .8"/>
+						<instance name="smokey_particle" color=".2 0 .8"/>
+					</twopointemitter>
+					<twopointemitter
+						minspawnrate="2"
+						maxspawnrate="3"
+						bone_a="{a}"
+						bone_b="{b}"
+						offsetsphere="5"
+						minparticlelife="600"
+						maxparticlelife="800"
+						material="/shared/effects/materials/skull.material"
+						minspeed="80"
+						maxspeed="160"
+						drag="0.04"
+						direction="0 0 1"
+						minangle="60"
+						maxangle="90"
+						gravity="-12"
+					>
+						<template name="skull_particle">
+							<particle
+								turn="1"
+								startcolor="0"
+								endcolor="{color}"
+								midcolorpos=".25"
+								startalpha="0"
+								midalpha=".5"
+								endalpha="0"
+								midalphapos=".3"
+								minstartscale="6"
+								maxstartscale="8"
+								minendscale="16"
+								maxendscale="20"
+								minanchor=".85"
+								maxanchor="1"
+							/>
+						</template>
+						<instance name="skull_particle" color="0 .4 .8"/>
+						<instance name="skull_particle" color="0 .2 .8"/>
+						<instance name="skull_particle" color=".2 .2 1"/>
+					</twopointemitter>
+				</template>
+				
+				<instance name="back_emitters" a="_bone_fx_01" b="_bone_fx_02" />
+				<instance name="back_emitters" a="_bone_fx_02" b="_bone_fx_03" />
+				<instance name="back_emitters" a="_bone_fx_03" b="_bone_fx_04" />
+			</model>
+		</particlesystem>		
+		
+		
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="firepet" />
+	<spawnparticlesystem instance="instance1" particlesystem="frostpet" />  
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+</thread>
+</effect>

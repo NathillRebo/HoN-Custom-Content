@@ -1,0 +1,50 @@
+
+// Hero_zzz_Pandora
+Hero_zzz_Pandora_name											Pandora
+Hero_zzz_Pandora_role											Pandora is as powerful as unpredictable. Her abilities allow her to weaken her foes with multitude of debuffs and effectively control their positions. While her damage output may be lacking, her debuffing ability is astounding.
+
+// Ability_Pandora1
+Ability_Pandora1_name											Chaos Bolt
+Ability_Pandora1_description									Pandora launches a bolt of volatile energy at her foes, inflicting them pain and leaving them dazed.
+Ability_Pandora1_description_simple								Pandora launches a bolt at the chosen target. It explodes upon reaching its target, dealing up to ^o{110,210,310,410}^* Magic Damage to the target and enemies nearby and stunning them for up to ^o{1.7,1.9,2.1,2.3}^* seconds, determined randomly (the longer the stun, the less damage it deals, and vice versa).\n\n^444To damage or to stun? That's the question.
+Ability_Pandora1_tooltip_flavor									To damage or to stun? That's the question.
+Ability_Pandora1_IMPACT_effect									The bolt explodes upon reaching its target, dealing up to ^o{110,210,310,410}^* Magic Damage to the target and enemies nearby and stunning them for up to ^o{1.7,1.9,2.1,2.3}^* seconds, determined randomly (the longer the stun, the less damage it deals, and vice versa).
+
+// Ability_Pandora2
+Ability_Pandora2_name											Phase Shift
+Ability_Pandora2_description									Pandora pulls the target through other planes, while also dashing to them, and meeting her foe in the center.
+Ability_Pandora2_description_simple								Pandora teleports both herself and the target to a point exactly between them, and reduces enemy's Movement Speed by ^o{20,30,40,50}%^* for 3 seconds.\n\n^444Keep your friends close, and your enemies closer.
+Ability_Pandora2_tooltip_flavor									Keep your friends close, and your enemies closer.
+Ability_Pandora2_IMPACT_effect									After teleporting, the target has its Movement Speed reduced by ^o{20,30,40,50}^* for 3 seconds.
+
+// Ability_Pandora3
+Ability_Pandora3_name											Weaver of Curses
+Ability_Pandora3_name:shardofthemaster_boost					^pWeaver of Curses^*
+Ability_Pandora3_description									Pandora's mere presence is enough to bring misfortunes to the unfortunate around her.
+Ability_Pandora3_description_simple								Pandora passively curses enemies around her with a random curse once every ^o{12,9,6,3}^* seconds. Each curse lasts 30 seconds.\n\n^pShard of the Master^* causes the curses to deal 80 Magic Damage over their duration^*.\n\n^444Sharing is caring!
+Ability_Pandora3_description_simple:shardofthemaster_boost		Pandora passively curses enemies around her with a random curse once every ^o{12,9,6,3}^* seconds. Each curse lasts 30 seconds ^pand deals 80 Magic Damage over this time^*.\n\n^444Sharing is caring!
+Ability_Pandora3_tooltip_flavor									Sharing is caring!
+Ability_Pandora3_IMPACT_effect									Pandora passively curses enemies around her with a random curse once every ^o{12,9,6,3}^* seconds. Each curse lasts 30 seconds.
+
+State_PandoraCurse1_name										Curse of the Greenhorn
+State_PandoraCurse2_name										Curse of the Bone
+State_PandoraCurse3_name										Curse of the Briar
+State_PandoraCurse4_name										Curse of the Afflicted
+State_PandoraCurse5_name										Curse of the Torpor
+State_PandoraCurse6_name										Curse of the Dead
+State_PandoraCurse7_name										Curse of the Sick
+State_PandoraCurse8_name										Curse of the Anchor
+State_PandoraCurse9_name										Curse of the Forlorn
+State_PandoraCurse10_name										Curse of the Chains
+State_PandoraCurse10_description								Max Move Speed reduced by {50,70,90,110} per stack.
+State_PandoraCurse11_name										Curse of the Coward
+
+// Ability_Pandora4
+Ability_Pandora4_name											Barrage of Misfortunes
+Ability_Pandora4_name:ult_boost									^gUnleash the Misfortunes^*
+Ability_Pandora4_description									Pandora launches ^o{4,6,8}^* missiles in the chosen direction, which pass through enemies hit.
+Ability_Pandora4_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Hurls 2 additional missiles. Increases range.
+Ability_Pandora4_description_simple								Pandora launches ^o{4,6,8}^* missiles in the chosen direction. Each of them deals ^o35^* Magic Damage^* and ^oapplies one of the curses from the Weaver of Curses ability^*.\n\n^gStaff of the Master^* throws two additional missiles. Increases range.\n\n^444And here you can hope to find Hope!
+Ability_Pandora4_description_simple:ult_boost					Pandora launches ^g{6,8,10}^* missiles in the chosen direction. Each of them deals ^o35^* Magic Damage^* and ^oapplies one of the curses from the Weaver of Curses ability^*.\n\n^444And here you can hope to find Hope!
+Ability_Pandora4_tooltip_flavor									And here you can hope to find Hope!
+Ability_Pandora4_IMPACT_effect									Enemies affected are dealt ^o35 Magic Damage^* and are afflicted with one of your curses from ^oWeaver of Curses^* ability. 

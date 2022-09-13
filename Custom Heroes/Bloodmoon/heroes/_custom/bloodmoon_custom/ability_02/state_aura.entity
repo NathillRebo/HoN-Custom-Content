@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bloodmoon2_Self"
+
+	icon="icon.tga"
+
+	effecttype=""
+	passiveeffect="effects/state.effect"
+>
+	<aura name="bloodmoon2_aura" state="State_Bloodmoon2_Enemy" radius="525" effecttype="Debuff" targetscheme="enemy_units" propagatecondition="not_stealthed" stack="true" />
+</state>

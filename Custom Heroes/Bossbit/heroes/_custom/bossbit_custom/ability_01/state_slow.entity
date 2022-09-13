@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statenetaccum
+	name="State_Bossbit_Debuff_1_Shard"
+
+	icon="icon.tga"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	armorpercharge="-2"
+	maxcharges="3"
+>	
+	<oninflict>
+		<addcharges a="1"/>
+	</oninflict>
+	<onrefresh>
+		<addcharges a="1"/>
+	</onrefresh>
+</statenetaccum>

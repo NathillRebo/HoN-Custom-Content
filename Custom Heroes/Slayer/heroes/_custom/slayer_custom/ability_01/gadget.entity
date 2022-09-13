@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Slayer1"
+	
+	icon=""
+	portrait=""
+	model="/shared/models/invis.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect=""
+	isselectable="false"
+	iscontrollable="false"
+	invulnerable="true"
+	selectsound=""
+	orderconfirmedsound=""
+	unitwalking="true"
+	
+	preglobalscale="1.1"
+	modelscale="0.63"
+	effectscale="1.0"
+	boundsheight="38"
+	boundsradius="42"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+	isflying="false"
+	clearvision="false"
+	drawonmap="false"
+	stealthtype="unrevealable"
+
+	attacktype="none"
+	
+	lifetime="1000"
+	deathtime="0"
+	corpsetime="0"
+	corpsefadetime="0"
+	
+>
+	
+</gadget>

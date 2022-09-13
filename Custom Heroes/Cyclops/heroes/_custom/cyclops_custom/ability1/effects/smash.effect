@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="0.8">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2200"
+				volume="1.0" 
+				sample="/heroes/rocky/ability_01/sounds/ability_01_impact_%.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2200"
+				volume="0.4" 
+				sample="/heroes/rocky/ability_02/sounds/ability_02_impact.wav"
+			/>
+			
+			<simpleemitter
+				count="1"
+				spawnrate="222"			
+				particlelife="5000"			
+			>
+				<particle>	
+					<groundsprite
+						delay="100"
+						life="3000"
+						material="/shared/effects/materials/ground_smash_overlay.material"
+						size="300"			
+						color="1.0 1.0 1.0"
+						startalpha="1"
+						endalpha="0"
+					/>		
+									
+					<simpleemitter
+						offsetsphere="50 50 50"
+						spawnrate="222"			
+						count="21"
+						particlelife="1300"			
+						gravity="3"					
+						acceleration="0"
+						speed="80"
+						position="0 0 10"					
+						material="/shared/effects/materials/pyroclast_01.material"	
+					>
+						<particle
+								minangle="-360"
+								maxangle="360"
+								color=".36 .33 .2"
+								startsize="40"
+								endsize="150"
+								minanglespeed="-30"
+								maxanglespeed="73"
+								
+								startalpha="0"
+								midalpha="1"
+								endalpha="0"
+					
+								frame="1"
+								framespeed="1"
+								anchor="1"
+								lockup="0"
+								lockright="false"
+								turn="false"
+						/>
+					</simpleemitter>	
+										
+					<billboard
+						life="1500"
+						startcolor="0.4 0.4 0.2"
+						endcolor="0 0 0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam="0.05"
+						endparam="0.0"
+
+						startsize="200"
+						midsize="400"
+						endsize="500"
+						midsizepos=".4"
+
+						depthbias="0"
+						position="0 0 20"
+						material="/shared/effects/materials/stomp_02.material"
+						lockup="true"
+						pitch="90"
+					/>
+
+					<billboard
+						life="500"
+						color="1.0 1.0 1.0"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam=".5"
+						endparam="0.0"
+						startsize="128"
+						endsize="768"
+						depthbias="0"
+						position="0 0 10"
+						material="/shared/effects/materials/refract_ring.material"
+						lockup="true"
+						pitch="90"
+					/>	
+				</particle>
+
+			</simpleemitter>
+			
+			<model
+				
+				startscale="0.5"
+				endscale="0.4"
+				life="700"
+				model="ball/break.mdf"
+				anim="idle"
+				color="1 1 1"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+			/>			
+			
+
+			<simpleemitter
+				delay="000"
+				count="5"
+				spawnrate="5000"
+				particlelife="2500"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="1"
+				>
+
+					<model
+						position="0 55 0"
+						life="1200"
+						model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+						anim="idle_slower"
+						color="1"
+						expirelife="500"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						minscale=".4"
+						maxscale=".625"
+						directionalspace="local"
+						minyaw="0"
+						maxyaw="180"
+					>
+					</model>
+					
+					<model
+						position="0 -45 0"
+						life="1200"
+						model="/heroes/moraxus/ability_01/effects/rocks/model.mdf"
+						anim="idle_slower"
+						color="1"
+						expirelife="500"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						minscale=".25"
+						maxscale=".5"
+						directionalspace="local"
+						minyaw="0"
+						maxyaw="180"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+			
+			<groundsprite
+				life="2000"
+				material="/shared/effects/materials/whitedot_blend.material"
+				size="150"
+				color="0 0 0"
+				startalpha=".65"
+				midalpha=".65"
+				endalpha="0"
+				midalphapos="0.05"
+			/>
+			
+			<simpleemitter
+				count="5"
+				spawnrate="5000"
+				particlelife="750"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				offsetsphere="250 250 0"
+			>
+				<particle
+					turn="1"
+				>
+					<groundsprite
+						delay="400"
+						life="2000"
+						material="/shared/effects/materials/earth_cracks_02.material"
+						minsize="55"
+						maxsize="90"
+						color="1.0 1.0 1.0"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos="0.05"
+						minyaw="0"
+						maxyaw="360"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<billboard
+				life="1000"
+				startcolor=".175 .075 0"
+				midcolor=".175 .075 0"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="250"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 50"
+			/>
+
+			<billboard
+				position="0 0 50"
+				life="350"
+				param="0.1"	
+				startsize="150"
+				endsize="550"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				position="0 0 50"
+				delay="175"
+				life="350"
+				param="0.1"	
+				startsize="150"
+				endsize="550"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"				
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+
+</effect>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Diablo1_Fire"
+
+	icon="icon.tga"
+	passiveeffect="effects/burningstate.effect"
+	
+	deniable="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"	
+>
+	<onframe>
+		<evaluate a="19,26,33,40" b="frametime" op="mult" />
+		<damage effecttype="DOT" amount="1" b="result" op="mult" />
+	</onframe>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onframe>
+			<evaluate a="31,38,45,52" b="frametime" op="mult" />
+			<damage effecttype="DOT" amount="1" b="result" op="mult" />
+		</onframe>
+	</modifier>
+
+</state>

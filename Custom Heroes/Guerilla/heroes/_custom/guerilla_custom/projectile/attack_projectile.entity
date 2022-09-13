@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Artillery_Alt3"
+
+	speed="1250"
+	gravity="0"
+	modelscale="0.25"
+	model="/shared/models/invis.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+</projectile>

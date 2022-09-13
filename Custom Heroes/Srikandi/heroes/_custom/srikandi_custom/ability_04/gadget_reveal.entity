@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Srikandi_Ability4"
+	
+	
+	
+	icon=""
+	portrait=""
+	model=""
+	
+	preglobalscale="1"
+	modelscale="1.0"
+	effectscale="1"
+	boundsheight="0"
+	boundsradius="0"
+	isselectable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+
+	attacktype="none"
+	combattype="Ranged"
+	canattack="false"
+
+	sightrangeday="400"
+	sightrangenight="400"
+
+	deathtime="0"
+	corpsetime="0"
+	
+	invulnerable="true"
+	flying="true"
+	clearvision="true"
+	drawonmap="false"
+	lifetime="1500"
+>
+</gadget>

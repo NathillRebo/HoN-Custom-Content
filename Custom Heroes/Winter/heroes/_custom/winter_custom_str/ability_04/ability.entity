@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Winter4"
+
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="800"
+	castactiontime="300"
+
+	maxlevel="4"
+	
+	requiredlevel="1,6,11,16"
+	baselevel="1"
+	disabled="true,false"
+
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+
+	manacost="150"
+	cooldowntime="30000"
+
+	targetradius="1400"
+	modifierkey=",Winter4_1,Winter4_2,Winter4_3"
+>
+	<onimpact>
+		<areaofeffect
+			radius="1400"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<condition test="hasstate State_Winter_Chill">
+				<applystate name="State_Winter_Frost" duration="0,1250,1500,1750" />
+				<damage effecttype="Magic" amount="0,200,300,400" />
+			</condition>
+			<applystate name="State_Winter_Chill" duration="0,1250,1500,1750" />
+		</areaofeffect>
+	</onimpact>
+	<modifier key="ult_boost" modpriority="100"
+		modifierkey="Winter4_0_sotm,Winter4_1_sotm,Winter4_2_sotm,Winter4_3_sotm"
+	>
+		<onimpact>
+			<areaofeffect
+				radius="1400"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+			>
+				<condition test="hasstate State_Winter_Chill">
+					<applystate name="State_Winter_Frost" duration="0,1250,1500,1750" />
+					<damage effecttype="Magic" amount="0,200,300,400" />
+				</condition>
+				<applystate name="State_Winter_Chill" duration="0,2250,2500,2750" />
+			</areaofeffect>
+		</onimpact>
+	</modifier>
+</ability>

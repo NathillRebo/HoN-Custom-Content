@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Bossbit_1"
+
+	speed="1550"
+	gravity="0"
+
+	modelscale="1.0"
+	model="effects/missile/model.mdf"
+	traileffect="effects/trail.effect"
+	effectscale="1.0"
+	impacteffect="effects/impact.effect"
+
+	flying="true"
+	flyheight="120"
+	
+	touchradius="64"
+	touchradiusdiradjust="true"
+	maxtouches="1"
+	touchtargetscheme="enemy_units"
+	toucheffecttype=""
+>
+	<ontouch>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<setvar0 a="source_attackdamage" b="0.25,0.5,0.75,1.00" op="mult" />
+				<damage effecttype="Magic" amount="55,70,85,100" b="var0" op="add" />
+			</onimpact>
+		</combatevent>
+		<delete target="this_entity" />
+		<kill target="proxy_entity" source="" />
+	</ontouch>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<ontouch>
+			<combatevent effecttype="AbilityBasedProjectile">
+				<onimpact>
+					<applystate name="State_Bossbit_Debuff_1_Shard" target="target_entity" duration="5080" />
+					<setvar0 a="source_attackdamage" b="0.25,0.5,0.75,1.00" op="mult" />
+					<damage effecttype="Magic" amount="55,70,85,100" b="var0" op="add" />
+				</onimpact>
+			</combatevent>
+			<delete target="this_entity" />
+			<kill target="proxy_entity" source="" />
+		</ontouch>
+	</modifier>
+	
+</projectile>

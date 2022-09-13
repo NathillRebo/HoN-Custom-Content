@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Hades4"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,6,11,16"
+	baselevel="1"
+	
+	maxcharges="30,40,50,60"
+	damagepercharge="0,0.5,1,1.5"
+	castspeed="0,0.1,0.25,0.4"
+
+	actiontype="passive"
+
+	noshuffle="true"
+>
+	
+	<ontimer>
+		<compare a="charges" b="0" op="gt">
+			<compare a="source_health" b="source_maxhealth" op="lt">
+				<heal a="25" target="source_entity" />
+				<removecharge />
+			</compare>
+			<starttimer duration="2000" />
+		</compare>
+	</ontimer>
+	
+	<onkill>
+		<compare a="charges" b="0" op="le">
+			<starttimer duration="2000" entity="this_entity" />
+		</compare>
+		<setvar1 a="target_maxhealth" b="100" op="div" />
+		<addcharges count="var1" entity="this_entity" />		
+	</onkill>
+	
+	<modifier key="ult_boost" modpriority="90"
+		maxcharges="50,60,70,80"
+	>
+		<ontimer>
+			<compare a="charges" b="0" op="gt">
+				<compare a="source_health" b="source_maxhealth" op="lt">
+					<heal a="30" target="source_entity" />
+					<removecharge />
+				</compare>
+				<starttimer duration="2000" />
+			</compare>
+		</ontimer>
+	</modifier>
+	
+</ability>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Carmilla4"
+
+	icon="icon.tga"
+	passiveeffect=""
+	displaylevel="true"
+	propagatetoillusions="true"
+
+	modifierkey="alt_2_transform"
+	
+	effecttype=""
+	castspeed="1"
+	movespeedmultiplier="0.2,0.4,0.6"
+	unitwalking="true"
+	strength="5,15,25"
+	agility="5,15,25"
+	intelligence="5,15,25"
+	maxmovespeed="34,67,100"
+>
+	<onframe>				
+		<!-- var1 is the Cooldown Reduction Rate converted to a pure time value -->
+		<!-- var1 = frametime * Cooldown_Reduction_Rate(x) * 1000 - 1000 -->		
+		<setvar0 a="2" /> <!-- Cooldown_Reduction_Rate(x) -->
+		
+		<setvar1 a="var0" b="1000" op="mult" />
+		<setvar1 a="var1" b="1000" op="sub" />
+		<setvar1 a="frametime" b="var1" op="mult" />
+		
+		<pushability source="this_owner_entity" slot="0" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_owner_entity" slot="1" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_owner_entity" slot="2" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+	</onframe>
+	
+	<onkill>
+		<evaluate a="target_maxhealth" b="2" op="mult"/>
+		<changeduration b="result" op="add" />
+	</onkill>
+	
+	<modifier key="ult_boost" modpriority="100"
+		strengthpercharge="1"
+		agilitypercharge="1"
+		intelligencepercharge="1"
+	>
+		<onkill>
+			<evaluate a="target_maxhealth" b="1.5" op="mult"/>
+			<changeduration b="result" op="add" />
+			<evaluate a="target_maxhealth" b="0.006" op="mult"/>
+			<addcharges count="result"/>
+		</onkill>
+	</modifier>
+</state>

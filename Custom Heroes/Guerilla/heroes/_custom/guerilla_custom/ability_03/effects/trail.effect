@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+		
+			<light
+				life="75"
+				falloffend="275"
+				startcolor="3"
+				endcolor="0"
+			/>
+			<groundsprite
+				expirelife="100"
+				position="0 -50 0"
+				material="/shared/effects/materials/whitedot_ground.material"
+				scale="3"
+				startcolor=".15 .065 .025"
+				endcolor="0"
+			/>
+			<groundsprite
+				expirelife="100"
+				position="0 -50 0"
+				material="/shared/effects/materials/whitedot_ground.material"
+				scale="1"
+				startcolor=".1 .05 .025"
+				endcolor="0"
+			/>
+			<sound
+				linearfalloff="true" 
+				falloffstart="100"
+				falloffend="2400"
+				volume=".5"
+				sample="/heroes/artillery/ability_01/sounds/shot_%.wav"
+			/>
+
+			<simpleemitter
+				count="15"
+				gravity="-25"
+				life="250"
+				spawnrate="2000"		
+				particlelife="400"			
+				speed="30"
+				material="/shared/effects/materials/dust_smoke_02.material"
+				offsetsphere="10"
+				depthbias="35"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-40"
+					maxanglespeed="-40"
+					startcolor=".3"
+					endcolor="0"		
+					startsize="50"
+					endsize="100"
+					startalpha=".5"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="15"
+				gravity="-25"
+				life="250"
+				spawnrate="2000"	
+				minparticlelife="200"	
+				maxparticlelife="600"
+				minspeed="25"			
+				maxspeed="75"
+				material="/shared/effects/materials/cloud.material"
+				offsetsphere="35 35 10"
+				depthbias="35"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-30"
+					maxanglespeed="-30"
+					startsize="25"
+					endsize="50"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<model
+				color="2"
+				scale="0.5"
+				model="missile/model.mdf"
+				anim="idle"
+				material="/heroes/artillery/material.material"
+				yaw="90"
+				minpitchspeed="-3000"
+				maxpitchspeed="3000"
+				minroll="-15"
+				maxroll="15"
+			>
+				<!-- small trails -->
+				<trailemitter
+					bone="_bone_weapon1"
+					spawnrate="150"
+					particlelife="400"
+					texpostime="400"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/arrow_trail.material"
+					speed="100"
+					angle="0"
+					direction="0 1 0"
+				>
+					<particle
+						startcolor=".5 .25 0"
+						midcolor="0 0 0"
+						endcolor="0 0 0"
+						startsize="13"
+						midsize="13"
+						endsize="0"
+						midsizepos="0.2"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="_bone_weapon1"
+					spawnrate="150"
+					particlelife="400"
+					texpostime="400"
+					texposscale="0.0"
+					texstretchscale=".4"
+					material="/shared/effects/materials/arrow_trail.material"
+					speed="100"
+					angle="0"
+					direction="0 1 0"
+				>
+					<particle
+						startcolor=".5 .25 0"
+						midcolor=".5 0 0"
+						endcolor="0 0 0"
+						midcolorpos=".35"
+						startsize="5"
+						midsize="5"
+						endsize="0"
+						midsizepos="0.2"
+					/>
+				</trailemitter>
+				
+				<!-- smoke -->
+				<trailemitter
+					spawnrate="20"
+					minparticlelife="200"
+					maxparticlelife="600"
+					mintexpostime="25"
+					maxtexpostime="35"
+					mintexposscale=".75"
+					maxtexposscale="1.5"
+					texstretchscale="1"
+					offsetsphere="20"
+					material="/shared/effects/materials/smoke_particle.material"
+				>
+					<particle
+						startcolor="1"
+						midcolor=".6 .3 .2"
+						endcolor="0 0 0"
+						midcolorpos=".35"
+						size="50"
+						midsizepos="0.2"
+						minmidscale="3"
+						maxmidscale="4"
+						minendscale="7"
+						maxendscale="8"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					spawnrate="20"
+					minparticlelife="600"
+					maxparticlelife="1000"
+					mintexpostime="35"
+					maxtexpostime="45"
+					mintexposscale=".75"
+					maxtexposscale="1.5"
+					texstretchscale="1"
+					offsetsphere="20"
+					material="/shared/effects/materials/smoke_particle.material"
+				>
+					<particle
+						startcolor="1"
+						midcolor=".8 .5 .3"
+						endcolor="0 0 0"
+						midcolorpos=".35"
+						size="50"
+						midsizepos="0.2"
+						minmidscale="3"
+						maxmidscale="4"
+						minendscale="7"
+						maxendscale="8"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+					/>
+				</trailemitter>
+				
+				<!-- main thruster -->
+				<trailemitter
+					spawnrate="60"
+					minparticlelife="50"
+					maxparticlelife="150"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/whitedot.material"
+				>
+					<particle
+						startcolor="1"
+						midcolor="1 .4 0"
+						endcolor="1 0 0"
+						midcolorpos=".35"
+						startsize="0"
+						midsize="70"
+						endsize="20"
+						midsizepos="0.2"
+						minmidscale="2"
+						maxmidscale="3"
+					/>
+				</trailemitter>
+				<trailemitter
+					spawnrate="60"
+					minparticlelife="50"
+					maxparticlelife="100"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/whitedot.material"
+				>
+					<particle
+						startcolor="1"
+						endcolor="0"
+						midcolorpos=".25"
+						startsize="5"
+						midsize="30"
+						endsize="60"
+						midsizepos="0.2"
+					/>
+				</trailemitter>
+				
+				<billboard
+					position="-50 0 0"
+					material="/shared/effects/materials/flare_01.material"
+					scale="10"
+					color=".4 .3 .2"
+				/>
+			
+				<model
+					color="2 1 0"
+					model="missile/model.mdf"
+					material="/shared/effects/materials/shell4.material"
+				/>	
+			</model>		
+
+			<simpleemitter
+				minangle="-90"
+				maxangle="-90"
+				spawnrate="40"
+				minparticlelife="250"
+				maxparticlelife="500"
+				speed="500"
+				drag="0.1"
+				gravity="-1"
+				offsetsphere="15"
+				material="/shared/effects/materials/dust_smoke_02.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					color=".35"
+					startsize="40"
+					minendscale="6"
+					maxendscale="10"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="35"
+				minparticlelife="250"
+				maxparticlelife="1000"
+				gravity="-10"
+				inheritvelocity=".05"
+				material="/shared/effects/materials/smoke_particle.material"
+				minangle="0"
+				maxangle="35"
+				direction="0 0 1"
+				offsetsphere="20 20 5"
+			>
+				<particle
+					angle="-90"
+					minangle="0"
+					maxangle="30"
+					minanglespeed="-55"
+					maxanglespeed="55"
+					startcolor=".7 .4 .1"
+					midcolor=".7"
+					endcolor="0 0 0"
+					midcolorpos=".65"
+					startsize="15"
+					midsize="45"
+					midsizepos=".2"
+					endsize="185"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					midalphapos=".2"
+					turn="true"
+				/>
+			</simpleemitter>
+
+			<!--
+			<simpleemitter
+				spawnrate="40"
+				minparticlelife="150"
+				maxparticlelife="300"
+				inheritvelocity=".05"
+				material="/shared/effects/materials/flame.material"
+				minangle="0"
+				maxangle="40"
+				direction="0 0 1"
+				offsetsphere="15 15 5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-55"
+					maxanglespeed="55"
+					startcolor="2 2 0"
+					midcolorpos=".2"
+					midcolor=".25 .5 0"
+					endcolor="0"
+					startsize="15"
+					midsize="55"
+					midsizepos=".2"
+					endsize="25"
+					startanchor=".65"
+					endanchor="0"
+				/>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-55"
+					maxanglespeed="55"
+					startcolor="2 2 0"
+					midcolorpos=".2"
+					midcolor=".5 .5 0"
+					endcolor="0"
+					startsize="45"
+					midsize="55"
+					midsizepos=".2"
+					endsize="25"
+					startanchor=".65"
+					endanchor="0"
+				/>
+			</simpleemitter>
+			-->
+
+			<simpleemitter
+				spawnrate="200"
+				drag=".001"
+				minparticlelife="200"
+				maxparticlelife="600"
+				gravity="25"
+				minspeed="20"
+				maxspeed="120"								
+				direction="0 0 1"
+				offsetsphere="15 15 0"
+				minangle="0"
+				maxangle="10"
+				material="/shared/effects/materials/spark_10.material"
+				inheritvelocity=".15"
+			>			
+				<particle
+					startcolor="1 .75 0"
+					midcolor="1 .75 0"
+					endcolor="0"
+					midcolorpos=".75"
+					minsize="10"
+					maxsize="20"
+					lockup="false"
+					lockright="false"
+					maxangle="360"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="1000"
+				spawnrate="3300"
+				count="25"
+				minparticlelife="250"
+				maxparticlelife="750"
+				gravity="20"
+				minspeed="100"
+				maxspeed="300"
+				drag=".01"
+				material="/shared/effects/materials/spark_10.material"
+				offsetsphere="10"
+				minangle="0"
+				maxangle="10"
+				direction="0 0 1"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="1"
+					midcolor="1 1 0"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					minstartsize="5"
+					maxstartsize="10"
+					midsize="10"
+					endsize="5"
+					startalpha="0"
+					midalpha=".7"
+					endalpha="0"
+					midalphapos=".5"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="35"
+				minparticlelife="250"
+				maxparticlelife="500"
+				material="/shared/effects/materials/whitedot.material"
+				particledirectionalspace="local"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+				depthbias="-20"
+			>
+				<particle
+					startcolor=".1 .05 0"
+					endcolor="0 0 0"
+					startsize="75"
+					endsize="400"
+					param="0.5"
+					startalpha=".3"
+					midalpha=".15"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+			</simpleemitter>
+
+			<billboard
+				life="100"
+				material="/shared/effects/materials/whitedot.material"
+				startsize="60"
+				endsize="280"
+				depthbias="-75"
+				startcolor=".55 .55 0"
+				midcolor=".2 .2 0"
+				endcolor="0"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

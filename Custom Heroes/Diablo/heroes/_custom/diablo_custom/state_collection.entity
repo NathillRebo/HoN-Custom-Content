@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ravenor_Collection_Effects"
+
+	icon=""
+	ishidden="true"
+	passiveeffect=""
+	propagatetoillusions="true"
+	
+	effecttype=""
+	
+	modifierkey="Alt5_Collection"
+>
+<onkill>
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>                
+				<targettype type="self" />
+				<else>
+					<setdeathanim target="target_entity" noanim="true" nocorpse="true" />
+					<setpos0 entity="target_entity" />
+					<playeffect effect="effects/death_collection.effect" source="pos0" target=""/>
+				</else>
+			</else>
+		</targettype>
+	</onkill>
+</state>

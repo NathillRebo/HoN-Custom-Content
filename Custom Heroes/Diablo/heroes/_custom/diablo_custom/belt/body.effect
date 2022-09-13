@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<!--
+				<sound
+				norestart="true"
+				channel="1349"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".7"
+				sample="/heroes/predator/alt5/sounds/vox_item_%.wav"
+			/>
+					
+			<sound
+				norestart="true"
+				channel="1350"
+				delay="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".8"
+				sample="/heroes/predator/alt5/sounds/item_%.wav"
+			/>
+		-->
+			
+			<model
+				model="model.mdf"
+				material="../material.material"
+				inheritparentmodifiers="true"
+				parentalpha="true"
+				parentteamcolor="true"
+				parentskeleton="true"
+			/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

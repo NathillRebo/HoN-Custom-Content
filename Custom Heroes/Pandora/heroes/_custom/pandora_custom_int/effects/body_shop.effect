@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".45">
+		
+<!-- effects around lowbody -->
+	<controller delay="3000" scale=".55">
+			<billboard
+				position="0 0 0"
+				expirelife="2000"
+				color="0"
+				startsize="700"
+				midsize="0"
+				endsize="0"
+				startalpha="1"
+				endalpha="0"
+				lockup="1"
+				lockright="1"
+				pitch="55"
+				material="/shared/effects/materials/black_spot.material"
+				depthbias="0"
+			/>
+
+		
+			<billboard
+
+				position="0 0 5"
+				expirelife="250"
+				startcolor=".1 0 .2"
+				endcolor="0 0 0"
+				size="1000"
+				lockup="1"
+				lockright="1"
+				pitch="55"
+				material="/shared/effects/materials/whitedot.material"
+				depthbias="50"
+			/>
+
+			<simpleemitter	
+
+				position="0 0 0"
+				spawnrate="15"
+				particlelife="750"
+				gravity="2"
+				speed="5"
+				direction="0 0 1"
+				material="/shared/effects/materials/twirl_05.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".075 0 .125"
+					endcolor="0"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					maxangle="360"
+					anglespeed="-30"
+					startsize="500"
+					endsize="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					anchor=".8"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+
+				position="0 0 5"
+				spawnrate="5"
+				minparticlelife="250"
+				maxparticlelife="750"
+				gravity="5"
+				speed="3"
+				offsetsphere="15"
+				direction="0 0 1"
+				material="/shared/effects/materials/twirl_blend.material"
+			>
+				<particle
+					startcolor="0"
+					midcolor="0"
+					endcolor="0"
+					midcolorpos=".5"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"					
+					maxangle="360"
+					anglespeed="-160"
+					startsize="500"
+					endsize="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					anchor=".8"
+				/>
+			</simpleemitter>
+
+			<billboard
+
+				position="0 0 5"
+				life="1000"
+				color="1 1 1"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				startparam=".025"
+				endparam="0"
+				startsize="0"
+				endsize="1000"
+				material="/shared/effects/materials/refract_ripple.material"
+				lockup="1"
+				pitch="55"
+				loop="true"
+			/>
+
+			<simpleemitter
+				spawnrate="5"
+				particlelife="400"
+				gravity="-6"
+				speed="0.0"
+				acceleration="0.0"
+				position="0 0 5"
+				offsetsphere="20 20 0"
+				material="/shared/effects/materials/flare_01.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".0 .15 .15"
+					endcolor="0 0 0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startsize="1000"
+					endsize="50"
+					lockup="true"
+					lockright="true"
+					pitch="55"
+				/>
+			</simpleemitter>
+
+			<billboard
+
+				position="0 0 5"
+				life="1000"
+				startcolor="0 0 0"
+				midcolor="0 .125 .25"
+				endcolor="0 0 0"
+				startsize="500"
+				endsize="500"
+				lockup="1"
+				pitch="55"
+				material="/shared/effects/materials/starlight.material"
+				loop="true"
+			/>
+
+			<simpleemitter
+
+				spawnrate="10"
+				particlelife="500"
+				gravity="-6"
+				speed="0.0"
+				acceleration="0.0"
+				position="0 0 5"
+				material="/shared/effects/materials/flare_01.material"
+				depthbias="-100"
+			>
+				<particle
+					startcolor=".3"
+					midcolor=".05 .1 .2"
+					endcolor="0 0 0"
+					startalpha=".02"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startsize="300"
+					endsize="50"
+					lockup="true"
+					pitch="55"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+
+				spawnrate="100"
+				particlelife="610"
+				gravity="0"
+				speed="0"
+				position="0 0 5"
+				acceleration="11"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="220 220 50"
+				drag="0.05"
+				direction="1 0 0"
+				depthbias="-50"
+			>
+				<particle
+					startstickiness="0"
+					endstickiness=".25"
+					startcolor=".75"
+					midcolor="0 .5 1"
+					endcolor="0 0 0"
+					startsize="10"
+					endsize="0"	
+					turn="1"
+					heightdistort="0.02"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+
+
+				spawnrate="100"
+				minparticlelife="300"
+				maxparticlelife="600"
+				gravity="0"
+				speed="0"
+				position="0 0 5"
+				acceleration="11"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="220 220 50"
+				drag="0.05"
+				direction="1 0 0"
+				depthbias="-50"
+			>
+				<particle
+					startstickiness="0"
+					endstickiness=".25"
+					startcolor="1"
+					midcolor="0 .5 1"
+					endcolor="0 0 0"
+					startsize="25"
+					endsize="0"	
+					turn="1"
+					heightdistort="0.02"
+				/>
+			</simpleemitter>
+
+			<model
+				model="/heroes/andromeda/effects/orbit.mdf"
+				anim="idle"
+				scale="1.25"
+				pitch="180"
+				yaw="90"
+				yawspeed="0"
+				position="0 0 0"
+				lockup="1"
+			>	
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/flare_03.material"
+					scale="1"
+					color="0 .5 1"
+				/>
+				
+				<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/flare_03.material"
+					scale=".5"
+					color="1"
+				/>
+
+				<template name="flameup">
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="40"
+						particlelife="750"
+						gravity="-3"
+						speed="5"
+						drag="0"
+						acceleration="0.10"
+						expirelife="300"
+						material="/shared/effects/materials/mysticenergy.material"
+						offsetsphere="0 0 0"
+						position="{position}"
+						yawspeed="360"
+						depthbias="0"
+						inheritvelocity="0"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							minanglespeed="20"
+							maxanglespeed="150"
+							startcolor="0 0 1"
+							midcolor=".2 .5 .7"
+							endcolor="0 0 0"
+							midcolorpos=".4"
+							startframe="0"
+							endframe="1"
+							startsize="20"
+							midsize="30"
+							endsize="10"
+							scale="{scale}"
+							midsizepos=".3"
+							startalpha="0"
+							midalpha=".45"
+							endalpha="0"
+							midalphapos=".01"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="20"
+						particlelife="750"
+						gravity="-10"
+						speed="2"
+						drag="0"
+						acceleration="0.10"
+						expirelife="300"
+						material="/shared/effects/materials/mysticenergy2.material"
+						offsetsphere="0 0 0"
+						direction="0 0 -2"
+						position="{position}"
+						yawspeed="-360"
+						depthbias="0"
+						inheritvelocity="0"
+					>
+						<particle
+							scale="{scale}"
+							minangle="0"
+							maxangle="360"
+							minanglespeed="20"
+							maxanglespeed="150"
+							startcolor=".5"
+							midcolor="0 .125 .3"
+							endcolor="0 0 0"
+							midcolorpos=".4"
+							startframe="0"
+							endframe="1"
+							startsize="20"
+							midsize="30"
+							endsize="1"
+							midsizepos=".3"
+						/>
+						
+					</simpleemitter>
+				<!-- 	
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="20"
+						particlelife="750"
+						gravity="-10"
+						speed="2"
+						drag="0"
+						acceleration="0.10"
+						expirelife="300"
+						material="/shared/effects/materials/flare_03.material"
+						offsetsphere="10 10 0"
+						direction="0 0 -1"
+						position="{position}"
+						yawspeed="-360"
+						depthbias="0"
+						inheritvelocity="0"
+					>
+						<particle
+							scale="{scale}"
+							minangle="0"
+							maxangle="360"
+							minanglespeed="20"
+							maxanglespeed="150"
+							startcolor="1"
+							midcolor="0 .25 .6"
+							endcolor="0 0 0"
+							midcolorpos=".4"
+							startframe="0"
+							endframe="1"
+							startsize="75"
+							midsize="75"
+							endsize="1"
+							midsizepos=".3"
+						/>
+						
+					</simpleemitter>
+ -->
+				</template>
+				
+				<instance name="flameup" bone="_bone_fx" scale="0.15" position="0 0 0"/>
+			</model>
+			
+			<model
+				model="/heroes/andromeda/effects/orbit.mdf"
+				anim="idle"
+				scale="2.65"
+				pitch="180"
+				yaw="90"
+				yawspeed="90"
+				position="0 0 0"
+				lockup="1"
+			>	
+			<!-- 	<billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/flare_03.material"
+					scale=".5"
+					color="0 .5 1"
+				/>
+				 -->
+				<!-- <billboard
+					bone="_bone_fx"
+					material="/shared/effects/materials/flare_03.material"
+					scale=".25"
+					color="1"
+				/> -->
+
+				<template name="flameup">
+				
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="25"
+						minparticlelife="750"
+						maxparticlelife="1500"
+						speed="5"
+						drag="0"
+						acceleration="0.10"
+						expirelife="300"
+						material="/shared/effects/materials/mysticenergy.material"
+						offsetsphere="0 0 0"
+						position="{position}"
+						yawspeed="360"
+						depthbias="0"
+					>
+						<particle
+							minangle="0"
+							maxangle="360"
+							minanglespeed="20"
+							maxanglespeed="150"
+							startcolor=".5"
+							midcolor=".1 .15 .35"
+							endcolor="0 0 0"
+							midcolorpos=".4"
+							startframe="0"
+							endframe="1"
+							startsize="20"
+							midsize="30"
+							endsize="10"
+							scale="{scale}"
+							midsizepos=".3"
+							startalpha="0"
+							midalpha=".45"
+							endalpha="0"
+							midalphapos=".01"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="20"
+						particlelife="750"
+						speed="2"
+						drag="0"
+						acceleration="0.10"
+						expirelife="300"
+						material="/shared/effects/materials/mysticenergy2.material"
+						offsetsphere="0 0 0"
+						direction="0 0 -2"
+						position="{position}"
+						yawspeed="-360"
+						depthbias="0"
+					>
+						<particle
+							scale="{scale}"
+							minangle="0"
+							maxangle="360"
+							minanglespeed="20"
+							maxanglespeed="150"
+							startcolor=".5"
+							midcolor="0 .125 .3"
+							endcolor="0 0 0"
+							midcolorpos=".4"
+							startframe="0"
+							endframe="1"
+							startsize="20"
+							midsize="30"
+							endsize="1"
+							midsizepos=".3"
+						/>
+					</simpleemitter>
+					
+				<!-- 	
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="20"
+						particlelife="750"
+						speed="2"
+						drag="0"
+						acceleration="0.10"
+						expirelife="300"
+						material="/shared/effects/materials/flare_03.material"
+						offsetsphere="5 5 0"
+						direction="0 0 0"
+						position="{position}"
+						yawspeed="-360"
+						depthbias="0"
+						inheritvelocity="0"
+					>
+						<particle
+							scale="{scale}"
+							minangle="0"
+							maxangle="360"
+							minanglespeed="20"
+							maxanglespeed="150"
+							startcolor="1 1 1"
+							midcolor="0 .25 .6"
+							endcolor="0 0 0"
+							midcolorpos=".4"
+							startframe="0"
+							endframe="1"
+							startsize="85"
+							midsize="85"
+							endsize="1"
+							midsizepos=".3"
+						/>
+						
+					</simpleemitter>
+ -->
+				</template>
+				
+				<instance name="flameup" bone="_bone_fx" scale="0.2" position="0 0 0"/>
+			</model>
+
+				
+			<model
+				model="/heroes/riftmage/alt5/ability_01/effects/box/model.mdf"
+				anim="idle3"
+				expirelife="300"
+				startalpha="1"
+				endalpha="0"
+				scale="1.75"
+				position="0 0 15"
+			/>
+	</controller>
+			
+<!-- effect pf weapon -->
+		<template name="glows">	
+				
+			<controller bone="_bone_weaponattach" scale="2.1"  >
+				<billboard
+					position="0 0 25"
+					expirelife="250"
+					startcolor="0 0 .5"
+					endcolor="0 0 0"
+					size="60"
+					lockup="1"
+					lockright="1"
+					pitch="{zpitch}"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="50"
+					directionalspace="local"
+				/>
+				
+				<billboard
+					position="0 0 25"
+					expirelife="250"
+					startcolor="0 .75 .75"
+					endcolor="0 0 0"
+					size="20"
+					lockup="1"
+					lockright="1"
+					pitch="{zpitch}"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="50"
+					directionalspace="local"
+				/>
+				
+				<billboard
+					position="0 0 25"
+					expirelife="250"
+					startcolor="1"
+					endcolor="0 0 0"
+					size="10"
+					lockup="1"
+					lockright="1"
+					pitch="{zpitch}"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="50"
+					directionalspace="local"
+				/>
+				
+				<billboard
+					position="0 0 25"
+					life="500"
+					color="0 .1 .15"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startsize="35"
+					midsize="45"
+					endsize="35"
+					material="/shared/effects/materials/twirl_blend.material"
+					lockright="1"
+					lockup="1"
+					pitch="{zpitch}"
+					loop="true"
+					directionalspace="local"
+					rollspeed="360"
+				/>
+				
+				<billboard
+					position="0 0 25"
+					life="500"
+					color="0 .1 .15"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					startsize="35"
+					midsize="45"
+					endsize="35"
+					material="/shared/effects/materials/twirl_blend.material"
+					lockright="1"
+					lockup="1"
+					pitch="{zpitch}"
+					loop="true"
+					directionalspace="local"
+					rollspeed="-360"
+				/>
+
+				<billboard
+					position="0 0 25"
+					life="1000"
+					color="1 1 1"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					startparam=".025"
+					endparam="0"
+					startsize="0"
+					endsize="85"
+					material="/shared/effects/materials/refract_ripple.material"
+					lockright="1"
+					lockup="1"
+					pitch="{zpitch}"
+					loop="true"
+					directionalspace="local"
+				/>
+				</controller>
+	</template>	
+	
+	<instance name="glows" zpitch="0"/>
+	<instance name="glows" zpitch="90"/>
+			
+			<controller bone="_bone_weaponattach" >
+			<simpleemitter
+				spawnrate="5"
+				particlelife="400"
+				gravity="-6"
+				speed="0.0"
+				acceleration="0.0"
+				position="0 0 25"
+				offsetsphere="0 0 0"
+				material="/shared/effects/materials/flare_01.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".1 .2 .35"
+					endcolor="0 0 0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startsize="200"
+					endsize="50"
+					lockup="true"
+					lockright="true"
+					pitch="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="10"
+				particlelife="500"
+				gravity="-6"
+				speed="0.0"
+				acceleration="0.0"
+				position="0 0 25"
+				material="/shared/effects/materials/flare_01.material"
+				depthbias="-100"
+			>
+				<particle
+					startcolor=".3"
+					midcolor=".05 .1 .2"
+					endcolor="0 0 0"
+					startalpha=".02"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startsize="50"
+					endsize="15"
+					lockup="true"
+					pitch="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="50"
+				particlelife="610"
+				gravity="0"
+				speed="0"
+				position="0 0 25"
+				acceleration="11"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="15"
+				drag="0.05"
+				direction="1 0 0"
+				depthbias="-50"
+			>
+				<particle
+					startstickiness="0"
+					endstickiness=".25"
+					startcolor="1"
+					midcolor="0 .25 1"
+					endcolor="0 0 0"
+					startsize="5"
+					endsize="0"	
+					turn="1"
+					heightdistort="0.02"
+				/>
+			</simpleemitter>
+	</controller>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

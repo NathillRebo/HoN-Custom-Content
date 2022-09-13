@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Cerberus2"
+
+	speed="1500"
+	gravity="10000"
+	
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	
+	traileffect="effects/trail.effect"
+	
+	canturn="0"
+	flying="0"
+	flyheight="0"
+	impactdistance="120"
+>
+
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+		    <onimpact>
+				<damage effecttype="Physical" amount="80,160,240,320" target="target_entity" />
+				<applystate name="State_Stunned" duration="1400,1500,1600,1700" target="target_entity" />
+		    </onimpact>
+		</combatevent>
+	</onimpact>
+</projectile>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Kali4"
+
+	icon="icon.tga"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="passive"
+	maxcharges="100"
+>
+	<onlearn>
+		<setcharges a="0" />
+		<setaccumulator value="0" />
+	</onlearn>
+	<ondamage>
+		<damageeffecttype effecttype="Magic SuperiorMagic">
+			<setvar0 a="damage_applied" b="0.1,0.15,0.2" op="mult" />
+			<heal source="this_owner_entity" target="this_owner_entity" a="var0" />
+		</damageeffecttype>
+	</ondamage>
+
+	<onattackeddamageevent>
+		<setvar1 a="damage_attempted" b="9,8,7" op="div"/>
+		<addcharges entity="this_entity" count="var1" />
+		<compare a="charges" b="100" op="ge">
+			<setcharges a="0"/>
+			<dispel type="StatusDebuff" target="source_entity" />
+			<dispel type="StatusDisable" target="source_entity" />
+		</compare>
+	</onattackeddamageevent>
+	
+	<modifier key="ult_boost" modpriority="100">
+		<onattackeddamageevent>
+			<setvar1 a="damage_attempted" b="9,8,7" op="div"/>
+			<addcharges entity="this_entity" count="var1" />
+			<compare a="charges" b="100" op="ge">
+				<setcharges a="0"/>
+				<dispel type="StatusDebuff" target="source_entity" />
+				<dispel type="StatusDisable" target="source_entity" />
+				
+				<pushability name="Ability_Kali1" />
+				<reducecooldown duration="2359" entity="stack_entity" />
+				<pushability name="Ability_Kali2" />
+				<reducecooldown duration="2359" entity="stack_entity" />
+				<pushability name="Ability_Kali3" />
+				<reducecooldown duration="2359" entity="stack_entity" />
+			</compare>
+		</onattackeddamageevent>
+	</modifier>
+</ability>

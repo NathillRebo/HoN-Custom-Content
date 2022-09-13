@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+		
+			<model 
+				startalpha="1"
+				endalpha="0"
+				model="wings/model.mdf"
+				anim="idle"
+				color=".62 .36 1.02"
+				expirelife="10"
+				position="0 -35 -10"
+				startscale="1.15"
+				endscale="0"
+			/>
+			
+			<model 
+				startalpha="1"
+				endalpha="0"
+				model="wings/model.mdf"
+				material="/shared/effects/materials/shell4.material"
+				anim="idle"
+				color=".09 .05 .15"
+				expirelife="10"
+				position="0 -35 -10"
+				startscale="1.15"
+				endscale="0"
+			/>
+
+			<light
+				expirelife="250"			
+				startcolor=".62 .36 1.02"			
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="75"
+				falloffend="125"
+				position="0 0 0"	
+			/>	
+
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				color=".79 .46 1.3"
+				size="20"
+				depthbias="-50"
+			/>
+
+			<billboard
+				material="/shared/effects/materials/whitedot.material"
+				color=".23 .14 .38"
+				size="50"
+			/>
+			
+			<simpleemitter
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="40"
+				particlelife="100"
+			>
+				<particle
+					color=".08 .05 .13"
+					startsize="16"
+					endsize="4"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="300"
+				particlelife="400"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					heightdistort="0.01"
+					turn="1"
+					startcolor=".31 .18 .51"
+					endcolor="0 0 0"
+					startsize="3"
+					endsize="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+			position="0 20 0"
+				material="/shared/effects/materials/smoke_01.material"
+				spawnrate="50"
+				minparticlelife="500"
+				maxparticlelife="750"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".25"
+					roll="180"
+					heightdistort="0.01"
+					turn="1"
+					startcolor=".05 .03 .08"
+					endcolor="0 0 0"
+					startsize="60"
+					endsize="20"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				material="/shared/effects/materials/smash_add.material"
+				spawnrate="100"
+				particlelife="200"
+				gravity="7"
+				speed="310"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					roll="180"
+					turn="1"
+					startcolor=".16 .09 .26"
+					midcolor=".16 .09 .26"
+					endcolor="0 0 0"
+					startsize="25"
+					endsize="44"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				spawnrate="100"
+				particlelife="600"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					roll="180"
+					heightdistort="0.01"
+					turn="1"
+					startcolor=".04 .02 .06"
+					endcolor="0 0 0"
+					startsize="36"
+					endsize="10"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="20"
+				minparticlelife="150"
+				maxparticlelife="300"
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 -25 0"
+				material="/shared/effects/materials/black_energy.material"
+				direction="0 0 0"
+				offsetsphere="12"
+				depthbias="0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-360"
+					maxanglespeed="360"
+					startcolor=".31 .18 .51"
+					midcolor=".31 .18 .51"
+					endcolor=".31 .18 .51"
+					startframe="0"
+					endframe="1"
+					startwidth="1"
+					endwidth="70"
+					height="80"
+					framespeed="3"
+				/>
+			</simpleemitter>
+
+
+			<simpleemitter
+				spawnrate="20"
+				minparticlelife="150"
+				maxparticlelife="300"
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 -60 0"
+				material="/shared/effects/materials/black_energy.material"
+				direction="0 0 0"
+				offsetsphere="12"
+				depthbias="0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-360"
+					maxanglespeed="360"
+					startcolor=".31 .18 .51"
+					midcolor=".31 .18 .51"
+					endcolor=".31 .18 .51"
+					startframe="0"
+					endframe="1"
+					startwidth="1"
+					endwidth="35"
+					height="45"
+					framespeed="3"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	
+		<waitfordeath  instance="instance0"/>
+ 
+
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

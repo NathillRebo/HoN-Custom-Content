@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Carmilla1"
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	displaylevel="true"
+	allowtransfer="true"
+	effecttype="StatusDebuff"
+>
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+	
+	<onexpired>
+		<evaluate a="charges" b="charges" op="mult"/>
+		<evaluate a="result" b="9,10,11,12" op="mult"/>
+		<damage effecttype="Magic" amount="1" b="result" op="mult" />
+	</onexpired>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		movespeedslowpercharge="0.03"
+	/>
+</state>

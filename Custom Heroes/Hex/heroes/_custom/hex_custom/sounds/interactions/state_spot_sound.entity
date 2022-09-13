@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Alexandrite_Paragon_Enemy_Spot"
+
+	icon=""
+	passiveeffect=""
+	propagatetoillusions="false"
+	effecttype=""
+	ishidden="true"
+>
+ <onframe>
+	<areaofeffect
+    radius="950"
+    targetscheme="visible_enemy_heroes"
+    targetselection="all"
+    ignoreinvulnerable="true"
+   >
+   <hasmodifier entity="target_entity" name="Brunhilde_Sound">
+   <playeffect effect="spot_brun.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Enemy_Spot" source="source_entity" />
+   <expire />
+    </hasmodifier>
+	<else>
+	<hasmodifier entity="target_entity" name="Ursa_Sound">
+   <playeffect effect="spot_ursa.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Enemy_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	<hasmodifier entity="target_entity" name="MasterOfArms_Magnetic_Alt7">
+   <playeffect effect="spot_ursa.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Enemy_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	<hasmodifier entity="target_entity" name="MasterOfArms_Electrical_Alt7">
+   <playeffect effect="spot_ursa.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Enemy_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	<hasmodifier entity="target_entity" name="Ursa_Sound_Uschi">
+   <playeffect effect="spot_ursa.effect" target="source_entity" occlude="true" />
+   <expirestate name="State_Alexandrite_Paragon_Enemy_Spot" source="source_entity" />
+   <expire />
+       </hasmodifier>
+	   <else>
+	</else>
+	</else>
+	</else>
+	</else>
+	</else>
+   </areaofeffect>
+   </onframe>
+
+</state>

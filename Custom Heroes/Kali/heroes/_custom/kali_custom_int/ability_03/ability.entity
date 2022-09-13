@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Kali3"
+
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="0"
+	castactiontime="0"
+
+	frontqueue="true"
+	inheritmovement="true"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	passiveeffect=""
+	
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+
+	manacost="65,70,75,80"
+	cooldowntime="10000,9500,9000,8500"
+	
+	targetradius="300"
+>
+	<onimpact>
+		<applystate name="State_Kali3" target="this_owner_entity" duration="1500" />
+	</onimpact>
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onkill>
+			<reducecooldown duration="1168"/>
+		</onkill>
+	</modifier>
+</ability>

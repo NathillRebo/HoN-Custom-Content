@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nova3"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+
+	unitwalking="true"
+	disarmed="true"
+	silenced="true"
+	invulnerable="true"
+	nothreat="true"
+	stealthtype="hero"
+	fadetime="0"
+	movespeedmultiplier="0.25,0.3,0.35,0.4"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<modifier key="ult_boost"
+		movespeedmultiplier="1,1.05,1.1,1.15"
+		maxmovespeed="403"
+	/>
+</state>

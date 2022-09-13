@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_NereidAttack"
+
+	speed="1100"
+	gravity="0"
+	canturn="true"
+	modelscale="1.1"
+
+	model="model.mdf"
+	traileffect="effects/trail.effect"
+	impacteffect="effects/impact.effect"
+>
+</projectile>

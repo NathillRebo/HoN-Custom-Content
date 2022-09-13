@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dryadin_Ability4_Shard"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	armor="-5"
+	magicarmor="-5"
+>
+</state>

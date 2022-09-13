@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" persistent="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".83">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1111"
+				volume=".56"
+				sample="../sounds/explosion.wav"
+			/>
+			<groundsprite
+				life="5000"
+				material="/shared/effects/materials/ground_scorch.material"	
+				size="500"
+				startalpha="1"
+				midalpha=".75"
+				endalpha="0"
+				position="0 0 0"
+			/>
+
+			<billboard
+				life="250"
+				position="0 0 50"
+				startcolor="1 0 0"
+				midcolor="1 1 0"
+				endcolor="1 0 0"
+				startsize="200"
+				endsize="750"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				material="/shared/effects/materials/explosion.material"
+			/>
+			
+			<billboard
+				life="500"
+				position="0 0 50"
+				startcolor=".5 0 0"
+				midcolor=".25 .125 0"
+				endcolor="0"
+				startsize="200"
+				endsize="750"
+				depthbias="-50"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				scale=".75"
+				material="/shared/effects/materials/starlight.material"
+			/>
+
+			<simpleemitter
+				count="15"
+				spawnrate="240"
+				particlelife="250"
+				material="/shared/effects/materials/rad_add.material"
+				offsetsphere="5 5 25"
+				position="0 0 150"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-25"
+					maxanglespeed="25"
+					startcolor="0"
+					midcolor=".275 .1 .04"
+					endcolor="0"
+					midcolorpos=".25"
+					width="50"
+					startsize="100"
+					endsize="1000"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					startanchor="1"
+					endanchor=".7"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="100"
+				spawnrate="3095"
+				minparticlelife="300"
+				maxparticlelife="400"
+				drag=".01"
+				offsetphere="140 140 20"
+				gravity="-3"
+				minspeed="650"
+				maxspeed="3250"
+				direction="0 0 1"
+				position="0 0 50"
+				depthbias="-30"
+				material="/shared/effects/materials/blob_add.material"
+			>
+				<particle
+					startcolor="1 .65 .1"
+					endcolor="0"
+					startsize="3"
+					endsize="0"
+					minscale="1"
+					maxscale="3"
+				/>
+				<particle
+					startcolor="1 .5 0"
+					endcolor="0"
+					startsize="5"
+					endsize="0"
+					minscale="1"
+					maxscale="2"
+					endstickiness=".4"
+					startheightdistort=".025"
+					endheightdistortion="0"
+					turn="1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter	
+				life="400"				
+				spawnrate="3095"
+				count="4"
+				position="0 0 100"
+				minparticlelife="200"			
+				maxparticlelife="350"				
+				material="/shared/effects/materials/smash_add.material"			
+				depthbias="-50"
+				offsetsphere="5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="0"
+					midcolor=".2 .05 0"
+					endcolor="0"
+					midcolorpos=".2"
+					minsize="130"
+					maxsize="250"
+					startscale="1"
+					endscale="3"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="300"
+				spawnrate="3095"
+				count="1"
+				position="0 0 75"
+				minparticlelife="200"
+				maxparticlelife="350"
+				material="/shared/effects/materials/soul_projectile2.material"
+				depthbias="0"
+				offsetsphere="0 0 0"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".5 .25 .1"
+					endcolor="0"
+					midcolorpos=".2"
+					size="200"
+					startscale="1"
+					endscale="3"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="300"
+				spawnrate="3095"
+				count="1"
+				position="0 0 75"
+				minparticlelife="200"
+				maxparticlelife="350"
+				material="/shared/effects/materials/soul_projectile2.material"
+				depthbias="0"
+				offsetsphere="0 0 0"
+			>
+				<particle 
+					startcolor="0"
+					midcolor=".5 .25 .1"
+					endcolor="0"
+					midcolorpos=".2"
+					size="200"
+					startscale="1"
+					endscale="3"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					yaw="180"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				speed="300"
+				life="300"
+				endspawnrate="1083"
+				count="35"
+				position="0 0 75"
+				minparticlelife="200"
+				maxparticlelife="500"
+				material="/shared/effects/materials/soul_projectile2.material"
+				depthbias="0"
+				offsetsphere="115"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startcolor=".5 .5 .5"
+					midcolor=".3 .15 .05"
+					endcolor="0 0 0"
+					size="40"
+					midsizepos=".75"
+					endsize="70"
+					startscale="1"
+					endscale="2"
+					endstickiness="1"
+				/>
+			</simpleemitter>
+
+			<billboard
+				life="300"
+				position="0 0 50"
+				startcolor=".4 .3 0"
+				endcolor="0"
+				endsize="1050"
+				depthbias="-100"
+				lockup="1"
+				pitch="90"
+				maxroll="360"
+				scale=".75"
+				material="/shared/effects/materials/pulse.material"
+			/>
+
+			<billboard
+				life="300"
+				position="0 0 50"
+				startcolor=".2 .1 0"
+				endcolor="0"
+				endsize="1150"
+				depthbias="-100"
+				lockup="1"
+				pitch="90"
+				scale=".75"
+				material="/shared/effects/materials/corona_06.material"
+			/>
+			
+			<simpleemitter
+				minangle="-90"
+				maxangle="-90"
+				life="500"
+				spawnrate="1006"
+				count="35"
+				minparticlelife="500"
+				maxparticlelife="1200"
+				speed="2000"
+				drag="0.1"
+				gravity="-1"
+				offsetsphere="250 250 0"
+				position="0 0 100"
+				material="/shared/effects/materials/bad_healing_smoke_12.material"
+			>
+				<particle
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					turn="1"
+					startcolor="1 1 1"
+					midcolorpos="0.2"
+					midcolor=".6 .3 .1"
+					endcolor="-1"
+					startsize="100"
+					minendscale="3"
+					maxendscale="5"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos="0.25"
+				/>
+			</simpleemitter>
+
+			<billboard
+				life="400"
+				position="0 0 50"
+				midalpha="1"
+				startalpha="0"
+				endalpha="0"
+				startsize="300"
+				endsize="1400"
+				depthbias="-100"
+				startparam="0.15"
+				endparam="0"
+				lockup="1"
+				pitch="90"
+				scale=".75"
+				material="/shared/effects/materials/refract_ring.material"
+			/>
+
+			<simpleemitter
+				offsetsphere="60 60 50"
+				spawnrate="774"
+				count="10"
+				particlelife="250"
+				acceleration="0"
+				position="0 0 150"
+				direction="0 0 0"
+				material="/shared/effects/materials/light_rays.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".25 .075 0"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					width="50"
+					minstartheight="600"
+					maxstartheight="1200"
+					endheight="25"
+					anchor="1"
+					lockup="1"
+					lockright="false"
+				/>
+			</simpleemitter>
+
+			<billboard
+				life="300"
+				color="1 1 1"
+				startalpha=".75"
+				midalpha=".5"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam=".8"
+				endparam=".2"
+				startsize="250"
+				endsize="1250"
+				position="0 0 50"
+				material="/shared/effects/materials/refract_ring.material"
+				lockright="true"
+				lockup="true"
+				scale=".75"
+				pitch="90"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

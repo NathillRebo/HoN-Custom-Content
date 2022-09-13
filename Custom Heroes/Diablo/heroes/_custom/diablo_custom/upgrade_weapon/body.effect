@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+					
+			<sound
+				norestart="true"
+				channel="1355"
+				delay="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".8"
+				sample="/heroes/ravenor/alt5/sounds/item_%.wav"
+			/>
+			
+			<model
+				model="model.mdf"
+				material="../material2.material"
+				inheritparentmodifiers="true"
+				parentalpha="true"
+				parentteamcolor="true"
+				parentskeleton="true"
+			/>
+			
+			<twopointemitter
+				spawnrate="30"
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				minparticlelife="1"
+				maxparticlelife="1200"			
+				gravity="-2"
+				minspeed="10"
+				maxspeed="50"
+				drag=".015"
+				material="/shared/effects/materials/spark_10.material"
+				offsetsphere="2"
+				minangle="-10"
+				maxangle="40"
+				direction="0 0 1"
+				directionalspace="global"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startcolor="1 .7 .2"
+					midcolor="1 .55 0"
+					endcolor="0 0 0"
+					midcolorpos=".3"
+					minstartsize="6"
+					maxstartsize="12"
+					endsize="0"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="4"
+				particlelife="300"
+				gravity="-10"
+				minspeed="0"
+				maxspeed="30"
+				drag="0.07"
+				offsetsphere="5"
+				material="/shared/effects/materials/refract_outsplash.material"
+				depthbias="-10"
+			>
+				<particle
+					startalpha=".6"
+					endalpha="0.0"
+					minangle="0"
+					maxangle="360"
+					startsize="85"
+					endsize="125"
+					param=".05"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				spawnrate="250"
+				minparticlelife="350"
+				maxparticlelife="500"
+				gravity="-25"
+				speed="10"
+				drag=".003"
+				material="/shared/effects/materials/flame.material"
+				offsetsphere="5 20 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="180"
+					minanglespeed="50"
+					startcolor="0"
+					midcolor=".6 .3 .2"
+					endcolor="0"
+					midcolorpos=".1"
+					maxanglespeed="0"
+					startsize="10"
+					midsize="25"
+					endsize="15"
+					startalpha=".1"
+					midalpha=".3"
+					endalpha="0"
+					startanchor=".5"
+					endanchor=".25"
+				/>
+			</twopointemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

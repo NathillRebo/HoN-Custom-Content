@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".9">
+<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2200"
+				volume=".3" 
+				sample="/shared/sounds/impacts/impact_heavy_%.wav"
+			/>
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1000"
+				volume=".1" 
+				sample="/heroes/rocky/sounds/impact_%.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".8" 
+				sample="/heroes/riptide/alt6/sounds/imp_%.wav"
+			/>
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".8" 
+				sample="/heroes/riptide/sounds/new_imp_%.wav"
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				position="0 0 40"
+				depthbias="-30"
+				life="200"
+				minparticlelife="450"				
+				maxparticlelife="1200"				
+				spawnrate="20"
+				acceleration="0.0"
+				gravity="20"
+				minangle="0"
+				maxangle="20"
+				direction="0 0 0"
+				speed="300"
+				offsetsphere="50 50 50"
+				material="/shared/effects/materials/mistletoe_1.material"
+				collide="0"
+				inheritvelocity=".01"
+			>
+				<particle 
+					maxangle="360"
+					minanglespeed="100"
+					maxanglespeed="300"
+					startsize="0"
+					midsize="60"
+					endsize="60"
+					startcolor="1"				
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					minscale=".5"
+					maxscale=".8"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				depthbias="-30"
+				life="200"
+				minparticlelife="450"				
+				maxparticlelife="1200"				
+				spawnrate="50"
+				acceleration="0.0"
+				drag="0.02"
+				gravity="50"
+				minangle="0"
+				maxangle="20"
+				direction="0 0 0"
+				speed="750"
+				offsetsphere="50 50 50"
+				material="/shared/effects/materials/snowflake.material"
+				collide="0"
+				inheritvelocity=".01"
+			>
+				<particle 
+					maxangle="360"
+					anglespeed="100"
+					startsize="20"
+					endsize="40"
+					startcolor="1"				
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					minscale=".2"
+					maxscale=".8"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="15"
+				minparticlelife="500"
+				maxparticlelife="750"
+				spawnrate="150"
+				minspeed="350"
+				maxspeed="600"
+				gravity="10"
+				minangle="0"
+				maxangle="10"
+				material="/shared/effects/materials/whitewater_02.material"
+				offsetsphere="15 15 0"
+				position="0 0 0"
+				direction="0 0 0"
+
+			>
+				<particle
+					minanglespeed="-100"
+					maxanglespeed="100"
+					minangle="-60"
+					maxangle="60"
+					startcolor="0 0 0"
+					midcolor=".5"
+					endcolor="0 0 0"
+					startsize="40"
+					endsize="90"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="1">
+		
+			<template name="glows">	
+				
+				<controller bone="diamonds_07" directionalspace="global" life="4333" startscale="1" midscale="4" midscalepos=".25" endscale="4">
+				<!--
+				<billboard
+					expirelife="250"
+					startcolor="0 0 .5"
+					endcolor="0 0 0"
+					size="60"
+					pitch="{zpitch}"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="100"
+					directionalspace="local"
+				/>
+				
+				<billboard
+					expirelife="250"
+					startcolor="0 .75 .75"
+					endcolor="0 0 0"
+					size="20"
+					pitch="{zpitch}"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="100"
+					directionalspace="local"
+				/>
+				
+				<billboard
+					expirelife="250"
+					startcolor="1"
+					endcolor="0 0 0"
+					size="10"
+					pitch="{zpitch}"
+					material="/shared/effects/materials/whitedot.material"
+					depthbias="100"
+					directionalspace="local"
+				/>
+				-->
+				<billboard
+					life="500"
+					color="0 .1 .15"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startsize="35"
+					midsize="45"
+					endsize="35"
+					material="/shared/effects/materials/twirl_blend.material"
+					pitch="{zpitch}"
+					loop="true"
+					directionalspace="local"
+					rollspeed="360"
+				/>
+				
+				<billboard
+					life="500"
+					color="0 .1 .15"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					startsize="35"
+					midsize="45"
+					endsize="35"
+					material="/shared/effects/materials/twirl_blend.material"
+					lockright="1"
+					pitch="{zpitch}"
+					loop="true"
+					directionalspace="local"
+					rollspeed="-360"
+				/>
+
+				<billboard
+					life="1000"
+					color="1 1 1"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					startparam=".025"
+					endparam="0"
+					startsize="0"
+					endsize="85"
+					material="/shared/effects/materials/refract_ripple.material"
+					pitch="{zpitch}"
+					loop="true"
+					directionalspace="local"
+				/>
+				</controller>
+			</template>	
+			<!--
+			<instance name="glows" zpitch="0"/>
+			<instance name="glows" zpitch="90"/>
+			-->
+			
+			
+			
+			
+
+			
+			
+			<controller bone="diamonds_07" directionalspace="global" life="4333" startscale="1" midscale="3" midscalepos=".25" endscale="3" >
+			<simpleemitter
+				spawnrate="5"
+				particlelife="400"
+				gravity="-6"
+				speed="0.0"
+				acceleration="0.0"
+				offsetsphere="0 0 0"
+				material="/shared/effects/materials/flare_01.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".1 .2 .35"
+					endcolor="0 0 0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startsize="200"
+					endsize="50"
+					pitch="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="10"
+				particlelife="500"
+				gravity="-6"
+				speed="0.0"
+				acceleration="0.0"
+				material="/shared/effects/materials/flare_01.material"
+				depthbias="-100"
+			>
+				<particle
+					startcolor=".3"
+					midcolor=".05 .1 .2"
+					endcolor="0 0 0"
+					startalpha=".02"
+					endalpha="0"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="0"
+					maxanglespeed="0"
+					startsize="50"
+					endsize="15"
+					pitch="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="50"
+				particlelife="610"
+				gravity="0"
+				speed="0"
+				acceleration="11"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="15"
+				drag="0.05"
+				direction="1 0 0"
+				depthbias="-50"
+			>
+				<particle
+					startstickiness="0"
+					endstickiness="1"
+					startcolor="1"
+					midcolor="0 .25 1"
+					endcolor="0 0 0"
+					startsize="5"
+					endsize="0"	
+					turn="1"
+					heightdistort="0.02"
+				/>
+			</simpleemitter>
+			</controller>
+			
+			<simpleemitter
+				bone="diamonds_07"
+				life="36s00"
+				startspawnrate="1"
+				endspawnrate="7"
+				particlelife="500"
+				startparticlescale=".25"
+				endparticlescale="1"
+				material="/shared/effects/materials/refract_ripple.material"
+			>
+				<particle
+					startcolor="1 1 1"
+					endcolor="0"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".25"
+					startparam=".025"
+					endparam="0"
+					startsize="300"
+					endsize="0"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				delay="4333"
+				bone="diamonds_07"
+				startsize="0"
+				endsize="150"
+				startcolor="1"
+				endcolor="0"
+				life="300"
+				rollspeed="800"
+				material="/shared/effects/materials/blink.material"
+			/>
+				
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

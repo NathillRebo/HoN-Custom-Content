@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Hex3"
+	
+	model="/shared/models/invis.mdf"
+	passiveeffect="effects/aoe.effect"
+	isselectable="false"
+	iscontrollable="false"
+	drawonmap="false"
+	immobile="true"
+	invulnerable="true"
+	
+	sightrangeday="575"
+	sightrangenight="575"
+	clearvision="true"
+	
+	unitwalking="true"
+	treewalking="true"
+	cliffwalking="true"
+	buildingwalking="true"
+
+	lifetime="6000"
+	
+	noblockneutralspawn="true" 
+	
+>
+	<modifier key="shardofthemaster_boost"
+		lifetime="12000"
+	/>
+</gadget>

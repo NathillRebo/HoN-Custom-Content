@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.125">
+<!--
+
+			
+			<model
+				delay="100"
+				life="300"
+				parentmodel="true"
+				parentskeleton="true"
+				startcolor="1 .5 0"
+				endcolor="0 0 0"
+				material="/shared/effects/materials/shell2.material"
+				startalpha="0"
+				endalpha="35"
+				
+			/>
+
+			<billboard
+				life="1000"
+				bone="_bone_center"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".7 .25 0"
+				endcolor="0 0 0"
+				startsize="300"
+				endsize="0"
+				depthbias="-25"
+			/>
+-->
+
+
+
+			<billboard
+			delay="350"
+				bone="_bone_origin"
+				life="200"
+				startcolor="1 0 0"
+				midcolor="1 1 0"
+				endcolor="1 0 0"
+				size="220"
+				position="0 0 50"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="100"
+				rollspeed="720"
+				directionalspace="local"
+				depthbias="-25"
+			/>
+			
+			<billboard
+			delay="350"
+				bone="_bone_origin"
+				life="200"
+				startcolor="1 0 0"
+				midcolor="1 1 0"
+				endcolor="1 0 0"
+				size="190"
+				position="0 0 50"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="100"
+				rollspeed="720"
+				directionalspace="local"
+				depthbias="-25"
+			/>
+			
+			<billboard
+			delay="350"
+				bone="_bone_origin"
+				life="200"
+				startcolor="1 0 0"
+				midcolor="1 1 0"
+				endcolor="1 0 0"
+				size="150"
+				position="0 0 50"
+				material="/heroes/drunkenmaster/effects/material.material"
+				lockup="1"
+				lockright="1"
+				pitch="100"
+				rollspeed="720"
+				directionalspace="local"
+				depthbias="-25"
+			/>
+<!--
+			<billboard
+				bone="_bone_origin"
+				life="200"
+				startcolor=".5 .5 .25"
+				endcolor="0 0 0"
+				size="180"
+				position="0 0 100"
+				material="/shared/effects/materials/blink.material"
+				lockup="1"
+				lockright="1"
+				yaw="90"
+				rollspeed="720"
+				directionalspace="local"
+				depthbias="-25"
+			/>
+-->
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+<!--
+		<camerashake2 scale="11" radius="1200" duration="400" frequency="22" />
+-->
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

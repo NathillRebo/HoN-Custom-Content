@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Praetor3"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype=""
+
+	healthregen="-100"
+	movespeedmultiplier="0.15"
+	lifesteal="0.15"
+	totaldamagemultiplier="0.5,0.75,1,1.25"
+	attackspeedmultiplier="0.5,0.75,1,1.25"
+>
+	<ondeath>
+		<playeffect effect="effects/pulse.effect" source="this_owner_entity" target="" occlude="true" />
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			center="this_owner_entity"
+		>
+			<applystate name="State_Stunned" target="target_entity" duration="1100,1200,1300,1400" />
+			<damage effecttype="Magic" source="this_inflictor_entity" target="target_entity" amount="95,175,255,335" />
+		</areaofeffect>
+	</ondeath>
+</state>

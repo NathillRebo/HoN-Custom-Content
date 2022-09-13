@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" ignorebasescale="1" useentityeffectscale="0" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="2.03">
+		
+			<sound
+				sample="../sounds/pulse.wav"
+				volume=".5"
+				linearfalloff="true"
+				falloffstart="225"
+				falloffend="800"
+			/>
+			
+			<simpleemitter
+				count="80"
+				spawnrate="1000"
+				minparticlelife="200"
+				maxparticlelife="400"
+				minspeed="100"
+				maxspeed="300"
+				drag=".05"
+				position="0 0 40"
+				material="/shared/effects/materials/ripple_02.material"
+				direction="0 0 1"
+				minangle="90"
+				maxangle="90"
+				depthbias="50"
+			>
+				<template name="shout_line">
+					<particle
+						startcolor="1"
+						midcolor="{color}"
+						endcolor="{color}"
+
+						angle="{angle}"
+						turn="1"
+						flare="1"
+						lockup="true"
+						lockright="true"
+						pitch="-90"
+
+						minstartwidth="20"
+						maxstartwidth="60"
+						minmidwidth="2"
+						maxmidwidth="15"
+						endwidth="0"
+						midwidthpos=".1"
+						startheight="20"
+						minendheight="20"
+						maxendheight="60"
+
+						weight="{weight}"
+					/>
+				</template>
+				<instance name="shout_line" color=".45 0.275 .45" weight="3" andle="0" />
+				<instance name="shout_line" color="0" weight="6" andle="180" />
+			</simpleemitter>
+
+			<billboard
+				maxroll="360"
+				position="0 0 10"
+				life="250"
+				startsize="0"
+				midsize="200"
+				endsize="270"
+				startparam="0"
+				midparam=".04"
+				endparam="0"
+				depthbias="-75"
+				material="/shared/effects/materials/refract_ripples.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+			<simpleemitter
+				count="1"
+				particlelife="500"
+				direction="0 0 1"
+				angle="0"
+				speed="100"
+				drag="0.05"
+				material="/shared/effects/materials/corona_07_blend.material"
+				depthbias="-75"
+			>
+				<particle
+					size="200"
+					startalpha=".75"
+					midalpha=".2"
+					endalpha="0"
+					midalphapos=".2"
+					startcolor=".25 .15 .25"
+					midcolor=".025 .01 .025"
+					endcolor="0"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+
+			<!-- <billboard
+				maxroll="360"
+				position="0 0 10"
+				life="300"
+				startsize="50"
+				midsize="160"
+				endsize="185"
+				depthbias="-75"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"
+				color=".5 .3 0"
+				material="/shared/effects/materials/corona_01_blend.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/> -->
+			
+			<!-- <billboard
+				timenudge="1"
+				material="/shared/effects/materials/stomp_02.material"
+				startcolor=".4 .6 .8"
+				endcolor="0"
+				life="250"
+				position="0 0 10"
+				startsize="50"
+				midsize="200"
+				endsize="250"
+				depthbias="-50"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/> -->
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

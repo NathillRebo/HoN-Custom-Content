@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Ardent1"
+	
+	statuseffectheader="true"
+	icon="icon.tga"
+	
+	casttime="0"
+	castactiontime="0"
+
+	casteffect=""
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	nonaggressive="true"
+	casteffecttype="Magic"
+	targetscheme=""
+
+	manacost="45,50,55,60"
+	cooldowntime="5000,5000,5000,5000"
+	novoiceresponse="true"
+>
+	<onimpact>
+		<resetattackcooldown />
+		<applystate name="State_Custom_Ardent1" target="source_entity" duration="5000" param="owner_counter"/>
+	</onimpact>
+</ability>

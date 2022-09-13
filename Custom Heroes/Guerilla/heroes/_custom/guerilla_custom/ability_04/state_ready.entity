@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Guerilla4_Ready"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype=""
+
+	healthregen="6,12,18"
+	manaregen="3,6,9"
+	movespeed="30,60,90"
+	maxmovespeed="30,60,90"
+	attackrange="50,100,150"
+>
+	
+</state>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false" useentityeffectscale="false" >
+	<definitions>
+		<particlesystem name="system0" space="world">
+		
+			<model
+				delay="0"
+				model="/heroes/hammerstorm/ability_01/projectile/model_still.mdf"
+				position="0 -15 15"
+				yaw="65" roll="130" pitch="50"
+				color="1"
+				scale=".95"
+				life="3000"
+				startalpha="1" midalpha="1" endalpha="0" midalphapos=".5"
+			/>
+			
+			<model
+				delay="0"
+				model="/heroes/hammerstorm/ability_01/projectile/model_still.mdf"
+				material="/shared/effects/materials/shell_rim_spoopy.material"
+				position="0 -15 15"
+				yaw="65" roll="130" pitch="50"
+				startcolor="0 .5 1" midcolor="0 .5 1" endcolor="0"
+				scale=".95"
+				life="3000"
+				startalpha="1" midalpha="1" endalpha="0" midalphapos=".5"
+			/>
+		
+			<billboard
+				delay="0"
+				life="200"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".15"
+				endparam="0"
+				startsize="0"
+				endsize="250"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+			
+			<billboard
+				life="250"
+				startcolor="0 .6 1"
+				endcolor="0 0 0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startsize="200"
+				midsize="300"
+				endsize="400"
+				scale=".4"
+				midsizepos=".4"
+				position="0 0 20"
+				material="/shared/effects/materials/stomp_02.material"
+				lockup="true"
+				pitch="90"
+				maxroll="360"
+			/>	
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

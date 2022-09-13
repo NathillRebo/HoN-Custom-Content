@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_zzz_Valor"
+	movespeedperlevel="3"
+	
+	team="Legion"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.7"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="44"
+	targetoffset="0 0 64"
+
+	category="physical"
+	difficulty="2"
+	
+	solorating="0"
+	junglerating="0"
+	carryrating="4"
+	supportrating="0"
+	initiatorrating="0"
+	gankerrating="2"
+	pusherrating="0"
+	rangedrating="0"
+	meleerating="5"
+
+	movespeed="310"
+	turnrate="540"
+	turnsmoothing="0.06"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="1.1"
+	magicarmor="5.0"
+
+	inventory0="Ability_Valor1"
+	inventory1="Ability_Valor2"
+	inventory2="Ability_Valor3"
+	inventory3="Ability_Valor4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="330"
+	attackcooldown="1700"
+	attackdamagemin="25"
+	attackdamagemax="29"
+	attacknumanims="2"
+	attackoffset="0 0 75"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Strength"
+	strength="23"
+	strengthperlevel="2.8"
+	agility="15"
+	agilityperlevel="1.4"
+	intelligence="18"
+	intelligenceperlevel="1.8"
+	
+	corpsetime="4500"
+	corpsefadetime="4500"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	previewmodel="preview.mdf"
+	previewpos="0 0 -50"
+	previewangles="0 0 0"
+	previewscale="1.15"
+	
+	storemodel="preview.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.45"
+	storepassiveeffect="effects/body_shop.effect"
+	previewpassiveeffect="effects/body_shop.effect"
+	
+	portraitcampos="7 0 20"
+	infoheight="180"
+> 
+	<recommendeditem name="Item_Madfreds_BrassKnuckles" /> 4150
+	<recommendeditem name="Item_Brutalizer" />	4400
+	<recommendeditem name="Item_Damage10" /> 4750
+	<recommendeditem name="Item_Splash" /> 4950
+	<recommendeditem name="Item_Freeze" />	5100
+	<recommendeditem name="Item_LifeSteal4" /> 6000
+	<recommendeditem name="Item_Dawnbringer" /> 6600
+
+	<onspawn>
+	</onspawn>
+</hero>

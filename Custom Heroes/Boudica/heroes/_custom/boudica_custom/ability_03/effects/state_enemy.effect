@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<simpleemitter
+				bone="_bone_head"
+				spawnrate="50"
+				life="1000"
+				particlelife="850"
+				gravity="100"
+				speed="50"
+				drag=".01"
+				acceleration="0.0"
+				position="0 0 0"
+				offsetsphere="5 5 0"
+				material="/shared/effects/materials/blood1.material"
+				direction="0 0 -1"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					angle="180"
+					color=".5 .5 .5"
+					startsize="60"
+					midsize="40"
+					minendsize="60"
+					maxendsize="40"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+		
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnparticlesystem instance="instance1" particlesystem="system1"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Cyclops1"
+
+	lifetime="1000"
+	gravity="6000"
+	useexactlifetime="true"
+
+	modelscale="2"
+	model="effects/ball/model.mdf"
+	traileffect=""
+	deatheffect="effects/smash.effect"
+>
+	<onimpact>
+		<areaofeffect
+				radius="200"
+				center="this_position"
+				effecttype="Magic"
+				targetselection="all"
+				targetscheme="enemy_units_and_structures"
+			>
+				<!-- Damage -->
+				<setvar0 a="20,60,100,140" />
+				<attack targetscheme="enemy_units_and_structures" source="source_entity" />
+				<damage effecttype="Physical" amount="1" b="var0" op="mult" />
+				<applystate name="State_Stunned_Knockdown" duration="1000,1100,1200,1300" />
+				<playanim name="knock_1" target="target_entity" />
+		</areaofeffect>
+	</onimpact>
+</projectile>

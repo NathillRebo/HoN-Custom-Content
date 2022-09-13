@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="model.model" type="K2" high="high.model" med="med.model" low="low.model" >
+	
+	<anim name="idle" clip="clips/default_1.clip" fps="30" loop="true" blendtime="150"/>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="30" loop="false">
+	    <frameevent frame="6" cmd="PlaySoundLinear /heroes/shadowblade/sounds/whooshagi_%.wav 0 1300 .53"/>
+		<frameevent frame="15" cmd="StartEffect effects/attack_1.effect"/>
+	</anim>
+	
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="30" loop="false">
+	    <frameevent frame="6" cmd="PlaySoundLinear /heroes/shadowblade/sounds/whooshagi_%.wav 0 1300 .53"/>
+		<frameevent frame="6" cmd="PlaySoundLinear /heroes/shadowblade/sounds/attack_grunt_%.wav 0 1300 .8"/>
+		<frameevent frame="15" cmd="StartEffect effects/attack_2.effect"/>
+	</anim>
+	
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="30" loop="true">
+		<frameevent frame="5" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="27" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+			
+		<frameevent frame="15" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="37" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="5" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="27" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="death_1" clip="clips/death_1.clip" fps="30" loop="true" loopbackframe="-1">
+	</anim>
+	
+	<anim name="ability_2a" clip="clips/ability_2a.clip" fps="30" loop="false">
+	 </anim>
+	
+	<anim name="ability_2a_fast" clip="clips/ability_2a.clip" fps="60" loop="false">
+	</anim>
+	
+	<anim name="ability_2b" clip="clips/ability_2b.clip" fps="30" loop="false">
+	</anim>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="30" loop="false">
+	    <frameevent frame="1" cmd="PlaySoundLinear /heroes/shadowblade/sounds/laughter.wav 400 1300 1"/>
+		<frameevent frame="1" cmd="PlaySoundLinear /heroes/shadowblade/ability_04/sounds/cast.wav 400 1300 1"/>
+	</anim>
+
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="30" loop="false"/>
+
+	<anim name="item_1" clip="clips/item_1.clip" fps="30" loop="false"/>
+
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+
+	<anim name="taunt_1" clip="clips/taunt_1.clip" fps="30" loop="false"/>
+
+	<anim name="portrait" clip="clips/portrait_1.clip" fps="30" loop="true"/>
+	
+	
+</model>

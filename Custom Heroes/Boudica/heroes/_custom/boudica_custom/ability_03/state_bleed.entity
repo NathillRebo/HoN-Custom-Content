@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Boudica3_Bleed"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_enemy.effect"
+	displaylevel="true"
+	effecttype="ForceTransferrable"
+	allowtransfer="false"
+	
+	modifierkey="boudica3_Active"
+>
+	<oninflict>
+		<applystate name="State_Empath_Ability4_Assist" duration="100" />
+	</oninflict>
+	
+	<ondeath>
+		<targettype type="hero" source="source_entity" target="source_entity">
+			<targettype type="enemy">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<pushability source="this_proxy_entity" name="Ability_Boudica3" />
+								<addcharges entity="stack_entity" count="1" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+		</targettype>
+		<expire />
+	</ondeath>
+	
+	<onframe>
+		<damage effecttype="Physical DOT" amount="25,45,65,85" b="frametime" op="mult" />
+	</onframe>
+</state>

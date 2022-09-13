@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Bossbit_3"
+
+	lifetime="313"
+	useexactlifetime="true"
+	gravity="2560"
+
+	model="effects/model.mdf"
+	modelscale="1"
+	traileffect="effects/trail.effect"
+	impacteffect="effects/impact.effect"
+	dynamicprecache="effects/impact.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<spawnaffector name="Affector_Bossbit_3" target="target_position" />
+		<!-- Dynamic VFX -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_position" target="" occlude="true" />
+	</onimpact>
+</projectile>

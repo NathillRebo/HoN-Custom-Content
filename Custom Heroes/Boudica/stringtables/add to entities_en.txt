@@ -1,0 +1,42 @@
+
+// Hero_Boudica_Custom
+Hero_Boudica_Custom_name										Boudica
+Hero_Boudica_Custom_role										Boudica is a late-game hero, who is both durable and can infinitely scale attack damage. Her mobility and ability to remove stuns makes her hard to pin down while she wrecks enemies.
+
+// Ability_Boudica1
+Ability_Boudica1_name											Breakthrough
+Ability_Boudica1_description									Boudica dashes in the chosen direction, damaging all enemies she passes through.
+Ability_Boudica1_description_simple								Boudica charges in the chosen direction, dealing ^o{85,145,205,265} Physical Damage^* to enemies she passes through.\n\nAttacks you make reduce remaining cooldown by 0.5 seconds.\n\n^444RrrrraaaaAAAAAA!
+Ability_Boudica1_effect_header
+Ability_Boudica1_tooltip_flavor									RrrrraaaaAAAAAA!
+Ability_Boudica1_IMPACT_effect									Enemies she passes through take ^o{85,145,205,265} Physical Damage^*. Attacks you make reduce remaining cooldown by 0.5 seconds.
+
+// Ability_Boudica2
+Ability_Boudica2_name											Barbaric Shout
+Ability_Boudica2_description									Boudica shouts, demoralizing nearby enemies and invigoratin herself.
+Ability_Boudica2_description_simple								Boudica shouts at nearby enemies, reducing their ^oBase Attack Damage and Movement Speed by {15,20,25,30}%^* for 4 seconds. For each enemy Hero hit, Boudica gains ^o{10,15,20,25}% increased Base Attack Damage^* for 8 seconds.\n\n^444I will FEAST on your HEART!
+Ability_Boudica2_effect_header
+Ability_Boudica2_tooltip_flavor									I will FEAST on your HEART!
+Ability_Boudica2_IMPACT_effect									Enemies hit have their ^oBase Attack Damage and Movement Speed reduced by {15,20,25,30}%^* for 4 seconds, while you gain ^o{10,15,20,25}% increased Base Attack Damage^* for 8 seconds for each enemy Hero hit.
+
+// Ability_Boudica3
+Ability_Boudica3_name											Bleed Out
+Ability_Boudica3_name:ult_boost									^gTrophy Collector^*
+Ability_Boudica3_description									Boudica makes her next attack wound grieviously the target.
+Ability_Boudica3_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Increases damage bonus to {4,5,6,7}.
+Ability_Boudica3_description_simple								Boudica's next attack applies a Bleed that deals ^o{25,45,65,85} Physical Damage^* per second for 3 seconds. Enemy heroes that die while bleeding this way permanently increase Boudica's ^oAttack Damage by {1.5,2.5,3.5,4.5}^*.\n\n^gStaff of the Master^* increases the bonus to {4,5,6,7}.\n\n^444Just bleeding die already!
+Ability_Boudica3_description_simple:ult_boost					Boudica's next attack applies a Bleed that deals ^o{25,45,65,85} Physical Damage^* per second for 3 seconds. Enemy heroes that die while bleeding this way permanently increase Boudica's ^gAttack Damage by {4,5,6,7}^*.\n\n^444Just bleeding die already!
+Ability_Boudica3_effect_header
+Ability_Boudica3_tooltip_flavor									Just bleeding die already!
+Ability_Boudica3_IMPACT_effect									This wound deals ^o{25,45,65,85} Physical Damage^* per second for 3 seconds. Enemy heroes that die while wounded this way permanently increase Boudica's ^oAttack Damage by {1.5,2.5,3.5,4.5}^*.
+Ability_Boudica3_IMPACT_effect:ult_boost						This wound deals ^o{25,45,65,85} Physical Damage^* per second for 3 seconds. Enemy heroes that die while wounded this way permanently increase Boudica's ^gAttack Damage by {4,5,6,7}^*.
+
+// Ability_Boudica4
+Ability_Boudica4_name											Adrenaline Rush
+Ability_Boudica4_name:shardofthemaster_boost					^pAdrenaline Rush^*
+Ability_Boudica4_description									Boudica gathers all her strength.
+Ability_Boudica4_description_simple								Boudica gathers all her strength to regain ^o20% of her max Health, remove disables from herself and reset cooldowns of her basic abilities^*.\n\nTaking damage quickens the cooldown of this ability.\n\n^pShard of the Master^* causes Adrenaline Rush to increase Attack Speed and Movement Speed by 20%, while also reducing durations of incoming stuns and debuffs by 20%, lasting for 4 seconds.\n\n^444A primal spirit has overtaken me. I am... MORE!
+Ability_Boudica4_description_simple:shardofthemaster_boost		Boudica gathers all her strength to regain ^o20% of her max Health, remove disables from herself, reset cooldowns of her basic abilities^*^p, increase Attack Speed and Movement Speed by 20% and reducing duration of incoming Stuns and Debuffs by 20%, lasting for 4 seconds^*.\n\nTaking damage quickens the cooldown of this ability.\n\n^444A primal spirit has overtaken me. I am... MORE!
+Ability_Boudica4_effect_header
+Ability_Boudica4_tooltip_flavor									A primal spirit has overtaken me. I am... MORE!
+Ability_Boudica4_IMPACT_effect									She regains ^o20% of her max Health, removes disables from herself and resets cooldowns of her basic abilities^*.\n\nTaking damage quickens the cooldown of this ability.

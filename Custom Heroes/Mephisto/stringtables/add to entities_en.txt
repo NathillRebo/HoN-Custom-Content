@@ -1,0 +1,50 @@
+
+// Hero_Mephisto_Custom
+Hero_Mephisto_Custom_name										Mephisto
+Hero_Mephisto_Custom_role										Mephisto is a mixed damage dealer who is most effective, when he can get in the fight and unleash his arsenal, while ending his job with nice attack speed, but deals little poke damage. While entering the fray will make him extra dangerous, he still needs to be careful to don't commit unnecesary suicides.
+
+// Ability_Mephisto1
+Ability_Mephisto1_name											Corruption
+Ability_Mephisto1_name:shardofthemaster_boost					^pCorruption^*
+Ability_Mephisto1_description									Mephisto corrupts target enemy for as long as he retains his influence over them.
+Ability_Mephisto1_description_simple							Mephisto curses the target, causing it to take ^o{15,25,35,45} Magic Damage^* per second for 3 seconds. Whenever the target is attacked, increase the remaining duration by 1 second.\n\n^pShard of the Master^* increases initial duration by 0.5 seconds and causes each attack to increase DPS by 2.\n\n^444My touch is the gentlest one!
+Ability_Mephisto1_description_simple:shardofthemaster_boost		Mephisto curses the target, causing it to take ^o{15,25,35,45} Magic Damage^* per second for ^p3.5^* seconds. Whenever the target is attacked, increase the remaining duration by 1 second ^pand it's Damage per Second by 2^*.\n\n^444My touch is the gentlest one!
+Ability_Mephisto1_effect_header
+Ability_Mephisto1_tooltip_flavor								My touch is the gentlest one!
+Ability_Mephisto1_IMPACT_effect									The corruption deals ^o{15,25,35,45} Magic Damage^* per second for 3 seconds. Whenever the target is attacked, increase the remaining duration by 1 second.
+
+// State_Mephisto1
+State_Mephisto1_name											Corruption
+State_Mephisto1_description										Taking {15,25,35,45} Magic Damage per second\nAttacks against this unit increase the remaining duration by 1 second
+
+// Ability_Mephisto2
+Ability_Mephisto2_name											Infernal Circle
+Ability_Mephisto2_description									Mephisto surrounds himself in hellfire, causing increasing damage to enemies around him for a short time.
+Ability_Mephisto2_description_simple							Mephisto surrounds himself in hellfire for 2.5 seconds, causing ^o{9,11,13,15} Magic Damage^* to enemies around him every 0.25 seconds. Each enemy Hero hit increases the damage per tick by ^o{0.4,0.8,1.2,1.6}^* until the effect ends.\n\n^444It's Lightning... Infernal Circle!
+Ability_Mephisto2_effect_header
+Ability_Mephisto2_tooltip_flavor								It's Lightning... Infernal Circle!
+Ability_Mephisto2_IMPACT_effect									This hellfire lasts 2.5 seconds and deals ^o{9,11,13,15} Magic Damage^* per 0.25 seconds to enemies within range. Whenever an enemy Hero is hit by this hellfire, its damage per tick increases by ^o{0.4,0.8,1.2,1.6}^* until the effect ends.
+
+// State_Mephisto2_Self
+State_Mephisto2_Self_name										Infernal Circle
+State_Mephisto2_Self_description								Deals {9,11,13,15} Magic Damage per 0.25 seconds, increased by {0.4,0.8,1.2,1.6} per charge
+
+// Ability_Mephisto3
+Ability_Mephisto3_name											Hatred Incarnate
+Ability_Mephisto3_name:ult_boost								^gHatred Infinite^*
+Ability_Mephisto3_description									Mephisto grows more powerful the more enemies are around him.
+Ability_Mephisto3_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Also reduces incoming stun and debuff duration by 5% per enemy Hero within range.
+Ability_Mephisto3_description_simple							For each enemy Hero within 600 units, Mephisto gains ^o{4,8,12,16}% Attack Speed^*, ^o{0.5,1,1.5,2} Armor^*, ^o{0.5,1,1.5,2} Magic Armor^* and ^o{6,12,18,24} Movement Speed^*.\n\n^gStaff of the Master^* also grants 5% Stun and Debuff resistance per enemy Hero nearby.\n\n^444The more the merrier! I hate you all.
+Ability_Mephisto3_description_simple:ult_boost					For each enemy Hero within 600 units, Mephisto gains ^o{4,8,12,16}% Attack Speed^*, ^o{0.5,1,1.5,2} Armor^*, ^o{0.5,1,1.5,2} Magic Armor^*^g, 5% Stun and Debuff Resistance^* and ^o{6,12,18,24} Movement Speed^*.\n\n^444The more the merrier! I hate you all.
+Ability_Mephisto3_effect_header
+Ability_Mephisto3_tooltip_flavor								The more the merrier! I hate you all.
+Ability_Mephisto3_IMPACT_effect									For each enemy Hero within 600 units, Mephisto gains ^o{4,8,12,16}% Attack Speed^*, ^o{0.5,1,1.5,2} Armor^*, ^o{0.5,1,1.5,2} Magic Armor^* and ^o{6,12,18,24} Movement Speed^*.
+Ability_Mephisto3_IMPACT_effect:ult_boost						For each enemy Hero within 600 units, Mephisto gains ^o{4,8,12,16}% Attack Speed^*, ^o{0.5,1,1.5,2} Armor^*, ^o{0.5,1,1.5,2} Magic Armor^*^g, 5% Stun and Debuff Resistance^* and ^o{6,12,18,24} Movement Speed^*.
+
+// Ability_Mephisto4
+Ability_Mephisto4_name											Requiem of Souls
+Ability_Mephisto4_description									Mephisto summons infernal abyss, which sucks those ufortunate enough to be standing there.
+Ability_Mephisto4_description_simple							After 1.25 seconds, pulls all enemies in the chosen area to the center, dealing them ^o{350,525,700} Magic Damage^* and stunning enemies hit for ^o{1.5,1.75,2} seconds^*.\n\n^444Go to hell!
+Ability_Mephisto4_effect_header
+Ability_Mephisto4_tooltip_flavor								Go to hell!
+Ability_Mephisto4_IMPACT_effect									After 1.25 seconds, pulls all enemies in the chosen area to the center, dealing them ^o{350,525,700} Magic Damage^* and stunning enemies hit for ^o{1.5,1.75,2} seconds^*.

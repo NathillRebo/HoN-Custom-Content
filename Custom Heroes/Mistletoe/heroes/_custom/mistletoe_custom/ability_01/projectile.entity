@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Mistletoe1"
+	
+	speed="1700"
+	gravity="0"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	traileffect="effects/projectile.effect"
+	effectscale="1.0"
+>
+	<onimpact>
+		<spawnaffector name="Affector_Mistletoe1" target="target_position" />
+		<kill source="" target="proxy_entity" />
+	</onimpact>
+</projectile>

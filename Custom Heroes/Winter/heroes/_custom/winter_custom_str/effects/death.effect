@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+			
+			<billboard
+			bone="_bone_centerofchest"
+			material="/shared/effects/materials/whitedot.material"
+			startcolor="0 0 1"
+			endcolor="0 0 0"
+			life="300"
+			startsize="50"
+			endsize="150"
+			depthbias="-50"
+		/>
+		
+		<billboard
+			bone="_bone_centerofchest"
+			material="/shared/effects/materials/corona_06.material"
+			startcolor="1"
+			endcolor="0 0 0"
+			life="300"
+			startsize="0"
+			endsize="100"
+			lockup="1"
+			pitch="90"
+		/>
+		<!-- 	
+		<simpleemitter
+			bone="_bone_centerofchest"
+			count="15"
+			spawnrate="50"
+			particlelife="1000"
+			gravity="-5"
+			speed="0"
+			drag="0.07"
+			acceleration="0.0"
+			mintimenudge="0"
+			maxtimenudge="1000"
+			material="/shared/effects/materials/phantom_smoke_04.material"
+			offsetsphere="20 20 20"
+			inheritvelocity=".25"
+			direction="0 0 1"
+			position="0 0 0"
+		>
+			<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="-30"
+				startcolor="0 0 0"
+				midcolor="0 0 .75"
+				endcolor="0 0 0"
+				maxanglespeed="30"
+				startsize="25"
+				endsize="50"
+				startalpha="0"
+				midalpha=".25"
+				endalpha="0"
+				midalphapos=".2"
+				startanchor="0"
+				endanchor="0"
+			/>
+		</simpleemitter>
+		
+		<simpleemitter
+			bone="_bone_centerofchest"
+			count="15"
+			spawnrate="30"
+			particlelife="1000"
+			gravity="-5"
+			speed="0"
+			drag="0.07"
+			acceleration="0.0"
+			mintimenudge="0"
+			maxtimenudge="1000"
+			material="/shared/effects/materials/phantom_smoke_04.material"
+			offsetsphere="20 20 20"
+			inheritvelocity=".25"
+			direction="0 0 1"
+			position="0 0 0"
+		>
+			<particle 
+				minangle="0"
+				maxangle="360"
+				minanglespeed="-30"
+				startcolor="0 0 0"
+				midcolor=".7"
+				endcolor="0 0 0"
+				maxanglespeed="30"
+				startsize="15"
+				endsize="40"
+				startalpha="0"
+				midalpha=".25"
+				endalpha="0"
+				midalphapos=".2"
+				startanchor="0"
+				endanchor="0"
+			/>
+		</simpleemitter>
+		 -->
+		
+		<simpleemitter
+				bone="_bone_centerofchest"
+				count="35"
+				maxparticlelife="1000"
+				minparticlelife="500"
+				spawnrate="190"
+				minspeed="30"
+				maxspeed="100"
+				gravity="1"
+				direction="0 0 1"
+				drag="0.1"
+				offsetsphere="15"
+				minangle="0"
+				maxangle="360"
+				depthbias="-40"
+				material="/shared/effects/materials/sparks_reveal.material"
+			>
+				<particle
+					color="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="20"
+					minendsize="10"
+					maxendsize="15"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startframe=".3"
+					endframe="1"
+					scale="3"
+				/>
+			</simpleemitter>
+			
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="50"
+				maxparticlelife="800"
+				minparticlelife="500"
+				spawnrate="190"
+				minspeed="0"
+				maxspeed="500"
+				gravity="10"
+				direction="0 0 1"
+				drag="0.1"
+				offsetsphere="10"
+				minangle="0"
+				maxangle="360"
+				depthbias="-40"
+				material="/shared/effects/materials/snowflake.material"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-70"
+					maxanglespeed="70"
+					size="25"
+					startcolor="0"
+					midcolor="2"
+					endcolor="0 0 0"	
+					midcolorpos=".4"					
+					startalpha="0"
+					midalpha="2"
+					endalpha="0"
+					midalphapos=".75"
+					minscale=".2"
+					maxscale=".5"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="200"
+				position="0"
+				startalpha=".75"
+				midalpha=".75"
+				endalpha="0"
+				startsize="80"
+				endsize="15"
+				depthbias="-100"
+				startparam="0.15"
+				endparam=".15"
+				lockup="1"
+				pitch="90"
+				material="/shared/effects/materials/refract_ring.material"
+			/>
+			
+			<groundsprite	
+				delay="2500"
+				life="3000"
+				material="/shared/effects/materials/ground_ice.material"
+				minsize="52"
+				maxsize="102"			
+				minyaw="-360"
+				maxyaw="306"
+				color="1"
+				startalpha="0"
+				midalpha="0.7"
+				endalpha="0"
+				midalphapos=".1"
+				position="0 0 0"
+			/>
+			
+			<groundsprite	
+				delay="2500"
+				life="3000"
+				material="/shared/effects/materials/ground_ice.material"
+				minsize="32"
+				maxsize="52"			
+				minyaw="-360"
+				maxyaw="306"
+				color="1"
+				startalpha="0"
+				midalpha="0.7"
+				endalpha="0"
+				midalphapos=".1"
+				position="0 30 0"
+			/>
+			
+			
+			<simpleemitter
+				spawnrate="2"
+				particlelife="3850"
+				
+			>
+				<particle>
+					<debris
+						position="0 0 -51"						
+						minscale="0.7"						
+						maxscale="1.0"
+						life="1000"
+						
+						minyaw="-360"
+						maxyaw="360"
+						
+						model="/heroes/tundra/ability_01/effects/debris.mdf"
+						anim="idle"	
+						minspeed="200.0"
+						maxspeed="300.0"
+						minrotationspeed="100.0"
+						maxrotationspeed="300.0"
+						gravity="41.0"
+					
+						minangle="0"
+						maxangle="90"
+						direction="0 0 1"
+						collide="true"
+						startalpha="1.0"
+						midalpha="1.0"
+						endalpha="1.0"
+						midalphapos="0.5"
+						bounce="0.7"
+						reflect="0.6"
+						animpose="true"
+						scale="3"
+					/>	
+					
+				</particle>
+			</simpleemitter>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+

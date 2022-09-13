@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_StormSister4_Self"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype=""
+	attackspeedmultiplier="0.25,0.5,0.75"
+	movespeedmultiplier="0.25,0.5,0.75"
+	maxmovespeed="135,275,415"
+	castspeed="0.25,0.5,0.75"
+	manaregen="25,50,75"
+	stunneddurationmultiplier="-0.25,-0.5,-0.75"
+	debuffdurationmultiplier="-0.25,-0.5,-0.75"
+	slowresistance="0.25,0.5,0.75"
+>
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="cantdeny">
+			<damage effecttype="Magic DOT Interrupting" amount="60,85,110" b="frametime" op="mult" nonlethal="true" />
+		</hasmodifier>
+		<else>
+			<damage effecttype="Magic DOT Interrupting" amount="60,85,110" b="frametime" op="mult" />
+		</else>
+	</onframe>
+	<modifier key="ult_boost" modpriority="100"
+		impactinterval="731"
+	>
+		<onimpact>
+			<spawnaffector name="Affector_StormSister4" proxy="target_entity" />
+		</onimpact>
+	</modifier>
+</state>

@@ -1,0 +1,42 @@
+
+// Hero_Cerberus_Custom
+Hero_Cerberus_Custom_name										Cerberus
+Hero_Cerberus_Custom_role										Cerberus is a sticky hero, who is hard to get rid off. Armed with powerfull suite of crowd-controls, gap closer and a sustain tool, he can be either a semi-carry or a tank.
+
+// Ability_Cerberus1
+Ability_Cerberus1_name											Stygian Grasp
+Ability_Cerberus1_name:shardofthemaster_boost					^pStygian Grasp^*
+Ability_Cerberus1_description									Cerberus's venomous bite leave his foes crawling.
+Ability_Cerberus1_description_simple							Passively causes your attacks to reduce enemy's ^omovement speed by {8,10,12,14}%^* for 1.8 seconds.\n\nActivate to make your next attack ^oimmobilize the enemy for {1.25,1.35,1.45,1.55} seconds^*.\n\n^pShard of the Master^* also causes the empowered attack to deal an additional damage equal to 9% of Cerberus's max Health.\n\n^444Puppy wants to play.
+Ability_Cerberus1_description_simple:shardofthemaster_boost		Passively causes your attacks to reduce enemy's ^omovement speed by {8,10,12,14}%^* for 1.8 seconds.\n\nActivate to make your next attack ^pdeal an additional damage equal to 9% of your max Health and ^*^oimmobilize the enemy for {1.25,1.35,1.45,1.55} seconds^*.\n\n^444Puppy wants to play.
+Ability_Cerberus1_effect_header
+Ability_Cerberus1_tooltip_flavor								Puppy wants to play.
+Ability_Cerberus1_IMPACT_effect									Passively causes your attacks to reduce enemy's ^omovement speed by {8,10,12,14}%^* for 1.8 seconds.\n\nActivate to make your next attack ^oimmobilize the enemy for {1.25,1.35,1.45,1.55} seconds^*.
+
+// Ability_Cerberus2
+Ability_Cerberus2_name											Overpower
+Ability_Cerberus2_description									Cerberus leaps at the target, rendering it unable to escape.
+Ability_Cerberus2_description_simple							Cerberus leaps at the target, dealing it ^o{80,160,240,320} Magic Damage^* and ^ostunning ot for {1.4,1.5,1.6,1.7} seconds^*.\n\n^444Who let the dog out?
+Ability_Cerberus2_effect_header
+Ability_Cerberus2_tooltip_flavor								Who let the dog out?
+Ability_Cerberus2_IMPACT_effect									The target takes ^o{80,160,240,320} Magic Damage^* and is ^ostunned for {1.4,1.5,1.6,1.7} seconds^*.
+
+// Ability_Cerberus3
+Ability_Cerberus3_name											Deathless Sustenance
+Ability_Cerberus3_description									Cerberus sustains himself from every bite he makes.
+Ability_Cerberus3_description_simple							Cerberus's attacks heal him for ^o{1.25,1.5,1.75,2}% of his Max Health^*.\n\n^444Is it Pedigree or Bult?
+Ability_Cerberus3_effect_header
+Ability_Cerberus3_tooltip_flavor								Is it Pedigree or Bult?
+Ability_Cerberus3_IMPACT_effect									Whenever he successfully makes an attack against an enemy unit, he heals himself for ^o{1.25,1.5,1.75,2}% of his Max Health^*.
+
+// Ability_Cerberus4
+Ability_Cerberus4_name											Plague Wind
+Ability_Cerberus4_name:ult_boost								^gStygian Torment^*
+Ability_Cerberus4_description									Cerberus breaths a cloud of stygian venom at the enemy, causing it to explode on impact and bounde to the nearest target.
+Ability_Cerberus4_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Reduces bounce amount to 5, but the cloud splits into 2 each time it bounces.
+Ability_Cerberus4_description_simple							Cerberus breathes a venom at the target, dealing ^o{50,100,150} Magic Damage^* to the target and enemies nearby, while also ^osilencing them for 1 second^*. The cloud then bounces to the nearest target, hitting a total of 10 times.\n\n^gStaff of the Master^* reduces the amount of bounces to 5, but causes each bounce to spawn an additional cloud.\n\n^444Better than Lizeth has promised!
+Ability_Cerberus4_description_simple:ult_boost					Cerberus breathes a venom at the target, dealing ^o{50,100,150} Magic Damage^* to the target and enemies nearby, while also ^osilencing them for 1 second^*. The cloud then ^gsplits to the nearest 2 targets^*, hitting a total of ^g5^* times.\n\n^444Better than Lizeth has promised!
+Ability_Cerberus4_effect_header
+Ability_Cerberus4_tooltip_flavor								Better than Lizeth has promised!
+Ability_Cerberus4_IMPACT_effect									Enemies on hit take ^o{50,100,150} Magic Damage^* and are ^osilenced for 1 second^*. Plague Wind bounces up to 10 times.
+Ability_Cerberus4_IMPACT_effect:ult_boost						Enemies on hit take ^o{50,100,150} Magic Damage^* and are ^osilenced for 1 second^*. Plague Wind bounces up to ^g5^* times^g, but splits each bounce^*.

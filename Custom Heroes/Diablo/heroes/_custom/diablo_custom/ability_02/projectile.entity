@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Diablo2"
+
+	gravity="10000"
+	lifetime="250"
+	useexactlifetime="true"
+
+	modelscale="1.0"
+	model=""
+	deatheffect=""
+	canturn="false"
+	flying="false"
+	flyheight="0"
+>
+	<onimpact>
+		<kill target="target_entity" source="" />
+	</onimpact>
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onimpact>
+			<spawnaffector name="Affector_Diablo2_Shard" source="target_position" target="target_position" />
+			<kill target="target_entity" source="" />
+		</onimpact>
+	</modifier>
+</projectile>

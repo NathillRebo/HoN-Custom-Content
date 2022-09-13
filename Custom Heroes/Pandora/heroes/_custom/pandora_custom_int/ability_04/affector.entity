@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Pandora4"
+
+	radius="0"
+	lifetime="1000"
+
+	visibility="allies"
+	diewithowner="true"
+>
+</affector>

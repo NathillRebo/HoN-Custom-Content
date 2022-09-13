@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Vermilion3"
+
+	radius="150"	
+	targetselection="all"
+	targetscheme="all_units"
+	effecttype="Magic"
+	destroytrees="true"
+	impactdelay="0"
+	impacteffect=""
+	
+>
+	<onimpact>
+		<cantarget targetscheme="enemy_units">
+			<damage effecttype="Magic" amount="75,145,215,285" />
+			<applystate name="State_Stunned" duration="1700,1800,1900,2000" />
+		</cantarget>
+	</onimpact>
+</affector>

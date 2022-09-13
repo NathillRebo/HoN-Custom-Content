@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ravenor_Alt5_Walk_Effect"
+
+	icon=""
+	ishidden="true"
+	passiveeffect=""
+	propagatetoillusions="true"
+	
+	effecttype=""
+	
+	modifierkey=""
+>
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="alt_Steamboots">
+			<setactivemodifierkey entity="this_entity" name="UpgradedWalk" />
+		</hasmodifier>
+		<else>
+			<hasmodifier entity="this_owner_entity" name="alt_GhostMarchers">
+				<setactivemodifierkey entity="this_entity" name="UpgradedWalk" />
+			</hasmodifier>
+			<else>
+				<hasmodifier entity="this_owner_entity" name="alt_PlatedGreaves">
+					<setactivemodifierkey entity="this_entity" name="UpgradedWalk" />
+				</hasmodifier>
+				<else>
+					<hasmodifier entity="this_owner_entity" name="alt_PostHaste">
+						<setactivemodifierkey entity="this_entity" name="UpgradedWalk" />
+					</hasmodifier>
+					<else>
+						<hasmodifier entity="this_owner_entity" name="striders_boost">
+							<setactivemodifierkey entity="this_entity" name="UpgradedWalk" />
+						</hasmodifier>
+						<else>
+							<setactivemodifierkey entity="this_entity" name="" />
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onframe>
+	
+	<modifier key="UpgradedWalk" modpriority="1"
+		modifierkey="Alt5_UpgradedWalk"
+	/>
+</state>

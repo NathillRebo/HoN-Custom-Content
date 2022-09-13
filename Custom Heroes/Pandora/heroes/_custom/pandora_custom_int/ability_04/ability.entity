@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Pandora4"
+	
+	icon="icon.tga"
+	
+	castactiontime="250"
+	casttime="0"
+	casteffect="effects/ready_sound.effect"
+	anim="ability_4"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	actiontype="target_position"
+	
+	manacost="150,250,350"
+	cooldowntime="120000,100000,80000"
+	
+	range="1300"
+	forcerange="1300"
+	targetradius="100"
+	
+	allowoutofboundscast="true"
+	noshuffle="true"
+
+	showlinecast="true"
+	linecastrange="1300"
+	linecastwidth="100"
+	
+	dontshowpersistentindicator="true"
+>
+	<onimpact>
+		<spawnaffector name="Affector_Pandora4" target="target_position" pushentity="true" />
+		<setproxy entity="this_entity" target="stack_entity" />
+		<applystate name="State_Pandora4" duration="175,275,375" target="source_entity" proxy="stack_entity" pushentity="true" />
+	</onimpact>	
+	<modifier key="ult_boost" modpriority="100"
+		range="1500"
+		forcerange="1500"
+		linecastrange="1500"
+	>
+		<onimpact>
+			<spawnaffector name="Affector_Pandora4" target="target_position" pushentity="true" />
+			<setproxy entity="this_entity" target="stack_entity" />
+			<applystate name="State_Pandora4" duration="275,375,475" target="source_entity" proxy="stack_entity" pushentity="true" />
+		</onimpact>	
+	</modifier>
+</ability>

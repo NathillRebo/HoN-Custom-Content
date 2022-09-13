@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Boudica2"
+
+	icon="icon.tga"
+	passiveeffect="effects/debuff.effect"
+
+	movespeedslow="0.15,0.20,0.25,0.30"
+	basedamagemultiplier="-0.15,-0.20,-0.25,-0.30"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+</state>

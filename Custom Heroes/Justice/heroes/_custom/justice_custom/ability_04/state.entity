@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Justice4"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	displaylevel="true"
+	
+	stunneddurationmultiplier="0.3,0.45,0.6"
+	debuffdurationmultiplier="0.3,0.45,0.6"
+	
+	effecttype="ForceTransferrable"
+	allowtransfer="false"
+	
+	modifierkey="justice4_Active"
+>
+	<oninflict>
+		<applystate name="State_Empath_Ability4_Assist" duration="100" />
+	</oninflict>
+	
+	<ondeath>
+		<spawnaffector name="Affector_Justice4" owner="this_inflictor_entity" target="target_position"/>
+		<spawnunit name="Gadget_Justice4" target="source_position" />
+		<playeffect effect="effects/special_death.effect" target="this_owner_entity" source="this_owner_entity" />
+		<pushability source="this_proxy_entity" name="Ability_Justice4" />
+		<addcharges entity="stack_entity" count="1" />
+		<expire />
+	</ondeath>
+	
+	<onframe>
+		<evaluate a="0.04,0.05,0.06" b="target_health" op="mult" />
+		<evaluate a="22,30,38" b="result" op="add"/>
+		<evaluate a="result" b="frametime" op="mult" />
+		<damage effecttype="Magic DOT" amount="1" b="result" op="mult" />
+	</onframe>
+</state>

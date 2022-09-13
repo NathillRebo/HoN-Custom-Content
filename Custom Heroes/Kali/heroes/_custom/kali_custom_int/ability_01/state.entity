@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Kali1"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	movespeedslow="0.1,0.15,0.2,0.25"
+>
+	<onframe>
+		<damage effecttype="Magic DOT" amount="9,18,27,36" b="frametime" op="mult" />
+	</onframe>
+	<onkill>
+		<targettype type="illusion" />
+		<else>
+			<expire/>
+		</else>
+	</onkill>
+</state>

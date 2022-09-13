@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="death" deferred="true" useentityeffectscale="1">
+	<definitions>
+	
+		<particlesystem name="system0" scale="2.5" space="world">
+		
+			<sound
+				norestart="true"
+				channel="1337990"
+				soundloop="true"
+				fadein="10"
+				fadeout="100" 
+				volume=".4"
+				sample="/heroes/pearl/sounds/body_loop.wav"
+				linearfalloff="true"
+				falloffstart="0"		
+				falloffend="300" 
+			/>
+		
+			<simpleemitter
+				position="0 0 40"
+				offsetsphere="20 20 40"
+				spawnrate="8"
+				particlelife="3000"
+				direction="0 0 1"
+				maxangle="20"
+				minspeed="10"
+				maxspeed="20"
+				directionalspace="local"
+				gravity="-1"
+				drag="0.01"
+				mininheritvelocity="0.1"
+				maxinheritvelocity="0.2"
+			>
+				<template name="bubble">
+					<particle>
+						<model
+							life="300"
+							startcolor="{startcolor}"
+							midcolor="{midcolor}"
+							endcolor="{endcolor}"
+							maxpitch="360"
+							maxroll="360"
+							maxyaw="360"
+							minpitchspeed="-300"
+							maxpitchspeed="300"
+							minrollspeed="-300"
+							maxrollspeed="300"
+							minyawspeed="-300"
+							maxyawspeed="300"
+							minscale=".015"
+							maxscale=".05"
+							model="/shared/effects/models/orb/orb.mdf"
+							material="../../effects/bubble.material"
+						/>
+						
+						<simpleemitter
+							life="300"
+							startspawnrate="0.0001"
+							midspawnrate="0.0001"
+							endspawnrate="1000"
+							midspawnratepos=".99"
+							minparticlelife="200"
+							maxparticlelife="200"
+							mincount="5"
+							maxcount="15"
+							material="/shared/effects/materials/whitewater_02.material"
+							minspeed="75"
+							maxspeed="150"
+							drag="0.05"
+						>
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-60"
+								maxanglespeed="60"
+								startsize="15"
+								endsize="30"
+								startcolor=".05"
+								endcolor="0"
+								startstickiness="0"
+								endstickiness=".4"
+							/>
+						</simpleemitter>
+
+						<simpleemitter
+							life="300"
+							startspawnrate="0.0001"
+							midspawnrate="0.0001"
+							endspawnrate="1000"
+							midspawnratepos=".99"
+							minparticlelife="50"
+							maxparticlelife="200"
+							mincount="5"
+							maxcount="15"
+							material="/shared/effects/materials/whitedot.material"
+							minspeed="75"
+							maxspeed="150"
+							drag="0.05"
+							gravity="50"
+						>
+							<particle
+								startcolor=".2 .5 .5"
+								midcolor=".3 .5 .5"
+								endcolor="0"
+								scale=".5"
+								minwidth=".5"
+								maxwidth="1"
+								minheight="3"
+								maxheight="6"
+								turn="1"
+							/>
+						</simpleemitter>
+					</particle>
+				</template>
+				
+				<instance name="bubble" startcolor=".4 1 1" midcolor=".4 1 1" endcolor=".4 1 1" />
+				<instance name="bubble" startcolor=".6 1 1" midcolor=".6 1 1" endcolor=".6 1 1" />
+				<instance name="bubble" startcolor=".8 1 1" midcolor=".8 1 1" endcolor=".8 1 1" />
+				<instance name="bubble" startcolor=".9 1 1" midcolor=".9 1 1" endcolor=".9 1 1" />
+				
+			</simpleemitter>
+
+		</particlesystem>
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<particlesystem name="system1" scale="2.3" space="world">
+
+			<simpleemitter
+				position="0 0 40"
+				offsetsphere="20 20 40"
+				spawnrate="8"
+				particlelife="3000"
+				direction="0 0 1"
+				maxangle="20"
+				minspeed="10"
+				maxspeed="20"
+				directionalspace="local"
+				gravity="-1"
+				drag="0.01"
+				mininheritvelocity="0.1"
+				maxinheritvelocity="0.2"
+			>
+				<template name="bubble">
+					<particle>
+						<model
+							life="300"
+							startcolor=".85 .7 1"
+							midcolor=".85 .7 1"
+							endcolor="0 0 0"
+							maxpitch="360"
+							maxroll="360"
+							maxyaw="360"
+							minpitchspeed="-300"
+							maxpitchspeed="300"
+							minrollspeed="-300"
+							maxrollspeed="300"
+							minyawspeed="-300"
+							maxyawspeed="300"
+							minscale=".015"
+							maxscale=".05"
+							model="/shared/effects/models/orb/orb.mdf"
+							material="/shared/effects/materials/shell2.material"
+						/>
+						
+						<simpleemitter
+							life="300"
+							startspawnrate="0.0001"
+							midspawnrate="0.0001"
+							endspawnrate="1000"
+							midspawnratepos=".99"
+							minparticlelife="200"
+							maxparticlelife="200"
+							mincount="5"
+							maxcount="15"
+							material="/shared/effects/materials/whitewater_02.material"
+							minspeed="75"
+							maxspeed="150"
+							drag="0.05"
+						>
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-60"
+								maxanglespeed="60"
+								startsize="15"
+								endsize="30"
+								startcolor=".05"
+								endcolor="0"
+								startstickiness="0"
+								endstickiness=".4"
+							/>
+						</simpleemitter>
+						
+						
+						<simpleemitter
+							life="300"
+							startspawnrate="0.0001"
+							midspawnrate="0.0001"
+							endspawnrate="1000"
+							midspawnratepos=".99"
+							minparticlelife="50"
+							maxparticlelife="200"
+							mincount="5"
+							maxcount="15"
+							material="/shared/effects/materials/whitedot.material"
+							minspeed="75"
+							maxspeed="150"
+							drag="0.05"
+							gravity="50"
+						>
+							<particle
+								startcolor=".2 .5 .5"
+								midcolor=".3 .5 .5"
+								endcolor="0"
+								scale=".5"
+								minwidth=".5"
+								maxwidth="1"
+								minheight="3"
+								maxheight="6"
+								turn="1"
+							/>
+						</simpleemitter>
+					</particle>
+				</template>
+				
+				<instance name="bubble" startcolor=".4 1 1" midcolor=".4 1 1" endcolor=".4 1 1" />
+				<instance name="bubble" startcolor=".6 1 1" midcolor=".6 1 1" endcolor=".6 1 1" />
+				<instance name="bubble" startcolor=".8 1 1" midcolor=".8 1 1" endcolor=".8 1 1" />
+				<instance name="bubble" startcolor=".9 1 1" midcolor=".9 1 1" endcolor=".9 1 1" />
+				
+			</simpleemitter>
+			
+
+			
+		</particlesystem>
+		
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+<!-- [min|max][start|mid|end]property[speed][position] -->
+
+

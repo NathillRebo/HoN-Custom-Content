@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name=" ">
+	<definitions>
+	
+	
+		<particlesystem name="system0" space="world" >
+			<!-- death model -->
+	
+				<model
+					life="5700"
+					model="death_1.mdf"
+					material="/heroes/vindicator/alt9/material.material"
+					anim="idle_alt9"
+					color=" 1 1  1"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+				>
+			
+			<!-- big blue ball -->
+				<billboard
+					bone="Box32"
+					position="0 0 0"
+					life="5700"
+					startsize="4"
+					midsize="32"
+					midsizepos="0.5"
+					endsize="0"
+					color="1.0 0.0 1.0"
+					startalpha="1.0"
+					midalpha="0.5"
+					midalphapos="0.5"
+					endalpha="0.0"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+			<!-- big white ball -->			
+			<billboard
+				bone="Box32"
+				position="0 0 0"
+				life="5700"
+				startsize="2"
+				midsize="16"
+				midsizepos="0.5"
+				endsize="0"
+				color=".7 .8 1.0"
+				startalpha="1.0"
+				midalpha="0.5"
+				midalphapos="0.5"
+				endalpha="0.0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="Box32"
+				position="0 0 0"
+				life="5700"
+				startsize="2"
+				midsize="16"
+				midsizepos="0.5"
+				endsize="0"
+				color="1.0 1.0 1.0"
+				startalpha="1.0"
+				midalpha="1"
+				midalphapos="0.5"
+				endalpha="0.0"
+				material="/heroes/vindicator/alt9/projectile/effects/jin.material"
+			/>
+			
+		<template name="fonts">
+			<simpleemitter
+				bone="Box32"
+				spawnrate="65"
+				particlelife="700"
+				gravity="0.0"
+				speed="0.1"
+				drag="0.0"
+				acceleration="0.0"
+				material="{material}"
+				inheritvelocity="0.0"
+				offsetsphere="22 22 22"
+			>
+				<particle
+					startcolor="0.0 0.0 0.0"
+					midcolor="0.25 0.40 1.0"
+					endcolor="0.5 0.20 1.0"
+					midcolorpos="0.5"
+					startalpha="1.0"
+					endalpha="1.0"
+					angle="0"
+					minanglespeed="-90"
+					maxanglespeed="90"
+					
+					startscale="5"
+					endscale="0.2"
+					lockup="false"
+					lockright="false"
+					pitch="0"
+					turn="true"
+					offcenter="true"
+					center="0.5 -0.2"
+				/>
+			</simpleemitter>
+		</template>
+			
+		<instance name="fonts"  material="/heroes/vindicator/alt9/effects/font_1.material"/>
+		<instance name="fonts"  material="/heroes/vindicator/alt9/effects/font_2.material"/>
+		<instance name="fonts"  material="/heroes/vindicator/alt9/effects/font_3.material"/>
+		
+			
+			</model>
+      </particlesystem>
+   </definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	
+	<waitfordeath instance="instance0" />
+	<wait duration="20000"/>
+	<!-- <die /> -->
+</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

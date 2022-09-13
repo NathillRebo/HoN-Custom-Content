@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Legion3"
+
+	icon="icon.tga"
+	passiveeffect=""
+	armor="-1,-2,-3,-4"
+
+	effecttype="StatusDebuff"
+>
+	<onframe>
+		<damage effecttype="Magic DOT" source="source_entity" target="target_entity" amount="8,16,24,32" b="frametime" op="mult" />
+	</onframe>
+</state>

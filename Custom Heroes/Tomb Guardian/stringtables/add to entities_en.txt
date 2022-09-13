@@ -1,0 +1,42 @@
+
+// Hero_TombGuardian_Custom
+Hero_TombGuardian_Custom_name									Tomb Guardian
+Hero_TombGuardian_Custom_role									Tomb Guardian brings lots of damage even if built full-tank, thanks to his Aura of Pain and infinite stacking of his Offering, making him a threat if he manages to close the distance, but his utility is very limited, as he brings only one short stun to his team.
+
+// Ability_TombGuardian1
+Ability_TombGuardian1_name										Offering
+Ability_TombGuardian1_description								Tomb Guardian empowers his weapon to make an offering, increasing his power.
+Ability_TombGuardian1_description_simple						Tomb Guardian's next attack is empowered, causing it to have a bonus of +40 to Attack Speed and deal an additional ^o{3.7,3.9,4.1,4.3} Physical Damage^* per charge. Killing an unit with this attack permanently grants 1 charge.\n\n^444Wait until 90th minute and I'll carry you!
+Ability_TombGuardian1_effect_header
+Ability_TombGuardian1_tooltip_flavor							Wait until 90th minute and I'll carry you!
+Ability_TombGuardian1_IMPACT_effect
+
+// Ability_TombGuardian2
+Ability_TombGuardian2_name										Cryptic Wave
+Ability_TombGuardian2_name:shardofthemaster_boost				^pCryptic Wave^*
+Ability_TombGuardian2_description								Tomb Guardian's stare paralyzes even the bravest souls.
+Ability_TombGuardian2_description_simple						Tomb Guardian strikes in the chosen direction, Stunning enemies in the chosen cone for ^o{0.9,1,1.1,1.2}^* seconds.\n\n^pShard of the Master^* increases Stun duration by 0.35 seconds.\n\n^444By Osiris and by Apis, look in my eyes. You have turned into a wild boar. Yes! A wiiillld boooaaarrr...
+Ability_TombGuardian2_description_simple:shardofthemaster_boost	Tomb Guardian strikes in the chosen direction, Stunning enemies in the chosen cone for ^o{1.25,1.35,1.45,1.55}^* seconds.\n\n^pShard of the Master^* increases Stun duration by 0.35 seconds.\n\n^444By Osiris and by Apis, look in my eyes. You have turned into a wild boar. Yes! A wiiillld boooaaarrr...
+Ability_TombGuardian2_effect_header
+Ability_TombGuardian2_tooltip_flavor							By Osiris and by Apis, look in my eyes. You have turned into a wild boar. Yes! A wiiillld boooaaarrr...
+Ability_TombGuardian2_IMPACT_effect								Enemies affected are Stunned for ^o{0.9,1,1.1,1.2} seconds.
+
+// Ability_TombGuardian3
+Ability_TombGuardian3_name										Aura of Pain
+Ability_TombGuardian3_description								Tomb Guardian sacrifices his own life to protect the tomb from interlopers.
+Ability_TombGuardian3_description_simple						Passively increases Health Regen by ^o{1,2,3,4}^*.\n\nWhen toggled on, Tomb Guardian takes ^o6% of his current Health as Magic Damage^* and enemies around him take ^o{6,7,8,9}% of his current Health as Magic Damage^*. Procs once every 1.5 seconds.\n\n^444You are not getting the treasures!
+Ability_TombGuardian3_effect_header
+Ability_TombGuardian3_tooltip_flavor							You are not getting the treasures!
+Ability_TombGuardian3_IMPACT_effect								When toggled on, Tomb Guardian takes ^o6% of his current Health as Magic Damage^* and enemies around him take ^o{6,7,8,9}% of his current Health as Magic Damage^*. Procs once every 1.5 seconds.
+
+// Ability_TombGuardian4
+Ability_TombGuardian4_name										Undefeated Body
+Ability_TombGuardian4_name:ult_boost							^gEternal Guardian^*
+Ability_TombGuardian4_description								Tomb Guardian is the most dangerous at the brink of death.
+Ability_TombGuardian4_description2								^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Also increases Health Regen by up to 12, depending on your missing Health.
+Ability_TombGuardian4_description_simple						Tomb Guardian passively gains ^o{11,13,15}% Life Steal^*. Also, depending on his missing Health, he gains up to ^o{20,45,70} Attack Damage^*.\n\n^gStaff of the Master^* also increases your Health Regen by up to 12, depending on your missing Health.\n\n^444There were many who thought they would kill me...
+Ability_TombGuardian4_description_simple:ult_boost				Tomb Guardian passively gains ^o{11,13,15}% Life Steal^*. Also, depending on his missing Health, he gains up to ^o{20,45,70} Attack Damage^* ^gand 12 Health Regen^*.\n\n^444There were many who thought they would kill me...
+Ability_TombGuardian4_effect_header
+Ability_TombGuardian4_tooltip_flavor							There were many who thought they would kill me...
+Ability_TombGuardian4_IMPACT_effect								Tomb Guardian passively gains ^o{11,13,15}% Life Steal^*. Also, depending on his missing Health, he gains up to ^o{20,45,70} Attack Damage^*.
+Ability_TombGuardian4_IMPACT_effect:ult_boost					Tomb Guardian passively gains ^o{11,13,15}% Life Steal^*. Also, depending on his missing Health, he gains up to ^o{20,45,70} Attack Damage^* ^gand 12 Health Regen^*.

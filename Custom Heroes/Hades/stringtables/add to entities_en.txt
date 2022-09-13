@@ -1,0 +1,42 @@
+
+// Hero_Hades_Custom
+Hero_Hades_Custom_name											Hades
+Hero_Hades_Custom_role											Hades is a jungler who clears camps at lower pace, but also with lower loss of health. He has a good ganking abilities and scales well into the late game, but he must maintain his souls to have maximum damage.
+
+// Ability_Hades1
+Ability_Hades1_name												Underworld's Call
+Ability_Hades1_name:shardofthemaster_boost						^pUnderworld's Call^*
+Ability_Hades1_description										Hades calls the powers of the underworld to instill fear in his enemies.
+Ability_Hades1_description_simple								Hades channels for 1.4 seconds, after which he deals ^o{85,155,225,295} Magic Damage^* and Fears surrounding enemies for ^o{1.45,1.55,1.65,1.75} seconds^*.\n\n^pShard of the Master^* increases Fear duration to {1.8,1.9,2,2.1} seconds and makes Hades attack each enemy hit once.\n\n^444Have you seen Devourer's nudes?
+Ability_Hades1_description_simple:shardofthemaster_boost		Hades channels for 1.4 seconds, after which he deals ^p{85,155,225,295} plus your Attack Damage as Mixed Damage^* and Fears surrounding enemies for ^p{1.8,1.9,2,2.1} seconds^*. ^pThis counts as a real auto-attack.^*\n\n^444Have you seen Devourer's nudes?
+Ability_Hades1_effect_header
+Ability_Hades1_tooltip_flavor									Have you seen Devourer's nudes?
+Ability_Hades1_IMPACT_effect									After the channel completes, deals ^o{85,155,225,295} Magic Damage^* and Fears surrounding enemies for ^o{1.45,1.55,1.65,1.75} seconds^*.
+
+// Ability_Hades2
+Ability_Hades2_name												Shroud of Darkness
+Ability_Hades2_description										Hades enshrouds himself in darkness, ready to ambush unsuspecting foes.
+Ability_Hades2_description_simple								Hades becomes invisible for ^o{3.65,4,4.35,4.7} seconds^*. When the invisibility expires (by any means), nearby enemies are silenced for ^o{1.35,1.45,1.55,1.65} seconds^*.\n\n^444This will leave you silent in awe!
+Ability_Hades2_effect_header
+Ability_Hades2_tooltip_flavor									This will leave you silent in awe!
+Ability_Hades2_IMPACT_effect									Hades becomes invisible for ^o{3.65,4,4.35,4.7} seconds^*. When the invisibility expires (by any means), nearby enemies are silenced for ^o{1.35,1.45,1.55,1.65} seconds^*.
+
+// Ability_Hades3
+Ability_Hades3_name												Terror
+Ability_Hades3_description										Hades's presence frightens his foes.
+Ability_Hades3_description_simple								Enemies around Hades have their Attack Damage reduced by {12,18,24,30}.\n\n^444You think I'm gonna succumb to THIS?
+Ability_Hades3_effect_header
+Ability_Hades3_tooltip_flavor									You think I'm gonna succumb to THIS?
+Ability_Hades3_IMPACT_effect									Enemies around Hades have their Attack Damage reduced by {12,18,24,30}.
+
+// Ability_Hades4
+Ability_Hades4_name												Soul Conduit
+Ability_Hades4_name:ult_boost									^gSoul Overcharge^*
+Ability_Hades4_description										Hades gathers power from those who he kills, turning them into a source of power and sustenance.
+Ability_Hades4_description2										^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Increases maximum number of charges by 20 and increases healing from charges by 5.
+Ability_Hades4_description_simple								Passively increases cast speed by ^o{0,10,25,40}%^*. Upon killing an unit, gain an amount of charges equal to ^o1%^* of that unit's max Health. Grants ^o{0,0.5,1,1.5}^* Damage per charge and consumes 1 charge every 2 seconds to heal yourself for ^o25^* Health. Maximum of ^o{30,40,50,60}^* charges. \n\n^gStaff of the Master^* increases the maximum number of charges by 20 and healing gained by 5.\n\n^444I need to get more jars for these poor sods...
+Ability_Hades4_description_simple:ult_boost						Passively increases cast speed by ^o{0,10,25,40}%^*. Upon killing an unit, gain an amount of charges equal to ^o1%^* of that unit's max Health. Grants ^o{0,0.5,1,1.5}^* Damage per charge and consumes 1 charge every 2 seconds to heal yourself for ^g30^* Health. Maximum of ^g{50,60,70,80}^* charges.\n\n^444I need to get more jars for these poor sods...
+Ability_Hades4_effect_header
+Ability_Hades4_tooltip_flavor									I need to get more jars for these poor sods...
+Ability_Hades4_IMPACT_effect									Passively increases cast speed by ^o{0,10,25,40}%^*. Upon killing an unit, gain an amount of charges equal to ^o1%^* of that unit's max Health. Grants ^o{0,0.5,1,1.5}^* Damage per charge and consumes 1 charge every 2 seconds to heal yourself for ^o25^* Health. Maximum of ^o{30,40,50,60}^* charges.
+Ability_Hades4_IMPACT_effect:ult_boost							Passively increases cast speed by ^o{0,10,25,40}%^*. Upon killing an unit, gain an amount of charges equal to ^o1%^* of that unit's max Health. Grants ^o{0,0.5,1,1.5}^* Damage per charge and consumes 1 charge every 2 seconds to heal yourself for ^g30^* Health. Maximum of ^g{50,60,70,80}^* charges.

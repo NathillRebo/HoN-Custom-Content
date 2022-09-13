@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_Ardent3_Debuff"
+
+    icon="icon.tga"
+    passiveeffect="effects/state.effect"
+
+    effecttype="StatusDebuff"
+    allowtransfer="true"
+
+    armor="-1,-2,-3,-4"
+	magicarmor="-1,-2,-3,-4"
+	movespeedslow="0.15,0.2,0.25,0.3"
+>
+</state>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Hex1"
+
+
+	radius="100"
+	lifetime="5000,6500,8000,9500"
+
+	visibility="allies"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	maximpactspertarget="1"
+	persist="false"
+	
+	impacteffect="effects/impact.effect"
+	effect=""
+>
+	<onimpact>
+		<applystate name="State_Hex1_Debuff" duration="1000,1100,1200,1300" />	
+	</onimpact>
+</affector>

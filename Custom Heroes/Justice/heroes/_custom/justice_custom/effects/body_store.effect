@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="0.5">
+			<sound
+				dampen="0.5"
+				channelid="storeaud"
+				sound2d="true"
+				volume=".5"
+				sample="../sounds/store_audio.wav"
+			/>	
+		<!-- weapon trails -->		
+			<template name="trails">
+				<twopointtrailemitter
+					life="1600"
+					position="0 0 0"
+					bone_a="{bone01}"
+					bone_b="{bone02}"
+					spawnrate="120"
+					particlelife="250"
+					subframepose="1"
+					direction="0 -1 0"
+					minangle="0"
+					maxangle="0"
+					texpostime="250"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/hide.material"
+				>
+					<particle
+						color="1 .5 0"
+						startalpha="0"
+						midalpha=".3"
+						endalpha="0"
+					/>
+				</twopointtrailemitter>
+			
+				<twopointtrailemitter
+					life="1600"
+					bone_a="{bone01}"
+					bone_b="{bone02}"
+					spawnrate="100"
+					particlelife="250"
+					angle="0"
+					material="/shared/effects/materials/reveal_trail_gradient_scavenger_smear_highlight.material"
+					attachtoemitter="true"
+					texposscale="1"
+					texpostime="100"
+					texstretchscale="0"
+					subframepos="true"
+				>
+					<particle
+						alpha="1"
+						startframe="0"
+						midframe=".5"
+						endframe="0"
+						midframepos=".35"
+						param=".5"
+					/>
+				</twopointtrailemitter>
+				
+				<twopointtrailemitter
+					life="1600"
+					bone_a="{bone01}"
+					bone_b="{bone02}"
+					spawnrate="100"
+					particlelife="250"
+					angle="0"
+					material="/shared/effects/materials/reveal_trail_gradient_scavenger_smear.material"
+					attachtoemitter="true"
+					texposscale="1"
+					texpostime="100"
+					texstretchscale="0"
+					subframepos="true"
+				>
+					<particle
+						alpha="1"
+						startframe="0"
+						midframe=".4"
+						endframe="0"
+						midframepos=".35"
+						param=".5"
+					/>
+				</twopointtrailemitter>
+			
+			</template>
+			<instance name="trails" bone01="bone091"  bone02="_bone_weapon008"/>
+			
+		
+		
+			
+			<simpleemitter
+				delay="1650"
+				count="1"
+				spawnrate="5000"
+				particlelife="2000"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle turn="1">
+					<billboard
+						position="0 0 50"
+						life="125"
+						color="1 .4 0"
+						startalpha="0" midalpha="1" endalpha="0" midalphapos=".2"
+						startsize="300" endsize="300"
+						rollspeed="-1250"
+						depthbias="-50"
+						material="/shared/effects/materials/shadow_cut02.material"
+						lockright="true" lockup="true"
+						pitch="-90"
+						directionalspace="local"
+					/>
+					<billboard
+						position="0 0 50"
+						life="125"
+						color="1 .4 0"
+						startsize="300"
+						endsize="300"
+						rollspeed="-1250"
+						depthbias="-50"
+						material="/shared/effects/materials/shadow_cut_add02.material"
+						lockright="true"
+						lockup="true"
+						pitch="-90"
+						directionalspace="local"
+					/>
+				</particle>
+			</simpleemitter>
+
+		
+		
+		<!-- stomp weapon on ground -->		
+			<billboard
+				delay="2650"
+				bone="_bone_centerofchest"
+				life="200"
+				color="1.0 1.0 1.0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam=".1"
+				endparam="0.0"
+				startsize="38"
+				endsize="200"
+				scale="5"
+				depthbias="-100"
+				position="0 0 0"
+				material="/shared/effects/materials/refract_ring.material"
+			/>		
+			
+			<simpleemitter
+				delay="2650"
+				bone="_bone_weapon1"
+				count="30"
+				spawnrate="2000"
+				minparticlelife="200"
+				maxparticlelife="300"
+				drag=".005"
+				offsetphere="20"
+				gravity="0"
+				minspeed="550"
+				maxspeed="850"								
+				direction="0 0 1"
+				position="0 0 -25"
+				depthbias="-30"
+				material="/shared/effects/materials/blob_overlay.material"
+			>			
+				<particle
+					startcolor="1 .9 .1"
+					midcolor="1 .75 0"
+					endcolor="0"
+					startsize="6"
+					endsize="0"
+					minscale="0.35"
+					maxscale=".75"
+					endstickiness=".4"
+					startheightdistort=".1"
+					endheightdistortion="0"
+					turn="1"
+					startframe="0" endframe="1"
+				/>
+			</simpleemitter>
+			
+			<groundsprite
+				delay="2650"
+				material="/shared/effects/materials/ground_bird.material"
+				scale="1.0"
+				expirelife="500"
+				color="1 .5 0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				life="1650"
+			/>
+			
+			<groundsprite
+				delay="2650"
+				material="/shared/effects/materials/stomp_02.material"
+				startscale="1.0" endscale="5"
+				expirelife="500"
+				startcolor="1 .5 0" midcolor="1 .5 0" endcolor="0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				life="200"
+				depthbias="-1"
+			/>
+			
+			<!-- weapon model -->
+			<model
+				delay="2450"
+				model="weapon.mdf"
+				life="2200"
+				parentskeleton="true"
+				color="1.00 0.57 0"
+				material="/shared/effects/materials/shell_energy_reveal2.material"
+				startparam0="0"
+				endparam0="1"
+			/>
+			<model
+				delay="2450"
+				model="weapon.mdf"
+				life="2200"
+				parentskeleton="true"
+				startcolor="1.00 0.57 0.14"
+				midcolor="1.00 0.57 0.14"
+				endcolor="1.00 0.3 0"
+				midcolorpos=".3"
+				material="/shared/effects/materials/shell_energy_reveal2.material"
+				startparam0="0"
+				midparam0=".8"
+				endparam0="1"
+			/>
+			<model
+				delay="2450"
+				model="weapon.mdf"
+				life="2200"
+				parentskeleton="true"
+				startcolor="1.00 0.57 0.14"
+				midcolor="1.00 0.57 0.14"
+				endcolor="1"
+				midcolorpos=".3"
+				material="/shared/effects/materials/shell_pulse_reveal.material"
+				startparam0="0"
+				midparam0=".8"
+				endparam0="1"
+			/>
+			
+		<!-- permanent body effects -->	
+			
+			<simpleemitter
+				delay="4400"
+				bone="_bone_centerofchest"
+				spawnrate="8"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				gravity="5"
+				drag=".05"
+				inheritvelocity="0.8"
+				offsetsphere="10 10 44"
+				material="/shared/effects/materials/cloud.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					color=".1 0 .1"
+					startalpha="0"
+					midalpha=".15"
+					endalpha="0"
+					startsize="0"
+					endsize="185"
+				/>
+			</simpleemitter>
+		
+			<template name="sparks" >
+				
+				<simpleemitter
+					delay="4400"
+					bone="{bone}"
+					offsetsphere="{offsetsphere}"
+					spawnrate="75"
+					minparticlelife="400"
+					maxparticlelife="800"
+					gravity="-10"
+					minspeed="10"
+					maxspeed="50"							
+					direction="0 0 1"
+					minangle="10"
+					maxangle="10"
+					material="/shared/effects/materials/sparks_reveal_gradient_02.material"
+					
+				>
+					<particle
+						color=".95 .1 1"
+						minangle="0"
+						maxangle="360"
+						maxanglespeed="10"
+						minanglespeed="-10"
+						size="3"
+						minscale="1"
+						maxscale="6"
+						startframe="0.2"
+						midframe=".5"
+						endframe="0"
+						midframepos=".1"
+						minparam=".1"
+						maxparam="1"
+					/>
+				</simpleemitter>
+				
+			</template>
+			<instance name="sparks" bone="_bone_weapon1" offsetsphere="40" />
+			<instance name="sparks" bone="_bone_weapon007" offsetsphere="40"/>
+			<instance name="sparks" bone="_bone_weapon008" offsetsphere="20"/>
+			
+			<billboard
+				delay="4400"
+				bone="_bone_weapon1"
+				life="200"
+				loop="1"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+				startcolor=".1 .0 .1"
+				midcolor=".16 .0 .13"			
+				endcolor=".1 .0 .1"
+				size="100"
+				depthbias="-20"
+				expirelife="300"
+			/>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />		
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

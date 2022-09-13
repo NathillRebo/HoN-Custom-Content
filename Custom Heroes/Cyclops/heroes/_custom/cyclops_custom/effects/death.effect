@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<groundsprite
+			name="emitter0"
+			life="2500"
+			loop="false"
+			material="/shared/effects/materials/blood_ground.material"
+			minsize="10"
+			maxsize="25"
+			minyaw="-360"
+			maxyaw="360"
+			startcolor=".3 .2 .2"
+			endcolor=".2 .2 .2"
+			startalpha="1"
+			midalpha="1"
+			endalpha="0"
+		/>
+
+		<particlesystem name="system0" space="entity" scale="3">
+
+			<simpleemitter
+				delay="500"
+				bone="R Forearm"
+				life="1000"
+				startspawnrate="25"
+				endspawnrate="75"
+				offsetsphere="10 50 0"
+				position="0 25 0"
+				particlelife="3000"
+			>
+				<particle
+					emitter="emitter0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				bone="R Forearm"
+				spawnrate="200"
+				count="155"
+				particlelife="500"
+				gravity="20"
+				speed="150"
+				drag=".01"
+				acceleration="0.0"
+				position="0 0 -7"
+				offsetsphere="0 0 0"
+				material="/shared/effects/materials/blood1.material"
+				delay="200"
+				minangle="-30"
+				maxangle="30"
+				direction="-.5 1 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+				particledirectionalspace="local"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					angle="180"
+					color=".5 0 0"
+					frame=".5"
+					startsize="20"
+					midsize="10"
+					minendsize="25"
+					maxendsize="60"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		
+	</thread> 
+</effect>

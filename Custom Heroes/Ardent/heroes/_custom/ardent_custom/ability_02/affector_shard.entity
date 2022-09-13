@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Ardent2_Shard"
+
+	radiusstart="50"
+	radiusend="250"
+	
+	innerradiusoffset="100"
+	
+	lifetime="200"
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	persist="true"
+	impacteffect="effects/impact_shard.effect"
+	effect="effects/explosion_shard.effect"
+	destroytrees="true"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="1" b="param" op="mult" />
+	</onimpact>
+</affector>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Boudica1"
+
+	radius="100"
+	
+	lifetime="-1"
+	
+	destroytrees="true"
+>
+
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="boudica1_Bind" />
+		<else>
+			<kill target="this_proxy_entity" source="" />
+			<delete target="this_entity" source="" />
+		</else>
+	</onframe>
+
+</affector>

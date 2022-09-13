@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.3">
+			
+			<model
+				parentmodel="true"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell2_outline.material"
+				alpha=".5"
+				color="1 .5 .1"
+			/>
+			
+			<template name="fire" >
+				<simpleemitter
+					spawnrate="20"
+					bone="{bone}"
+					offsetsphere="1"
+					minparticlelife="1450"
+					maxparticlelife="1620"
+					direction="1 0 0"
+					depthbias="20"
+					minspeed="0"
+					maxspeed="5"
+					material="/shared/effects/materials/flame_white2.material"
+				>
+					<particle
+						startsize="0"
+						endsize="50"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						color=".3 .05 0"
+						maxangle="360"
+						minscale=".6"
+						maxscale=".75"
+						anchor="1"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="8"
+					material="/shared/effects/materials/ember_reveal.material"
+					minparticlelife="1000"
+					maxparticlelife="1250"
+					direction="1 0 0"
+					
+					minspeed="0"
+					maxspeed="10"
+					depthbias="10"
+					offsetsphere="0"
+				>
+					<particle
+						maxangle="360"
+						startscale="0"
+						midscale="8"
+						minendscale="18"
+						maxendscale="22"
+						startalpha="1"
+						midalpha="1"
+						endalpha="1"
+						color="1 .75 .5"
+						startframe="0"
+						endframe="1"
+						anchor="1"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="10" minparticlelife="600" maxparticlelife="750"
+					direction="0 0 1"
+					gravity="-6"
+					minspeed="2"  maxspeed="7"
+					drag="0.1" 
+					material="/shared/effects/materials/flame_white2.material"
+					offsetsphere="6"
+					depthbias="30"
+				>
+					<particle
+						startsize="0"
+						endsize="80"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						color=".3 .05 0"
+						maxangle="360"
+						minscale=".6"
+						maxscale=".75"
+						anchor="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="5"
+					material="/shared/effects/materials/ember_reveal.material"
+					minparticlelife="1000"
+					maxparticlelife="1250"
+					direction="1 0 0"
+					
+					minspeed="0"
+					maxspeed="10"
+					depthbias="10"
+					offsetsphere="0"
+				>
+					<particle
+						maxangle="360"
+						startscale="0"
+						midscale="8"
+						minendscale="20"
+						maxendscale="28"
+						startalpha="1"
+						midalpha="1"
+						endalpha="1"
+						color="1 .75 .5"
+						startframe="0"
+						endframe="1"
+						anchor="0"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="5"
+					minparticlelife="600"
+					maxparticlelife="700"
+					minspeed="3"
+					maxspeed="8"
+					gravity="-5"
+					offsetsphere="3"
+				>
+				
+					<particle
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-200"
+						maxyawspeed="200"
+						minpitchspeed="-200"
+						maxpitchspeed="200"
+						minrollspeed="-200"
+						maxrollspeed="200"
+						startscale="0"
+						minendscale=".4"
+						maxendscale=".8"
+					>
+						<billboard
+							maxangle="360"
+							minrollspeed="-40"
+							maxrollspeed="40"
+							life="700"
+							position="20 0 0"
+							material="/shared/effects/materials/spark_10.material"
+							startsize="10"
+							endsize="5"
+							startframe="0"
+							endframe="1"
+						/>
+					</particle>
+					
+					<particle
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-200"
+						maxyawspeed="200"
+						minpitchspeed="-200"
+						maxpitchspeed="200"
+						minrollspeed="-200"
+						maxrollspeed="200"
+						startscale="0"
+						minendscale=".4"
+						maxendscale=".8"
+					>
+						<billboard
+							maxangle="360"
+							minrollspeed="-40"
+							maxrollspeed="40"
+							life="700"
+							position="20 0 0"
+							material="/shared/effects/materials/whitedot_blend.material"
+							color="0"
+							startsize="10"
+							endsize="0"
+							startframe="0"
+							endframe="1"
+						/>
+					</particle>
+					
+				</simpleemitter>
+				
+			</template>
+			<instance name="fire" bone="_bone_weapon1"/> 
+			<instance name="fire" bone="_bone_weapon3"/> 
+			<!-- <trackeremitter
+				bone="_bone_weaponattach"
+				targetbone="_bone_weapon1"
+				tracktype="lerp"
+				trackspeed="1" 
+				spawnrate="10"
+				particlelife="2000"
+				offsetsphere="0"
+				minspeed="20"
+				maxspeed="30"
+				material="/shared/effects/materials/flame_white2.material"
+				distancelife="1"
+				direction="0 0 1"
+				anchor="0"
+				directionalspace="local"
+			>
+				<particle
+					startsize="0"
+					endsize="80"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					color=".3 .05 0"
+					maxangle="360"
+					minscale=".6"
+					maxscale=".75"
+					anchor="0"
+				/>
+			</trackeremitter>
+			
+			<trackeremitter
+				bone="_bone_weaponattach"
+				targetbone="_bone_weapon1"
+				tracktype="lerp"
+				trackspeed="1" 
+				spawnrate="10"
+				particlelife="2000"
+				offsetsphere="0"
+				minspeed="20"
+				maxspeed="30"
+				material="/shared/effects/materials/ember_reveal.material"
+				distancelife="1"
+				direction="0 0 1"
+				anchor="0"
+				directionalspace="local"
+			>
+				<particle
+					maxangle="360"
+					startscale="0"
+					midscale="8"
+					minendscale="20"
+					maxendscale="28"
+					startalpha="1"
+					midalpha="1"
+					endalpha="1"
+					color="1 .75 .5"
+					startframe="0"
+					endframe="1"
+					anchor="0"
+				/>
+			</trackeremitter> -->
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Hades1"
+
+	radius="400"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype=""
+	persist="true"
+	
+	effect=""
+	impacteffect=""
+>
+	<onimpact>
+		<applystate name="State_Hades1_Fear" duration="1450,1550,1650,1750" target="target_entity" />
+		<damage effecttype="Magic" amount="85,155,225,295" b="1" op="mult" />
+	</onimpact>
+	<modifier key="shardofthemaster_boost">
+		<onimpact>
+			<applystate name="State_Hades1_Fear" duration="1800,1900,2000,2100" target="target_entity" />
+			<damage effecttype="Magic" amount="85,155,225,295" b="1" op="mult" />
+			<attack targetscheme="enemy_units" source="source_entity" />
+		</onimpact>
+	</modifier>
+</affector>

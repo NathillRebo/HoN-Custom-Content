@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bloodmoon4_Shield"
+	
+	passiveeffect="effects/shield.effect"
+	icon="icon.tga"
+
+	effecttype="StatusBuff"
+	stunneddurationmultiplier="-0.65"
+	debuffdurationmultiplier="-0.65"
+>
+	<onattackeddamageevent>
+		<setvalue name="damage_attempted" a="damage_attempted" b="0.35" op="mult" />
+	</onattackeddamageevent>
+</state>

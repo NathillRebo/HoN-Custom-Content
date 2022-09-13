@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="true" useentityeffectscale="1">
+	<definitions>
+		<!-- <modifier
+			name="modifier0"
+			life="16000"
+			color="1 0 0"
+			startalpha="0"
+			midalpha="0"
+			endalpha="0"
+			midalphapos=".875"
+
+		/> -->
+		
+		<particlesystem name="system0" space="world" scale="1">
+		<sound
+				    dampen="0.5"
+				    channelid="storeaud"
+					sound2d="true"
+					volume=".7"
+					sample="../sounds/store_audio.wav"
+			/>
+			
+			<model
+				life="2800"
+				model="/heroes/prophet/alt9/effects/bird/bird_fly/model.mdf"
+				anim="idle3"
+				position="0 0 0"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".9"
+				yaw="20"
+			>
+				<trailemitter
+					life="2200"
+					bone="Bip01 Spine"
+					spawnrate="50"
+					particlelife="1500"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale="1"
+					depthbias="50"
+					material="/shared/effects/materials/arrow_trail_blend.material"
+				>
+					<particle
+						startalpha=".9"
+						endalpha="0"
+						startcolor="1 .5 .1"
+						midcolor=".55 .2 0"
+						endcolor="1 0 0"
+						startsize="20"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					life="2200"
+					bone="Bip01 Spine"
+					spawnrate="50"
+					particlelife="900"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale=".75"
+					depthbias="-10"
+					material="/shared/effects/materials/ember_reveal.material"
+				>
+					<particle
+						startalpha="1"
+						endalpha="0"
+						startsize="15"
+						midsize="6"
+						endsize="0"
+						color="1 .75 .2"
+						startframe=".5"
+						endframe="1"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					life="2200"
+					bone="Bip01 Spine"
+					spawnrate="30"
+					particlelife="900"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/light_trail.material"
+				>
+					<particle
+						startcolor="1 0 0"
+						midcolor="1 .4 0"
+						endcolor="1"
+						midcolorpos=".25"
+						startsize="10"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<simpleemitter
+					life="2200"
+					bone="Bip01 Spine"
+					spawnrate="50" minparticlelife="600" maxparticlelife="750"
+					direction="0 0 1"	
+					minspeed="0"  maxspeed="20"
+					drag="0.1" 
+					material="/shared/effects/materials/phantom_white_reveal.material"
+					offsetsphere="5"
+					depthbias="-50"
+				>
+					<particle					
+						minagle="-360" maxangle="360"
+						startcolor="1 .5 .2" midcolor="1 .5 0" endcolor="1 0 0"
+						minsize="5" maxsize="15" startscale=".7" endscale="2.3"
+						startframe="1" midframe=".1" endframe="1" midframepos=".3"
+						startalpha="0" midalpha=".75" endalpha="0" midalphapos=".2"
+						minscale="1"
+						maxscale="1.2"
+					/>
+					<particle					
+						minagle="-360" maxangle="360"
+						startcolor="1 .9 .8" midcolor="1 .3 .2" endcolor="1 .3 0"
+						minsize="5" maxsize="15" startscale=".7" endscale="2.3"
+						startframe="1" midframe=".1" endframe="1" midframepos=".3"
+						startalpha="0" midalpha=".7" endalpha="0" midalphapos=".2"
+						minscale="1"
+						maxscale="1.2"
+					/>
+				</simpleemitter>
+	
+				<trailemitter
+					life="2200"
+					bone="Bip01 R Hand"
+					spawnrate="50"
+					particlelife="300"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale=".5"
+					material="/shared/effects/materials/beam_06.material"
+				>
+					<particle
+						startalpha=".75"
+						endalpha="0"
+						startcolor="1"
+						endcolor="1 .8 .5"
+						startsize="10"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					life="2200"
+					bone="Bip01 L Hand"
+					spawnrate="50"
+					particlelife="300"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale=".5"
+					material="/shared/effects/materials/beam_06.material"
+				>
+					<particle
+						startalpha=".75"
+						endalpha="0"
+						startcolor="1"
+						endcolor="1 .8 .5"
+						startsize="10"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<simpleemitter
+					life="2200"
+					bone="Bip01 Spine"
+					spawnrate="50"
+					minparticlelife="700"
+					maxparticlelife="900"
+					gravity="1"
+					speed="10"
+					drag="0.07"
+					acceleration="0.0"
+					mintimenudge="0"
+					maxtimenudge="1000"
+					position="0 0 0"
+					material="/shared/effects/materials/phantom_white.material"
+					depthbias="-25"
+					offsetsphere="10"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						minanglespeed="-30"
+						color=".8 .2 .1"
+						maxanglespeed="30"
+						minstartsize="40"
+						maxstartsize="50"
+						endsize="20"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						midalphapos=".1"
+					 />
+				</simpleemitter>
+				
+				<template name="trails">
+					<twopointtrailemitter
+						life="2200"
+						name="trail01"
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="50"
+						particlelife="400"
+						subframepose="1"
+						texpostime="1000"
+						texposscale="0"
+						texstretchscale=".6"
+						material="/shared/effects/materials/arrow_trail_blend.material"
+					>
+						<particle
+							startcolor=".3 .35 .4"
+							midcolor=".75 .4 0"
+							endcolor="1 0 0"
+							midcolorpos=".65"
+							startalpha=".45"
+							midalpha=".15"
+							endalpha="0"
+						/>
+					</twopointtrailemitter>
+					
+					<twopointtrailemitter
+						life="2200"
+						name="trail02"
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="50"
+						particlelife="200"
+						subframepose="1"
+						texpostime="1000"
+						texposscale="0"
+						texstretchscale=".6"
+						material="/shared/effects/materials/swoosh_white.material"
+					>
+						<particle
+							startcolor=".3 .35 .4"
+							midcolor=".05 .25 1"
+							endcolor="2 0 0"
+							midcolorpos=".45"
+							startalpha=".4"
+							midalpha=".1"
+							endalpha="0"
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="trails" bone01="Bone_10"  bone02="Bone_12"/>
+				<instance name="trails" bone01="Bone_05"  bone02="Bone_03"/>
+				
+				<controller bone="Bip01 Spine" scale=".2">
+					<billboard
+						expirelife="100"
+						material="/shared/effects/materials/whitedot.material"
+						color=".5 .2 0"
+						size="200"
+						directionalspace="local"
+						startalpha="1"
+						endalpha="0"
+						depthbias="50"
+						lockup="1"
+						lockright="1"
+						pitch="-90"
+					/>
+
+					<simpleemitter
+						life="2000"
+						particlelife="2000"
+						spawnrate="30"
+						speed="1000"
+						acceleration="0"
+						position="0 0 00"
+						drag=".1"
+						gravity="10"
+						material="/shared/effects/materials/spark_11.material"
+						offsetsphere="20 20 20"
+						direction="0 -1 0"
+						minangle="0"
+						maxangle="120"
+					>
+						<particle
+							turn="true"
+							startcolor="0 0 0"
+							midcolor="1"
+							endcolor="0 0 0"
+							size="40" 
+							startscale="1"
+							endscale="0"
+						>
+						</particle>
+					</simpleemitter>
+					
+					<simpleemitter
+						life="2200"
+						minparticlelife="200"
+						maxparticlelife="400"
+						spawnrate="30"
+						speed="1510.0"
+						acceleration="0.0"
+						position="0 0 00"
+						drag="0.1"
+						material="/shared/effects/materials/flare_03.material"
+						offsetsphere="15"
+						direction="0 -1 0"
+						minangle="0"
+						maxangle="120"
+					>
+						<particle
+							turn="true"
+							startcolor="0 0 0"
+							midcolor="1 .75 .5"
+							endcolor="0 0 0"
+							size="41"
+							startscale="1"
+							endscale="0"
+						>
+						</particle>
+					</simpleemitter>
+
+					<model
+						position="0 0 0"
+						expirelife="1500"
+						name="emitter0" 
+						anim="idle"
+						model="/shared/effects/models/circle_of_bones/model.mdf"
+						scale="2.25"
+						startcolor="0 0 0"
+						midcolor="0 0 0"
+						endcolor="0 0 0"
+						midcolorpos=".75"
+						startalpha="0"
+						midalpha="0"
+						endalpha="0"
+						midalphapos=".4"
+						rollspeed="500"
+					>
+						<template name="trails">
+							<twopointtrailemitter
+								life="2000"
+								name="trail01"
+								position="0 0 0"
+								bone_a="{bone01}"
+								bone_b="{bone02}"
+								spawnrate="100"
+								particlelife="600"
+								subframepose="1"
+								texpostime="1000"
+								texposscale="0"
+								texstretchscale="1"
+								material="/shared/effects/materials/arrow_trail_blend.material"
+							>
+								<particle
+									startcolor="0 .65 1"
+									midcolor=".75 .4 0"
+									endcolor="1 0 0"
+									midcolorpos=".65"
+									startalpha=".45"
+									midalpha=".15"
+									endalpha="0"
+								/>
+							</twopointtrailemitter>
+							
+							<twopointtrailemitter
+								life="2000"
+								name="trail02"
+								position="0 0 0"
+								bone_a="{bone01}"
+								bone_b="{bone02}"
+								spawnrate="100"
+								particlelife="400"
+								subframepose="1"
+								texpostime="1000"
+								texposscale="0"
+								texstretchscale="1"
+								material="/shared/effects/materials/swoosh_white.material"
+							>
+								<particle
+									startcolor="0 .65 1"
+									midcolor=".05 .25 1"
+									endcolor="2 0 0"
+									midcolorpos=".45"
+									startalpha=".4"
+									midalpha=".1"
+									endalpha="0"
+								/>
+							</twopointtrailemitter>
+						</template>
+						
+						<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
+						<instance name="trails" bone01="_bone_fx_03"  bone02="_bone_fx_04"/>
+						<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_06"/>
+						<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_08"/>
+						<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_10"/>
+					</model>
+					
+					
+				</controller>	
+			</model>
+			
+			<!-- <model
+				life="3500"
+				model="/heroes/prophet/alt9/effects/bird/bird_fly/model.mdf"
+				material="/shared/effects/materials/shell_energy_reveal2.material"
+				anim="idle3"
+				color="3 2 .5"
+				position="0 0 0"
+				startparam0="0"
+				midparam0="0"
+				endparam0="1"
+				midalphapos=".91"
+				yaw="20"
+			/> -->
+			
+			<simpleemitter
+				delay="2000"
+				count="1"
+				position="0 0 89"
+				gravity="1"
+			>
+				<particle>
+			
+					<simpleemitter
+						life="1700"
+						spawnrate="10"
+						
+						offsetsphere="1"
+						minparticlelife="550"
+						maxparticlelife="620"
+						direction="1 0 0"
+						depthbias="0"
+						minspeed="0"
+						maxspeed="5"
+						material="/shared/effects/materials/flame_white2.material"
+					>
+						<particle
+							startsize="0"
+							endsize="40"
+							startalpha=".8"
+							midalpha=".7"
+							endalpha="0"
+							color=".1 .75 .1"
+							maxangle="360"
+							minscale="4"
+							maxscale="5"
+							anchor="1"
+						/>				
+						<particle
+							startsize="0"
+							endsize="40"
+							startalpha=".8"
+							midalpha=".7"
+							endalpha="0"
+							color=".7 0 .5"
+							maxangle="360"
+							minscale="4"
+							maxscale="5"
+							anchor="1"
+						/>
+						<particle
+							startsize="0"
+							endsize="40"
+							startalpha=".8"
+							midalpha=".7"
+							endalpha="0"
+							color=".6 .55 0"
+							maxangle="360"
+							minscale="4"
+							maxscale="5"
+							anchor="1"
+						/>
+						<particle
+							startsize="0"
+							endsize="40"
+							startalpha=".8"
+							midalpha=".7"
+							endalpha="0"
+							color="0 .65 .75"
+							maxangle="360"
+							minscale="4"
+							maxscale="5"
+							anchor="1"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						life="1700"
+						spawnrate="30"
+						
+						offsetsphere="1"
+						minparticlelife="550"
+						maxparticlelife="620"
+						direction="1 0 0"
+						depthbias="0"
+						minspeed="0"
+						maxspeed="5"
+						material="/shared/effects/materials/flame_white2.material"
+					>
+						<particle
+							startsize="0"
+							endsize="40"
+							startalpha=".6"
+							midalpha=".4"
+							endalpha="0"
+							color=".7 .25 0"
+							maxangle="360"
+							minscale="3"
+							maxscale="4"
+							anchor="1"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						life="1600"
+						spawnrate="5"
+						material="/shared/effects/materials/flare_07.material"
+						particlelife="500"
+						depthbias="-10"
+						offsetsphere="0"
+					>
+						<particle
+							maxangle="360"
+							startscale="0"
+							midscale="50"
+							endscale="150"
+							
+							startcolor="1 .5 .2"
+							endcolor="0"
+							startframe="0"
+							endframe="1"
+							anchor="1"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						life="1500"
+						
+						spawnrate="10"
+						material="/shared/effects/materials/ember_reveal.material"
+						minparticlelife="500"
+						maxparticlelife="650"
+						direction="1 0 0"
+						
+						minspeed="0"
+						maxspeed="10"
+						depthbias="-5"
+						offsetsphere="0"
+					>
+						<particle
+							maxangle="360"
+							startscale="0"
+							midscale="8"
+							minendscale="25"
+							maxendscale="30"
+							startalpha="1"
+							midalpha="1"
+							endalpha="1"
+							color="1"
+							startframe="0"
+							endframe="1"
+							anchor="1"
+						/>
+					</simpleemitter>
+				
+					
+					<simpleemitter
+						life="1800"
+						particlelife="2000"
+						spawnrate="26"
+						speed="100"
+						acceleration="0"
+						depthbias="0"
+						drag=".1"
+						
+						material="/shared/effects/materials/spark_11.material"
+						offsetsphere="0"
+						direction="0 -1 0"
+						minangle="0"
+						maxangle="120"
+					>
+						<particle
+							turn="true"
+							startcolor="1 .7 .5"
+							midcolor="1"
+							endcolor="0 0 0"
+							midcolorpos=".1"
+							size="10" 
+							startscale="1.2"
+							midscale=".5"
+							endscale="0"
+							midscalepos=".1"
+						>
+						</particle>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+			
+			<model
+				model="../model_store_l.mdf"
+				scale="1"
+				anim="idle"
+				delay="3600"
+				life="700"
+				startcolor="1 .5 .2"
+				endcolor="1"
+				startalpha="0"
+				midalpha="0"
+				endalpha="1"
+				midalphapos=".4"
+			/>
+			
+			<model
+				model="../model_store_l.mdf"
+				material="/shared/effects/materials/shell_energy_reveal2.material"
+				scale="1"
+				anim="idle"
+				delay="3600"
+				life="700"
+				color="3 .7 .5"
+				position="0 0 0"
+				startparam0="0"
+				endparam0="1"
+			/>
+			
+			<model
+				model="../model_store_l.mdf"
+				material="/shared/effects/materials/shell_energy_reveal2.material"
+				startparam0="0"
+				midparam0=".8"
+				endparam0="1"
+				scale="1"
+				anim="idle"
+				delay="3600"
+				life="500"
+				color="1 .3 .1"
+			/>
+			
+			
+			<model
+				model="../model_store_l.mdf"
+				scale="1"
+				anim="idle"
+				delay="4300"	
+			/>
+			
+			<billboard
+					delay="3600"
+					
+					life="550"
+					color="1.0 1.0 1.0"
+					startalpha="1.0"
+					midalpha="1.0"
+					endalpha="0.0"
+					midalphapos="0.75"
+					startparam=".25"
+					endparam="0.0"
+					startsize="38"
+					endsize="200"
+					scale="3"
+					depthbias="-100"
+					position="0 0 58"
+					material="/shared/effects/materials/refract_ring.material"
+				/>	
+			
+			<simpleemitter
+				delay="3600"
+				minparticlelife="1500"
+				maxparticlelife="3000"
+				count="50"
+				mingravity="1"
+				maxgravity="2"
+				minspeed="200"
+				maxspeed="700"
+				acceleration="0"
+				depthbias="0"
+				drag=".1"
+				position="0 0 58"
+				material="/shared/effects/materials/spark_11.material"
+				offsetsphere="0"
+				direction="0 -1 0"
+				minangle="0"
+				maxangle="120"
+			>
+				<particle
+					turn="true"
+					startcolor="1 .7 .5"
+					midcolor="1"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+					size="10" 
+					startscale="1.6"
+					midscale=".6"
+					endscale="0"
+					midscalepos=".1"
+				>
+				</particle>
+			</simpleemitter>
+			
+			<controller delay="4100" scale=".7">
+			<template name="birds">
+				<model	
+					delay="0"
+					life="3000"
+					model="/heroes/prophet/alt9/effects/bird/bird_attack/model.mdf"
+					anim="idle"
+					startscale="0"
+					midscale="1"
+					endscale="1.3"
+					midscalepos=".22"
+					color="1 1 1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="1"
+					midalphapos=".4"
+					yaw="{yaw}"
+					position="{position}"
+					yawspeed="100"
+					
+					
+				>
+					
+					<trailemitter
+							delay="50"
+							bone="Bip01 Spine"
+							spawnrate="50"
+							particlelife="500"
+							texpostime="500"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/arrow_trail_blend.material"
+						>
+							<particle
+								startalpha=".75"
+								endalpha="0"
+								startcolor="{a}"
+								midcolor="{b}"
+								endcolor="{c}"
+								startsize="14"
+								endsize="0"
+							/>
+						</trailemitter>
+						
+						<trailemitter
+							delay="50"
+							bone="Bip01 Spine"
+							spawnrate="60"
+							particlelife="300"
+							texpostime="500"
+							texposscale="0"
+							texstretchscale="1"
+							material="/shared/effects/materials/swoosh_add.material"
+						>
+							<particle
+								startcolor="{d}"
+								endcolor="0 0 0"
+								midcolorpos=".25"
+								startsize="8"
+								endsize="1"
+							/>
+						</trailemitter>
+						
+						<trailemitter
+							delay="50"
+							bone="Bone_12"
+							spawnrate="100"
+							particlelife="500"
+							texpostime="500"
+							texposscale="0"
+							texstretchscale=".5"
+							material="/shared/effects/materials/star_15.material"
+						>
+							<particle
+								startalpha=".75"
+								endalpha="0"
+								color="{e}"
+								startsize="16"
+								endsize="8"
+							/>
+						</trailemitter>
+						
+						<trailemitter
+							delay="50"
+							bone="Bone_03"
+							spawnrate="100"
+							particlelife="500"
+							texpostime="500"
+							texposscale="0"
+							texstretchscale=".5"
+							material="/shared/effects/materials/star_15.material"
+						>
+							<particle
+								startalpha=".75"
+								endalpha="0"
+								color="{e}"
+								startsize="16"
+								endsize="8"
+							/>
+						</trailemitter>
+						
+						<simpleemitter
+							delay="50"
+							bone="Bip01 Spine"
+							spawnrate="50"
+							minparticlelife="500"
+							maxparticlelife="900"
+							gravity="0"
+							speed="10"
+							drag="0.07"
+							acceleration="0.0"
+							mintimenudge="0"
+							maxtimenudge="1000"
+							position="0 0 0"
+							material="/shared/effects/materials/phantom_white.material"
+							depthbias="-25"
+							offsetsphere="5"
+						>
+							<particle 
+								minangle="0"
+								maxangle="360"
+								minanglespeed="-30"
+								color="{f}"
+								maxanglespeed="30"
+								minstartsize="80"
+								maxstartsize="100"
+								endsize="10"
+								scale=".4"
+								startalpha="0"
+								midalpha=".5"
+								endalpha="0"
+								midalphapos=".1"
+							 />
+						</simpleemitter>	
+				</model>
+				
+				<!-- <model	
+					model="/heroes/prophet/alt9/effects/bird/bird_attack/model.mdf"
+					material="/shared/effects/materials/shell_rim_spoopy.material"
+					anim="idle"
+					color="1.5 .1 2"
+					scale="{scale}"
+					alpha="2"
+					yaw="{yaw}"
+					position="{position}"
+				/> -->
+			</template>
+
+			<instance name="birds" yaw="0" position="0 0 -20" a="1 .8 .5" b=".75 .4 0" c="1 0 0" d="1 .4 0" e="1 .8 .5" f=".8 .2 .1"/>
+			<instance name="birds" yaw="120" position="0 0 00" a="1 .6 .9" b=".5 0 .4" c=".3 0 .2" d="1 0 .8" e="1 .55 .9" f=".5 .1 .3"/>
+			<instance name="birds" yaw="240" position="0 0 10" a=".6 1 .6" b="0 1 0" c="0 .5 0" d=".2 1 .2" e=".65 1 .65" f="0 .7 0"/>
+			
+			
+			</controller>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>  
+      	<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>

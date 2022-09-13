@@ -1,0 +1,42 @@
+
+// Hero_Dryadin_Custom
+Hero_Dryadin_Custom_name										Dryadin
+Hero_Dryadin_Custom_role										Dryadin is a support and initiator, that brings loads of utility, but lower damage, compared to other agility heroes. Her potential grows dramatically with each ability she learns, allowing her to cast spells much more frequently.
+
+// Ability_Dryadin1
+Ability_Dryadin1_name											Perseverance
+Ability_Dryadin1_description									Bestows nearby allies, heaing them ^o{85,140,195,250} Health^*. Using this ability reduces remaining cooldowns of other abilities by 2 seconds.
+Ability_Dryadin1_description_simple								Bestows nearby allies, heaing them ^o{85,140,195,250} Health^*. Using this ability reduces remaining cooldowns of other abilities by 2 seconds.\n\n^444Let my gentle touch bring you comfort.
+Ability_Dryadin1_effect_header
+Ability_Dryadin1_tooltip_flavor									Let my gentle touch bring you comfort.
+Ability_Dryadin1_IMPACT_effect									Bestows nearby allies, heaing them ^o{85,140,195,250} Health^*. Using this ability reduces remaining cooldowns of other abilities by 2 seconds.
+
+// Ability_Dryadin2
+Ability_Dryadin2_name											Gaea's Will
+Ability_Dryadin2_description									Dryadin leaps at the chosen location, dealing ^o{80,150,220,290} Magic Damage^* to enemies hit and ^oreducing their Movement Speed by {20%,25%,30%,35%} for {1.2,1.5,1.8,2.1} seconds^*. Using this ability reduces remaining cooldowns of other abilities by 2 seconds.
+Ability_Dryadin2_description_simple								Dryadin leaps at the chosen location, dealing ^o{80,150,220,290} Magic Damage^* to enemies hit and ^oreducing their Movement Speed by {20%,25%,30%,35%} for {1.2,1.5,1.8,2.1} seconds^*. Using this ability reduces remaining cooldowns of other abilities by 2 seconds.\n\n^444Why are you running away already!
+Ability_Dryadin2_effect_header
+Ability_Dryadin2_tooltip_flavor									Why are you running away already!
+Ability_Dryadin2_IMPACT_effect									Dryadin leaps at the chosen location, dealing ^o{80,150,220,290} Magic Damage^* to enemies hit and ^oreducing their Movement Speed by {20%,25%,30%,35%} for {1.2,1.5,1.8,2.1} seconds^*. Using this ability reduces remaining cooldowns of other abilities by 2 seconds.
+
+// Ability_Dryadin3
+Ability_Dryadin3_name											Entangling Strike
+Ability_Dryadin3_name:ult_boost									^gEntangling Strike^*
+Ability_Dryadin3_description									When off cooldown, Dryadin's next attack will apply ^oImmobilize for {0.8,1.2,1.6,2} seconds, dealing {40,72,112,160} Magic Damage over time^*. This attack reduces remaining cooldowns of other abilities by 2 seconds.
+Ability_Dryadin3_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Causes your attacks to reduce remaining cooldown of Entangling Strike by 1 second.
+Ability_Dryadin3_description_simple								When off cooldown, Dryadin's next attack will apply ^oImmobilize for {0.8,1.2,1.6,2} seconds, dealing {40,72,112,160} Magic Damage over time^*. This attack reduces remaining cooldowns of other abilities by 2 seconds.\n\n^gStaff of the Master^* causes your attacks to passively reduce the remaining cooldown of Entangling Strike by 1 second.\n\n^444Stay with me!
+Ability_Dryadin3_description_simple:ult_boost					When off cooldown, Dryadin's next attack will apply ^oImmobilize for {0.8,1.2,1.6,2} seconds, dealing {40,72,112,160} Magic Damage over time^*. This attack reduces remaining cooldowns of other abilities by 2 seconds. ^gWhen cooling down, attacks reduce remaining cooldown of Entangling Strike by 1 second.^*\n\n^444Stay with me!
+Ability_Dryadin3_effect_header
+Ability_Dryadin3_tooltip_flavor									Stay with me!
+Ability_Dryadin3_IMPACT_effect									When off cooldown, Dryadin's next attack will apply ^oImmobilize for {0.8,1.2,1.6,2} seconds, dealing {40,72,112,160} Magic Damage over time^*. This attack reduces remaining cooldowns of other abilities by 2 seconds.
+Ability_Dryadin3_IMPACT_effect:ult_boost						When off cooldown, Dryadin's next attack will apply ^oImmobilize for {0.8,1.2,1.6,2} seconds, dealing {40,72,112,160} Magic Damage over time^*. This attack reduces remaining cooldowns of other abilities by 2 seconds. ^gWhen cooling down, attacks reduce remaining cooldown of Entangling Strike by 1 second.^*
+
+// Ability_Dryadin4
+Ability_Dryadin4_name											Wrath of Nature
+Ability_Dryadin4_name:shardofthemaster_boost					^pWrath of Nature^*
+Ability_Dryadin4_description									Strikes the ground, ^osending nearby enemies into the air for 1 second^* and dealing them ^o{280,440,600} Magic Damage^*. Using this ability reduces remaining cooldowns of other abilities by 6 seconds.
+Ability_Dryadin4_description_simple								Strikes the ground, ^osending nearby enemies into the air for 1 second^* and dealing them ^o{280,440,600} Magic Damage^*. Using this ability reduces remaining cooldowns of other abilities by 6 seconds.\n\n^pShard of the Master^* causes this ability to refresh cooldowns of basic abilities completely and reduces enemy's Armor and Magic Armor by 5 for 3 seconds.\n\n^444Enough with pleasantries!
+Ability_Dryadin4_description_simple:shardofthemaster_boost		Strikes the ground, ^osending nearby enemies into the air for 1 second^*, dealing them ^o{280,440,600} Magic Damage^* ^pand reducing their Armor and Magic Armor by 5 for 3 seconds^*. Using this ability ^prefreshes cooldowns of your basic abilities^*.\n\n^444Enough with pleasantries!
+Ability_Dryadin4_effect_header
+Ability_Dryadin4_tooltip_flavor									Enough with pleasantries!
+Ability_Dryadin4_IMPACT_effect									Strikes the ground, ^osending nearby enemies into the air for 1 second^* and dealing them ^o{280,440,600} Magic Damage^*. Using this ability reduces remaining cooldowns of other abilities by 6 seconds.

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Valor2"
+
+	speed="2000"
+	gravity="0"
+
+	modelscale="1.0"
+	model=""
+	
+	flying="true"
+	flyheight="0"
+	
+	touchradius="125"
+	touchradiusdiradjust="true"
+	touchtargetscheme="all_other_nonboss_units"
+	toucheffecttype="Magic"
+	maxtouchespertarget="1"
+>
+	<onspawn>
+		<applystate name="State_Valor2_Check" target="source_entity" duration="1250" proxy="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<playanim name="idle" target="source_entity" />
+	</onimpact>
+
+</projectile>

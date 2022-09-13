@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_StormSister2_Self" 
+
+    icon="icon.tga" 
+    passiveeffect="effects/state_self.effect" 
+
+    effecttype="" 
+    alwaystransmitdata="true" 
+	armor="1,2,3,4"
+	magicarmor="1,2,3,4"
+> 
+    <onexpired> 
+        <expirestate name="State_StormSister2_Enemy" target="this_proxy_entity" /> 
+    </onexpired> 
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onframe>
+			<heal target="this_owner_entity" a="42" b="frametime" op="mult"/> 
+		</onframe> 
+	</modifier>
+</state>  

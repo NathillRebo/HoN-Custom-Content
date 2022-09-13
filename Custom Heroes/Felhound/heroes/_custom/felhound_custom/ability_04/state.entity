@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Felhound4"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="10"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+
+	agilitypercharge="2,3,4"
+
+	movespeedpercharge="4,5,6"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+	
+	<modifier key="ult_boost" modpriority="100"
+		maxcharges="15"
+	/>
+</state>

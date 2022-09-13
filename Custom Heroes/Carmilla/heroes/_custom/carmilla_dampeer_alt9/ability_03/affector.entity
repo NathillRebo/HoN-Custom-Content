@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Carmilla3"
+
+	radius="525"
+	arc="60"
+	
+	lifetime="50"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	maximpactspertarget="1"
+
+	effect="effects/impact.effect"
+	
+>
+	<onspawn>
+		<!-- Explosion art -->
+		<setpos0 position="this_owner_entity" offsetspace="this_entity" offset="0 300 0" />
+		<playeffect effect="effects/explosion.effect" source="pos0" target="" occlude="true" />
+	</onspawn>
+
+	<onimpact>
+		<damage effecttype="Magic" source="this_owner_entity" target="target_entity" amount="75,145,215,285" />
+		<applystate name="State_Carmilla3" target="target_entity" duration="1550,1650,1750,1850" proxy="proxy_entity" />
+	</onimpact>
+	
+</affector>

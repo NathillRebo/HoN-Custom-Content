@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_Ult_Boost"
+
+	icon=""
+	passiveeffect="effects/boost.effect"
+	
+	ishidden="true"
+	
+	effecttype=""
+>
+
+	<modifier key="iamsheeped" modpriority="1000" passiveeffect=""/>
+	
+	<altavatar key="Hero_Solstice.Alt" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>	
+	
+	<altavatar key="Hero_Solstice.Alt2" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt3" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt4" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>	
+	
+	<altavatar key="Hero_Solstice.Alt5" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt6" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt7" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>
+	
+	<altavatar key="Hero_Solstice.Alt8" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>	
+	
+	<altavatar key="Hero_Solstice.Alt9" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>	
+	
+	<altavatar key="Hero_Solstice.trophy_skin" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>		
+	
+	<altavatar key="Hero_Solstice.Alt10" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>	
+	
+	<altavatar key="Hero_Solstice.Alt11" modpriority="90"
+		passiveeffect="effects/boost.effect"
+	/>	
+	
+	
+</state>

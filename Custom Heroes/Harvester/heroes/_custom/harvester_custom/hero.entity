@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Dread_Custom"
+	
+	team="Hellbourne"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.9"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+
+	category="magic cc"
+	difficulty="1.5"
+
+	solorating="2"
+	junglerating="0"
+	carryrating="0"
+	supportrating="0"
+	initiatorrating="1"
+	gankerrating="5"
+	pusherrating="0"
+	rangedrating="0"
+	meleerating="5"
+
+	movespeed="290"
+	turnrate="540"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.00"
+
+	armor="1.48"
+	magicarmor="5.0"
+
+	inventory0="Ability_Dread1"
+	inventory1="Ability_Dread2"
+	inventory2="Ability_Dread3"
+	inventory3="Ability_Dread4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="400"
+	attackcooldown="1700"
+	attackdamagemin="28"
+	attackdamagemax="34"
+	attacknumanims="2"
+	attackoffset="0 0 0"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect="effects/impact2.effect"
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Agility"
+	strength="18"
+	strengthperlevel="2"
+	agility="23"
+	agilityperlevel="2.4"
+	intelligence="14"
+	intelligenceperlevel="1.8"
+	
+	previewmodel="preview.mdf"
+	previewpos="-10 0 -70"
+	previewangles="0 0 0"
+	previewscale="1.95"
+	
+	storemodel="preview.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.85"
+	
+	corpsetime="3000"
+	corpsefadetime="5500"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+> 
+	<recommendeditem name="Item_Pierce" />	2600
+	<recommendeditem name="Item_Critical1" /> 2625
+	<recommendeditem name="Item_ManaBurn1" /> 3300
+	<recommendeditem name="Item_Madfreds_BrassKnuckles" /> 4150
+	<recommendeditem name="Item_Weapon3" /> 4200
+	<recommendeditem name="Item_Brutalizer" />	4400
+	<recommendeditem name="Item_Immunity" /> 4825
+	<recommendeditem name="Item_Splash" /> 4950
+	<recommendeditem name="Item_Hypercrown" /> 5800
+	<recommendeditem name="Item_Dawnbringer" /> 6600
+
+	<modifier key="iamsheeped" modpriority="201"
+		passiveeffect=""
+	/>
+</hero>

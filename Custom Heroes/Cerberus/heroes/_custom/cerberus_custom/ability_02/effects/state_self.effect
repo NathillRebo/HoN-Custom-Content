@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+<!--
+		<modifier
+			name="modifier0"
+			expirelife="25"
+			startcolor="1 1 1"
+			endcolor="1 1 1"
+			startalpha=".4"
+			endalpha="0"
+		/>
+-->
+		<particlesystem name="system0" space="entity" scale="1">
+			
+			
+			<model
+				bone="_bone_overhead"
+				position="0 0 0"
+				scale="2"
+				expirelife="25"
+				model="sword/model.mdf"
+				anim="idle"
+				startcolor="1.5"
+				endcolor="1 1 1"
+				startalpha="1"
+				endalpha="0"
+				yawspeed="90"
+			>
+
+				<template name="lights">
+			
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="30"
+						particlelife="850"
+						offsetsphere="0 0 0"
+						minspeed="0"
+						maxspeed="50"
+						position="0 0 0"
+						minangle="-360"
+						maxangle="360"
+						direction="0 0 1"
+					>
+						<particle
+							turn="true"
+						>
+							<billboard
+								bone="{bone}"
+								spawnrate="500"
+								count="1"
+								minlife="250"
+								maxlife="350"
+								position="0 0 0"
+								material="/shared/effects/materials/light_rays2.material"
+								directionalspace="local"
+								minyaw="-360"
+								maxyaw="360"
+								roll="180"
+								size="2"
+								lockup="true"
+								lockright="true"
+								pitch="90"
+								startcolor=".25 .5 .05"
+								endcolor="0 0 0"
+								minstartheight="25"
+								maxstartheight="135"
+								endheight="0"
+							>
+							</billboard>
+						</particle>
+					</simpleemitter>
+					
+				</template>
+
+				<instance name="lights" bone="_bone_weapon2"/>
+
+				<billboard
+					bone="_bone_weapon2"
+					expirelife="500"
+					startcolor="0 .2 0"
+					endcolor="0 0 0"
+					size="75"
+					position="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					directionalspace="local"
+					depthbias="-25"
+					minroll="-180"
+					maxroll="180"
+					rollspeed="-360"
+					loop="true"
+				/>
+
+				<billboard
+					bone="_bone_weapon2"
+					expirelife="500"
+					startcolor=".25 .15 0"
+					endcolor="0 0 0"
+					size="20"
+					position="0 0 0"
+					material="/shared/effects/materials/whitedot.material"
+					directionalspace="local"
+					depthbias="-25"
+					minroll="-180"
+					maxroll="180"
+					rollspeed="-360"
+					loop="true"
+				/>
+
+				<simpleemitter
+					bone="_bone_weapon2"
+					spawnrate="200"
+					particlelife="610"
+					gravity="0"
+					speed="0"
+					position="0 0 0"
+					acceleration="11"
+					material="/shared/effects/materials/whitedot.material"
+					offsetsphere="35"
+					drag="0.01"
+					direction="1 0 0"
+					depthbias="50"
+				>
+					<particle 
+						startstickiness="0"
+						endstickiness="1"
+						startcolor="0 .75 0"
+						endcolor="0 0 0"
+						midcolorpos=".85"
+						startsize="1"
+						endsize="0"	
+						turn="1"
+						heightdistort="0.1"				
+					
+					/>
+				</simpleemitter>
+			</model>
+			
+			<model
+				bone="_bone_overhead"
+				position="0 0 0"
+				scale="2"
+				expirelife="25"
+				model="sword/model.mdf"
+				anim="idle"
+				material="/shared/effects/materials/shell2.material"
+				startcolor="0 .65 0"
+				endcolor="0 0 0"
+				yawspeed="90"
+			>
+			</model>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+	</thread>
+</effect>

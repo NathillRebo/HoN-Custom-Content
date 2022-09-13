@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Flying_Monkey_Set_Bonus"
+	
+	modelscale="1.25"
+	model="model.mdf"
+
+	inheritvisibilityfromtarget="true"
+
+	effectscale="1.0"
+	impacteffect=""
+	traileffect="body.effect"
+	
+	canturn="true"
+	flying="true"
+	flyheight="0"
+	speed="400"
+	maxspeed="3000"
+	
+	maxtouches="0"
+	maxtotalimpacts="0"
+	impactdistance="-1000"
+	touchradius="0"
+	
+	dieonmaxtouches="false"
+	
+	disjointable="false"
+	
+	homing="true"
+	homingseekrange="100"
+	homingunlockrange="100"
+	homingtargetscheme=""
+	homingturnspeed="0.2"
+	
+	homingspeedmul="1.2"
+	hominglocktarget="false"
+	homingseekstealth="true"
+	homingalwayslocktarget="true"
+	homingspeedmultiplierdistance="450"
+>
+
+</projectile>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Dread2"
+
+	radius="450"
+	arc="120"
+	
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Physical"
+	
+	effect="impact.effect"
+	impacteffect="impact.effect"
+>
+	<onimpact>
+		<!-- Damage -->
+		<setvar0 a="90,170,250,330" />
+		<damage effecttype="Magic" amount="1" b="var0" op="mult" />
+		<applystate name="State_Dread2" duration="2500,2800,3100,3400" />
+	</onimpact>
+</affector>

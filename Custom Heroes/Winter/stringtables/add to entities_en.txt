@@ -1,0 +1,38 @@
+
+// Hero_zzz_Winter
+Hero_zzz_Winter_name											Winter
+Hero_zzz_Winter_role											Winter is a mobile support, capable of entering the fight easily, slowing enemies en-masse and protecting her allies with Glacial Shield. While she can deal considerable damage and withstand as much, she has no ways to effectively pressure her foes from afar.
+
+//Ability_Winter1
+Ability_Winter1_name											Arctic Wind
+Ability_Winter1_description										Winter enshrouds herself in frost winds for a short duration.
+Ability_Winter1_description_simple								Winter empowers herself, increasing her Armor and Magic Armor by ^o{1,2,3,4}^* and Movement Speed by ^o{10,20,30,40}%^*, while also gaining unitwalking for 3 seconds.\n\nEnemies she passes through are dealt ^o{90,150,210,270}^* Magic Damage and are ^tChilled^*.\n\n^444Winter is coming.
+Ability_Winter1_tooltip_flavor									Winter is coming.
+Ability_Winter1_IMPACT_effect									While enshrouded this way, she gains a bonus of +{10,20,30,40}% to Movement Speed, +{1,2,3,4} to Armor and Magic Armor and gains unitwalking, while enemies she passes through are dealt {90,150,210,270} Magic Damage and are ^tChilled^*. Arctic Wind lasts 3 seconds.
+
+//Ability_Winter2
+Ability_Winter2_name											Glacial Shield
+Ability_Winter2_name:shardofthemaster_boost						^pGlacial Shield^*
+Ability_Winter2_description										Winter encases target friend or self in ice, protecting the target from harm.
+Ability_Winter2_description_simple								Winter encases the target in ice, shielding it from the next ^o{200,300,400,500}^* damage dealt over up to 1.5 seconds, during which the target is also stunned.\n\nWhen the shield expires, it explodes, dealing ^o{70,100,130,160}^* Magic Damage to nearby enemies and ^tChilling^* them.\n\n^pShard of the Master^* also increases Health Regen by 160 for the duration.\n\n^444I'm Winter, I'm helping.
+Ability_Winter2_description_simple:shardofthemaster_boost		Winter encases the target in ice, shielding it from the next ^o{200,300,400,500}^* damage dealt over up to 1.5 seconds ^pand increasing Health Regen by 160 for the duration^*, during which the target is also stunned.\n\nWhen the shield expires, it explodes, dealing ^o{70,100,130,160}^* Magic Damage to nearby enemies and ^tChilling^* them.\n\n^444I'm Winter, I'm helping.
+Ability_Winter2_tooltip_flavor									I'm Winter, I'm helping.
+Ability_Winter2_IMPACT_effect									The target is shielded from the next {200,300,400,500} damage dealt over up to 1.5 seconds, during which the target is also stunned.\n\nWhen the shield expires, it explodes, dealing {70,100,130,160} Magic Damage to nearby enemies and ^tChilling^* them.
+
+//Ability_Winter3
+Ability_Winter3_name											Frozen Star
+Ability_Winter3_description										Winter leaps into battle, damaging her foes.
+Ability_Winter3_description_simple								Winter leaps at the chosen location, dealing ^o{90,140,190,240}^* Magic Damage to enemies hit, reducing their Armor and Magic Armor by ^o{1,2,3,4}^* for 3 seconds and ^tChilling^* them.\n\n^444Starfall!
+Ability_Winter3_tooltip_flavor									Starfall!
+Ability_Winter3_IMPACT_effect									Enemies hit are dealt {90,140,190,240} Magic Damage, have their Armor and Magic Armor reduced by {1,2,3,4} for 3 seconds and are ^tChilled^*.
+
+//Ability_Winter4
+Ability_Winter4_name											Permafrost
+Ability_Winter4_name:ult_boost									^gPermafrost^*
+Ability_Winter4_description										Winter reduces the temperature around her, freezing her enemies. Her abilities apply ^tChilled^*, which reduces Movement Speed by 100% tapering over {1,1.25,1.5,1.75} seconds.
+Ability_Winter4_description:ult_boost							Winter reduces the temperature around her, freezing her enemies. Her abilities apply ^tChilled^*, which reduces Movement Speed by 100% tapering over ^g{2,2.25,2.5,2.75}^* seconds.
+Ability_Winter4_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Increases the ^tChilled^* duration by 1 second.
+Ability_Winter4_description_simple								Abilities apply ^tChilled^* for ^o{1,1.25,1.5,1.75}^* seconds, which reduces Movement Speed by 100% tapering over the duration.\n\nActivate to apply ^tChilled^* to all enemies in a large radius around Winter. Enemies that were already ^tChilled^* are instead dealt ^o{0,200,300,400}^* Magic Damage and are stunned for ^o{0,1.25,1.5,1.75} seconds^*.\n\n^gStaff of the Master^* increases the ^tChilled^* duration by 1 second.\n\n^444Stay frosty!
+Ability_Winter4_description_simple:ult_boost					Abilities apply ^tChilled^* for ^g{2,2.25,2.5,2.75}^* seconds, which reduces Movement Speed by 100% tapering over the duration.\n\nActivate to apply ^tChilled^* to all enemies in a large radius around Winter. Enemies that were already ^tChilled^* are instead dealt ^o{0,200,300,400}^* Magic Damage and are stunned for ^o{0,1.25,1.5,1.75} seconds^*.\n\n^444Stay frosty!
+Ability_Winter4_tooltip_flavor									Stay frosty!
+Ability_Winter4_IMPACT_effect									Enemies around her are ^tChilled^* for {1,1.25,1.5,1.75} seconds, or, if already ^tChilled^*, are stunned for {0,1.25,1.5,1.75} seconds and are dealt {0,200,300,400} Magic Damage.

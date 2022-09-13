@@ -1,0 +1,47 @@
+
+// Hero_zzz_Vermilion
+Hero_zzz_Vermilion_name											Vermilion
+Hero_zzz_Vermilion_role											Vermilion is a poke-enhancing hero, who alloes her team to withstand longer before engaging, while also dealing solid damage from afar. While her wave clear is lacking, her damage output and utility makes her an excellent support, contributing to her team even without gold.
+
+// Ability_Vermilion1
+Ability_Vermilion1_name											Warmth of Summer
+Ability_Vermilion1_description									Vermilion soothes the target's pain, restoring vigor herself. Passively increases Health Regen of nearby allied heroes by {2,3,4,5}.
+Ability_Vermilion1_description_simple							Passively increases Health Regen of nearby allied heroes by {2,3,4,5}.\n\nOn use, Vermilion heals target unit and self for ^o{50,100,150,200}^* Health. Targeting self will instead heal Vermilion for ^o{70,140,210,280}^* Health.\n\n^444That's the best way to cure fever!
+Ability_Vermilion1_tooltip_flavor								That's the best way to cure fever!
+Ability_Vermilion1_IMPACT_effect								Both she and the target regain ^o{50,100,150,200}^* Health on use. Casting the ability on self will instead heal Vermilion for ^o{70,140,210,280}^*.
+
+// State_Vermilion1
+State_Vermilion1_name											Summer Aura
+
+// Ability_Vermilion2
+Ability_Vermilion2_name											Vermilion Bird
+Ability_Vermilion2_name:shardofthemaster_boost					^pVermilion Bird^*
+Ability_Vermilion2_description									Vermilion sends out her bird to scout the area. The bird attacks the first hero it reaches.
+Ability_Vermilion2_description_simple							Vermilion sends her bird in the chosen direction, revealing the area as it flies. Upon colliding with an enemy hero, it attacks it, dealing ^o{80,160,240,320}^* Magic Damage to the target, reducing its Magic Armor by ^o{3,4,5,6}^* for 5 seconds and revealing it for the duration.\n\n^pShard of the Master^* reduces remaining cooldown by 80% on hitting the target.\n\n^444Fly my love! Gouge their eyes!
+Ability_Vermilion2_description_simple:shardofthemaster_boost	Vermilion sends her bird in the chosen direction, revealing the area as it flies. Upon colliding with an enemy hero, it attacks it, dealing ^o{80,160,240,320}^* Magic Damage to the target, reducing its Magic Armor by ^o{3,4,5,6}^* for 5 seconds, revealing it for the duration ^pand reducing the remaining cooldown of this ability by 80%^*.\n\n^444Fly my love! Gouge their eyes!
+Ability_Vermilion2_tooltip_flavor								Fly my love! Gouge their eyes!
+Ability_Vermilion2_IMPACT_effect								The enemy is dealt ^o{80,160,240,320}^* Magic Damage and has its Magic Armor reduced by ^o{3,4,5,6}^* for 5 seconds. While the effect lasts, the target is also revealed.
+
+// State_Vermilion2
+State_Vermilion2_name											Birded
+
+// Ability_Vermilion3
+Ability_Vermilion3_name											Solar Beam
+Ability_Vermilion3_description									Vermilion focuses energy in a single beam of light, which decimates her foes.
+Ability_Vermilion3_description_simple							Vermilion blasts target area after a 0.75 seconds delay. Enemies inside are dealt ^o{75,145,215,285}^* Magic Damage and are stunned for ^o{1.7,1.8,1.9,2}^* seconds.\n\n^444Imma firin mah lazor!
+Ability_Vermilion3_tooltip_flavor								Imma firin mah lazor!
+Ability_Vermilion3_IMPACT_effect								Enemies hit are dealt ^o{75,145,215,285}^* Magic Damage and are stunned for ^o{1.7,1.8,1.9,2}^* seconds. This spell hits 0.75 seconds after casting.
+
+// Ability_Vermilion4
+Ability_Vermilion4_name											Sunscorch
+Ability_Vermilion4_description									Vermilion burns her foes more effectively the more spells she casts. 
+Ability_Vermilion4_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Increases cooldown reduction per spellcast. Your spellcasts also reduce cooldowns of allies's spells.
+Ability_Vermilion4_description_simple							Passively causes your spellcasts to reduce the cooldowns of your abilities by ^o{0.9,1.2,1.5}^* seconds and cause your enemies to take an additional ^o{1,2,3}%^* more damage for 15 seconds, stacking up to 5 times.\n\n^gStaff of the Master^* increases the cooldown reduction and also reduces cooldowns of allies' abilities.\n\n^444Is it hot in here or is it just me?
+Ability_Vermilion4_description_simple:ult_boost					Passively causes your spellcasts to reduce the cooldowns of your abilities by ^g{1.4,1.7,2} seconds, cooldowns of your allies' abilities by 0.5 seconds^* and cause your enemies to take an additional ^o{1,2,3}%^* more damage for 15 seconds, stacking up to 5 times.\n\n^444Is it hot in here or is it just me?
+Ability_Vermilion4_tooltip_flavor								Is it hot in here or is it just me?
+Ability_Vermilion4_IMPACT_effect								Passively causes your spellcasts to reduce the cooldowns of your abilities by ^o{0.9,1.2,1.5}^* seconds and cause your enemies to take an additional ^o{1,2,3}%^* more damage for 15 seconds, stacking up to 5 times.
+Ability_Vermilion4_IMPACT_effect:ult_boost						Passively causes your spellcasts to reduce the cooldowns of your abilities by ^g{1.4,1.7,2} seconds, cooldowns of your allies' abilities by 0.5 seconds^* and cause your enemies to take an additional ^o{1,2,3}%^* more damage for 15 seconds, stacking up to 5 times.
+
+// State_Vermilion4
+State_Vermilion4_name											Sunscorched
+State_Vermilion4_description									You're getting sunburnt, get some sunblock!

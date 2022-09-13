@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Ravenor_Alt5_Ability1_Effect"
+
+	icon=""
+	ishidden="true"
+	passiveeffect=""
+	propagatetoillusions="true"
+	
+	effecttype=""
+	
+	modifierkey=""
+>
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="alt_GrimoireOfPower">
+			<setactivemodifierkey entity="this_entity" name="UpgradedAbility1" />
+		</hasmodifier>
+		<else>
+			<hasmodifier entity="this_owner_entity" name="alt_ArclightCrown">
+				<setactivemodifierkey entity="this_entity" name="UpgradedAbility1" />
+			</hasmodifier>
+			<else>
+				<hasmodifier entity="this_owner_entity" name="alt_Thunderclaw">
+					<setactivemodifierkey entity="this_entity" name="UpgradedAbility1" />
+				</hasmodifier>
+				<else>
+					<hasmodifier entity="this_owner_entity" name="alt_HarkonsBlade">
+						<setactivemodifierkey entity="this_entity" name="UpgradedAbility1" />
+					</hasmodifier>
+					<else>
+						<hasmodifier entity="this_owner_entity" name="alt_Dawnbringer">
+							<setactivemodifierkey entity="this_entity" name="UpgradedAbility1" />
+						</hasmodifier>
+						<else>
+							<hasmodifier entity="this_owner_entity" name="alt_LightBrand">
+								<setactivemodifierkey entity="this_entity" name="UpgradedAbility1" />
+							</hasmodifier>
+							<else>
+								<setactivemodifierkey entity="this_entity" name="" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onframe>
+	
+	<modifier key="UpgradedAbility1" modpriority="1"
+		modifierkey="Alt5_UpgradedAbility1"
+	/>
+</state>

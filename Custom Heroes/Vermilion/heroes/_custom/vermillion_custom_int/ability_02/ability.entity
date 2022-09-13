@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Vermilion2"
+
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="200"
+	castactiontime="100"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	casteffecttype="Magic"
+	targetscheme="enemy_units"
+	casteffect="effects/cast.effect"
+	
+	manacost="70,85,100,115"
+	cooldowntime="15000"
+
+	range="19000"
+	forcerange="19000"
+	allowoutofboundscast="true"
+	targetradius="100"
+	
+	showlinecast="true"
+	linecastrange="19000"
+	linecastwidth="100"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<spawnunit name="Gadget_Vermilion2_Reveal" count="1" target="source_position" pushentity="true" />
+		<spawnprojectile name="Projectile_Vermilion2" source="source_entity" target="target_position" bind="stack_entity" proxy="stack_entity" offset="0 140 0" />
+	</onimpact>
+	<modifier key="shardofthemaster_boost" modpriority="100"/>
+</ability>

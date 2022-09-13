@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statenetaccum
+	name="State_Bossbit_Buff_2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype=""
+	allowtransfer=""
+	
+	displaylevel="true"
+	
+	shield="true"
+	maxaccumulator="1350"
+>	
+	<oninflict>
+		<setvar1 source="source_entity" a="source_maxhealth" b="0.08,0.12,0.16,0.20" op="mult" />
+		<setaccumulator value="result" valueb="12,21,30,39" valueop="add" />
+	</oninflict>
+
+	<ondamaged>
+		<damageeffecttype effecttype="DOT" />
+		<else>
+			<targettype type="enemy">
+				<playeffect effect="effects/impact.effect" source="source_entity"/>
+			</targettype>
+		</else>
+		
+		<setvar0 a="source_damage" b="1" op="mult" />
+		<compare a="var0" b="accumulator" op="ge">
+			<evaluate a="var0" b="accumulator" op="sub" />
+			<changedamage b="result" op="min" />
+			<expire />
+		</compare>
+		<else>
+			<changedamage b="0" op="mult" />
+			<evaluate a="accumulator" b="var0" op="sub" />
+			<setaccumulator value="result" />
+		</else>
+	</ondamaged>
+	
+	<onattackedpostimpact>
+		<targettype type="enemy">
+			<playeffect effect="effects/impact.effect" source="source_entity" />
+		</targettype>
+	</onattackedpostimpact>
+	
+	<onexpired>
+		<playeffect effect="effects/state_expire.effect" source="source_entity"/>
+	</onexpired>
+	
+	<onattack effectdescription="true">
+		<cantarget targetscheme="enemy_units_and_Towers">
+			<applystate name="State_Bossbit_Debuff_2" target="target_entity" duration="1000" />
+		</cantarget>
+	</onattack>
+</statenetaccum>

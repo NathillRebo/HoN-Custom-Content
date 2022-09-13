@@ -1,0 +1,42 @@
+
+// Hero_Cyclops_Custom
+Hero_Cyclops_Custom_name										Cyclops
+Hero_Cyclops_Custom_role										Cyclops is a true siege hero, allowing him to stun, slow and permanently weaken enemy structures, while also having a considerable amount of defense to shrug off a few turret attacks. While effective at pushing, he is not bad at fighting other heroes, as he can lock then down for long amounts of time.
+
+// Ability_Cyclops1
+Ability_Cyclops1_name											Hurl Boulder
+Ability_Cyclops1_description									No enemy is out of Cyclops's range, as his boulders are extension of his attacks.
+Ability_Cyclops1_description_simple								Cyclops hurls a boulder at the chosen location. Enemies hit are dealt ^o{20,60,100,140} + Cyclops's Attack Damage as Physical Damage^* and are stunned for ^o{1,1.1,1.2,1.3} seconds^*. This counts as a real auto-attack and affects buildings.\n\n^444Gimme some stone!
+Ability_Cyclops1_effect_header									
+Ability_Cyclops1_tooltip_flavor									Gimme some stone!
+Ability_Cyclops1_IMPACT_effect									Enemies hit are dealt ^o{20,60,100,140} + Cyclops's Attack Damage as Physical Damage^* and are stunned for ^o{1,1.1,1.2,1.3} seconds^*. This counts as a real auto-attack and affects buildings.
+
+// Ability_Cyclops2
+Ability_Cyclops2_name											Slam
+Ability_Cyclops2_description									Cyclops slams the ground, leaving even the toughest enemies reeling.
+Ability_Cyclops2_description_simple								Cyclops slams the ground, dealing ^o{75,145,215,285} Physical Damage^* to enemies and structures around him and reducing their Attack Speed and Movement Speed by ^o{10,20,30,40}%^* for 2 seconds.\n\n^444CYCLOPS SMASH!
+Ability_Cyclops2_effect_header
+Ability_Cyclops2_tooltip_flavor									CYCLOPS SMASH!
+Ability_Cyclops2_IMPACT_effect									Enemies hit are dealt ^o{75,145,215,285} Physical Damage^* and have their Attack Speed and Movement Speed reduced by ^o{10,20,30,40}%^* for 2 seconds. Affects units and structures.
+
+// Ability_Cyclops3
+Ability_Cyclops3_name											Demolish
+Ability_Cyclops3_name:shardofthemaster_boost					^pDemolish^*
+Ability_Cyclops3_description									Cyclops revels in demolishing anything related to architecture, causing great devastation to enemies and structures alike.
+Ability_Cyclops3_description_simple								When off cooldown, your next attack against an enemy unit will deal an additional ^o{25,65,105,145} Physical Damage^* and stun the enemy for ^o{1.7,1.8,1.9,2} seconds^*.\n\nWhen attacking a structure, instead the attack deals an additional ^o{50,100,150,200} bonus Physical Damage^* and the attack permanently reduces the structure's ^oArmor by {0.7,0.9,1.1,1.3}^*, ^oAttack Speed by {2.5,3.5,4.5,5.5}%^* and ^oAttack Damage by {2.5,3.5,4.5,5.5}^*.\n\n^pShard of the Master^* reduces cooldown to 6 seconds.\n\n^444Funy turet go down!
+Ability_Cyclops3_description_simple:shardofthemaster_boost		When off cooldown, your next attack against an enemy unit will deal an additional ^o{25,65,105,145} Physical Damage^* and stun the enemy for ^o{1.7,1.8,1.9,2} seconds^*.\n\nWhen attacking a structure, instead the attack deals an additional ^o{50,100,150,200} bonus Physical Damage^* and the attack permanently reduces the structure's ^oArmor by {0.7,0.9,1.1,1.3}^*, ^oAttack Speed by {2.5,3.5,4.5,5.5}%^* and ^oAttack Damage by {2.5,3.5,4.5,5.5}^*.\n\n^444Funy turet go down!
+Ability_Cyclops3_effect_header
+Ability_Cyclops3_tooltip_flavor									Funy turet go down!
+Ability_Cyclops3_IMPACT_effect									When off cooldown, your next attack against an enemy unit will deal an additional ^o{25,65,105,145} Physical Damage^* and stun the enemy for ^o{1.7,1.8,1.9,2} seconds^*.\n\nWhen attacking a structure, instead the attack deals an additional ^o{50,100,150,200} bonus Physical Damage^* and the attack permanently reduces the structure's ^oArmor by {0.7,0.9,1.1,1.3}^*, ^oAttack Speed by {2.5,3.5,4.5,5.5}%^* and ^oAttack Damage by {2.5,3.5,4.5,5.5}^*.
+
+// Ability_Cyclops4
+Ability_Cyclops4_name											Rock Solid
+Ability_Cyclops4_name:ult_boost									^gRaid Boss^*
+Ability_Cyclops4_description									Cyclops is impervious to lesser attacks and cannot be stopped easily by normal means.
+Ability_Cyclops4_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Increases duration by 1 seconds. Also increases Attack Speed by 90%.o
+Ability_Cyclops4_description_simple								Passively increases damage dealt to structures by ^o{5,10,15}%^* and grants 80% chance to reduce incoming attack damage by ^o{8,16,24}^*, which stacks with similar effects. Use to remove all stuns and disables and gain 100% resistance to those effects for ^o{1,1.5,2}^* seconds.\n\n^gStaff of the Master^* increases duration by 1 second and increases Attack Speed by 90% for the duration.\n\n^444You are now between a stone and me!
+Ability_Cyclops4_description_simple:ult_boost					Passively increases damage dealt to structures by ^o{5,10,15}%^* and grants 80% chance to reduce incoming attack damage by ^o{8,16,24}^*, which stacks with similar effects. Use to remove all stuns and disables and gain 100% resistance to those effects ^gand 90% Attack Speed^* for ^g{2,2.5,3}^* seconds.\n\n^444You are now between a stone and me!
+Ability_Cyclops4_effect_header
+Ability_Cyclops4_tooltip_flavor									You are now between a stone and me!
+Ability_Cyclops4_IMPACT_effect									Passively increases damage dealt to structures by ^o{5,10,15}%^* and grants 80% chance to reduce incoming attack damage by ^o{8,16,24}^*, which stacks with similar effects. Use to remove all stuns and disables and gain 100% resistance to those effects for ^o{1,1.5,2}^* seconds.
+Ability_Cyclops4_IMPACT_effect:ult_boost						Passively increases damage dealt to structures by ^o{5,10,15}%^* and grants 80% chance to reduce incoming attack damage by ^o{8,16,24}^*, which stacks with similar effects. Use to remove all stuns and disables and gain 100% resistance to those effects ^gand 90% Attack Speed^* for ^g{2,2.5,3}^* seconds.

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Custom_ArdentAttack"
+
+	speed="1533"
+	gravity="0"
+	modelscale=".85"
+	model="effects/dagger/model.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+</projectile>

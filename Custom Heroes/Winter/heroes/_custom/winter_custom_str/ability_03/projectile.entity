@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Winter3"
+
+	lifetime="600"
+	useexactlifetime="true"
+	gravity="5500"
+
+	modelscale="1.0"
+	model=""
+		
+	canturn="false"
+	flying="false"
+	pathing="false"
+	flyheight="0"
+	
+	dynamicprecache="effects/affector.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/affector.effect" entity="this_entity" />
+	</onspawn>
+>
+	<onimpact>
+		<spawnaffector name="Affector_Winter3" target="target_position" owner="this_owner_entity" />
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_position" target="" occlude="true" />
+	</onimpact>
+</projectile>

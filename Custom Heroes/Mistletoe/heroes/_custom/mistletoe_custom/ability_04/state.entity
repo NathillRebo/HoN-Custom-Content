@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Mistletoe4"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype=""
+	attackspeed="0.5,0.75,1"
+>
+	<onattackingdamageevent>
+		<evaluate a="0.1,0.15,0.2" b="damage_attempted" op="mult" />
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="ally_units"
+			ignoreinvulnerable="true"
+		>
+			<heal a="result" target="target_entity"/>
+			<playeffect effect="effects/impact_heal.effect" />
+		</areaofeffect>
+	</onattackingdamageevent>
+	<modifier key="ult_boost" modpriority="100"
+		debuffdurationmultiplier="0.5"
+		stunneddurationmultiplier="0.5"
+	>	
+	</modifier>
+</state>

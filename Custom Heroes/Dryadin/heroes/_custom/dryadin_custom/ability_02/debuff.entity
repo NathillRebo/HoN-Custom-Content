@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dryadin_Ability2_Debuff"
+	
+	icon="icon.tga"
+	
+	passiveeffect="effects/state.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	movespeedslow="0.20,0.25,0.30,0.35"
+>
+</state>

@@ -1,0 +1,60 @@
+
+// Hero_Hex_Custom
+Hero_Hex_Custom_name											Hex
+Hero_Hex_Custom_role											Hex is a support, who excels at debuffing her enemies. With Shadow Infusion and Upheaval, she can lock enemies and render them harmless for prolonged amounts of time, while her Shadow Realm allows her to gank effectively and cut her enemies' escape successfully.
+
+// Ability_Hex1
+Ability_Hex1_name												Shadow Realm
+Ability_Hex1_description										Hex hides in the shadow realm, haunting her enemies.
+Ability_Hex1_description_simple									Hex turns invisible for ^o{4.5,6,7.5,9} seconds^*. While invisible this way, enemies she passes through are Silenced and have their Movement Speed reduced by 85% tapering over ^o{1,1.1,1.2,1.3} seconds^*.\n\n^444Can I touch you here?
+Ability_Hex1_effect_header
+Ability_Hex1_tooltip_flavor										Can I touch you here?
+Ability_Hex1_IMPACT_effect										Hex turns invisible for ^o{4.5,6,7.5,9} seconds^*. While invisible this way, enemies she passes through are Silenced and have their Movement Speed reduced by 85% tapering over ^o{1,1.1,1.2,1.3} seconds^*.
+
+// State_Hex1_Self
+State_Hex1_Self_name											Shadow Realm
+State_Hex1_Self_description										Passing through enemies silences them and slows by 85% tapering over {1,1.1,1.2,1.3} seconds.
+
+// State_Hex1_Debuff
+State_Hex1_Debuff_name											Shadow Touch
+
+// Ability_Hex2
+Ability_Hex2_name												Shadow Infusion
+Ability_Hex2_description										Hex infuses the target with the power of shadows, debuffing it if it is an enemy or buffing it if it is an ally.
+Ability_Hex2_description_simple									Hex empowers target friendly unit, increasing its Attack Speed and Movement Speed by ^o{10,15,20,25}%^* and healing it ^o{10,15,20,25} Health^* per second for 10 seconds. \nWhen used on an enemy, reduces Attack Speed and Movement Speed by ^o{10,15,20,25}%^* and deals ^o{10,15,20,25} Magic Damage^* per second for 10 seconds.\n\n^444She likes me, she likes me not...
+Ability_Hex2_effect_header
+Ability_Hex2_tooltip_flavor										She likes me, she likes me not...
+Ability_Hex2_IMPACT_effect										Increases Attack Speed and Movement Speed by ^o{10,15,20,25}%^* and heals ^o{10,15,20,25} Health^* per second for 10 seconds, or reduces Attack Speed and Movement Speed by ^o{10,15,20,25}%^* and deals ^o{10,15,20,25} Magic Damage^* per second for 10 seconds.
+
+// State_Hex2_Ally
+State_Hex2_Ally_name											Shadow Infusion
+State_Hex2_Ally_description										Healing {10,15,20,25} Health per second.
+
+// State_Hex2_Enemy
+State_Hex2_Enemy_name											Shadow Infusion
+State_Hex2_Enemy_description									Taking {10,15,20,25} Magic Damage per second.
+
+// Ability_Hex3
+Ability_Hex3_name												Upheaval
+Ability_Hex3_name:shardofthemaster_boost						^pUpheaval^*
+Ability_Hex3_description										Hex curses the ground with the unholy magic, withering enemies inside.
+Ability_Hex3_description_simple									Hex curses target area for 6 seconds, causing enemies inside to have their Attack Speed and Movement Speed gradually reduced by up to ^o{35,47,59,71}%^*. When the effect expires, it deals ^o{70,130,190,250} Magic Damage^* to enemies still standing in the area.\n\n^pShard of the Master^* doubles duration and increases damage to {105,195,285,375}.\n\n^444I could call a demon at you, if I had one.
+Ability_Hex3_description_simple:shardofthemaster_boost			Hex curses target area for ^p12^* seconds, causing enemies inside to have their Attack Speed and Movement Speed gradually reduced by up to ^p{70,94,118,142}%^*. When the effect expires, it deals ^p{105,195,285,375} Magic Damage^* to enemies still standing in the area.\n\n^444I could call a demon at you, if I had one.
+Ability_Hex3_effect_header
+Ability_Hex3_tooltip_flavor										I could call a demon at you, if I had one.
+Ability_Hex3_IMPACT_effect										Enemies inside have their Attack Speed and Movement Speed gradually reduced by up to ^o{35,47,59,71}%^*. After 6 seconds, the ground erupts, dealing ^o{70,130,190,250} Magic Damage^*.
+
+// State_Hex3
+State_Hex3_name													Upheaval
+
+// Ability_Hex4
+Ability_Hex4_name												Cascading Nether
+Ability_Hex4_name:ult_boost										^gTidal Nether^*
+Ability_Hex4_description										Hex launches a wave of destructive nether at her foes, which grows more powerful the more it devours.
+Ability_Hex4_description2										^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Increases width to 200 and range to 1600.
+Ability_Hex4_description_simple									Hex launches a wave of negative energy, which deals ^o{250,475,700} Magic Damage^* to enemies hit and stuns them for ^o{1,2,3} seconds^*, increased by 1 second for each enemy hero that was already hit.\n\n^gStaff of the Master^* increases width to 200 and range to 1600.\n\n^444In queue everyone, there will be enough for everyone!
+Ability_Hex4_description_simple:ult_boost						Hex launches a wave of negative energy, which deals ^o{250,475,700} Magic Damage^* to enemies hit and stuns them for ^o{1,2,3} seconds^*, increased by 1 second for each enemy hero that was already hit.\n\n^444In queue everyone, there will be enough for everyone!
+Ability_Hex4_effect_header
+Ability_Hex4_tooltip_flavor										In queue everyone, there will be enough for everyone!
+Ability_Hex4_IMPACT_effect										Enemies hit are dealt ^o{250,475,700} Magic Damage^* and stunned for ^o{1,2,3} seconds^*, increased by 1 second for each enemy Hero already hit.
+Ability_Hex4_IMPACT_effect:ult_boost							Enemies hit are dealt ^o{250,475,700} Magic Damage^* and stunned for ^o{1,2,3} seconds^*, increased by 1 second for each enemy Hero already hit.

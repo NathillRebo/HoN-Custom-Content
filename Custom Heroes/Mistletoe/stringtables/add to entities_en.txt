@@ -1,0 +1,63 @@
+
+// Hero_Mistletoe_Custom
+Hero_Mistletoe_Custom_name										Mistletoe
+Hero_Mistletoe_Custom_role										Mistletoe is a carry who works very well with on-hit effects, as her Savagery allows to make double attacks. Combined with Twin Blades, she is able to apply many on-hit effects in a quick succession.
+
+// Ability_Mistletoe1
+Ability_Mistletoe1_name											Ice Blast
+Ability_Mistletoe1_description									Mistletoe throws an ice projectile at the chosen location, which explodes upon reaching its target.
+Ability_Mistletoe1_description_simple							Mistletoe throws a projectile, which explodes at the chosen location, dealing ^o{70,135,200,265} Magic Damage^* and ^oimmobilizing enemies hit for {1.5,1.6,1.7,1.8} seconds^*.\n\n^444Cool down!
+Ability_Mistletoe1_effect_header
+Ability_Mistletoe1_tooltip_flavor								Cool down!
+Ability_Mistletoe1_IMPACT_effect								Enemies hit are dealt ^o{70,135,200,265} Magic Damage^* and are ^oimmobilized for {1.5,1.6,1.7,1.8} seconds^*.
+
+// State_Mistletoe1
+State_Mistletoe1_name											Ice Blast
+
+// Ability_Mistletoe2
+Ability_Mistletoe2_name											Frozen Tempest
+Ability_Mistletoe2_name:shardofthemaster_boost					^pFrozen Tempest^*
+Ability_Mistletoe2_description									Mistletoe surrounds herself with chilling winds.
+Ability_Mistletoe2_description_simple							Activate to toggle on or off. While toggled on, drains ^o{13,16,19,22} Mana^* per second, but deals ^o{11,22,33,44} Magic Damage^* per second to enemies around you, reducing their ^oattack speed and movement speed by {2,4,6,8}%^* for 1.5 seconds, stacking up to 5 times.\n\n^pShard of the Master^* increases the maximum number of stacks to 10.\n\n^444Straight from the Icecrown!
+Ability_Mistletoe2_description_simple:shardofthemaster_boost	Activate to toggle on or off. While toggled on, drains ^o{13,16,19,22} Mana^* per second, but deals ^o{11,22,33,44} Magic Damage^* per second to enemies around you, reducing their ^oattack speed and movement speed by {2,4,6,8}%^* for 1.5 seconds, stacking up to ^p10^* times.\n\n^444Straight from the Icecrown!
+Ability_Mistletoe2_effect_header
+Ability_Mistletoe2_tooltip_flavor								Straight from the Icecrown!
+Ability_Mistletoe2_IMPACT_effect								While active, drains {13,16,19,22} Mana per second, but deals {11,22,33,44} Magic Damage per second to enemies around her, reducing their attack speed and movement speed by {2,4,6,8}% for 1.5 seconds, stacking up to 5 times.
+
+// State_Mistletoe2_Debuff
+State_Mistletoe2_Debuff_name									Frozen Tempest
+
+// State_Mistletoe2
+State_Mistletoe2_name											Frozen Tempest
+State_Mistletoe2_description									Deals {11,22,33,44} Magic Damage per second\nApplies a {2,4,6,8}% Attack speed and Movement speed slow for 1.5 seconds, stacking up to 5 times\nDrains {13,16,19,22} Mana from the source
+State_Mistletoe2_description:shardofthemaster_boost				Deals {11,22,33,44} Magic Damage per second\nApplies a {2,4,6,8}% Attack speed and Movement speed slow for 1.5 seconds, stacking up to ^p10^* times\nDrains {13,16,19,22} Mana from the source
+
+// Ability_Mistletoe3
+Ability_Mistletoe3_name											Savagery
+Ability_Mistletoe3_description									Mistletoe strikes her enemies with unmatched savagery.
+Ability_Mistletoe3_description_simple							When off cooldown, grants a ^osecondary attack on hit^*, which ^oreduces enemy's Movement Speed by 100%^o for 0.7 seconds. Attacks reduce this cooldown by 1 second.\n\n^444Strike you once, you will feel it. Strike you twice...
+Ability_Mistletoe3_effect_header
+Ability_Mistletoe3_tooltip_flavor								Strike you once, you will feel it. Strike you twice...
+Ability_Mistletoe3_IMPACT_effect								When off cooldown, grants a ^osecondary attack on hit^*, which ^oreduces enemy's Movement Speed by 100%^o for 0.7 seconds. Attacks reduce this cooldown by 1 second.
+
+// State_Mistletoe3_Strike
+State_Mistletoe3_Strike_name									Savagery
+
+// State_Mistletoe3_Slow
+State_Mistletoe3_Slow_name										Savagery
+
+// Ability_Mistletoe4
+Ability_Mistletoe4_name											Yuletide
+Ability_Mistletoe4_name:ult_boost								^gYuletide^*
+Ability_Mistletoe4_description									Mistletoe starts the feast, imbuing herself with rage.
+Ability_Mistletoe4_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Removes mana cost and grants 50% Stun and Debuff resistance.
+Ability_Mistletoe4_description_simple							Mistletoe enters rage for 10 seconds, causing her to gain ^o{50,75,100}% bonus Attack Speed^* and ^oheal^* herself and allies around her for ^o{10,15,20}% of damage dealt^*.\n\n^gStaff of the Master^* removes the mana cost and causes this ability to also increase stun and debuff resistance by 50%.\n\n^444Let's share a special wafer!
+Ability_Mistletoe4_description_simple:ult_boost					Mistletoe enters rage for 10 seconds, causing her to gain ^o{50,75,100}% bonus Attack Speed^*^g, 50% Stun and Debuff Resistance^* and ^oheal^* herself and allies around her for ^o{10,15,20}% of damage dealt^*.\n\n^444Let's share a special wafer!
+Ability_Mistletoe4_effect_header
+Ability_Mistletoe4_tooltip_flavor								Let's share a special wafer!
+Ability_Mistletoe4_IMPACT_effect								This rage increases her attack speed by {50,75,100}% and causes her to heal herself and allies within range for {10,15,20}% of damage dealt. This buff lasts 10 seconds.
+Ability_Mistletoe4_IMPACT_effect:ult_boost						This rage increases her attack speed by {50,75,100}%^g, 50% Stun and Debuff Resistance^* and causes her to heal herself and allies within range for {10,15,20}% of damage dealt. This buff lasts 10 seconds.
+
+// State_Mistletoe4
+State_Mistletoe4_name											Yuletide
+State_Mistletoe4_description									Healing allies for {10,15,20}% of damage dealt

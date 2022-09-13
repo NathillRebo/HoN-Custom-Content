@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_zzz_Carmilla"
+
+	team="Hellbourne"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="2.2"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="44"
+	targetoffset="0 0 64"
+	
+	infoheight="180"
+	category="magic"
+	difficulty="2"
+
+	solorating="2"
+	junglerating="0"
+	carryrating="2"
+	supportrating="0"
+	initiatorrating="0"
+	gankerrating="3"
+	pusherrating="0"
+	rangedrating="0"
+	meleerating="5"
+
+	movespeed="310"
+	turnrate="540"
+	turnsmoothing="0.08"
+
+	maxhealth="150"
+	healthregen="1.00"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-0.65"
+	magicarmor="5.0"
+
+	inventory0="Ability_Carmilla1"
+	inventory1="Ability_Carmilla2"
+	inventory2="Ability_Carmilla3"
+	inventory3="Ability_Carmilla4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="330"
+	attackcooldown="1700"
+	attackdamagemin="30"
+	attackdamagemax="36"
+	attacknumanims="2"
+	attackoffset="0 50 170"
+	attackprojectile=""
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="600"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Intelligence"
+	strength="19"
+	strengthperlevel="2"
+	agility="16"
+	agilityperlevel="1.8"
+	intelligence="22"
+	intelligenceperlevel="2.4"
+	
+	previewmodel="preview.mdf"
+	previewpos="0 0 -70"
+	previewangles="0 0 0"
+	previewscale="1.15"
+	previewpassiveeffect=""
+	
+	storemodel="preview.mdf"
+	storepos="0 0 -24"
+	storeangles="0 0 30"
+	storescale="1.8"
+	storepassiveeffect=""
+	
+	portraitcampos="22 -60 25"
+	portraitangles="0 0 0"
+	corpsetime="1050"
+	corpsefadetime="1500"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	overrideportraiteffects="true"
+> 
+	<recommendeditem name="Item_Nuke" /> 2540
+	<recommendeditem name="Item_ArmorOfTheMadMage" /> 4300
+	<recommendeditem name="Item_HealthMana2" /> 4300
+	<recommendeditem name="Item_FrostfieldPlate" /> 4600
+	<recommendeditem name="Item_Protect" /> 4600
+	<recommendeditem name="Item_Silence" /> 4725
+	<recommendeditem name="Item_Immunity" /> 4800
+	<recommendeditem name="Item_GrimoireOfPower" /> 5200
+	
+	<!-- refer to this state for boosted ability 4 effects -->
+	<modifier key="ult_boost" modpriority="101"
+		passiveeffect=""
+	>
+		<aura state="State_Dampeer_Ult_Boost" radius="0" targetscheme="self"/>
+	</modifier>
+	
+	<!-- normal ability 4 effects -->
+	<modifier key="Dampeer_Soul_1" priority="100"
+		passiveeffect="effects/soul1.effect" 
+	/>
+	
+	<modifier key="Dampeer_Soul_2" priority="100"
+		passiveeffect="effects/soul2.effect"
+	/>
+	
+	<modifier key="Dampeer_Soul_3" priority="100"
+		passiveeffect="effects/soul3.effect"
+	/>
+	
+	<modifier key="alt_2_transform" modpriority="100"
+		portraitcampos="23 -65 18.5"
+		portraitangles="0 0 35"
+		model="additional_alt/model.mdf"
+		modelscale="1"
+	/>
+
+</hero>

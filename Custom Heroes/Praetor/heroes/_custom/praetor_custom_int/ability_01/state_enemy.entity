@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_Praetor1_Enemy" 
+
+    icon="icon.tga" 
+    passiveeffect="effects/link.effect" 
+    effecttype="StatusDebuff" 
+    alwaystransmitdata="true" 
+	attackspeedslow="0.1,0.15,0.2,0.25"
+	movespeedslow="0.1,0.15,0.2,0.25"
+	castspeed="-0.15,-0.25,-0.35,-0.45"
+> 
+	<oninflict>
+		<pushability name="Ability_Praetor1" source="this_proxy_entity" />
+		<getrange entity="stack_entity" />
+		<setaccumulator value="result" valueb="150" valueop="add" />
+	</oninflict>
+	
+	<onframe>
+		<evaluate a="target_maxhealth" b="0.01,0.02,0.03,0.04" op="mult"/>
+		<evaluate a="result" b="frametime" op="mult"/>
+		<damage effecttype="Magic DOT" a="0" b="result" op="add" />
+		<distance target="target_entity" source="this_inflictor_entity" />
+		<compare a="result" b="accumulator" op="gt">
+			<expirestate name="State_Praetor1_Self" target="this_inflictor_entity" /> 
+			<expire /> 
+		</compare>
+	</onframe> 
+
+	<onexpired> 
+		<expirestate name="State_Praetor1_Self" target="this_inflictor_entity" /> 
+	</onexpired>
+</state>

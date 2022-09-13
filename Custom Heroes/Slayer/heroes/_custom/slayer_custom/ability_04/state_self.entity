@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Slayer4_Bind"
+	
+	icon="icon.tga"
+	
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	ishidden="true"
+	
+	passiveeffect="effects/launch.effect"
+	
+	effecttype=""
+>
+</state>

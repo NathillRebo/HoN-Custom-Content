@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Cyclops2"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	movespeedslow="0.1,0.2,0.3,0.4"
+	attackspeedslow="0.1,0.2,0.3,0.4"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+	
+</state>

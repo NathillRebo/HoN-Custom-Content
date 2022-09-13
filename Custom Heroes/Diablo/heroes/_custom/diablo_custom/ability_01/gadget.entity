@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Diablo1"
+
+	icon=""
+	portrait=""
+	model="/shared/models/invis.mdf"
+	passiveeffect="effects/gadget.effect"
+	
+	preglobalscale="1.2"
+	modelscale="1.0"
+	effectscale="1.0"
+	boundsheight="38"
+	boundsradius="42"
+	isselectable="false"
+	selectionradius="0"
+	targetoffset="0 0 0"
+
+	canrotate="false"
+	ismobile="false"
+
+	attacktype="none"
+	combattype="Ranged"
+
+	sightrangeday="0"
+	sightrangenight="0"
+	unitwalking="true"
+	canattack="false"
+	deathtime="0"
+	corpsetime="0"
+	
+	lifetime="3250"
+	invulnerable="true"
+	flying="false"
+	drawonmap="false"
+	
+	noblockneutralspawn="true"
+>
+	<aura state="State_Diablo1_Fire" radius="180" targetscheme="enemy_units" ignoreinvulnerable="true" duration="250" />
+</gadget>

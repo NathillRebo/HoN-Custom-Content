@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="ability_03">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.2">
+      
+	  <sound
+	            delay="50"
+				linearfalloff="true"
+				falloffstart="400"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/dryadin_custom/ability_01/sounds/impact.wav"
+			/>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="70"
+				minspeed="100"
+				maxspeed="1200"
+				drag=".05"
+				gravity="-20"
+				minparticlelife="100"
+				maxparticlelife="1000"
+				direction="0 0 1"
+				minangle="30"
+				maxangle="90"
+				material="/shared/effects/materials/abstract_reveal.material"
+			>
+				<particle
+					maxangle="360"
+                    minrollspeed="-40"
+                    maxrollspeed="40"
+                    life="900"
+                    startsize="3"
+                    endsize="3"
+                    startcolor="0 5 0"
+                    midcolor="0 1 0"
+                    endcolor="-2 0 -1"
+                    midcolorpos=".25"
+                    startframe="0"
+                    endframe=".5"
+					scale=".5"
+                />
+				<particle
+					maxangle="360"
+                    minrollspeed="-40"
+                    maxrollspeed="40"
+                    life="900"
+                    startsize="3"
+                    endsize="3"
+                    startcolor="0"
+                    midcolor="0"
+                    endcolor="-2 0 -1"
+                    midcolorpos=".25"
+                    startframe="0"
+                    endframe=".5"
+					scale=".5"
+                />
+			</simpleemitter>
+			
+			
+			<simpleemitter
+					bone="_bone_centerofchest"
+					count="50" particlelife="700"
+					direction="0 1 0"
+					gravity="-1"
+					minspeed="500"  maxspeed="1500"
+					drag="0.05" 
+					material="/shared/effects/materials/phantom_white_reveal.material"
+					offsetsphere="5"
+					depthbias="-150"
+				>
+					<particle					
+						minagle="-360" maxangle="360"
+						startcolor="0" midcolor="0 .1 0" endcolor="0"
+						minsize="5" maxsize="15" scale="2"
+						startframe="1" midframe=".1" endframe="1" midframepos=".3"
+						startalpha=".5" endalpha="0"
+						anchor="0"
+					/>
+				</simpleemitter>
+				
+				<billboard
+					bone="_bone_centerofchest"
+					life="500"
+					startcolor="0"
+					endcolor="0"
+					param=".025"
+					startalpha="1"
+					endalpha="0"
+					startsize="0"
+					endsize="360"
+					lockup="1"
+					pitch="90"
+					material="/shared/effects/materials/refract_ripple.material"
+				/>
+				
+				<billboard
+					bone="_bone_centerofchest"
+					life="500"
+					startcolor="0"
+					endcolor="0"
+					param=".025"
+					startalpha="1"
+					endalpha="0"
+					startsize="0"
+					endsize="150"
+					lockup="1"
+					pitch="90"
+					material="/shared/effects/materials/refract_ripple.material"
+				/>
+				
+				<billboard
+					delay="100"
+					bone="_bone_centerofchest"
+					life="300"
+					startcolor="0 0.75 0"
+					endcolor="0"
+					startsize="0"
+					endsize="250"
+					lockup="1"
+					pitch="90"
+					material="/shared/effects/materials/corona_01.material"
+				/>
+				
+				<billboard
+					bone="_bone_centerofchest"
+					life="400"
+					startcolor="0 0.5 0"
+					endcolor="0"
+					startsize="0"
+					endsize="250"
+					startalpha="1"
+					endalpha="0"
+					lockup="1"
+					pitch="90"
+					material="/shared/effects/materials/whitedot_blend.material"
+				/>
+				
+				<billboard
+					bone="_bone_centerofchest"
+					life="200"
+					startcolor="0 10 0"
+					endcolor="0"
+					startsize="0"
+					endsize="550"
+					lockup="1"
+					pitch="90"
+					scale=".5"
+					material="/shared/effects/materials/flare_03.material"
+				/>
+				
+				<billboard
+					delay="100"
+					bone="_bone_centerofchest"
+					life="200"
+					startcolor="0 2 0"
+					endcolor="0"
+					startsize="0"
+					endsize="250"
+					lockup="1"
+					pitch="90"
+					material="/shared/effects/materials/stomp_01.material"
+				/>
+
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<waitfordeath instance="instance0" />
+</thread>
+
+</effect>
+
+
+
+
+
+
+

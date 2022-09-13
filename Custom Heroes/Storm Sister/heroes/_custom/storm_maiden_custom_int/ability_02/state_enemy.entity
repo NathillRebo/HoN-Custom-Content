@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_StormSister2_Enemy" 
+
+    icon="icon.tga" 
+    passiveeffect="effects/link.effect" 
+    effecttype="StatusDebuff" 
+    alwaystransmitdata="true" 
+	movespeedslow="0.2,0.3,0.4,0.5"
+	armor="-1,-2,-3,-4"
+	magicarmor="-1,-2,-3,-4"
+> 
+	<oninflict>
+		<pushability name="Ability_StormSister2" source="this_proxy_entity" />
+		<getrange entity="stack_entity" />
+		<setaccumulator value="result" valueb="150" valueop="add" />
+	</oninflict>
+	
+	<onframe>
+		<damage effecttype="Magic DOT" source="proxy_entity" amount="25,50,75,100" b="frametime" op="mult" />
+
+		<distance target="target_entity" source="this_inflictor_entity" />
+		<compare a="result" b="accumulator" op="gt">
+			<expirestate name="State_StormSister2_Self" target="this_inflictor_entity" /> 
+			<expire /> 
+		</compare>
+	</onframe> 
+
+	<onexpired> 
+		<expirestate name="State_StormSister2_Self" target="this_inflictor_entity" /> 
+	</onexpired> 
+</state>

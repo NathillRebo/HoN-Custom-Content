@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<sound
+				norestart="true"
+				channel="1355"
+				delay="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".8"
+				sample="/heroes/ravenor/alt5/sounds/item_%.wav"
+			/>
+			
+			
+			<template name="feet">
+				<simpleemitter
+					spawnrate="18"
+					bone="{bone}"
+					minparticlelife="1"
+					maxparticlelife="1200"
+					gravity="-2"
+					minspeed="10"
+					maxspeed="40"
+					drag=".015"
+					material="/shared/effects/materials/fire_add.material"
+					offsetsphere="2"
+					minangle="-10"
+					maxangle="40"
+					direction="0 0 1"
+					directionalspace="global"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						startcolor="1 1 0"
+						midcolor=".5 0 0"
+						endcolor="0 0 0"
+						midcolorpos=".4"
+						minstartsize="30"
+						maxstartsize="40"
+						endsize="12"
+						startalpha="0"
+						midalpha=".7"
+						endalpha="0"
+						midalphapos=".5"
+						turn="true"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					spawnrate="12"
+					bone="{bone}"
+					minparticlelife="1"
+					maxparticlelife="1200"			
+					gravity="-2"
+					minspeed="10"
+					maxspeed="50"
+					drag=".015"
+					material="/shared/effects/materials/whitedot.material"
+					offsetsphere="2"
+					minangle="-10"
+					maxangle="40"
+					direction="0 0 1"
+					directionalspace="global"
+				>
+					<particle 
+						minangle="0"
+						maxangle="360"
+						startcolor="1 .7 .2"
+						midcolor="1 .55 0"
+						endcolor="0 0 0"
+						midcolorpos=".3"
+						minstartsize="3"
+						maxstartsize="6"
+						endsize="0"
+						anchor="1"
+						turn="true"
+					/>
+				</simpleemitter>
+				
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="5"
+					particlelife="300"
+					minspeed="0"
+					maxspeed="30"
+					drag="0.07"
+					offsetsphere="5"
+					material="/shared/effects/materials/refract_outsplash.material"
+				>
+					<particle
+						startalpha=".6"
+						endalpha="0.0"
+						minangle="0"
+						maxangle="360"
+						startsize="15"
+						endsize="75"
+						param=".2"
+						anchor="1"
+					/>
+				</simpleemitter>
+	<!--
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="40"
+						particlelife="600"
+						gravity="-10"
+						speed="10"
+						drag=".003"
+						acceleration="00"
+						position="0 0 0"
+						material="/shared/effects/materials/flame.material"
+						offsetsphere="10 10 0"
+						minangle="0"
+						maxangle="0"
+						direction="0 0 0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="180"
+							minanglespeed="50"
+							startcolor=".3 .3 .2"
+							midcolor=".3 .3 .2"
+							endcolor=".3 .3 .2"
+							midcolorpos="1"
+							maxanglespeed="0"
+							startsize="10"
+							midsize="25"
+							endsize="5"
+							startalpha=".1"
+							midalpha=".3"
+							endalpha="0"
+							startanchor="1"
+							endanchor=".5"
+						/>
+					</simpleemitter>
+	-->
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="4"
+						particlelife="500"
+						gravity="-.2"
+						speed="10"
+						drag="0.07"
+						acceleration="0.0"
+						mintimenudge="0"
+						maxtimenudge="1000"
+						position="0 0 0"
+						material="/shared/effects/materials/refract_wave2.material"
+						offsetsphere="20 20 0"
+						inheritvelocity="0"
+					>
+						<particle
+							pitch="-90"
+							minyaw="-360"
+							maxyaw="360"
+							startsize="25"
+							endsize="90"
+							param="0.015"
+							startalpha="1"
+							endalpha="0"
+							lockright="1"
+							lockup="1"
+							anchor="`"
+						/>
+					</simpleemitter>
+
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="20"
+						particlelife="600"
+						gravity="-2"
+						speed="10"
+						drag=".003"
+						acceleration="00"
+						position="0 0 0"
+						material="/shared/effects/materials/flame.material"
+						offsetsphere="10 10 0"
+						minangle="0"
+						maxangle="0"
+						direction="0 0 0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="180"
+							minanglespeed="50"
+							startcolor=".3 .3 .2"
+							midcolor=".3 0 0"
+							endcolor=".3 0 0"
+							midcolorpos=".25"
+							maxanglespeed="0"
+							startsize="50"
+							midsize="25"
+							endsize="5"
+							startalpha=".1"
+							midalpha=".3"
+							endalpha="0"
+							startanchor="1"
+							endanchor=".5"
+						/>
+					</simpleemitter>
+				<!--	
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="40"
+						particlelife="600"
+						gravity="-10"
+						speed="10"
+						drag=".003"
+						acceleration="00"
+						position="0 0 0"
+						material="/shared/effects/materials/flame.material"
+						offsetsphere="10 10 0"
+						minangle="0"
+						maxangle="0"
+						direction="0 0 0"
+					>
+						<particle 
+							minangle="0"
+							maxangle="180"
+							minanglespeed="50"
+							startcolor=".3 .3 .2"
+							midcolor=".3 .3 .2"
+							endcolor=".3 .3 .2"
+							midcolorpos="1"
+							maxanglespeed="0"
+							startsize="10"
+							midsize="25"
+							endsize="5"
+							startalpha=".1"
+							midalpha=".3"
+							endalpha="0"
+							startstickiness="0"
+							endstickiness="0"
+						/>
+					</simpleemitter>
+	-->
+				</template>
+			<!--
+			<instance name="feet" bone="_bone_leftfoot" />
+			<instance name="feet" bone="_bone_rightfoot" />
+			-->
+			
+			
+			
+			
+			<!--
+			<template name="flaming_foot">
+				<controller bone="{bone}" >
+					<simpleemitter
+						position="{position}"
+						offsetsphere="2 12 3"
+						spawnrate="100"
+						minparticlelife="250"
+						maxparticlelife="500"
+						material="/shared/effects/materials/flame.material"
+						minspeed="10"
+						maxspeed="20"
+						direction="{dir}"
+						angle="20"
+						gravity="-10"
+					>
+						<particle
+							turn="1"
+							startcolor="0"
+							midcolor=".5 .3 .2"
+							endcolor="0"
+							minsize="6"
+							maxsize="10"
+							startscale="2"
+							endscale=".5"
+						/>
+						<particle
+							yaw="180"
+							turn="1"
+							startcolor="0"
+							midcolor=".5 .3 .2"
+							endcolor="0"
+							minsize="6"
+							maxsize="10"
+							startscale="2"
+							endscale=".5"
+						/>
+					</simpleemitter>
+				</controller>
+			</template>
+			-->
+			
+			<template name="flaming_foot">
+				<controller bone="{bone}" >
+					<simpleemitter
+						position="{position}"
+						offsetsphere="0 12 0"
+						spawnrate="50"
+						particlelife="400"
+						particledirectionalspace="local"
+					>
+						<particle>
+							<simpleemitter
+								minlife="250"
+								maxlife="600"
+								minspawnrate="2"
+								maxspawnrate="3"
+								offsetsphere="2"
+								minparticlelife="250"
+								maxparticlelife="400"
+								minspeed="10"
+								maxspeed="20"
+								direction="{dir}"
+								angle="30"
+								gravity="-2"
+								material="/shared/effects/materials/fire_add2.material"
+							>
+								<particle
+									startcolor="0"
+									midcolor=".6 .4 0"
+									endcolor="0"
+									minsize="4"
+									maxsize="7"
+									startscale="2"
+									endscale="1"
+								/>
+								<particle
+									yaw="180"
+									startcolor="0"
+									midcolor=".6 .4 0"
+									endcolor="0"
+									minsize="4"
+									maxsize="7"
+									startscale="2"
+									endscale="1"
+								/>
+							</simpleemitter>
+						</particle>
+						<particle>
+							<simpleemitter
+								minlife="250"
+								maxlife="600"
+								minspawnrate="6"
+								maxspawnrate="8"
+								offsetsphere="2"
+								minparticlelife="250"
+								maxparticlelife="400"
+								minspeed="10"
+								maxspeed="20"
+								direction="{dir}"
+								angle="30"
+								gravity="-2"
+								material="/shared/effects/materials/flame.material"
+							>
+								<particle
+									turn="1"
+									startcolor="0"
+									midcolor="1 .4 0"
+									endcolor="0"
+									minsize="6"
+									maxsize="10"
+									startscale="2"
+									endscale="1"
+								/>
+								<particle
+									yaw="180"
+									turn="1"
+									startcolor="0"
+									midcolor="1 .4 0"
+									endcolor="0"
+									minsize="6"
+									maxsize="10"
+									startscale="2"
+									endscale="1"
+								/>
+							</simpleemitter>
+						</particle>
+					</simpleemitter>
+				
+					<simpleemitter
+						spawnrate="3"
+						particlelife="600"
+						minspeed="0"
+						maxspeed="30"
+						direction="0 0 1"
+						angle="45"
+						drag="0.07"
+						offsetsphere="15"
+						gravity="-2"
+						material="/shared/effects/materials/refract_outsplash.material"
+					>
+						<particle
+							startalpha=".6"
+							endalpha="0.0"
+							minangle="0"
+							maxangle="360"
+							startsize="15"
+							endsize="75"
+							param=".05"
+							anchor="1"
+						/>
+					</simpleemitter>
+				</controller>
+			</template>
+			
+			<instance name="flaming_foot" bone="Bip01 L Foot" position="2 6 4" dir="0 0 1" />
+			<instance name="flaming_foot" bone="Bip01 L Foot" position="2 6 -4" dir="0 0 -1" />
+			<instance name="flaming_foot" bone="Bip01 R Foot" position="2 6 4" dir="0 0 1" />
+			<instance name="flaming_foot" bone="Bip01 R Foot" position="2 6 -4" dir="0 0 -1" />
+			<instance name="flaming_foot" bone="Bip01 R Calf" position="2 6 4" dir="0 0 -1" />
+			<instance name="flaming_foot" bone="Bip01 L Calf" position="2 6 4" dir="0 0 -1" />
+			<instance name="flaming_foot" bone="Bip01 R Calf" position="2 6 -4" dir="0 0 -1" />
+			<instance name="flaming_foot" bone="Bip01 L Calf" position="2 6 -4" dir="0 0 -1" />
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

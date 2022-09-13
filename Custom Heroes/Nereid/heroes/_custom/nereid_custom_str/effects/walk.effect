@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  useentityeffectscale="1" deferred="true" >
+	<definitions >
+		
+		<particlesystem name="system0" space="world" scale="1">
+			<simpleemitter		
+				bone="_bone_origin"
+				position="-50 -50 10"
+				inheritvelocity=".2"
+				spawnrate="100"			
+				particlelife="1000"			
+				gravity="0"
+				speed="50"
+				drag=".01"
+				depthbias="0"
+				material="/shared/effects/materials/smoke_01.material"
+				offsetsphere="40 20 20"
+				angle="50"
+				direction="1 1 0"
+				roll="90"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="30"
+					endsize="80"
+					color=".3 .3 .25"
+					startalpha="0.0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter		
+				bone="_bone_origin"
+				position="50 -50 10"
+				inheritvelocity=".2"
+				spawnrate="100"			
+				particlelife="1000"			
+				gravity="0"
+				speed="50"
+				drag=".01"
+				depthbias="0"
+				material="/shared/effects/materials/smoke_01.material"
+				offsetsphere="40 20 20"
+				angle="50"
+				direction="-1 1 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="30"
+					endsize="80"
+					color=".3 .3 .25"
+					param=".0141151"
+					startalpha="0.0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".1"
+				/>
+			</simpleemitter>			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

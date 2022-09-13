@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nereid1"
+	
+	immobilized2="true"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	negativeeffect="immobilized"
+>
+</state>

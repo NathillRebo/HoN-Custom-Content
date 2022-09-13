@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="1">
+		
+			<model
+				expirelife="0"
+				model="cloth/model.mdf"
+				inheritparentmodifiers="true"
+				parentskeleton="true"
+				parentalpha="false"
+				startalpha="1"
+				midalpha="0"
+				endalpha="0"
+				color=".22 .28 .34"
+			/>
+			
+			
+
+			<model
+				expirelife="0"
+				model="crystals/model.mdf"
+				material="opal.material"
+				inheritparentmodifiers="true"
+				parentskeleton="true"
+				startalpha=".7"
+				endalpha="0"
+				color="0 .75 1"
+			/>
+			
+			<model
+				expirelife="0"
+				model="crystals/model.mdf"
+				inheritparentmodifiers="true"
+				parentskeleton="true"
+				parentalpha="false"
+				startalpha=".8"
+				endalpha="0"
+				color="1.5"
+			/>
+
+		
+			<!-- hero effects -->
+			
+			<light
+				bone="_bone_fx_staff"
+				expirelife="0"
+				startcolor="3 1 3"
+				endcolor="0 0 0"
+				falloffstart="00"
+				falloffend="45"
+				position="0 0 0"
+			/>
+
+			<orbiteremitter
+				expirelife="0"
+				delay="300"
+				bone="_bone_fx_staff"
+				spawnrate="11"
+				particlelife="1000"
+				gravity="0.0"
+				minspeed="2"
+				maxspeed="2.5"
+				acceleration="0" 
+				drag="0"
+				minangle="-90" 
+				maxangle="90" 
+				position="0 0 0" 
+				origin="0 0 0" 
+				orbit="1 0 1" 
+				direction="0 0 1" 
+				offset="10 10 5"
+				cylindrical="false" 
+				material="bat.material"
+			>
+				<particle
+					maxangle="360"
+					startcolor=".0 .75 1"
+					midcolor=".0 .75 1"
+					endcolor="0"
+					minframe="0"
+					maxframe="1"
+					framespeed="1.5"
+					minscale="20"
+					maxscale="24"
+					startsize="2"
+					midsize="1"
+					endsize="2"
+					turn="true"
+					
+				/>
+			</orbiteremitter>
+<!--
+			<trackeremitter	
+				bone="_bone_weapon3"
+				position="0 0 0"
+				targetbone="_bone_weapon3"
+				targetposition="0 0 10"
+				inheritvelocity="0"
+				tracktype="lerp"
+				trackspeed="1"
+				spawnrate="10"
+				minparticlelife="1000"
+				maxparticlelife="1500"
+				offsetsphere="5"
+				minspeed="10"
+				maxspeed="50"
+				direction="0 0 1"
+				material="bat.material"
+			>
+				<particle 
+					startcolor=".0 .75 1"
+					midcolor=".0 .75 1"
+					endcolor="0"
+					midcolorpos=".75"
+					maxangle="359"
+					maxanglespeed="30"
+					minanglespeed="-30"
+					minscale="20"
+					maxscale="40"
+					startsize="2"
+					midsize="1"
+					endsize="2"
+					framespeed="1.5"	
+					anchor="1"
+				/>
+			</trackeremitter>
+			-->
+			
+			
+			
+
+			<billboard
+				bone="_bone_fx_staff"
+				material="/shared/effects/materials/whitedot.material"
+				position="0 0 0"
+				color=".2 .0 .4"
+				size="35"
+				depthbias="-0"
+				expirelife="0"
+			/>
+
+			<billboard
+				bone="_bone_fx_staff"
+				delay="200"
+				position="0 0 0"
+				expirelife="0"
+				startcolor="0 .0 .25"
+				endcolor="0 0 0"
+				size="15"
+				rollspeed="-1250"
+				depthbias="-25"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				expirelife="0"
+				bone="_bone_fx_staff"
+				delay="200"
+				position="0 0 0"
+				startcolor=".1 0 .25"
+				endcolor="0 0 0"
+				size="65"
+				rollspeed="-1250"
+				depthbias="-25"
+				material="/shared/effects/materials/flare_01.material"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

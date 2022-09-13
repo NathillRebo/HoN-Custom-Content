@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Guerilla4_Stealth"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	stealthtype="hero"
+	fadetime="0"
+	unitwalking="true"
+	treewalking="true"
+	
+	modifierkey="guerillaultstealth"
+	
+	effecttype="StatusStealth"
+>
+	<onframe />
+
+	<oninflict>
+		<forgetattacks />
+		<startfade />
+	</oninflict>
+	
+	<onactivatepreimpact>
+		<expire />
+	</onactivatepreimpact>
+	
+	<onattackpreimpact>
+		<expire />
+	</onattackpreimpact>
+	
+	<onexpired>
+		<startexpire entity="this_proxy_entity" />
+	</onexpired>
+</state>

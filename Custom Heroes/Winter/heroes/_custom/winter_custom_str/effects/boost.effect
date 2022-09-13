@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+			
+			<simpleemitter
+				bone="_bone_weapon3"
+				spawnrate="25"
+				expirelife="500"
+				particlelife="500"			
+				gravity="0"
+				speed="0"
+				drag=".01"
+				acceleration="0"
+				timenudge="500"
+				depthbias="-20"
+
+				material="/shared/effects/materials/bad_heal_smoke_06.material"
+				offsetsphere="25 25 5"
+				minangle="265"
+				maxangle="265"
+				direction="0 0 -1"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="45"
+					minanglespeed="50"
+					maxanglespeed="150"
+
+					startcolor=".2"
+					midcolor=".5"
+					endcolor=".4"
+					midcolorpos=".8"
+
+					startframe="0"
+					endframe="1"
+					startsize="50"
+					midsize="50"
+					endsize="50"
+					midsizepos=".05"	
+					
+					
+					startalpha=".0"
+					midalpha=".9"
+					endalpha="0"
+
+					midalphapos=".5"
+				/>
+			</simpleemitter>
+		
+			<simpleemitter
+				bone="_bone_weapon3"
+				spawnrate="25"
+				particlelife="550"
+				gravity="-.2"
+				speed="0"
+				drag="0"
+				acceleration="0.0"		
+				expirelife="300"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				offsetsphere="0 0 0"
+				depthbias="-20"
+			>
+
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="20"
+					maxanglespeed="50"
+
+					startcolor="0 0 0"
+					midcolor=".3"
+					endcolor="0 0 0"
+					midcolorpos=".4"
+
+					startframe="0"
+					endframe="1"
+					startsize="20"
+					midsize="40"
+					endsize="20"
+					midsizepos=".3"	
+					
+					startalpha="0"
+					midalpha=".45"
+					endalpha="0"
+					midalphapos=".01"
+					
+					startstickiness=".95"
+					endstickiness=".95"
+				/>	
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

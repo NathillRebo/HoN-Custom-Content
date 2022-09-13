@@ -1,0 +1,45 @@
+
+// Hero_Bossbit_Custom
+Hero_Bossbit_Custom_name										Bossbit
+Hero_Bossbit_Custom_role										Bossbit is a durable, short-ranged carry that is particularly effective against enemies with high health pool. When his attack is ramped up, he gains loads of benefits from on-hit effects.
+
+// Ability_Bossbit1
+Ability_Bossbit1_name											Searing Shot
+Ability_Bossbit1_name:shardofthemaster_boost					^pSearing Shot^*
+Ability_Bossbit1_description									Fires a long-range missile, that deals ^o{55,70,85,100}^* + ^o{25%,50%,75%,100%}^* of your Attack Damage as Physical Damage to the first enemy it hits.
+Ability_Bossbit1_description_simple								Fires a long-range missile, that deals ^o{55,70,85,100}^* + ^o{25%,50%,75%,100%}^* of your Attack Damage as Physical Damage to the first enemy it hits.\n\n^pShard of the Master^* also causes this ability to reduce Armor of enemy hit by 2 for 5 seconds, stacking up to 3 times.\n\n^444That's some hot stuff!
+Ability_Bossbit1_description_simple:shardofthemaster_boost		Fires a long-range missile, that deals ^o{55,70,85,100}^* + ^o{25%,50%,75%,100%}^* of your Attack Damage as Physical Damage to the first enemy it hits ^pand reduces its Armor by 2 for 5 seconds, stacking up to 3 times^*.\n\n^444That's some hot stuff!
+Ability_Bossbit1_effect_header
+Ability_Bossbit1_tooltip_flavor									That's some hot stuff!
+Ability_Bossbit1_IMPACT_effect									Fires a long-range missile, that deals ^o{55,70,85,100}^* + ^o{25%,50%,75%,100%}^* of your Attack Damage as Physical Damage to the first enemy it hits.
+
+// State_Bossbit_Debuff_1_Shard
+State_Bossbit_Debuff_1_Shard_name								Searing Shot
+
+// Ability_Bossbit2
+Ability_Bossbit2_name											Shield Capacitors
+Ability_Bossbit2_description									Activate to grant yourself a Shield that absorbs Damage equal to ^o{8%,12%,16%,20%} of your max Health^* for 5 seconds.\nWhile the shield lasts, your attacks reduce the enemy's Movement Speed by ^o{14%,21%,28%,35%}^*.
+Ability_Bossbit2_description_simple								Activate to grant yourself a Shield that absorbs Damage equal to ^o{8%,12%,16%,20%} of your max Health^* for 5 seconds.\nWhile the shield lasts, your attacks reduce the enemy's Movement Speed by ^o{14%,21%,28%,35%}^*.\n\n^444Also known as Terror Capacitors.
+Ability_Bossbit2_effect_header
+Ability_Bossbit2_tooltip_flavor									Also known as Terror Capacitors.
+Ability_Bossbit2_IMPACT_effect									Activate to grant yourself a Shield that absorbs Damage equal to ^o{8%,12%,16%,20%} of your max Health^* for 5 seconds.\nWhile the shield lasts, your attacks reduce the enemy's Movement Speed by ^o{14%,21%,28%,35%}^*.
+
+// Ability_Bossbit3
+Ability_Bossbit3_name											Frag Grenade
+Ability_Bossbit3_description									Throws a bomb at the chosen location, dealing ^o{60,100,140,180}^* Magic damage to enemies hit and pushing them ^o300^* units aside.
+Ability_Bossbit3_description_simple								Throws a bomb at the chosen location, dealing ^o{60,100,140,180}^* Magic damage to enemies hit and pushing them ^o300^* units aside.\n\n^444Spread out!
+Ability_Bossbit3_effect_header
+Ability_Bossbit3_tooltip_flavor									Spread out!
+Ability_Bossbit3_IMPACT_effect									Throws a bomb at the chosen location, dealing ^o{60,100,140,180}^* Magic damage to enemies hit and pushing them ^o300^* units aside.
+
+// Ability_Bossbit4
+Ability_Bossbit4_name											Minigun
+Ability_Bossbit4_name:ult_boost									^gMore Dakka!^*
+Ability_Bossbit4_description									Bossbit's attacks ramp up the guns, increasing his attack speed as he attacks and allowing it to shred through toughest enemies.
+Ability_Bossbit4_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Increases the attack speed bonus to 20% per attack.
+Ability_Bossbit4_description_simple								Your attacks ^oincrease attack speed by 15% for 6 seconds^*. This effect stacks, but each stack has a separate timer.\n\nAttacking enemy targets deals an additional ^oPhysical Damage equal to {1%,2%,3%,4%} of target's max Health^*.\n\n^gStaff of the Master^* increases the bonus to 20%.\n\n^444There's never enough bullets.
+Ability_Bossbit4_description_simple:ult_boost					Your attacks ^gincrease attack speed by 20% for 6 seconds^*. This effect stacks, but each stack has a separate timer.\n\nAttacking enemy targets deals an additional ^oPhysical Damage equal to {1%,2%,3%,4%} of target's max Health^*.\n\n^444There's never enough bullets.
+Ability_Bossbit4_effect_header
+Ability_Bossbit4_tooltip_flavor									There's never enough bullets.
+Ability_Bossbit4_IMPACT_effect									Your attacks ^oincrease attack speed by 15% for 6 seconds^*. This effect stacks, but each stack has a separate timer.\n\nAttacking enemy targets deals an additional ^oPhysical Damage equal to {1%,2%,3%,4%} of target's max Health^*.
+Ability_Bossbit4_IMPACT_effect:ult_boost						Your attacks ^gincrease attack speed by 20% for 6 seconds^*. This effect stacks, but each stack has a separate timer.\n\nAttacking enemy targets deals an additional ^oPhysical Damage equal to {1%,2%,3%,4%} of target's max Health^*.

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_Bloodmoon3_Enemy" 
+
+    icon="icon.tga" 
+    passiveeffect="effects/link.effect" 
+    effecttype="StatusDebuff" 
+    alwaystransmitdata="true" 
+> 
+	<oninflict>
+		<pushability name="Ability_Bloodmoon3" source="this_proxy_entity" />
+		<getrange entity="stack_entity" />
+		<setaccumulator value="result" valueb="190" valueop="add" />
+	</oninflict>
+	
+	<onframe>
+		<damage effecttype="SuperiorMagic DOT" amount="30,55,80,105" b="frametime" op="mult" />
+		<compare a="target_mana" b="1" op="gt">
+			<setvar0 a="30,55,80,105" b="frametime" op="mult" />
+			<takemana amount="var0" />
+			<compare a="result" b="0" op="gt">
+				<givemana amount="var0" target="source_entity" />
+			</compare>
+		</compare>
+		<distance target="target_entity" source="this_inflictor_entity" />
+		<compare a="result" b="accumulator" op="gt">
+			<expirestate name="State_Bloodmoon3_Self" target="this_inflictor_entity" /> 
+			<expire /> 
+		</compare>
+	</onframe> 
+
+	<onexpired> 
+		<expirestate name="State_Bloodmoon3_Self" target="this_inflictor_entity" /> 
+		<distance target="target_entity" source="this_inflictor_entity" />
+		<compare a="result" b="accumulator" op="lt">
+			<applystate name="State_Stunned" target="target_entity" proxy="source_entity" duration="750,800,850,900" /> 
+		</compare>
+	</onexpired>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		armor="-4"
+		magicarmor="-4"
+		movespeedslow="0.35"
+	/>
+	
+</state>

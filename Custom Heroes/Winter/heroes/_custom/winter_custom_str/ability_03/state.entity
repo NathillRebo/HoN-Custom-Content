@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Winter3"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	stunned="true"
+	stunneddurationunmodifiable="true"
+
+	ishidden="true"
+
+	unitwalking="true"
+	effecttype=""
+>
+</state>

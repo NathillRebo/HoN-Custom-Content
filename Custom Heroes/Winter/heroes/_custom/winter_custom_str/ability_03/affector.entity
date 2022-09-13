@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Winter3"
+
+	radius="275"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	
+	dynamicprecache="effects/affector.effect"
+>
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/affector.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onimpact>
+		<damage effecttype="Magic" amount="90,140,190,240" />
+		<applystate name="State_Winter_Chill" duration="1000"/>
+		<applystate name="State_Winter3_Enemy" duration="3000"/>
+	</onimpact>
+	
+	<modifier key="Winter4_1" modpriority="100">
+		<onimpact>
+			<damage effecttype="Magic" amount="90,140,190,240" />
+			<applystate name="State_Winter_Chill" duration="1250"/>
+			<applystate name="State_Winter3_Enemy" duration="3000"/>
+		</onimpact>
+	</modifier>
+	<modifier key="Winter4_2" modpriority="100">
+		<onimpact>
+			<damage effecttype="Magic" amount="90,140,190,240" />
+			<applystate name="State_Winter_Chill" duration="1500"/>
+			<applystate name="State_Winter3_Enemy" duration="3000"/>
+		</onimpact>
+	</modifier>
+	<modifier key="Winter4_3" modpriority="100">
+		<onimpact>
+			<damage effecttype="Magic" amount="90,140,190,240" />
+			<applystate name="State_Winter_Chill" duration="1750"/>
+			<applystate name="State_Winter3_Enemy" duration="3000"/>
+		</onimpact>
+	</modifier>
+	<modifier key="Winter4_0_sotm" modpriority="100">
+		<onimpact>
+			<damage effecttype="Magic" amount="90,140,190,240" />
+			<applystate name="State_Winter_Chill" duration="2000"/>
+			<applystate name="State_Winter3_Enemy" duration="3000"/>
+		</onimpact>
+	</modifier>
+	<modifier key="Winter4_1_sotm" modpriority="100">
+		<onimpact>
+			<damage effecttype="Magic" amount="90,140,190,240" />
+			<applystate name="State_Winter_Chill" duration="2250"/>
+			<applystate name="State_Winter3_Enemy" duration="3000"/>
+		</onimpact>
+	</modifier>
+	<modifier key="Winter4_2_sotm" modpriority="100">
+		<onimpact>
+			<damage effecttype="Magic" amount="90,140,190,240" />
+			<applystate name="State_Winter_Chill" duration="2500"/>
+			<applystate name="State_Winter3_Enemy" duration="3000"/>
+		</onimpact>
+	</modifier>
+	<modifier key="Winter4_3_sotm" modpriority="100">
+		<onimpact>
+			<damage effecttype="Magic" amount="90,140,190,240" />
+			<applystate name="State_Winter_Chill" duration="2750"/>
+			<applystate name="State_Winter3_Enemy" duration="3000"/>
+		</onimpact>
+	</modifier>
+</affector>

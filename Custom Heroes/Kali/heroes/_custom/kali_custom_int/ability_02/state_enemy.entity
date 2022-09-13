@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Kali2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	silenced="true"
+	perplexed="true"
+
+	negativeeffect="taunted"
+	
+	effecttype="StatusDisable"
+	allowtransfer="false"
+	
+	modifierkey="forced_Attack"
+	totaldamagemultiplier="-0.25,-0.3,-0.35,-0.4"
+>
+	<onframe>
+		<targettype type="alive" target="source_entity" />
+		<else>
+			<expire />
+		</else>
+	</onframe>
+	
+	<oninflict>
+		<aggression />
+		<order command="stop" force="true" source="this_owner_entity" target="target_entity" />
+		<order command="attack" force="true" forceduration="1800,1900,2000,2100" source="target_entity" target="proxy_entity" />
+	</oninflict>
+	
+	<onrefresh>
+		<aggression />
+		<order command="attack" force="true" forceduration="1800,1900,2000,2100" source="target_entity" target="proxy_entity" />
+	</onrefresh>
+
+	<onexpired>
+		<targettype type="creep">
+			<order command="stop" source="this_owner_entity" target="this_owner_entity" />
+		</targettype>
+	</onexpired>
+</state>

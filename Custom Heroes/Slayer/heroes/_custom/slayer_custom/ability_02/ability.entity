@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Slayer2"
+ 
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="1000"
+	castactiontime="500"
+	casteffect="cast.effect"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	actiontype="target_position"
+	targetscheme="enemy_units"
+	casteffecttype="Attack"
+	manacost="90,95,100,105"
+	cooldowntime="14000,13000,12000,11000"
+	range="350"
+	
+	dynamicprecache="impact.effect"
+>
+	<onlearn>
+		<setscriptvalue name="impact_effect" value="impact.effect" entity="this_entity" />
+	</onlearn>
+	<onimpact>
+		<getyaw source="this_owner_entity" target="target_entity" />
+		<setvar2 a="result" />
+		
+		<setaccumulator value="var2" valueb="30" valueop="add" />
+		<!-- Adjust the angle to be within the bounds of -180 to +180 -->
+		<compare a="accumulator" b="-180" op="lt">
+			<setaccumulator value="accumulator" valueb="360" valueop="add" />
+		</compare>
+		<else>
+			<compare a="accumulator" b="180" op="gt">
+				<setaccumulator value="accumulator" valueb="360" valueop="sub" />
+			</compare>
+		</else>
+		<spawnaffector name="Affector_Slayer2" source="this_owner_entity" target="this_owner_entity" facing="target_entity" angle="accumulator" pushentity="true"/>
+		
+		<setaccumulator value="var2" valueb="30" valueop="sub" />
+		<!-- Adjust the angle to be within the bounds of -180 to +180 -->
+		<compare a="accumulator" b="-180" op="lt">
+			<setaccumulator value="accumulator" valueb="360" valueop="add" />
+		</compare>
+		<else>
+			<compare a="accumulator" b="180" op="gt">
+				<setaccumulator value="accumulator" valueb="360" valueop="sub" />
+			</compare>
+		</else>
+		<spawnaffector name="Affector_Slayer2" source="this_owner_entity" target="this_owner_entity" facing="target_entity" angle="accumulator" pushentity="true"/>
+		
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="target_entity" occlude="true" />
+	</onimpact>
+</ability>

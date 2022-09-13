@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_Vindicator_Ability2"
+    
+    ishidden="true"
+    icon="icon.tga"
+    serverentity="true"
+>
+    <onkilled>
+		<targettype type="mimic" target="source_entity" />
+		<else>
+			<targettype type="self" source="this_inflictor_entity" />
+			<else>
+				<targettype type="heropet" target="source_entity" />
+				<else>
+					<adjustintelligence entity="this_spawner_entity" value="1" />
+					<addcharges count="1" entity="this_spawner_entity" />
+				</else>
+			</else>
+		</else>
+    </onkilled>
+</state>

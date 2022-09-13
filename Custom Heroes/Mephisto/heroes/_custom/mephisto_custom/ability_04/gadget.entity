@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Mephisto4"
+	
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="/shared/models/invis.mdf"
+	skin=""
+	unitwalking="true"
+	
+	stealthtype="unrevealable"
+	fadetime="0"
+	
+	passiveeffect="effects/ability.effect"
+	spawneffect=""
+	respawneffect=""
+	selectsound=""
+	isselectable="false"
+	iscontrollable="false"
+	drawonmap="false"
+	orderconfirmedsound=""
+	
+	preglobalscale="1.35"
+	modelscale="1.0"
+	effectscale="0.9"
+	boundsheight="64"
+	boundsradius="16"
+	selectionradius="36"
+	targetoffset="0 0 0"
+
+	movespeed="0"
+	turnrate="0"
+	ismobile="false"
+	canrotate="false"
+
+	maxhealth="0"
+	healthregen="0"
+	maxmana="0"
+	manaregen="0"
+
+	invulnerable="true"
+	canattack="false"
+
+	clearvision="true"
+	sightrangeday="200"
+	sightrangenight="200"
+	corpsetime="0"
+	deathtime="0"
+	
+	lifetime="1000"
+	noblockneutralspawn="true"
+>
+	<onexpired>
+		<spawnunit name="Gadget_Mephisto4_Whirlpool" count="1" target="this_position" pushentity="true" />
+		<spawnaffector name="Affector_Mephisto4" target="stack_entity" owner="this_owner_entity" />
+	</onexpired>
+	
+</gadget>

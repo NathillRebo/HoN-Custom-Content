@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+		<model
+			parentmodel="1"
+			parentskeleton="1"
+			material="material.material"
+			life="1950"
+			startalpha="0"
+			midalpha="1"
+			endalpha="1"
+			midalphapos=".7"
+		/>
+		
+		<controller delay="1900" >
+			<model
+				life="3750"
+				model="ra_death/model.mdf"
+				material="material.material"
+				anim="death_1"
+				color="1"
+				expirelife="500"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				scale="1"
+			/>
+		</controller>
+
+		</particlesystem>
+
+
+		<modifier
+			color="1 1 1"
+			startalpha="1"
+			midalpha="0"
+			endalpha="0"
+			midalphapos=".2"
+			life="10000"
+		/>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<spawnmodifier instance="instance0"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+	</thread>
+
+</effect>

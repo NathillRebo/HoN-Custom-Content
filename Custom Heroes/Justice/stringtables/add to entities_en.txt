@@ -1,0 +1,54 @@
+
+// Hero_Justice_Custom
+Hero_Justice_Custom_name										Justice
+Hero_Justice_Custom_role										Justice is a durable initiator, who scales very well into the late game, when she also becomes a carry with tremendous regenerations. She doesn't need gold as much as other potential carries, as large part of her damage comes from abilities, which scale with her ultimate's stacks.
+
+// Ability_Justice1
+Ability_Justice1_name											Zeal
+Ability_Justice1_description									Justice empowers her next attack, causing it to cleave through enemies.
+Ability_Justice1_description_simple								Justice's next attack cleaves through enemies, dealing ^o{40,65,90,115} bonus Physical Damage^* to enemies in front of her, ^ohealing herself for {8,13,18,23}^* per target hit.\n\n^444Generates 1 Holy Power.
+Ability_Justice1_effect_header									
+Ability_Justice1_tooltip_flavor									Generates 1 Holy Power.
+Ability_Justice1_IMPACT_effect									Enemies cleaved this way are dealt ^o{40,65,90,115} Physical Damage^*. Justice ^oheals for {8,13,18,23}^* for each enemy hit.
+
+// State_Justice1
+State_Justice1_name												Zeal
+State_Justice1_description										Next attack will cleave through opponents, dealing {40,65,90,115} damage and healing for {8,13,18,23} per target hit.
+
+// Ability_Justice2
+Ability_Justice2_name											Divine Judgment
+Ability_Justice2_description									Justice rushes forward a short distance.
+Ability_Justice2_description_simple								Justice rushes forward, dealing ^o{90,175,260,345} Magic Damage^* to enemies hit and ^oknocking them up for 0.75 seconds^*.\n\n^444I'm coming for you!
+Ability_Justice2_effect_header
+Ability_Justice2_tooltip_flavor									I'm coming for you!
+Ability_Justice2_IMPACT_effect									Enemiese she passes through are dealt ^o{90,175,260,345} Magic Damage^* and are ^oknocked up for 0.75 seconds^*.
+
+// Ability_Justice3
+Ability_Justice3_name											Vendetta
+Ability_Justice3_name:shardofthemaster_boost					^pVendetta^*
+Ability_Justice3_description									Justics culls through enemies nearby, while her determination keeps her in combat.
+Ability_Justice3_description_simple								Passively increases ^oHealth Regen by up to {3,6,9,12}^*, depending on Justice's missing Health.\n\nOn use, Justice culls through enemies nearby, dealing them ^o{40,80,120,160} to {80,160,240,320} Magic Damage^*, depending on her missing health. Enemies hit are ^oslowed by 60% for {0.6,0.75,0.9,1.05} seconds^* if they have less health percentage than Justice, ^oor are stunned otherwise^*.\n\n^pShard of the Master^* deals an additional Magic Damage equal to 12% of target's max Health to enemies that have more health percentage than you.\n\n^444I'm not done yet!
+Ability_Justice3_description_simple:shardofthemaster_boost		Passively increases ^oHealth Regen by up to {3,6,9,12}^*, depending on Justice's missing Health.\n\nOn use, Justice culls through enemies nearby, dealing them ^o{40,80,120,160} to {80,160,240,320} Magic Damage^*, depending on her missing health. Enemies hit are ^oslowed by 60% for {0.6,0.75,0.9,1.05} seconds^* if they have less health percentage than Justice, ^por are stunned and dealt additional Magic Damage equal to 12% of its max Health otherwise^*.\n\n^444I'm not done yet!
+Ability_Justice3_effect_header
+Ability_Justice3_tooltip_flavor									I'm not done yet!
+Ability_Justice3_IMPACT_effect									Enemies hit are dealt ^o{40,80,120,160} to {80,160,240,320} Magic Damage^*, depending on her missing health and are ^oslowed by 60% for {0.6,0.75,0.9,1.05} seconds^* if they have higher health percentage than Justice, ^oor are stunned otherwise^*.\n\nPassively increases ^oHealth Regen by up to {3,6,9,12}^*, depending on Justice's missing Health.
+
+// Ability_Justice4
+Ability_Justice4_name											Final Reckoning
+Ability_Justice4_name:ult_boost									^gDay of Judgment^*
+Ability_Justice4_description									Justice sentences her target for death, rewarding herself and her allies upon killing the target.
+Ability_Justice4_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Now also grants 3% Stun resistance and Debuff resistance per charge.
+Ability_Justice4_description_simple								Justice marks target enemy Hero, dealing it ^o{200,270,340} + {30,36,42}% of target's current Health as Magic Damage^* over 9 seconds and causing any ^ostuns and debuffs applied to it to have increased duration by {30,45,60}%^*.\n\nWhen the target dies, Justice grants a permanent charge and creates a replenishing field at that enemy's location for 9 seconds, which ^oheals {40,60,80} Health and Mana^* per second, while also causing ^oabilities to refresh faster by {40,60,80}%^*.\n\nJustics gains passive {1.5,3,4.5} Health Regen, {0.8,1.6,2.4} Mana Regen and {2.6,5.2,7.8}% Cooldown Reduction per charge.\n\n^gStaff of the Master^* also grants 3% Stun resistance and Debuff resistance per charge.\n\n^444Any last words? Maybe a glass of water?
+Ability_Justice4_description_simple:ult_boost					Justice marks target enemy Hero, dealing it ^o{200,270,340} + {30,36,42}% of target's current Health as Magic Damage^* over 9 seconds and causing any ^ostuns and debuffs applied to it to have increased duration by {30,45,60}%^*.\n\nWhen the target dies, Justice grants a permanent charge and creates a replenishing field at that enemy's location for 9 seconds, which ^oheals {40,60,80} Health and Mana^* per second, while also causing ^oabilities to refresh faster by {40,60,80}%^*.\n\nJustics gains passive {1.5,3,4.5} Health Regen, {0.8,1.6,2.4} Mana Regen, {2.6,5.2,7.8}% Cooldown Reduction ^gand 3% Stun and Debuff resistance^* per charge.\n\n^444Any last words? Maybe a glass of water?
+Ability_Justice4_effect_header
+Ability_Justice4_tooltip_flavor									Any last words? Maybe a glass of water?
+Ability_Justice4_IMPACT_effect									The target takes ^o{200,270,340} + {30,36,42}% of its current Health as Magic Damage^* over 9 seconds and increases the duration of ^ostuns and debuffs applied to it by {30,45,60}%^*\n\nWhen it dies, Justice grants a permanent charge, which grants ^o{1.5,3,4.5} Health Regen^*, ^o{0.8,1.6,2.4} Mana Regen^* and ^o{2.6,5.2,7.8}% Cooldown Reduction^* and creates a replenishing field at that enemy's location for 9 seconds, which ^oheals {40,60,80} Health and Mana^* per second, while also causing ^oabilities to refresh faster by {40,60,80}%^*.
+Ability_Justice4_IMPACT_effect:ult_boost						The target takes ^o{200,270,340} + {30,36,42}% of its current Health as Magic Damage^* over 9 seconds and increases the duration of ^ostuns and debuffs applied to it by {30,45,60}%^*\n\nWhen it dies, Justice grants a permanent charge, which grants ^o{1.5,3,4.5} Health Regen^*, ^o{0.8,1.6,2.4} Mana Regen^*, ^o{2.6,5.2,7.8}% Cooldown Reduction^* ^gand 3% Stun and Debuff resistance^* and creates a replenishing field at that enemy's location for 9 seconds, which ^oheals {40,60,80} Health and Mana^* per second, while also causing ^oabilities to refresh faster by {40,60,80}%^*.
+
+// State_Justice4
+State_Justice4_name												Final Reckoning
+State_Justice4_description										Taking {200,270,340} + {30,36,42}% of your's current Health as Magic Damage over 9 seconds\nSpawns a restoration field for Justice's team on death
+
+// State_Justice4_Ally
+State_Justice4_Ally_name										Justice Served
+State_Justice4_Ally_description									Healing {40,60,80} Health and Mana per second, cooldowns elapse {40,60,80}% faster

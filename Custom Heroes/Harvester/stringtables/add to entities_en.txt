@@ -1,0 +1,51 @@
+
+// Hero_Dread_Custom
+Hero_Dread_Custom_name											Harvester
+Hero_Dread_Custom_role											Harvester is a ganker hero, who can initiate from afar and stick to his enemies effectively, thanks to his increased movement speed and a long silence. Good crown control with nice damage allows him to eliminate weaker targets quickly.
+
+// Ability_Dread1
+Ability_Dread1_name												Hand of Death
+Ability_Dread1_description										Harvester hurls a deadly projectile that leaves the enemy paralyzed.
+Ability_Dread1_description_simple								Harvester hurls a projectile in the chosen direction, stopping at the first enemy hit. The target takes ^o{100,170,240,310} Magic Damage^* and is stunned for ^o{1.3,1.4,1.5,1.6} seconds^*.\n\n^444You cannot escape death!
+Ability_Dread1_effect_header
+Ability_Dread1_tooltip_flavor									You cannot escape death!
+Ability_Dread1_IMPACT_effect									The projectile deals ^o{100,170,240,310} Magic Damage^* on hit and stuns for ^o{1.3,1.4,1.5,1.6} seconds^*.
+
+// Ability_Dread2
+Ability_Dread2_name												Soul Reap
+Ability_Dread2_name:shardofthemaster_boost						^pSoul Reap^*
+Ability_Dread2_description										Harvester's scythe terrorizes his foes as he slices through them, leaving them unable to cast spells.
+Ability_Dread2_description_simple								Harvester slashes through enemies in front of him, dealing ^o{90,170,250,330} Magic Damage^* and ^oSilencing them for {2.5,2.8,3.1,3.4} seconds^*.\n\n^pShard of the Master^* causes Soul Reap to reduce enemy' Armor by 4 for the duration.\n\n^444Shhh... Just rest for a bit.
+Ability_Dread2_description_simple:shardofthemaster_boost		Harvester slashes through enemies in front of him, dealing ^o{90,170,250,330} Magic Damage^*^p, reducing Armor by 4^* and ^oSilencing them for {2.5,2.8,3.1,3.4} seconds^*.\n\n^444Shhh... Just rest for a bit.
+Ability_Dread2_effect_header
+Ability_Dread2_tooltip_flavor									Shhh... Just rest for a bit.
+Ability_Dread2_IMPACT_effect									Enemies hit are dealt ^o{90,170,250,330} Magic Damage^* and are ^oSilenced for {2.5,2.8,3.1,3.4} seconds^*.
+
+// State_Dread2
+State_Dread2_name												Silence
+
+// Ability_Dread3
+Ability_Dread3_name												Reaper
+Ability_Dread3_description										There is no protection from Harvester, as neither speed or armor will prevent him from killing his target.
+Ability_Dread3_description_simple								Passively grants ^o{2,4,6,8} Armor Pierce^* and ^o{10,20,30,40} Movement Speed^*.\n\n^444I'll get you eventually...
+Ability_Dread3_effect_header
+Ability_Dread3_tooltip_flavor									I'll get you eventually...
+Ability_Dread3_IMPACT_effect									Passively grants ^o{2,4,6,8} Armor Pierce^* and ^o{10,20,30,40} Movement Speed^*.
+
+// Ability_Dread4
+Ability_Dread4_name												Harvest Time
+Ability_Dread4_name:ult_boost									^gHarvest Season^*
+Ability_Dread4_description										When the time comes, Harvester begins the Harvesting season, culling through multiple enemies for a short time.
+Ability_Dread4_description2										^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Increases Agility bonus and heals you for 2% of enemies hit's max Health.
+Ability_Dread4_description_simple								When activated, Harvester gains ^o{12,24,36} Agility^* and his attacks deal 100% damage to all enemies within 300 units of the target for 6 seconds.\n\n^gStaff of the Master^* increases the Agility bonus and causes you to heal for 2% of enemies' max Health per attack.\n\n^444Have you even tried... Human Bread?
+Ability_Dread4_description_simple:ult_boost						When activated, Harvester gains ^g{22,34,46} Agility^*, his attacks deal 100% damage to all enemies within 300 units of the target ^gand heal Harvester for 2% of enemies's max Health^* for 6 seconds.\n\n^444Have you even tried... Human Bread?
+Ability_Dread4_effect_header
+Ability_Dread4_tooltip_flavor									Have you even tried... Human Bread?
+Ability_Dread4_IMPACT_effect									When activated, Harvester gains ^o{12,24,36} Agility^* and his attacks deal 100% damage to all enemies within 300 units of the target for 6 seconds.
+Ability_Dread4_IMPACT_effect_ult_boost							When activated, Harvester gains ^g{22,34,46} Agility^*, his attacks deal 100% damage to all enemies within 300 units of the target ^gand heal Harvester for 2% of enemies's max Health^* for 6 seconds.
+
+// State_Dread4
+State_Dread4_name												Harvest Time
+State_Dread4_name:ult_boost										^gHarvest Season^*
+State_Dread4_description										Attacks deal damage to all enemies within 300 units of the target.
+State_Dread4_description:ult_boost								Attacks deal damage to all enemies within 300 units of the target and heal Harvester for 2% of enemies hit's max Health.

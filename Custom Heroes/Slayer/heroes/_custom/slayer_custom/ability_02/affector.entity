@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Slayer2"
+
+	radius="350"
+	arc="120"
+	
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Physical"
+	
+	effect="impact.effect"
+	impacteffect="impact.effect"
+>
+	<onimpact>
+		<!-- Damage -->
+		<setvar0 a="10,35,60,85" />
+		<attack targetscheme="enemy_units" source="source_entity" />
+		<damage effecttype="Physical" amount="1" b="var0" op="mult" />
+	</onimpact>
+	<modifier key="shardofthemaster_boost">
+		<onimpact>
+			<!-- Damage -->
+			<setvar0 a="10,35,60,85" />
+			<attack targetscheme="enemy_units" source="source_entity" />
+			<damage effecttype="Physical" amount="1" b="var0" op="mult" />
+			<applystate name="State_Slayer2_Shard" duration="1200" />
+		</onimpact>
+	</modifier>
+</affector>

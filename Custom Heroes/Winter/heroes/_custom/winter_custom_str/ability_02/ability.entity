@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Winter2"
+
+	statuseffecttooltip="State_Winter2"
+	icon="icon.tga"
+	passiveeffect=""
+	
+	anim="ability_2"
+	casttime="800"
+	castactiontime="150"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	targetscheme="ally_units"
+	manacost="90,95,100,105"
+	cooldowntime="8000"
+	casteffecttype="SuperiorMagic"
+	
+	range="700"
+	targetradius="275"
+
+	doubleactivate="true"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	showrangeandradiusintooltip="true"
+
+	targetpriorities="ally_heroes"
+>
+	<onimpact>
+		<applystate name="State_Winter2" duration="1500" />
+	</onimpact>
+	
+	<modifier key="Winter4_1" modpriority="100"/>
+	<modifier key="Winter4_2" modpriority="100"/>
+	<modifier key="Winter4_3" modpriority="100"/>
+	<modifier key="Winter4_0_sotm" modpriority="100"/>
+	<modifier key="Winter4_1_sotm" modpriority="100"/>
+	<modifier key="Winter4_2_sotm" modpriority="100"/>
+	<modifier key="Winter4_3_sotm" modpriority="100"/>
+	
+	<modifier key="shardofthemaster_boost" modpriority="101"/>
+</ability>

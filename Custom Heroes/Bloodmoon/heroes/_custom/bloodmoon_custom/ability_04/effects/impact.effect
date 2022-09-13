@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="chain_lightning" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.5">
+			<sound
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="800"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/sapphire/ability_01/sounds/imp_%.wav"
+			/>
+			
+			<simpleemitter
+				position="0 0 30"
+				life="700"
+				count="26"
+				spawnrate="932"
+				depthbias="-20"
+				minparticlelife="600"
+				maxparticlelife="1400"
+				speed="542"
+				drag="0.1"
+				offsetsphere="42"
+				material="/shared/effects/materials/dust_smoke_03.material"
+			>
+				<particle 
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minangle="-360"
+					maxangle="0"
+					startcolor="1 .25 .25"
+					midcolor="1 0 0"
+					endcolor="0"
+					startalpha=".5"
+					endalpha="0"
+					startsize="50"
+					endsize="95"
+					endwidth="110"
+				/>
+
+				<particle 
+					minanglespeed="-80"
+					maxanglespeed="80"
+					minangle="-360"
+					maxangle="0"
+					startcolor="1 .15 .15"
+					midcolor="1 0 0"
+					endcolor="0"
+					startalpha=".5"
+					endalpha="0"
+					startsize="50"
+					endsize="95"
+					endwidth="110"
+				/>
+
+			</simpleemitter>
+			
+			<simpleemitter
+				life="400"
+				spawnrate="4333"
+				count="9"
+				position="0 0 30"
+				minparticlelife="200"
+				maxparticlelife="350"
+				material="/shared/effects/materials/smash_add.material"
+				depthbias="-50"
+				offsetsphere="5"
+				>
+				<particle
+					minangle="0"
+					maxangle="360"
+					startcolor="0"
+					midcolor=".4 0 0"
+					endcolor="0"
+					minsize="50"
+					maxsize="100"
+					startscale="1"
+					endscale="3"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="22"
+				spawnrate="4333"
+				minparticlelife="200"
+				maxparticlelife="300"
+				drag=".005"
+				offsetsphere="20"
+				minspeed="325"
+				maxspeed="1192"
+				position="0 0 30"
+				material="/shared/effects/materials/light_rays.material"
+				>
+				<particle
+					startcolor=".7 0 0"
+					midcolor=".5 0 0"
+					endcolor="0"
+					startsize="15"
+					endsize="30"
+					minscale="1"
+					maxscale="5"
+					startheight="5"
+					endheight="40"
+					turn="1"
+				/>
+				<particle
+					startcolor=".8 0 0"
+					midcolor=".7 0 0"
+					endcolor="0"
+					startsize="15"
+					endsize="30"
+					minscale="1"
+					maxscale="5"
+					startheight="5"
+					endheight="40"
+					turn="1"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				count="43"
+				spawnrate="4333"
+				minparticlelife="200"
+				maxparticlelife="300"
+				drag=".005"
+				offsetsphere="20"
+				minspeed="325"
+				maxspeed="2275"
+				position="0 0 30"
+				material="/shared/effects/materials/blob_add.material"
+				>
+				<particle
+					startcolor="1"
+					midcolor="1 .35 .35"
+					endcolor="0"
+					startsize="5"
+					endsize="0"
+					minscale="1"
+					maxscale="2"
+					endstickiness=".3"
+					startheightdistort=".05"
+					endheightdistortion="0"
+					turn="1"
+				/>
+			</simpleemitter> 
+			
+			<simpleemitter
+				position="0 0 30"
+				count="1"
+				particlelife="150"
+				material="/shared/effects/materials/blink.material"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color="1 .15 .15"
+					startalpha=".1"
+					endalpha="0"
+					startsize="25"
+					endsize="125"
+					scale="2"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				count="43"
+				minparticlelife="300"
+				maxparticlelife="500"
+				drag=".005"
+				offsetsphere="20"
+				minspeed="542"
+				maxspeed="1192"
+				position="0 0 30"
+				gravity="5"
+				material="/shared/effects/materials/spark_12.material"
+				>
+				<particle
+					startcolor="1 .65 .65"
+					midcolor="1 .25 .25"
+					endcolor="0"
+					startsize="35"
+					endsize="0"
+					minscale=".5"
+					maxscale="2"
+				/>
+			</simpleemitter>
+			 
+			<billboard
+				life="180"
+				color="1.0 1.0 1.0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam=".5"
+				endparam="0.0"
+				startsize="58"
+				endsize="330"
+				depthbias="-100"
+				position="0 0 30"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				pitch="90"
+			/>	
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<camerashake2 scale="5.0" radius="500" duration="250" frequency="10" />
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

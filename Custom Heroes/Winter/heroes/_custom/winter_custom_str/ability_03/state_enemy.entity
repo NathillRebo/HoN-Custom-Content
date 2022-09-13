@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Winter3_Enemy"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	armor="-1,-2,-3,-4"
+	magicarmor="-1,-2,-3,-4"
+
+	effecttype="StatusDebuff"
+>
+</state>

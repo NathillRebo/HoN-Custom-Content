@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Pandora4"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	effecttype=""
+	
+	ishidden="false"
+	disarmed="true"
+	
+	impactinterval="50"
+	impactdelay="50"
+
+	modifierkey="Pandora4"
+>
+	<oninflict>
+		<!-- If no more charges on the main skill -->
+		<pushability name="Ability_Pandora3" />
+		<setvar1 a="source_level" source="stack_entity" />
+		
+		<!-- Determine curve value for Artillery's Q projectile -->
+		<random min="1" max="5" />
+		<setvar0 a="result" />
+		
+		<compare a="var0" b="1" op="eq">
+			<setpos0 position="this_proxy_position" offsetspace="source_entity" offset="200 200 0" />
+			<spawnprojectile name="Projectile_Pandora4" source="this_owner_entity" owner="this_owner_entity" offsetspace="this_owner_entity" offset="0 0 0" target="pos0" noresponse="true" param="var1" pushentity="true" />
+			<setactivemodifierkey name="Pandora_Projectile1_Curve_1" entity="stack_entity" />
+		</compare>
+		<else>
+			<compare a="var0" b="2" op="eq">
+				<setpos0 position="this_proxy_position" offsetspace="source_entity" offset="200 -200 0" />
+				<spawnprojectile name="Projectile_Pandora4" source="this_owner_entity" owner="this_owner_entity" offsetspace="this_owner_entity" offset="0 0 0" target="pos0" noresponse="true" param="var1" pushentity="true" />
+				<setactivemodifierkey name="Pandora_Projectile1_Curve_2" entity="stack_entity" />
+			</compare>
+			<else>
+				<compare a="var0" b="3" op="eq">
+					<setpos0 position="this_proxy_position" offsetspace="source_entity" offset="0 0 0" />
+					<spawnprojectile name="Projectile_Pandora4" source="this_owner_entity" owner="this_owner_entity" offsetspace="this_owner_entity" offset="0 0 0" target="pos0" noresponse="true" param="var1" pushentity="true" />
+					<setactivemodifierkey name="Pandora_Projectile1_Curve_3" entity="stack_entity" />
+				</compare>
+				<else>
+					<compare a="var0" b="4" op="eq">
+						<setpos0 position="this_proxy_position" offsetspace="source_entity" offset="-200 200 0" />
+						<spawnprojectile name="Projectile_Pandora4" source="this_owner_entity" owner="this_owner_entity" offsetspace="this_owner_entity" offset="0 0 0" target="pos0" noresponse="true" param="var1" pushentity="true" />
+						<setactivemodifierkey name="Pandora_Projectile1_Curve_4" entity="stack_entity" />
+					</compare>
+					<else>
+						<setpos0 position="this_proxy_position" offsetspace="source_entity" offset="-200 -200 0" />
+						<spawnprojectile name="Projectile_Pandora4" source="this_owner_entity" owner="this_owner_entity" offsetspace="this_owner_entity" offset="0 0 0" target="pos0" noresponse="true" param="var1" pushentity="true" />
+					</else>
+				</else>
+			</else>
+		</else>
+		
+		<!-- Art -->
+		<playeffect effect="effects/attackaction.effect" source="source_entity" />
+	</oninflict>
+
+	<onimpact>
+		<!-- If no more charges on the main skill -->
+		<pushability name="Ability_Pandora3" />
+		<setvar1 a="source_level" source="stack_entity" />
+		
+		<!-- Determine curve value for Artillery's Q projectile -->
+		<random min="1" max="5" />
+		<setvar0 a="result" />
+		
+		<compare a="var0" b="1" op="eq">
+			<setpos0 position="this_proxy_position" offsetspace="source_entity" offset="200 200 0" />
+			<spawnprojectile name="Projectile_Pandora4" source="this_owner_entity" owner="this_owner_entity" offsetspace="this_owner_entity" offset="0 0 0" target="pos0" noresponse="true" param="var1" pushentity="true" />
+			<setactivemodifierkey name="Pandora_Projectile1_Curve_1" entity="stack_entity" />
+		</compare>
+		<else>
+			<compare a="var0" b="2" op="eq">
+				<setpos0 position="this_proxy_position" offsetspace="source_entity" offset="200 -200 0" />
+				<spawnprojectile name="Projectile_Pandora4" source="this_owner_entity" owner="this_owner_entity" offsetspace="this_owner_entity" offset="0 0 0" target="pos0" noresponse="true" param="var1" pushentity="true" />
+				<setactivemodifierkey name="Pandora_Projectile1_Curve_2" entity="stack_entity" />
+			</compare>
+			<else>
+				<compare a="var0" b="3" op="eq">
+					<setpos0 position="this_proxy_position" offsetspace="source_entity" offset="0 0 0" />
+					<spawnprojectile name="Projectile_Pandora4" source="this_owner_entity" owner="this_owner_entity" offsetspace="this_owner_entity" offset="0 0 0" target="pos0" noresponse="true" param="var1" pushentity="true" />
+					<setactivemodifierkey name="Pandora_Projectile1_Curve_3" entity="stack_entity" />
+				</compare>
+				<else>
+					<compare a="var0" b="4" op="eq">
+						<setpos0 position="this_proxy_position" offsetspace="source_entity" offset="-200 200 0" />
+						<spawnprojectile name="Projectile_Pandora4" source="this_owner_entity" owner="this_owner_entity" offsetspace="this_owner_entity" offset="0 0 0" target="pos0" noresponse="true" param="var1" pushentity="true" />
+						<setactivemodifierkey name="Pandora_Projectile1_Curve_4" entity="stack_entity" />
+					</compare>
+					<else>
+						<setpos0 position="this_proxy_position" offsetspace="source_entity" offset="-200 -200 0" />
+						<spawnprojectile name="Projectile_Pandora4" source="this_owner_entity" owner="this_owner_entity" offsetspace="this_owner_entity" offset="0 0 0" target="pos0" noresponse="true" param="var1" pushentity="true" />
+					</else>
+				</else>
+			</else>
+		</else>
+		
+		<!-- Art -->
+		<playeffect effect="effects/attackaction.effect" source="source_entity" />
+	</onimpact>
+	
+	<onexpired>
+		<pushability name="Ability_Pandora4" />
+		<delete target="stack_proxy_entity" source="" />
+	</onexpired>
+</state>

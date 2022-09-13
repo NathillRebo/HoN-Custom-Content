@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Dryadin_Custom"
+
+	team="Legion"
+	icon="icon.tga"
+	icon2="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	infoheight="185"
+	preglobalscale="1.675"
+	modelscale="1.0"
+	effectscale="0.7"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 64"
+
+	category="physical magic"
+	difficulty="2.5"
+
+	solorating="4"
+	junglerating="0"
+	carryrating="3"
+	supportrating="5"
+	initiatorrating="0"
+	gankerrating="2"
+	pusherrating="0"
+	rangedrating="5"
+	meleerating="0"
+	
+	movespeed="290"
+	turnrate="540"
+	turnsmoothing="0.05"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="-1"
+	magicarmor="5.0"
+
+	inventory0="Ability_Dryadin1"
+	inventory1="Ability_Dryadin2"
+	inventory2="Ability_Dryadin3"
+	inventory3="Ability_Dryadin4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory7=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="400"
+	attackcooldown="1700"
+	attackdamagemin="25"
+	attackdamagemax="29"
+	attacknumanims="2"
+	attackoffset="0 100 100"
+	attackprojectile="Projectile_EmeraldWardenAttack_Alt"
+	attackrange="500"
+	attackstarteffect=""
+	attackactioneffect="projectile/effects/attack_action.effect"
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Agility"
+	strength="19"
+	strengthperlevel="2.2"
+	agility="20"
+	agilityperlevel="2.6"
+	intelligence="19"
+	intelligenceperlevel="2.1"
+	
+	storemodel="preview.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.55"
+	
+	corpsetime="550"
+	corpsefadetime="3000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	tiltfactor="1.0"
+	tiltspeed="90.0"
+>
+	<recommendeditem name="Item_ManaBurn1" /> 3300
+	<recommendeditem name="Item_AdevesCloak" /> 3500
+	<recommendeditem name="Item_SacrificialStone" /> 4300
+	<recommendeditem name="Item_SpikedBola" /> 4375
+	<recommendeditem name="Item_JadeSpire" /> 4800
+	<recommendeditem name="Item_DaemonicBreastplate" /> 5600
+	<recommendeditem name="Item_Evasion" /> 5700
+	<recommendeditem name="Item_SandScepter" /> 5900
+	
+	<modifier key="iamsheeped" modpriority="100"
+		passiveeffect=""
+	/>
+</hero>

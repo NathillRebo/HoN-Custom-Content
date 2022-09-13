@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dryadin_Ability2_Delay"
+
+	ishidden="true"
+	
+	effecttype=""
+>
+	<onexpired>
+		<killtrees radius="270" />
+		<areaofeffect
+			center="this_owner_entity"
+			radius="270"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<damage effecttype="Magic" amount="80,150,220,290" />
+			<applystate name="State_Dryadin_Ability2_Debuff" target="target_entity" duration="1200,1500,1800,2100" />
+			<!-- Sound -->
+			<playeffect effect="effects/impact_audio.effect" source="this_owner_entity" /> 
+		</areaofeffect>
+		
+		<!-- Art -->
+		
+		<playeffect effect="effects/cast_aoe.effect" source="this_owner_entity" occlude="true" /> 	
+	</onexpired>
+</state>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1" >
+
+			<model
+				model="sotm_models/model.mdf"
+				parentskeleton="true"
+				material="/shared/effects/materials/shell3.material"
+				startcolor="1 0 2"
+				midcolor="2 0 1"
+				endcolor="1 0 2"
+				life="1000"
+				loop="1"
+				expirelife="0"
+				
+			/>
+
+			
+			<template name="dark_trail" >
+				<billboard
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot_blend.material"
+					size="80"
+					depthbias="25"
+					color="0 0 0"
+					alpha="1"
+				/>
+				<billboard
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot_blend.material"
+					size="30"
+					depthbias="25"
+					color=".5 0 .75"
+					alpha="1"
+				/>
+				
+				<!--
+				<trailemitter
+					bone="{bone}"
+					spawnrate="15"
+					particlelife="1000"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/soul_projectile.material"
+				>
+					<particle
+						startsize="25"
+						endsize="0"
+						startcolor=".35 0 .35"
+						endcolor="0"
+						startalpha="1"
+						endalpha="0"
+					/>
+				</trailemitter>
+				-->
+			</template>
+			
+			<instance name="dark_trail" bone="_bone_fx_01" />
+			<instance name="dark_trail" bone="_bone_fx_02" />
+			
+			
+			<beam
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				material="/shared/effects/materials/whitedot_blend.material"
+				size="15"
+				color=".5 0 1"
+				depthbias="-10"
+			/>
+			
+			<billboard
+				bone="_bone_weapon3"
+				material="/shared/effects/materials/whitedot.material"
+				size="50"
+				color=".45 .1 .75"
+				depthbias="-25"
+			/>
+		
+		</particlesystem>
+	</definitions>
+	 
+  <thread>
+    <spawnparticlesystem instance="instance0" particlesystem="system0" />
+    <waitfordeath instance="instance0" />
+    <!-- <die /> -->
+  </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

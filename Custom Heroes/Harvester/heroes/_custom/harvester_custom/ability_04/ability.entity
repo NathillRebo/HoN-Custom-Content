@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Dread4"
+
+	icon="icon.tga"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	casteffect="effects/state_begin.effect"
+
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	novoiceresponse="true"
+	nonaggressive="true"
+	anim="ability_4"
+
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="90000,70000,50000"
+	manacost="150,200,250"
+	noresponse="true"
+
+	nosilence="true"
+	nostun="true"
+	noforce="true"
+
+	modifierkey=""
+>
+	<onimpact>
+		<applystate name="State_Dread4" target="source_entity" duration="6000" />
+	</onimpact>
+	<modifier key="ult_boost" modpriority="100"/>
+</ability>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+
+
+		
+		<terrainemitter
+				spawnrate="15"
+				particlelife="2000"
+			>
+				<particle
+				>
+					<terrainemitter
+						range="30"
+						count="1"
+						particlelife="1000"
+					>
+						<particle
+						minscale=".75"
+						maxscale="1.25">
+							
+								
+							<model
+								minyaw="0"
+								maxyaw="360"
+								minpitch="-15"
+								maxpitch="-15"
+								minroll="-15"
+								maxroll="15"
+								life="1500"
+								anim="idle_1"
+								model="/heroes/geomancer/ability_04/effects/shard/model.mdf"
+								material="crystal.material"
+								color=".5 1 1.5"
+								startscale="0"
+								midscale=".25"
+								endscale="0"
+								midscalepos=".05"
+								alpha=".5"
+							>
+								<model
+									life="500"
+									loop="true"
+									anim="idle"
+									model="/heroes/geomancer/ability_04/effects/shard/model.mdf"
+									material="/shared/effects/materials/shell.material"
+									startcolor="2 .5 3"
+									midcolor="2 .5 3"
+									endcolor="2 .5 3"
+									scale="1"
+								/>
+								<billboard
+									bone="shard"
+									position="0 0 5"
+									size="100"
+									life="1500"
+									startcolor="0"
+									midcolor=".25 .15 .35"
+									endcolor="0"
+									depthbias="-25"
+									material="/shared/effects/materials/whitedot.material"
+								/>
+							</model>
+								
+						</particle>
+					</terrainemitter>
+				</particle>
+			</terrainemitter>
+<!--			
+			<terrainemitter
+				spawnrate="5"
+				particlelife="2000"
+			>
+				<particle
+				>
+				<groundsprite
+					material="/shared/effects/materials/whitedot_ground.material"
+					startcolor=".1 .2 .05"
+					endcolor="0"
+					life="1500"
+					size="30"
+				/>
+				</particle>
+			</terrainemitter>
+	-->		
+			<terrainemitter
+				position="0 0 10"
+				spawnrate="50"
+				minparticlelife="650"
+				maxparticlelife="1000"
+				material="/shared/effects/materials/mana.material"
+				directionalspace="local"
+				gravity="-2"
+				maxspeed="50"
+				direction="0 0 1"
+				angle="90"
+				drag="0.02"
+				offsetsphere="50 50 10"
+				depthbias="-10"
+			>
+				<particle
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+					startcolor=".5 .35 .75"
+					endcolor="0"
+					minstartscale="7.5"
+					maxstartscale="9"
+					minendscale="14"
+					maxendscale="17"
+					minangle="0"
+					maxangle="359"
+					minanglespeed="20"
+					maxanglespeed="100"
+					width="2.5"
+				/>
+			</terrainemitter>
+			
+			<groundsprite
+					material="/shared/effects/materials/whitedot_ground.material"
+					startcolor=".5 0 .5"
+					endcolor="0"
+					expirelife="1500"
+					size="30"
+				/>
+	
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

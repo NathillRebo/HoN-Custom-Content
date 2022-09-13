@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Winter_Frost"
+	
+	icon="icon.tga"
+	passiveeffect="effects/impact.effect"
+	
+	stunned="true"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+</state>

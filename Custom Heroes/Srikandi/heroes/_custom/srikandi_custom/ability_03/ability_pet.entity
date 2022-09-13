@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_ForsakenArcher1_Pet"
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_ForsakenArcher_Ability1"
+	
+	anim=""
+	casttime="800"
+	castactiontime="300"
+
+	maxlevel="4"
+	baselevel="0,1,2,3"
+	requiredlevel="0"
+
+	actiontype="target_position"
+	noresponse="true"
+	
+	range="9999"
+	
+>
+	<onimpact>
+		<playeffect effect="../projectile/cast.effect" />
+		<hasavatarkey name="Hero_ForsakenArcher.Alt" >
+			<playeffect effect="/heroes/forsaken_archer/alt/ability_01/effects/cast.effect" source="source_entity" target="" occlude="true" />
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_ForsakenArcher.Alt2" >
+				<playeffect effect="/heroes/forsaken_archer/alt2/ability_01/effects/cast.effect" source="source_entity" target="" occlude="true" />
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_ForsakenArcher.Alt3" >
+					<playeffect effect="/heroes/forsaken_archer/alt3/ability_01/effects/cast.effect" source="source_entity" target="" occlude="true" />
+				</hasavatarkey>
+				<else>
+					<else>
+						<hasavatarkey name="Hero_ForsakenArcher.Alt4" >
+							<playeffect effect="/heroes/forsaken_archer/alt4/ability_01/effects/cast.effect" source="source_entity" target="" occlude="true" />
+						</hasavatarkey>
+						<else>
+							<hasavatarkey name="Hero_ForsakenArcher.Alt6" >
+								<playeffect effect="/heroes/forsaken_archer/alt6/ability_01/effects/cast.effect" source="source_entity" target="" occlude="true" />
+							</hasavatarkey>
+							<else>
+								<hasavatarkey name="Hero_ForsakenArcher.Alt8" >
+									<playeffect effect="/heroes/forsaken_archer/alt8/ability_01/effects/cast.effect" source="source_entity" target="" occlude="true" />
+								</hasavatarkey>
+								<else>
+									<hasavatarkey name="Hero_ForsakenArcher.Alt9" >
+										<playeffect effect="/heroes/forsaken_archer/alt9/ability_01/effects/cast.effect" source="source_entity" target="" occlude="true" />
+									</hasavatarkey>
+									<else>
+										<hasavatarkey name="Hero_ForsakenArcher.Alt10" >
+											<playeffect effect="/heroes/forsaken_archer/alt10/ability_01/effects/cast.effect" source="source_entity" target="" occlude="true" />
+										</hasavatarkey>
+										<else>
+											<hasavatarkey name="Hero_ForsakenArcher.Alt11" >
+												<playeffect effect="/heroes/forsaken_archer/alt11/ability_01/effects/cast.effect" source="source_entity" target="" occlude="true" />
+											</hasavatarkey>
+											<else>
+											<playeffect effect="effects/cast.effect" source="source_entity" target="" occlude="true" />
+										</else>
+									</else>	
+								</else>
+							</else>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+		</else>
+		
+		<playanim source="this_owner_entity" target="this_owner_entity" name="ability_1" speed="1.5" />
+		<spawnaffector name="Affector_ForsakenArcher_Ability1" target="target_position" />
+		<kill target="target_entity" source="" />
+	</onimpact>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt9" 
+		icon="/heroes/forsaken_archer/alt9/ability_01/icon.tga"
+	>
+	</altavatar>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt11" 
+		icon="/heroes/forsaken_archer/alt11/ability_01/icon.tga"
+	/>
+	
+</ability>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_Ardent3_Buff"
+
+    icon="icon.tga"
+    passiveeffect="effects/state_ally.effect"
+
+    effecttype="StatusBuff"
+    allowtransfer="true"
+
+    armor="1,2,3,4"
+	magicarmor="1,2,3,4"
+>
+</state>

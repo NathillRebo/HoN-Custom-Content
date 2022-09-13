@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Nereid2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusBuff"
+
+	damage="9,17,25,33"
+>
+	<onattackimpact>
+		<heal a="4,8,12,16" target="source_entity"/>
+		<applystate name="State_Nereid2_Debuff" target="target_entity" duration="3000" />
+	</onattackimpact>
+</state>

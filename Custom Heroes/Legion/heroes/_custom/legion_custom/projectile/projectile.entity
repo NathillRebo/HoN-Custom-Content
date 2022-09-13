@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Taint_Attack_Alt"
+
+	speed="900"
+	gravity="-500"
+
+	modelscale="1.85"
+	model="effects/projectile/model.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+</projectile>
+ 

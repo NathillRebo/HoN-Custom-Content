@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Nova1"
+
+	modelscale="1"
+
+	isselectable="false"
+	iscontrollable="false"
+	ismobile="false"
+	canrotate="false"
+	invulnerable="true"
+	drawonmap="false"
+
+	model="/shared/models/invis.mdf"
+	passiveeffect="effects/ability_01.effect"
+
+	lifetime="3000"
+	deathtime="0"
+	corpsetime="0"
+	
+	noblockneutralspawn="true"
+>
+	<aura state="State_Nova1" radius="275" targetscheme="enemy_units" effecttype="Magic" disablenegativeeffectpopuponrefresh="true" />
+
+</gadget>

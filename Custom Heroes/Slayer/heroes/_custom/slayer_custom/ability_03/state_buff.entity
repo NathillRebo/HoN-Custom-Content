@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Slayer3_Buff"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="3"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+
+	damagepercharge="4,6,8,10"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+	
+	<modifier key="ult_boost" modpriority="100"
+		maxcharges="8"
+	/>
+</state>

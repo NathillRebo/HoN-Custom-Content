@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model" >
+	
+	<anim name="idle" clip="clips/default_1.clip" loop="true" loopbackframe="1" >
+		<frameevent frame="1" cmd="StopEffect 0" />
+		<startevent cmd="PlaySoundLoopingLinear sounds/idle.wav 0 1300 1 3 0 300"/>
+		<frameevent frame="55" cmd="PlaySoundLinear sousnds/leftpiece.wav 1300 1300 1"/>
+		<frameevent frame="108" cmd="PlaySoundLinear sosunds/rightpiece.wav 1300 1300 1"/>
+		<startevent cmd="StopSound 1"/>
+		<startevent cmd="StopSound 2"/>
+	</anim>
+	
+	<anim name="portrait" clip="clips/default_1.clip" loop="true" loopbackframe="1"/>
+
+	<anim name="walk_1" clip="clips/walk_1.clip" loop="true" fps="25" loopbackframe="1">
+	<startevent cmd="StopSound 1"/>
+	<startevent cmd="StopSound 3"/>
+	
+	<startevent cmd="PlaySoundLoopingLinear sounds/body_loop.wav 0 500 .9 2 100 300"/>
+	
+	<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+	<frameevent frame="12" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	
+	<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>	
+	<frameevent frame="12" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>	
+	</anim>
+	
+	<anim name="item_1" clip="clips/item_1.clip" fps="30"/>
+	
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="30">
+	<startevent cmd="StopSound 3"/>
+	</anim>
+	
+	<anim name="ability_1" clip="clips/ability_1.clip">
+
+	</anim>
+	
+	<anim name="ability_2" clip="clips/ability_2.clip"/>
+
+    <anim name="ability_3" clip="clips/ability_3.clip">
+		<startevent cmd="StopSound 1"/>
+		<startevent cmd="StopSound 3"/>
+		<startevent cmd="StopSound 2"/>
+		<frameevent frame="1" cmd="StartEffect ../ability_03/effects/night_swoosh.effect"/>
+		<frameevent frame="3" cmd="PlaySoundLinear ../sounds/attack_grunt_n_%.wav 128 1300 1"/>
+		<frameevent frame="10" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 128 1300 .80"/>
+	</anim>
+	
+	<anim name="ability_4_night" clip="clips/ability_4.clip" fps="20">
+		<startevent cmd="StartEffect ability_04/effects/channel_self.effect 0"/>
+		<endevent cmd="StopEffect 0" />
+	</anim>
+	
+	<anim name="ability_4_night_end" clip="clips/ability_4.clip" fps="20" minstartframe="80" maxstartframe="80"/>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="27">
+		<startevent cmd="StopSound 1"/>
+		<startevent cmd="StopSound 2"/>
+		<startevent cmd="StopSound 3"/>
+		<frameevent frame="1" cmd="StartEffect ../effects/attack_night.effect"/>
+		<frameevent frame="15" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 128 1300 .80"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="27">
+	<startevent cmd="StopSound 1"/>
+	<startevent cmd="StopSound 3"/>
+	<startevent cmd="StopSound 2"/>
+	<frameevent frame="10" cmd="PlaySoundLinear sounds/attack_grunt_n_%.wav 128 1300 .85"/>
+	<frameevent frame="15" cmd="PlaySoundLinear /shared/sounds/attacks/attack_light_%.wav 128 1300 .80"/>
+	</anim>
+
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="-1"> 
+	<frameevent frame="0" cmd="PlaySoundLinear ../sounds/death_grunt.wav 400 1800 1"/>
+	<startevent cmd="StopSound 1"/>
+	<startevent cmd="StopSound 3"/>
+	<startevent cmd="StopSound 2"/>
+	<frameevent frame="0" cmd="StartEffect /heroes/solstice/alt5/effects/spawn_sound_killer.effect"/>
+	</anim>
+	
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1">
+    <startevent cmd="StopSound 1"/>
+    <startevent cmd="StopSound 3"/>
+	<startevent cmd="StopSound 2"/> 
+	</anim>	
+	
+	<anim name="taunt_1" clip="clips/taunt_1.clip"/>
+
+			
+</model>

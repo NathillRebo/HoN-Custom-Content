@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Felhound3_Debuff"
+
+	icon="icon.tga"
+	
+	incomingdamagemultiplier="0.14,0.18,0.22,0.26"
+	
+	passiveeffect="effects/state_enemy.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+</state>

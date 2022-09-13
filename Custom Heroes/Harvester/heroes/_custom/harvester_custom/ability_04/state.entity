@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dread4"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+
+	effecttype=""
+	agility="12,24,36"
+
+	modifierkey="Dread_ability4"
+>
+	<onattackimpact effectdescription="true">
+		<targettype type="melee" source="this_owner_entity" target="this_owner_entity">
+			<cantarget targetscheme="enemy_units">
+				<splashdamage a="total_adjusted_damage" b="1" op="mult" radius="300" effecttype="Physical Splash Cleave" targetscheme="enemy_units" />
+				<pushentity entity="target_entity" />
+				
+				<setpos0 position="source_entity" positionend="stack_position" positionmodifier="pointonline" positionvalue="355" />
+			</cantarget>
+		</targettype>
+	</onattackimpact>
+	<modifier key="ult_boost" modpriority="100"
+		agility="22,34,46"
+	>
+		<onattackimpact effectdescription="true">
+			<targettype type="melee" source="this_owner_entity" target="this_owner_entity">
+				<cantarget targetscheme="enemy_units">
+					<splashdamage a="total_adjusted_damage" b="1" op="mult" radius="300" effecttype="Physical Splash Cleave" targetscheme="enemy_units" />
+					<pushentity entity="target_entity" />
+					<setpos0 position="source_entity" positionend="stack_position" positionmodifier="pointonline" positionvalue="355" />
+					<areaofeffect
+						targetselection="all"
+						targetscheme="enemy_units"
+						center="pos0"
+						radius="300"
+						effecttype="Physical Splash Cleave"
+						ignore="stack_entity"
+					>
+						<setvar0 a="0.02" b="target_maxhealth" op="mult"/>
+						<heal target="source_entity" a="1" b="var0" op="mult" />
+					</areaofeffect>
+				</cantarget>
+			</targettype>
+		</onattackimpact>
+	</modifier>
+</state>

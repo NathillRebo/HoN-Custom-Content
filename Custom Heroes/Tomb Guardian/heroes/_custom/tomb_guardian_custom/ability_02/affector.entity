@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_TombGuardian2"
+
+	radiusstart="1"
+	radiusend="457"
+	speed="875"
+	
+	lifetime="800"
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	persist="true"
+	
+	effect="effects/ability.effect"
+	impacteffect="effects/impact.effect"
+	
+	
+>
+	<onimpact>
+		<applystate name="State_Stunned" duration="900,1000,1100,1200"/>
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost">
+		<onimpact>
+			<applystate name="State_Stunned" duration="1250,1350,1450,1550"/>
+		</onimpact>
+	</modifier>
+</affector>

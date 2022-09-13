@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Praetor2_Pulse"
+
+	icon="icon.tga"
+
+	impactinterval="1000"
+	
+	incomingdamagemultiplier="-0.3,-0.35,-0.4,-0.45"
+	passiveeffect="effects/shield.effect"
+
+	effecttype=""
+	allowtransfer="false"
+>
+	<oninflict>
+		<playeffect effect="effects/pulse.effect" source="this_owner_entity" target="" occlude="true" />
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			center="this_owner_entity"
+		>
+			<applystate name="State_Praetor2_CC" target="target_entity" duration="1000" />
+			<damage effecttype="Magic" source="source_entity" target="target_entity" amount="20,30,40,50" />
+		</areaofeffect>
+	</oninflict>
+
+	<onimpact>
+		<playeffect effect="effects/pulse.effect" source="this_owner_entity" target="" occlude="true" />
+		<areaofeffect
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			center="this_owner_entity"
+		>
+			<applystate name="State_Praetor2_CC" target="target_entity" duration="1000" />
+			<damage effecttype="Magic" source="source_entity" target="target_entity" amount="20,30,40,50" />
+		</areaofeffect>
+	</onimpact>
+</state>

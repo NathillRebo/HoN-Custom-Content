@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model" >
+
+	<anim name="idle" clip="clips/default_1.clip" loop="true" blendtime ="250">
+			<startevent cmd="StopSound 1"/>
+	</anim>
+	
+	<anim name="portrait" clip="clips/portrait_1.clip" loop="true" fps="15"/> 
+	
+	<anim name="item_1" clip="clips/item_1.clip" fps="30"/>
+
+	<anim name="bored_1" clip="clips/bored_1.clip" fps="30"/>
+
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="28" loop="true">
+		<frameevent frame="1" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="13" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="25" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="36" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="48" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="60" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+										
+		<frameevent frame="1" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="13" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="25" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="36" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		<frameevent frame="48" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="60" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+		
+		<startevent cmd="StopSound 1"/>
+	</anim>
+
+	<anim name="taunt_1" clip="clips/taunt_1.clip" />
+
+	<anim name="death_1" clip="clips/death_1.clip" fps="15" loop="true" loopbackframe="-1">
+		<startevent cmd="StartEffect effects/death.effect"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_grunt.wav 400 1300 .8"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death_foley.wav 0 1300 1"/>
+		<startevent cmd="StopSound 1"/>
+	</anim>
+
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="30">
+    <frameevent frame="10" cmd="PlaySoundLinear sounds/attack_%.wav 0 1300 1"/>
+	</anim>
+
+	<anim name="attack_2" clip="clips/attack_2.clip" fps="30">
+    <frameevent frame="10" cmd="PlaySoundLinear sounds/attack_%.wav 0 1300 1"/>
+	<frameevent frame="20" cmd="PlaySoundLinear /heroes/witch_slayer/ability_04/sounds/shell_drop.wav 0 800 .5"/>
+	</anim>
+	
+	<anim name="bunker_attack_1" clip="clips/attack_1.clip" fps="30">
+		<frameevent frame="9" cmd="PlaySoundLinear sounds/attack_%.wav 0 1300 .7"/>
+	</anim>
+	
+	<anim name="bunker_attack_2" clip="clips/attack_2.clip" fps="30">
+		<frameevent frame="9" cmd="PlaySoundLinear sounds/attack_%.wav 0 1300 .7"/>
+	</anim>
+	
+	<anim name="bunker_walk_1" clip="clips/bunker_walk_1.clip" fps="30"/>
+
+	<anim name="ability_2" clip="clips/ability_2.clip" fps="30"/>
+	
+	<anim name="ability_3" clip="clips/ability_2.clip" fps="60"/>
+	
+	<anim name="ability_4" clip="clips/ability_4.clip" fps="40"/>
+	
+	<anim name="ability_1" clip="clips/ability_1.clip" fps="100" loop="true" startframe="1" numframes="45" loopbackframe="31" >
+		<frameevent frame="31" cmd="PlaySoundLinear sounds/bazooka_%.wav 1500 2000 .5"/>
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/equip_bazooka.wav 1500 2000 1"/>
+
+	</anim>
+	
+	<anim name="ability_1_end" clip="clips/ability_1.clip" fps="55" startframe="45" numframes="100">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/equip_m60.wav 1500 2000 1"/>
+		<startevent cmd="StopSound 1"/>
+	</anim>
+		
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1">
+		<startevent cmd="StopSound 1"/>
+	</anim>	
+			
+</model>

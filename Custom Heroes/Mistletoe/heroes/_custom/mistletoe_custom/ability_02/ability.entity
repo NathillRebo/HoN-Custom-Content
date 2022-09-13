@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Mistletoe2"
+
+	icon="icon.tga"
+	
+	anim=""
+	casttime="0"
+	castactiontime="0"
+	casteffect=""
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	casteffecttype="Magic"
+	actiontype="toggle"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	manacost="0"
+	activemanacost="0"
+	toggleoffmanacost="0"
+	cooldowntime="1000"
+	targetradius="350"
+	noresponse="false"
+	
+>
+	<checkcost>
+		<compare a="source_mana" b="13,16,19,22" op="le">
+			<invalidate />
+		</compare>
+	</checkcost>
+	
+	<activatecost>
+		<takemana amount="13,16,19,22" triggeractionscript="true" />
+	</activatecost>
+	
+	<ontoggleon>
+		<applystate name="State_Mistletoe2" continuous="true" istoggle="true" />
+	</ontoggleon>
+	
+	<ontoggleoff>
+		<expirestate name="State_Mistletoe2" target="source_entity" />
+		<startcooldown duration="1000" />
+	</ontoggleoff>
+	
+	<onimpact/>
+	
+	<modifier key="manabatterymistletoe" condition="toggle_active" modpriority="100"
+		noresponse="true"
+	>
+	</modifier>
+	
+	<modifier key="Mistletoemana2" modpriority="99"
+	>
+		<activatecost/>
+		
+		<ontoggleoff>
+			<expirestate name="State_Mistletoe2" target="source_entity" />
+			<startcooldown duration="1000" />
+		</ontoggleoff>
+	</modifier>
+</ability>

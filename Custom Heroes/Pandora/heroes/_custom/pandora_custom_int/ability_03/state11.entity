@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_PandoraCurse11"
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	displaylevel="true"
+	allowtransfer="true"
+	effecttype="StatusDebuff"
+	
+	strengthpercharge="-3,-4,-5,-6"
+	agilitypercharge="-3,-4,-5,-6"
+	intelligencepercharge="-3,-4,-5,-6"
+	movespeedpercharge="4,5,6,7"
+>
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+	
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onframe>
+			<setvar0 a="2.64" b="frametime" op="mult" />
+			<setvar0 a="var0" b="charges" op="mult" />
+			<damage target="this_owner_entity" effecttype="Magic DOT" amount="1" b="var0" op="mult" />
+		</onframe>
+	</modifier>
+</state>

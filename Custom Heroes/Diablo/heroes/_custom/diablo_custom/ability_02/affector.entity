@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Diablo2_Shard"
+
+	radius="150"
+	targetscheme="enemy_units"
+	targetselection="all"
+	effecttype="Magic"
+	
+	dynamicprecache="effects/impact.effect"
+>
+	<onimpact>
+		<applystate name="State_Stunned" duration="1000" />
+		<damage effecttype="Magic" amount="50" />
+	</onimpact>
+	
+	<onspawn>
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<onexpired>
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="source_position" target="source_position" occlude="true" />
+	</onexpired>
+</affector>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gadget
+	name="Gadget_Guerilla_Ability1"
+
+	modelscale="1.18"
+
+	isselectable="false"
+	iscontrollable="false"
+	ismobile="false"
+	canrotate="false"
+	invulnerable="true"
+	drawonmap="false"
+
+	model="/shared/models/invis.mdf"
+	passiveeffect="effects/ability_01.effect"
+
+	lifetime="1000,1600,2200,2800"
+	deathtime="0"
+	corpsetime="0"
+	
+	noblockneutralspawn="true"
+>
+	<aura state="State_Guerilla_Ability1" radius="325" targetscheme="ally_units" effecttype="Magic"/>
+</gadget>

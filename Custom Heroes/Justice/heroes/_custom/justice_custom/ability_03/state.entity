@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Justice3_Slow"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	movespeedslow="0.6"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+</state>

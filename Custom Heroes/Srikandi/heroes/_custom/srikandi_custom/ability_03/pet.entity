@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pet
+	name="Pet_ForsakenArcher_Ability1"
+	
+	icon="../ability_03/pet/icon.tga"
+	portrait="../ability_03/pet/icon.tga"
+	model="effects/skeleton/model.mdf"
+	skin=""
+	
+	passiveeffect="../ability_03/pet/effects/passive.effect"
+	spawneffect="../ability_03/pet/effects/spawn.effect"
+	respawneffect=""
+	selectsound=""
+	orderconfirmedsound=""
+	
+	preglobalscale="1.8"
+	modelscale="1.0"
+	
+	canrotate="false"
+	ismobile="false"
+
+	invulnerable="true"
+	diewithowner="false"
+	iscontrollable="false"
+	isselectable="false"
+	unitwalking="true"
+	buildingwalking="true"
+	cliffwalking="true"
+	treewalking="true"
+	
+	inventory0="Ability_ForsakenArcher1_Pet"
+	
+	canattack="false"
+	attacktype="none"
+	combattype="Melee"
+	
+	lifetime="500"
+	unittype=""
+	nothreat="true"
+>
+
+	<altavatar key="Hero_ForsakenArcher.Alt"
+		model="/heroes/forsaken_archer/alt/ability_01/effects/pet/model.mdf"
+	/>
+
+	<altavatar key="Hero_ForsakenArcher.Alt2"
+		model="/heroes/forsaken_archer/alt2/ability_01/effects/pet/model.mdf"
+	/>
+
+	<altavatar key="Hero_ForsakenArcher.Alt3" 
+		model="/heroes/forsaken_archer/alt3/ability_01/effects/pet/model.mdf"
+	/>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt4" 
+		model="/heroes/forsaken_archer/alt4/ability_01/effects/pet/model.mdf"
+		passiveeffect="/heroes/forsaken_archer/alt4/ability_01/effects/passive.effect"
+		spawneffect="/heroes/forsaken_archer/alt4/ability_01/effects/spawn.effect"
+	/>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt6"
+		model="../alt6/ability_01/effects/pet/model.mdf"
+		passiveeffect="../alt6/ability_01/effects/pet/passive.effect"
+		spawneffect="../alt6/ability_01/effects/pet/spawn.effect"
+	/>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt9"
+	    icon="/heroes/forsaken_archer/alt9/ability_01/icon.tga"
+		model="../alt9/ability_03/pet/model.mdf"
+		passiveeffect="../alt9/ability_03/effects/pet/passive.effect"
+		spawneffect="../alt9/ability_03/effects/pet/spawn.effect"
+	/>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt10"
+		model="../alt10/ability_03/pet/model.mdf"
+		passiveeffect="../alt10/ability_03/effects/pet/passive.effect"
+		spawneffect="../alt10/ability_03/effects/pet/spawn.effect"
+	/>
+	
+	<altavatar key="Hero_ForsakenArcher.Alt11"
+		icon="/heroes/forsaken_archer/alt11/ability_01/icon.tga"
+	/>
+</pet>

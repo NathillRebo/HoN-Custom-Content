@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Praetor2_CC"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	movespeedslow="0.3,0.35,0.4,0.45"
+>
+</state>

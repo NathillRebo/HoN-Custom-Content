@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1" >
+						
+			<sound
+			    life="1250"
+			    forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1250"
+				volume=".5"
+				sample="../sounds/cast_trail.wav"
+			/>
+			
+			<beam
+				expirelife="269"
+				bone_a="_bone_weapon1"
+				bone_b="_bone_weapon3"
+				size="108"
+				material="/shared/effects/materials/whitedot.material"
+				startalpha="1"
+				endalpha="0"
+				startcolor="1 0 0"
+				endcolor="0 0 0"
+			/>
+			
+			<beam
+				expirelife="269"
+				bone_a="_bone_weapon3"
+				bone_b="_bone_weaponattach"
+				size="108"
+				material="/shared/effects/materials/whitedot.material"
+				startalpha="1"
+				endalpha="0"
+				startcolor="1 0 0"
+				endcolor="0 0 0"
+			/>
+			<template name="swoosh_trail">
+				<trailemitter
+					bone="{bone}"
+					spawnrate="54"
+					particlelife="673"
+					material="/shared/effects/materials/swoosh_add.material"
+					texposscale="0"
+					texstretchscale="1"
+				>
+					<particle
+						startcolor="0"
+						midcolor="1 0 0"
+						endcolor="0"
+						size="20"
+					/>
+				</trailemitter>
+			</template>
+				
+			<instance name="swoosh_trail" bone="_bone_weapon1" />
+			<instance name="swoosh_trail" bone="Bone009" />
+			<instance name="swoosh_trail" bone="Bone010" />
+			<instance name="swoosh_trail" bone="Bone011" />
+			<instance name="swoosh_trail" bone="Bone012" />
+			<instance name="swoosh_trail" bone="_bone_rightfoot" />
+			<instance name="swoosh_trail" bone="_bone_leftfoot" />
+			
+			<trailemitter
+				bone="_bone_weapon3"
+				spawnrate="54"
+				particlelife="404"
+				material="/shared/effects/materials/flux_trail.material"
+				texposscale="0"
+				texstretchscale="1"
+			>
+				<particle
+					startcolor="0"
+					midcolor="1 0 0"
+					endcolor="0"
+					midcolorpos=".1"
+					size="25"
+				/>
+			</trailemitter>
+			
+			<billboard
+				expirelife="269"
+				bone="_bone_weapon3"
+				size="269"
+				material="/shared/effects/materials/flare_05.material"
+				startcolor="1 0 0"
+				endcolor="0 0 0"
+				depthbias="-10"
+			/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hades2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	stealthtype="hero"
+	fadetime="1000"
+	unitwalking="true"
+	
+	effecttype="StatusStealth"
+>
+	<oninflict>
+		<playeffect effect="effects/initial_impact.effect" source="target_entity" />
+		<forgetattacks />
+		<startfade />
+	</oninflict>
+	
+	<onexpired>
+		<areaofeffect
+			radius="400"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<applystate name="State_Hades2_Silence" duration="1350,1450,1550,1650" target="target_entity" />
+		</areaofeffect>
+	</onexpired>
+	
+	<onattack>
+		<expire />
+	</onattack>
+	
+	<onactivatepreimpact>
+		<expire />
+		<isitem entity="inflictor_entity" >
+			<expire />
+		</isitem>
+	</onactivatepreimpact>
+</state>

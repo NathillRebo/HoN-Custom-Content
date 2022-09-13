@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Srikandi_Ability1_Attack"
+
+	
+	
+	icon="icon.tga"
+	passiveeffect=""
+	modifierkey="srikandi_ability1_attackspeed"
+	attackspeed="0.20,0.40,0.60,0.80"
+	effecttype=""
+>
+
+</state>

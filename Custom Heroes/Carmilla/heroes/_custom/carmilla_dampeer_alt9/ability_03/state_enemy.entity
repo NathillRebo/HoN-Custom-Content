@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Carmilla3"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	silenced="true"
+	perplexed="true"
+	disarmed="true"
+	unitwalking="true"
+
+	negativeeffect="feared"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	movespeedslow="1"
+>
+	<onframe>
+		<targettype type="alive" target="source_entity" />
+		<else>
+			<expire />
+		</else>
+	</onframe>
+	
+	<oninflict>
+		<order command="move" force="true" forceduration="lifetime" source="target_entity" target="proxy_entity" />
+	</oninflict>
+	
+	<onrefresh>
+		<order command="move" force="true" forceduration="lifetime" source="target_entity" target="proxy_entity" />
+	</onrefresh>
+
+	<onexpired>
+		<targettype type="creep">
+			<order command="stop" source="this_owner_entity" target="this_owner_entity" />
+		</targettype>
+	</onexpired>
+</state>

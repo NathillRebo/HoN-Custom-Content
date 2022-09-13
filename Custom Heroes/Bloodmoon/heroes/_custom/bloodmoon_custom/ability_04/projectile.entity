@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Bloodmoon4"
+	
+	speed="3333"
+	gravity="0"
+	
+	canturn="true"
+	flying="true"
+	flyheight="0"
+	
+	touchradius="50"
+	touchradiusdiradjust="true"
+	touchtargetscheme="nothing"
+	toucheffecttype=""
+	
+	impacteffect="effects/impact.effect"
+	
+	impactdistance="60"
+>
+	<ontouch>
+		<kill target="this_entity" source="" />
+	</ontouch>
+	
+	<onimpact>
+		<damage effecttype="Physical" amount="230,440,650" />
+		<kill target="this_entity" source="" />
+	</onimpact>
+	<modifier key="ult_boost" modpriority="100">
+		<onimpact>
+			<damage effecttype="Physical" amount="230,440,650" />
+			<applystate name="State_Bloodmoon4_Shield" target="source_entity" duration="2000" />
+			<kill target="this_entity" source="" />
+		</onimpact>
+	</modifier>
+</projectile>

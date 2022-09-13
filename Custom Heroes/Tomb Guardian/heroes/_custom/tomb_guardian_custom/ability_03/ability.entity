@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_TombGuardian3"
+
+	icon="icon.tga"
+	
+	anim=""
+	casttime="0"
+	castactiontime="0"
+	casteffect=""
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	casteffecttype="Magic"
+	actiontype="toggle"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	manacost="0"
+	activemanacost="0"
+	toggleoffmanacost="0"
+	cooldowntime="1500"
+	targetradius="400"
+	noresponse="false"
+	healthregen="1,2,3,4"
+>
+	<activatecost>
+		<damage amount="source_health" b="0.06" op="mult" triggeractionscript="true" />
+	</activatecost>
+	
+	<ontoggleon>
+		<applystate name="State_TombGuardian3" continuous="true" istoggle="true" />
+	</ontoggleon>
+	
+	<ontoggleoff>
+		<expirestate name="State_TombGuardian3" target="source_entity" />
+		<startcooldown duration="1500" />
+	</ontoggleoff>
+	
+	<onimpact/>
+	
+	<modifier key="manabatterytombguardian" condition="toggle_active" modpriority="100"
+		noresponse="true"
+	>
+	</modifier>
+</ability>

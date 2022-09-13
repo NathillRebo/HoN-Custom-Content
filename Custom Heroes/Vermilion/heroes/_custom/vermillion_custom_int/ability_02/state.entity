@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Vermilion2"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state1.effect"
+	revealed="true"
+	sighted="true"
+	
+	magicarmor="-3,-4,-5,-6"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+</state>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Hades3"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	noresponse="true"
+	
+	casttime="0"
+	castactiontime="0"
+	
+	cooldowntime="1000"
+	
+>
+	<aura name="hadesaura" state="State_Hades3" radius="900" targetscheme="enemy_units" propagatecondition="not_stealthed" />
+	
+	<onimpact>
+		<setactivemodifierkey name="hades3_off" entity="this_entity" />
+	</onimpact>
+	
+	<modifier key="hades3_off" modpriority="150"
+		icon="/shared/icons/off.tga"
+	>
+		<aura name="hadesaura" state="State_Hades3" radius="0" targetscheme="nothing" propagatecondition="not_stealthed" />
+		
+		<onimpact>
+			<setactivemodifierkey name="" entity="this_entity" />
+		</onimpact>
+	</modifier>
+	
+</ability>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Justice2"
+
+	speed="1438"
+	gravity="0"
+
+	modelscale="1.0"
+	model="/shared/models/invis.mdf"
+	traileffect=""
+
+	canturn="false"
+	flying="true"
+	flyheight="0"
+	touchtargetscheme="enemy_units"
+	targetselection="all"
+	touchradius="100"
+	maxtouchespertarget="1"
+	touchradiusdiradjust="true"
+	toucheffecttype="Magic"
+>
+	<ontouch>
+		<applystate name="State_Stunned" duration="750" />
+		<damage effecttype="Magic" amount="90,175,260,345" />
+		<unbind target="target_entity" />
+		<spawnprojectile name="Projectile_Justice2_Air" source="target_entity" target="target_entity" bind="target_entity" ignoretargetoffset="true" noresponse="true" />
+	</ontouch>
+	
+</projectile>

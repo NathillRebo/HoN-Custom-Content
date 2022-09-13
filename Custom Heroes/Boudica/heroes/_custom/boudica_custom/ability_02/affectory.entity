@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Boudica2"
+
+	radius="400"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype=""
+	persist="true"
+	
+	effect=""
+	impacteffect=""
+>
+	<onimpact>
+		<applystate name="State_Boudica2" duration="4000" target="target_entity" />
+		<cantarget targetscheme="enemy_heroes" >
+			<applystate name="State_Boudica2_Buff" duration="8000" target="source_entity" />
+		</cantarget>
+	</onimpact>
+</affector>

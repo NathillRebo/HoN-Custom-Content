@@ -1,0 +1,26 @@
+
+// Hero_zzz_Nereid
+Hero_zzz_Nereid_name											Nereid
+
+// Ability_Nereid1
+Ability_Nereid1_name											Pin
+Ability_Nereid1_description_simple								Nereid throws her trident at the chosen location, dealing ^o{85,145,205,265} Magic Damage^* to enemies hit. Enemies in the center are also ^oImmobilized for {1.6,1.8,2,2.2} seconds^*.\n\n^444Ace in the hole!
+
+// Ability_Nereid2
+Ability_Nereid2_name											Spot Weaknesses
+Ability_Nereid2_description_simple								Nereid strikes where her enemies are most vulnerable for the next 5 seconds. During this time, she gains ^o{9,17,25,33} Attack Damage^*, her attacks heal her for ^o{4,8,12,16} Health^* and reduce enemy's ^oDamage Dealt by {4,5,6,7}% for 3 seconds, stacking up to 3 times^*.\nAttacks passively reduce the cooldown of this ability by 1 second.\n\n^444Damn, I missed your eyes!
+
+// Ability_Nereid3
+Ability_Nereid3_name											Crushing Wave
+Ability_Nereid3_name:shardofthemaster_boost						^pCrushing Wave^*
+Ability_Nereid3_description_simple								Nereid leaps at the chosen location, dealing ^o{95,155,215,275} Magic Damage to enemies nearby, stunning them for ^o{0.9,1,1.1,1.2} seconds^* and pushing enemies hit back.\n\n^pShard of the Master^* slightly increases stun duration and causes Nereid to attack each enemy hit.\n\n^444Wave goodbye!
+Ability_Nereid3_description_simple:shardofthemaster_boost		Nereid leaps at the chosen location, dealing ^o{95,155,215,275} Magic Damage to enemies nearby, stunning them for ^p{1,1.1,1.2,1.3} seconds^*, pushing enemies hit back and attacking each enemy once (counts as a real auto-attack).\n\n^444Wave goodbye!
+
+// Ability_Nereid4
+Ability_Nereid4_name											Poseidon's Blessing
+Ability_Nereid4_name:ult_boost									^gPoseidon's Blessing^*
+Ability_Nereid4_description_simple								Whenever Nereid uses an ability, she gains a stack of Poseidon's Blessing for 6 seconds, up to 4. Each stack increases her ^oHealth Regen by {4.5,8.5,12.5}^*, to a total of ^o{18,34,50} bonus Health Regen^*.\n\n^gStaff of the Master^* increases Attack Speed by 20 per charge.\n\n^444I don't need a healer!
+Ability_Nereid4_description_simple:ult_boost					Whenever Nereid uses an ability, she gains a stack of Poseidon's Blessing for 6 seconds, up to 4. Each stack increases her ^oHealth Regen by {4.5,8.5,12.5}^* ^gand Attack Speed by 20^*, to a total of ^o{18,34,50} bonus Health Regen^* ^gand 80 Attack Speed^*.\n\n^444I don't need a healer!
+
+// State_Nereid4
+State_Nereid4_name												Poseidon's Blessing

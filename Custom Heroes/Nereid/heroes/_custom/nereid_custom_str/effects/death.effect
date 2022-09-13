@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="death_debris">
+	<definitions>
+	
+		<modifier
+			life="20000"
+			color="1"
+			startalpha="1"
+			midalpha="0"
+			endalpha="0"
+			midalphapos=".5"
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+		<sound
+		        delay="2300"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".7"
+				sample="../../ability_03/sounds/impact.wav"
+			/>
+			
+			<sound
+		        delay="2300"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".5"
+				sample="../sounds/ab1.wav"
+			/>
+			
+			<sound
+		        delay="2600"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".5"
+				sample="../../ability_01/sounds/cast.wav"
+			/>
+			
+			<simpleemitter
+				delay="200"
+				bone="_bone_spirit"
+				life="2300"
+				spawnrate="100"
+				minangle="0"
+				maxangle="360"
+				position="0 0 0"
+				particlelife="500"
+			>
+				<particle
+					turn="true"
+				>
+					<billboard
+						life="500"
+						material="/shared/effects/materials/light_rays.material"
+						startcolor="0"
+						midcolor=".2 .3 .4"
+						endcolor="0"
+						midcolorpos=".3"
+						expirelife="300"								
+						depthbias="-20"
+						position="0 0 0"
+						minroll="0"
+						maxroll="359"
+						width="20"
+						startsize="10"
+						midsize="50"
+						endsize="80"
+						midsizepos=".3"
+						alpha=".5"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<billboard
+				delay="200"
+				life="2300"
+				bone="_bone_spirit"
+				material="/shared/effects/materials/whitedot.material"
+				color=".5"								
+				size="50"
+				depthbias="-20"
+				position="0 0 0"
+			/>
+			
+			<simpleemitter
+				bone="_bone_spirit"
+				delay="200"
+				life="2300"
+				spawnrate="150"
+				position="0 0 0"
+				particlelife="2000"
+				gravity="0"
+				speed="1"
+				drag=".1"
+				direction="0 0 1"
+				material="/shared/effects/materials/sparks_reveal.material"
+				offsetsphere="20"
+			>
+				<particle
+					color="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="10"
+					minendsize="2"
+					maxendsize="5"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startframe=".3"
+					endframe="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_spirit"
+				delay="200"
+				life="2300"
+				spawnrate="400"
+				position="0 0 0"
+				particlelife="2000"
+				gravity="0"
+				speed="1"
+				drag=".1"
+				direction="0 0 1"
+				material="/shared/effects/materials/sparks_reveal.material"
+				offsetsphere="2"
+			>
+				<particle
+					color="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="10"
+					minendsize="2"
+					maxendsize="5"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startframe=".3"
+					endframe="1"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_spirit"
+				delay="2300"
+				life="900"
+				material="/shared/effects/materials/corona_07.material"
+				startcolor="0"
+				midcolor="0 .5 1"
+				endcolor="0"
+				midcolorpos=".3"
+				expirelife="300"								
+				startsize="10"
+				midsize="150"
+				endsize="175"
+				midsizepos=".4"
+				depthbias="-20"
+				position="0 0 0"
+				lockup="true"
+				lockright="true"
+				directionalspace="local"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_spirit"
+				delay="2300"
+				life="900"
+				material="/shared/effects/materials/refract_ripple.material"
+				color="1"
+				expirelife="300"								
+				startsize="20"
+				midsize="200"
+				endsize="250"
+				midsizepos=".4"
+				depthbias="-20"
+				position="0 0 0"
+				lockup="true"
+				lockright="true"
+				directionalspace="local"
+				param=".1"
+				startalpha="0"
+				midalpha=".7"
+				endalpha="0"
+				midalphapos=".2"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_spirit"
+				delay="2300"
+				life="1000"
+				material="/shared/effects/materials/light_rays.material"
+				startcolor="0"
+				midcolor=".6 .5 .3"
+				endcolor="0"
+				midcolorpos=".3"
+				expirelife="300"								
+				size="250"
+				midsizepos=".4"
+				depthbias="-20"
+				position="0 0 0"
+				lockup="true"
+				lockright="true"
+				directionalspace="local"
+				pitch="0"
+				
+				startheight="50"
+				midheight="350"
+				endheight="350"
+				midheaightpos=".3"
+				
+				startwidth="50"
+				midwidth="200"
+				endwidth="30"
+				midwidthpos=".3"
+			/>
+			
+			<billboard
+				bone="_bone_spirit"
+				delay="2300"
+				life="1000"
+				material="/shared/effects/materials/light_rays.material"
+				startcolor="0"
+				midcolor=".5"
+				endcolor="0"
+				midcolorpos=".3"
+				expirelife="300"								
+				size="250"
+				midsizepos=".4"
+				depthbias="-20"
+				position="0 0 0"
+				lockup="true"
+				lockright="true"
+				directionalspace="local"
+				pitch="0"
+				
+				startheight="50"
+				midheight="350"
+				endheight="350"
+				midheaightpos=".3"
+				
+				startwidth="50"
+				midwidth="200"
+				endwidth="30"
+				midwidthpos=".3"
+			/>
+			
+			<billboard
+				bone="_bone_spirit"
+				delay="2300"
+				life="900"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0"
+				midcolor="0 .5 1"
+				endcolor="0"
+				midcolorpos=".3"
+				expirelife="300"								
+				startsize="20"
+				midsize="250"
+				endsize="300"
+				midsizepos=".4"
+				depthbias="-20"
+				position="0 0 0"
+				directionalspace="local"
+			/>
+			
+			<billboard
+				bone="_bone_spirit"
+				delay="2300"
+				life="900"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0"
+				midcolor=".8"
+				endcolor="0"
+				midcolorpos=".3"
+				expirelife="300"								
+				startsize="20"
+				midsize="100"
+				endsize="120"
+				midsizepos=".4"
+				depthbias="-20"
+				position="0 0 0"
+				directionalspace="local"
+			/>
+		
+			<billboard
+				bone="_bone_spirit"
+				delay="2300"
+				life="1000"
+				material="/shared/effects/materials/light_rays.material"
+				startcolor="0"
+				midcolor=".6 .5 .3"
+				endcolor="0"
+				midcolorpos=".3"
+				expirelife="300"								
+				size="250"
+				midsizepos=".4"
+				depthbias="-20"
+				position="0 0 0"
+				lockup="true"
+				lockright="true"
+				directionalspace="local"
+				pitch="0"
+				yaw="90"
+				
+				startheight="50"
+				midheight="250"
+				endheight="250"
+				midheaightpos=".3"
+				
+				startwidth="50"
+				midwidth="120"
+				endwidth="30"
+				midwidthpos=".3"
+			/>
+			
+			<billboard
+				bone="_bone_spirit"
+				delay="2300"
+				life="1000"
+				material="/shared/effects/materials/light_rays.material"
+				startcolor="0"
+				midcolor=".5"
+				endcolor="0"
+				midcolorpos=".3"
+				expirelife="300"								
+				size="250"
+				midsizepos=".4"
+				depthbias="-20"
+				position="0 0 0"
+				lockup="true"
+				lockright="true"
+				directionalspace="local"
+				pitch="0"
+				yaw="90"
+				
+				startheight="50"
+				midheight="250"
+				endheight="250"
+				midheaightpos=".3"
+				
+				startwidth="50"
+				midwidth="20"
+				endwidth="30"
+				midwidthpos=".3"
+			/>
+			
+			<billboard
+				bone="_bone_spirit"
+				delay="2300"
+				life="3000"
+				position="0 -20 350"
+				material="/shared/effects/materials/flare2.material"
+				startheight="000"
+				midheight="750"
+				endheight="750"
+				midheightpos=".5"
+				startwidth="1"
+				midwidth="30"
+				endwidth="30"
+				midwidthpos=".2"
+				lockup="1"
+				startcolor="0 0 0"
+				midcolor="1"
+				endcolor="0"			
+				midcolorpos=".2"
+			/>
+
+			<billboard
+				bone="_bone_spirit"
+				delay="2300"
+				life="3500"
+				position="0 -20 350"
+				material="/shared/effects/materials/flare2.material"
+				height="1500"
+				lockup="1"
+				startcolor="0"
+				midcolor=".1 .3 .5"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+
+				startwidth="10"
+				midwidth="100"
+				endwidth="10"
+				midwidthpos=".2"
+			/>
+
+		</particlesystem>
+		
+		<particlesystem name="system1" space="world" scale="1">
+		
+		<template name="spirit">
+
+			<simpleemitter
+				delay="200"
+				bone="{bone}"
+				life="1900"
+				spawnrate="100"
+				minangle="0"
+				maxangle="360"
+				position="0 0 0"
+				particlelife="500"
+			>
+				<particle
+					turn="true"
+				>
+					<billboard
+						life="500"
+						material="/shared/effects/materials/light_rays.material"
+						startcolor="0"
+						midcolor=".2 .3 .4"
+						endcolor="0"
+						midcolorpos=".3"
+						expirelife="300"								
+						depthbias="-20"
+						position="0 0 0"
+						minroll="0"
+						maxroll="359"
+						width="20"
+						startsize="5"
+						midsize="20"
+						endsize="50"
+						midsizepos=".3"
+						alpha=".5"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<billboard
+				delay="200"
+				life="1900"
+				bone="{bone}"
+				material="/shared/effects/materials/whitedot.material"
+				color=".5"								
+				size="50"
+				depthbias="-20"
+				position="0 0 0"
+			/>
+		</template>
+		
+			<model
+				position="0 0 0"
+				scale="1"
+				model="wings/model.mdf"
+				color=".5 .5 .9"
+				anim="idle"
+				life="2000"
+				startalpha=".6"
+				midalpha=".6"
+				endalpha="0"
+				midalphapos=".8"
+			>
+			</model>
+		
+			<model
+				position="0 0 0"
+				scale="1"
+				model="spirit/model.mdf"
+				material="../material.material"
+				color=".5 .5 .9"
+				startalpha=".6"
+				midalpha=".6"
+				endalpha="0"
+				midalphapos=".8"
+				life="2000"
+				anim="idle"
+			>	
+
+				<instance name="spirit" bone="_bone_centerofchest"/>
+				
+				<simpleemitter
+					bone="_bone_centerofchest"
+					life="2000"
+					spawnrate="150"
+					position="0 0 0"
+					particlelife="2000"
+					gravity="0"
+					speed="1"
+					drag=".1"
+					direction="0 0 1"
+					material="/shared/effects/materials/sparks_reveal.material"
+					offsetsphere="20"
+				>
+					<particle
+						color="1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						maxangle="90"
+						startsize="10"
+						minendsize="2"
+						maxendsize="5"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startframe=".3"
+						endframe="1"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="_bone_centerofchest"
+					life="2000"
+					spawnrate="400"
+					position="0 0 0"
+					particlelife="2000"
+					gravity="0"
+					speed="1"
+					drag=".1"
+					direction="0 0 1"
+					material="/shared/effects/materials/sparks_reveal.material"
+					offsetsphere="2"
+				>
+					<particle
+						color="1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						maxangle="90"
+						startsize="10"
+						minendsize="2"
+						maxendsize="5"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startframe=".3"
+						endframe="1"
+					/>
+				</simpleemitter>
+			</model>
+		</particlesystem>
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance2"/>
+		<wait duration="2300"/>
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+		<waitfordeath  instance="instance2"/>
+	</thread>
+</effect>
+<!-- [min|max][start|mid|end]property[speed][pos] -->

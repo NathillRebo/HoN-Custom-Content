@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="local" scale="0.33">
+
+
+
+			<billboard			
+				expirelife="200"				
+				startsize="720"				
+				endsize="0"
+				material="/shared/effects/materials/whitedot.material"
+				startalpha="1"
+				endalpha="0"
+				color=".3 0 .5"
+				depthbias="-10"
+			/>
+		
+			<model
+				position="0 0 0"
+				expirelife="10"
+				model="eye.mdf"
+				material="../../material.material"
+				scale="700"
+				color="1"
+			/>
+			
+			<trailemitter				
+				spawnrate="50"
+				particlelife="500"
+				texpostime="500"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				position="65 0 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle				
+					 startcolor=".5 0 .5"
+					 midcolor="0.5 0 0.5"
+					 endcolor="0 0 0"
+					 startsize="40"
+					 midsize="30"
+					 endsize="5"
+					 midsizepos="0.2"
+			 />
+			</trailemitter>				
+			
+			<trailemitter				
+				spawnrate="50"
+				particlelife="500"
+				texpostime="500"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				position="-65 0 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					startcolor=".5 0 .5"
+					 midcolor="0.5 0 0.5"
+					 endcolor="0 0 0"
+					 startsize="40"
+					 midsize="30"
+					 endsize="5"
+					 midsizepos="0.2"
+			 />
+			</trailemitter>				
+			
+			
+			<trailemitter				
+				spawnrate="50"
+				particlelife="500"
+				texpostime="500"
+			 	texposscale="0.0"
+			 	texstretchscale=".4"
+				position="0 60 0"
+				material="/shared/effects/materials/arrow_trail.material"
+			>
+				<particle
+					 startcolor=".5 0 .5"
+					 midcolor="0.5 0 0.5"
+					 endcolor="0 0 0"
+					 startsize="10"
+					 midsize="180"
+					 endsize="30"
+					 midsizepos="0.2"
+			 />
+			</trailemitter>	
+
+
+			
+			<model
+				position="0 0 0"
+				expirelife="10"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				scale="5"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				rollspeed="1500"
+			>
+			
+				<template name="trails">
+					<twopointtrailemitter
+						name="trail01"
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="100"
+						particlelife="1000"
+						subframepose="1"
+						texpostime="1000"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/soul_projectile_emerald.material"
+					>
+						<particle
+							startcolor=".2 0 .2"
+							endcolor="0 0 0"
+							startalpha="1"
+							midalpha="0"
+							endalpha="0"
+						/>
+					</twopointtrailemitter>
+					<twopointtrailemitter
+						name="trail01"
+						position="0 0 0"
+						bone_a="{bone02}"
+						bone_b="{bone01}"
+						spawnrate="100"
+						particlelife="300"
+						subframepose="1"
+						texpostime="1000"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/soul_projectile_white2.material"
+					>
+						<particle
+							startcolor=".5 0 .5"
+							endcolor="0 0 0"
+							startalpha="0"
+							midalpha="0"
+							endalpha="0"
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
+				<instance name="trails" bone01="_bone_fx_03"  bone02="_bone_fx_04"/>
+				<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_06"/>
+				<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_08"/>
+				<instance name="trails" bone01="_bone_fx_05"  bone02="_bone_fx_10"/>
+				
+			</model>	
+		
+			<!-- <simpleemitter
+				spawnrate="20"
+				minparticlelife="500"
+				maxparticlelife="600"
+				speed="12"
+				material="/shared/effects/materials/fire_blend.material"
+				offsetsphere="10"
+				position="0 0 0"
+				yawspeed="-360"
+				depthbias="-100"
+				inheritvelocity=".025"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="20"
+					maxanglespeed="150"
+					startcolor=".3 0 .3"
+					midcolor="0"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startsize="205"
+					midsize="200"
+					endsize="0"	
+					midsizepos=".25"
+					minscale="1.5"
+					maxscale="2.5"
+				/>
+			</simpleemitter>	 -->	
+			
+			<simpleemitter
+				spawnrate="20"
+				minparticlelife="500"
+				maxparticlelife="600"
+				speed="12"
+				material="/shared/effects/materials/fire_add.material"
+				offsetsphere="10"
+				position="0 0 0"
+				yawspeed="-360"
+				depthbias="-100"
+				inheritvelocity=".025"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="20"
+					maxanglespeed="150"
+					startcolor=".8 0 .8"
+					midcolor=".4 0 .4"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startsize="205"
+					midsize="200"
+					endsize="0"	
+					midsizepos=".25"
+					minscale="1.5"
+					maxscale="2.5"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				offsetsphere="80"
+				spawnrate="20"
+				particlelife="800"
+				minspeed="500"
+				maxspeed="1000"
+				gravity="-5"
+				>
+				<particle
+					maxyaw="360"
+					maxpitch="360"
+					maxroll="360"
+					minyawspeed="-1000"
+					maxyawspeed="1000"
+					minrollspeed="-1000"
+					maxrollspeed="1000"
+					minpitchspeed="-1000"
+					maxpitchspeed="1000"
+					minscale="10"
+					maxscale="20"
+				>
+					<trailemitter
+						minlife="650"
+						maxlife="1050"
+						directionalspace="local"
+						particledyrectionalspace="local"
+						position="8 0 0"
+						spawnrate="200"
+						minparticlelife="800"
+						maxparticlelife="1000"
+						material="/shared/effects/materials/trail_01_blend.material"
+						texposscale="0"
+						texstretchscale="1"
+						startparticlecolor="1"
+						midparticlecolor="1"
+						endparticlecolor="0"
+					>
+						<particle
+							startcolor="1 0 1"
+							midcolor=".1 0 .2"
+							endcolor="0"
+							startalpha="1"
+							midalpha=".6"
+							endalpha="0"
+							startsize="0"
+							midsize="8"
+							endsize="0"
+						/>
+					</trailemitter>
+				</particle>
+			</simpleemitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

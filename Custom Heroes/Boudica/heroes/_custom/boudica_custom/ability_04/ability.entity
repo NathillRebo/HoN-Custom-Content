@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Boudica4"
+
+	icon="icon.tga"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	casteffect="active.effect"
+
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	novoiceresponse="true"
+	nonaggressive="true"
+	anim=""
+
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="135000,90000,45000"
+	noresponse="true"
+
+	nosilence="true"
+	nostun="true"
+	noforce="true"
+
+	modifierkey=""
+>
+	<onimpact>
+		<dispel type="StatusDebuff" target="source_entity" />
+		<dispel type="StatusDisable" target="source_entity" />
+		<setvar0 a="source_maxhealth" b="0.2" op="mult" />
+		<heal a="var0" target="source_entity" />
+		<pushability name="Ability_Boudica1" />
+		<reducecooldown duration="15000" entity="stack_entity" />
+		<pushability name="Ability_Boudica2" />
+		<reducecooldown duration="15000" entity="stack_entity" />
+		<pushability name="Ability_Boudica3" />
+		<reducecooldown duration="15000" entity="stack_entity" />
+	</onimpact>
+	<onattackeddamageevent>
+		<setvar1 a="damage_attempted" b="5.3" op="mult"/>
+		<reducecooldown duration="var1" />
+	</onattackeddamageevent>
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onimpact>
+			<dispel type="StatusDebuff" target="source_entity" />
+			<dispel type="StatusDisable" target="source_entity" />
+			<setvar0 a="source_maxhealth" b="0.2" op="mult" />
+			<heal a="var0" target="source_entity" />
+			<pushability name="Ability_Boudica1" />
+			<reducecooldown duration="15000" entity="stack_entity" />
+			<pushability name="Ability_Boudica2" />
+			<reducecooldown duration="15000" entity="stack_entity" />
+			<pushability name="Ability_Boudica3" />
+			<reducecooldown duration="15000" entity="stack_entity" />
+			<applystate name="State_Boudica4_Shard" target="source_entity" duration="4000" />
+		</onimpact>
+	</modifier>
+</ability>

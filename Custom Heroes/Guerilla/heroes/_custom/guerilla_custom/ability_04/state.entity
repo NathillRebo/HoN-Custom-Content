@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Guerilla4_Buff"
+	
+	ishidden="true"
+	serverentity="true"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	effecttype=""
+	allowtransfer="false"
+	
+>
+
+	<onframe>
+		<targettype type="visible" source="this_owner_entity" target="source_entity">
+			<areaofeffect
+				radius="2000"
+				center="source_entity"
+				targetscheme="nongadget_player_controlled_enemy_units_and_lanecreeps"
+				targetselection="all"
+				ignoreinvulnerable="true"
+			>
+			</areaofeffect>
+			<compare a="result" b="1" op="ge">
+				<expirestate name="State_Guerilla4_Ready" target="source_entity" />
+			</compare>
+			<else>
+				<applystate name="State_Guerilla4_Ready" continuous="true" target="source_entity" />	
+			</else>
+		</targettype>
+		<else>
+			<applystate name="State_Guerilla4_Ready" continuous="true" target="source_entity" />			
+		</else>
+	</onframe>
+
+</state>

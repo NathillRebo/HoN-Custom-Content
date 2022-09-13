@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="1">
+
+	<definitions>
+		
+		<particlesystem name="system0" space="entity" scale="2">
+
+			<sound
+				volume=".85"
+				sample="../sounds/cast.wav"
+				linearfalloff="true"
+				falloffstart="500" 
+				falloffend="2000" 
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				startcolor="0 1 1"
+				endcolor="0 0 0"
+				startsize="0"
+				endsize="100"
+				material="/shared/effects/materials/starlight.material"
+				maxroll="360"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				startcolor="0 1 1"
+				endcolor="0 0 0"
+				startsize="50"
+				endsize="150"
+				material="/shared/effects/materials/star_03.material"
+				maxroll="360"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				startcolor="0 1 1"
+				endcolor="0 0 0"
+				startsize="110"
+				endsize="30"
+				material="/shared/effects/materials/blink.material"
+				maxroll="360"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor="0 1 .25"
+				midcolor="0 .2 0"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="100"
+				endsize="0"
+				depthbias="0"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				param="0.1"
+				startsize="50"
+				endsize="100"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				delay="175"
+				life="500"
+				param="0.1"
+				startsize="50"
+				endsize="100"
+				startalpha="0"
+				midalpha=".4"
+				endalpha="0"
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<model
+				position="0 0 100"
+				life="1000"
+				name="emitter0" 
+				anim="idle"
+				model="/shared/effects/models/circle_of_bones/model.mdf"
+				startscale="2"
+				endscale="1"
+				startcolor="0 0 0"
+				midcolor="0 0 0"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				startalpha="0"
+				midalpha="0"
+				endalpha="0"
+				midalphapos=".4"
+				minyaw="-5"
+				maxyaw="5"
+				yawspeed="360"
+				rollspeed="180"
+			>
+			
+				<template name="trails">
+					<twopointtrailemitter
+						life="500"
+						name="trail01"
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="100"
+						particlelife="450"
+						subframepose="1"
+						direction="0 -1 0"
+						minangle="0"
+						maxangle="0"
+						texpostime="450"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/soul_projectile_emerald.material"
+					>
+						<particle
+							startcolor="0 1 .9"
+							endcolor="0 1 .9"
+							startalpha="0"
+							midalpha=".35"
+							endalpha="0"
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_03"/>
+				<instance name="trails" bone01="_bone_fx_02"  bone02="_bone_fx_05"/>
+				<instance name="trails" bone01="_bone_fx_03"  bone02="_bone_fx_06"/>
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_02"/>
+				<instance name="trails" bone01="_bone_fx_02"  bone02="_bone_fx_03"/>
+				<instance name="trails" bone01="_bone_fx_04"  bone02="_bone_fx_05"/>
+				<instance name="trails" bone01="_bone_fx_06"  bone02="_bone_fx_07"/>
+				<instance name="trails" bone01="_bone_fx_08"  bone02="_bone_fx_09"/>
+				<instance name="trails" bone01="_bone_fx_10"  bone02="_bone_fx_11"/>
+				<instance name="trails" bone01="_bone_fx_12"  bone02="_bone_fx_13"/>
+				
+				<model
+					bone="_bone_fx_03"
+					life="900"
+					model="bird/model.mdf"
+					anim="idle"
+					startcolor="1 3 2"
+					endcolor="1 1 1"
+					midcolorpos=".2"
+					expirelife="500"
+					startalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					startscale=".35"
+					endscale=".25"
+					yaw="45"
+					pitch="90"
+					directionalspace="local"
+				>
+				</model>
+				
+			</model>
+			
+			<simpleemitter
+				spawnrate="75"
+				count="20"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				gravity="-55"
+				speed="40"
+				drag=".08"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/phantom_smoke_10.material"
+				offsetsphere="20 20 70"
+				minangle="90"
+				maxangle="-90"
+			>
+				<particle 
+					startcolor="0 0 0"
+					midcolor="0 .1 0"
+					endcolor="0"
+					midcolorpos=".1"
+					startframe="0"
+					endframe="1"
+					startwidth="20"
+					midwidth="15"
+					endwidth="6"
+					midwidthpos=".5"
+					startheight="0"
+					endheight="900"
+					lockup="true"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="8"
+				minspeed="35"
+				maxspeed="100"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				offsetsphere="25 25 10"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity="-0.1"
+				depthbias="0"
+				directionalspace="local"
+				direction="0 0 -1"
+				gravity="5"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					color="0"
+					minsize="100"
+					maxsize="125"
+					endsize="150"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+			
+			
+			<simpleemitter
+			bone="Bip01 L Calf"
+				spawnrate="8"
+				minspeed="35"
+				maxspeed="100"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				offsetsphere="25 25 10"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity="-0.1"
+				depthbias="0"
+				directionalspace="local"
+				direction="0 0 -1"
+				gravity="5"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					color="0"
+					minsize="100"
+					maxsize="125"
+					endsize="150"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+			bone="Bip01 R Calf"
+				spawnrate="8"
+				minspeed="35"
+				maxspeed="100"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				offsetsphere="25 25 10"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity="-0.1"
+				depthbias="0"
+				directionalspace="local"
+				direction="0 0 -1"
+				gravity="5"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					color="0"
+					minsize="100"
+					maxsize="125"
+					endsize="150"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

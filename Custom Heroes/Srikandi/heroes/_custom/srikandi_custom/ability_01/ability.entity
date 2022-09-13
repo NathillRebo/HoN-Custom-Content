@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Srikandi1"
+
+	icon="icon.tga"
+	statuseffecttooltip="State_Srikandi1_Ability1"
+	statuseffecttooltip2="State_Srikandi1_Ability1_Attack"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	anim=""
+	casttime="0"
+	castactiontime="0"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	responsetype="KinesisThoughtsteal"
+
+	actiontype="target_self"
+	casteffecttype=""
+	
+	manacost="45"
+	cooldowntime="16000"
+	
+	targetscheme=""
+	
+	dynamicprecache="../alt/ability_01/effects/stealth_sound.effect"
+>
+	<onlearn>
+		<setscriptvalue name="stealthsound_effect" value="../alt/ability_01/effects/stealth_sound.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onimpact>
+		<applystate name="State_Srikandi_Ability1" duration="4000,6000,8000,10000" />
+		
+		<!-- Dynamic visual effects -->
+		<getscriptvalue name="stealthsound_effect" destvar="str0" entity="this_entity" />
+		<playeffectdynamic effect="str0" source="source_entity" target="source_entity" occlude="true" />
+	</onimpact>
+	
+</ability>

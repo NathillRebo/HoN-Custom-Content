@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<sound
+				delay="0"
+				life="4000"
+		        forcestereo="true"
+				volume=".8"
+				sample="/heroes/tempest/ability_03/sounds/cast.wav"
+				linearfalloff="true"
+				falloffstart="5000"		
+				falloffend="8000" 
+			/>
+			
+			<groundsprite
+				delay="0"
+				life="1200"
+				material="/shared/effects/materials/whitecircle_blend.material"
+				color="0"
+				startalpha=".4"
+				midalpha=".75"
+				endalpha="0"
+				midalphapos=".95"
+				startscale="0"
+				midscale="2.0"
+				endscale="6.2"
+				midscalepos=".3"
+			/>
+		
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<wait duration="2000"/>
+		<camerashake2 scale="1.0" radius="600" duration="250" frequency="22" />
+		<wait duration="200"/>
+		<camerashake2 scale="2.0" radius="700" duration="250" frequency="22" />
+		<wait duration="200"/>
+		<camerashake2 scale="4.0" radius="800" duration="250" frequency="22" />
+		<wait duration="200"/>
+		<camerashake2 scale="8.0" radius="900" duration="250" frequency="22" />
+		<wait duration="200"/>
+		<camerashake2 scale="16.0" radius="1000" duration="250" frequency="22" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Felhound4"
+
+	icon="icon.tga"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	actiontype="passive"
+>
+	<onkill>
+		<applystate name="State_Felhound4" duration="10000" target="source_entity" />
+	</onkill>
+	<modifier key="ult_boost" modpriority="100">
+		<onkill>
+			<applystate name="State_Felhound4" duration="15000" target="source_entity" />
+		</onkill>
+	</modifier>
+</ability>

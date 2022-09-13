@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Pandora1"
+
+	radius="200"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+>
+	<onimpact>
+		<random min="0" max="100" />
+		<setvar0 a="result" b="1" op="mult"/>
+		<setvar1 a="100" b="var1" op="sub"/>
+		<setvar2 a="var1" b="17,19,21,23" op="mult"/>
+		<damage effecttype="Magic" amount="1.1,2.1,3.1,4.1" b="var0" op="mult" />
+		<applystate name="State_Stunned" duration="var2"/>
+	</onimpact>
+</affector>

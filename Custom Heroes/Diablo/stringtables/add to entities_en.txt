@@ -1,0 +1,55 @@
+
+// Hero_Diablo_Custom
+Hero_Diablo_Custom_name											Diablo
+Hero_Diablo_Custom_role											Diablo is an unusual hero, who excels at split-pushing and farming minions. He deals damage through making his enemies follow his path of wake, or, Dooming them and Flinging over his shoulder into his fire. Not as endurant as other Strength heroes, but capable of delivering constant area damage.
+
+// Ability_Diablo1
+Ability_Diablo1_name											Path of Flames
+Ability_Diablo1_name:ult_boost									^gPath of Embers^*
+Ability_Diablo1_description										Where Diablo comes, nothing remains, as the ground beneath him burns with his every step.
+Ability_Diablo1_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Increases the burning damage by 12 per second.
+Ability_Diablo1_description_simple								When toggled on, drains ^o{21,25,29,33}^* Mana per second, but also leaves a trail of flames, which lasts for 3 seconds and deals ^o{19,26,33,40} Magic Damage per second^*. While active, increases Movement Speed by ^o{7,10,13,16}%^* and max Movement Speed by ^o{35,55,75,95}^*.\n\n^gStaff of the Master^* increases the burning damage by 12 per second.\n\n^444Better chase Diablo.
+Ability_Diablo1_description_simple:ult_boost					When toggled on, drains ^o{21,25,29,33}^* Mana per second, but also leaves a trail of flames, which lasts for 3 seconds and deals ^g{31,38,45,52} Magic Damage per second^*. While active, increases Movement Speed by ^o{7,10,13,16}%^* and max Movement Speed by ^o{35,55,75,95}^*.\n\n^444Better chase Diablo.
+Ability_Diablo1_effect_header
+Ability_Diablo1_tooltip_flavor									Better chase Diablo.
+Ability_Diablo1_IMPACT_effect									When toggled on, drains ^o{21,25,29,33}^* Mana per second, but also leaves a trail of flames, which lasts for 3 seconds and deals ^o{19,26,33,40} Magic Damage per second^*. While active, increases Movement Speed by ^o{7,10,13,16}%^* and max Movement Speed by ^o{35,55,75,95}^*.
+Ability_Diablo1_IMPACT_effect:ult_boost							When toggled on, drains ^o{21,25,29,33}^* Mana per second, but also leaves a trail of flames, which lasts for 3 seconds and deals ^g{31,38,45,52} Magic Damage per second^*. While active, increases Movement Speed by ^o{7,10,13,16}%^* and max Movement Speed by ^o{35,55,75,95}^*.
+
+// State_Diablo1
+State_Diablo1_name												Path of Flames
+State_Diablo1_description										+{35,55,75,95} Max Movement Speed\nLeaving a trail of fire, which lasts 3 seconds and deals {19,26,33,40} Magic Damage per second
+
+// State_Diablo1_Fire
+State_Diablo1_Fire_name											Stays in Fire
+State_Diablo1_Fire_description									Taking {19,26,33,40} Magic Damage per second. Don't stay in fire!
+State_Diablo1_Fire_description:ult_boost						Taking ^g{31,38,45,52} Magic Damage per second^*. Don't stay in fire!
+
+// Ability_Diablo2
+Ability_Diablo2_name											Overpower
+Ability_Diablo2_name:shardofthemaster_boost						^pOverpower^*
+Ability_Diablo2_description										Diablo's strength is unmatched, allowing him to throw his enemies over his shoulder no matter their size.
+Ability_Diablo2_description_simple								Diablo flings the target over his shoulder, dealing it ^o{70,130,190,250} Magic Damage^*.\n\n^pShard of the Master^* causes Overpower to deal 50 Magic Damage to enemies near the target's landing location and Stuns them for 1 second.\n\n^444To the moon!
+Ability_Diablo2_description_simple:shardofthemaster_boost		Diablo flings the target over his shoulder, dealing it ^p{120,180,240,300} Magic Damage and stunning for 1 second. Enemies near the target's landing point are dealt {50} Magic Damage and are Stunned for 1 second^*.\n\n^444To the moon!
+Ability_Diablo2_effect_header
+Ability_Diablo2_tooltip_flavor									To the moon!
+Ability_Diablo2_IMPACT_effect									Diablo flings the target over his shoulder, dealing it ^o{70,130,190,250} Magic Damage^*.
+
+// Ability_Diablo3
+Ability_Diablo3_name											Burning Blood
+Ability_Diablo3_name:ult_boost									^gScorching Blood^*
+Ability_Diablo3_description										Diablo's blood sometimes bursts out when damaged, scorching the ground around him.
+Ability_Diablo3_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^* Increases the burning damage by 12 per second.
+Ability_Diablo3_description_simple								When attacked, there's 18% chance to spawn a burning node at the attacker's position, which lasts 3 seconds and deals ^o{19,26,33,40}^* Magic Damage per second to enemies inside.\n\n^gStaff of the Master^* increases the burning damage by 12 per second.\n\n^444It's like I never left sauna...
+Ability_Diablo3_description_simple:ult_boost					When attacked, there's 18% chance to spawn a burning node at the attacker's position, which lasts 3 seconds and deals ^g{31,38,45,52}^* Magic Damage per second to enemies inside.\n\n^444It's like I never left sauna...
+Ability_Diablo3_effect_header
+Ability_Diablo3_tooltip_flavor									It's like I never left sauna...
+Ability_Diablo3_IMPACT_effect									When attacked, there's 18% chance to spawn a burning node at the attacker's position, which lasts 3 seconds and deals ^o{19,26,33,40}^* Magic Damage per second to enemies inside.
+Ability_Diablo3_IMPACT_effect:ult_boost							When attacked, there's 18% chance to spawn a burning node at the attacker's position, which lasts 3 seconds and deals ^g{31,38,45,52}^* Magic Damage per second to enemies inside.
+
+// Ability_Diablo4
+Ability_Diablo4_name											Doom
+Ability_Diablo4_description										Diablo blasts target enemy with unholy electricity, bringing them on their knees, begging for mercy, and ultimately lying dead.
+Ability_Diablo4_description_simple								Diablo dispels positive effects from the target and reduces that enemy's Movement Speed by 100% tapering over 7 seconds. When the slow ends, the target is dealt ^o{200,400,600}^* Magic Damage.\n\n^444Isn't it amusing, when they beg for mercy?
+Ability_Diablo4_effect_header
+Ability_Diablo4_tooltip_flavor									Isn't it amusing, when they beg for mercy?
+Ability_Diablo4_IMPACT_effect									The target is stripped of their buffs and has its Movement Speed reduced by 100% tapering over 7 seconds. When the effect ends, the target is dealt ^o{200,400,600}^* Magic Damage.

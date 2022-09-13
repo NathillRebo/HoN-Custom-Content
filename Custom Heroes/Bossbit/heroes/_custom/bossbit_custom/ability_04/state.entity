@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Bossbit4"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="255"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+
+	attackspeedpercharge=".15"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1" timed="true" />
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1" timed="true" />
+	</onrefresh>
+	<modifier key="ult_boost" modpriority="100"
+		attackspeedpercharge=".20"
+	/>
+</state>

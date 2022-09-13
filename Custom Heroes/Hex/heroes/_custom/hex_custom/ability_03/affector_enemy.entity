@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Hex3"
+
+	radius="575"
+	lifetime="6000"
+	impactinterval="60"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	
+	persist="false"
+	
+	diewithowner="false"
+>
+	
+	<onimpact>
+		<applystate name="State_Hex3" duration="1000" />
+	</onimpact>
+	<onexpired>
+		<areaofeffect
+			radius="575"	
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			destroytrees="true"
+		>
+			<damage effecttype="Magic" amount="70,130,190,250" />
+		</areaofeffect>
+	</onexpired>
+	<modifier key="shardofthemaster_boost"
+		lifetime="12000"
+	>
+		<onexpired>
+			<areaofeffect
+				radius="575"	
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+				destroytrees="true"
+			>
+				<damage effecttype="Magic" amount="105,195,285,375" />
+			</areaofeffect>
+		</onexpired>
+	</modifier>
+</affector>

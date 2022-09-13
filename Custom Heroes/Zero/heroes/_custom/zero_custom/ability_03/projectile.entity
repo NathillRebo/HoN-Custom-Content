@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Zero3"
+
+	speed="1775"
+	gravity="2500"
+
+	modelscale=".3"
+	model="/shared/models/invis.mdf"
+
+	effectscale="3.0"
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+
+>
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<spawnaffector name="Affector_Zero3" target="this_position" />
+			</onimpact>
+		</combatevent>
+	</onimpact>
+</projectile>

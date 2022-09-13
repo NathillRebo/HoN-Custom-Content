@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true" useentityeffectscale="0">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">		
+
+			<billboard	
+				bone="_bone_overhead"
+				life="200" loop="1"
+				color="1 0 0"
+				startalpha="1"
+				endalpha="0"
+				size="32"
+				material="/shared/effects/materials/corona_01.material"
+				position="0 0 55"
+			/>
+			<billboard	
+				bone="_bone_overhead"
+				color="1"
+				startalpha="1"
+				endalpha="1"
+				size="30"
+				material="material.material"
+				position="0 0 55"
+				rollspeed="200"
+			/>
+
+			<simpleemitter
+				bone="_bone_overhead"
+				position="0 0 55"
+				spawnrate="70"
+				direction="0 0 1"
+				minangle="-90"
+				maxangle="90"
+				particlelife="900"
+				maxspeed="150"
+				drag=".1"
+				material="/shared/effects/materials/sparks_reveal.material"
+			>
+				<particle
+					startcolor="1.00 0.00 0.74" midcolor="1.00 0.50 0.00" endcolor="1.00 0.74 0.00"
+					maxstartsize="15" minstartsize="5" endsize="50"
+					anchor="1"
+					minscale=".5" maxscale="3"
+					startframe=".3" endframe="1"
+				/>
+			</simpleemitter>
+			
+			<!-- <simpleemitter
+				bone="_bone_overhead"
+				position="0 0 55"
+				count="1"
+				particlelife="2000"
+			>
+				<particle
+					anchor="1"
+				>
+					<simpleemitter
+						count="30"
+						direction="0 0 1"
+						minangle="-90"
+						maxangle="90"
+						particlelife="800"
+						speed="100"
+						directionalspace="local"
+						material="/shared/effects/materials/light_rays4.material"
+					>
+						<particle
+							startcolor="1 0 0"
+							endcolor="0"
+							startsize="10"
+							endsize="60"
+							startwidth="10"
+							endwidth="2"
+							anchor="1"
+							turn="1"
+						/>
+					</simpleemitter>
+					<simpleemitter
+						life="800"
+						count="20"
+						direction="0 0 1"
+						minangle="-90"
+						maxangle="90"
+						particlelife="600"
+						speed="100"
+						
+						material="/shared/effects/materials/flare1.material"
+					>
+						<particle
+							startcolor=".5 0 0"
+							endcolor="0"
+							startsize="10"
+							endsize="60"
+							anchor="1"
+							turn="1"
+						/>
+					</simpleemitter>
+					<simpleemitter
+						life="800"
+						count="70"
+						direction="0 0 1"
+						minangle="-90"
+						maxangle="90"
+						particlelife="900"
+						maxspeed="150"
+						
+						material="/shared/effects/materials/sparks_reveal.material"
+					>
+						<particle
+							startcolor="1.00 0.00 0.74" midcolor="1.00 0.50 0.00" endcolor="1.00 0.74 0.00"
+							maxstartsize="15" minstartsize="5" endsize="50"
+							anchor="1"
+							minscale=".5" maxscale="3"
+							startframe=".3" endframe="1"
+						/>
+					</simpleemitter>
+					<simpleemitter
+						life="800"
+						count="20"
+						direction="0 0 1"
+						minangle="-90"
+						maxangle="90"
+						particlelife="900"
+						maxspeed="150"
+						material="/shared/effects/materials/flare1.material"
+					>
+						<particle
+							color="1 0 0"
+							startsize="20"
+							endsize="0"
+							anchor="1"
+							minscale=".5"
+							maxscale="1"
+						/>
+					</simpleemitter>
+					<simpleemitter
+						delay="0"
+						count="1"
+						particlelife="750"
+						material="/shared/effects/materials/corona_01.material"
+					>
+						<particle
+							startscale="0"
+							endscale=".75"
+							size="180"
+							angle="100"
+							startcolor="0"
+							midcolor=".45 0 .75"
+							endcolor="0"
+							midcolorpos=".5"
+							anglespeed="-70"
+							anchor="1"
+						>
+							
+						</particle>
+					</simpleemitter>
+				</particle>
+			</simpleemitter> -->
+			
+			
+				
+		</particlesystem>
+		
+
+	</definitions>
+	
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+      	<waitfordeath instance="instance0" />
+	
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

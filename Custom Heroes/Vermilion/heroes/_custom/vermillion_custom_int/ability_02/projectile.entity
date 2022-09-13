@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Vermilion2"
+
+	speed="2000"
+	gravity="0"
+	lifetime="9500"
+
+	modelscale="3"
+	model="effects/model.mdf"
+	traileffect="effects/trail.effect"
+	canturn="1"
+	flying="true"
+	flyheight="100"
+	deatheffect="effects/death.effect"
+	
+	touchradius="100"
+	touchradiusdiradjust="true"
+	maxtouches="1"
+	touchtargetscheme="enemy_heroes"
+	toucheffecttype="Magic"
+	
+	dynamicprecache=",effects/impact.effect"
+	
+>
+	<onspawn>
+		<spawnunit name="Gadget_Vermilion2" target="this_owner_entity" proxy="this_proxy_entity" pushentity="true" duration="-1" />
+		<setproxy entity="this_entity" target="stack_entity" />
+		
+		<setscriptvalue name="impact_effect" value="effects/impact.effect" entity="this_entity" />
+	</onspawn>
+	
+	<ondeath>
+		<kill target="proxy_entity" source="" />
+		<spawnunit name="Gadget_Vermilion2_Reveal_Linger" count="1" target="this_position" />
+	</ondeath>
+	
+	<ontouch>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<cantarget effecttype="Magic">
+					<damage effecttype="Magic" amount="80,160,240,320" />
+					<applystate name="State_Vermilion2" duration="5000" />
+					<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+					<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+				</cantarget>
+			</onimpact>
+		</combatevent>
+
+		<kill target="this_entity" source="" />
+	</ontouch>
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<ontouch>
+			<combatevent effecttype="AbilityBasedProjectile">
+				<onimpact>
+					<cantarget effecttype="Magic">
+						<damage effecttype="Magic" amount="80,160,240,320" />
+						<applystate name="State_Vermilion2" duration="5000" />
+						<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+						<playeffectdynamic effect="str0" target="target_entity" source="target_entity" occlude="true" />
+					</cantarget>
+				</onimpact>
+			</combatevent>
+			<pushability name="Ability_Vermilion2" />
+			<getremainingcooldown target="stack_entity" />
+			<setvar0 a="result" b="1000" op="mult" />
+			<setvar0 a="var0" b="0.8" op="mult" />
+			<reducecooldown duration="var0" entity="stack_entity" />
+			<kill target="this_entity" source="" />
+		</ontouch>
+	</modifier>
+</projectile>

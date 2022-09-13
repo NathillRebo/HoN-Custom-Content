@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			expirelife="50"
+			startcolor="1"
+			endcolor="1"
+			startalpha="0"
+			endalpha="0"
+			
+		/>
+
+		<particlesystem name="system0" space="world" scale="1">
+				
+			<sound
+			   life="5000"
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume="1"
+				sample="/heroes/shadowblade/ability_02/sounds/leap.wav"
+			/>
+		
+			<simpleemitter
+				spawnrate="15"
+				count="5"
+				particlelife="5500"
+				offsetsphere="0 0 0"
+				position="0 0 0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						position="0 0 0"
+						scale="2.25"
+						minlife="250"
+						maxlife="250"
+						model="shadoww/model.mdf"
+						anim="ability_2a_fast"
+						color="0 1 0"
+						startalpha=".5"
+						endalpha="0"
+					>
+					</model>
+					
+				</particle>
+			</simpleemitter>
+		
+		
+		
+
+			<billboard	
+				life="500"
+				bone="_bone_centerofchest"
+				startcolor="0 0 0"
+				midcolor="0 .5 0"
+				endcolor="0"
+				size="200"
+				material="/shared/effects/materials/glow_01.material"
+				
+				depthbias="75"
+				position="0 0 50"
+			/>	
+			
+		<template name="trail">	
+			<twopointtrailemitter
+				life="500"
+			 	bone_a="{bone_a}"
+				bone_b="{bone_b}"
+				spawnrate="44"
+				particlelife="1500"
+				texpostime="1500"
+				texposscale="0.0"
+				texstretchscale="1.0"
+				material="/shared/effects/materials/swoosh_add.material"
+				subframepos="true"
+			>
+	         	<particle
+					startcolor="0 .35 0"
+					endcolor="0 0 0" 
+				/>
+			</twopointtrailemitter>
+		</template>
+		
+			<instance name="trail"
+			 	bone_a="Bip01 L Clavicle"
+				bone_b="Bip01 L Hand"
+			/>
+				
+				<instance name="trail"
+				bone_a="Bip01 R Clavicle"
+				bone_b="Bip01 R Hand"
+				/>
+					
+				<instance name="trail"
+				bone_a="Bip01 R Foot"
+				bone_b="Bip01 R Thigh"
+				/>
+
+				<instance name="trail"
+				bone_a="Bip01 L Foot"
+				bone_b="Bip01 L Thigh"
+			/>
+						
+			<instance name="trail"
+				bone_a="Bip01 Pelvis"
+				bone_b="Bip01 Head"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+
+	</thread>
+
+</effect>

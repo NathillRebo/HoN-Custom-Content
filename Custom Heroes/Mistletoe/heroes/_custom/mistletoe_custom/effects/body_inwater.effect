@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect>
+  <definitions>
+    <particlesystem name="system0" space="world" scale="2.5">
+
+		<skeletonemitter
+				minparticlelife="400"
+				maxparticlelife="600"
+				spawnrate="30"
+				material="/shared/effects/materials/snowflake.material"
+				minspeed="5"
+				maxspeed="10"
+				drag="0.1"
+				gravity="5"
+				offsetsphere="1"
+			>
+				<particle
+					turn="1"
+					minscale="0.1"
+					maxscale="0.25"
+					color="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					size="10"
+				/>
+			</skeletonemitter>
+				
+			<simpleemitter
+				bone="_bone_origin"
+				gravity="-1"
+				spawnrate="100"
+				minparticlelife="500"
+				maxparticlelife="750"
+				offsetradial="15 15 0"
+				expirelife="1000"
+				material="/shared/effects/materials/whitewater_02.material"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"		
+					startcolor="0 0 0"
+					midcolor=".5"
+					endcolor="0 0 0"
+					size="1"
+					minstartscale="4"
+					maxstartscale="6"
+					maxendscale="8"
+					minendscale="12"
+					startalpha="0"
+					midalpha="0.25"
+					midalphapos="0.2"
+					endalpha="0"
+				/>
+			</simpleemitter>
+		
+			<terrainemitter
+				minparticlelife="750"
+				maxparticlelife="1000"
+				spawnrate="10"
+				material="/shared/effects/materials/ice_reveal.material"
+				range="20"
+				depthbias="-5"
+			>
+				<particle
+					turn="1"
+					angle="180"
+					size="15"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".25"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					minscale="2"
+					maxscale="3"
+					startcolor="0"
+					midcolor=".5 .5 1"
+					endcolor="0"
+					maxangle="360"
+					framespeed=".8"
+				/>
+			</terrainemitter>
+			
+			<terrainemitter
+				minparticlelife="500"
+				maxparticlelife="750"
+				spawnrate="5"
+				material="/shared/effects/materials/ice_reveal.material"
+				range="20"
+				depthbias="-5"
+			>
+				<particle
+					turn="1"
+					angle="180"
+					size="15"
+					midalphapos=".25"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					minscale="2"
+					maxscale="3"
+					startcolor="0"
+					midcolor=".5 .5 .6"
+					endcolor="0"
+					maxangle="360"
+					anchor="1"
+					framespeed=".5"
+				/>
+			</terrainemitter>
+			
+			<simpleemitter
+				minparticlelife="600"
+				maxparticlelife="800"
+				spawnrate="40"
+				offsetsphere="10 10 0"
+				depthbias="-10"
+				material="/shared/effects/materials/snowflake_reveal.material"
+			>
+				<particle
+					maxangle="360"
+					color=".8 .9 1"
+					startframe="1"
+					minendframe="0"
+					maxendframe=".5"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					midalphapos=".5"
+					size="50"
+					minscale=".25"
+					maxscale="1.25"
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_origin"
+				lockup="1"
+				pitch="90"
+				expirelife="100"
+				material="/shared/effects/materials/whitedot_ground.material"
+				color=".5"
+				size="20"
+			/>
+	
+	  </particlesystem>
+	  
+	  <particlesystem name="system1" space="world" scale="1">
+		
+		<controller bone="_bone_center" >	
+			<orbiteremitter	
+				spawnrate="100"
+				minparticlelife="300"	
+				maxparticlelife="750"				
+				origin="1.0 1 10" 
+				orbit="1 0 0" 
+				direction="1 0 0" 
+				offset="3.14 5 5"
+				position="2 0 0"
+				cylindrical="true" 
+				minspeed="1"
+				maxspeed="10"
+				acceleration="0"
+				gravity="5"
+				material="/shared/effects/materials/whitewater_02.material"
+				inheritvelocity="0"
+				directionalspace="local"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					anglespeed="300"
+					statcolor="0"
+					midcolor=".25"
+					endcolor="0"	
+					startsize="5"					
+					endsize="10"
+					minscale="1"
+					maxscale="2"						
+				/>
+			</orbiteremitter>
+		</controller>
+		
+
+			
+		
+		
+		<controller bone="Bip001 Pelvis" roll="87" >
+			<model
+				model="water/model.mdf"
+				anim="idle"
+				material="snow.material"
+				expirelife="500"
+				position="0 0 0"
+				scale="1.25"
+				color="1 1 1"
+				alpha="1"
+				yawspeed="300"
+				directionalspace="global"
+			>
+				<controller bone="water_1" >	
+					<orbiteremitter	
+						spawnrate="100"
+						minparticlelife="300"	
+						maxparticlelife="750"				
+						origin="1.0 1 10" 
+						orbit="1 0 0" 
+						direction="0 0 1" 
+						offset="3.14 0 1"
+						position="0 0 5"
+						cylindrical="true" 
+						minspeed="0"
+						maxspeed="5"
+						acceleration="0"
+						gravity="5"
+						material="/shared/effects/materials/water_spray_add.material"
+						inheritvelocity="0"
+						directionalspace="local"
+					>
+						<particle
+							minangle="-360"
+							maxangle="360"
+							anglespeed="300"
+							startcolor="0"
+							midcolor=".1"
+							endcolor="0"	
+							startsize="5"					
+							endsize="10"
+							minscale="1"
+							maxscale="5"	
+							depthbias="-100"
+						/>
+					</orbiteremitter>
+				</controller>
+			</model>
+		</controller>
+		
+		<controller bone="_bone_center" roll="87" >
+			<model
+				model="water/model.mdf"
+				anim="idle"
+				material="snow2.material"
+				expirelife="500"
+				position="0 0 0"
+				scale="1.5"
+				color="1 1 1"
+				yawspeed="100"
+			/>
+		</controller>
+
+
+		</particlesystem>
+	  
+  </definitions>
+  <thread>
+    <spawnparticlesystem particlesystem="system0" instance="instance0" />
+	<spawnparticlesystem particlesystem="system1" instance="instance1" />
+    <waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+  </thread>
+</effect>

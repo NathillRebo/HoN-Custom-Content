@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dampeer_FullCharge_Alt9"
+
+	icon="icon.tga"
+	passiveeffect=""
+	ishidden="true"
+
+	effecttype=""
+	
+	morphpriority="90"
+	morphmodel="additional_alt/model.mdf"
+	
+	morphmodelscale=".9"
+	
+	portraitcampos="0 0 0"
+	
+	propagatetoillusions="true"
+	
+	modifierkey="alt_2_transform"
+>
+	<ondeath>
+		<expire />
+	</ondeath>
+
+</state>

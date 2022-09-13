@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_TombGuardian2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_debuff.effect"
+	
+	allowtransfer="true"
+	
+	movespeedslow="1"
+	attackspeedslow="1"
+	totaldamagemultiplier="-1"
+
+	negativeeffect="slowed"
+	
+	effecttype="StatusDebuff"
+	
+	modifierkey=""
+>
+</state>

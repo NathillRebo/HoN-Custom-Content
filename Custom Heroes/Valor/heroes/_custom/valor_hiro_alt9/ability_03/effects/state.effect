@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+		<modifier 
+			name="modifier0"
+			alpha="1"
+			color="1 1 1"
+		/>
+
+		<particlesystem name="system0" space="entity" scale="1">
+			<model
+				life="2000"
+				parentmodel="true"
+				parentskeleton="true"
+				color=".8 .8 .9"
+				startscale="1"
+				midscale="1.25"
+				endscale="1"
+				midscalepos=".4"
+				material="/shared/effects/materials/shell2_outline.material"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+			/>
+			
+			<model
+				expirelife="300"
+				parentmodel="true"
+				parentskeleton="true"
+				color=".4 .4 .5"
+				material="/shared/effects/materials/shell4_outline.material"
+			/>
+
+			
+			<skeletonemitter
+				timenudge="2000"
+				spawnrate="20"
+				offsetsphere="40 40 40"
+				minparticlelife="1000"
+				maxparticlelife="1600"
+				material="/shared/effects/materials/sparks_reveal2.material"
+				gravity="-5"
+				direction="0 0 1"
+				angle="0"
+				maxspeed="20"
+			>
+				<template name="sparks">
+					<particle
+						minangle="0"
+						maxangle="360"
+						minsize="20"
+						maxsize="30"
+						color="{color}"
+						startframe="1"
+						midframe=".5"
+						endframe="1"
+						midframepos=".25"
+					/>
+				</template>
+				
+				<instance name="sparks" color=".4 .4 .5" />
+				<instance name="sparks" color=".4 .4 .5" />
+			</skeletonemitter>
+
+			<template name="bg_glow" >
+				<simpleemitter
+					timenudge="2000"
+					bone="{bone}"
+					spawnrate="4"
+					minparticlelife="1200"
+					maxparticlelife="2000"
+					depthbias="8"
+					material="/shared/effects/materials/light_rays.material"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						flare="1"
+						minstartsize="10"
+						maxstartsize="20"
+						minendsize="20"
+						maxendsize="40"
+						startcolor="0"
+						midcolor=".1 .1 .2"
+						endcolor="0"
+						minanglespeed="-50"
+						maxanglespeed="50"
+						anchor="1"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="bg_glow" bone="_bone_fx_06" />
+			<instance name="bg_glow" bone="_bone_fx_03" />
+			<instance name="bg_glow" bone="_bone_fx_16" />
+			<instance name="bg_glow" bone="_bone_fx_13" />
+			<instance name="bg_glow" bone="_bone_head" />
+			<instance name="bg_glow" bone="_bone_back" />
+			<instance name="bg_glow" bone="_bone_center" />
+			<instance name="bg_glow" bone="_bone_lefthand" />
+			<instance name="bg_glow" bone="_bone_righthand" />
+			<instance name="bg_glow" bone="Bip01 R Calf" />
+			<instance name="bg_glow" bone="Bip01 L Calf" />
+			<instance name="bg_glow" bone="Bip01 R Forearm" />
+			<instance name="bg_glow" bone="Bip01 L Forearm" />
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+
+	</thread>
+
+</effect>

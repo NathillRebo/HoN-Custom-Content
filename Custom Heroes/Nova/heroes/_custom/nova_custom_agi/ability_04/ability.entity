@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Nova4"
+
+	icon="icon.tga"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	actiontype="passive"
+	
+	agilitypercharge="5,10,15"
+	
+	targetradius="800"
+>
+	<onframe>
+		<setaccumulator value="1" />
+		
+		<areaofeffect
+			radius="800"
+			targetscheme="other_ally_heroes"
+			targetselection="all"
+		>			
+			<setaccumulator value="accumulator" valueb="1" valueop="add" />
+		</areaofeffect>
+		
+		<setcharges a="accumulator" />
+	</onframe>
+</ability>

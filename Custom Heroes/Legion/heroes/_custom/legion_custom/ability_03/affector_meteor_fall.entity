@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Legion3"
+
+	radius="400"
+	lifetime="5000"
+	effect="effects/meteor_fall.effect"
+	
+	targetselection="all"
+	targetscheme="enemy_nonboss_units"
+	effecttype="Magic"
+	destroytrees="true"
+>
+	
+	<onframeimpact>
+		<applystate name="State_Legion3" continuous="true" timeout="frametime" />
+	</onframeimpact>
+	
+</affector>

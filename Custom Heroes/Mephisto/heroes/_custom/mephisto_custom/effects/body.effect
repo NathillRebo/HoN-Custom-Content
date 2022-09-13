@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".65">
+			<terrainemitter
+				spawnrate="5"
+				range="70"
+				particlelife="1500"
+				drag="0.05"
+			>
+				<particle>			
+					<billboard 
+						life="700"
+						startcolor=".8 .3 0"
+						midcolor="1 .1 0"
+						endcolor=" .5 .5 0"
+						midcolorpos=".25"
+						material="/shared/effects/materials/bubble_pop.material"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".8"
+						minframe="0"
+						maxframe="1"
+						minframespeed="2"
+						maxframespeed="2"
+						offsetsphere="10 4 3"
+						minscale=".4"
+						maxscale=".4"
+						turn="true"
+						angle="-45"
+					/>
+					</particle>
+			</terrainemitter>
+			<simpleemitter
+				bone="_bone_origin"
+				range="50"
+				gravity="-5"
+				spawnrate="10"
+				minparticlelife="600"
+				maxparticlelife="800"
+				offsetsphere="45"
+				material="/shared/effects/materials/whitedot.material"
+				depthbias="-55"
+				position="0 -20 0"
+			>
+				<particle 
+					startcolor="1 .3 0"
+					midcolor="1 .3 0"
+					endcolor="1 .3 0"
+					minstartscale="1"
+					maxstartscale="1"
+					maxendscale="3"
+					minendscale="1"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startanchor="1"
+					endanchor="0"
+				/>
+			</simpleemitter>
+			
+			<template name="splashes">			
+				<simpleemitter
+					spawnrate="8"
+					minparticlelife="250"
+					maxparticlelife="500"
+					gravity="-8"
+					maxspeed="10"
+					drag=".003"
+					depthbias="-30"
+					bone="{bone}"
+					material="/shared/effects/materials/whitedot.material"
+					offsetsphere=".5"
+					minangle="0"
+					maxangle="20"
+					direction="0 -1 1"
+					>
+					<particle 
+					minangle="-45"
+					maxangle="45"
+					startalpha=".3"
+					startcolor=".3 0 .6"
+					midcolor=".1 0 .5"
+					endcolor="0"
+					startsize="0"
+					midsize="5"
+					endsize="2"
+					startanchor="1"
+					endanchor=".75"
+					/>
+				</simpleemitter>
+				<simpleemitter
+					bone="_bone_origin"
+					gravity="-1"
+					spawnrate="5"
+					minparticlelife="400"
+					maxparticlelife="600"
+					offsetsphere="15 15 0"
+					material="/shared/effects/materials/whitewater_02.material"
+					depthbias="-55"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor="0 0 0"
+						midcolor="1 .4 0"
+						endcolor="0 0 0"
+						size="5"
+						minstartscale="6"
+						maxstartscale="8"
+						maxendscale="20"
+						minendscale="12"
+						startalpha="0"
+						midalpha="0.25"
+						midalphapos="0.2"
+						endalpha="0"
+					/>
+				</simpleemitter>
+			  </template>
+			  
+			<simpleemitter
+				bone="_bone_head"
+				gravity="-5"
+				spawnrate="2"
+				minparticlelife="700"
+				maxparticlelife="800"
+				offsetsphere="0 0 0"
+				position="0 0 65"
+				material="/shared/effects/materials/heathaze.material"
+			>
+				<particle 
+					color="1 1 1"
+					param=".2"
+					size="100"
+					startalpha="0"
+					midalpha=".05"
+					endalpha="0"
+					startanchor="1"
+					endanchor="0"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				bone="_bone_origin"
+				particlelife="500"
+				spawnrate="12"
+				material="/shared/effects/materials/refract_ripples.material"
+				offsetsphere="15"
+				depthbias="-10"
+				timenudge="200"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-60"
+					maxanglespeed="60"
+					startsize="100"
+					endsize="185"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+					startparam=".02"
+					endparam="0"
+					lockup="true"
+					lockright="1"
+					pitch="90"
+					minscale=".6"
+					maxscale=".8"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				bone="_bone_origin"
+				gravity="-1"
+				spawnrate="20"
+				minparticlelife="400"
+				maxparticlelife="600"
+				offsetsphere="15 15 0"
+				material="/shared/effects/materials/whitewater_02.material"
+				depthbias="-55"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"		
+					startcolor="0 0 0"
+					midcolor="1 .4 0"
+					endcolor="0 0 0"
+					size="5"
+					minstartscale="6"
+					maxstartscale="8"
+					maxendscale="20"
+					minendscale="12"
+					startalpha="0"
+					midalpha="0.25"
+					midalphapos="0.2"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			
+			<template name="splashes01">
+				<simpleemitter
+					bone="{bone}"
+					gravity="-1"
+					spawnrate="10"
+					minparticlelife="600"
+					maxparticlelife="950"
+					offsetsphere="15 50 0"
+					material="/shared/effects/materials/fire.material"
+					depthbias="-55"
+					inheritvelocity="-0.1"
+				>
+					<particle 
+						minangle="-180"
+						maxangle="180"		
+						startcolor="1 0 0"
+						midcolor=".2"
+						endcolor=".5 .2 0"
+						size="8"
+						minstartscale="5"
+						maxstartscale="10"
+						minendscale="12"
+						maxendscale="16"
+						startalpha="0"
+						midalpha=".5"
+						midalphapos="0.5"
+						endalpha="0"
+						anchor=".5"
+					/>
+				</simpleemitter>
+			</template>
+			<instance name="splashes01" />
+			<instance name="splashes01" />
+			<instance name="splashes" bone="_bone_righteye"/>
+			<instance name="splashes" bone="_bone_lefteye"/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+</effect>

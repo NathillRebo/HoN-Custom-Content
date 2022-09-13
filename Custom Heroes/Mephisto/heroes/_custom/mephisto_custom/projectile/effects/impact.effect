@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true" >
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".65">
+
+			<sound
+				delay="20"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume=".85"
+				sample="/heroes/hydromancer/sounds/impact_%.wav"
+			/>
+
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				depthbias="-30"
+				life="300"
+				minparticlelife="450"				
+				maxparticlelife="700"				
+				spawnrate="12540"
+				count="20"
+				minspeed="250"
+				maxspeed="150"
+				gravity="25"
+				direction="0 0 1"
+				minangle="-90"
+				maxangle="90"
+				drag="0.01"
+				material="/shared/effects/materials/blood1.material"
+				offsetsphere="15 15 5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="160"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="40"
+					endsize="110"
+					startcolor="1 0 0"
+					midcolor="1 0 0"					
+					endcolor="1 0 0"				
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale=".5"
+					maxscale="1"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				depthbias="-30"
+				life="300"
+				minparticlelife="450"				
+				maxparticlelife="700"				
+				spawnrate="12540"
+				count="20"
+				minspeed="250"
+				maxspeed="150"
+				gravity="25"
+				direction="0 0 1"
+				minangle="-90"
+				maxangle="90"
+				drag="0.01"
+				material="/shared/effects/materials/blood1.material"
+				offsetsphere="15 15 5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="160"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					startsize="40"
+					endsize="110"
+					startcolor=".3 0 0"
+					midcolor=".3 0 0"					
+					endcolor=".3 0 0"				
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale=".5"
+					maxscale="1"
+				/>
+			</simpleemitter>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="450"
+				startcolor=".9 .4 0"
+				endcolor="0"
+				startsize="200"
+				endsize="300"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				delay="100"
+				life="350"
+				startcolor="1 .5 0"
+				endcolor="1 .1 0"
+				midcolor="1 .1 0"
+				startsize="100"
+				endsize="300"
+				depthbias="-25"
+				material="/shared/effects/materials/outsplash_blend2.material"
+				position="0 0 0"
+				lockup="true"
+				pitch="90"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				startsize="40"
+				endsize="210"
+				depthbias="-25"
+				material="/shared/effects/materials/outsplash_blend.material"
+				position="0 0 0"
+				lockup="true"
+				pitch="90"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				startcolor="1 .3 0"
+				endcolor=".5 .1 0"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="500"
+				material="/shared/effects/materials/refract_pinch.material"
+				startsize="25"
+				endsize="225"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				startparam="0.1"
+				endparam="0"
+				lockup="true"
+				pitch="90"
+			/>
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

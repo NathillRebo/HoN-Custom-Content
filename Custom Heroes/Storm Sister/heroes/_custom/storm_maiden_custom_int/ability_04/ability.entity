@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_StormSister4"
+
+	statuseffecttooltip="State_Devourer_Ability2_Other"
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="toggle"
+	
+	casteffecttype=""
+	noresponse="true"
+	
+	manacost="0"
+	cooldowntime="4000"
+	
+	targetscheme=""
+	
+	dynamicprecache=""
+>
+	<onlearn />
+	
+	<ontoggleon>
+		<applystate name="State_StormSister4_Self" istoggle="true" />
+		
+		<getscriptvalue name="cast_sound_effect" destvar="str0" entity="this_entity" />
+		<setstr1 a="" />
+		<comparestrings a="str0" b="str1" op="ne">
+			<playeffectdynamic effect="str0" source="source_entity" target="this_owner_entity" occlude="true" />
+		</comparestrings>
+	</ontoggleon>
+	
+	<onimpact effectdescription="true"/>
+	
+	<ondamaged>
+		<targettype type="self" >
+		</targettype>
+		<else>
+			<applystate name="State_StormSister4_Cantdeny" target="this_owner_entity" duration="1000" />
+			<starttimer duration="1000" />
+		</else>
+	</ondamaged>
+
+	<modifier key="decay_active" condition="toggle_active" modpriority="100"
+		casttime="0"
+		anim=""
+	/>
+	<modifier key="ult_boost" modpriority="101"/>
+</ability>

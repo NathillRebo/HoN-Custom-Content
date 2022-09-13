@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+<!--
+		<modifier
+			name="modifier0"
+			material="material.material"
+			color="1 1 1"
+			expirelife="750"
+			startalpha="1"
+			endalpha="0"
+		/>
+-->
+		<particlesystem name="system0" space="entity" scale="1">
+		
+					<sound
+			    delay="150"
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="1300"
+				volume=".80"
+				sample="../sounds/charge.wav"
+			/>
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			<billboard
+				expirelife="300"
+				bone="_bone_centerofchest"
+				delay="200"
+				position="0 0 0"
+				startcolor="1 0 0"
+				midcolor="1 1 0"
+				endcolor="1 0 0"
+				size="250"
+				rollspeed="-1250"
+				depthbias="-50"
+				material="/shared/effects/materials/flare_01.material"
+			/>
+<!--
+			<billboard
+				expirelife="300"
+				bone="_bone_centerofchest"
+				delay="200"
+				position="0 0 0"
+				startcolor="0 0 1"
+				midcolor="0 0 1"
+				endcolor="0 0 0"
+				size="300"
+				rollspeed="-1250"
+				depthbias="-10"
+				material="/shared/effects/materials/flare_01.material"
+			/>
+-->
+			
+
+		</particlesystem>
+		
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<spawnparticlesystem instance="instance2" particlesystem="system2" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" /> 
+		<waitfordeath instance="instance2" /> 
+	</thread>
+
+</effect>

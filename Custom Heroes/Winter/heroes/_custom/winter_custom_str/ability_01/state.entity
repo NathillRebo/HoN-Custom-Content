@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Winter1"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	movespeedmultiplier="0.1,0.2,0.3,0.4"
+	armor="1,2,3,4"
+	magicarmor="1,2,3,4"
+	
+	unitwalking="true"
+	
+	effecttype="StatusBuff"
+	
+	modifierkey=""
+	
+>
+	<oninflict>
+		<forgetattacks />
+			<playeffect effect="effects/cast.effect" source="source_entity" />
+		<startfade />
+	</oninflict>
+	
+	<onattackimpact>
+		<expire />
+	</onattackimpact>
+	
+	<onactivatepreimpact>
+		<expire />
+	</onactivatepreimpact>
+	
+	<aura
+		gadget="Gadget_Winter1"
+		radius="0"
+		targetscheme="self"
+	/>
+</state>

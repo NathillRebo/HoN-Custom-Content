@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Felhound3"
+
+	speed="1500"
+	gravity="10000"
+	
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	
+	traileffect="effects/trail.effect"
+	
+	canturn="0"
+	flying="0"
+	flyheight="0"
+	impactdistance="120"
+>
+
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+		    <onimpact>
+				<damage effecttype="Physical" amount="90,140,190,240" target="target_entity" />
+				<applystate name="State_Felhound3_Debuff" duration="3000" target="target_entity" />
+		    </onimpact>
+		</combatevent>
+	</onimpact>
+	<modifier key="shardofthemaster_boost" modpriority="100">
+		<onimpact>
+			<combatevent effecttype="AbilityBasedProjectile">
+				<onimpact>
+					<areaofeffect
+						center="this_position"
+						radius="230"
+						targetscheme="enemy_units"
+						targetselection="all"
+						effecttype="Physical"
+					>
+						<damage effecttype="Physical" amount="90,140,190,240" target="target_entity" />
+						<applystate name="State_Felhound3_Debuff" duration="3000" target="target_entity" />
+					</areaofeffect>
+				</onimpact>
+			</combatevent>
+		</onimpact>
+	</modifier>
+</projectile>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Valor2"
+	
+	icon="icon.tga"
+	anim="walk_1"
+	casttime="100"
+	castactiontime="100"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	activatescheme="movement"
+
+	casteffecttype="Magic"
+	targetscheme="all_other_nonboss_units"
+	manacost="90,100,110,120"
+	cooldowntime="13000"
+	casteffect=""
+	allowoutofrangecast="true"
+	allowoutofboundscast="true"
+	
+	range="800"
+	forcerange="800"
+	targetradius="125"
+	
+	showlinecast="true"
+	linecastrange="925"
+	linecastwidth="125"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<!-- Distance check to prevent long-range casts on the same frame -->
+		<setpos0 position="target_position" />
+		<distance target="pos0" />
+		<compare a="result" b="1300" op="lt">
+			<spawnprojectile name="Projectile_Valor2" target="target_position" bind="source_entity" bindstate="State_Valor2" bindturn="true" unbindondeath="true" pushentity="true" />
+			<spawnaffector name="Affector_Valor2" target="stack_entity" proxy="source_entity"/>
+			
+			<playeffect effect="effects/charge.effect" />
+		</compare>
+		<else>
+			<playanim name="idle" target="source_entity" />
+		</else>
+	</onimpact>
+</ability>

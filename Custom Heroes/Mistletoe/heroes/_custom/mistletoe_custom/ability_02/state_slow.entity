@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Mistletoe2_Debuff"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	movespeedslowpercharge="0.02,0.04,0.06,0.08"
+	attackspeedslowpercharge="0.02,0.04,0.06,0.08"
+	maxcharges="5"
+
+	negativeeffect="slowed"
+>
+	<modifier key="shardofthemaster_boost"
+		maxcharges="10"
+	/>
+	
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+</state>

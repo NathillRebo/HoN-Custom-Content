@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Cerberus1"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	impactinterval="1000"
+	
+	effecttype=""
+>	
+	<onattackstart>
+		<playeffect effect="effects/attack_action.effect" target="source_entity" source="source_entity" occlude="true" />
+	</onattackstart>
+	
+	<onattackpreimpact>
+		<cantarget targetscheme="enemy_units">
+			<seteffecttype name="combat_damagetype" effecttype="SuperiorMagic" />
+			<seteffecttype name="combat_effecttype" effecttype="Attack SuperiorMagic" />
+		</cantarget>
+	</onattackpreimpact>
+	
+	<onattackimpact>
+		<playeffect effect="effects/impact.effect" source="target_entity" occlude="true" />
+		<applystate name="State_Cerberus1_Debuff" duration="1250,1350,1450,1550" />
+		<expire />
+	</onattackimpact>
+	
+	
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="iamsheeped">
+			<activatemodifierkey entity="this_entity" name="iamsheeped" />
+		</hasmodifier>
+		<else>
+			<deactivatemodifierkey entity="this_entity" name="" />
+		</else>
+	</onframe>
+	
+	<modifier key="iamsheeped" modpriority="9999"
+		passiveeffect=""
+	/>
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		attackrange="15"
+	>
+		<onattack effectdescription="true">
+			<cantarget targetscheme="enemy_units">
+				<setvar0 a="source_maxhealth" b="0.09" op="mult" />
+				<damage effecttype="Magic" amount="1" b="var0" op="mult" />
+			</cantarget>
+		</onattack>
+	</modifier>
+</state>

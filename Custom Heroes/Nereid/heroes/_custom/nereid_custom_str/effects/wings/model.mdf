@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model"  >
+
+	<anim name="idle" clip="../spirit/default_1.clip" loop="1" fps="20" blendtime="200"/>
+	
+</model>

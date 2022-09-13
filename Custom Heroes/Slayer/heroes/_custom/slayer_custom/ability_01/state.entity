@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Slayer1"
+
+	icon="icon.tga"
+	passiveeffect=""
+
+	effecttype=""
+	modifierkey="slayer_Q_active"
+>		
+	
+	<onexpired>
+		<delete target="this_proxy_entity" source="" />
+	</onexpired>
+	
+</state>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Flying_Monkey"
+
+	icon=""
+	ishidden="true"
+	passiveeffect=""
+	propagatetoillusions="true"
+	
+	effecttype=""
+	
+	modifierkey=""
+>
+	<onspawn>
+		<setproxy entity="this_entity" target="0" />
+	</onspawn>
+	
+	<oninflict>
+		<!-- Spawn / kill dragon logic -->
+		<hasmodifier entity="target_entity" name="iamsheeped">
+			<setactivemodifierkey entity="this_entity" name="" />
+			<compare a="this_proxy_entity" b="0" op="gt">
+				<kill target="this_proxy_entity" source="" />
+			</compare>
+		</hasmodifier>
+		<else>
+			<hasmodifier entity="target_entity" name="Deadlift_Ghost">
+				<compare a="this_proxy_entity" b="0" op="gt">
+					<kill target="this_proxy_entity" source="" />
+				</compare>
+			</hasmodifier>
+			<else>
+				<targettype target="target_entity" type="alive">
+					<setactivemodifierkey entity="this_entity" name="Dragon_Active" />
+					<compare a="this_proxy_entity" b="0" op="eq">
+						<spawnprojectile name="Projectile_Flying_Monkey_Set_Bonus" pushentity="true" offset="0 50 0" source="target_entity" />
+						<setent0 entity="stack_entity" />
+						<setproxy entity="this_entity" target="stack_entity" />
+					</compare>
+				</targettype>
+				<else>
+					<setactivemodifierkey entity="this_entity" name="" />
+					<compare a="this_proxy_entity" b="0" op="ne">
+						<kill target="this_proxy_entity" source="" />
+					</compare>
+				</else>
+			</else>
+		</else>
+	</oninflict>
+	
+	<onframe>
+		<hasmodifier name="Deadlift_Ghost" entity="target_entity">
+			<kill target="this_proxy_entity" source="" />
+		</hasmodifier>
+	</onframe>
+	
+	<onexpired>
+		<compare a="this_proxy_entity" b="0" op="ne">
+			<kill target="this_proxy_entity" source="" />
+		</compare>
+	</onexpired>
+</state>

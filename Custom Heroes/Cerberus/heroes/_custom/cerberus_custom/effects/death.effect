@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+	<definitions>
+	
+		<modifier
+			name="modifier0"
+			life="10000"
+			startcolor="1 1 1"
+			midcolor="0 1 0"
+			endcolor="0 1 0"
+			midcolorpos=".7"
+		/>
+	
+		<particlesystem name="system0" space="entity" scale="1.75">
+		
+			<simpleemitter
+				position="0 -20 0"
+				offsetsphere="20 20 0"
+				spawnrate="5"
+				particlelife="2000"
+				life="2000"
+			>
+			
+			<particle>
+				
+				<model
+					delay="0"
+					model="/heroes/soulstealer/alt3/effects/hand/hand.mdf"
+					anim="idle"
+					minyaw="-110"
+					maxyaw="0"
+					minyawspeed="-180"
+					maxyawspeed="-90"
+					startscale=".25"
+					midscale=".5"
+					endscale="0"
+					midscalepos=".75"
+					startalpha="1"
+					midalpha=".5"
+					endalpha=".5"
+					midalphapos=".5"
+					position="0 0 0"
+					directionalspace="global"
+				/>
+			</particle>
+			
+			</simpleemitter>
+
+			<groundsprite
+				position="0 -20 0"
+				name="emitter0" 
+				count="1"
+				loop="false"
+				material="/shared/effects/materials/crack_2_ground.material"
+				life="8000"
+				size="30"
+				startcolor=".2 0 .2"
+				endcolor=".2 0 .2"
+				startalpha=".75"
+				midalpha=".75"
+				endalpha="0"
+			/>
+
+			<groundsprite
+				position="0 -20 0"
+				name="emitter0"
+				count="1"
+				loop="false"
+				material="/shared/effects/materials/blackhole_overlay.material"
+				life="8000"
+				size="30"
+				startalpha=".75"
+				midalpha=".75"
+				endalpha="0"
+			/>
+<!--
+			<groundsprite
+				position="-20 -15 0"
+				name="emitter0"
+				count="1"
+				loop="false"
+				material="/shared/effects/materials/blob.material"
+				life="8000"
+				startsize="10"
+				endsize="20"
+				minyaw="-360"
+				maxyaw="360"
+				startcolor=".2 1 .2"
+				endcolor=".2 1 .2"
+				startalpha=".75"
+				midalpha=".75"
+				endalpha="0"
+			/>
+-->
+			<simpleemitter
+				position="0 0 0"
+				life="5000"
+				minparticlelife="2100"
+				maxparticlelife="2200"
+				spawnrate="35"
+				material="/shared/effects/materials/blob_add.material"
+				offsetsphere="35 35 0"
+			>
+				<particle 
+					minanglespeed="-110"
+					maxanglespeed="130"
+					minangle="-360"
+					maxangle="360"
+					startcolor="0"
+					midcolor=".1 0 .05"
+					endcolor="0"
+					startsize="15"
+					lockup="1"
+					pitch="90"
+					endsize="45"
+				/>
+			</simpleemitter>		
+			
+			<billboard
+				bone="_bone_head"
+				life="10000"
+				startcolor=".1 0 .05"
+				endcolor="0 0 0"
+				size="100"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-100"
+			/>
+
+
+			<simpleemitter
+				bone="_bone_center"
+				count="50"
+				position="0 0 0"
+				spawnrate="500"
+				minparticlelife="200"
+				maxparticlelife="600"			
+				gravity="0"
+				material="/shared/effects/materials/blood_white.material"
+				offsetsphere="15 15 0"
+				direction="0 0 1"
+				depthbias="0"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					color="1 0 .5"
+					startsize="20"
+					endsize="30"
+					turn="true"
+					startalpha=".65"
+					midalpha=".65"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="7500"
+				bone="_bone_center"
+				position="0 0 0"
+				spawnrate="10"										
+				particlelife="1600"	
+				material="/shared/effects/materials/smoke_17.material"
+				offsetsphere="5 5 5"
+				inheritvelocity=".4"
+				gravity="-2"
+				collide="1"
+				depthbias="-50"
+				offsetradial="30"
+				minangle="-90"
+				maxangle="90"
+				speed="5"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color="1 0 .5"
+					startsize="35"
+					endsize="70"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					startanchor=".2"
+					endanchor="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+			
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/>
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+<!-- [min|max][start|mid|end]property[speed][position] -->

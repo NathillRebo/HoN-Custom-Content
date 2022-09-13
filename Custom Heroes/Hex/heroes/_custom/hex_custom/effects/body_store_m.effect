@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+			<model
+				expirelife="0"
+				model="crystals/model_store_m.mdf"
+				material="opal.material"
+				inheritparentmodifiers="true"
+				parentskeleton="true"
+				startalpha=".7"
+				endalpha="0"
+				color="0 .75 1"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

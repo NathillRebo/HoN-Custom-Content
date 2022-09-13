@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Zero1"
+
+	speed="1275,1400,1525,1650"
+	gravity="2562"
+	modelscale="0.6"
+	model="/shared/models/invis.mdf"
+
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+</projectile>

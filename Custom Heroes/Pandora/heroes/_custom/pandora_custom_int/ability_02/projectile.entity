@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Andromeda_Ability1"
+
+	speed="1250"
+	gravity="0"
+
+	modelscale="1"
+	model="effects/orb/orb.mdf"
+	traileffect="effects/trail.effect"
+	effectscale="1.0"
+	impacteffect=""
+>
+
+
+	<altavatar key="Hero_Andromeda.Alt" modpriority="100"
+		traileffect="../alt/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Andromeda.Alt3" modpriority="100"
+		traileffect="../alt3/ability_01/effects/trail.effect"
+	/>
+	
+	<altavatar key="Hero_Andromeda.Alt4" modpriority="100"
+		traileffect="/heroes/andromeda/alt4/ability_01/effects/trail.effect"
+	/>
+
+	<altavatar key="Hero_Andromeda.Alt6" modpriority="100"
+		traileffect="/heroes/andromeda/alt6/ability_01/effects/trail.effect"
+	/>
+</projectile>

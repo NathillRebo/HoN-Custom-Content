@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dryadin_Ability2"
+
+	ishidden="true"
+	
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	
+	unitwalking="true"
+	treewalking="true"
+>
+</state>

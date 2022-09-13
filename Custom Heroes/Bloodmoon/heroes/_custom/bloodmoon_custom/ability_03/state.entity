@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_Bloodmoon3_Self" 
+
+    icon="icon.tga" 
+    passiveeffect="effects/state_self.effect" 
+
+    effecttype="" 
+    alwaystransmitdata="true" 
+> 
+    <onframe>
+		<heal target="source_entity" a="30,55,80,105" b="frametime" op="mult" />
+    </onframe> 
+     
+    <onexpired> 
+        <expirestate name="State_Bloodmoon3_Enemy" target="this_proxy_entity" /> 
+    </onexpired> 
+	
+	<modifier key="shardofthemaster_boost" modpriority="100"
+		armor="4"
+		magicarmor="4"
+		movespeedmultiplier="0.35"
+	/>
+</state>  

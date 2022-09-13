@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+		
+		<controller bone="Bone030">
+			<model
+				delay="750"
+				position="6 0 0"
+				expirelife="300"
+				model="dagger/model.mdf"
+				color="1 1 1"
+				inheritparentmodifiers="true"
+				roll="-90"
+				yaw="0"
+				life="5000"
+			/>
+		</controller>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

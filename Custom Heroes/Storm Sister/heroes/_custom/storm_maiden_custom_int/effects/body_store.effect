@@ -1,0 +1,1555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+				    dampen="0.5"
+				    channelid="storeaud"
+					sound2d="true"
+					volume=".5"
+					sample="../sounds/store_audio.wav"
+			/>
+			
+			<model
+				life="4050"
+				color="1"
+				position="0 0 0"
+				model="../1/model_store_l.mdf"
+				anim="idle"
+				scale="1"
+			>
+		<template name="bone">
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="4"
+				minparticlelife="500"
+				maxparticlelife="650"
+				gravity="0"
+				material="/shared/effects/materials/cloud_blend.material"
+				offsetsphere="4"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-15"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="18"
+					endsize="22"
+					color=".4 .5 .6"		
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					minscale="1.5"
+					maxscale="2.3"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="4"
+				minparticlelife="550"
+				maxparticlelife="750"
+				gravity="0"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="4"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-15"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="28"
+					endsize="45"
+					color=".7 .8 .9"
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					minscale="1.5"
+					maxscale="2.3"
+				/>
+			</simpleemitter>
+			</template>
+			<instance name="bone" bone="_bone_weaponattach001" position="-32 0 -2"/>
+			<instance name="bone" bone="_bone_weaponattach003" position="-37 0 -2"/>
+			<instance name="bone" bone="_bone_weaponattach011" position="29 0 -2"/>
+			<instance name="bone" bone="_bone_weaponattach014" position="34 0 -2"/>
+			<template name="bone">
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="1"
+				minparticlelife="1850"
+				maxparticlelife="2550"
+				gravity="2"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-20"
+				minspeed="50"
+				maxspeed="250"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="10"
+					endsize="22"
+					startcolor="0"
+					midcolor="0 .2 .4"
+					endcolor="0"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					minscale="1"
+					maxscale="2"
+					anchor="1"
+				/>
+			</simpleemitter>
+			</template>
+			<instance name="bone" bone="_bone_weaponattach001" position="-35 0 -1" offsetsphere="2"/>
+			<instance name="bone" bone="_bone_weaponattach003" position="-40 0 -1" offsetsphere="2"/>
+			<instance name="bone" bone="_bone_weaponattach011" position="32 0 -1" offsetsphere="2"/>
+			<instance name="bone" bone="_bone_weaponattach014" position="37 0 -1" offsetsphere="2"/>
+			<simpleemitter		
+				bone="_bone_weaponattach001"
+				spawnrate="15"
+				minparticlelife="700"		
+				maxparticlelife="900"		
+				offsetsphere="20 20 5"
+				material="/shared/effects/materials/bubble_add.material"	
+				depthbias="-20"	
+				gravity="20"
+				position="-35 0 0"
+			>
+				<particle	
+					color=".8 1 1"
+					startsize="4"
+					endsize="1"
+					startscale=".4"
+					endscale=".8"		
+					startheightdistort=".5"		
+					lockup="1"
+				/> 
+				<particle	
+					color=".7 .9 1"
+					startsize="4"
+					endsize="1"
+					startscale=".4"
+					endscale=".8"		
+					startheightdistort=".5"		
+					lockup="1"
+				/> 
+			</simpleemitter> 
+			<simpleemitter		
+				bone="_bone_weaponattach011"
+				spawnrate="15"
+				minparticlelife="700"		
+				maxparticlelife="900"		
+				offsetsphere="20 20 5"
+				material="/shared/effects/materials/bubble_add.material"	
+				depthbias="-20"	
+				gravity="20"
+				position="35 0 0"
+			>
+				<particle	
+					color=".8 1 1"
+					startsize="4"
+					endsize="1"
+					startscale=".4"
+					endscale=".8"		
+					startheightdistort=".5"		
+					lockup="1"
+				/> 
+				<particle	
+					color=".7 .9 1"
+					startsize="4"
+					endsize="1"
+					startscale=".4"
+					endscale=".8"		
+					startheightdistort=".5"		
+					lockup="1"
+				/> 
+			</simpleemitter> 
+			<template name="bone">
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="2"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/bad_heal_smoke_06.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startsize="15"
+					endsize="22"
+					color=".7 .8 .9"		
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					minscale="1.5"
+					maxscale="2.3"
+					anchor="0.9"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="3"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/cloud_blend.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startsize="15"
+					endsize="22"
+					color=".4 .5 .6"
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					minscale="1.5"
+					maxscale="2.3"
+					anchor="0.9"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="2"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="250"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="15"
+					endsize="22"
+					startcolor="0"
+					midcolor=".2"
+					endcolor="0"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale="1.5"
+					maxscale="2.3"
+					anchor="0.9"
+				/>
+			</simpleemitter>				
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="2"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="2"
+				material="/shared/effects/materials/cloud_blend02.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="250"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="15"
+					endsize="22"
+					startcolor=".2"
+					endcolor=".1"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					minscale="1.5"
+					maxscale="2.3"
+					anchor="0.9"
+				/>
+			</simpleemitter>	
+			</template>
+			<instance name="bone" bone="Bone041" position="-32 0 -2" offsetsphere="2 3 2"/>
+			<instance name="bone" bone="Bone039" position="29 0 -2" offsetsphere="4 5 4"/>
+				<template name="bone">
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="3"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/bad_heal_smoke_06.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startsize="15"
+					endsize="22"
+					color=".7 .8 .9"		
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					minscale=".8"
+					maxscale="1.5"
+					anchor=".9"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="3"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/cloud_blend.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startsize="15"
+					endsize="22"
+					color=".4 .5 .6"
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					minscale=".8"
+					maxscale="1.5"
+					anchor=".9"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="2"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="250"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="15"
+					endsize="22"
+					startcolor="0"
+					midcolor=".2"
+					endcolor="0"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale=".8"
+					maxscale="1.5"
+					anchor=".9"
+				/>
+			</simpleemitter>				
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="2"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="2"
+				material="/shared/effects/materials/cloud_blend02.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="250"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="15"
+					endsize="22"
+					startcolor=".2"
+					endcolor=".1"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					minscale=".8"
+					maxscale="1.5"
+					anchor=".9"
+				/>
+			</simpleemitter>	
+			</template>
+			<instance name="bone" bone="_bone_weaponattach002" position="-32 0 -8" offsetsphere="1 2 1"/>
+			<instance name="bone" bone="_bone_weaponattach012" position="29 0 -8" offsetsphere="1 2 1"/>
+			<instance name="bone" bone="_bone_weaponattach014" position="34 0 -8" offsetsphere="4 5 4"/>
+			<instance name="bone" bone="_bone_weaponattach003" position="-37 0 -8" offsetsphere="4 5 4"/>
+			<template name="cloud">
+				<simpleemitter
+					position="0 5 0"
+					spawnrate="25"
+					bone="{bone}"
+					minparticlelife="450"
+					maxparticlelife="750"
+					gravity="10"
+					material="/shared/effects/materials/smoke_particle.material"
+					offsetsphere="6"
+					speed=".02"
+				>
+					<particle
+						maxangle="360"
+						minanglespeed="-20"
+						maxanglespeed="20"
+						startsize="18"
+						endsize="42"
+						color=".7 .8 .9"						
+						startstickeness="1"
+						endstickiness="0"
+						startalpha="0"
+						midalpha=".5"
+						endalpha="0"
+						scale=".7"
+					/>
+				</simpleemitter>
+				<simpleemitter
+					position="0 5 0"
+					spawnrate="25"
+					bone="{bone}"
+					minparticlelife="450"
+					maxparticlelife="650"
+					gravity="10"
+					material="/shared/effects/materials/cloud_blend.material"
+					offsetsphere="6"
+					speed=".02"
+				>
+					<particle
+						maxangle="360"
+						minanglespeed="-20"
+						maxanglespeed="20"
+						startsize="18"
+						endsize="42"
+						color=".4 .5 .6"			
+						startstickeness="1"
+						endstickiness="0"
+						startalpha="0"
+						midalpha=".6"
+						endalpha="0"
+						scale=".6"
+					/>
+				</simpleemitter>	
+			</template>
+			<instance name="cloud" bone="_bone_righthand"/>
+			<instance name="cloud" bone="_bone_lefthand"/>
+			</model>
+			<model
+				delay="4050"
+				life="4700"
+				color="1"
+				position="0 0 0"
+				model="../1/model_store_l.mdf"
+				material="../2/material.material"
+				anim="idle"
+				scale="1"
+			>
+			<template name="bone">
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="4"
+				minparticlelife="500"
+				maxparticlelife="650"
+				gravity="0"
+				material="/shared/effects/materials/cloud_blend.material"
+				offsetsphere="4"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-15"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="18"
+					endsize="22"
+					color=".2"		
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					minscale="1.5"
+					maxscale="2.3"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="4"
+				minparticlelife="550"
+				maxparticlelife="750"
+				gravity="0"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="4"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-15"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="28"
+					endsize="45"
+					color=".2"
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					minscale="1.5"
+					maxscale="2.3"
+				/>
+			</simpleemitter>
+			</template>
+			<instance name="bone" bone="_bone_weaponattach001" position="-54 0 -2"/>
+			<instance name="bone" bone="_bone_weaponattach003" position="-49 0 -2"/>
+			<instance name="bone" bone="_bone_weaponattach011" position="41 0 -2"/>
+			<instance name="bone" bone="_bone_weaponattach014" position="46 0 -2"/>
+			<template name="bone">
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="1"
+				minparticlelife="1850"
+				maxparticlelife="2550"
+				gravity="2"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-20"
+				minspeed="50"
+				maxspeed="250"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="10"
+					endsize="22"
+					startcolor="0"
+					midcolor=".4 0 .1"
+					endcolor="0"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					minscale="1"
+					maxscale="2"
+					anchor="1"
+				/>
+			</simpleemitter>
+			</template>
+			<instance name="bone" bone="_bone_weaponattach001" position="-47 0 -1" offsetsphere="2"/>
+			<instance name="bone" bone="_bone_weaponattach003" position="-52 0 -1" offsetsphere="2"/>
+			<instance name="bone" bone="_bone_weaponattach011" position="44 0 -1" offsetsphere="2"/>
+			<instance name="bone" bone="_bone_weaponattach014" position="49 0 -1" offsetsphere="2"/>
+			<template name="bone">
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="2"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/bad_heal_smoke_06.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startsize="15"
+					endsize="22"
+					color="0"		
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".9"
+					endalpha="0"
+					minscale="1.5"
+					maxscale="2.3"
+					anchor="0.9"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="3"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/cloud_blend.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startsize="15"
+					endsize="22"
+					color=".25"
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".9"
+					endalpha="0"
+					minscale="1.5"
+					maxscale="2.3"
+					anchor="0.9"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="2"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="250"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="15"
+					endsize="22"
+					startcolor="0"
+					midcolor=".2"
+					endcolor="0"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale="1.5"
+					maxscale="2.3"
+					anchor="0.9"
+				/>
+			</simpleemitter>				
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="2"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="2"
+				material="/shared/effects/materials/cloud_blend02.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="250"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="15"
+					endsize="22"
+					color="0"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".9"
+					endalpha="0"
+					minscale="1.5"
+					maxscale="2.3"
+					anchor="0.9"
+				/>
+			</simpleemitter>	
+			</template>
+			<instance name="bone" bone="Bone041" position="-44 0 -3" offsetsphere="2 3 2"/>
+			<instance name="bone" bone="Bone039" position="41 0 3" offsetsphere="4 5 4"/>
+			<template name="bone">
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="3"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/bad_heal_smoke_06.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startsize="15"
+					endsize="22"
+					color="0"		
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".9"
+					endalpha="0"
+					minscale=".8"
+					maxscale="1.5"
+					anchor=".9"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="3"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/cloud_blend.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startsize="15"
+					endsize="22"
+					color=".25"
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".9"
+					endalpha="0"
+					minscale=".8"
+					maxscale="1.5"
+					anchor=".9"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="2"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="250"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="15"
+					endsize="22"
+					startcolor="0"
+					midcolor=".2"
+					endcolor="0"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale=".8"
+					maxscale="1.5"
+					anchor=".9"
+				/>
+			</simpleemitter>				
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="2"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="2"
+				material="/shared/effects/materials/cloud_blend02.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="250"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="15"
+					endsize="22"
+					color="0"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".9"
+					endalpha="0"
+					minscale=".8"
+					maxscale="1.5"
+					anchor=".9"
+				/>
+			</simpleemitter>	
+			</template>
+			<instance name="bone" bone="_bone_weaponattach002" position="-44 0 -8" offsetsphere="1 2 1"/>
+			<instance name="bone" bone="_bone_weaponattach012" position="41 0 -8" offsetsphere="1 2 1"/>
+			<instance name="bone" bone="_bone_weaponattach014" position="46 0 -8" offsetsphere="4 5 4"/>
+			<instance name="bone" bone="_bone_weaponattach003" position="-49 0 -8" offsetsphere="4 5 4"/>
+			<template name="cloud">
+			<simpleemitter
+				position="0 5 0"
+				spawnrate="25"
+				bone="{bone}"
+				minparticlelife="450"
+				maxparticlelife="750"
+				gravity="10"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="6"
+				speed=".02"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-20"
+					maxanglespeed="20"
+					startsize="18"
+					endsize="42"
+					color=".2"
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					scale=".7"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="0 5 0"
+				spawnrate="25"
+				bone="{bone}"
+				minparticlelife="450"
+				maxparticlelife="650"
+				gravity="10"
+				material="/shared/effects/materials/cloud_blend.material"
+				offsetsphere="6"
+				speed=".02"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-20"
+					maxanglespeed="20"
+					startsize="18"
+					endsize="42"
+					color=".25"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".6"
+					endalpha="0"
+					scale=".6"
+				/>
+			</simpleemitter>	
+		</template>
+			<instance name="cloud" bone="_bone_righthand"/>
+			<instance name="cloud" bone="_bone_lefthand"/>
+			<controller bone="_bone_weapon3" >
+				<beam
+					color=".8 0 .4"
+					position_a="0 0 15"
+					position_b="0 0 -82"
+					size="20"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+			</controller>
+			<controller bone="_bone_weapon1" >
+				<twopointtrailemitter
+					position_a="0 0 5"
+					position_b="0 0 32"
+					spawnrate="700"
+					particlelife="100"
+					texpostime="200"
+					texposscale="1"
+					texstretchscale="0"
+					material="/shared/effects/materials/wave_trail.material"
+					subframepose="true"
+				>
+					<particle
+						startcolor=".5 0 .2"
+						endcolor="0 0 0"					
+					/>
+				</twopointtrailemitter>	
+			</controller>
+		</model>
+		<model
+			delay="8700"
+			color="1"
+			position="0 0 0"
+			model="../1/model_store_l.mdf"
+			material="../3/material.material"
+			anim="idle"
+			scale="1"
+			>
+		<template name="bone">
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="4"
+				minparticlelife="500"
+				maxparticlelife="650"
+				gravity="0"
+				material="/shared/effects/materials/cloud_blend.material"
+				offsetsphere="4"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-15"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="18"
+					endsize="22"
+					startcolor="1 1 .3"		
+					midcolor=".8 .55 .3"		
+					endcolor=".8 .3 .5"		
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					minscale="1"
+					maxscale="1.8"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="4"
+				minparticlelife="550"
+				maxparticlelife="750"
+				gravity="0"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="4"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-15"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="28"
+					endsize="45"
+					startcolor="1 1 .3"
+					midcolor="1 .6 .3"
+					endcolor="1 .5 .6"
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					minscale="1"
+					maxscale="1.8"
+				/>
+			</simpleemitter>
+			</template>
+			<instance name="bone" bone="_bone_weaponattach001" position="-54 0 -2"/>
+			<instance name="bone" bone="_bone_weaponattach003" position="-49 0 -2"/>
+			<instance name="bone" bone="_bone_weaponattach011" position="41 0 -2"/>
+			<instance name="bone" bone="_bone_weaponattach014" position="46 0 -2"/>
+		<template name="bone">
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="1"
+				minparticlelife="1850"
+				maxparticlelife="2550"
+				gravity="2"
+				material="/shared/effects/materials/whitedot.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-20"
+				minspeed="50"
+				maxspeed="250"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="10"
+					endsize="22"
+					startcolor="0"
+					midcolor=".4 .3 .05"
+					endcolor="0"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					minscale="0.6"
+					maxscale="1.5"
+					anchor="1"
+				/>
+			</simpleemitter>
+			</template>
+			<instance name="bone" bone="_bone_weaponattach001" position="-47 0 -1" offsetsphere="2"/>
+			<instance name="bone" bone="_bone_weaponattach003" position="-52 0 -1" offsetsphere="2"/>
+			<instance name="bone" bone="_bone_weaponattach011" position="44 0 -1" offsetsphere="2"/>
+			<instance name="bone" bone="_bone_weaponattach014" position="49 0 -1" offsetsphere="2"/>
+			<template name="bone">
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="3"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/bad_heal_smoke_06.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startsize="15"
+					endsize="22"
+					startcolor="1 1 .6"		
+					midcolor="1 .7 .3"		
+					endcolor="1 .5 .6"		
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					minscale="1"
+					maxscale="1.8"
+					anchor="0.9"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="3"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/cloud_blend.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startsize="15"
+					endsize="22"
+					startcolor="1 .9 .4"
+					midcolor="1 .7 .3"
+					endcolor="1 .4 .5"
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".6"
+					endalpha="0"
+					minscale="1"
+					maxscale="1.8"
+					anchor="0.9"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="3"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="250"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="15"
+					endsize="22"
+					startcolor="0"
+					midcolor=".3 .3 .1"
+					endcolor="0"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale="1"
+					maxscale="1.8"
+					anchor="0.9"
+				/>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="15"
+					endsize="22"
+					startcolor="0"
+					midcolor=".3 .1 .3"
+					endcolor="0"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale="1"
+					maxscale="1.8"
+					anchor="0.9"
+				/>
+			</simpleemitter>
+			</template>
+			<instance name="bone" bone="Bone041" position="-44 0 -3" offsetsphere="2 3 2"/>
+			<instance name="bone" bone="Bone039" position="41 0 3" offsetsphere="4 5 4"/>
+		<template name="bone">
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="3"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/bad_heal_smoke_06.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-150"
+					maxanglespeed="150"
+					startsize="15"
+					endsize="22"
+					startcolor="1 1 .6"		
+					midcolor="1 .7 .3"		
+					endcolor="1 .5 .6"	
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					minscale=".5"
+					maxscale="1"
+					anchor=".9"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="3"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/cloud_blend.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="100"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startsize="15"
+					endsize="22"
+					startcolor="1 .9 .4"
+					midcolor="1 .7 .3"
+					endcolor="1 .4 .5"
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".6"
+					endalpha="0"
+					minscale=".5"
+					maxscale="1"
+					anchor=".9"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="{position}"
+				bone="{bone}"
+				spawnrate="2"
+				minparticlelife="1050"
+				maxparticlelife="1650"
+				gravity="0"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				offsetsphere="{offsetsphere}"
+				direction="1 0 0"
+				minangle="-180"
+				maxangle="180"
+				directionalspace="global"
+				depthbias="-5"
+				minspeed="50"
+				maxspeed="250"
+				drag="0.5"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="15"
+					endsize="22"
+					startcolor="0"
+					midcolor=".3 .3 .1"
+					endcolor="0"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale=".5"
+					maxscale="1"
+					anchor=".9"
+				/>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startsize="15"
+					endsize="22"
+					startcolor="0"
+					midcolor=".3 .1 .3"
+					endcolor="0"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					minscale=".5"
+					maxscale="1"
+					anchor=".9"
+				/>
+			</simpleemitter>
+			</template>
+			<instance name="bone" bone="_bone_weaponattach002" position="-44 0 -8" offsetsphere="1 2 1"/>
+			<instance name="bone" bone="_bone_weaponattach012" position="41 0 -8" offsetsphere="1 2 1"/>
+			<instance name="bone" bone="_bone_weaponattach014" position="46 0 -8" offsetsphere="4 5 4"/>
+			<instance name="bone" bone="_bone_weaponattach003" position="-49 0 -8" offsetsphere="4 5 4"/>
+		<template name="cloud">
+			<simpleemitter
+				position="0 5 0"
+				spawnrate="25"
+				bone="{bone}"
+				minparticlelife="450"
+				maxparticlelife="750"
+				gravity="10"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="6"
+				speed=".02"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-20"
+					maxanglespeed="20"
+					startsize="18"
+					endsize="42"
+					startcolor="1 .7 .3"
+					midcolor="1 .7 .3"
+					endcolor="1 .2 .5"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					scale="0.7"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				position="0 5 0"
+				spawnrate="25"
+				bone="{bone}"
+				minparticlelife="450"
+				maxparticlelife="650"
+				gravity="10"
+				material="/shared/effects/materials/cloud_blend.material"
+				offsetsphere="6"
+				speed=".02"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-20"
+					maxanglespeed="20"
+					startsize="18"
+					endsize="42"
+					startcolor="1 .7 .3"
+					midcolor="1 .7 .3"
+					endcolor="1 .2 .5"				
+					startstickeness="1"
+					endstickiness="0"
+					startalpha="0"
+					midalpha=".6"
+					endalpha="0"
+					scale="0.6"
+				/>
+			</simpleemitter>	
+		</template>
+		<instance name="cloud" bone="_bone_righthand"/>
+		<instance name="cloud" bone="_bone_lefthand"/>
+		</model>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<wait duration="20000"/>
+	</thread>
+</effect>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hex1_Self"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	unitwalking="true"
+	
+	stealthtype="hero"
+	fadetime="500"
+	
+	effecttype="StatusStealth"
+	
+	modifierkey=""
+	
+>
+	<oninflict>
+		<forgetattacks />
+			<playeffect effect="effects/cast.effect" source="source_entity" />
+		<startfade />
+	</oninflict>
+	
+	<onattackimpact>
+		<expire />
+	</onattackimpact>
+	
+	<onactivatepreimpact>
+		<expire />
+	</onactivatepreimpact>
+
+	<onexpired>
+		<playeffect effect="effects/castback.effect" source="source_entity" />
+	</onexpired>
+	
+	<aura
+		gadget="Gadget_Hex1"
+		radius="0"
+		targetscheme="self"
+	/>
+</state>

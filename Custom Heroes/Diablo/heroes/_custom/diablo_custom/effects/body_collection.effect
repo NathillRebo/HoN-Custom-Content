@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+		<controller
+			bone="_bone_head"
+			position="0 0 18"
+			lockup="true"
+	
+		>
+			<billboard
+				bone="_bone_head"
+				position="0 0 50"
+				scale=".65"
+				color="1 .65 .15"
+				alpha=".25"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				material="/shared/effects/materials/outsplash_blend_white.material"
+			/>
+			
+				<simpleemitter
+					bone="_bone_head"
+					spawnrate="150"
+					position="0 0 50"
+					offsetradial="15"
+					minparticlelife="200"
+					maxparticlelife="600"
+					gravity="-10"
+					material="/shared/effects/materials/fire_add2.material"
+				>
+					<particle
+						anchor="1"
+						size="10"
+						minangle="0"
+						maxangle="360"
+						startcolor=".8"
+						midcolor=".4 .75 .8"
+						endcolor="0"
+						midpos=".2"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="_bone_head"
+					spawnrate="150"
+					position="0 0 50"
+					offsetradial="15"
+					minparticlelife="200"
+					maxparticlelife="600"
+					gravity="-10"
+					material="/shared/effects/materials/fire_add.material"
+				>
+					<particle
+						anchor="1"
+						size="10"
+						minangle="0"
+						maxangle="360"
+						startcolor="1 1 0"
+						midcolor=".5 0 0"
+						endcolor="0 0 0"
+						midcolorpos=".4"
+					/>
+				</simpleemitter>
+			</controller>	
+			<!--
+			<simpleemitter
+				bone="_bone_head"
+				spawnrate="45"
+				position="0 0 50"
+				offsetradial="30"
+				particlelife="2000"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity=".5"
+			>
+				<particle
+					color=".4 .75 .8"
+					startalpha="0"
+					midalpha=".2"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			-->
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="8"
+				minspeed="35"
+				maxspeed="100"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				offsetsphere="25 25 10"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity="-0.1"
+				depthbias="0"
+				directionalspace="local"
+				direction="0 0 -1"
+				gravity="5"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					color="0"
+					minsize="100"
+					maxsize="125"
+					endsize="150"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+			
+			
+			<simpleemitter
+			bone="Bip01 L Calf"
+				spawnrate="8"
+				minspeed="35"
+				maxspeed="100"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				offsetsphere="25 25 10"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity="-0.1"
+				depthbias="0"
+				directionalspace="local"
+				direction="0 0 -1"
+				gravity="5"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					color="0"
+					minsize="100"
+					maxsize="125"
+					endsize="150"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+			bone="Bip01 R Calf"
+				spawnrate="8"
+				minspeed="35"
+				maxspeed="100"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				offsetsphere="25 25 10"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity="-0.1"
+				depthbias="0"
+				directionalspace="local"
+				direction="0 0 -1"
+				gravity="5"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					color="0"
+					minsize="100"
+					maxsize="125"
+					endsize="150"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+			
+		</particlesystem>	
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

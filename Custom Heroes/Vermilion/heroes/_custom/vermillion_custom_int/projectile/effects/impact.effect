@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".75">
+			
+			<sound
+			    volume=".4"
+				sample="/heroes/prophet/sounds/impact_%.wav"
+				linearfalloff="true"
+				falloffstart="600"			
+				falloffend="1300" 
+			/>
+			<simpleemitter
+				bone="_bone_centerofchest"
+				spawnrate="250"
+				count="5"
+				minparticlelife="500"
+				maxparticlelife="750"
+				gravity="0"
+				maxspeed="140"
+				drag="0.1"
+				angle="30"
+				material="/shared/effects/materials/pyroclast_02.material"
+				offsetsphere="15"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					minanglespeed="-10"
+					maxanglespeed="10"
+					color="1 .5 .3"
+					scale="75"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					midalphapos=".25"
+
+				/>
+			</simpleemitter>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor=".8 .4 0"
+				endcolor="0"
+				startsize="250"
+				endsize="0"
+				depthbias="-25"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor=".65"
+				endcolor="0"
+				startsize="55"
+				endsize="0"
+				depthbias="-50"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				life="250"
+				param="0.1"
+				startsize="200"
+				endsize="100"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				depthbias="0"
+				material="/shared/effects/materials/refract_swell.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

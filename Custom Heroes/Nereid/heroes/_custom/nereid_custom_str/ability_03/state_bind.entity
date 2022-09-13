@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Pearl_Ability3_Bind"
+
+	ishidden="true"
+	stunned="true"
+	
+	passiveeffect="effects/aura.effect"
+	
+>
+	<onframe />
+	
+	<altavatar key="Hero_Pearl.Alt10" 
+	    passiveeffect="../alt10/ability_03/aura.tga"
+	/>
+	
+</state>

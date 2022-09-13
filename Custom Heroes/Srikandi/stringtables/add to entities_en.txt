@@ -1,0 +1,49 @@
+
+// Hero_Srikandi_Custom
+Hero_Srikandi_Custom_name										Srikandi
+Hero_Srikandi_Custom_role										Srikandi excels at flanking her foes, both with good attacks and good crowd control, but her lower attack range makes her more vulnerable to enemies that survive her attacks.
+
+// Ability_Srikandi1
+Ability_Srikandi1_name											Strafe
+Ability_Srikandi1_description									Srikandi becomes invisible and gains attack speed after she leaves this state.
+Ability_Srikandi1_description_simple							Srikandi becomes ^oinvisible for {4,6,8,10} seconds^*, with a 0.5 seconds fade time. After she leaves the state (either by breaking it or after it expires), she gains a bonus of ^o{20%,40%,60%,80%} Attack Speed for 5 seconds^*.\n\n^444Now you see me... Now you don't!
+Ability_Srikandi1_effect_header								
+Ability_Srikandi1_tooltip_flavor								Now you see me... Now you don't!
+Ability_Srikandi1_IMPACT_effect									Srikandi becomes ^oinvisible for {4,6,8,10} seconds^*, with a 0.5 seconds fade time. After she leaves the state (either by breaking it or after it expires), she gains a bonus of ^o{20%,40%,60%,80%} Attack Speed for 5 seconds^*.
+
+// State_Srikandi1_Ability1
+State_Srikandi1_Ability1_name									Strafe
+
+// State_Srikandi_Ability1_Attack
+State_Srikandi1_Ability1_Attack_name							Strafe
+
+// Ability_Srikandi2
+Ability_Srikandi2_name											Flaming Arrows
+Ability_Srikandi2_name:shardofthemaster_boost					^pFlaming Arrows^*
+Ability_Srikandi2_description									Attack deal bonus damage at the cost of mana.
+Ability_Srikandi2_description_simple							When toggled on, each attack drains mana, but also deals an additional ^o{24,40,56,72} Magic Damage^*.\n\n^pShard of the Master^* increases damage.\n\n^444I got a quiver of those from a certain burning skeleton!
+Ability_Srikandi2_description_simple:shardofthemaster_boost		When toggled on, each attack drains mana, but also deals an additional ^p{32,48,64,80} plus 1% of target's Max Health as Magic Damage^*.\n\n^444I got a quiver of those from a certain burning skeleton!
+Ability_Srikandi2_effect_header
+Ability_Srikandi2_tooltip_flavor								I got a quiver of those from a certain burning skeleton!
+Ability_Srikandi2_IMPACT_effect									When toggled on, each attack drains mana, but also deals an additional ^o{24,40,56,72} Magic Damage^*.
+
+// Ability_Srikandi3
+Ability_Srikandi3_name											Suppress
+Ability_Srikandi3_description									Rains down arrows at the target location, dealing damage and slowing enemies hit.
+Ability_Srikandi3_description_simple							Rains down arrows at the chosen location, dealing ^o{85,160,235,310} Magic Damage^* to enemies within its area and ^oreducing their Movement Speed by {25%,30%,35%,40%} for {2,3,4,5} seconds^*.\n\n^444Why am I limited by attack speed if I can fire tens of arrows at once?
+Ability_Srikandi3_effect_header
+Ability_Srikandi3_tooltip_flavor								Why am I limited by attack speed if I can fire tens of arrows at once?
+Ability_Srikandi3_IMPACT_effect									Rains down arrows at the chosen location, dealing ^o{85,160,235,310}^* Magic Damage^* to enemies within its area and ^oreducing their Movement Speed by {25%,30%,35%,40%} for {2,3,4,5} seconds^*.
+
+// Ability_Srikandi4
+Ability_Srikandi4_name											Golden Arrow of Lanka
+Ability_Srikandi4_name:ult_boost								Enchanted Golden Arrow of Lanka
+Ability_Srikandi4_description									Fires an arrow in the chosen direction, exploding upon hitting an enemy hero, dealing damage and stunning enemies within its area.
+Ability_Srikandi4_description2									^gThis ability can be boosted by Staff of the Master.^*\n\n^gStaff Effect:^*Increases damage by 175 and stun duration by 0.5 seconds.
+Ability_Srikandi4_description2:boost							\r	
+Ability_Srikandi4_description_simple							Fires an arrow in the chosen direction, which explodes upon hitting an enemy hero. The explosion deals ^o{200,400,600} Magic Damage^* and applies a ^o{0.75,1.25,1.75} second Stun^*.\n\n^gStaff of the Master^* increases damage by 175 and stun duration by 0.5 seconds.\n\n^444No Scope
+Ability_Srikandi4_description_simple:ult_boost					Fires an arrow in the chosen direction, which explodes upon hitting an enemy hero. The explosion deals ^g{375,575,775} Magic Damage^* and applies a ^g{1.25,1.75,2.25} second Stun^*.\n\n^444No Scope
+Ability_Srikandi4_effect_header
+Ability_Srikandi4_tooltip_flavor								No Scope
+Ability_Srikandi4_IMPACT_effect									The explosion deals ^o{200,400,600} Magic Damage^* and applies a ^o{0.75,1.25,1.75} second Stun^*.
+Ability_Srikandi4_IMPACT_effect:ult_boost						The explosion deals ^g{375,575,775} Magic Damage^* and applies a ^g{1.25,1.75,2.25} second Stun^*.

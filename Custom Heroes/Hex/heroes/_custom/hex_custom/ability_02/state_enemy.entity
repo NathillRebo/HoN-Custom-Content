@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Hex2_Enemy"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	movespeedslow="0.1,0.15,0.2,0.25"
+	attackspeedslow="0.1,0.15,0.2,0.25"
+>	
+	<onframe>
+		<damage effecttype="Magic DOT" amount="10,15,20,25" b="frametime" op="mult" />
+	</onframe>
+	
+</state>

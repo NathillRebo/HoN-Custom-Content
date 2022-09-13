@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Solstice_NightFX"
+	
+	passiveeffect=""
+	deathpersist="true"
+	
+	ishidden="true"
+	icon="icon_b.tga"
+	
+	propagatetoillusions="true"
+	modifierkey="Night_Solstice"
+>
+	<oninflict>
+		<hasavatarkey name="Hero_Solstice.Alt7">
+			<playeffect effect="alt7/night_change.effect" target="source_entity" ignoreculling="true"/>
+		</hasavatarkey>
+		<else>
+			<hasavatarkey name="Hero_Solstice.Alt8">
+				<playeffect effect="alt8/night_change.effect" target="source_entity" ignoreculling="true"/>
+			</hasavatarkey>
+			<else>
+				<hasavatarkey name="Hero_Solstice.Alt9">
+					<playeffect effect="alt9/night_change.effect" target="source_entity" ignoreculling="true"/>
+				</hasavatarkey>
+				<else>
+					<hasavatarkey name="Hero_Solstice.Alt10">
+						<playeffect effect="alt10/night_change.effect" target="source_entity" ignoreculling="true"/>
+					</hasavatarkey>
+					<else>
+						<hasavatarkey name="Hero_Solstice.Alt11">
+							<playeffect effect="alt11/night_change.effect" target="source_entity" ignoreculling="true"/>
+						</hasavatarkey>
+					</else>
+				</else>
+			</else>
+		</else>
+		<pausevoiceovers duration="3500" />
+	</oninflict>
+	
+	<onframe />
+	
+	<!-- Switch to day state -->
+	<modifier key="solstice_day" condition="day" modpriority="101">
+		<onframe>
+			<!-- Do not switch automatically when Sotm is present -->
+			<hasmodifier entity="this_owner_entity" name="ult_boost" />
+			<else>
+				<applystate name="State_Solstice_DayFX" continuous="true" ignoreinvulnerable="true"/>
+				<expire/>
+			</else>
+		</onframe>
+	</modifier>
+	
+	<modifier key="ult_boost" modpriority="100"
+		modifierkey2="Night_Solstice_Ult"
+	>	
+	</modifier>
+</state>

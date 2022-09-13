@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Zero3"
+
+	radius="300"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+>
+	<onimpact>
+		<applystate name="State_Zero3" duration="3000" />
+		<damage effecttype="Magic" amount="0.13" b="source_maxmana" op="mult" />
+	</onimpact>
+</affector>

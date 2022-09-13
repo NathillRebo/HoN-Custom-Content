@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state 
+    name="State_Praetor1_Self" 
+
+    icon="icon.tga" 
+    passiveeffect="effects/state_self.effect" 
+
+    effecttype="" 
+    alwaystransmitdata="true" 
+	manaregen="-24,-32,-40,-48"
+> 
+    <onframe>
+		<evaluate a="24,32,40,48" b="frametime" op="mult" />
+		<compare a="source_mana" b="result" op="le" >
+			<expire />
+		</compare>
+		<takemana target="source_entity" amount="result" triggeractionscript="true" costovertime="true" />
+    </onframe> 
+     
+    <onexpired> 
+        <expirestate name="State_Praetor1_Enemy" target="this_proxy_entity" /> 
+    </onexpired> 
+</state>  

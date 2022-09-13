@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".75">
+
+
+			<simpleemitter
+				position="0 0 100"
+				spawnrate="4"
+				particlelife="1500"
+				gravity="2"
+				speed="5"
+				direction="0 0 1"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+					color=".53 .29 .08"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					maxangle="360"
+					anglespeed="-30"
+					startsize="1200"
+					endsize="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					anchor=".8"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				position="0 0 100"
+				spawnrate="3"
+				particlelife="850"
+				gravity="5"
+				speed="15"
+				offsetsphere="25"
+				direction="0 0 1"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+					
+					color=".35 .19 .05"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					maxangle="-190"
+					anglespeed="-30"
+					startsize="600"
+					endsize="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					anchor=".8"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				position="0 0 100"
+				spawnrate="3"
+				particlelife="1250"
+				gravity="5"
+				speed="3"
+				offsetsphere="15"
+				direction="0 0 1"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+					color=".83 .45 .13"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					maxangle="360"
+					anglespeed="-160"
+					startsize="500"
+					endsize="0"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					anchor=".8"
+				/>
+			</simpleemitter>
+
+			<orbiteremitter
+				spawnrate="33"
+				particlelife="1250"
+				origin="0 0 -310" 
+				orbit="-3 70 60" 
+				direction="0 0 1" 
+				offset="70 70 70"
+				cylindrical="true" 
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-600"
+						maxyawspeed="600"
+						minrollspeed="-600"
+						maxrollspeed="600"
+						minpitchspeed="-600"
+						maxpitchspeed="600"
+						minscale="2"
+						maxscale="2.5"
+					>
+						<trailemitter
+							minlife="750"
+							maxlife="1250"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="300"
+							material="/shared/effects/materials/glow_02.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor=".59 .32 .09"
+								midcolor=".89 .48 .14"
+								endcolor="1.08 .64 .18"
+								startsize="0"
+								minmidsize="2"
+								maxmidsize="3"
+								endsize="0"
+							/>
+						</trailemitter>
+						<trailemitter
+							minlife="750"
+							maxlife="1250"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="500"
+							material="/shared/effects/materials/fire_scrolling_trail.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor="1.77 .96 .27"
+								midcolor="1.77 .96 .27"
+								endcolor="1.77 .96 .27"
+								startsize="0"
+								minmidsize="4"
+								maxmidsize="6"
+								endsize="0"
+							/>
+						</trailemitter>
+					</particle>
+			</orbiteremitter>
+
+			<orbiteremitter
+				position="0 0 15"
+				minspawnrate="10"
+				maxspawnrate="15"
+				particlelife="1000"
+				origin="0 0 -100"
+				orbit="-5 0 0 "
+				direction="0 0 1"
+				offset="0 0 0"
+				cylindrical="true"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-600"
+						maxyawspeed="600"
+						minrollspeed="-600"
+						maxrollspeed="600"
+						minpitchspeed="-600"
+						maxpitchspeed="600"
+						minscale="2"
+						maxscale="2.5"
+					>
+						<trailemitter
+							minlife="750"
+							maxlife="1250"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="300"
+							material="/shared/effects/materials/glow_02.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor=".59 .32 .09"
+								midcolor=".89 .48 .14"
+								endcolor="1.08 .64 .18"
+								startsize="0"
+								minmidsize="2"
+								maxmidsize="3"
+								endsize="0"
+							/>
+						</trailemitter>
+						<trailemitter
+							minlife="750"
+							maxlife="1250"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="500"
+							material="/shared/effects/materials/fire_scrolling_trail.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor="1.77 .96 .27"
+								midcolor="1.77 .96 .27"
+								endcolor="1.77 .96 .27"
+								startsize="0"
+								minmidsize="4"
+								maxmidsize="6"
+								endsize="0"
+							/>
+						</trailemitter>
+					</particle>
+			</orbiteremitter>
+
+			<orbiteremitter
+				position="0 0 30"
+				minspawnrate="10"
+				maxspawnrate="10"
+				particlelife="950"
+				origin="0 0 -200"
+				orbit="-2 0 0 "
+				direction="0 0 1"
+				offset="10 10 10"
+				cylindrical="true"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-600"
+						maxyawspeed="600"
+						minrollspeed="-600"
+						maxrollspeed="600"
+						minpitchspeed="-600"
+						maxpitchspeed="600"
+						minscale="2"
+						maxscale="2.5"
+					>
+						<trailemitter
+							minlife="750"
+							maxlife="1250"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="300"
+							material="/shared/effects/materials/glow_02.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor=".59 .32 .09"
+								midcolor=".89 .48 .14"
+								endcolor="1.08 .64 .18"
+								startsize="0"
+								minmidsize="2"
+								maxmidsize="3"
+								endsize="0"
+							/>
+						</trailemitter>
+						<trailemitter
+							minlife="750"
+							maxlife="1250"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="500"
+							material="/shared/effects/materials/fire_scrolling_trail.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor="1.77 .96 .27"
+								midcolor="1.77 .96 .27"
+								endcolor="1.77 .96 .27"
+								startsize="0"
+								minmidsize="4"
+								maxmidsize="6"
+								endsize="0"
+							/>
+						</trailemitter>
+					</particle>
+			</orbiteremitter>
+
+			<orbiteremitter
+				position="0 0 50"
+				minspawnrate="15"
+				maxspawnrate="15"
+				particlelife="1000"
+				origin="0 0 -300"
+				orbit="-2 0 0 "
+				direction="0 0 1"
+				offset="0 0 0"
+				cylindrical="true"
+				material="/shared/effects/materials/pyroclast_01.material"
+			>
+				<particle
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-600"
+						maxyawspeed="600"
+						minrollspeed="-600"
+						maxrollspeed="600"
+						minpitchspeed="-600"
+						maxpitchspeed="600"
+						minscale="2"
+						maxscale="2.5"
+					>
+						<trailemitter
+							minlife="750"
+							maxlife="1250"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="300"
+							material="/shared/effects/materials/glow_02.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor=".59 .32 .09"
+								midcolor=".89 .48 .14"
+								endcolor="1.08 .64 .18"
+								startsize="0"
+								minmidsize="2"
+								maxmidsize="3"
+								endsize="0"
+							/>
+						</trailemitter>
+						<trailemitter
+							minlife="750"
+							maxlife="1250"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="500"
+							material="/shared/effects/materials/fire_scrolling_trail.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor="1.77 .96 .27"
+								midcolor="1.77 .96 .27"
+								endcolor="1.77 .96 .27"
+								startsize="0"
+								minmidsize="4"
+								maxmidsize="6"
+								endsize="0"
+							/>
+						</trailemitter>
+					</particle>
+			</orbiteremitter>
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

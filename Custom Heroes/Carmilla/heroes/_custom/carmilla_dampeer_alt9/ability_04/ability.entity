@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Carmilla4"
+
+	icon="icon.tga"
+	
+	anim="ability_1"
+	casttime="800"
+	castactiontime="250"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_self"
+	frontqueue="true"
+	casteffecttype="SuperiorMagic"
+	casteffect=""
+	
+	manacost="100"
+	cooldowntime="150000"
+	
+	targetradius="400"
+>
+	<onimpact>
+		<applystate name="State_Carmilla4" duration="15000" target="source_entity" />
+		<playeffect effect="effects/birth.effect" source="source_entity" target="" />
+	</onimpact>
+	<modifier key="ult_boost" modpriority="100"/>
+</ability>

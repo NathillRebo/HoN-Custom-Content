@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Zero_Custom"
+	movespeedperlevel="3"
+
+	team="Legion"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect="effects/body.effect"
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="2.5"
+	portraitcampos="16 -45 18"
+	modelscale="1"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="44"
+	targetoffset="0 0 64"
+
+	category="magic"
+	difficulty="2"
+
+	solorating="1"
+	junglerating="0"
+	carryrating="5"
+	supportrating="0"
+	initiatorrating="0"
+	gankerrating="0"
+	pusherrating="0"
+	rangedrating="5"
+	meleerating="0"
+	
+	movespeed="300"
+	turnrate="540"
+	turnsmoothing="0.075"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="0"
+	magicarmor="5"
+
+	inventory0="Ability_Zero1"
+	inventory1="Ability_Zero2"
+	inventory2="Ability_Zero3"
+	inventory3="Ability_Zero4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="400"
+	attackcooldown="1700"
+	attackdamagemin="21"
+	attackdamagemax="25"
+	attacknumanims="2"
+	attackoffset="0 40 70"
+	attackprojectile="Projectile_Zero"
+	attackrange="550"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Intelligence"
+	strength="13"
+	strengthperlevel="1.4"
+	agility="19"
+	agilityperlevel="2.1"
+	intelligence="24"
+	intelligenceperlevel="2.6"
+	
+	corpsetime="6500"
+	corpsefadetime="2500"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+	
+	previewmodel="model.mdf"
+	previewpos="0 0 -85"
+	previewangles="0 0 0"
+	previewscale="1.5"
+	
+	storemodel="preview.mdf"
+	storepos="0 -100 -25"
+	storeangles="0 0 0"
+	storescale="2.2"
+	storepassiveeffect="effects/body_store.effect"
+> 
+	<recommendeditem name="Item_HealthMana2" /> 4300
+	<recommendeditem name="Item_FrostfieldPlate" /> 4600
+	<recommendeditem name="Item_Silence" /> 4725
+	<recommendeditem name="Item_JadeSpire" /> 4800
+	<recommendeditem name="Item_HarkonsBlade" /> 5000
+	<recommendeditem name="Item_Morph" /> 5425
+	<recommendeditem name="Item_SandScepter" /> 5900
+	
+	<modifier key="Adrenaline_Shard" modpriority="100"
+		preglobalscale="0.8"
+		model="/heroes/adrenaline/ability_01/effects/stone.mdf"
+		passiveeffect="/heroes/adrenaline/ability_01/effects/ground.effect"
+		
+		attackprojectile="Projectile_AdrenalineAttack"
+		
+		ismobile="true"
+		iscontrollable="false"
+		
+		attackrange="1800"
+		attackoffset="0 50 80"
+	>
+		<onattack>
+			<setproxy entity="this_entity" target="target_entity" />
+			<activatemodifierkey name="Adrenaline_Shard" />
+		</onattack>
+		
+		<onframe>
+			<compare a="this_proxy_entity" b="0" op="ne">
+				<applystate name="State_Adrenaline_Ability1_Sight" target="this_proxy_entity" continuous="true" duration="1000" timeout="frametime" />
+			</compare>
+		</onframe>
+	</modifier>
+	
+	<modifier key="ult_boost" modpriority="101"
+		passiveeffect="effects/boost.effect"
+	>
+	</modifier>
+</hero>

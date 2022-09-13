@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Nereid1_Root"
+
+	radius="100"	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Magic"
+	destroytrees="true"
+	impactdelay="0"
+	impacteffect=""
+	
+>
+	<onimpact>
+		<applystate name="State_Nereid1" duration="1600,1800,2000,2200" />
+	</onimpact>
+</affector>

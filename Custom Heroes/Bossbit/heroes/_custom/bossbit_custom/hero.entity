@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_Bossbit_Custom"
+	
+	team="Hellbourne"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	passiveeffect=""
+
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.45"
+	modelscale="1"
+	effectscale="0.9"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 90"
+	infoheight="200"
+
+	category="physical"
+	difficulty="3"
+
+	solorating="0"
+	junglerating="0"
+	carryrating="5"
+	supportrating="0"
+	initiatorrating="0"
+	gankerrating="0"
+	pusherrating="0"
+	rangedrating="5"
+	meleerating="0"
+	
+	movespeed="290"
+	turnrate="540"
+	turnsmoothing="0.075"
+
+	maxhealth="150"
+	healthregen="0.25"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="0.04"
+	magicarmor="5.0"
+
+	inventory0="Ability_Bossbit1"
+	inventory1="Ability_Bossbit2"
+	inventory2="Ability_Bossbit3"
+	inventory3="Ability_Bossbit4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="350"
+	attackcooldown="1700"
+	attackdamagemin="14"
+	attackdamagemax="18"
+	attackoffset="17 100 106"
+	attacknumanims="1"	
+	attackprojectile="Projectile_Artillery"
+	attackrange="400"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect=""
+	attacktype="ranged"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Agility"
+	strength="21"
+	strengthperlevel="2.3"
+	agility="22"
+	agilityperlevel="2.4"
+	intelligence="14"
+	intelligenceperlevel="1.5"
+	
+	previewmodel="preview.mdf"
+	previewpos="-15 0 -70"
+	previewangles="0 0 0"
+	previewscale="1.25"
+	
+	storemodel="model_store.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.30"
+	
+	corpsetime="2000"
+	corpsefadetime="5000"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+
+	<recommendeditem name="Item_Custom_DiamondArrow" /> 3900
+	<recommendeditem name="Item_Custom_FlashfastBlade" /> 3900
+	<recommendeditem name="Item_Custom_Sunderer" /> 3950
+	<recommendeditem name="Item_Summon" /> 3950
+	<recommendeditem name="Item_Custom_Silverlight" /> 4000
+	<recommendeditem name="Item_Custom_TheBlackArrow" /> 4050
+	<recommendeditem name="Item_Custom_GiantSlayer" /> 4150
+	<recommendeditem name="Item_Madfreds_BrassKnuckles" /> 4150
+	<recommendeditem name="Item_Custom_Demolisher" /> 4250
+	<recommendeditem name="Item_Custom_SerpentsEye" /> 4250
+	<recommendeditem name="Item_Custom_NefarianBlade" /> 4400
+	<recommendeditem name="Item_Custom_DemonicGrasp" /> 4600
+	<recommendeditem name="Item_Custom_GiantsCharge" /> 5150
+	<recommendeditem name="Item_ManaBurn2" />  5200
+	<recommendeditem name="Item_Custom_BlackthornHammer" /> 5300
+	<recommendeditem name="Item_Custom_AtalantasBow" /> 5500
+	<recommendeditem name="Item_Custom_GloriousExecutionersAxe" /> 5550
+	<recommendeditem name="Item_Custom_Tiamat" /> 5550
+	<recommendeditem name="Item_DaemonicBreastplate" /> 5600
+	<recommendeditem name="Item_Custom_WarmongerAxe" /> 5600
+	<recommendeditem name="Item_Evasion" /> 5700
+	<recommendeditem name="Item_Hypercrown" /> 5800
+	<recommendeditem name="Item_Custom_MailOfRenewal" /> 5900
+	<recommendeditem name="Item_Sasuke" /> 6200
+	
+	<modifier key="frost" modpriority="80"
+		attackprojectile="Projectile_Frost"
+	/>
+	
+</hero>

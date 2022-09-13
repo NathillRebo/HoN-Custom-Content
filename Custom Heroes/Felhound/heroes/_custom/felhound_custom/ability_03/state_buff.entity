@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Shadowblade_Ability2_Buff"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	
+	effecttype=""
+	allowtransfer="false"
+	
+	damagepercharge="1"
+>
+
+	<onframe />
+	
+	<altavatar key="Hero_ShadowBlade.Alt3" modpriority="90"
+		passiveeffect="../alt3/ability_02/effects/state_self.effect"
+	/>
+
+	<altavatar key="Hero_ShadowBlade.Alt4" modpriority="90"
+		passiveeffect="../alt4/ability_02/effects/state_self.effect"
+	/>
+
+	<altavatar key="Hero_ShadowBlade.Alt5" modpriority="90"
+		passiveeffect="../alt5/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt6" modpriority="90"
+		passiveeffect="../alt6/ability_02/effects/state_self.effect"
+	/>
+	
+	<altavatar key="Hero_ShadowBlade.Alt7" modpriority="90"
+	    icon="/heroes/shadowblade/alt7/ability_02/icon.tga"
+		passiveeffect="../alt7/ability_02/effects/state_self.effect"
+	/>
+</state>

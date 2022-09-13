@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Diablo2_Bind"
+
+	icon="icon.tga"
+	
+	stunned="true"
+	stunneddurationunmodifiable="true"
+	
+	passiveeffect="effects/launch.effect"
+	effecttype=""
+>
+</state>

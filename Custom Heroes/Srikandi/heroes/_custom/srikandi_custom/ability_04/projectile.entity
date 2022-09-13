@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Srikandi_R"
+
+	speed="1500"
+	gravity="0"
+
+	modelscale="1.0"
+	model="effects/arrow.mdf"
+	traileffect="effects/trail.effect"
+	effectscale="1.0"
+	impacteffect=""
+
+	flying="true"
+	flyheight="120"
+	
+	touchradius="100"
+	touchradiusdiradjust="true"
+	maxtouches="1"
+	touchtargetscheme="enemy_heroes"
+	toucheffecttype=""
+>
+	<ontouch>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<areaofeffect
+					radius="385"
+					targetselection="all"
+					targetscheme="enemy_units"
+					effecttype="Magic"
+				>
+					<cantarget effecttype="Magic" >
+						<applystate name="State_Stunned" target="target_entity" duration="750,1250,1750" pushentity="true" stack="true" />
+						<damage amount="200,400,600" effecttype="Magic" />
+					</cantarget>
+				</areaofeffect>
+				<applystate name="State_Stunned" target="target_entity" duration="750,1250,1750" pushentity="true" stack="true" />
+				<damage amount="200,400,600" effecttype="Magic" />
+				
+				<playeffect effect="effects/impact.effect" source="target_entity" target="target_entity" />
+			</onimpact>
+		</combatevent>
+		<delete target="this_entity" />
+		<kill target="proxy_entity" source="" />
+	</ontouch>
+	<modifier key="ult_boost" priority="100">
+		<ontouch>
+			<combatevent effecttype="AbilityBasedProjectile">
+				<onimpact>
+					<areaofeffect
+						radius="385"
+						targetselection="all"
+						targetscheme="enemy_units"
+						effecttype="Magic"
+					>
+						<cantarget effecttype="Magic" >
+							<applystate name="State_Stunned" target="target_entity" duration="1250,1750,2250" pushentity="true" stack="true" />
+							<damage amount="375,575,775" effecttype="Magic" />
+						</cantarget>
+					</areaofeffect>
+					<applystate name="State_Stunned" target="target_entity" duration="1250,1750,2250" pushentity="true" stack="true" />
+					<damage amount="375,575,775" effecttype="Magic" />
+					
+					<playeffect effect="effects/impact_boost.effect" source="target_entity" target="target_entity" />
+				</onimpact>
+			</combatevent>
+			<delete target="this_entity" />
+			<kill target="proxy_entity" source="" />
+		</ontouch>
+	</modifier>
+	
+</projectile>

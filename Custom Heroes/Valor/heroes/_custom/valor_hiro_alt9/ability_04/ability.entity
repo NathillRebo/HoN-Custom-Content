@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Valor4"
+
+	icon="icon.tga"
+	
+	anim="item_1"
+	casttime="0"
+	castactiontime="0"
+	casteffect=""
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	actiontype="self_position"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	targetradius="600"
+	
+	manacost="50"
+	cooldowntime="90000,65000,40000"
+>
+	<onimpact>
+		<areaofeffect
+			center="this_owner_entity"
+			radius="600"
+			targetselection="all"
+			targetscheme="ally_units"
+			ignoreinvulnerable="true"
+		>
+			<applystate name="State_Valor4" duration="6000" />
+		</areaofeffect>
+		<applystate name="State_Valor4_Aura" target="source_entity" duration="6000" />
+		
+		<!-- Art -->
+		<playeffect effect="effects/cast.effect" source="source_position" target="" occlude="true" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+	
+	<modifier key="ult_boost" modpriority="100"
+		cooldowntime="85000,60000,35000"
+		manacost="40"
+	>
+		<onimpact>
+			<areaofeffect
+				center="this_owner_entity"
+				radius="600"
+				targetselection="all"
+				targetscheme="ally_units"
+				ignoreinvulnerable="true"
+			>
+				<applystate name="State_Valor4" duration="6000" />
+				<dispel type="StatusDebuff"/>
+				<dispel type="StatusDisable"/>
+			</areaofeffect>
+			<applystate name="State_Valor4_Aura" target="source_entity" duration="6000" />
+			
+			<!-- Art -->
+			<playeffect effect="effects/cast.effect" source="source_position" target="" occlude="true" />
+			<playanim name="item_1" target="source_entity" />
+		</onimpact>
+	</modifier>
+</ability>

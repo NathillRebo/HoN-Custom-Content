@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale="1">
+		<sound
+		        soundloop="true"
+				fadein="0"
+				fadeout="200"
+				channel="13379996"
+				volume="1"
+				life="3326"
+				sample="/heroes/prophet/ability_01/sounds/throw_%.wav"
+				linearfalloff="true"
+				falloffstart="600" 
+				falloffend="1300" 
+			/>
+			
+			<simpleemitter
+				bone="_bone_overhead"
+				count="1"
+				position="0 0 120"
+				speed="-300"
+				direction="0 0 1"
+				angle="0"
+			>
+				<particle>
+			<model
+				life="375"
+				bone="_bone_overhead"
+				model="/heroes/prophet/alt9/effects/bird/bird_attack/model.mdf"
+				anim="idle"
+				startscale="1.7"
+				midscale="1.5"
+				endscale=".7"
+				startcolor="12 8 4"
+				midcolor="1 1 1"
+				endcolor="1 1 1"
+				midcolorpos=".15"
+				startalpha="1"
+				midalpha="1"
+				endalpha="1"
+				position="0 0 0"
+				yaw="180"
+				yawspeed="360"
+				minpitch="-10"
+				maxpitch="10"
+			>
+				<billboard
+					bone="Bip01 Spine2"
+					life="200"
+					startcolor="1 .75 .5"
+					midcolor=".5 .25 0"
+					midcolorpos="0.5"
+					endcolor="0 0 0"
+					startsize="250"
+					endsize="0"
+					material="/shared/effects/materials/whitedot.material"
+				/>	
+				<trailemitter
+					bone="Bip01 Spine"
+					spawnrate="100"
+					particlelife="300"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/arrow_trail_blend.material"
+				>
+					<particle
+						startalpha=".75"
+						endalpha="0"
+						startcolor="1 .8 .5"
+						midcolor=".75 .4 0"
+						endcolor="1 0 0"
+						startsize="30"
+						endsize="0"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="Bip01 Spine"
+					spawnrate="100"
+					particlelife="200"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale="1"
+					material="/shared/effects/materials/swoosh_add.material"
+				>
+					<particle
+						startcolor="1 .4 0"
+						endcolor="0 0 0"
+						midcolorpos=".25"
+						startsize="20"
+						endsize="5"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="Bone_12"
+					spawnrate="120"
+					particlelife="300"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale=".5"
+					material="/shared/effects/materials/star_15.material"
+				>
+					<particle
+						startalpha=".75"
+						endalpha="0"
+						color="1 .8 .5"
+						startsize="50"
+						endsize="20"
+					/>
+				</trailemitter>
+				
+				<trailemitter
+					bone="Bone_03"
+					spawnrate="120"
+					particlelife="300"
+					texpostime="500"
+					texposscale="0"
+					texstretchscale=".5"
+					material="/shared/effects/materials/star_15.material"
+				>
+					<particle
+						startalpha=".75"
+						endalpha="0"
+						color="1 .8 .5"
+						startsize="50"
+						endsize="20"
+					/>
+				</trailemitter>	
+				
+				<simpleemitter
+				bone="Bip01 Spine"
+				spawnrate="100"
+				minparticlelife="300"
+				maxparticlelife="500"
+				gravity="0"
+				speed="55"
+				offsetsphere="20"
+				drag="0"
+				inheritvelocity=".1"
+				direction="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle 
+					startcolor="1 0 0"
+					endcolor="1"
+					midcolorpos=".8"
+					minangle="0"
+					maxangle="360"
+					startsize="20"
+					midsize="30"
+					endsize="0"
+					anchor="0"
+				/>
+				<particle 
+					startcolor="1 .8 0"
+					endcolor="0"
+					midcolorpos=".8"
+					minangle="0"
+					maxangle="360"
+					startsize="20"
+					midsize="30"
+					endsize="0"
+					anchor="0"
+				/>
+				<particle 
+					startcolor="1 0 0"
+					endcolor="0"
+					midcolorpos=".8"
+					minangle="0"
+					maxangle="360"
+					startsize="20"
+					midsize="30"
+					endsize="0"
+					anchor="0"
+				/>
+				<particle 
+					startcolor="1 0 1"
+					endcolor="0"
+					midcolorpos=".8"
+					minangle="0"
+					maxangle="360"
+					startsize="20"
+					midsize="30"
+					endsize="0"
+					anchor="0"
+				/>
+				<particle 
+					startcolor="0 .5 1"
+					endcolor="0"
+					midcolorpos=".8"
+					minangle="0"
+					maxangle="360"
+					startsize="20"
+					midsize="30"
+					endsize="0"
+					anchor="0"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+			bone="Bip01 Spine"
+				spawnrate="20"
+				minparticlelife="300"
+				maxparticlelife="600"
+				gravity="0"
+				speed="75"
+				offsetsphere="20 20 0"
+				drag="0"
+				inheritvelocity=".1"
+				direction="0 0 0"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle 
+					color="1"
+					minangle="0"
+					maxangle="360"
+					startsize="40"
+					endsize="0"
+					anchor="0"
+				/>
+			</simpleemitter>
+			</model>
+			</particle>
+			</simpleemitter>
+		
+
+			<billboard
+				bone="_bone_overhead"
+				life="400"
+				startcolor=".5 .25 .1"
+				midcolor=".5 0 0"
+				midcolorpos="0.75"
+				endcolor="0 0 0"
+				startsize="200"
+				endsize="0"
+				depthbias="-25"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Justice2_Air"
+
+	gravity="5000"
+	lifetime="750"
+	useexactlifetime="true"
+	
+>
+	
+</projectile>

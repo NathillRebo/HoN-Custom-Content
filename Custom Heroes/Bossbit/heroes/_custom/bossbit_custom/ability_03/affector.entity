@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Bossbit_3"
+
+	radius="225"	
+	targetselection="all"
+	targetscheme="all_units"
+	effecttype="Magic"
+	destroytrees="true"
+	impactdelay="0"
+	impacteffect=""
+	
+>
+	<onimpact>
+		<cantarget targetscheme="enemy_units">
+			<playanim name="knock_1" target="target_entity" />
+			<damage effecttype="Magic" amount="60,100,140,180" />
+			
+			<cantarget effecttype="Push Disable">
+				<push force="1600" duration="188" source="this_entity" />
+			</cantarget>
+		</cantarget>
+	</onimpact>
+</affector>

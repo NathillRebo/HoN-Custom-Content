@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Justice4"
+
+	radius="300"
+	lifetime="9000"
+	
+	targetselection="all"
+	targetscheme="ally_units"
+	effecttype="Magic"
+	
+	persist="false"
+	
+	diewithowner="false"
+	passiveeffect="effects/aoe.effect"
+>
+
+	<onframeimpact>
+		<applystate name="State_Justice4_Ally" duration="125" />
+	</onframeimpact>
+</affector>

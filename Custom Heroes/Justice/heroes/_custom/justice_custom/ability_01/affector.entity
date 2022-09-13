@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Justice1"
+
+	radius="250"
+	arc="180"
+	
+	maximpactspertarget="1"
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Physical"
+	
+	effect=""
+	impacteffect="effects/day_cleave_impact.effect"
+>
+	<onimpact>
+		<!-- Damage -->
+		<setvar0 a="40,65,90,115" />
+		<damage effecttype="Physical" amount="1" b="var0" op="mult" /> 
+		<calculatedamage amount="var0" effecttype="Physical" /> <!-- Calculate damage specifically for lifesteal -->
+		<heal target="source_entity" a="8,13,18,23" />
+	</onimpact>
+</affector>

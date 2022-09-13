@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="cyclone" deferred="true" useentityeffectscale="0">
+	<definitions>
+
+		<particlesystem name="system1" space="world" scale="1">	
+		
+
+		<template name="flameup">
+
+			
+			<simpleemitter
+				bone="{bone}"
+				spawnrate="60"
+				particlelife="250"
+				gravity="-3"
+				speed="5"
+				drag="0"
+				acceleration="0.10"		
+				expirelife="300"
+				material="/shared/effects/materials/blood1.material"
+				offsetsphere="10"
+				position="{position}"
+				yawspeed="360"
+				depthbias="-10"
+				
+				
+				
+				
+			>
+
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="20"
+					maxanglespeed="150"
+
+					startcolor="1 0 1"
+					endcolor="0 0 0"
+					midcolorpos=".4"
+
+					startframe="0"
+					endframe="1"
+					
+					startsize="20"
+					midsize="30"
+					endsize="10"
+					scale="{scale}"
+					midsizepos=".3"					
+					anchor="1"
+					startalpha="0"
+					midalpha=".45"
+					endalpha="0"
+					midalphapos=".01"					
+				/>
+
+				
+			</simpleemitter>
+		
+		
+			<simpleemitter
+				bone="{bone}"
+				spawnrate="60"
+				particlelife="250"
+				gravity="-10"
+				speed="2"
+				drag="0"
+				acceleration="0.10"		
+				expirelife="300"
+				material="/shared/effects/materials/blood1.material"
+				offsetsphere="10"
+				direction="0 0 -2"
+				position="{position}"
+				yawspeed="-360"
+				depthbias="-10"
+				
+
+
+			>
+
+				<particle 
+				
+					scale="{scale}"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="20"
+					maxanglespeed="150"
+					startcolor="3 0 1"
+					midcolor="3 0 0"
+					endcolor="4 0 0"
+					midcolorpos=".4"
+					startframe="0"
+					endframe="1"
+					startsize="20"
+					midsize="30"
+					endsize="1"
+					midsizepos=".3"	
+					anchor="1"
+				/>
+				
+			</simpleemitter>
+
+		</template>
+	
+		<instance name="flameup" bone="_bone_fx_03" scale="0.6" position="0 0 0"/>
+		<instance name="flameup" bone="_bone_fx_04" scale="0.6" position="0 0 0"/>
+
+		
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

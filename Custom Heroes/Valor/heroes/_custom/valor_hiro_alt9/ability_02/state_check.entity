@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Valor2_Check"
+
+	icon="icon.tga"
+	ishidden="true"
+	
+	effecttype=""
+	deathpersist="true"
+>
+	<onframe>
+		<condition test="not_hasstate State_Valor2" target="source_entity">
+			<kill target="proxy_entity" source="" />
+		</condition>
+	</onframe>
+</state>

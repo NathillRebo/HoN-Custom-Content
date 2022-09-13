@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Dryadin_Ability2"
+
+	speed="1600"
+	gravity="1600"
+	
+	lifetime="400"
+
+	modelscale="1.2"
+	model="/shared/effects/models/side_to_side/model.mdf"
+	traileffect="effects/trail.effect"
+
+	canturn="true"
+	flying="true"
+	pathing="true"
+	deatheffect=""
+
+	unitwalking="true"
+	treewalking="true"
+>
+	<onimpact>
+		<applystate name="State_Dryadin_Ability2_Delay" target="source_entity" duration="0" />
+	</onimpact>
+</projectile>

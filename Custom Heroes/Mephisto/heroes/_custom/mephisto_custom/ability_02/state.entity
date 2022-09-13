@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Mephisto2_Enemy"
+
+	icon="icon.tga"
+
+	effecttype=""
+>
+	<onframe>
+		<targettype target="source_entity" type="Courier" />
+		<else>
+			<damage effecttype="SuperiorMagic DOT" amount="18,35,52,69" b="frametime" op="mult" />
+			<heal target="source_entity" a="5,9,13,17" b="frametime" op="mult" />
+		</else>
+	</onframe>
+</state>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Maliken_Ability4"
+
+	icon="icon.tga"
+	passiveeffect=""
+	displaylevel="true"
+	propagatetoillusions="true"
+
+	modifierkey="malikenult_1,malikenult_2,malikenult_3"
+	modifierkey2="malikenult"
+	
+	effecttype=""
+>
+	<onframe />
+	
+	<onattackimpact>
+		<cantarget targetscheme="enemy_units">
+			<splashdamage a="total_adjusted_damage" b="0.15,0.25,0.35" op="mult" radius="75" effecttype="Physical Splash Cleave" targetscheme="enemy_units" centerontarget="true" />
+			<splashdamage a="total_adjusted_damage" b="0.15,0.25,0.35" op="mult" radius="200" effecttype="Physical Splash Cleave" targetscheme="enemy_units" centerontarget="true" />
+			<splashdamage a="total_adjusted_damage" b="0.20,0.25,0.3" op="mult" radius="350" effecttype="Physical Splash Cleave" targetscheme="enemy_units" centerontarget="true" />
+			
+			<areaofeffect
+				targetselection="all"
+				targetscheme="enemy_units"
+				center="target_entity"
+				radius="350"
+				effecttype="Physical Splash Cleave"
+				ignore="target_entity"
+			>
+				<!-- playeffect doesn't work if the modifier has no name. -->
+				<playeffect effect="/shared/effects/splash_damage.effect" source="target_entity" target="stack_entity"/>
+			</areaofeffect>
+		</cantarget>
+	</onattackimpact>
+	
+	<onexpired>
+		<playeffect effect="effects/cast.effect" source="source_entity" target="" />
+		<playeffect effect="/heroes/maliken/alt5/ability_02/effects/silent_wings.effect" source="source_entity" target="" />
+	</onexpired>
+	
+	<altavatar key="Hero_Maliken.Alt"
+		modifierkey2="malikenult_Alt"
+	/>
+	
+	<altavatar key="Hero_Maliken.Alt2"
+		modifierkey2="malikenult_Alt2"
+	/>
+	
+	<altavatar key="Hero_Maliken.Alt3"
+		modifierkey2="malikenult_Alt3"
+	/>
+	
+	<altavatar key="Hero_Maliken.Alt4"
+		modifierkey2="malikenult_Alt4"
+	/>
+	
+	<altavatar key="Hero_Maliken.Alt5"
+		modifierkey2="malikenult_Alt5"
+		passiveeffect="../alt5/ability_04/effects/wings_large.effect"
+	>
+		<onframe>
+			<hasmodifier name="swordflame" entity="this_owner_entity">
+				<activatemodifierkey name="swordflame" entity="this_entity"/>
+				<deactivatemodifierkey name="swordhealing" entity="this_entity"/>
+			</hasmodifier>
+			<else>
+				<hasmodifier name="swordhealing" entity="this_owner_entity">
+					<deactivatemodifierkey name="swordflame" entity="this_entity"/>
+					<activatemodifierkey name="swordhealing" entity="this_entity"/>
+				</hasmodifier>
+				<else>
+					<deactivatemodifierkey name="swordflame" entity="this_entity"/>
+					<deactivatemodifierkey name="swordhealing" entity="this_entity"/>
+				</else>
+			</else>
+		</onframe>
+		
+		<modifier key="swordflame" modpriority="1"
+			passiveeffect="../alt5/ability_04/effects/wings_large_flame.effect"
+		/>
+		<modifier key="swordhealing" modpriority="1"
+			passiveeffect="../alt5/ability_04/effects/wings_large_heal.effect"
+		/>
+	</altavatar>
+	
+	<altavatar key="Hero_Maliken.Alt6"
+		modifierkey2="malikenult_Alt6"
+	/>
+	
+	<altavatar key="Hero_Maliken.Alt7"
+		modifierkey2="malikenult_Alt7"
+	/>
+	
+	<altavatar key="Hero_Maliken.Alt8"
+		modifierkey2="malikenult_Alt8"
+	>
+		<onexpired>
+			<playeffect effect="/heroes/maliken/alt8/ability_04/effects/sound_end.effect" source="source_entity" target="" />
+		</onexpired>
+	</altavatar>
+	
+	
+	<altavatar key="Hero_Maliken.Alt9"
+		modifierkey2="malikenult_Alt9"
+		skin="default"
+	>
+		<onframe>
+			<hasmodifier name="swordflame" entity="this_owner_entity">
+				<activatemodifierkey name="swordflame" entity="this_entity"/>
+				<deactivatemodifierkey name="swordhealing" entity="this_entity"/>
+			</hasmodifier>
+			<else>
+				<hasmodifier name="swordhealing" entity="this_owner_entity">
+					<deactivatemodifierkey name="swordflame" entity="this_entity"/>
+					<activatemodifierkey name="swordhealing" entity="this_entity"/>
+				</hasmodifier>
+				<else>
+					<deactivatemodifierkey name="swordflame" entity="this_entity"/>
+					<deactivatemodifierkey name="swordhealing" entity="this_entity"/>
+				</else>
+			</else>
+		</onframe>
+		
+		<onexpired>
+			<playeffect effect="/heroes/maliken/alt9/ability_04/effects/sound_end.effect" source="source_entity" target="" />
+		</onexpired>
+		
+		<modifier key="swordflame" modpriority="1"
+			passiveeffect="../alt9/ability_04/effects/body_flame.effect"
+			skin="flame"
+		/>
+		<modifier key="swordhealing" modpriority="1"
+			passiveeffect="../alt9/ability_04/effects/body_heal.effect"
+			
+		/>
+	</altavatar>
+	
+	<modifier key="krosmode" modpriority="100"
+		morphmodel="/heroes/maliken/ability_04/model.mdf"
+		morphpreglobalscale="1.64"
+		morphattackprojectile="Projectile_MalikenAttack"
+		morphattackcooldown="1700"
+		morphattackoffset="0 100 70"
+		morphattackrange="600"
+		morphattacktype="ranged"
+		morphattackimpacteffect=""
+
+		morphpriority="100"
+	/>
+</state>

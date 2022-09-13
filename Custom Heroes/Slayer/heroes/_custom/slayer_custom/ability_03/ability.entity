@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Slayer3"
+
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+>
+	<onattack effectdescription="true">
+		<cantarget targetscheme="enemy_units">
+			<applystate name="State_Slayer3_Buff" target="source_entity" duration="5000" />
+			<applystate name="State_Slayer3_Debuff" target="target_entity" duration="5000" />
+		</cantarget>
+	</onattack>
+	<modifier key="ult_boost" modpriority="100"/>
+</ability>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_TombGuardian1"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	impactinterval="1000"
+	attackspeed="0.4"
+	damagepercharge="3.7,3.9,4.1,4.3"
+	
+	effecttype=""
+>	
+	<onattackstart>
+		<playeffect effect="effects/attack_action.effect" target="source_entity" source="source_entity" occlude="true" />
+	</onattackstart>
+	
+	<onattackpreimpact>
+		<cantarget targetscheme="enemy_units">
+			<seteffecttype name="combat_damagetype" effecttype="SuperiorMagic" />
+			<seteffecttype name="combat_effecttype" effecttype="Attack SuperiorMagic" />
+		</cantarget>
+	</onattackpreimpact>
+	
+	<onattackimpact>
+		<applystate name="State_TombGuardian1_Charger" target="target_entity" duration="125" proxy="this_owner_entity"/>
+		<playeffect effect="effects/impact.effect" source="target_entity" occlude="true" />
+		<expire />
+	</onattackimpact>
+	
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="iamsheeped">
+			<activatemodifierkey entity="this_entity" name="iamsheeped" />
+		</hasmodifier>
+		<else>
+			<deactivatemodifierkey entity="this_entity" name="" />
+		</else>
+	</onframe>
+	
+	<modifier key="iamsheeped" modpriority="9999"
+		passiveeffect=""
+	/>
+</state>

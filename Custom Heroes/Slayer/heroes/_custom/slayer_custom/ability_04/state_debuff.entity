@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Slayer4_Debuff"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	movespeedslow="0.15,0.2,0.25"
+	armor="-5"
+	magicarmor="-5"
+>
+</state>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<abilityattribute
+	name="Ability_Srikandi2"
+
+	icon="icon.tga"
+
+	casttime="980"
+	castactiontime="370"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	cooldowntime="0"
+
+	range="550"
+	activatescheme="canattack"
+	actiontype="attack"
+	targetscheme="enemy_units"
+	casteffecttype="Attack"
+	projectile="Projectile_Srikandi_W"
+	
+	manacost="18,24,30,36"
+	casteffect=""
+	novoiceresponse="true"
+	propagatetoillusions="false"
+	
+	doubleactivate="true"
+
+>	
+	<onattack>
+		<!-- Required to allow the skill to stack with Attack Modifiers -->
+		<setvalue name="combat_attackability" a="0" />
+	</onattack>
+	
+	<onimpact>
+		<damage effecttype="Magic" amount="24,40,56,72" b="1" op="mult" />
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost" modpriority="103">
+		<onimpact>
+			<evaluate a="target_maxhealth" b="0.01" op="mult"/>
+			<evaluate a="result" b="32,48,64,80" op="add"/>
+			<damage effecttype="Magic" amount="1" b="result" op="mult" />
+		</onimpact>
+	</modifier>
+
+	<modifier key="alt_Wingbow"
+		range="650"
+	/>
+	
+	<modifier key="alt_JadeSpire" modpriority="101"
+		range="400"
+	>
+		<onframe>
+			<hasmodifier name="alt_Wingbow" entity="this_entity">
+				<setactivemodifierkey name="alt_JadeSpire_and_Wingbow" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setactivemodifierkey name="" entity="this_entity" />
+			</else>
+		</onframe>
+	</modifier>
+	
+	<modifier key="alt_JadeSpire_and_Wingbow" modpriority="102"
+		range="500"
+	>
+		<onframe>
+			<hasmodifier name="alt_Wingbow" entity="this_entity">
+				<setactivemodifierkey name="alt_JadeSpire_and_Wingbow" entity="this_entity" />
+			</hasmodifier>
+			<else>
+				<setactivemodifierkey name="" entity="this_entity" />
+			</else>
+		</onframe>
+	</modifier>
+</abilityattribute>

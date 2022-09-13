@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Kali3"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="false"
+	
+	movespeedmultiplier="0.75"
+
+	impactinterval="1500"
+>
+	<onframe />
+	
+	<onimpact>
+		<areaofeffect
+			center="this_owner_entity"
+			radius="300"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<damage effecttype="Magic" amount="90,160,230,300"/>
+			<applystate name="State_Kali3_Slow" duration="1500" />
+		</areaofeffect>					
+		<playeffect effect="effects/impact.effect" source="this_owner_position" target="" />	
+	</onimpact>
+</state>

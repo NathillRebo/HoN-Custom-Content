@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1.25">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2500"
+				volume="1"
+				sample="/heroes/berzerker/ability_04/sounds/cast.wav"
+			/>	
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2500"
+				volume="1"
+				sample="/heroes/berzerker/ability_04/sounds/cast_vox.wav"
+			/>	
+		
+			<sound		
+				soundloop="true"
+				fadein="1000"
+				fadeout="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".75"
+				sample="/heroes/berzerker/ability_04/sounds/state.wav"
+			/>
+
+			<template name="fireStuff">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="25"
+					minparticlelife="250"
+					maxparticlelife="1000"
+					minspeed="0"
+					maxspeed="500"
+					drag=".08"
+					offsetsphere="15"
+					angle="15"
+					material="/shared/effects/materials/phantom_smoke_04.material"
+					depthbias="-50"
+				>
+					<particle
+						minangle="-360"
+						maxangle="360"
+						minanglespeed="-150"
+						maxanglespeed="150"
+						startcolor="1 .35 0"
+						midcolor="1 .35 0"
+						endcolor="0 0 0"
+						minstartsize="15"
+						maxstartsize="30"
+						endsize="60"
+						anchor="1"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="35"
+					minparticlelife="100"
+					maxparticlelife="250"
+					minspeed="0"
+					maxspeed="700"
+					drag="0.07"
+					angle="70"
+					offsetsphere="15"
+					material="/shared/effects/materials/soul_projectile2.material"
+					depthbias="-50"
+				>
+					<particle
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="-360"
+						maxanglespeed="360"
+						startcolor=".5"
+						midcolor=".5 .25 0"
+						endcolor="0"
+						startsize="10"
+						minendscale="10"
+						maxendscale="10"
+						anchor="1"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="35"
+					minparticlelife="100"
+					maxparticlelife="250"
+					minspeed="0"
+					maxspeed="700"
+					drag="0.07"
+					angle="70"
+					offsetsphere="15"
+					material="/shared/effects/materials/femme_lightning_01.material"
+					depthbias="-50"
+				>
+					<particle
+						minangle="-180"
+						maxangle="180"
+						minanglespeed="-360"
+						maxanglespeed="360"
+						startcolor="1 1 1"
+						midcolor="1 .5 0"
+						endcolor="0"
+						startsize="10"
+						minendscale="10"
+						maxendscale="15"
+						anchor="1"
+					/>
+				</simpleemitter>
+
+
+				<billboard
+					bone="{bone}"
+					expirelife="300"
+					startcolor=".15 0 0"
+					endcolor="0"
+					startsize="100"
+					endsize="0"
+					depthbias="-30"
+					material="/shared/effects/materials/whitedot.material"
+				/>
+
+				
+			</template>
+
+			<instance name="fireStuff" bone="Bip01 R Hand"/>
+			<instance name="fireStuff" bone="Bip01 L Hand"/>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<spawnmodifier modifier="invis" instance="instance1"/>
+		<waitfordeath instance="instance1"/>
+		<waitfordeath instance="instance0"/>
+	</thread>
+
+</effect>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Boudica1_Bind"
+	
+	icon="icon.tga"
+	passiveeffect="effects/trail.effect"
+
+	unitwalking="true"
+	stunned="true"
+	
+	effecttype=""
+	ishidden="true"
+	
+	modifierkey="boudica1_Bind"
+>
+	<onexpired>
+		<targettype type="alive" target="this_owner_entity">
+			<playanim name="idle" target="this_owner_entity" />
+		</targettype>
+	</onexpired>
+</state>

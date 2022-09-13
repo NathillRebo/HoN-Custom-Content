@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Legion4"
+
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="0"
+	castactiontime="0"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	frontqueue="true"
+	
+	maxcharges="350,625,900"
+	
+	targetradius="525"
+	
+	casteffecttype="Magic"
+	cooldowntime="60000"
+>
+	<checkcost>
+		<compare a="charges" b="0" op="eq">
+			<invalidate />
+		</compare>
+	</checkcost>
+	
+	<onimpact>
+		<areaofeffect
+				radius="525"
+				targetselection="all"
+				targetscheme="enemy_units"
+				ignoreinvulnerable="false"
+			>
+			<damage effecttype="Magic" amount="1" b="charges" op="mult"/>
+			<hasmodifier name="shardofthemaster_boost">
+				<evaluate a="3" b="charges" op="mult"/>
+				<applystate name="State_Stunned" duration="result" />
+			</hasmodifier>
+		</areaofeffect>
+		<playeffect effect="effects/cast.effect" source="source_position" target="" occlude="true" />
+		<multcharges value="0" />
+	</onimpact>
+	
+	<modifier key="shardofthemaster_boost"/>
+	
+	<onattackeddamageevent>
+		<setvar1 a="damage_attempted" b="0.05,0.1,0.15" op="mult"/>
+		<addcharges entity="this_entity" count="var1" />
+		<setvalue name="damage_attempted" a="damage_attempted" b="0.95,0.9,0.85" op="mult" />
+	</onattackeddamageevent>
+</ability>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="1400"
+				falloffend="2000"
+				volume="1"
+				sample="/heroes/ravenor/ability_01/sounds/impact.wav"
+			/>
+			
+			<model
+				life="250"
+				model="/heroes/artesia/ability_01/effects/sphere/orb2.mdf"
+				startcolor="0 0 0"
+				midcolor=".16 .09 .26"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				expirelife="500"
+				startscale="2.5"
+				midscale="2.5"
+				endscale="1"
+				midscalepos=".6"
+				yawspeed="180"
+			/>
+			
+			<model
+				life="250"
+				model="/heroes/artesia/ability_01/effects/sphere/orb2.mdf"
+				startcolor="0 0 0"
+				midcolor=".06 .04 .1"
+				endcolor="0 0 0"
+				midcolorpos=".75"
+				expirelife="500"
+				startscale="2.5"
+				midscale="2.5"
+				endscale="1"
+				midscalepos=".6"
+				yawspeed="-180"
+			/>
+			
+			<billboard
+				delay="100"
+				life="500"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".35"
+				param=".25"
+				startsize="0"
+				endsize="750"
+				depthbias="-100"
+				position="0 0 20"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				pitch="90"
+			/>
+			
+			<simpleemitter
+				spawnrate="200"
+				life="640"
+				minparticlelife="150"
+				maxparticlelife="300"
+				gravity="0"
+				speed="640"
+				drag="0"
+				acceleration="0"
+				position="0 -60 0"
+				material="/shared/effects/materials/black_energy.material"
+				direction="0 0 0"
+				offsetsphere="12"
+				depthbias="0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-360"
+					maxanglespeed="360"
+					startcolor=".31 .18 .51"
+					midcolor=".31 .18 .51"
+					endcolor=".31 .18 .51"
+					startframe="0"
+					endframe="1"
+					startwidth="1"
+					endwidth="35"
+					height="45"
+					framespeed="3"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				spawnrate="200"
+				life="435"
+				minparticlelife="150"
+				maxparticlelife="300"
+				gravity="0"
+				speed="435"
+				drag="0"
+				acceleration="0"
+				position="0 -25 0"
+				material="/shared/effects/materials/black_energy.material"
+				direction="0 0 0"
+				offsetsphere="12"
+				depthbias="0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-360"
+					maxanglespeed="360"
+					startcolor=".31 .18 .51"
+					midcolor=".31 .18 .51"
+					endcolor=".31 .18 .51"
+					startframe="0"
+					endframe="1"
+					startwidth="1"
+					endwidth="70"
+					height="80"
+					framespeed="3"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="400"
+				life="205"
+				speed="205"
+				particlelife="100"
+			>
+				<particle
+					color=".08 .05 .13"
+					startsize="10"
+					endsize="10"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

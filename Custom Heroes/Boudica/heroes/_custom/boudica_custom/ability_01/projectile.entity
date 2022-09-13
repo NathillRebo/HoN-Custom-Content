@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Boudica1"
+
+	speed="1300"
+	gravity="0"
+
+	modelscale="1.0"
+	model="/shared/models/invis.mdf"
+	traileffect=""
+
+	canturn="false"
+	flying="true"
+	flyheight="0"
+	touchtargetscheme="enemy_units"
+	targetselection="all"
+	touchradius="100"
+	maxtouchespertarget="1"
+	touchradiusdiradjust="true"
+	toucheffecttype="Physical"
+>
+	<ontouch>
+		<damage effecttype="Physical" amount="85,145,205,265" />
+		
+	</ontouch>
+	
+</projectile>

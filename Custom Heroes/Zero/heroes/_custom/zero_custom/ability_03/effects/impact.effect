@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="entity" scale=".85">
+
+			<sound
+				linearfalloff="true"
+				falloffstart="200"
+				falloffend="2000"
+				volume=".6"
+				sample="/heroes/artesia/sounds/impact_%.wav"
+			/>
+			
+			<sound
+				linearfalloff="true"
+				falloffstart="200"
+				falloffend="2000"
+				volume=".80"
+				sample="/heroes/kenisis/sounds/impact_%.wav"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor=".5"
+				midcolor="0 .5 .3"
+				endcolor="0 0 0"
+				midcolorpos=".8"
+				life="462"
+				startsize="77"
+				endsize="385"
+				depthbias="-154"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/whitedot.material"
+				startcolor="0 .25 .15"
+				midcolor="0 .25 .15"
+				endcolor="0 0 0"
+				life="462"
+				startsize="38"
+				endsize="538"
+				depthbias="-154"
+			/>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="538"
+				param="0.5"
+				startsize="31"
+				endsize="538"
+				startalpha="0"
+				midalpha=".65"
+				endalpha="0"
+				depthbias="0"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+			/>
+			
+			<billboard
+				bone="_bone_centerofchest"
+				material="/shared/effects/materials/corona_06.material"
+				startcolor="0 .6 .3"
+				endcolor="0 0 0"
+				life="615"
+				startsize="0"
+				endsize="308"
+				lockup="1"
+				pitch="90"
+			/>
+
+			<simpleemitter
+				count="77"
+				position="0 0 154"
+				spawnrate="21731"
+				particlelife="769"
+				minspeed="0"
+				maxspeed="1155"
+				drag=".01"
+				inheritvelocity=".25"
+				offsetsphere="15 15 15"
+				gravity="3"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle
+					startcolor="0 1 .5"
+					midcolor="0 1 .5"
+					endcolor="0 .5 .5"
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-123"
+					maxanglespeed="123"
+					startsize="77"
+					midsize="77"
+					endsize="0"
+					depthbias="-246"
+				/>
+			</simpleemitter>
+
+			
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="23"
+				spawnrate="154"
+				minspeed="0"
+				maxspeed="1200"
+				particlelife="308"
+				material="/shared/effects/materials/rad_add.material"
+				offsetsphere="8 8 38"
+				position="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-38"
+					maxanglespeed="38"
+					startcolor="0"
+					midcolor="0 .2 .2"
+					endcolor="0"
+					midcolorpos=".25"
+					width="123"
+					startsize="77"
+					endsize="846"
+					lockup="1"
+					lockright="1"
+					pitch="-90"
+					startanchor="1"
+					endanchor=".7"
+				/>
+			</simpleemitter>		
+			
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Ardent3"
+	
+	speed="2000"
+	gravity="0"
+	
+	canturn="true"
+	flying="true"
+	flyheight="0"
+	
+	touchradius="50"
+	touchradiusdiradjust="true"
+	touchtargetscheme="nothing"
+	toucheffecttype=""
+	
+	impactdistance="60"
+>
+	<ontouch>
+		<kill target="this_entity" source="" />
+	</ontouch>
+	
+	<onimpact>
+		<cantarget targetscheme="ally_units">
+			<dispel type="StatusDebuff" target="target_entity" />
+			<dispel type="StatusDisable" target="target_entity" />
+			<applystate name="State_Ardent3_Buff" target="target_entity" duration="2500,3000,3500,4000" />
+		</cantarget>
+		<cantarget targetscheme="enemy_units">
+			<damage effecttype="Magic" amount="70,120,170,220" />
+			<applystate name="State_Ardent3_Debuff" target="target_entity" duration="3000" />
+		</cantarget>
+		<kill target="this_entity" source="" />
+	</onimpact>
+</projectile>

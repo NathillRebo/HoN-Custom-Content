@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Mephisto1"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+
+	effecttype="StatusDebuff"
+>	
+	<onframe>
+		<damage effecttype="Magic DOT" amount="15,25,35,45" b="frametime" op="mult" />
+	</onframe>
+	
+	<onattackedpreimpact>
+		<combateffecttype effecttype="AbilityBasedProjectile BindingProjectile" />
+		<else>
+			<applystate name="State_Mephisto1" target="source_entity" pushentity="true" />
+			<changeduration b="967" op="add" entity="stack_entity" />
+		</else>
+	</onattackedpreimpact>
+	
+	<modifier key="shardofthemaster_boost">
+		<onframe>
+			<evaluate a="2" b="charges" op="mult"/>
+			<evaluate a="15,25,35,45" b="result" op="add"/>
+			<evaluate a="result" b="frametime" op="mult"/>
+			<damage effecttype="Magic DOT" amount="1" b="result" op="mult" />
+		</onframe>
+		
+		<onattackedpreimpact>
+			<combateffecttype effecttype="AbilityBasedProjectile BindingProjectile" />
+			<else>
+				<applystate name="State_Mephisto1" target="source_entity" pushentity="true" />
+				<changeduration b="967" op="add" entity="stack_entity" />
+				<addcharges count="1"/>
+			</else>
+		</onattackedpreimpact>
+	</modifier>
+</state>

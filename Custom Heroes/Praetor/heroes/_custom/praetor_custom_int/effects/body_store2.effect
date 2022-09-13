@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect  deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="1">
+			<sound
+				dampen="0.5"
+				channelid="storeaud"
+				sound2d="true"
+				volume=".5"
+				sample="../sounds/store_preview.wav"
+			/>
+			
+			<billboard
+			delay="3000"
+				bone="Bone002"
+				size="40"
+				position="0 0 10"
+				life="3000"
+				material="/shared/effects/materials/circle_puppet01_blend.material"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				depthbias="0"
+				color=".3 0 .3"
+				rollspeed="-100"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				scale="4"
+			/>
+			<billboard
+				delay="3000"
+				bone="Bone002"
+				size="40"
+				position="0 0 10"
+				life="3000"
+				material="/shared/effects/materials/circle_puppet02_blend.material"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				depthbias="0"
+				color=".7 0 1"
+				rollspeed="100"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+				scale="4"
+			/>
+			<simpleemitter
+				bone="Bone002"
+				delay="3500"
+				life="2800"
+				spawnrate="20"
+				minparticlelife="600"
+				maxparticlelife="700"
+				speed="12"
+				material="/shared/effects/materials/fire_blend.material"
+				offsetsphere="50 50 0"
+				position="0 0 0"
+				yawspeed="-360"
+				gravity="-20"
+				inheritvelocity=".025"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-50"
+					maxanglespeed="50"
+					startcolor=".3 0 .3"
+					midcolor="0"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startsize="10"
+					midsize="20"
+					midsizepos=".25"
+					minscale="3"
+					maxscale="5"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				bone="Bone002"
+				delay="3500"
+				life="2500"
+				position="0 0 10"
+				spawnrate="25"
+				minparticlelife="300"
+				maxparticlelife="600"
+				offsetsphere="50 50 0"
+				minspeed="10.0"
+				maxspeed="50"
+				direction="0 0 1"
+				gravity="-20"
+				material="/shared/effects/materials/vindicator_eye.material"
+			>
+				<particle
+					startsize="5"
+					midsize="7"
+					endsize="0"
+					maxangle="360"
+					maxanglespeed="50"
+					minanglespeed="-50"
+					minscale="2"
+					maxscale="4"
+					startcolor=".8"
+					midcolor=".8"
+					endcolor="0"
+					midcolorpos=".5"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				bone="Bone002"
+				delay="3500"
+				life="2800"
+				spawnrate="20"
+				minparticlelife="700"
+				maxparticlelife="800"
+				minspeed="10"
+				maxspeed="50"
+				material="/shared/effects/materials/mysticenergy_black.material"
+				offsetsphere="50 50 0"
+				position="0 0 0"
+				yawspeed="-360"
+				gravity="-10"
+				inheritvelocity=".025"
+			>
+				<particle
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-300"
+					maxanglespeed="300"
+					startcolor=".8 0 1"
+					midcolor=".2 0 .44"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					startsize="10"
+					endsize="20"	
+					midsizepos=".25"
+					minscale="1"
+					maxscale="2"
+				/>
+			</simpleemitter>
+			<billboard
+				bone="Bone002"
+				position="0 0 10"
+				delay="5800"
+				life="550"
+				startalpha=".5"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				startparam=".25"
+				endparam="0"
+				startsize="0"
+				endsize="550"
+				depthbias="-100"
+				material="/shared/effects/materials/refract_ring.material"
+				lockup="true"
+				lockright="true"
+				pitch="90"
+			/>
+			<billboard
+				bone="Bone002"
+				delay="2000"
+				life="4500"
+				startcolor="0"
+				midcolor=".4 0 .6"
+				endcolor="0"
+				size="200"
+				depthbias="-100"
+				position="0 0 10"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			<billboard
+				bone="Bone002"
+				delay="5800"
+				life="300"
+				startcolor="0"
+				midcolor=".3 0 .4"
+				endcolor="0"
+				startsize="200"
+				endsize="300"
+				depthbias="-100"
+				position="0 0 10"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+      	<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>

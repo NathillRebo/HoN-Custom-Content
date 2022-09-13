@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Carmilla1"
+
+	speed="1700"
+	gravity="0"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+	deatheffect="effects/death.effect"
+	
+	canturn="false"
+	flying="true"
+	flyheight="70"
+	
+	touchradius="100"
+	maxtouchespertarget="1"
+	touchtargetscheme="enemy_units"
+	toucheffecttype="Magic"
+	touchradiusdiradjust="true"
+	
+	lifetime="-1"
+>
+	<ontouch>
+		<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity" />
+		<damage effecttype="Magic" amount="40,50,60,70" />
+		<applystate name="State_Carmilla1" duration="10000"/>
+	</ontouch>
+</projectile>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect entityeffectscale="true" deferred="true">
+
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1" >
+		
+			<sound
+				linearfalloff="true" 
+				falloffstart="500"
+				falloffend="1800"
+				volume=".33"
+				sample=".../sounds/impact.wav"
+			/>
+
+			<model
+				life="450"
+				model="invis_bust/model.mdf"
+				anim="idle"
+				startcolor="1 .61 1"
+				midcolor="1 .61 1"
+				endcolor="1 .61 1"
+				midcolorpos=".2"
+				expirelife="500"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+			>
+
+				<template name="trails">
+					<twopointtrailemitter
+						name="trail01"
+						position="0 0 0"
+						bone_a="{bone01}"
+						bone_b="{bone02}"
+						spawnrate="25"
+						particlelife="500"
+						subframepose="1"
+						texpostime="500"
+						texposscale="0"
+						texstretchscale="1"
+						material="/shared/effects/materials/soul_projectile_blue.material"
+						startparticlecolor="1 .61 1"
+						endparticlecolor="0 0 0"
+					>
+						<particle
+							startcolor=".5 .31 .69"
+							endcolor="0 0 0"
+						/>
+					</twopointtrailemitter>
+				</template>
+				
+				<instance name="trails" bone01="_bone_fx_01"  bone02="_bone_fx_03"/>
+				<instance name="trails" bone01="_bone_fx_02"  bone02="_bone_fx_03"/>
+				
+			<template name="rings">
+
+				<billboard
+					expirelife="150"
+					bone="_bone_fx_03"
+					startcolor="0 .25 .85"
+					endcolor="0 0 0"
+					size="7"
+					position="{position}"
+					material="../../ability_01/effects/material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="500"
+					pitch="90"
+					yawspeed="0"
+				/>
+
+				<billboard
+					expirelife="150"
+					bone="_bone_fx_03"
+					startcolor="0.37 .22 .51"
+					endcolor="0 0 0"
+					size="75"
+					position="{position}"
+					material="../../ability_01/effects/material.material"
+					lockup="1"
+					lockright="1"
+					rollspeed="500"
+					pitch="90"
+					yawspeed="0"
+				/>
+			</template>
+
+			<instance name="rings" position="0 0 0"/>
+
+			</model>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier1"/> 
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		
+	</thread>
+
+</effect>

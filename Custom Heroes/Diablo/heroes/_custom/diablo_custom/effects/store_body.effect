@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".5">
+			
+			<template name="smoke">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="15"
+					minspeed="35"
+					maxspeed="100"
+					minparticlelife="500"
+					maxparticlelife="1000"
+					offsetsphere="25 25 10"
+					material="/shared/effects/materials/pyroclast_02.material"
+					inheritvelocity="-0.1"
+					depthbias="-10"
+					directionalspace="local"
+					direction="0 0 -1"
+					gravity="5"
+				>
+					<particle
+						maxangle="360"
+						color=".85"
+						minsize="100"
+						maxsize="125"
+						endsize="150"
+						startalpha="0"
+						midalpha=".35"
+						endalpha="0"
+						midalphapos=".2"
+					/>
+					<particle
+						maxangle="360"
+						color=".65"
+						minsize="100"
+						maxsize="125"
+						endsize="150"
+						startalpha="0"
+						midalpha=".35"
+						endalpha="0"
+						midalphapos=".2"
+					/>
+					<particle 
+						minangle="-180"
+						maxangle="180"
+						color=".45"
+						minsize="100"
+						maxsize="125"
+						endsize="150"
+						startalpha="0"
+						midalpha=".35"
+						endalpha="0"
+						midalphapos=".2"
+					/>
+					<particle 
+						minangle="-180"
+						maxangle="180"
+						color=".25"
+						minsize="100"
+						maxsize="125"
+						endsize="150"
+						startalpha="0"
+						midalpha=".35"
+						endalpha="0"
+						midalphapos=".2"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="smoke" bone="_bone_center" />
+			<instance name="smoke" bone="Bip01 L Calf" />
+			<instance name="smoke" bone="Bip01 R Calf" />
+			
+			
+			<beam
+				bone_a="_bone_fx_01"
+				bone_b="_bone_fx_02"
+				material="/shared/effects/materials/whitedot.material"
+				framespeed="1.75"
+				size="125"
+				color=".25 0 0"
+			/>
+			<beam
+				bone_a="_bone_fx_01"
+				bone_b="_bone_fx_02"
+				material="/shared/effects/materials/femme_lightning_02.material"
+				framespeed="1.75"
+				size="70"
+				color=".35"
+			/> 
+			<beam
+				bone_a="_bone_fx_01"
+				bone_b="_bone_fx_02"
+				material="/shared/effects/materials/femme_lightning_01.material"
+				framespeed="2.31"
+				size="90"
+				color=".75 0 0"
+			/>
+			
+			<template name="eye_glow">
+				<simpleemitter
+					bone="{bone}"
+					spawnrate="15"
+					gravity="-5"
+					particlelife="400"
+					direction="{direction}"
+					angle="0"
+					speed="15"
+					depthbias="-1"
+					material="/shared/effects/materials/whitedot.material"
+				>
+					<particle
+						startscale="1"
+						endscale="1"
+						startcolor="1 0 0"
+						midcolorpos=".1"
+						endcolor="0"
+						turn="1"
+						height="10"
+						width="4"
+						anchor="1"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="eye_glow" bone="_bone_lefteye" direction="1 -0.25 0" />
+			<instance name="eye_glow" bone="_bone_righteye" direction="-1 -0.25 0" />
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0"/>
+		<waitfordeath instance="instance0"/>
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Srikandi_Ability1"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	stealthtype="hero"
+	fadetime="500"
+	unitwalking="true"
+	
+	effecttype="StatusStealth"
+	
+	modifierkey="Srikandi1_Active"
+>
+	<oninflict>
+		<forgetattacks />
+		<startfade />
+	</oninflict>
+	
+	<onattack>
+		<expire />
+		<applystate name="State_Srikandi_Ability1_Attack" duration="5000" target="source_entity" />
+	</onattack>
+	
+	<onactivatepreimpact>
+		<applystate name="State_Srikandi_Ability1_Attack" duration="5000" target="source_entity" />
+	</onactivatepreimpact>
+	
+	<onexpired>
+		<applystate name="State_Srikandi_Ability1_Attack" duration="5000" target="source_entity" />
+	</onexpired>
+</state>
