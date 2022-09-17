@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_TemporalBeads"
+	
+	icon="icon.tga"
+	
+	cost="1000"
+	
+	actiontype="passive"
+>
+	<onframe>				
+		<setvar1 a="frametime" b="100" op="mult" />
+		<pushability source="this_owner_entity" slot="0" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_owner_entity" slot="1" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_owner_entity" slot="2" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_owner_entity" slot="3" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+	</onframe>
+</item>

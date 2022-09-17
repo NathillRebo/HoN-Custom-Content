@@ -1,0 +1,10 @@
+
+// Item_Custom_TemporalBeads
+Item_Custom_TemporalBeads_name									Temporal Beads				
+Item_Custom_TemporalBeads_description							
+Item_Custom_TemporalBeads_description_simple					+10% Cooldown Refresh Speed
+Item_Custom_TemporalBeads_effect_header
+Item_Custom_TemporalBeads_FRAME_effect							+10% Cooldown Refresh Speed
+Item_Custom_TemporalBeads_search_terms							cdr,cooldown,reduction,tb,temporal,beads,temporals
+Item_Custom_TemporalBeads_shop_flavor
+Item_Custom_TemporalBeads_shop_categories						Filter_Modifier
