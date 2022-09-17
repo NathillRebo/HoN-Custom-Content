@@ -1,0 +1,14 @@
+
+// Item_Custom_WraithKingsCrown
+Item_Custom_WraithKingsCrown_name								Wraith King's Crown
+Item_Custom_WraithKingsCrown_description						
+Item_Custom_WraithKingsCrown_description2						This item contains a ^oLifesteal Modifier^* which does not stack.
+Item_Custom_WraithKingsCrown_description_simple					^oLifesteal Modifier^*\nGrants lifesteal and the ability to mind control enemy units.
+Item_Custom_WraithKingsCrown_search_terms						wraith,king,kings,crown,wraithking,wraithkings,wraithcrown,wraithscrown,kingscrown,kingcrown,wraithkingcrown,wraithkingscrown,lifesteal,leech,armor,damage,dmg,creep,dominate,strength,agility,intelligence,helm,overlord,helmoftheoverlord
+Item_Custom_WraithKingsCrown_effect_header						Status Effect(s)
+Item_Custom_WraithKingsCrown_shop_flavor						Used by the darkest kings that are now dead, they can control the minds of lesser creatures.
+Item_Custom_WraithKingsCrown_shop_categories					Filter_Armor,Filter_Regeneration,Filter_Modifier
+Item_Custom_WraithKingsCrown_IMPACT_effect						^oDominates the target^*, taking control of it and switching its team permanently. The unit gains 1 Mana Regen, 10 Health Regen and bonus Damage and Movement Speed equal to 20% of your own.\n\nIf a Dominated unit dies, Crown's current cooldown is reduced by 50%.
+
+// State_WraithKingsCrown
+State_WraithKingsCrown_name										Wraith King's Crown

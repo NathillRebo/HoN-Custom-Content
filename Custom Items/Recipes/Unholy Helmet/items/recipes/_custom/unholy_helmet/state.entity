@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_UnholyHelmet"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	modifierkey="cantcollectchalice"
+>
+	<aura state="State_Custom_UnholyHelmet_Aura" radius="1000" targetscheme="enemy_heroes" ignoreinvulnerable="true" notooltip="true" stack="true" proxy="this_entity"  />
+	
+	<onexpired>
+		<compare a="accumulator" b="1" op="eq">
+			<setvar0 a="source_maxhealth" b="0.1" op="mult"/>
+			<heal a="var0" target="source_entity" />
+		</compare>
+	</onexpired>
+
+</state>

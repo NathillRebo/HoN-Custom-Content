@@ -1,0 +1,10 @@
+
+// Item_Custom_WardensLantern
+Item_Custom_WardensLantern_name									Warden's Lantern
+Item_Custom_WardensLantern_description							
+Item_Custom_WardensLantern_description_simple					Place to temporarily grant vision of the nearby area for 6 minutes.
+Item_Custom_WardensLantern_search_terms							ward,sight,wardens,lantern,health,regen,mana,max
+Item_Custom_WardensLantern_effect_header						Status Effect(s)
+Item_Custom_WardensLantern_shop_flavor							Worn by those who watch the districts and outskirts for danger, this lamp can reveal more if worn by a potent hero.
+Item_Custom_WardensLantern_shop_categories						Filter_Regeneration,Filter_Booster,Filter_Activatable
+Item_Custom_WardensLantern_IMPACT_effect						Places a ^oWard of Sight^* at target location which lasts ^o6 minutes^* or until destroyed.\n\nThe Ward of Sight provides 1700 day and night vision and is ^oStealthed^*. Dies in 4 hits.\n\nIf the ward lasts full duration, you are ^grefunded 50%^* of the cost.

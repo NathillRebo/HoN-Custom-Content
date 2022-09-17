@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_UnholyHelmet_Aura"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	serverentity="true"
+>
+	<onkilled>
+		<targettype type="illusion" target="source_entity" />
+		<else>
+			<targettype type="heropet" target="source_entity" />
+			<else>
+				<targettype type="mimic" target="source_entity" />
+				<else>
+					<setaccumulator value="1" entity="this_spawner_entity" />
+					<expirestate name="State_Custom_UnholyHelmet" target="this_inflictor_entity" />
+				</else>
+			</else>
+		</else>
+	</onkilled>
+</state>

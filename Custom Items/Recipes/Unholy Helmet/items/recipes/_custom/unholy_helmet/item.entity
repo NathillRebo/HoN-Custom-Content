@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_UnholyHelmet"
+	
+	icon="icon.tga"
+	cost="1075"
+	components="Item_Ringmail Item_AxeOfTheMalphai Item_BloodChalice"
+	
+	actiontype="target_self"
+	casteffecttype="SuperiorMagic"
+	
+	casttime="0"
+	castactiontime="0"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	cooldowntime="25000"
+	cooldowntype="bloodchalice"
+
+	manacost="0"
+	manaregenmultiplier="0.5"
+	
+	strength="30"
+	intelligence="5"
+	armor = "5"
+	targetradius="1000"
+	
+	maxcharges="1"
+	
+	modifierkey="alt_BloodChalice"
+	
+	responsetype="Item_NonInterrupting"
+>
+	<aura name="Custom_UnholyHelmet_Collector" state="State_Custom_UnholyHelmet_Collector" radius="1000" targetscheme="enemy_heroes" ignoreinvulnerable="true" notooltip="true" stack="true" proxy="this_entity" />
+
+	<onframe />
+	
+	<onready>
+		<setactivemodifierkey name="" />
+	</onready>
+
+	<onimpact>
+		<playeffect effect="effects/impact.effect" source="source_entity" target="" />
+		
+		<setvar0 a="-0.1" b="source_maxhealth" op="mult"/>
+		
+		<compare a="charges" b="1" op="eq">
+			<removecharge />
+		</compare>
+		<else>
+			<applystate name="State_Custom_UnholyHelmet" target="source_entity" duration="15000" />
+			<changehealth a="var0" />
+			<damage effecttype="" amount="0.000001" nonlethal="true" />
+		</else>
+		<setactivemodifierkey name="bloodchalice_cooldown" />
+		<setvar1 a="var0" b="-1.75" op="div"/>
+		<givemana target="source_entity" amount="var1" />
+		<setvar2 a="-9.1779" b="var0" op="mult"/>
+		
+		<pushability source="this_owner_entity" slot="0" />
+		<reducecooldown entity="stack_entity" duration="var2" />
+		<pushability source="this_owner_entity" slot="1" />
+		<reducecooldown entity="stack_entity" duration="var2" />
+		<pushability source="this_owner_entity" slot="2" />
+		<reducecooldown entity="stack_entity" duration="var2" />
+		<pushability source="this_owner_entity" slot="3" />
+		<reducecooldown entity="stack_entity" duration="var2" />
+	</onimpact>
+	
+	<modifier key="bloodchalice_cooldown" modpriority="101">
+		<aura name="Custom_UnholyHelmet_Collector" state="State_Custom_UnholyHelmet_Collector" radius="1000" targetscheme="nothing" ignoreinvulnerable="true" notooltip="true" stack="true" proxy="this_entity"  />
+	</modifier>
+	
+	<modifier key="bloodchalice_charged" modpriority="100"
+		cooldowntime="3000"
+	>
+	</modifier>
+</item>

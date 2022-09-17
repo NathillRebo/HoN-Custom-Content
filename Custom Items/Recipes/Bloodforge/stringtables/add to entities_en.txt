@@ -1,0 +1,13 @@
+
+// Item_Custom_Bloodforge
+Item_Custom_Bloodforge_name										Bloodforge
+Item_Custom_Bloodforge_description								
+Item_Custom_Bloodforge_description2								When you kill an enemy hero, gain ^oBloodforged Shield^* for 20 seconds, which absorbs up to ^o375^* damage.\nThis item contains a ^oLifesteal Modifier^* which does not stack.
+Item_Custom_Bloodforge_description_simple						Shield yourself upon killing enemy heroes.
+Item_Custom_Bloodforge_effect_header							Bloodforged Shield Effect(s)
+Item_Custom_Bloodforge_search_terms								blood,forge,bloods,bloodforge,bf,damage,attack,lifesteal,lifeleech,lifedrain,healthdrain,healthsteal,healthleech,l15
+Item_Custom_Bloodforge_shop_categories							Filter_Strength,Filter_Damage,Filter_AttackSpeed,Filter_Regeneration
+
+// State_Custom_Bloodforge
+State_Custom_Bloodforge_name									Bloodforged Shield
+State_Custom_Bloodforge_description								Absorbs 375 damage

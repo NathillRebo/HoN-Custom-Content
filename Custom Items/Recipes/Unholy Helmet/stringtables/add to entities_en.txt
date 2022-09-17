@@ -1,0 +1,14 @@
+// Item_Custom_UnholyHelmet
+Item_Custom_UnholyHelmet_name									Unholy Helmet
+Item_Custom_UnholyHelmet_description2							
+Item_Custom_UnholyHelmet_description_simple						Use to sacrifice Health for Mana and Cooldown Reduction.
+Item_Custom_UnholyHelmet_search_terms							unholy,helmet,unholyhelmet,uh,armor,bloodchalice,blood,chalice,soulring,soul,bc,mana,strength,intelligence,chaliceofblood,regeneration
+Item_Custom_UnholyHelmet_effect_header							Unholy Helmet Effect(s)
+Item_Custom_UnholyHelmet_effect_header2							
+Item_Custom_UnholyHelmet_tooltip_flavor							
+Item_Custom_UnholyHelmet_shop_categories						Filter_Strength,Filter_Intelligence,Filter_Regeneration,Filter_Activatable,Filter_Armor
+Item_Custom_UnholyHelmet_IMPACT_effect							On use, ^oconsumes 10% Health^*, ^ogrants 1 Mana per 1.75 Health spend and reduces remaining ability cooldowns by 1 second per 110 Health spent^*.\n\n^oRecovers 10%^* Health if an ^oenemy hero dies^* within range in the next 15 seconds. If not used, an enemy death will, instead, ^ocharge^* the Unholy Helmet.\n\nIf charged, using the Helmet will consume the charge instead of Health. Max of ^c1 charge^*.
+
+// State_Custom_UnholyHelmet
+State_Custom_UnholyHelmet_name									Unholy Helmet
+State_Custom_UnholyHelmet_description							If an enemy hero is killed in 1000 radius, user gains 10% Health. This state then expires.

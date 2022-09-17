@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SpearOfDesolation"
+
+	icon="icon.tga"
+	
+	cost="1400"
+	components="Item_Custom_Spellbook Item_AcolytesStaff Item_Custom_TemporalBeads"
+
+	actiontype="passive"
+	
+	intelligence="30"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.08" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onframe>				
+		<setvar1 a="frametime" b="150" op="mult" />
+		<pushability source="this_owner_entity" slot="0" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_owner_entity" slot="1" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_owner_entity" slot="2" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_owner_entity" slot="3" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+	</onframe>
+	
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="enemy">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<pushability source="this_owner_entity" slot="0" />
+								<reducecooldown entity="stack_entity" duration="4000" />
+								<pushability source="this_owner_entity" slot="1" />
+								<reducecooldown entity="stack_entity" duration="4000" />
+								<pushability source="this_owner_entity" slot="2" />
+								<reducecooldown entity="stack_entity" duration="4000" />
+								<pushability source="this_owner_entity" slot="3" />
+								<reducecooldown entity="stack_entity" duration="7461" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+		</targettype>
+	</onkill>
+</item>

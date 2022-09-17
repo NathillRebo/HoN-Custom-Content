@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_WardensLantern"
+	
+	icon="icon.tga"
+	
+	cost="970"
+	
+	maxhealth="50"
+	healthregen="1"
+	manaregenmultiplier="0.3"
+	
+	actiontype="target_position"
+	casttime="500"
+	castactiontime="200"
+	responsetype="Order_NonInterrupting"
+	
+	range="600"
+	manacost="5"
+	cooldowntime="180000"
+	cooldowntype="wardenslantern"
+	showareacast="true"
+	showneutralspawnblockrange="true"
+>
+	<onimpact>
+		<spawnunit name="Gadget_FlamingEye" target="target_position" proxy="source_entity" />
+	</onimpact>
+</item>

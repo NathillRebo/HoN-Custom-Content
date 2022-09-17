@@ -11,8 +11,8 @@
 	intelligence="20,24,28"
 	actiontype="passive"
 	
-	maxcharges="2"
-	maxlevel="2"
+	maxcharges="3"
+	maxlevel="3"
 >
 	<oncreate>
 		<addcharges count="1" />
