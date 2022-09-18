@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_StaffOfCalamity"
+
+	icon="icon.tga"
+	
+	cost="950"
+	components="Item_Custom_Spellbook Item_Custom_Spellbook Item_AcolytesStaff"
+	actiontype="passive"
+	
+	intelligence="30"
+>
+	<onframe/>
+	
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<chance threshold="0.30">
+				<setvalue name="damage_attempted" a="damage_attempted" b="1.725" op="mult" />
+			</chance>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.15" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</item>

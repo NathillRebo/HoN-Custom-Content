@@ -1,0 +1,9 @@
+
+// Item_Custom_StaffOfCalamity
+Item_Custom_StaffOfCalamity_name								Staff of Calamity
+Item_Custom_StaffOfCalamity_description							Your spells have 30% chance to deal 50% more damage.
+Item_Custom_StaffOfCalamity_description_simple					Increases spell damage. Grants spell crit.
+Item_Custom_StaffOfCalamity_search_terms						soc,staff,of,calamitz,calamity,ap,ability,power,spellpower,abilitypower,amplifying,magic,magicpower,intelligence,crit,critical,critic,spell
+Item_Custom_StaffOfCalamity_shop_flavor							Can have disastrous effects.
+Item_Custom_StaffOfCalamity_FRAME_effect						+15% Spell Damage
+Item_Custom_StaffOfCalamity_shop_categories						Filter_Intelligence,Filter_Modifier
