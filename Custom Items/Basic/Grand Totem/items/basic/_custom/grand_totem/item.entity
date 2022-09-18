@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_GrandTotem"
+	
+	icon="icon.tga"
+	cost="850"
+	actiontype="passive"
+	strength="6"
+	agility="6"
+	intelligence="6"
+>
+</item>

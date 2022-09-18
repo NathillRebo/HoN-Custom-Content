@@ -1,0 +1,8 @@
+
+// Item_Custom_GrandTotem
+Item_Custom_GrandTotem_name										Grand Totem
+Item_Custom_GrandTotem_description								
+Item_Custom_GrandTotem_description_simple						^9776 Strength^*\n^7976 Agility^*\n^7796 Intelligence^*									
+Item_Custom_GrandTotem_search_terms								grandtotem,grand,totem,strength,str,agility,agi,intelligence,int,gt,6s,6a,6i							
+Item_Custom_GrandTotem_effect_header							Status Effect(s)
+Item_Custom_GrandTotem_shop_categories							Filter_Strength,Filter_Agility,Filter_Intelligence

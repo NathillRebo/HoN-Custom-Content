@@ -1,0 +1,9 @@
+
+// Item_Moonspear
+Item_Moonspear_name												Moon Spear
+Item_Moonspear_description										
+Item_Moonspear_description_simple								^79715 Agility^*							
+Item_Moonspear_search_terms										moonspear,moon,spear,15agi,15agility,15a,ms,agility							
+Item_Moonspear_effect_header									Status Effect(s)
+Item_Moonspear_shop_flavor										
+Item_Moonspear_shop_categories									Filter_Agility

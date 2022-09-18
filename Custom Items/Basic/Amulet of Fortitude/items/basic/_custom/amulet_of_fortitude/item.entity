@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_AmuletOfFortitude"
+	
+	icon="icon.tga"
+	
+	cost="1425"
+	
+	actiontype="passive"
+	allowsharing="true"
+	
+	healthregen="7"
+>
+</item>

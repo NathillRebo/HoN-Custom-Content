@@ -1,0 +1,9 @@
+
+// Item_Custom_RustyPickaxe
+Item_Custom_RustyPickaxe_name									Rusty Pickaxe
+Item_Custom_RustyPickaxe_description							Killing any unit grants 4 bonus Gold.\nDoes not refund any gold when sold.\nPays off after 150 kills.
+Item_Custom_RustyPickaxe_description_simple						+4 Gold per kill
+Item_Custom_RustyPickaxe_search_terms							rusty,pickaxe,late,gold,damage,gps,gpm,farm,turtle
+Item_Custom_RustyPickaxe_effect_header							Status Effect(s)
+Item_Custom_RustyPickaxe_shop_flavor							Found in a collapsed have, held by skeletal remains of a dwarven miner. While not exactly a good weapon, it will prove useful if you want to be the richest champion.
+Item_Custom_RustyPickaxe_shop_categories						Filter_Damage,Filter_Modifier

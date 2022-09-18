@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Moonspear"
+	
+	icon="icon.tga"
+	cost="1500"
+	actiontype="passive"
+	agility="15"
+>
+</item>

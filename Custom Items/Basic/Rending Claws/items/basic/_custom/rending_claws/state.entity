@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_RendingClaws"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	armor="-3"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>	
+</state>

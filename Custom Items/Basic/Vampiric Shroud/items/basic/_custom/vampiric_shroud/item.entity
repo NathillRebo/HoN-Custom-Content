@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_VampiricShroud"
+	
+	
+	icon="icon.tga"
+	cost="900"
+	
+	actiontype="passive"
+>
+	<onframe />
+	<modifier key="magic_lifesteal" modpriority="15" exclusive="true">
+		<ondamage>
+			<damageeffecttype effecttype="Magic SuperiorMagic">
+				<cantarget targetscheme="enemy_units">
+					<targettype type="hero">
+						<setvar0 a="damage_applied" b="0.15" op="mult" />
+						<heal source="this_owner_entity" target="this_owner_entity" a="var0" />
+					</targettype>
+					<else>
+						<setvar0 a="damage_applied" b="0.05" op="mult" />
+						<heal source="this_owner_entity" target="this_owner_entity" a="var0" />
+					</else>
+				</cantarget>
+			</damageeffecttype>
+		</ondamage>
+	</modifier>
+</item>

@@ -1,0 +1,10 @@
+
+// Item_Custom_Spellbook
+Item_Custom_Spellbook_name										Spellbook
+Item_Custom_Spellbook_description								
+Item_Custom_Spellbook_description_simple						+6% Spell Damage
+Item_Custom_Spellbook_effect_header
+Item_Custom_Spellbook_search_terms								spellbook,book,spell,sb,ap,ability,power,spellpower,abilitypower,amplifying,magic,magicpower
+Item_Custom_Spellbook_shop_flavor								Granted to the novices so they will remember their spells.
+Item_Custom_Spellbook_shop_categories							Filter_Modifier
+Item_Custom_Spellbook_FRAME_effect								+6% Spell Damage

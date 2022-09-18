@@ -1,0 +1,8 @@
+
+// Item_Custom_ReinforcedRobe
+Item_Custom_ReinforcedRobe_name									Reinforced Robe
+Item_Custom_ReinforcedRobe_description								
+Item_Custom_ReinforcedRobe_description_simple					3 Armor\n25% Mana Regen								
+Item_Custom_ReinforcedRobe_search_terms							reinforced,robe,armor,mana,regen						
+Item_Custom_ReinforcedRobe_effect_header						Status Effect(s)
+Item_Custom_ReinforcedRobe_shop_categories						Filter_Armor,Filter_Regeneration

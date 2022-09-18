@@ -1,0 +1,12 @@
+
+// Item_Custom_RendingClaws
+Item_Custom_RendingClaws_name									Rending Claws
+Item_Custom_RendingClaws_description2							This item doesn't stack with Shieldbreaker.
+Item_Custom_RendingClaws_description_simple						Attacks reduce armor.
+Item_Custom_RendingClaws_search_terms							rending,claws,rendingclaws,armorredu,armorpierce,armorpene,pierce,penetration
+Item_Custom_RendingClaws_effect_header							Rend Effect(s)
+Item_Custom_RendingClaws_shop_flavor								
+Item_Custom_RendingClaws_shop_categories						Filter_Modifier
+
+// State_RendingClaws
+State_RendingClaws_name											Rend

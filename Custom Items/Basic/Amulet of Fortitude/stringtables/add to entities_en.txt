@@ -1,0 +1,8 @@
+
+// Item_Custom_AmuletOfFortitude
+Item_Custom_AmuletOfFortitude_name								Amulet of Fortitude
+Item_Custom_AmuletOfFortitude_description							
+Item_Custom_AmuletOfFortitude_description_simple				7 Health Regeneration						
+Item_Custom_AmuletOfFortitude_search_terms						restoration,regen,regeneration,hpregen,hpregeneration,healthregen,healthregeneration,7r,amulet,fortitude,amuletoffortitude			
+Item_Custom_AmuletOfFortitude_effect_header						Status Effect(s)
+Item_Custom_AmuletOfFortitude_shop_categories					Filter_Regeneration

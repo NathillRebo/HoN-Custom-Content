@@ -1,0 +1,9 @@
+
+// Item_HeavyBlade
+Item_HeavyBlade_name											Heavy Blade
+Item_HeavyBlade_description									
+Item_HeavyBlade_description_simple								^97715 Strength^*							
+Item_HeavyBlade_search_terms									heavyblade,heavy,blade,15str,15strength,15s,strength,str,hb,too,heavy,to,use,properly
+Item_HeavyBlade_effect_header									Status Effect(s)
+Item_HeavyBlade_shop_flavor										These blades are too heavy to be used properly by most folk.
+Item_HeavyBlade_shop_categories									Filter_Strength

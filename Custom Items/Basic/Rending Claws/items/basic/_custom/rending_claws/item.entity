@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_RendingClaws"
+	
+	icon="icon.tga"
+	statuseffecttooltip="State_RendingClaws"
+	
+	cost="280"
+
+	actiontype="passive"
+>
+	<onattackimpact />
+	
+	<modifier key="attack_shieldbreaker" modpriority="18" exclusive="true"
+		statuseffecttooltip="State_RendingClaws"
+	>
+		<onattackimpact effectdescription="true">
+		</onattackimpact>
+		
+		<onattackpredamage propagatetoillusions="false" >
+			<compare a="combat_attackability" b="0" op="eq">
+				<targettype type="Boss" />
+				<else>
+					<cantarget targetscheme="enemy_units">
+						<applystate name="State_RendingClaws" duration="5000" />
+					</cantarget>
+				</else>				
+			</compare>
+		</onattackpredamage>
+	</modifier>
+</item>

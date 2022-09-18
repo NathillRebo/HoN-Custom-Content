@@ -1,0 +1,8 @@
+
+// Item_Custom_Ankh
+Item_Custom_Ankh_name											Ankh
+Item_Custom_Ankh_description								
+Item_Custom_Ankh_description_simple								130 Health\n60 Mana							
+Item_Custom_Ankh_search_terms									ankh,max,health,mana						
+Item_Custom_Ankh_effect_header									Status Effect(s)
+Item_Custom_Ankh_shop_categories								Filter_Booster

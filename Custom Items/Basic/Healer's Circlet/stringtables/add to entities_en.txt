@@ -1,0 +1,8 @@
+
+// Item_Custom_HealersCirclet
+Item_Custom_HealersCirclet_name									Healer's Circlet
+Item_Custom_HealersCirclet_description							
+Item_Custom_HealersCirclet_description_simple					+10% Heal Amp
+Item_Custom_HealersCirclet_search_terms							healer,circlet,heal,amp
+Item_Custom_HealersCirclet_effect_header						Status Effect(s)
+Item_Custom_HealersCirclet_shop_categories						Filter_Modifier

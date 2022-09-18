@@ -1,0 +1,7 @@
+
+// Item_Custom_VitalityBelt
+Item_Custom_VitalityBelt_name									Vitality Belt
+Item_Custom_VitalityBelt_description							
+Item_Custom_VitalityBelt_description_simple						5% Stun and Debuff Resistance
+Item_Custom_VitalityBelt_search_terms							vitality,belt,stun,debuff,resistance,reduction,tenacity
+Item_Custom_VitalityBelt_shop_categories						

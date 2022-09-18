@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_RustyPickaxe"
+	
+	icon="icon.tga"
+	
+	cost="600"
+	sellvalue="0"
+	
+	damage="2"
+	
+	actiontype="passive"
+	
+	maxcharges="150"
+>
+	
+	<modifier key="rusty_pickaxe_gold" modpriority="4" exclusive="true">
+		<onkill>
+			<givegold amount="4" target="source_entity" />
+			<addcharges count="1"/>
+		</onkill>
+	</modifier>
+</item>

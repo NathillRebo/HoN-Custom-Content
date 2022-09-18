@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_VitalityBelt"
+	
+	icon="icon.tga"
+	
+	cost="525"
+	
+	actiontype="passive"
+>
+	<modifier key="stun_and_debuff_duration_reduction" modpriority="5" exclusive="true"
+		stunneddurationmultiplier="-0.05"
+		debuffdurationmultiplier="-0.05"
+	/>
+</item>

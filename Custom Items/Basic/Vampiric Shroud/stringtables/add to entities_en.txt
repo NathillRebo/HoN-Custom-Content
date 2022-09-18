@@ -1,0 +1,10 @@
+
+// Item_Custom_VampiricShroud
+Item_Custom_VampiricShroud_name									Vampiric Shroud
+Item_Custom_VampiricShroud_description							This item contains a ^oMagic Lifesteal Modifier^*, which doesn't stack.
+Item_Custom_VampiricShroud_description2								
+Item_Custom_VampiricShroud_description_simple					^oMagic Lifesteal Modifier^*
+Item_Custom_VampiricShroud_effect_header
+Item_Custom_VampiricShroud_search_terms							leech,drain,vampirism,vampiric,shroud,spell
+Item_Custom_VampiricShroud_shop_categories						Filter_Regeneration
+Item_Custom_VampiricShroud_FRAME_effect							15% Magic Lifesteal (5% vs. non-hero units)

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Ankh"
+	
+	icon="icon.tga"
+	cost="690"
+	actiontype="passive"
+	health="130"
+	mana="60"
+>
+</item>

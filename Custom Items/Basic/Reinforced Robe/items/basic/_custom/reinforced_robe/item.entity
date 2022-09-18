@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_ReinforcedRobe"
+	
+	icon="icon.tga"
+	cost="475"
+	actiontype="passive"
+	armor="3"
+	manaregenmultiplier="0.25"
+>
+</item>
