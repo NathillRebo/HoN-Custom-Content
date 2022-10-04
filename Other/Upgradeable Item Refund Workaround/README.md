@@ -6,6 +6,6 @@ To install the patch fully:
 
 This patch will work for english language only - to make it compatible with other languages, repeat the third and fourth step for each language, then replace each added entry from english to appriopriate language.  
 For example:  
-Item_Nuke_IMPACT_effect											Deals ^o350 Magic Damage^* to target.  
+Item_Nuke_IMPACT_effect&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Deals ^o350 Magic Damage^* to target.  
 should look like:  
-Item_Nuke_IMPACT_effect											Verursacht beim Ziel ^o350 Magischen Schaden^*.  
+Item_Nuke_IMPACT_effect&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Verursacht beim Ziel ^o350 Magischen Schaden^*.  
