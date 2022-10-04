@@ -1,10 +1,10 @@
 
 // Item_Custom_SpearOfDesolation
 Item_Custom_SpearOfDesolation_name								Spear of Desolation			
-Item_Custom_SpearOfDesolation_description						Whenever you score a kill on an enemy hero, reduce cooldowns of your basic abilities by 4 seconds and on your ultimate by 7.5 seconds.
-Item_Custom_SpearOfDesolation_description_simple				Kills reduce remaining cooldowns of your spells.
+Item_Custom_SpearOfDesolation_description						Whenever you score a kill on an enemy hero or when an enemy hero dies nearby, reduce remaining cooldowns of your abilities by 3 seconds.
+Item_Custom_SpearOfDesolation_description_simple				Takedowns reduce remaining cooldowns of your spells.
 Item_Custom_SpearOfDesolation_effect_header
-Item_Custom_SpearOfDesolation_FRAME_effect						+15% Cooldown Refresh Speed\n+8% Spell Damage
-Item_Custom_SpearOfDesolation_search_terms						cdr,cooldown,reduction,spell,damage,amp,spellamp,spelldamage,magicpower,abilitypower,ap,mp,sp,spellpower,spear,of,desolation
+Item_Custom_SpearOfDesolation_FRAME_effect						+8% Spell Damage
+Item_Custom_SpearOfDesolation_search_terms						spell,damage,amp,spellamp,spelldamage,magicpower,abilitypower,ap,mp,sp,spellpower,spear,of,desolation
 Item_Custom_SpearOfDesolation_shop_flavor
 Item_Custom_SpearOfDesolation_shop_categories					Filter_Modifier,Filter_Intelligence

@@ -1,2 +1,2 @@
 
-	<item name="Item_Custom_SpearOfDesolation" /> 5600
+	<item name="Item_Custom_SpearOfDesolation" /> 5000

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_Spear_Of_Desolation"
+    
+    ishidden="true"
+    icon="icon.tga"
+    serverentity="true"
+>
+    <onkilled>
+        <targettype type="illusion" target="source_entity" />
+		<else>
+			<targettype type="mimic" target="source_entity" />
+			<else>
+				<targettype type="self" source="this_inflictor_entity" />
+				<else>
+					<targettype type="heropet" target="source_entity" />
+					<else>
+						<addcharges count="3" entity="this_spawner_entity" />
+					</else>
+				</else>
+			</else>
+		</else>
+    </onkilled>
+	
+    <onframe />
+	
+	<altavatar key="Hero_Devourer.Alt13"
+		icon="/heroes/Devourer/alt13/ability_03/icon.tga"
+	>
+		<modifier key="Night_Set_Devourer" modpriority="100"
+			icon="/heroes/Devourer/alt14/ability_03/icon.tga"
+		/>
+	</altavatar>
+
+	<altavatar key="Hero_Devourer.Alt14"
+		icon="/heroes/Devourer/alt14/ability_03/icon.tga"
+	>
+		<modifier key="Night_Set_Devourer" modpriority="100"
+			icon="/heroes/Devourer/alt13/ability_03/icon.tga"
+		/>
+	</altavatar>
+</state>
