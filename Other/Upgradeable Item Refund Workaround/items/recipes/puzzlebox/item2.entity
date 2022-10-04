@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Summon2"
+	
+	icon="icon2.tga"
+	
+	cost="1100"
+	components="Item_Summon"
+	
+	actiontype="no_target"
+	casteffecttype=""
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="90000"
+	cooldowntype="summon"
+	manacost="50"
+	
+	maxhealth="250"
+	maxmana="300"
+	damage="7"
+	
+	responsetype="Item_NonInterrupting"
+>
+	<onimpact>
+		<areaofeffect
+			radius="99999"
+			targetselection="all"
+			targetscheme="my_units"
+			ignoreinvulnerable="true"
+		>
+			<entitytype type="Pet_NecroRanged">
+				<kill target="target_entity" goldbountymult="0.0" experiencebountymult="0.0" />
+			</entitytype>
+			<entitytype type="Pet_NecroMelee">
+				<kill target="target_entity" goldbountymult="0.0" experiencebountymult="0.0" />
+			</entitytype>
+		</areaofeffect>
+		<spawnunit name="Pet_NecroRanged" count="1" maxactive="1" level="2" target="source_entity" offsetspace="source_entity" offset="-32 64" />
+		<spawnunit name="Pet_NecroMelee" count="1" maxactive="1" level="2" target="source_entity" offsetspace="source_entity" offset="32 64" />
+		<levelpets name="Pet_NecroRanged" value="2" />
+		<levelpets name="Pet_NecroMelee" value="2" />
+		<playanim name="item_1" target="source_entity" />
+		<starttimer duration="35000" />
+	</onimpact>
+</item>

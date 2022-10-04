@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Nuke"
+	
+	casttime="500"
+	castactiontime="0"
+	anim=""
+	
+	icon="icon.tga"
+	
+	cost="1000"
+	components="Item_NeophytesBook Item_MajorTotem"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	range="600"
+	manacost="120"
+	cooldowntime="40000"
+	cooldowntype="nuke"
+	
+	impacteffect="effects/impact_lvl1.effect"
+	
+	strength="4"
+	agility="4"
+	intelligence="14"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	modifierkey="alt_Codex"
+	modifierkey2="Prophet_Alt4_Birds"
+
+	targetpriorities="enemy_heroes"
+>
+	<onimpact effectdescription="true">
+		<damage effecttype="Magic" amount="350" />
+		
+		<!-- VFX -->
+		<playeffect effect="effects/cast_lvl1.effect" occlude="true" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</item>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_SpellShards3"
+
+	icon="icon3.tga"
+	
+	cost="675"
+	components="Item_SpellShards2"
+	
+	actiontype="passive"
+	
+	intelligence="15"
+	manaregenmultiplier="2"
+
+	modifierkey="alt_Spellshards"
+>
+	<modifier key="spellshards" modpriority="60" exclusive="true">
+		<onattackingdamageevent>
+			<!-- Magic Armor Penetration -->
+			<setvalue name="damage_magicarmorpiercepercent" a="damage_magicarmorpiercepercent" b="0.6" op="add" />
+			
+			<!-- +Spell Damage vs. non-hero units -->
+			<combatsupertype supertype="attack" />
+			<else>
+				<targettype type="hero" />
+				<else>
+					<setvalue name="damage_attempted" a="damage_attempted" b="1.2" op="mult" />
+				</else>
+			</else>
+		</onattackingdamageevent>	
+	</modifier>
+</item>

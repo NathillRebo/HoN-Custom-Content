@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="model.max" file="high.model" type="K2">
+
+	<anim name="idle" clip="clips/default_1.clip" loop="true" nuframes="50"/>
+	
+	<anim name="spawn_1" clip="clips/birth_1.clip" fps="30" loop="false"/>
+
+	<anim name="walk_1" clip="clips/walk_1.clip" fps="48" loop="true">
+		<frameevent frame="2" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="2" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .07"/>
+		<frameevent frame="2" cmd="StartEffect /shared/effects/footstep_r_#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/waterhack#GetTerrainType()#.effect"/>
+		<frameevent frame="15" cmd="PlaySoundLinear /shared/sounds/footsteps/#GetTerrainType()#_%.wav 0 1800 .07"/>
+		<frameevent frame="15" cmd="StartEffect /shared/effects/footstep_l_#GetTerrainType()#.effect"/>
+	</anim>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip">
+		<frameevent frame="5" cmd="PlaySoundLinear sounds/attack_1.wav 0 1200 .7"/>
+		<frameevent frame="5" cmd="PlaySoundLinear sounds/attack_grunt_%.wav 0 1200 .7"/>
+	</anim>
+	
+	<anim name="mana_burn" clip="clips/mana_burn.clip">
+		<frameevent frame="10" cmd="PlaySoundLinear sounds/attack_2.wav 0 1800 1"/>
+	</anim>
+	
+	<anim name="death_1" clip="clips/death_1.clip" loop="true" loopbackframe="-1" fps="34">
+		<frameevent frame="1" cmd="PlaySoundLinear sounds/death.wav 0 1800 1"/>
+	</anim>
+		
+	<anim name="knock_1" clip="clips/knock_1.clip" loop="true" loopbackframe="-1"/>
+	
+	<anim name="getup_1" clip="clips/getup_1.clip"/>
+	
+</model>

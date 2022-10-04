@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Nuke2"
+	
+	casttime="500"
+	castactiontime="0"
+	anim=""
+	
+	icon="icon2.tga"
+	
+	cost="1000"
+	components="Item_Nuke"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	range="675"
+	manacost="135"
+	cooldowntime="35000"
+	cooldowntype="nuke"
+	
+	impacteffect="effects/impact_lvl2.effect"
+	
+	strength="5"
+	agility="5"
+	intelligence="16"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	modifierkey="alt_Codex"
+	modifierkey2="Prophet_Alt4_Birds"
+
+	targetpriorities="enemy_heroes"
+>
+	<onimpact effectdescription="true">
+		<damage effecttype="Magic" amount="450" />
+		
+		<!-- VFX -->
+		<playeffect effect="effects/cast_lvl2.effect" occlude="true" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</item>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<building
+	name="Building_LegionBase"
+	
+	collidablesurface="true"
+	icon="icon.tga"
+	portrait=""
+	model="model.mdf"
+	mapicon="/shared/icons/minimap_base.tga"
+	mapiconsize="0.048"
+	skin=""
+	
+	unittype="MainBaseStructure"
+	
+	passiveeffect="effects/body.effect"
+	destroyedsound=""
+	lowhealtheffect=""
+	lowhealthsound=""
+	selectsound=""
+	
+	preglobalscale=".8"
+	modelscale="2.5"
+	effectscale="1.1"
+	boundsheight="256"
+	boundsradius="120"
+	selectionradius="192"
+	targetoffset="0 0 0"
+
+	immunity="DisableImmunity"
+	noheroarmorreduction="true"
+	
+	maxhealth="4250"
+	healthregen="3"
+
+	armor="15"
+	magicarmor="0"
+
+	attacktype="none"
+	combattype="Structure"
+
+	aggrorange="800"
+	sightrangeday="900"
+	sightrangenight="600"
+	revealrange="900"
+	revealtype="tower"
+	
+	drawonmap="true"
+	isbase="true"
+	
+	sharedinventory0="Ability_Glyph_Legion"
+	sharedremoteshopaccess="Shop_Supplies Shop_Accessories Shop_Weapons Shop_Relics Shop_Secret Shop_Recipes1 Shop_Recipes2 Shop_Recipes3 Shop_Recipes4 Shop_Recipes5 Shop_Recipes6"
+>
+	<ondamaged />
+
+	<onframe />
+	
+	<aura name="BackdoorProtection_Global" state="State_BackdoorProtection_Global" radius="99999" targetscheme="ally_buildings_not_well" ignoreinvulnerable="true" />
+	<aura name="Well_AttackStructure_Aura" state="State_Well_AttackStructure" radius="99999" targetscheme="ally_well_attackstructure" ignoreinvulnerable="true" />
+	<aura name="stacking_logic_Aura" state="State_Stacking_Neutral" radius="99999" targetscheme="neutral_nonboss_units" ignoreinvulnerable="true" />
+	
+	<modifier key="gated" modpriority="150"
+		sharedremoteshopaccess="Reborn_Shop_Supplies Reborn_Shop_Accessories Reborn_Shop_Weapons Reborn_Shop_Relics Reborn_Shop_Secret Reborn_Shop_Recipes1 Reborn_Shop_Recipes2 Reborn_Shop_Recipes3 Reborn_Shop_Recipes4 Reborn_Shop_Recipes5"
+	/>
+
+	<modifier key="OnlyMidMap" modpriority="101"
+		maxhealth="3500"
+		healthregen="30"
+	>
+		<onframe />
+		
+		<ondamaged>
+			<applystate name="State_Legion_Main_Damaged" duration="10000" target="this_entity" source="this_entity" />
+			
+			<!-- Damage reduction vs. non-hero units -->
+			<targettype type="hero" />
+			<else>
+				<scaledamage scale="0.5" />
+			</else>
+		</ondamaged>
+		
+		<!-- The Backdoor Protection System will be handled by game_logic.entity -->
+		<aura name="BackdoorProtection_Global" state="State_BackdoorProtection_Global" radius="0" targetscheme="nothing" ignoreinvulnerable="true" />
+
+	</modifier>
+	
+	<modifier key="the_grimm_hunt" modpriority="100"
+		healthregen="0"
+	>
+		<aura name="BackdoorProtection_Global" state="State_BackdoorProtection_Global" radius="0" targetscheme="nothing" ignoreinvulnerable="true" />
+	</modifier>
+
+	<modifier key="krosmode" modpriority="100"
+		maxhealth="5000"
+		healthregen="0"
+	>
+		<ondamaged />
+		
+		<onframe>
+			<compare a="accumulator" b="0" op="eq">
+				<compare a="source_health" b="50" op="lt">
+					<!-- Tell everyone that the base is dead and what it means -->
+					<chatmessage message="krosmode_legion_basedead" important="true" />
+
+					<!-- Kill the base attack point -->
+					<pushentitybyname name="LegionWell_AttackPoint" />
+					<kill source="" target="stack_entity" />
+
+					<hasmodifier name="OnlyMidMap">
+						<pushentitybyname name="LegionWell_AttackPoint2" />
+						<kill source="" target="stack_entity" />
+						<pushentitybyname name="LegionWell_AttackPoint3" />
+						<kill source="" target="stack_entity" />
+					</hasmodifier>
+
+					<!-- Remove the tower's Armor -->
+					<areaofeffect
+						global="true"
+						targetscheme="ally_buildings"
+						targetselection="all"
+						ignoreinvulnerable="true"
+						source="this_entity"
+					>
+						<targettype type="Tower">
+							<applystate name="State_Krosmode_TowerArmor_Pierce" continuous="true" />
+						</targettype>
+					</areaofeffect>
+
+					<!-- Only do this once -->
+					<setaccumulator value="1" />
+				</compare>
+			</compare>
+		</onframe>
+
+		<aura name="BackdoorProtection_Global" state="State_BackdoorProtection_Global" radius="0" targetscheme="nothing" ignoreinvulnerable="true" />
+	
+	</modifier>
+
+	<modifier key="tutorial_challenge" modpriority="100"
+		model="/shared/models/invis.mdf"
+		mapicon=""
+		boundsheight="0"
+		boundsradius="0"
+		selectionradius="0"
+		isselectable="false"
+		invulnerable="true"
+		unitwalking="true"
+	
+		drawonmap="false"
+		mapiconsize="0"
+
+		stealthtype="unrevealable"
+		fadetime="0"
+	>
+		<aura name="BackdoorProtection_Global" state="State_BackdoorProtection_Global" radius="0" targetscheme="nothing" ignoreinvulnerable="true" />
+
+	</modifier>
+
+	<modifier key="campaignmapmod" modpriority="100"
+		model="/shared/models/invis.mdf"
+		mapicon=""
+		boundsheight="0"
+		boundsradius="0"
+		selectionradius="0"
+		isselectable="false"
+		invulnerable="true"
+		unitwalking="true"
+	
+		drawonmap="false"
+		mapiconsize="0"
+
+		stealthtype="unrevealable"
+		fadetime="0"
+	>
+		<aura name="BackdoorProtection_Global" state="State_BackdoorProtection_Global" radius="0" targetscheme="nothing" ignoreinvulnerable="true" />
+
+	</modifier>
+
+	<modifier key="grimmscrossingmod" modpriority="100"
+		armor="10"
+		healthregen="15"
+	>
+		<aura name="BackdoorProtection_Global" state="State_BackdoorProtection_Global" radius="0" targetscheme="nothing" ignoreinvulnerable="true" />
+	</modifier>
+</building>

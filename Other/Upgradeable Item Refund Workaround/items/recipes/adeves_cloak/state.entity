@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_AdevesCloak"
+	
+	icon="icon.tga"
+	passiveeffect="effects/shield.effect"
+	
+	healthregen="15"
+	manaregen="10"
+	
+	stunneddurationmultiplier="-0.2"
+	debuffdurationmultiplier="-0.2"
+	
+	effecttype=""
+	allowtransfer="false"
+>
+	<onattackingdamageevent>
+		<!-- Damage Output reduction -->
+		<setvalue name="damage_attempted" a="damage_attempted" b="0.15" op="mult" />
+	</onattackingdamageevent>
+	
+	<ondamaged>
+		<!-- Damage reduction for damage received -->
+		<scaledamage scale="0.8" />
+	</ondamaged>
+
+	<onframe />
+</state>

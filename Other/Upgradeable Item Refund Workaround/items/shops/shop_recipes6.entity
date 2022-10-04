@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Recipes6"
+
+	style="recipes"
+	
+	icon=""
+	order="1"
+	slot="10"
+>
+	<item name="Item_SpellShards2" /> 2675
+	<item name="Item_SpellShards3" /> 3350
+	<item name="Item_AdevesCloak2" /> 3000
+	<item name="Item_Summon2" /> 3650
+	<item name="Item_Summon3" /> 4750
+	<item name="Item_Nuke2" /> 3540
+	<item name="Item_Nuke3" /> 4540
+	<item name="Item_Nuke4" /> 5540
+	<item name="Item_Nuke5" /> 6540
+	<item name="Item_Critical12" /> 4250
+	<item name="Item_Critical13" /> 5175
+	<item name="Item_Critical14" /> 6100
+	<item name="Item_ManaBurn12" /> 4160
+	<item name="Item_ManaBurn13" /> 5020
+	<item name="Item_Pierce2" /> 3600
+	<item name="Item_Pierce3" /> 4600
+</shop>

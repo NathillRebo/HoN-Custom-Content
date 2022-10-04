@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Pierce2"
+	
+	icon="icon2.tga"
+	
+	cost="1000"
+	components="Item_Pierce"
+	
+	actiontype="passive"
+	
+	damage="45"
+	
+	modifierkey="alt_Shieldbreaker"
+>
+	<onattackimpact />
+	
+	<modifier key="attack_shieldbreaker" modpriority="36" exclusive="true"
+	>
+		<onattackimpact effectdescription="true">
+		</onattackimpact>
+		
+		<onattackpredamage propagatetoillusions="false" >
+			<compare a="combat_attackability" b="0" op="eq">
+				<targettype type="Boss" />
+				<else>
+					<cantarget targetscheme="enemy_units">
+						<applystate name="State_Item3B" statelevel="2" duration="5000" />
+					</cantarget>
+				</else>				
+			</compare>
+		</onattackpredamage>
+	</modifier>
+</item>

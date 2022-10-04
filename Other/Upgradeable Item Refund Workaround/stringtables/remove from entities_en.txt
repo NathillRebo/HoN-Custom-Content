@@ -1,0 +1,74 @@
+
+// Item_Summon
+Item_Summon_name												Puzzlebox
+Item_Summon_description											After obtaining this item, the recipe may be re-purchased to upgrade it. ^rCan be upgraded 2 times.^*\n\nStock: 2/9 (Initial/Max)\nRestock Time: 10 minutes
+Item_Summon_description2										
+Item_Summon_description_simple									Use to summon two minions. Melee minion Reveals stealth.\n^rCan be upgraded 2 times.^*
+Item_Summon_search_terms										puzzlebox,puzzle,box,necronomicon,necro,nomicon,necrobox,pb,necros,necrocon,book,necrobook,strength,intelligence,summon,burn,combustion,manacombustion					
+Item_Summon_effect_header										Status Effect(s)
+Item_Summon_shop_flavor											Any with the patience to master a Puzzlebox gains great intelligence, and then finds himself charged with a boost of unholy strength. These artifacts, once unlocked, provide a gateway to the Abyss, and can be used to call forth enslaved daemons to do battle.
+Item_Summon_shop_categories										Filter_Activatable,Filter_Booster,Filter_Damage
+Item_Summon_IMPACT_effect										Spawns a ^cPuzzlebox Wizard^* and ^cPuzzlebox Mauler^* under your control for ^o35 seconds^*. Both Minions have ^o{400,600,800} Health, {6,8,10} Armor, 11 Magic Armor, and {350,370,390} Movement Speed^*.\n\n^yPuzzlebox Wizard^*\n- ^o{40,65,90} Attack Damage^*, ^o{350,450,550} Attack Range^*\n- Can cast Mana Burn: ^oBurns {125,175,225} Mana^* from target and deal Magic Damage equal to 100% of Mana burnt. Has an aura that grants ^o+{3,6,9}% Movement Speed^* and ^o{3,6,9} Attack Speed^* to allies.\n\n^yPuzzlebox Mauler^*\n- ^o{25,50,75} Attack Damage^*. ^oAttacks burn {25,50,75} Mana^* and deal Physical Damage equal to 100% of Mana burnt.\n- Reveals enemies and wards in a ^o{300,650,1000} radius^*. Deals ^o{200,400,600} True Damage^* to killer.
+Item_Summon_tooltip_flavor										Tribute to ElementUser for his knowledge of game mechanics & certain mechanical implementations into the game! :3
+
+// Item_AdevesCloak
+Item_AdevesCloak_name											Adeve's Cloak
+Item_AdevesCloak_description									While off cooldown, taking damage from player-controlled enemy sources starts a 3 second timer on the item and starts accumulating damage. The timer is refreshed each time you take damage from player-controlled enemy sources.\n\nIf the accumulated post-mitigation damage exceeds ^c20% of your Max Health or 300 (whichever is higher) while the timer is active^*, the item is placed on cooldown and ^oAdeve's Protection is applied for 3 seconds^*.\n\nAdeve's Protection grants ^o{15,25} Health Regeneration and {10,20} Mana Regeneration, {20,50}% Debuff and Stun Reduction, {20,50}% Damage Reduction, and {85,60}% Damage Output reduction^*.
+Item_AdevesCloak_description2									Passive Mana Regeneration bonus does not stack with itself or Nihil Crystal.\n\nAfter obtaining this item, the recipe may be re-purchased to upgrade it. ^rCan be upgraded 1 time.^*
+Item_AdevesCloak_description_simple								Anti-burst passive\n^rCan be upgraded 1 time.^*
+Item_AdevesCloak_search_terms									adeve,adeves,cloak,adevescloak,aeon,disk,aeondisk,antiburst
+Item_AdevesCloak_effect_header									
+Item_AdevesCloak_shop_flavor									A cloak from a mysterious mage focused on warding off unexpected lethal bursts of damage.
+Item_AdevesCloak_shop_categories								Filter_Booster
+
+// Item_SpellShards
+Item_SpellShards_name											Spellshards
+Item_SpellShards_description									This item's Magic Armor Penetration or Spell Damage bonus does not stack with itself.
+Item_SpellShards_description_simple								Ignores {30,45,60}% of enemy Magic Armor.\n+{10,15,20}% Spell Damage vs. non-heroes
+Item_SpellShards_search_terms									spellshards,spellshard,spell,ss,magic,sharp,spell,damage,intelligence,attackspeed,as,manaregeneration,penetration,magicpenetration,shards,thunderbringer,regeneration
+Item_SpellShards_shop_flavor									
+Item_SpellShards_shop_categories								Filter_Intelligence,Filter_Regeneration
+Item_SpellShards_FRAME_effect									\nCauses any Magic Damage you deal to ^oignore {30,45,60}% of your target's Magic Armor^*.\n\n+{10,15,20}% Spell Damage vs. non-heroes
+
+// Item_Nuke
+Item_Nuke_name													Codex
+Item_Nuke_description											After obtaining this item, the recipe may be re-purchased to upgrade it. ^rCan be upgraded 4 times.^*
+Item_Nuke_description2											
+Item_Nuke_description_simple 									Cast to deal massive Magic Damage to a target.\n^rCan be upgraded 4 times.^*
+Item_Nuke_search_terms											codex,prodex,dagon,intelligence,damage,dmg,nuke,agility,strength									
+Item_Nuke_effect_header											Status Effect(s)
+Item_Nuke_shop_flavor											The antiquarian monks of the Merugian Order, long since vanished from Newerth, are known for the illuminated manuscripts hidden in their far-flung monasteries. Filled with the uncovered secrets of the Ancients, a Merugian Codex can help one gain a better understanding of the world, so much so that he grows in all abilities and even combat prowess. Moreover, the books contain devastating sorceries derived from Ancient technology.
+Item_Nuke_shop_categories										Filter_Strength,Filter_Agility,Filter_Intelligence,Filter_Damage,Filter_Activatable
+Item_Nuke_IMPACT_effect											Deals ^o{350,450,600,750,900} Magic Damage^* to target.
+
+// Item_Critical1
+Item_Critical1_name												Riftshards
+Item_Critical1_description										On attack, grants a 25% chance to deal a ^o{1.25,1.5,1.75,2}x critical strike^* and ^o{2.5,5,7.5,10}% of the target's Max Health^* as bonus damage (except vs. Bosses).\n\nAfter obtaining this item, the recipe may be re-purchased to upgrade it. ^rCan be upgraded 3 times.^*
+Item_Critical1_description_simple								Grants a chance to deal critical strikes on attack.\n^rCan be upgraded 3 times.
+Item_Critical1_search_terms										riftshards,riftshard,rift,crystalis,crystalys,buriza,burizado,bruiza,bruizado,burizadokyanon,bruizadokyanon,kyanon,critstick,criticalstrike,shards,rs,damage,dmg,burize				
+Item_Critical1_effect_header									Status Effect(s)
+Item_Critical1_shop_flavor										When Hellbourne rifts are closed, they leave behind unhealed scars that taint the land for years. Daemon and mortal alike have discovered that Riftshards harvested from this unholy ground can be used as powerful enhancements to weapons, especially given their occasional tendency to explode for massive damage.\n\nAfter obtaining this item, the recipe may be re-purchased to upgrade it. Can be upgraded three times.
+Item_Critical1_shop_categories									Filter_Damage
+
+// Item_ManaBurn1
+Item_ManaBurn1_name												Nullfire Blade
+Item_ManaBurn1_description										Burns the targets mana, dealing damage based on the mana burnt.\n\n^rCan be upgraded 2 times^*. ^cLevel 2+ activation dispels buffs on enemy targets^*, while ^cLevel 3 activation can target self to dispel debuffs^*.
+Item_ManaBurn1_description2										This item's ^yMana Burn^* effect does not stack with itself.
+Item_ManaBurn1_description_simple								^oMana Combustion Modifier^*\nBurns enemy mana and slows.\n^rCan be upgraded 2 times^*.
+Item_ManaBurn1_search_terms										nullfireblade,nullfire,null,dispel,dispelstick,purgestick,purge,diffusal,diffusalblade,difusal,difusalblade,diffusalstick,difusalstick,nb,nfb,db,agility,intelligence,dispel,slow,burn,manaburn,combustion,manacombustion
+Item_ManaBurn1_effect_header									Dispelled Effect(s)
+Item_ManaBurn1_shop_flavor										Forged on a plane of Hell devoid of matter or energy, the Nullfire Blade seeks always to destroy magic around it, whether by burning it out of a foe or stripping him of enchantments. In addition, the vortex of emptiness it projects around itself bestows both speed and insight to one who wields it.
+Item_ManaBurn1_shop_categories									Filter_Agility,Filter_Intelligence,Filter_Modifier,Filter_Activatable
+Item_ManaBurn1_FRAME_effect										
+Item_ManaBurn1_IMPACT_effect									Target an enemy unit to apply a ^oTapering 60% Movement Speed Slow to them for 4 seconds^*. Deals 800 True Damage to summoned units and instantly kills illusions.
+Item_ManaBurn1_ATTACK_IMPACT_effect:manacombustion				Burns up to ^o{40,60,80} of the target's Mana^* and deals Physical Damage equal to 50% of the Mana burnt.\n\nThis effect propagates to illusions for 33% of power.
+
+// Item_Pierce
+Item_Pierce_name												Shieldbreaker
+Item_Pierce_description											After obtaining this item, the recipe may be re-purchased to upgrade it. ^rCan be upgraded 2 times.^*
+Item_Pierce_description2										On attack, applies ^oBroken Armor^* to target for ^o5 seconds^*.\n\nAt ^ylevel 3^*, applies a stacking ^o-1 Armor^* debuff to ^oBuildings^* and Gadgets you attack. Max of ^c7 stacks^*.
+Item_Pierce_description_simple									Reduces enemy Armor on attack.\n^rCan be upgraded 2 times.
+Item_Pierce_search_terms										shieldbreaker,sheildbreaker,shieldbraker,sheildbraker,sb,stygiandesolator,stygiandesolater,styg,stygian,deso,desolator,sd,damage,dmg,reduction,armorreduction
+Item_Pierce_effect_header										Broken Armor Effect(s)
+Item_Pierce_shop_flavor											Forged by Hellbourne slaves, Shieldbreaker mauls appear to be little more than huge spiked clubs, but the despair and anger poured into their makers gives them the power to inflict massive harm. Each blow of a Shieldbreaker destroys some of its victim's armor, as if the weapon hungered to reach the flesh and blood beneath.
+Item_Pierce_shop_categories										Filter_Damage,Filter_Modifier

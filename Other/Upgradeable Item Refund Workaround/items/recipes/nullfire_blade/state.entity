@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ManaBurn1"	
+	
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	impacteffect="impact.effect"
+	
+	movespeedslowstart="0.6"
+	movespeedslowend="0.0"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<onframe />
+</state>

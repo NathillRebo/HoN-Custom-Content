@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_RemoteShopAccess_Main"
+
+	icon=""
+	passiveeffect=""
+	ishidden="true"
+	
+	effecttype=""
+	
+	remoteshopaccess="Shop_Supplies Shop_Accessories Shop_Weapons Shop_Relics Shop_Secret Shop_Recipes1 Shop_Recipes2 Shop_Recipes3 Shop_Recipes4 Shop_Recipes5 Shop_Recipes6"
+>
+	
+	<modifier key="gated" modpriority="100"
+		remoteshopaccess="Reborn_Shop_Supplies Reborn_Shop_Accessories Reborn_Shop_Weapons Reborn_Shop_Relics Reborn_Shop_Secret Reborn_Shop_Recipes1 Reborn_Shop_Recipes2 Reborn_Shop_Recipes3 Reborn_Shop_Recipes4 Reborn_Shop_Recipes5 Shop_Recipes6"
+	/>
+</state>

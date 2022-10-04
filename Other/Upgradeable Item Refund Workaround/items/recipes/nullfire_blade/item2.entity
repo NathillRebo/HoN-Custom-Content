@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_ManaBurn12"
+	
+	statuseffecttooltip="State_Item2F"
+	
+	icon="icon2.tga"
+	
+	cost="860"
+	components="Item_ManaBurn1"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	
+	range="700"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="14000"
+	cooldowntype="manaburn1"
+	casteffect="cast.effect"
+	casteffecttype=""
+	
+	strength="5"
+	agility="34"
+	intelligence="5"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	modifierkey="alt_NullfireBlade"
+
+	doubleactivate="false"
+	
+	targetpriorities="enemy_heroes"
+>
+
+	<onframe />
+	
+	<onactivatestart>
+		<setproxy target="target_entity" />
+	</onactivatestart>
+
+	<activatecost>
+		<cantarget target="this_proxy_entity" effecttype="Magic" />
+		<else>
+			<condition target="this_proxy_entity" test="not_hasstate State_Jereziah_Ability2">
+				<invalidate />
+			</condition>
+		</else>
+	</activatecost>
+	
+	<onimpact>
+		<targettype type="self">
+			<dispel type="StatusDebuff" target="target_entity" />
+		</targettype>
+		
+		<else>		
+			<!-- Deal True Damage to summoned units and kill illusions -->
+			<cantarget targetscheme="summoned_enemy_units">
+				<damage source="this_owner_entity" target="target_entity" amount="800" />
+			</cantarget>
+			<killillusions />
+
+			<dispel type="StatusBuff" target="target_entity" />
+				
+			<applystate name="State_ManaBurn1" duration="4000" />
+		</else>
+		
+		<!-- VFX -->
+		<playeffect effect="impact.effect" source="target_entity" target="" />		
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+	
+	<modifier key="manacombustion" modpriority="60" exclusive="true"
+	>
+		<onattackimpact effectdescription="true" >
+			<cantarget targetscheme="enemy_units" effecttype="Magic">
+				<compare a="target_mana" b="0" op="gt">
+					<targettype target="source_entity" type="illusion">
+						<evaluate a="60" b="3" op="div" />
+						<takemana amount="result" />
+						<damage effecttype="Physical" amount="0.5" b="result" op="mult" />
+						<popup name="manaburn" source="target_entity" target="source_entity" a="result" b="0.5" op="div" />
+						<playeffect effect="manaburn.effect" source="source_entity" target="target_entity" />										
+					</targettype>
+					<else>
+						<takemana amount="60" />						
+						<damage effecttype="Physical" amount="0.5" b="result" op="mult" />
+						<popup name="manaburn" source="target_entity" target="source_entity" a="result" b="0.5" op="div" />
+						<playeffect effect="manaburn.effect" source="source_entity" target="target_entity" />
+					</else>
+				</compare>
+			</cantarget>
+		</onattackimpact>
+	</modifier>
+</item>

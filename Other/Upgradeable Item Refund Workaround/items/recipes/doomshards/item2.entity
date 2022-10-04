@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Critical12"
+
+	icon="icon2.tga"
+	
+	cost="925"
+	components="Item_Critical1"
+	
+	actiontype="passive"
+
+	modifierkey="alt_Critical"
+	
+	damage="53"
+	
+>
+	<modifier key="doomshards_crit" modpriority="190" exclusive="true" >
+		<onattack>
+			<targettype type="building" />
+			<else>
+				<chance threshold="0.25">
+					<!-- Base Critical Damage Multiplier -->
+					<setvar0 a="1.5" />
+					<targettype type="Boss">
+						<addcritical chance="1" multiplier="var0" />
+					</targettype>
+					<else>
+						<!-- Percentage of Max Health calculation -->
+						<evaluate a="target_maxhealth" b="0.05" op="mult" />
+						
+						<!-- Use <bonusdamageadd /> to add the damage so that the added Crit Damage functions properly with other <bonusdamageadd /> calls -->
+						<!-- Have to divide the result by the Base Critical Damage Multiplier to fix a <bonusdamageadd /> calculation bug -->
+						<setvar1 a="result" b="var0" op="div" />
+						<bonusdamageadd target="" a="var1" />
+						
+						<!-- Perform the Critical Strike call here -->
+						<addcritical chance="1" multiplier="var0" />
+					</else>
+				</chance>
+			</else>
+		</onattack>
+	</modifier>
+</item>

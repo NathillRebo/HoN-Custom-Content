@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_AdevesCloak"
+	
+	new="true"
+	
+	icon="icon.tga"
+	
+	cost="900"
+	components="Item_BloodRuby Item_EtherJewel Item_NihilCrystal"
+	
+	actiontype="passive"
+	
+	maxhealth="150"
+	maxmana="120"
+	
+	cooldowntime="80000"
+	cooldowntype="adevescloak"
+>	
+	<ondamaged>
+		<isready>
+			<cantarget targetscheme="player_controlled_enemy_units_and_gadgets">
+				<!-- Use <updatehealth /> to update the health for each damage instance to avoid calculation bugs -->
+				<updatehealth entity="source_entity" />
+				
+				<!-- var0 = Damage Threshold -->
+				<evaluate a="source_maxhealth" b="0.2" op="mult" />
+				<setvar0 a="result" b="300" op="max" />
+				
+				<!-- Accumulate damage -->
+				<changeaccumulator b="damage_applied" op="add" />
+				
+				<!-- Damage threshold exceeded -->
+				<compare a="accumulator" b="var0" op="ge">
+					<startcooldown />
+					<scaledamage scale="0.8" />
+					<applystate name="State_AdevesCloak" target="source_entity" duration="3000" />
+					
+					<resettimer />
+					<setaccumulator value="0" />
+				</compare>
+				<else>
+					<starttimer duration="3000" />
+				</else>
+			</cantarget>
+		</isready>
+	</ondamaged>
+	
+	<ontimer>
+		<setaccumulator value="0" />
+	</ontimer>
+	
+	<modifier key="nihil_crystal_manaregen" modpriority="0.65" exclusive="true"
+		manaregen="0.65"
+	>	
+	</modifier>
+</item>
