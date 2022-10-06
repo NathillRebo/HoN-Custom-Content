@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Ancile"
+
+	icon="icon.tga"
+	
+	cost="900"
+	components="Item_Custom_WardedShield Item_MightyBlade Item_Quickblade"
+
+	actiontype="passive"
+	
+	strength="18"
+	magicarmor="8"
+	agility="12"
+	deflectionchance="0.50"
+	deflection="32"
+	targetradius="425"
+	
+	modifierkey="alt_IronBuckler"
+>
+	<onframe />
+	
+	<modifier key="buckler_melee" condition="melee" modpriority="32"
+		deflection="32"
+	>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="16"
+		deflection="16"
+	>
+	</modifier>
+	
+	<onattackedpreimpact priority="0" propagatetoillusions="false" >
+		<combatsupertype supertype="spell">
+			<setaccumulator value="25" /> <!-- Base Magic Damage -->
+			<targettype type="illusion" source="this_owner_entity" target="this_owner_entity">
+				<!-- Works on illusions for 33% of strength -->
+				<changeaccumulator b="0.33" op="mult" />
+			</targettype>
+			<areaofeffect
+				radius="425"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Magic"
+				source="source_entity"
+				center="source_entity"
+			>
+				<damage effecttype="Magic" amount="0" b="accumulator" op="add" />
+				<applystate name="State_Custom_Ancile" duration="3750" disablenegativeeffectpopuponrefresh="true" />
+			</areaofeffect>
+			<playeffect effect="impact.effect" source="source_entity" target="" />
+		</combatsupertype>
+	</onattackedpreimpact>
+</item>

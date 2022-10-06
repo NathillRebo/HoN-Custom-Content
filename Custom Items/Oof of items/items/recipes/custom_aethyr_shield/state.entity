@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_AethyrShield"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	healthregenpercharge=".3"
+	manaregenpercharge=".3"
+	maxcharges="100"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1" timed="true" />
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1" timed="true" />
+	</onrefresh>
+
+</state>

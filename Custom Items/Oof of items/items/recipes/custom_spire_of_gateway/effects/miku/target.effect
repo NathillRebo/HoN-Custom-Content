@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="0">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.65">
+			<sound    
+                delay="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume="1" 
+				sample="sounds/start.wav"
+			/>
+			
+			<sound  
+				pitchshift="true"
+				minpitch="1.4"			
+                forcestereo="true"			
+                delay="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume="1" 
+				sample="sounds/1.wav"
+			/>
+			
+			<sound    
+			    pitchshift="true"
+				minpitch="1.3"
+				forcestereo="true"
+                delay="1000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume="1" 
+				sample="sounds/1.wav"
+			/>
+			
+			<sound    
+				pitchshift="true"
+				minpitch="1.2"
+				forcestereo="true"
+                delay="1500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume="1" 
+				sample="sounds/1.wav"
+			/>
+			
+			<sound    
+				pitchshift="true"
+				minpitch="1.1"
+				forcestereo="true"
+                delay="2000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume="1" 
+				sample="sounds/1.wav"
+			/>
+			
+			<sound    
+			    life="5000"
+				pitchshift="true"
+				minpitch="1.0"
+				forcestereo="true"
+                delay="2500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume="1" 
+				sample="sounds/1.wav"
+			/>
+			
+			
+			<sound
+			    
+                soundloop="true"
+				fadein="250"
+				fadeout="1500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".4" 
+				sample="sounds/mu_loop.wav"
+			/>
+			
+			<sound
+			    dampen="0.8"
+                forcestereo="true"			
+				linearfalloff="true" 
+				falloffstart="800"
+				falloffend="1800"
+				volume="1" 
+				sample="sounds/rise_1.wav"
+			/>
+			
+	
+			<!-- stream of light -->
+			<billboard
+				expirelife="1000"
+				material="/shared/effects/materials/flare2.material"
+				startheight="3000"
+				midheight="3000"
+				endheight="100"
+				midheightpos=".75"
+				width="40"
+				lockup="1"
+				startcolor="0 .1 .1"
+				endcolor="0 0 0"
+			/>
+			<billboard
+				expirelife="1000"
+				material="/shared/effects/materials/flare2.material"
+				startheight="3000"
+				midheight="3000"
+				endheight="100"
+				midheightpos=".75"
+				width="40"
+				lockup="1"
+				startcolor="0 .2 .2"
+				endcolor="0 0 0"
+			/>
+			
+			<simpleemitter
+				expirelife="100"
+				spawnrate="10"
+				particlelife="1000"
+				direction="0 0 -1"
+				angle="0"
+				speed="500"
+				offsetsphere="20 20 0"
+				position="0 0 600"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle
+					startsize="0"
+					endsize="3000"
+					startwidth="0"
+					endwidth="20"
+					startcolor="0 .5 1"
+					endcolor="0"
+					lockup="1"
+				/>
+			</simpleemitter>
+			
+			<!-- light shafts -->
+			<simpleemitter
+				delay="500"
+				spawnrate="100"
+				position="0 0 500"
+				offsetsphere="20 20 500"
+				direction="0 0 -1"
+				angle="0"
+				minspeed="100"
+				maxspeed="300"
+				minparticlelife="500"
+				maxparticlelife="700"
+				material="/shared/effects/materials/flare_01.material"
+			>
+				<particle
+					startsize="0"
+					midsize="5"
+					midsizepos=".15"
+					minendsize="100"
+					maxendsize="400"
+					lockup="1"
+					startwidth="0"
+					midwidth="3"
+					endwidth="3"
+					midwidthpos=".25"
+					color=".25 2 2"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				particlelife="1250"
+				spawnrate="50"
+				offsetsphere="5 5 500"
+				position="0 0 250"
+				offsetradialangle="90"
+				offsetdirection="0 0 -1"
+				material="/ui/common/models/miku/bg/bg01.material"
+				minspeed="100"
+				maxspeed="250"
+				drag="0"
+				direction="0 0 -1"
+				angle="0"
+			>
+				<particle
+					turn="1"
+					minpitch="0" maxpitch="359"
+					minroll="0" maxroll="359"
+					startsize="20" 
+					minmidsize="20" maxmidsize="30"
+					endsize="0"
+					scale="2"
+					color=".05 .2 .18"
+					gridsnap="30"
+					minstartframe=".25" maxstartframe=".5"
+					minendframe=".75" maxendframe="1"
+				>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				particlelife="750"
+				spawnrate="30"
+				offsetsphere="5 5 500"
+				position="0 0 250"
+				offsetradialangle="90"
+				offsetdirection="0 0 1"
+				material="/shared/effects/materials/whitesquare.material"
+				minspeed="150"
+				maxspeed="250"
+				drag="0"
+				direction="0 0 -1"
+				angle="0"
+				
+			>
+				<particle
+					startsize="20" 
+					minmidsize="20" maxmidsize="60"
+					endsize="0"
+					scale=".5"
+					color=".05 .2 .18"
+					gridsnap="20"
+					startframe=".5"
+					endframe="1"
+				>
+					<billboard
+						life="250"
+						material="/shared/effects/materials/whitesquare_02.material"
+						startcolor="0 .25 .5"
+						endcolor="0"
+						startsize="0"
+						endsize="15"
+						midsizepos=".25"
+						scale="4"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<!-- musical notes -->	
+			<template name="notes" >
+				<orbiteremitter
+					spawnrate="20"
+					minparticlelife="1000"
+					maxparticlelife="1850"
+					origin="0 0 85"
+					orbit="1.5 2 3"
+					direction="0 0 1"
+					offset="20"
+					position="0 0 30"
+					cylindrical="true"
+					material="{material}"
+				>
+					<particle
+						minanglespeed="-50"
+						maxanglespeed="50"
+						startsize="50"	
+						endsize="5"								
+						depthbias="-100"
+						startcolor=".5 .3 1"
+						midcolor=".4 .2 1"
+						endcolor="0"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".1"
+						maxscale=".5"
+					/>
+					<particle
+						minanglespeed="-50"
+						maxanglespeed="50"
+						startsize="35"	
+						endsize="1"								
+						depthbias="-100"
+						startcolor=".5 .8 1"
+						midcolor=".2 .5 1"
+						endcolor="0"
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".25"
+						minscale=".1"
+						maxscale=".5"
+					/>
+				</orbiteremitter>
+			</template>
+			<instance name="notes" material="/shared/effects/materials/note_4.material" />
+			<instance name="notes" material="/shared/effects/materials/note_5.material" />
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

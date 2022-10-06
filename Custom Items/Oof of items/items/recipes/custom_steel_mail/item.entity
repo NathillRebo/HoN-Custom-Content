@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SteelMail"
+
+	icon="icon.tga"
+	
+	cost="325"
+	components="Item_BloodRuby Item_GuardianRing Item_CrushingClaws"
+
+	actiontype="passive"
+	
+	armor="3"
+	strength="4"
+	maxhealth="200"
+>
+</item>

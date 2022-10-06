@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_FlashfastBlade"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="100"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1" timed="true" />
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1" timed="true" />
+	</onrefresh>
+	
+	<onframe>
+		<evaluate a="1.8333" b="charges" op="mult" />
+		<evaluate a="frametime" b="result" op="mult" />
+		<damage effecttype="Physical DOT" amount="1" b="result" op="mult" />
+	</onframe>
+</state>

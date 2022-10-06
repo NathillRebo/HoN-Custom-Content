@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_UrnOfTheFallenKing_Collector"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	serverentity="true"
+	armor="-10"
+>
+	<onkilled>
+		<targettype type="illusion" target="source_entity" />
+		<else>
+			<targettype type="heropet" target="source_entity" />
+			<else>
+				<addcharges count="1" entity="this_spawner_entity" />
+				<compare a="result" b="3" op="ge">
+					<resettimer entity="this_spawner_entity" />
+				</compare>
+				<targettype type="hero" source="source_entity" target="source_entity" >
+					<hasmodifier name="OnlyMidMap" />
+					<else>
+						<setrespawntimebonus target="source_entity" value="-6500" />
+					</else>
+				</targettype>
+				
+				<play2dsound sample="/shared/sounds/items/item_soultrap_charge_%.wav" channel="111" volume="0.5" dampen="0.9" sourceonly="true" targetonly="false" />
+			</else>
+		</else>
+	</onkilled>
+</state>

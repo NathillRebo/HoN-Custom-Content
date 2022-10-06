@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Hexdrinker"
+
+	icon="icon.tga"
+	
+	cost="1050"
+	components="Item_Custom_AncientSword Item_Broadsword Item_Quickblade"
+
+	actiontype="passive"
+	
+	damage="40"
+	magicarmor="8"
+	agility="12"
+>
+	
+	<onattackedpreimpact priority="0" propagatetoillusions="false" >
+		<combatsupertype supertype="spell">
+			<applystate name="State_Custom_Hexdrinker" target="source_entity" duration="2000" />
+		</combatsupertype>
+	</onattackedpreimpact>
+</item>

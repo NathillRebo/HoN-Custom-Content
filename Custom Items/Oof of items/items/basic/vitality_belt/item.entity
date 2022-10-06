@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_VitalityBelt"
+	
+	icon="icon.tga"
+	
+	cost="1050"
+	
+	stunneddurationmultiplier="-0.05"
+	debuffdurationmultiplier="-0.05"
+	
+	actiontype="passive"
+>
+</item>

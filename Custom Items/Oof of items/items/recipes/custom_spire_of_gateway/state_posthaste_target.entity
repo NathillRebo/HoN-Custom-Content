@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_PostHaste_Target"
+
+	icon="icon.tga"
+	passiveeffect="effects/target.effect"
+	
+	immobilized="true"
+	disarmed="true"
+	silenced="true"
+	perplexed="true"
+	
+	effecttype=""
+	impactinterval="3750"
+>
+	<onimpact>
+		<expire />
+	</onimpact>
+	
+	<modifier key="goldenred_tp" modpriority="101"
+		passiveeffect="effects/goldenred/target.effect"
+	/>
+	
+	<modifier key="gold_tp" modpriority="101"
+		passiveeffect="effects/gold/target.effect"
+	/>
+	
+	<modifier key="silver_tp" modpriority="101"
+		passiveeffect="effects/silver/target.effect"
+	/>
+	
+	<modifier key="8bit2_tp" modpriority="101"
+		passiveeffect="effects/8bit2/target.effect"
+	/>
+	
+	<modifier key="miku_tp" modpriority="101"
+		passiveeffect="effects/miku/target.effect"
+	/>
+	
+	<modifier key="con6_1_tp" modpriority="101"
+		passiveeffect="effects/con6reward/1/target.effect"
+	/>
+	
+	<modifier key="con6_2_tp" modpriority="101"
+		passiveeffect="effects/con6reward/2/target.effect"
+	/>
+	
+	<modifier key="con6_3_tp" modpriority="101"
+		passiveeffect="effects/con6reward/2/target.effect"
+	/>
+	
+	<modifier key="con6_4_tp" modpriority="101"
+		passiveeffect="effects/con6reward/4/target.effect"
+	/>
+	
+	<modifier key="con6_5_tp" modpriority="101"
+		passiveeffect="effects/con6reward/5/target.effect"
+	/>
+	
+	<modifier key="songkran_tp" modpriority="101"
+		passiveeffect="effects/songkran/target.effect"
+	/>
+	
+	<modifier key="wc2018_tp" modpriority="101"
+		passiveeffect="effects/worldcup2018/target.effect"
+	/>
+	
+	<modifier key="con7_1_tp" modpriority="101"
+		passiveeffect="effects/con7reward/1/target.effect"
+	/>
+	
+	<modifier key="con7_2_tp" modpriority="101"
+		passiveeffect="effects/con7reward/2/target.effect"
+	/>
+	
+	<modifier key="con7_3_tp" modpriority="101"
+		passiveeffect="effects/con7reward/2/target.effect"
+	/>
+	
+	<modifier key="con7_4_tp" modpriority="101"
+		passiveeffect="effects/con7reward/4/target.effect"
+	/>
+	
+	<modifier key="con7_5_tp" modpriority="101"
+		passiveeffect="effects/con7reward/5/target.effect"
+	/>
+	
+	<modifier key="punk_tp" modpriority="101"
+		passiveeffect="effects/punk/target.effect"
+	/>
+	
+	<modifier key="con8_1_tp" modpriority="101"
+		passiveeffect="effects/con7reward/1/target.effect"
+	/>
+	
+	<modifier key="con8_2_tp" modpriority="101"
+		passiveeffect="effects/con7reward/2/target.effect"
+	/>
+	
+	<modifier key="con8_3_tp" modpriority="101"
+		passiveeffect="effects/con7reward/2/target.effect"
+	/>
+	
+	<modifier key="con8_4_tp" modpriority="101"
+		passiveeffect="effects/con7reward/4/target.effect"
+	/>
+	
+	<modifier key="con8_5_tp" modpriority="101"
+		passiveeffect="effects/con7reward/5/target.effect"
+	/>
+	
+	<modifier key="con9_1_tp" modpriority="101"
+		passiveeffect="effects/con7reward/1/target.effect"
+	/>
+	
+	<modifier key="con9_2_tp" modpriority="101"
+		passiveeffect="effects/con7reward/2/target.effect"
+	/>
+	
+	<modifier key="con9_3_tp" modpriority="101"
+		passiveeffect="effects/con7reward/2/target.effect"
+	/>
+	
+	<modifier key="con9_4_tp" modpriority="101"
+		passiveeffect="effects/con7reward/4/target.effect"
+	/>
+	
+	<modifier key="con9_5_tp" modpriority="101"
+		passiveeffect="effects/con7reward/5/target.effect"
+	/>
+	
+</state>

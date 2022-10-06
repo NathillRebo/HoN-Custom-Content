@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_HeroicHalberd"
+
+	icon="icon.tga"
+	
+	cost="1225"
+	components="Item_TwinBlades Item_Halberd"
+	
+	actiontype="passive"
+	cooldowntime="5000"
+	cooldowntype="twins"
+	
+	attackspeed="0.15"
+	manaregen="1.25"
+	intelligence="12"
+	damage="40"
+	truestrike="true"
+	
+	modifierkey="alt_TwinBlades"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.02" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<modifier key="twinblades_melee" condition="melee" modpriority="100">
+		<onattackpreimpact>
+			<isready>
+				<cantarget targetscheme="enemy_units">
+					<issplitprojectile entity="inflictor_entity" />
+					<else>
+						<startcooldown />
+						<applystate name="State_Custom_HeroicHalberd_Strike" target="this_owner_entity" duration="200" proxy="target_entity" stack="true" />
+					</else>
+				</cantarget>
+			</isready>
+			<chance threshold="0.30">
+				<targettype type="building" />
+				<else>
+					<issplitprojectile entity="inflictor_entity" />
+					<else>
+						<!-- Bonus Physical Damage -->
+						<setaccumulator value="75" />
+						<targettype type="illusion" source="this_owner_entity" target="this_owner_entity">
+							<!-- Works on illusions for 33% of strength -->
+							<changeaccumulator b="0.33" op="mult" />
+						</targettype>
+
+						<cantarget targetscheme="ally_units">
+							<damage effecttype="Physical" amount="0" b="accumulator" op="add" nonlethal="true" />
+						</cantarget>
+						<else>
+							<damage effecttype="Physical" amount="0" b="accumulator" op="add" />
+						</else>
+						<popup name="bonus_damage" a="75" source="target_entity" />
+					</else>
+				</else>
+			</chance>
+		</onattackpreimpact>
+	</modifier>
+</item>

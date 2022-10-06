@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_TitansGrip"
+
+	speed="2000"
+	gravity="12000"
+
+	modelscale="1.0"
+	model=""
+	canturn="false"
+	
+	touchradius="100"
+	maxtouchespertarget="1"
+	touchtargetscheme="enemy_units"
+	toucheffecttype="Magic"
+	touchradiusdiradjust="true"
+>
+	
+	<ontouch>
+		<cantarget effecttype="Magic" >
+			<applystate name="State_Stunned" duration="1000" />
+		</cantarget>
+		<damage effecttype="Magic" amount="170" />
+	</ontouch>
+	
+</projectile>

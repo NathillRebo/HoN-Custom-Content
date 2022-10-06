@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_Sovereignity"
+
+	icon="icon.tga"
+	
+	stunneddurationmultiplier="-0.1"
+	debuffdurationmultiplier="-0.1"
+	
+	effecttype="StatusBuff"
+>
+</state>

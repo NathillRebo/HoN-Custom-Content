@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_LerneanCry"
+
+	icon="icon.tga"
+	
+	cost="825"
+	components="Item_Custom_Morningstar Item_Broadsword Item_PerpetualCogwheel"
+	cooldown="1700"
+	cooldowntype="lerneancry"
+
+	actiontype="passive"
+	
+	manaregen="5.5"
+	damage="35"
+	strength="5"
+>
+	<onabilityimpact>
+		<isready>
+			<startcooldown />
+			<applystate name="State_Custom_LerneanCry" duration="5000" target="source_entity" pushentity="true" />
+		</isready>
+	</onabilityimpact>
+</item>

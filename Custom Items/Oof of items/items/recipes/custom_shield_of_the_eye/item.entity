@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_ShieldOfTheEye"
+
+	icon="icon.tga"
+	
+	cost="850"
+	components="Item_Custom_SpikedShield Item_PortalKey"
+
+	actiontype="target_position"
+	activatescheme="movement"
+	allowoutofrangecast="true"
+	manacost="75"
+	casttime="0"
+	castactiontime="0"
+	range="1100"
+	targetradius="225"
+
+	cooldowntime="15000"
+	cooldowntype="portalkey"
+
+	doubleactivate="true"
+
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	armor="4"
+	strength="5"
+	deflectionchance="0.50"
+	deflection="32"
+>
+	<onframe />
+	
+	<modifier key="buckler_melee" condition="melee" modpriority="100"
+		deflection="32"
+	>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="100"
+		deflection="16"
+	>
+	</modifier>
+	
+	<onpickup>
+		<startcooldown duration="3000" />
+	</onpickup>
+
+	<ondamaged priority="-10">
+		<compare a="source_damage" b="0" op="gt">
+			<targettype type="player_controlled">
+				<targettype type="self" />
+				<else>
+					<startcooldown duration="3000" />				
+				</else>
+			</targettype>
+		</compare>
+	</ondamaged>
+
+	<onimpact>
+		<playeffect effect="warp.effect" source="source_position" occlude="true" />
+		
+		<teleport target="target_position" />
+		<disjoint target="source_entity" />
+		<unbind target="source_entity" />
+		<areaofeffect
+			radius="225"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+		>
+			<applystate name="State_Stunned" duration="750" />
+		</areaofeffect>
+		
+		<playeffect effect="warp.effect" source="source_position" occlude="true" />
+	</onimpact>
+</item>

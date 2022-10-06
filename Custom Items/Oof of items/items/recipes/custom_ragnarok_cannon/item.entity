@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_RagnarokCannon"
+
+	icon="icon.tga"
+	
+	cost="1275"
+	components="Item_Manatube Item_SwordOfTheHigh"
+
+	actiontype="passive"
+	cooldowntype="ragnarokcannon"
+	
+	damage="80"
+	manaregen="3"
+	
+	cooldowntime="35000"
+>
+	<onattackpreimpact propagatetoillusions="true">
+		<isready>
+			<startcooldown />
+			<damage effecttype="Magic" amount="400"/>
+			<playeffect effect="effects/impact.effect" source="target_entity" target="" />
+		</isready>
+	</onattackpreimpact>
+	<onabilityimpact>
+		<reducecooldown duration="4472" />
+	</onabilityimpact>
+</item>

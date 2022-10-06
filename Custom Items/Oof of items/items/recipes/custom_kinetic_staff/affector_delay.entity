@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Custom_KineticStaff_Delay"
+
+	radius=""
+	lifetime=""
+
+	impactdelay="100"
+>
+	<onimpact>
+		<unbind target="target_entity" />
+		<spawnaffector name="Affector_Custom_KineticStaff" target="target_entity" />
+		<cantarget targetscheme="enemy_units">
+			<applystate name="State_Stunned" duration="850" />
+		</cantarget>
+		<cantarget targetscheme="ally_units">
+			<applystate name="State_Custom_KineticStaff_Ally" duration="1500" />
+		</cantarget>
+		<spawnunit name="Gadget_PushStaff" target="target_entity" offset="0 500" pushentity="true" />
+		<spawnprojectile name="Projectile_PushStaff" source="target_entity" target="stack_position" bind="target_entity" bindturn="true" bindstate="State_PushStaff" />
+	</onimpact>
+</affector>

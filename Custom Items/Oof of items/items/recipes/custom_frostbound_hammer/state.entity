@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_Rooted"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	immobilized2="true"
+	
+	effecttype="StatusDebuff"
+
+	negativeeffect="immobilized"
+>
+</state>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_ChargedBow"
+
+	icon="icon.tga"
+	
+	cost="250"
+	components="Item_MinorTotem Item_DuckBoots Item_GlovesOfHaste"
+
+	actiontype="passive"
+	
+	attackspeed=".15"
+	agility="6"
+	strength="2"
+	intelligence="2"
+>
+</item>

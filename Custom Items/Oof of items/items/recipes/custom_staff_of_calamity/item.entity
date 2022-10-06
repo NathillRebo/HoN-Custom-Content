@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_StaffOfCalamity"
+
+	icon="icon.tga"
+	
+	cost="850"
+	components="Item_Custom_LostArtifact Item_AcolytesStaff"
+	actiontype="passive"
+	
+	
+	manaregen="1"
+	intelligence="35"
+>
+
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<chance threshold="0.2">
+				<setvalue name="damage_attempted" a="damage_attempted" b="1.65" op="mult" />
+			</chance>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.1" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</item>

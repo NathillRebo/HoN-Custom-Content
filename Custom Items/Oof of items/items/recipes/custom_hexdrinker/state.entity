@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_Hexdrinker"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	magicarmor="4"
+	attackspeed="0.4"
+	movespeedmultiplier="0.25"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+
+</state>

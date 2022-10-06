@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_TelchinesRing_Slow"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	movespeedslow="1"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	negativeeffect="slowed"
+>
+	<onframe />
+</state>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_CentennialShield"
+	
+	icon="icon.tga"
+	
+	cost="825"
+	components="Item_Shield2 Item_Custom_GlowingEmerald"
+	
+	actiontype="passive"
+	
+	maxhealth="300"
+	healthregen="17"
+	
+	modifierkey="alt_CentennialShield"
+
+	>
+	
+	<modifier key="buckler_melee" condition="melee" modpriority="115">
+	
+		<onattackedpredamage>
+			<combateffecttype effecttype="Attack">
+				<targettype type="gadget" />
+				<else>
+					<chance threshold="0.5">
+						<setvalue name="combat_deflection" a="combat_deflection" b="80" op="max" />
+					</chance>
+				</else>
+			</combateffecttype>
+		</onattackedpredamage>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="115"
+	>
+		<onattackedpredamage>
+			<combateffecttype effecttype="Attack">
+				<targettype type="gadget" />
+				<else>
+					<chance threshold="0.5">
+						<setvalue name="combat_deflection" a="combat_deflection" b="40" op="max" />
+					</chance>
+				</else>
+			</combateffecttype>
+		</onattackedpredamage>
+	</modifier>
+	
+	<onhealed>
+		<applystate name="State_Custom_CentennialShield" target="target_entity" duration="5000" />
+	</onhealed>
+</item>

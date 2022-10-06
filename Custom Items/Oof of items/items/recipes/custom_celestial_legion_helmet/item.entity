@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_CelestialLegionHelmet"
+
+	icon="icon.tga"
+	
+	cost="800"
+	components="Item_Custom_ImperialHelmet Item_Confluence"
+
+	actiontype="passive"
+	targetradius="1030"
+	
+	armor="4"
+	intelligence="18"
+	strength="12"
+	agility="12"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.08" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onabilityimpact>
+		<areaofeffect
+			radius="1030"
+			targetselection="all"
+			targetscheme="ally_units"
+			ignoreinvulnerable="true"
+		>
+			<heal a="12" target="target_entity"/>
+			<givemana amount="15" target="target_entity" />
+		</areaofeffect>
+	</onabilityimpact>
+</item>

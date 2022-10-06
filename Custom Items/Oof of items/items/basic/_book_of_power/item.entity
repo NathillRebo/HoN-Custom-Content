@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_BookOfPower"
+	
+	icon="icon.tga"
+	cost="700"
+	actiontype="self_position"
+	casttime="0"
+	castactiontime="0"
+	noninterrupting="true"
+	nobreakchannel="true"
+	frontqueue="true"
+	
+	maxcharges="999"
+	
+	category="consumable"
+	initialcharges="1"
+	chargecost="1"
+	rechargeable="true"
+	destroyonempty="true"
+	allowsharing="true"
+	allowtransfer="true"
+	
+	cooldowntime="0"
+	cooldowntype=""
+	manacost="0"
+	
+	responsetype="Item_NonInterrupting Order_NonInterrupting"
+	canusewardslot="true"
+>
+	<onimpact>
+		<applystate name="State_BookOfIntelligence" target="this_owner_entity" continuous="true" pushentity="true" />
+		<addcharges entity="stack_entity" count="1" />
+		<applystate name="State_BookOfAgility" target="this_owner_entity" continuous="true" pushentity="true" />
+		<addcharges entity="stack_entity" count="1" />
+		<applystate name="State_BookOfStrength" target="this_owner_entity" continuous="true" pushentity="true" />
+		<addcharges entity="stack_entity" count="1" />
+	</onimpact>
+</item>

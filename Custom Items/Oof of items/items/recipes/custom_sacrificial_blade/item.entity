@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SacrificialBlade"
+
+	icon="icon.tga"
+	
+	cost="1025"
+	components="Item_Moonspear Item_Custom_ConduitGem"
+
+	actiontype="passive"
+	
+	agility="35"
+	intelligence="12"
+>
+	<onattack effectdescription="true">
+		<cantarget targetscheme="enemy_units">
+			<givemana amount="7" target="source_entity" />
+		</cantarget>
+	</onattack>
+	
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.01" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+</item>

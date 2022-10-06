@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_GloriousExecutionersAxe"
+
+	icon="icon.tga"
+	
+	cost="1600"
+	components="Item_Custom_ChargedBow Item_Wingbow"
+
+	actiontype="passive"
+	
+	maxcharges="1023"
+	
+	attackspeed=".20"
+	agility="40"
+	strength="3"
+	intelligence="3"
+	
+	dynamicprecache="effects/impact.effect"
+>
+	<onabilityimpact>
+		<addcharges count="1" />		
+	</onabilityimpact>
+	
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="enemy">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<setvar0 a="charges" b="2" op="mult"/>
+								<givegold amount="var0" target="source_entity" />
+								<setcharges a="0" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+		</targettype>
+		<else>
+			<addcharges count="1" />
+		</else>
+	</onkill>
+	
+	<onkilled>
+		<targettype type="illusion" target="source_entity" />
+		<else>
+		    <evaluate a="charges" b="0.75" op="mult" />
+			<setcharges a="charges" b="result" op="sub" />
+		</else>
+	</onkilled>
+	
+	<onattackingdamageevent>
+		<setvar0 a="target_maxhealth" b="0.1" op="mult" />
+		<pushstack a="var0" />
+		<compare a="target_health" b="result" op="lt">
+			<kill target="target_entity" />
+			
+			<!-- Dynamic visual effects -->
+			<getscriptvalue name="impact_effect" destvar="str0" entity="this_entity" />
+			<playeffectdynamic effect="str0" source="target_entity" target="source_entity" occlude="true" />
+		</compare>
+	</onattackingdamageevent>
+	
+</item>

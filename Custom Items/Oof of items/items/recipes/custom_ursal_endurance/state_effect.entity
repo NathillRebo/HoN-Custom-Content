@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_UrsalEndurance_Effect"
+
+	icon=""
+	passiveeffect=""
+	ishidden="true"
+	
+	effecttype=""
+>
+	
+	<modifier key="striders_boost" modpriority="50" exclusive="true"
+		passiveeffect="effects/state.effect"
+	>
+		<onframe>
+			<hasmodifier entity="source_entity" name="striders_boost" />
+			<else>
+				<expire />
+			</else>
+		</onframe>
+	</modifier>
+</state>

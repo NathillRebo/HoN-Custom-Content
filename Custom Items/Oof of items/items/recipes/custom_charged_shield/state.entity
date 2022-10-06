@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_HotBL_Charges"
+
+	icon="icon.tga"
+	passiveeffect=""
+	ishidden="true"
+	deathpersist="true"
+	
+	impactinterval="500"
+	
+	effecttype=""
+	
+	maxcharges="20"
+>
+	<onimpact>
+		<removecharge />
+		<addcharges count="1" entity="this_proxy_entity" />
+		<compare a="charges" b="0" op="le">
+			<expire />
+		</compare>
+	</onimpact>
+</state>

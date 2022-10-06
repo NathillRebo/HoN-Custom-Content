@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_RodOfAsclepius"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	incominghealmultiplier=".15"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+
+</state>

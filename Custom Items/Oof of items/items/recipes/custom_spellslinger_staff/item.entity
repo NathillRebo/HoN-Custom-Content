@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SpellslingerStaff"
+
+	icon="icon.tga"
+	
+	cost="1000"
+	components="Item_Custom_SorcerersStaff Item_PerpetualCogwheel Item_PerpetualCogwheel"
+
+	actiontype="passive"
+	
+	intelligence="5"
+	maxhealth="250"
+	manaregen="7.5"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.07" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onabilityimpact>
+		<pushability source="this_owner_entity" slot="0" />
+		<reducecooldown entity="stack_entity" duration="795" />
+		<pushability source="this_owner_entity" slot="1" />
+		<reducecooldown entity="stack_entity" duration="795" />
+		<pushability source="this_owner_entity" slot="2" />
+		<reducecooldown entity="stack_entity" duration="795" />
+		<pushability source="this_owner_entity" slot="3" />
+		<reducecooldown entity="stack_entity" duration="795" />
+	</onabilityimpact>
+</item>

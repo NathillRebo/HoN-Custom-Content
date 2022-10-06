@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_EmberstoneBracers"
+
+	icon="icon.tga"
+	passiveeffect="cast.effect"
+	
+	attackspeed="0.5"
+	movespeedmultiplier="0.5"
+	slowresistance="1.0"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	
+	<onattackimpact>
+		<playeffect effect="state.effect" source="source_entity" target="target_entity"/>
+	</onattackimpact>
+</state>

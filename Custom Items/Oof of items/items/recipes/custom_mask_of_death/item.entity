@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_MaskOfDeath"
+	
+	statuseffecttooltip="State_MaskOfDeath"
+	statuseffectheader="true"
+	icon="icon.tga"
+	
+	cost="1150"
+	components="Item_ElderParasite Item_Steamstaff Item_Steamstaff"
+	
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="30000"
+	cooldowntype="elderparasite"
+	manacost="25"
+	
+	damage="35"
+	attackspeed="0.45"
+	
+	modifierkey="alt_ElderParasite"
+	responsetype="Item_NonInterrupting"
+>
+	<onimpact>
+		<applystate name="State_MaskOfDeath" duration="12000" />
+	</onimpact>
+	
+	<modifier key="attack_lifesteal" modpriority="10" exclusive="true"
+		lifesteal="0.15"
+	>
+		<onattackimpact>
+			<cantarget targetscheme="enemy_units">
+				<compare a="combat_attackability" b="0" op="eq">
+					<playeffect effect="/shared/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+				</compare>
+			</cantarget>
+		</onattackimpact>
+		
+		<onattackpredamage>
+			<cantarget targetscheme="enemy_units">
+				<compare a="bounce_count" b="2" op="lt">
+					<compare a="combat_attackability" b="0" op="eq" />
+					<else>
+						<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.15" op="add" />
+					</else>
+				</compare>
+			</cantarget>
+			<else>
+				<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.15" op="add" />
+			</else>
+		</onattackpredamage>
+	</modifier>
+</item>

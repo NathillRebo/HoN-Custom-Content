@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_FightersSigil"
+
+	icon="icon.tga"
+	
+	cost="500"
+	components="Item_BloodRuby Item_Fleetfeet Item_BlessedArmband"
+
+	actiontype="passive"
+	
+	agility="8"
+	strength="8"
+	maxhealth="200"
+>
+</item>

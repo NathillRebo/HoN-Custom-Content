@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_MendingRoot"
+	
+	icon="icon.tga"
+	
+	cost="760"
+	components="Item_MysticPotpourri Item_MagicArmor2 Item_Strength5"
+	
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	noresponse="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="1000"
+	
+	strength="6"
+	agility="3"
+	intelligence="3"
+	healthregen="12.5"
+	magicarmor="10"
+	stunneddurationmultiplier="-0.1"
+	debuffdurationmultiplier="-0.1"
+	
+	casteffect="cast.effect"
+	
+	responsetype="Item_NonInterrupting"
+>
+
+	<aura name="MendingRoot_Aura" state="State_MendingRoot" radius="900" targetscheme="ally_units" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+	
+	<oncreate>
+		<activatemodifierkey name="MysticPotpourri_Aura_Toggle_All" />
+	</oncreate>
+	
+	<onpickup>
+		<activatemodifierkey name="MysticPotpourri_Aura_Toggle_All" />
+	</onpickup>
+	
+	<onimpact />
+	
+	<modifier key="MysticPotpourri_Aura_Toggle_All" modpriority="100"
+		icon="icon_all.tga"
+	>
+		<onimpact>
+			<deactivatemodifierkey name="MysticPotpourri_Aura_Toggle_All" />
+			<activatemodifierkey name="MysticPotpourri_Aura_Toggle_Heroes" />
+		</onimpact>
+		
+		<aura name="MendingRoot_Aura" state="State_MendingRoot" radius="900" targetscheme="ally_units" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+	</modifier>
+	
+	<modifier key="MysticPotpourri_Aura_Toggle_Heroes" modpriority="100"
+		icon="icon_hero.tga"
+	>
+		<onimpact>
+			<deactivatemodifierkey name="MysticPotpourri_Aura_Toggle_Heroes" />
+			<activatemodifierkey name="MysticPotpourri_Aura_Toggle_All" />
+		</onimpact>
+		
+		<aura name="MendingRoot_Aura" state="State_MendingRoot" radius="900" targetscheme="ally_heroes" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+	</modifier>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.01" op="mult" />
+		</else>
+	</onattackingdamageevent>
+
+</item>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Beastmaster_Totem"
+
+	icon="icon.tga"
+	
+	cost="1200"
+	components="Item_Halberd Item_Warhammer Item_HeavyBlade"
+	
+	actiontype="passive"
+	
+	damage="30"
+	strength="20"
+
+	showareacast="true"
+
+	modifierkey="alt_Beastmaster_Totem"
+>
+	<modifier key="pulverize" modpriority="75" exclusive="true">
+		<onattack effectdescription="true">
+			<cantarget targetscheme="enemy_units">
+				<chance threshold="0.30">
+					<setaccumulator value="source_strength" /> <!-- Base Magic Damage -->
+					<targettype type="illusion" source="this_owner_entity" target="this_owner_entity">
+						<!-- Works on illusions for 33% of strength -->
+						<changeaccumulator b="0.33" op="mult" />
+					</targettype>
+					<areaofeffect
+						radius="206"
+						targetselection="all"
+						targetscheme="enemy_units"
+						effecttype="Physical"
+						source="source_entity"
+						center="target_position"
+					>
+					<damage effecttype="Physical" amount="0" b="accumulator" op="add" />
+					</areaofeffect>
+					<playeffect effect="impact.effect" source="target_entity" target="" />
+				</chance>
+			</cantarget>
+		</onattack>
+	</modifier>
+</item>

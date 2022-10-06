@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_MidgardianMail"
+
+	icon="icon.tga"
+	
+	cost="1000"
+	components="Item_Custom_SteelMail Item_Custom_AmuletOfFortitude Item_Custom_AmuletOfFortitude"
+
+	maxhealth="350"
+	healthregen="15"
+	strength="5"
+	armor="4"
+	actiontype="passive"
+>
+	<onattackedpredamage>
+		<applystate name="State_Custom_MidgardianMail" target="target_entity" duration="1800" />
+	</onattackedpredamage>
+</item>

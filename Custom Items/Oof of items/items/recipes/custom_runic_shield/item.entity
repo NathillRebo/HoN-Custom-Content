@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_RunicShield"
+
+	icon="icon.tga"
+	
+	cost="1100"
+	components="Item_Custom_WardedShield Item_HeavyBlade Item_Custom_HelmOfValor"
+
+	actiontype="passive"
+	
+	magicarmor="10"
+	armor="5"
+	strength="33"
+	agility="8"
+	
+	deflectionchance="0.50"
+	deflection="25"
+	
+	modifierkey="alt_IronBuckler"
+>
+	<onframe />
+	
+	<modifier key="buckler_melee" condition="melee" modpriority="100"
+		deflection="35"
+	>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="100"
+		deflection="17"
+	>
+	</modifier>
+	
+	<aura name="Custom_RunicShield_Aura" state="State_Custom_RunicShield" radius="250" targetscheme="enemy_units_and_structures" effecttype="Debuff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+	
+</item>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Relics"
+
+	style="relics"
+	
+	icon="shop_relics.tga"
+	order="1"
+	slot="2"
+>
+	<item name="Item_WindWhistle" /> 200
+	<item name="Item_ManaBattery" /> 200
+	<item name="Item_NihilCrystal" /> 200
+	<item name="Item_Scarab" /> 325
+	<item name="Item_TrinketOfRestoration" /> 350
+	<item name="Item_EtherJewel" /> 450
+	<item name="Item_GlovesOfHaste" /> 500
+	<item name="Item_MysticVestments" /> 500
+	<item name="Item_Custom_Spellbook" /> 535
+	<item name="Item_BloodRuby" /> 550
+	<item name="Item_BoundEye" /> 700
+	<item name="Item_Voltstone" /> 700
+	<item name="Item_HungrySpirit" /> 900
+	<item name="Item_SnakeBracelet" /> 1100
+	<item name="Item_Custom_TemporalBeads" /> 1100
+	<item name="Item_AlacrityBand" /> 1200
+	<item name="Item_PortalKey" /> 2250
+</shop>

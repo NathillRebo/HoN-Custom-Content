@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Lichslayer"
+
+	icon="icon.tga"
+	
+	cost="1300"
+	components="Item_Custom_AncientSword Item_Custom_AncientSword Item_Custom_AncientSword"
+	cooldowntime="60000"
+
+	actiontype="passive"
+	
+	frontqueue="true"
+	noninterrupting="true"
+	inheritmovement="true"
+	noturntotarget="true"
+	nostun="true"
+	nosilence="true"
+	
+	noresponse="true"
+	
+	noshuffle="true"
+	
+	damage="45"
+	magicarmor="25"
+>
+	<onframe>
+		<isready>
+			<setvar0 a="target_health" b="target_maxhealth" op="div" />
+			<compare a="var0" b="0.3" op="lt">
+				<heal source="source_owner_entity" a="450" />
+				<startcooldown />
+			</compare>
+		</isready>
+	</onframe>
+
+</item>

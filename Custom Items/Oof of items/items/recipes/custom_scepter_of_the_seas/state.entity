@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_ScepterOfTheSeas"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="3"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+	
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<evaluate a="2.5" b="charges" op="mult" />
+			<setvar0 a="result" b="100" op="div"/>
+			<setvar1 a="result" b="1" op="add"/>
+			<setvalue name="damage_attempted" a="damage_attempted" b="var1" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</state>

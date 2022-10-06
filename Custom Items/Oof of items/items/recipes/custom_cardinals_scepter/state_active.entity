@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Cardinal_Active"
+
+	icon="icon.tga"
+	passiveeffect="active.effect"
+	immunitytype="AstrolabeImmunity"
+	
+	healthregen="4"
+	armor="2"
+	magicarmor="2"
+
+	effecttype=""
+>
+	<oninflict>
+		<heal a="250" />
+	</oninflict>
+</state>

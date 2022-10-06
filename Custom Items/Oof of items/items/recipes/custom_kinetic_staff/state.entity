@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_PushStaff"
+
+	icon="icon.tga"
+
+	immobilized2="true"
+	disarmed="true"
+	
+	passiveeffect="effects/push.effect"
+	
+	effecttype=""
+>
+
+</state>

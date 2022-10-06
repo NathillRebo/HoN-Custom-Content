@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_PostHaste_Target_State"
+
+	icon="icon.tga"
+	passiveeffect="effects/target.effect"
+	
+	immobilized="true"
+	disarmed="true"
+	silenced="true"
+	perplexed="true"
+	
+	effecttype=""
+	impactinterval="3750"
+>
+	<onimpact>
+		<expire />
+	</onimpact>
+	
+	<ondeath>
+		<breakchannel entity="this_proxy_entity" />
+	</ondeath>
+	
+
+</state>

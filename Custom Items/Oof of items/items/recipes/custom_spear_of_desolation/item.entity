@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SpearOfDesolation"
+
+	icon="icon.tga"
+	
+	cost="1300"
+	components="Item_Custom_SpellFocus Item_AcolytesStaff"
+
+	actiontype="passive"
+	
+	intelligence="40"
+	agility="3"
+	strength="3"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.11" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="enemy">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<pushability source="this_owner_entity" slot="0" />
+								<reducecooldown entity="stack_entity" duration="3000" />
+								<pushability source="this_owner_entity" slot="1" />
+								<reducecooldown entity="stack_entity" duration="3000" />
+								<pushability source="this_owner_entity" slot="2" />
+								<reducecooldown entity="stack_entity" duration="3000" />
+								<pushability source="this_owner_entity" slot="3" />
+								<reducecooldown entity="stack_entity" duration="5875" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+		</targettype>
+	</onkill>
+</item>

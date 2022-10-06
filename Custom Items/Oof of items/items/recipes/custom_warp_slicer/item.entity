@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_WarpSlicer"
+
+	icon="icon.tga"
+	
+	cost="1175"
+	components="Item_Wingbow Item_AlacrityBand Item_TrinketOfRestoration"
+
+	actiontype="toggle"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="2000"
+	toggleoffcooldowntime="0"
+	noninterrupting="true"
+	nobreakchannel="true"
+	noresponse="true"
+	
+	agility="30"
+	attackspeed="0.4"
+	healthregen="3"
+>
+	
+	<ontoggleon>
+		<resetcooldown />
+		<startcooldown duration="2000" />
+	</ontoggleon>
+	
+	<modifier key="insanitarius_active" condition="toggle_active" modpriority="100"
+		modifierkey="insanitarius_on"
+		icon="icon1.tga"
+	>
+		<onimpact />
+		<onattack effectdescription="true">
+			<cantarget targetscheme="enemy_units_and_Towers">
+				<applystate name="State_Custom_WarpSlicer" target="source_entity" duration="3157" />
+			</cantarget>
+		</onattack>
+
+	</modifier>
+	
+</item>

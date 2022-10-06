@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_Foeslayer"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	attackspeed="0.5"
+	movespeedmultiplier="0.15"
+	stunneddurationmultiplier="-0.10"
+	debuffdurationmultiplier="-0.10"
+	healthregen="16.5"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+
+</state>

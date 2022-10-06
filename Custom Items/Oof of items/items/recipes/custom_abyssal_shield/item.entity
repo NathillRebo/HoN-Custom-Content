@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_AbyssalShield"
+	
+	icon="icon.tga"
+	
+	cost="1175"
+	components="Item_LifeSteal5 Item_IronShield Item_HelmOfTheVictim"
+	
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	noresponse="true"
+	
+	armor="10"
+	agility="10"
+	healthregen="4"
+
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="1000"
+	
+	casteffect="cast.effect"
+	
+	modifierkey="alt_AbyssalSkull"
+	responsetype="Item_NonInterrupting"
+>
+
+	<aura name="Custom_AbyssalShield_Aura" state="State_Custom_AbyssalShield" radius="900" targetscheme="ally_units_and_structures" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+	
+	<oncreate>
+		<activatemodifierkey name="Custom_AbyssalShield_Aura_Toggle_All" />
+	</oncreate>
+	
+	<onpickup>
+		<activatemodifierkey name="Custom_AbyssalShield_Aura_Toggle_All" />
+	</onpickup>
+	
+	<onimpact />
+	
+	<modifier key="Custom_AbyssalShield_Aura_Toggle_All" modpriority="100"
+		icon="icon.tga"
+	>
+		<onimpact>
+			<deactivatemodifierkey name="Custom_AbyssalShield_Aura_Toggle_All" />
+			<activatemodifierkey name="Custom_AbyssalShield_Aura_Toggle_Heroes" />
+		</onimpact>
+		
+		<aura name="Custom_AbyssalShield_Aura" state="State_Custom_AbyssalShield" radius="900" targetscheme="ally_units_and_structures" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+	</modifier>
+	
+	<modifier key="Custom_AbyssalShield_Aura_Toggle_Heroes" modpriority="100"
+		icon="icon.tga"
+	>
+		<onimpact>
+			<deactivatemodifierkey name="Custom_AbyssalShield_Aura_Toggle_Heroes" />
+			<activatemodifierkey name="Custom_AbyssalShield_Aura_Toggle_All" />
+		</onimpact>
+		
+		<aura name="Custom_AbyssalShield_Aura" state="State_Custom_AbyssalShield" radius="900" targetscheme="ally_heroes_and_structures" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+	</modifier>
+</item>

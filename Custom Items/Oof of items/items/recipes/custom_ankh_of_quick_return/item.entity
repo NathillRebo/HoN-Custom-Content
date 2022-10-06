@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_AnkhOfQuickReturn"
+
+	icon="icon.tga"
+	
+	cost="850"
+	components="Item_Custom_TribalMask Item_Custom_BlessedBracer"
+
+	actiontype="passive"
+	
+	maxhealth="250"
+	maxmana="150"
+	strength="8"
+	agility="8"
+	intelligence="8"
+	attackspeed=".25"
+	evasion=".15"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.02" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onkilled>
+		<targettype type="illusion" source="source_entity" target="source_entity" />
+		<else>
+			<targettype type="mimic" source="source_entity" target="source_entity" />
+			<else>
+				<targettype type="hero" source="source_entity" target="source_entity" >
+					<setrespawntimebonus target="source_entity" value="5750" />
+				</targettype>
+			</else>
+		</else>
+	</onkilled>
+	<onrespawn>
+		<applystate name="State_Custom_AnkhOfQuickReturn" duration="10000" target="source_entity" />
+	</onrespawn>
+</item>

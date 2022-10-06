@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_LotusCrown"
+
+	icon="icon.tga"
+	
+	cost="1105"
+	components="Item_PerpetualCogwheel Item_Custom_Sagestone"
+
+	actiontype="passive"
+	
+	strength="5"
+	agility="5"
+	intelligence="10"
+	healthregen="3"
+	manaregen="7"
+	totalhealmultiplier="0.1"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.01" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onheal priority="0" propagatetoillusions="false" >
+		<applystate name="State_Custom_LotusCrown" target="target_entity" duration="5000" />
+	</onheal>
+</item>

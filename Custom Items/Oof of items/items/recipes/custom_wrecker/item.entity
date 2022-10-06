@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Wrecker"
+
+	icon="icon.tga"
+	
+	cost="1350"
+	components="Item_Custom_HeavyMace Item_Voulge"
+
+	actiontype="passive"
+	
+	damage="70"
+	strength="8"
+	agility="3"
+	intelligence="3"
+>
+	<aura name="custom_wrecker_aura" state="State_Custom_Wrecker" radius="875" effecttype="Debuff" targetscheme="enemy_units" propagatecondition="not_stealthed" stack="true" />
+</item>

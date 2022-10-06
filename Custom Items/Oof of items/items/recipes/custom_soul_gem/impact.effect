@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.5">
+
+			<sound 
+			    life="5000"
+				linearfalloff="true" 
+				falloffstart="500"
+				falloffend="1000"
+				volume="1" 
+				sample="imp_%.wav"
+			/>
+			<simpleemitter
+				count="150"
+				spawnrate="1000"
+				minparticlelife="400"
+				maxparticlelife="800"
+				drag=".01"
+				offsetphere="220 220 30"
+				gravity="0"
+				minspeed="850"
+				maxspeed="1350"								
+				direction="0 0 1"
+				position="0 0 50"
+				depthbias="-30"
+				material="/shared/effects/materials/blob_add.material"
+			>			
+				<particle
+					startcolor="1 .15 .15"
+					endcolor="0"
+					startsize=".43"
+					endsize="0"
+					minscale="1"
+					maxscale="1"
+				/>
+				<particle
+					startcolor="1 .6 .6"
+					endcolor="0"
+					startsize=".43"
+					endsize="0"
+					minscale="1"
+					maxscale="1"
+					endstickiness=".4"
+					startheightdistort=".05"
+					endheightdistortion="0"
+					turn="1"
+				/>
+				<particle
+					startcolor=".15 1 .15"
+					endcolor="0"
+					startsize="4.93"
+					endsize="0"
+					minscale="1"
+					maxscale="1"
+				/>
+				<particle
+					startcolor=".6 1 .6"
+					endcolor="0"
+					startsize="4.93"
+					endsize="0"
+					minscale="1"
+					maxscale="1"
+					endstickiness=".4"
+					startheightdistort=".05"
+					endheightdistortion="0"
+					turn="1"
+				/>
+				<particle
+					startcolor=".15 .15 1"
+					endcolor="0"
+					startsize="3.63"
+					endsize="0"
+					minscale="1"
+					maxscale="1"
+				/>
+				<particle
+					startcolor=".6 .6 1"
+					endcolor="0"
+					startsize="3.63"
+					endsize="0"
+					minscale="1"
+					maxscale="1"
+					endstickiness=".4"
+					startheightdistort=".05"
+					endheightdistortion="0"
+					turn="1"
+				/>
+			</simpleemitter>
+			
+			<light
+				position="0 0 50"
+				life="150"
+				startcolor="10"
+				midcolor=".87"
+				midcolorpos=".1 9.87 7.27"
+				endcolor="0"
+				falloffstart="0"
+				falloffend="300"
+			/>
+			
+			<controller scale="1" bone="_bone_centerofchest">
+				<simpleemitter
+					mincount="16"
+					maxcount="20"
+					particlelife="2330"
+					direction="0 0 1"
+					directionalspace="global"
+					minangle="90"
+					maxangle="90"
+					gravity="-5"
+					minspeed="200"
+					maxspeed="450"
+					drag="0.02"
+				>
+					<particle
+						maxyaw="360"
+						maxpitch="360"
+						maxroll="360"
+						minyawspeed="-600"
+						maxyawspeed="600"
+						minrollspeed="-600"
+						maxrollspeed="600"
+						minpitchspeed="-600"
+						maxpitchspeed="600"
+						minscale="2"
+						maxscale="2.5"
+					>
+						<trailemitter
+							minlife="750"
+							maxlife="1250"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="300"
+							material="/shared/effects/materials/glow_02.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor="0.57 1 0.7"
+								midcolor="1 0.9 0.59"
+								endcolor="0.09 1 0.74"
+								startsize="0"
+								minmidsize="2"
+								maxmidsize="3"
+								endsize="0"
+							/>
+						</trailemitter>
+						<trailemitter
+							minlife="750"
+							maxlife="1250"
+							directionalspace="local"
+							particledyrectionalspace="local"
+							position="10 0 0"
+							spawnrate="20"
+							particlelife="500"
+							material="/shared/effects/materials/fire_scrolling_trail.material"
+							texposscale="0"
+							texstretchscale="1"
+							startparticlecolor="1"
+							midparticlecolor="1"
+							endparticlecolor="0"
+						>
+							<particle
+								startcolor="1"
+								midcolor="1"
+								endcolor="1"
+								startsize="0"
+								minmidsize="4"
+								maxmidsize="6"
+								endsize="0"
+							/>
+						</trailemitter>
+					</particle>
+				</simpleemitter>
+			</controller>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

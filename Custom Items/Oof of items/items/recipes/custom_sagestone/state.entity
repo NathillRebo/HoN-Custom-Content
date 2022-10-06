@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_LotusCrown"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	strength="9"
+	agility="9"
+	intelligence="9"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+
+</state>

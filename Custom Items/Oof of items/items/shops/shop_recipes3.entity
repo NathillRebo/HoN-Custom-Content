@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Recipes3"
+
+	style="recipes"
+	
+	icon="shop_recipes3.tga"
+	order="1"
+	slot="7"
+>
+	<item name="Item_PowerSupply" /> 600
+	<item name="Item_AdevesCloak" /> 3500
+	<item name="Item_BarrierIdol" /> 3650
+	<item name="Item_Custom_MageBane" /> 3700
+	<item name="Item_Excruciator" /> 3725
+	
+	<item name="Item_Custom_DragonslayersShoulderpad" /> 3750
+	<item name="Item_Custom_ShieldOfTheEye" /> 3850
+	<item name="Item_Custom_PhantomVeil" /> 4000
+	<item name="Item_Custom_Ancile" /> 4000
+	
+	<item name="Item_Custom_FrostwolfInsignia" /> 4000
+	<item name="Item_Custom_GrimmsWard" /> 4100
+	<item name="Item_UltorsHeavyPlate" /> 4100
+	<item name="Item_Custom_ShieldOfTheSix" /> 4125
+	
+	<item name="Item_Custom_Moonguard" /> 4150
+	<item name="Item_ArmorOfTheMadMage" /> 4300
+	<item name="Item_HealthMana2" /> 4300
+	<item name="Item_Custom_ChargedShield" /> 4325
+	
+	<item name="Item_Custom_GenjisGuard" /> 4350
+	<item name="Item_Custom_UrsalEndurance" /> 4375
+	<item name="Item_Custom_SpellsurgeAegis" /> 4400
+	<item name="Item_Custom_AnkhOfQuickReturn" /> 4500
+	<item name="Item_Custom_AethyrShield" /> 4500
+	
+	<item name="Item_Custom_Dawnguard" /> 4500
+	<item name="Item_Custom_CentennialShield" /> 4525
+	<item name="Item_Custom_GladiatorShield" /> 4550
+	
+	<item name="Item_FrostfieldPlate" /> 4600
+	<item name="Item_Protect" /> 4600
+	<item name="Item_Custom_SelenialStaff" /> 4700
+	
+	<item name="Item_BehemothsHeart" /> 4800
+	<item name="Item_Immunity" /> 4800
+	<item name="Item_Custom_MysticalMail" /> 4975
+	<item name="Item_Custom_LeviathanPearl" /> 5000
+	
+	<item name="Item_Custom_MidgardianMail" /> 5050
+	<item name="Item_Custom_BloodlordsShroud" /> 5100
+	<item name="Item_Custom_StoneOfGaia" /> 5125
+	<item name="Item_Custom_SacrificialShroud" /> 5150
+	
+	<item name="Item_Custom_BarbarianShield" /> 5200
+	<item name="Item_Custom_MagisBlessing" /> 5200
+	<item name="Item_Custom_BlackthornHammer" /> 5300
+	<item name="Item_Custom_UnholyHelmet" /> 5325
+	<item name="Item_Custom_FaceOfTheMountain" /> 5350
+	
+	<item name="Item_Custom_Lichslayer" /> 5350
+	<item name="Item_DaemonicBreastplate" /> 5600
+	
+	<item name="Item_Evasion" /> 5700
+	<item name="Item_Custom_MantleOfDiscord" /> 5700
+	<item name="Item_Custom_OniHuntersGarb" /> 5800
+	<item name="Item_Custom_MailOfRenewal" /> 5900
+	
+	<item name="Item_Sasuke" /> 6200
+</shop>

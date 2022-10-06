@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_OniHuntersGarb"
+
+	icon="icon.tga"
+	
+	cost="1100"
+	components="Item_Custom_SpellboundKusari Item_Custom_HelmOfValor Item_Custom_HelmOfValor"
+
+	actiontype="passive"
+	
+	magicarmor="8"
+	armor="13"
+	strength="19"
+	agility="19"
+	intelligence="3"
+	manaregen="1.5"
+	
+	maxcharges="5"
+	
+	armorpercharge="1.5"
+	magicarmorpercharge="1.5"
+	
+	targetradius="1000"
+>
+	<onframe>
+		<setcharges a="0" />
+		<setaccumulator value="0" />
+		
+		<areaofeffect
+			radius="1000"
+			targetscheme="visible_enemy_heroes_not_heropets"
+			targetselection="all"
+		>			
+			<setaccumulator value="accumulator" valueb="1" valueop="add" />
+		</areaofeffect>
+		
+		<setcharges a="accumulator" />
+	</onframe>
+</item>

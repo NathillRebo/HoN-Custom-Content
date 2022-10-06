@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Sunderer"
+
+	icon="icon.tga"
+	
+	cost="800"
+	components="Item_Custom_LightBlade Item_Warhammer"
+
+	actiontype="passive"
+	
+	attackspeed=".25"
+	damage="45"
+	agility="5"
+>
+	<onattackingdamageevent>
+		<setvar0 a="0.3" />
+		<setvalue name="damage_armorpiercepercent" a="damage_armorpiercepercent" b="var0" op="add" />
+	</onattackingdamageevent>
+</item>

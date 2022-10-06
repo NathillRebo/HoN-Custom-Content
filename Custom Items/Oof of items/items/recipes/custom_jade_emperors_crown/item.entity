@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_JadeEmperorsCrown"
+	
+	icon="icon.tga"
+	
+	cost="850"
+	components="Item_Custom_ImperialHelmet Item_Custom_HoodOfCunning Item_NeophytesBook"
+	
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	noresponse="true"
+	
+	armor="11"
+	intelligence="26"
+	agility="8"
+
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="1000"
+	
+	casteffect="cast.effect"
+	
+	modifierkey="alt_Custom_JadeEmperorsCrown"
+	responsetype="Item_NonInterrupting"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.09" op="mult" />
+		</else>
+	</onattackingdamageevent>
+
+	<aura name="Custom_JadeEmperorsCrown_Aura" state="State_Custom_JadeEmperorsCrown" radius="1000" targetscheme="enemy_units_and_structures" effecttype="Debuff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+	
+	<oncreate>
+		<activatemodifierkey name="Custom_JadeEmperorsCrown_Aura_Toggle_All" />
+	</oncreate>
+	
+	<onpickup>
+		<activatemodifierkey name="Custom_JadeEmperorsCrown_Aura_Toggle_All" />
+	</onpickup>
+	
+	<onimpact />
+	
+	<modifier key="Custom_JadeEmperorsCrown_Aura_Toggle_All" modpriority="100"
+		icon="icon.tga"
+	>
+		<onimpact>
+			<deactivatemodifierkey name="Custom_JadeEmperorsCrown_Aura_Toggle_All" />
+			<activatemodifierkey name="Custom_JadeEmperorsCrown_Aura_Toggle_Heroes" />
+		</onimpact>
+		
+		<aura name="Custom_JadeEmperorsCrown_Aura" state="State_Custom_JadeEmperorsCrown" radius="1000" targetscheme="enemy_units_and_structures" effecttype="Debuff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+	</modifier>
+	
+	<modifier key="Custom_JadeEmperorsCrown_Aura_Toggle_Heroes" modpriority="100"
+		icon="icon.tga"
+	>
+		<onimpact>
+			<deactivatemodifierkey name="Custom_JadeEmperorsCrown_Aura_Toggle_Heroes" />
+			<activatemodifierkey name="Custom_JadeEmperorsCrown_Aura_Toggle_All" />
+		</onimpact>
+		
+		<aura name="Custom_JadeEmperorsCrown_Aura" state="State_Custom_JadeEmperorsCrown" radius="1000" targetscheme="enemy_heroes" effecttype="Debuff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+	</modifier>
+</item>

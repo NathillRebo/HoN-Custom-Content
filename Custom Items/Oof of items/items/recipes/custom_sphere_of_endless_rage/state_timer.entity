@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_SphereOfEndlessRage_Timer"
+
+	icon="icon.tga"
+	ishidden="true"
+>	
+	<onexpired>
+		<evaluate a="lifetime_remaining" />
+		<setvar0 a="result" />
+		<compare a="var0" b="0" op="gt">
+			<startcooldown toolname="Item_Custom_SphereOfEndlessRage" duration="var0" />
+		</compare>
+	</onexpired>
+</state>

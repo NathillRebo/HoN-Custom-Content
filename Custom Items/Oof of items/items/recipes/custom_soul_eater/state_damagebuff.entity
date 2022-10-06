@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WhisperingHelm_DamageBuff"
+	
+	ishidden="true"
+	
+	manaregen="1"	
+	damagepercharge="1"
+>
+	<oninflict>
+		<setvar0 source="this_proxy_entity" a="source_attackdamage" b="0.15" op="mult" />
+		<compare a="var0" b="0" op="gt">
+			<setcharges a="var0" />
+		</compare>
+		<else>
+			<setcharges a="0" />
+		</else>		
+	</oninflict>
+	
+	<onattackstart>
+		<compare a="this_proxy_entity" b="0" op="ne">
+			<setvar0 source="this_proxy_entity" a="source_attackdamage" b="0.15" op="mult" />
+			<compare a="var0" b="0" op="gt">
+				<setcharges a="var0" />
+			</compare>
+			<else>
+				<setcharges a="0" />
+			</else>		
+		</compare>
+	</onattackstart>
+	
+	<onexpired>
+		<foreachitem source="this_proxy_entity">
+			<entitytype target="target_entity" type="Item_WhisperingHelm">
+				<getremainingcooldown target="target_entity" />
+		
+				<!-- Convert to milliseconds & reduce the cooldown by 50% -->
+				<setvar0 a="result" b="1000" op="mult" />
+				<setvar0 a="var0" b="0.5" op="mult" />
+				
+				<reducecooldown duration="var0" entity="target_entity" />
+			</entitytype>
+			<else>
+				<entitytype target="target_entity" type="Item_Custom_SoulEater">
+					<getremainingcooldown target="target_entity" />
+			
+					<!-- Convert to milliseconds & reduce the cooldown by 50% -->
+					<setvar0 a="result" b="1000" op="mult" />
+					<setvar0 a="var0" b="0.5" op="mult" />
+					
+					<reducecooldown duration="var0" entity="target_entity" />
+				</entitytype>
+			</else>
+		</foreachitem>
+	</onexpired>
+	
+</state>

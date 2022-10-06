@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_ShieldOfTheSix"
+	
+	passiveeffect="state.effect"
+	icon="icon.tga"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<oninflict>
+		<targettype type="building" source="this_owner_entity" target="this_owner_entity">
+			<setactivemodifierkey name="item_shieldofthefive_Building" />
+		</targettype>
+	</oninflict>
+	
+	<modifier key="item_shieldofthefive_Building" modpriority="50"
+		passiveeffect="state_building.effect"
+	/>
+	
+	<modifier key="small_armor_buff" modpriority="5" exclusive="true"
+		armor="5"
+	/>
+</state>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="2.5">
+
+
+			<simpleemitter
+				spawnrate="1000"
+				count="1"
+				particlelife="4000"
+			>
+				<particle>
+					<groundsprite
+						material="/shared/effects/materials/whitedot_ground.material"
+						size="30"
+						startcolor=".3 .2 .05"
+						endcolor="0 0 0"
+						expirelife="1000"
+						yawspeed="-40"
+					/>
+
+				</particle>
+			</simpleemitter>
+			
+		<!-- columns of light -->
+			<billboard
+				expirelife="500"
+				material="/shared/effects/materials/flare2.material"
+				startheight="3000"
+				midheight="3000"
+				endheight="100"
+				midheightpos=".75"
+				width="40"
+				lockup="1"
+				startcolor=".2 .1 .05"
+				endcolor="0 0 0"
+			/>
+			<billboard
+				expirelife="500"
+				material="/shared/effects/materials/flare2.material"
+				startheight="3000"
+				midheight="3000"
+				endheight="100"
+				midheightpos=".75"
+				width="40"
+				lockup="1"
+				startcolor=".2 .1 .05"
+				endcolor="0 0 0"
+			/>
+			
+			<simpleemitter
+				spawnrate="10"
+				minparticlelife="500" maxparticlelife="1500"
+				direction="0 0 -1"
+				angle="0"
+				speed="500"
+				offsetsphere="20 20 0"
+				position="0 0 600"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle
+					startsize="0"
+					endsize="3000"
+					startwidth="0"
+					minendwidth="10" maxendwidth="20"
+					startcolor="1 .75 .5"
+					endcolor="0"
+					lockup="1"
+				/>
+				
+				<particle
+					startsize="0"
+					endsize="3000"
+					startwidth="0"
+					minendwidth="10" maxendwidth="20"
+					startcolor="1"
+					endcolor="0"
+					lockup="1"
+				/>
+				<particle
+					startsize="0"
+					endsize="3000"
+					startwidth="0"
+					minendwidth="10" maxendwidth="20"
+					startcolor="1 .25 .25" 
+					endcolor="0"
+					lockup="1"
+				/>
+			</simpleemitter>
+
+			<!--sparkles-->
+			<simpleemitter
+				life="5000"
+				delay="500"
+				spawnrate="33"
+				count="32"
+				particlelife="250"			
+				gravity="0"
+				speed="2"
+				drag="0"
+				acceleration="0"
+				position="0 0 180"
+				material="/shared/effects/materials/frost_flash_10.material"
+				offsetsphere="5 5 405"
+				minangle="360"
+				maxangle="180"
+				direction="0 0 1"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle 
+					minangle="135"
+					maxangle="210"
+					minanglespeed="-50"
+					maxanglespeed="-150"
+					color="2 2 2"
+					startframe="0"
+					endframe="1"
+					startsize="50"
+					midsize="15"
+					endsize=".1"
+					midsizepos=".5"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="5000"
+				delay="500"
+				spawnrate="20"
+				particlelife="250"
+				gravity="-5"
+				speed="2"
+				drag="0"
+				acceleration="0"
+				position="0 0 160"
+				material="/shared/effects/materials/frost_flash_10.material"
+				offsetsphere="50 50 405"
+				minangle="360"
+				maxangle="180"
+				direction="0 0 1"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+				yawspeed="30"
+			>
+
+				<particle
+					minangle="135"
+					maxangle="210"
+					minanglespeed="-50"
+					maxanglespeed="-150"
+					color="2 1 1"
+					startframe="0"
+					endframe="1"
+					startsize="25"
+					midsize="25"
+					endsize=".1"
+					midsizepos=".4"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+
+				<particle 
+					minangle="135"
+					maxangle="210"
+					minanglespeed="-50"
+					maxanglespeed="-150"
+					color="2 .5 0"
+					startframe="0"
+					endframe="1"
+					startsize="25"
+					midsize="7.5"
+					endsize=".1"
+					midsizepos=".4"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

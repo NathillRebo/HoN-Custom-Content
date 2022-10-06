@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_AmuletOfTheStronghold"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	armor="15"
+	healthregen="17"
+	attackspeed="0.7"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+</state>

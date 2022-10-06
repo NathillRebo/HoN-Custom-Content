@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_Custom_BlackthornHammer"
+	
+    ishidden="true"
+>
+    <ondeath>
+        <targettype type="illusion" target="source_entity" />
+		<else>
+			<setvar0 source="this_inflictor_entity" a="source_maxhealth" b="0.035" op="mult" />
+			<heal source="this_inflictor_entity" target="this_inflictor_entity" a="var0" />
+		</else>
+    </ondeath>
+</state>

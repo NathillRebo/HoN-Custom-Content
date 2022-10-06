@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_TheDominator"
+
+	icon="icon.tga"
+	
+	cost="950"
+	components="Item_Custom_Morningstar Item_AxeOfTheMalphai"
+
+	actiontype="passive"
+	
+	manaregen="1.5"
+	damage="15"
+	strength="35"
+>
+	<onattackingdamageevent>
+		<targettype type="hero" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.20" op="mult" />
+		</else>
+	</onattackingdamageevent>	
+</item>

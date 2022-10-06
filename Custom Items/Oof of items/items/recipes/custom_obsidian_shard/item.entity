@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_ObsidianShard"
+
+	icon="icon.tga"
+	
+	cost="750"
+	components="Item_Custom_SpellFocus Item_Confluence"
+
+	actiontype="passive"
+	
+	intelligence="20"
+	agility="15"
+	strength="15"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.08" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<aura name="Custom_ObsidianShard_Aura" state="State_Custom_ObsidianShard" radius="1000" targetscheme="ally_units" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+</item>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_BarbarianShield"
+
+	icon="icon.tga"
+	
+	cost="1250"
+	components="Item_Custom_SpikedShield Item_AxeOfTheMalphai"
+
+	actiontype="passive"
+	
+	armor="4"
+	strength="35"
+	deflectionchance="0.50"
+	deflection="33"
+	
+	modifierkey="alt_IronBuckler"
+>
+	<onframe />
+	
+	<modifier key="buckler_melee" condition="melee" modpriority="100"
+		deflection="33"
+	>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="100"
+		deflection="16"
+	>
+	</modifier>
+	<onattackedpredamage>
+		<applystate name="State_Custom_BarbarianShield" target="source_entity" duration="3000" />
+	</onattackedpredamage>
+</item>

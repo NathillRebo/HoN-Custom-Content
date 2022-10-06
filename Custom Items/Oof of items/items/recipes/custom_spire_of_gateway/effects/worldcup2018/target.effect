@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="0">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+		<!-- light columns -->
+				<billboard
+					expirelife="1000"
+					material="/shared/effects/materials/flare_rainbow.material"
+					startheight="3000"
+					midheight="3000"
+					endheight="100"
+					midheightpos=".75"
+					width="40"
+					lockup="1"
+					startcolor=".2"
+					endcolor="0 0 0"
+				/>
+				<billboard
+					expirelife="1000"
+					material="/shared/effects/materials/flare_rainbow.material"
+					startheight="3000"
+					midheight="3000"
+					endheight="100"
+					midheightpos=".75"
+					width="40"
+					lockup="1"
+					startcolor=".3"
+					endcolor="0 0 0"
+				/>
+				
+				<billboard
+					life="1000"
+					loop="1"
+					material="/shared/effects/materials/flare_rainbow.material"
+					height="3000"
+					startsize="40"
+					endsize="100"
+					lockup="1"
+					startcolor="0"
+					midcolor=".3"
+					endcolor="0 0 0"
+				/>
+				
+		<!-- shafts of light -->
+			<template name="color">	
+				<simpleemitter
+					spawnrate="7"
+					position="0 0 500"
+					offsetsphere="40 40 500"
+					direction="0 0 -1"
+					angle="0"
+					minspeed="100"
+					maxspeed="300"
+					minparticlelife="500"
+					maxparticlelife="700"
+					material="/shared/effects/materials/light_rays.material"
+				>
+					<particle
+						startsize="0"
+						midsize="5"
+						midsizepos=".15"
+						minendsize="100"
+						maxendsize="400"
+						lockup="1"
+						startwidth="0"
+						midwidth="3"
+						endwidth="3"
+						midwidthpos=".25"
+						startcolor="{color}" 
+						midcolor="{color}"
+						midcolorpos=".75"
+						endcolor="0"
+						startframe="1" endframe="0"
+					/>
+				</simpleemitter>
+			
+				<simpleemitter
+					position="0 0 5"
+					spawnrate="10"
+					particlelife="400"
+					speed="200"
+					direction="0 0 1"
+					angle="60"
+					offsetsphere="0"
+					directionalspace="global"
+					material="/shared/effects/materials/light_rays.material"
+					depthbias="-50"
+				>
+					<particle
+						turn="1"
+						startsize="0"
+						endsize="150"
+						startwidth="0"
+						minendwidth="20" maxendwidth="40"
+						startcolor="{color}"
+						endcolor="0"
+						alpha=".5"
+					/>
+				</simpleemitter>
+			
+			</template>
+			<instance name="color" color="0 .8 .8" />
+			<instance name="color" color="0 .2 .2" />
+			<instance name="color" color="0 .8 0" />
+			<instance name="color" color=".8 0 .8" />
+			<instance name="color" color=".8 .8 0" />
+			<instance name="color" color="1 1 .5" />
+			<instance name="color" color="1 .8 0" />
+			<instance name="color" color="1 .5 0" />
+			<instance name="color" color=".8 .5 0" />
+			<instance name="color" color="0 .5 .8" />
+			<instance name="color" color=".5 0 .8" />
+			<instance name="color" color=".5 0 1" />
+			<instance name="color" color="1 0 1" />
+			<instance name="color" color="1 0 .5" />
+	
+	
+		</particlesystem>
+	
+	</definitions>
+	
+	
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

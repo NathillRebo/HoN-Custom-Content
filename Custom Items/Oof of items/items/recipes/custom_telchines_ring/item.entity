@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_TelchinesRing"
+
+	icon="icon.tga"
+	
+	cost="1100"
+	components="Item_TwinBlades Item_AlacrityBand"
+	
+	actiontype="passive"
+	cooldowntime="5000"
+	cooldowntype="twins"
+	
+	attackspeed="0.5"
+	manaregen="1.25"
+	intelligence="12"
+	damage="40"
+	
+	modifierkey="alt_TwinBlades"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.02" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<modifier key="twinblades_melee" condition="melee" modpriority="100">
+		<onattackpreimpact>
+			<reducecooldown duration="600" />
+			<isready>
+				<cantarget targetscheme="enemy_units">
+					<issplitprojectile entity="inflictor_entity" />
+					<else>
+						<startcooldown />
+						<applystate name="State_Custom_TelchinesRing_Strike" target="this_owner_entity" duration="100" proxy="target_entity" stack="true" />
+					</else>
+				</cantarget>
+			</isready>
+		</onattackpreimpact>
+	</modifier>
+</item>

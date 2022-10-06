@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_FrostboundHammer"
+
+	icon="icon.tga"
+	
+	cost="1000"
+	components="Item_Custom_HeavyHammer Item_Beastheart Item_BlessedArmband"
+
+	actiontype="passive"
+	cooldowntime="12000"
+	cooldowntype="frostboundhammer"
+	
+	frontqueue="true"
+	noninterrupting="true"
+	inheritmovement="true"
+	noturntotarget="true"
+	nostun="true"
+	nosilence="true"
+	
+	noresponse="true"
+	
+	noshuffle="true"
+	
+	strength="15"
+	damage="15"
+	maxhealth="550"
+>
+	<modifier key="custom_frostboundhammer" modpriority="100" exclusive="true">
+		<onattackimpact effectdescription="true">
+			<cantarget targetscheme="enemy_units">
+				<isready>
+					<setvar0 a="source_maxhealth" b="0.06" op="mult" />
+					<targettype type="illusion" target="source_entity">
+						<damage effecttype="Magic" amount="0.33" b="var0" op="mult" />	
+						<applystate name="State_Custom_Rooted" duration="333" />
+					</targettype>
+					<else>
+						<damage effecttype="Magic" amount="1" b="var0" op="mult" />
+						<applystate name="State_Custom_Rooted" duration="1000" />
+					</else>
+					<startcooldown/>
+				</isready>
+			</cantarget>
+		</onattackimpact>
+	</modifier>
+</item>

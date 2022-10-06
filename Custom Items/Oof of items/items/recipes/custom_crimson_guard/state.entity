@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_Crimsonguard"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	attackspeed="0.4"
+	movespeedmultiplier="0.25"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+
+</state>

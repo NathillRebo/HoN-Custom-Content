@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_Custom_MedallionOfThePretender_Ally"
+
+    icon="icon.tga"
+    passiveeffect="effects/state_ally.effect"
+
+    effecttype="StatusBuff"
+    allowtransfer="true"
+
+    armor="7"
+	healthregen="3"
+	manaregen="3"
+>
+	<modifier key="fadeAlt7LexTalionis"
+		passiveeffect="/heroes/fade/alt7/item_fx/lex_talionis/state.effect"
+	/>
+</state>

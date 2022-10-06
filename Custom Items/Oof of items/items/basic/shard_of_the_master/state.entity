@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_ShardOfTheMaster"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	deathpersist="true"
+	
+	effecttype=""
+	modifierkey="shardofthemaster_boost"
+	
+	stunneddurationmultiplier="-0.05"
+	debuffdurationmultiplier="-0.05"
+>
+</state>

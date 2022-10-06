@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_LightBlade"
+
+	icon="icon.tga"
+	
+	cost="400"
+	components="Item_GlovesOfHaste Item_Punchdagger Item_DuckBoots"
+
+	actiontype="passive"
+	
+	attackspeed=".20"
+	damage="12"
+	agility="4"
+>
+</item>

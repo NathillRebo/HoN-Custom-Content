@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Ghostblade"
+	
+	icon="icon.tga"
+	
+	cost="1200"
+	components="Item_Voulge Item_Moonspear Item_GlovesOfHaste"
+	
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="9000"
+	cooldowntype="enhancedmarchers"
+	
+	damage="50"
+	agility="20"
+	attackspeed="0.2"
+	
+	modifierkey="alt_Boots"
+	modifierkey2="alt_GhostMarchers"
+	
+	effectkey0="effect_Boots"
+	effectkey1="effect_UpgradedBoots"
+	responsetype="Item_NonInterrupting"
+>
+	<onimpact>
+		<playeffect effect="cast.effect" />
+		<applystate name="State_Custom_Ghostblade" duration="3000" />
+	</onimpact>
+</item>

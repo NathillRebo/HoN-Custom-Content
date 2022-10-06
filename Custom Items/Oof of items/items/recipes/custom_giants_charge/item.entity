@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_GiantsCharge"
+
+	icon="icon.tga"
+	
+	cost="750"
+	components="Item_Custom_HeavyMace Item_Custom_BeltOfFrenzy Item_Custom_BeltOfFrenzy"
+
+	actiontype="passive"
+	
+	damage="45"
+	attackspeed=".4"
+	strength="16"
+	agility="11"
+	intelligence="11"
+	maxcharges="100"
+	movespeed="40"
+	movespeedpercharge=".5"
+	impactinterval="100"
+>
+	<oninflict>
+		<setcharges a="0"/>
+		<setcharges a="0" entity="this_spawner_entity" />
+	</oninflict>
+	<onframe>
+		<evaluate a="movement" b=".1" op="mult" />
+		<addcharges count="result" />
+		<evaluate a="movement" b=".1" op="mult" />
+		<addcharges count="result" entity="this_spawner_entity"/>
+	</onframe>
+	<onattackpreimpact propagatetoillusions="false">
+		<compare a="charges" b="16" op="ge">
+			<targettype type="building" />
+			<else>
+				<issplitprojectile entity="inflictor_entity" />
+				<else>
+					<!-- Bonus Physical Damage -->
+					<evaluate a=".8" b="charges" op="mult" />
+					<setaccumulator value="result" />
+					<evaluate a="3" b="charges" op="mult" />
+					<applystate name="State_Stunned" duration="result" />
+					<damage effecttype="Physical" amount="0" b="accumulator" op="add" />
+					<popup name="bonus_damage" a="accumulator" source="target_entity" />
+					<setcharges a="0" />
+				</else>
+			</else>
+		</compare>
+	</onattackpreimpact>
+</item>

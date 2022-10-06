@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Recipes2"
+
+	style="recipes"
+	
+	icon="shop_recipes2.tga"
+	order="1"
+	slot="6"
+>
+	<item name="Item_GraveLocket" /> 850
+	<item name="Item_Energizer" /> 1400
+	<item name="Item_SolsBulwark" /> 1500
+	
+	<item name="Item_Astrolabe" /> 2050
+	
+	<item name="Item_LifeSteal5" /> 2050
+	<item name="Item_NomesWisdom" /> 2275
+	<item name="Item_Intelligence6" /> 2650
+	<item name="Item_Dreamcatcher" /> 2700
+	
+	<item name="Item_ArcaneBomb" /> 3300
+	<item name="Item_Spell_Sunder" /> 3325
+	<item name="Item_Custom_Frostspire" /> 3400
+	<item name="Item_Custom_ObsidianShard" /> 3800
+	
+	<item name="Item_Custom_ShogunsKusari" /> 3850
+	<item name="Item_Custom_NimbleRod" /> 3950
+	<item name="Item_Summon" /> 3950
+	
+	<item name="Item_Custom_MedallionOfThePretender" /> 4000
+	<item name="Item_Custom_AmuletOfTheStronghold" /> 4000
+	<item name="Item_Custom_CelestialLegionHelmet" /> 4050
+	<item name="Item_Custom_SimurghHeart" /> 4050
+	<item name="Item_Custom_TalismanOfEnergy" /> 4100
+	<item name="Item_Custom_VoidShield" /> 4100
+	
+	<item name="Item_MendingRoot" /> 4150
+	<item name="Item_Custom_RodOfAsclepius" /> 4175
+	<item name="Item_Custom_CaduceusShield" /> 4200
+	
+	<item name="Item_Intelligence7" /> 4200
+	<item name="Item_Custom_RuneforgedHammer" /> 4200
+	<item name="Item_Custom_CardinalsStaff" /> 4300
+	<item name="Item_SacrificialStone" /> 4300
+	<item name="Item_Custom_Sovereignity" /> 4350
+	
+	<item name="Item_Custom_GuardianStone" /> 4500
+	<item name="Item_Custom_LotusCrown" /> 4550
+	<item name="Item_Custom_Ancient_Oak_Branch" /> 4560
+	<item name="Item_Custom_AbyssalShield" /> 4650
+	<item name="Item_Custom_MoonlitEssence" /> 4700
+	
+	<item name="Item_Custom_BannerOfCommand" /> 4775
+	<item name="Item_Custom_JadeEmperorsCrown" /> 4800
+	<item name="Item_JadeSpire" /> 4800
+	<item name="Item_Custom_SpireOfGateway" /> 4800
+	
+	<item name="Item_Custom_Necronomicon" /> 5100
+	<item name="Item_Custom_EaglesongStaff" /> 5200
+	<item name="Item_Custom_UrnOfTheFallenKing" /> 5200
+	
+	<item name="Item_Custom_AncestralStaff" /> 5375
+	<item name="Item_Morph" /> 5425
+	<item name="Item_RestorationStone" /> 5425
+	<item name="Item_Custom_RunicShield" /> 5500
+	<item name="Item_Custom_EmperorsArmor" /> 5525
+	
+	<item name="Item_Custom_StaffOfWizardry" /> 5575
+	<item name="Item_Custom_KineticStaff" /> 5700
+	<item name="Item_SandScepter" /> 5900
+	<item name="Item_MastersLegacy" /> 6500
+</shop>

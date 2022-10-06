@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_GuardianStone"
+
+	icon="icon.tga"
+	
+	cost="1035"
+	components="Item_Replenish Item_Astrolabe"
+	
+	actiontype="self_position"
+	targetscheme="ally_units"
+	targetradius="600"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="45000"
+	cooldowntype="replenish"
+	manacost="0"
+	
+	strength="12"
+	agility="8"
+	intelligence="12"
+	maxmana="300"
+	healthregen="3"
+	
+	modifierkey="alt_RingOfSorcery"
+	effectkey0="effect_RingOfSorcery"
+	
+	responsetype="Item_NonInterrupting"
+>
+<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.02" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onframe />
+	
+	<onimpact>
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			effecttype="Astrolabe"
+			targetscheme="ally_units"
+			ignoreinvulnerable="true"
+		>
+			<cantarget targetscheme="no_Overhead_Visuals" ignoreinvulnerable="true" />
+			<else>
+				<applystate name="State_GuardianStone_Active" duration="25000" />
+			</else>
+			<givemana amount="240" />
+		</areaofeffect>
+		
+		<!-- Art -->
+		<playeffect effect="cast.effect" source="source_position" target="" occlude="true" />
+		<playeffect effect="cast_astro.effect" source="source_position" target="" occlude="true" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+	<aura state="State_GuardianStone_Aura" radius="900" targetscheme="ally_units" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+
+</item>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_MagisBlessing"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	healthregen="5.0"
+	manaregen="2.5"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onframe>				
+		<!-- var1 is the Cooldown Reduction Rate converted to a pure time value -->
+		<!-- var1 = frametime * Cooldown_Reduction_Rate(x) * 1000 - 1000 -->		
+		<setvar0 a="1.35" /> <!-- Cooldown_Reduction_Rate(x) -->
+		
+		<setvar1 a="var0" b="1000" op="mult" />
+		<setvar1 a="var1" b="1000" op="sub" />
+		<setvar1 a="frametime" b="var1" op="mult" />
+		
+		<pushability source="this_owner_entity" slot="0" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_owner_entity" slot="1" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_owner_entity" slot="2" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_owner_entity" slot="3" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<foreachitem source="this_owner_entity">
+			<!-- Will not work for Warchief's items that have a 3s cooldown or less -->
+			<reducecooldown entity="target_entity" duration="var1" />
+		</foreachitem>
+	</onframe>
+
+</state>

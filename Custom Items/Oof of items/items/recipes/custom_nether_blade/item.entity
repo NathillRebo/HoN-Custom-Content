@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_NetherBlade"
+
+	icon="icon.tga"
+	
+	cost="1600"
+	components="Item_VoidTalisman Item_Wingbow"
+	statuseffecttooltip="State_VoidTalisman"
+	
+	actiontype="target_entity"
+	targetscheme="all_units"
+	casteffecttype="SuperiorMagic"
+	casteffect="cast.effect"
+	
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true" 
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="25000"
+	cooldowntype="VoidTalisman"
+	targetpriorities="all_heroes"
+	
+	range="800"
+	
+	manacost="0"
+	intelligence="7"
+	strength="7"
+	agility="40"
+	
+	responsetype="Item_NonInterrupting"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.01" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<checkcost>
+		<hasmodifier entity="target_entity" name="activation_modifier">
+			<invalidate />
+		</hasmodifier>
+	</checkcost>
+	
+	<onimpact>
+		<cantarget targetscheme="ally_units">
+			<heal a="275" />
+			<playeffect effect="ability_ally.effect" source="target_entity" target="" />
+			<dispel type="Physical" />
+			<applystate name="State_VoidTalisman" duration="4000" />
+		</cantarget>
+		
+		<cantarget targetscheme="enemy_units">
+			<damage effecttype="Magic" amount="275" />
+			<playeffect effect="ability.effect" source="target_entity" target="" />
+			<applystate name="State_VoidTalisman" duration="4000" />
+		</cantarget>
+	</onimpact>
+</item>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Junglespear"
+
+	icon="icon.tga"
+	
+	cost="900"
+	components="Item_Custom_BumbasDagger Item_Broadsword"
+
+	actiontype="passive"
+	
+	damage="35"
+	strength="4"
+	agility="4"
+	intelligence="4"
+>
+	<modifier key="attack_freeze" modpriority="63" exclusive="true"
+	>
+		<onattackimpact>
+			<heal a="10" target="source_entity"/>
+			<givemana amount="4" target="source_entity"/>
+			<cantarget effecttype="Magic" targetscheme="enemy_units">
+				<targettype type="illusion" source="this_owner_entity" target="this_owner_entity">
+					<applystate name="State_Custom_Junglespear" target="target_entity" duration="1000" pushentity="true" />
+				</targettype>
+				<else>
+					<applystate name="State_Custom_Junglespear" target="target_entity" duration="3000" pushentity="true" />
+				</else>
+			</cantarget>
+		</onattackimpact>
+	</modifier>
+</item>

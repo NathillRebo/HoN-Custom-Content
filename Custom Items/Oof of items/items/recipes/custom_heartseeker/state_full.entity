@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_Heartseeker"
+
+	icon="icon.tga"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	
+	healthregenreduction="0.33"
+>
+</state>

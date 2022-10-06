@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SerpentsEye"
+
+	icon="icon.tga"
+	
+	cost="1150"
+	components="Item_Custom_LightBlade Item_SnakeBracelet Item_Fleetfeet"
+
+	actiontype="passive"
+	
+	attackspeed=".25"
+	damage="15"
+	agility="15"
+	evasion=".15"
+>
+	<onattackingdamageevent>
+		<applystate name="State_Custom_SerpentsEye" target="target_entity" duration="10000" />
+	</onattackingdamageevent>
+</item>

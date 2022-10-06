@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_AncientManuscript"
+
+	icon="icon.tga"
+	
+	cost="900"
+	components="Item_Custom_BookOfSouls Item_BrainOfMaliken Item_BrainOfMaliken"
+
+	actiontype="passive"
+	
+	intelligence="5"
+	maxmana="700"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvar0 a="source_maxmana" b="0.005" op="mult"/>
+			<setvar0 a="var0" b="100" op="div"/>
+			<setvar0 a="var0" b="1.07" op="add"/>
+			<setvalue name="damage_attempted" a="damage_attempted" b="var0" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</item>

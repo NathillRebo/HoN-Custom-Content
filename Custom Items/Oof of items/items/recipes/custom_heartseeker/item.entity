@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Heartseeker"
+
+	icon="icon.tga"
+	
+	cost="950"
+	components="Item_Custom_Morningstar Item_Warhammer Item_Scarab"
+
+	actiontype="passive"
+	
+	manaregen="3"
+	damage="45"
+	strength="5"
+>
+	<onattackingdamageevent>
+		<applystate name="State_Custom_Heartseeker" target="target_entity" duration="1700" />
+	</onattackingdamageevent>
+</item>

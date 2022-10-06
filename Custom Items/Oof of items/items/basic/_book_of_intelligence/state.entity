@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_BookOfIntelligence"
+
+	icon="icon.tga"
+	passiveeffect=""
+	
+	deathpersist="true"
+	
+	effecttype=""
+	
+	intelligencepercharge="1"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<evaluate a="0.0046" b="charges" op="mult" />
+			<evaluate a="1" b="result" op="add" />
+			<setvalue name="damage_attempted" a="damage_attempted" b="result" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</state>

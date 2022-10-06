@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SpellFocus"
+
+	icon="icon.tga"
+	
+	cost="215"
+	components="Item_Custom_Spellbook Item_MarkOfTheNovice Item_MinorTotem"
+
+	actiontype="passive"
+	
+	intelligence="6"
+	agility="2"
+	strength="2"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.06" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</item>

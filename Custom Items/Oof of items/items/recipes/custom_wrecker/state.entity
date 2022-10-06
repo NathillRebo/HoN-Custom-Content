@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_Wrecker"
+
+	icon="icon.tga"
+
+	effecttype=""
+>
+	<onframe>
+		<targettype target="source_entity" type="Courier" />
+		<else>
+			<damage effecttype="SuperiorMagic DOT" amount="3" b="frametime" op="mult" />
+			<heal target="source_entity" a="3" b="frametime" op="mult" />
+		</else>
+	</onframe>
+</state>

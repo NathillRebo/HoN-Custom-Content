@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_MailOfRenewal"
+
+	icon="icon.tga"
+	
+	cost="800"
+	components="Item_Custom_GlowingEmerald Item_Custom_FightersSigil Item_Custom_FightersSigil"
+	
+	actiontype="passive"
+	cooldowntime="60000"
+	cooldowntype="custom_mailofrenewal"
+	
+	maxhealth="350"
+	healthregen="6"
+	strength="16"
+	agility="16"
+	maxcharges="20"
+	
+	targetradius="650"
+	hoverareacastrange="650"
+>
+	<onattackeddamageevent>
+		<isready>
+			<addcharges count="1" />
+			<starttimer duration="3000" />
+			<compare a="charges" b="20" op="eq">
+				<areaofeffect
+					radius="650"
+					targetselection="all"
+					targetscheme="ally_units"
+					ignoreinvulnerable="true"
+				>
+					<applystate name="State_Custom_MailOfRenewal" duration="10000" />
+				</areaofeffect>
+				<multcharges value="0" />
+				<startcooldown />
+			</compare>
+		</isready>
+	</onattackeddamageevent>
+	
+	<ontimer>
+		<multcharges value="0" />
+	</ontimer>
+</item>

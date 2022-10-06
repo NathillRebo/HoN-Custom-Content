@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_GenjisGuard"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="100"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+
+	stunneddurationmultiplierpercharge="-0.0085"
+	debuffdurationmultiplierpercharge="-0.0085"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+</state>

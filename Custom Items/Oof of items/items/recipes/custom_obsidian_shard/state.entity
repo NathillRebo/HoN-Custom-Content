@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_ObsidianShard"
+	
+	icon="icon.tga"
+	
+	effecttype="StatusBuff"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.05" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</state>

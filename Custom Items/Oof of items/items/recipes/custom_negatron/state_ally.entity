@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_Custom_Negatron_Ally"
+
+    icon="icon.tga"
+    passiveeffect="effects/state_ally.effect"
+
+    effecttype="StatusBuff"
+    allowtransfer="true"
+	
+	impactinterval="900"
+
+    armor="5"
+>
+	<onimpact>
+		<dispel type="StatusDebuff" />
+	</onimpact>
+	
+	<modifier key="fadeAlt7LexTalionis"
+		passiveeffect="/heroes/fade/alt7/item_fx/lex_talionis/state.effect"
+	/>
+</state>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_SerpentsEye"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	revealed="true"
+	sighted="true"
+	
+	movespeedslow="0.03"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+
+</state>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_MoonlitEssence"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	healthregen="20"
+	manaregen="10"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+
+</state>

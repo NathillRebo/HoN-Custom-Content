@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_HeavyBlade"
+	
+	icon="icon.tga"
+	cost="1500"
+	actiontype="passive"
+	strength="15"
+>
+</item>

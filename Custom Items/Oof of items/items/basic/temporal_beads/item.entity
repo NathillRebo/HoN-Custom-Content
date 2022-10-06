@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_TemporalBeads"
+	
+	icon="icon.tga"
+	
+	cost="1100"
+	
+	actiontype="passive"
+>
+	<modifier key="ability_cooldown_reduction" modpriority="10" exclusive="true"
+		reducedabilitycooldowns="0.1"
+	>
+	</modifier>
+</item>

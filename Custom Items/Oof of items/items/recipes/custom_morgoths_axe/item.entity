@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_MorgothsAxe"
+	
+	statuseffecttooltip="State_Custom_MorgothsAxe"
+	icon="icon.tga"
+	
+	cost="1000"
+	components="Item_AxeOfTheMalphai Item_Warhammer"
+	
+	actiontype="toggle"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="2000"
+	toggleoffcooldowntime="0"
+	noninterrupting="true"
+	nobreakchannel="true"
+	noresponse="true"
+	
+	strength="30"
+	damage="30"
+	
+	modifierkey="alt_Insanitarius"
+>
+	<onimpact />
+	
+	<ontoggleon>
+		<resetcooldown />
+		<startcooldown duration="2000" />
+		<applystate name="State_Custom_MorgothsAxe" istoggle="true" pushentity="true" />
+	</ontoggleon>
+	
+	<modifier key="insanitarius_active" condition="toggle_active" modpriority="100"
+		modifierkey="insanitarius_on"
+	>
+		<onimpact />
+
+	</modifier>
+	
+	<modifier key="insanitarius_shopdescription" condition="insanitariusdesc" modpriority="101">
+		<onimpact />
+	</modifier>
+</item>

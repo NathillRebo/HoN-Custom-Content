@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_RageOfTheForge"
+
+	icon="icon.tga"
+	
+	cost="1100"
+	components="Item_Wingbow Item_HeavyBlade"
+
+	actiontype="passive"
+	
+	agility="30"
+	strength="20"
+>
+	<onattack effectdescription="true">
+		<cantarget targetscheme="enemy_units_and_Towers">
+			<applystate name="State_Custom_RageOfTheForge" target="source_entity" duration="2000" />
+		</cantarget>
+	</onattack>
+	
+</item>

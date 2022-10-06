@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_NefarianBlade"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="255"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	strengthpercharge="-1"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1" timed="true" />
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1" timed="true" />
+	</onrefresh>
+</state>

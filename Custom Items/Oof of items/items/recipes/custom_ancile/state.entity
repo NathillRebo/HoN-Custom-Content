@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_Ancile"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="5"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	movespeedslowpercharge="0.03"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+</state>

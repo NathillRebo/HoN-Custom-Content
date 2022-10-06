@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_UrsalEndurance"
+	
+	icon="icon.tga"
+	
+	cost="750"
+	components="Item_Custom_GlowingEmerald Item_Custom_AmuletOfFortitude Item_MightyBlade"
+
+	actiontype="passive"
+
+	cooldowntime="6000"
+	cooldowntype="ChargersCharging"
+	modifierkey="ursalregen"
+	
+	maxcharges="18"
+	passcharges="true"
+	
+	strength="12"
+	maxhealth="320"
+	healthregen="9"
+	
+	modifierkey2="alt_UrsalEndurance"
+>
+	<onimpact />
+	
+	<onpickup>
+		<expirestate name="State_UrsalEndurance" target="source_entity" />
+		<expirestate name="State_UrsalEndurance_Effect" target="source_entity" />
+		<setcharges a="0" />
+		<startcooldown />
+	</onpickup>
+
+	<modifier key="ursalregen" modpriority="50" exclusive="true"
+		healthregenpercharge="3"
+	>
+		
+		<onchannelingend>
+			<entitytype target="inflictor_entity" type="Ability_Taunt" />
+			<else>
+				<startcooldown duration="6000" />
+			</else>
+		</onchannelingend>
+		
+		<onrespawn>
+			<applystate name="State_UrsalEndurance" duration="1500" target="source_entity" />
+			<applystate name="State_UrsalEndurance_Effect" continuous="true" target="source_entity" />
+		</onrespawn>
+		
+		<onframe>
+			<isready>
+				<compare a="result" b="1" op="ge" />
+				<else>
+					<setactivemodifierkey name="" />
+					<condition test="not_hasstate State_UrsalEndurance and charges lt 18">
+						<applystate name="State_UrsalEndurance" duration="9000" target="source_entity" />
+						<applystate name="State_UrsalEndurance_Effect" continuous="true" target="source_entity" />
+					</condition>
+				</else>
+			</isready>
+		</onframe>
+
+		<onattackedpreimpact>
+			<targettype type="enemy">
+				<expirestate name="State_UrsalEndurance" target="source_entity" />
+				<expirestate name="State_UrsalEndurance_Effect" target="source_entity" />
+				<setcharges a="0" />
+				<startcooldown />
+			</targettype>
+		</onattackedpreimpact>
+		
+		<ondamaged priority="-10">
+			<targettype type="enemy">
+				<expirestate name="State_UrsalEndurance" target="source_entity" />
+				<expirestate name="State_UrsalEndurance_Effect" target="source_entity" />
+				<setcharges a="0" />
+				<startcooldown />
+			</targettype>
+		</ondamaged>
+		
+		<onattackingdamageevent>
+			<damageeffecttype effecttype="Interrupting" >
+				<expirestate name="State_UrsalEndurance" target="source_entity" />
+				<expirestate name="State_UrsalEndurance_Effect" target="source_entity" />
+				<setcharges a="0" />
+				<startcooldown />
+			</damageeffecttype>
+			<damageeffecttype effecttype="DOT" />
+			<else>
+				<expirestate name="State_UrsalEndurance" target="source_entity" />
+				<expirestate name="State_UrsalEndurance_Effect" target="source_entity" />
+				<setcharges a="0" />
+				<startcooldown />
+			</else>
+		</onattackingdamageevent>
+		
+		<onactivateimpact ignoreresponsetype="Order_NonInterrupting">
+			<expirestate name="State_UrsalEndurance" target="source_entity" />
+			<expirestate name="State_UrsalEndurance_Effect" target="source_entity" />
+			<setcharges a="0" />
+			<startcooldown />
+		</onactivateimpact>
+		
+		<onattack>
+			<expirestate name="State_UrsalEndurance" target="source_entity" />
+			<expirestate name="State_UrsalEndurance_Effect" target="source_entity" />
+			<setcharges a="0" />
+			<startcooldown />
+		</onattack>
+
+	</modifier>
+</item>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="nukeEffect" useentityeffectscale="true" >
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			
+			<sound
+				linearfalloff="true" 
+				falloffstart="400"
+				falloffend="2000"
+				volume="1"
+				sample="sounds/cast.wav"
+			/>
+			
+			<beam
+				life="650"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_overhead"
+				bone_b="_bone_overhead"
+				size="40"
+				startcolor="1 0 0"
+				endcolor="0"
+				material="/shared/effects/materials/whitedot.material"
+				framespeed="1.75"
+			/>
+			
+			<beam
+				life="650"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_overhead"
+				bone_b="_bone_overhead"
+				size="15"
+				startcolor="1 .7 .7"
+				midcolor=".5 .2 .1"
+				endcolor="0"
+				material="/shared/effects/materials/whitedot.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="850"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_overhead"
+				bone_b="_bone_overhead"
+				size="100"
+				startcolor="1 .3 .3"
+				midcolor=".5 .1 0"
+				endcolor="0"
+				material="/shared/effects/materials/femme_lightning_01.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="850"
+				owner_a="source"
+				owner_b="target"
+				bone_a="_bone_overhead"
+				bone_b="_bone_overhead"
+				size="50"
+				startcolor="1 .5 .5"
+				endcolor="0"
+				material="/shared/effects/materials/femme_lightning_01.material"
+				framespeed="1.75"
+			/>
+			
+			<template name="spiral">
+				<trackeremitter
+					count="3"
+					particlelife="750"
+					minspeed="1500"
+					maxspeed="2500"
+					tracktype="distance"
+					trackspeed="100"
+					distancelife="1"
+					owner="{owner}"
+					bone="_bone_overhead"
+					targetowner="{target}"
+					targetbone="_bone_overhead"
+				>
+					<particle turn="1">
+						<model
+							model="/shared/effects/models/circle_of_bones/model.mdf"
+							anim="idle"
+							roll="90"
+							yaw="90"
+							minpitchspeed="3000"
+							maxpitchspeed="4000"
+							minscale=".35"
+							maxscale=".75"
+						>
+							<trailemitter
+								life="400"
+								bone="_bone_fx_01"
+								spawnrate="60"
+								particlelife="500"
+								material="/shared/effects/materials/femme_lightning_01_trail.material"
+								texposscale="1"
+								texstretchscale="0"
+								startparticlecolor="1 .65 .45"
+								endparticlecolor="1 .25 .1"
+							>
+								<particle
+									startcolor="0"
+									midcolor="1"
+									endcolor="0"
+									midcolorpos=".1"
+									startalpha="0"
+									midalpha=".5"
+									endalpha="0"
+									midalphapos=".1"
+									minsize="45"
+									maxsize="60"
+									framespeed="2"
+								/>
+							</trailemitter>
+						</model>
+					</particle>
+				</trackeremitter>
+			</template>
+			
+			<instance name="spiral" owner="source" target="target" />
+			<instance name="spiral" owner="target" target="source" />
+			
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

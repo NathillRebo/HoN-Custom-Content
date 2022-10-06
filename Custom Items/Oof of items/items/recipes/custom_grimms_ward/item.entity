@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_GrimmsWard"
+	
+	icon="icon.tga"
+	
+	cost="850"
+	components="Item_Custom_GlowingEmerald Item_Glowstone Item_Lifetube"
+	
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	casteffect="cast.effect"
+	cooldowntime="60000"
+	cooldowntype="grimmsward"
+	
+	maxcharges="500"
+	initialcharges="0"
+	passcharges="true"
+	
+	targetradius="525"
+	hoverareacastrange="525"
+	
+	maxhealth="500"
+	maxmana="150"
+	healthregen="9"
+	
+	modifierkey="alt_GrimmsWard"
+	effectkey0="effect_GrimmsWard"
+	responsetype="Item_NonInterrupting"
+>
+	<checkcost>
+		<compare a="charges" b="0" op="eq">
+			<invalidate />
+		</compare>
+	</checkcost>
+	
+	<onimpact>
+		<areaofeffect
+				radius="525"
+				targetselection="all"
+				targetscheme="enemy_units"
+				ignoreinvulnerable="false"
+			>
+			<damage effecttype="Magic" amount="300" b="charges" op="add"/>
+		</areaofeffect>
+		<startcooldown />
+		<multcharges value="0" />
+	</onimpact>
+	
+	<onattackeddamageevent>
+		<setvar1 a="damage_attempted" b="0.05" op="mult"/>
+		<addcharges entity="this_entity" count="var1" />
+		<setvalue name="damage_attempted" a="damage_attempted" b="0.95" op="mult" />
+	</onattackeddamageevent>
+</item>

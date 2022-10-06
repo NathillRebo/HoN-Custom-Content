@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_TranscendentsStar"
+
+	icon="icon.tga"
+	
+	cost="850"
+	components="Item_Custom_Morningstar Item_BrainOfMaliken Item_MightyBlade"
+
+	actiontype="passive"
+	
+	manaregen="1.5"
+	damage="15"
+	strength="18"
+	maxmana="250"
+>
+	<modifier key="custom_transcendentsstar" modpriority="29" exclusive="true">
+		<onattack effectdescription="true">
+			<cantarget targetscheme="enemy_units">
+				<setvar0 a="source_maxmana" b="0.025" op="mult" />
+				<bonusdamageadd target="" a="var0" />
+			</cantarget>
+		</onattack>
+	</modifier>
+</item>

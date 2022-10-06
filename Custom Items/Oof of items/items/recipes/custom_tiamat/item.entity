@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Tiamat"
+
+	icon="icon.tga"
+	
+	cost="1060"
+	components="Item_Custom_ChargedBow Item_Wingbow Item_MajorTotem"
+
+	actiontype="passive"
+	
+	attackspeed=".20"
+	agility="35"
+	strength="8"
+	intelligence="8"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.01" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onattackpreimpact propagatetoillusions="true">
+		<targettype type="ranged" source="this_owner_entity" target="this_owner_entity">
+			<issplitprojectile entity="inflictor_entity" />
+			<else>
+				<!-- AoE damage to side targets -->
+				<setvar1 a="source_attackdamage" b="0.35" op="mult" />
+				<areaofeffect
+					radius="300"
+					targetselection="all"
+					targetscheme="enemy_units"
+					effecttype="Physical"
+					ignore="target_entity"
+				>
+					<playeffect effect="impact.effect" target="" source="target_entity" />
+					<targettype type="illusion" target="source_entity" >
+						<damage effecttype="Magic" amount="0.33" b="var1" op="mult" target="target_entity" />
+					</targettype>
+					<else>
+						<damage effecttype="Magic" amount="1" b="var1" op="mult" target="target_entity" />
+					</else>
+				</areaofeffect>
+			</else>
+		</targettype>
+	</onattackpreimpact>
+</item>

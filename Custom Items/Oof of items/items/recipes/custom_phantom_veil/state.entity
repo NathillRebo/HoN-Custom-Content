@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_VoidTalismanPlus"
+
+	icon="icon.tga"
+
+	effecttype=""
+	
+	immunitytype="PhysicalImmunity"
+	basedamagemultiplier="-0.75"
+	
+	passiveeffect="effects/state.effect"
+	
+	modifierkey="activation_modifier"
+>
+	<onattackedpreimpact>
+		<combateffecttype effecttype="AbilityBasedProjectile BindingProjectile" />
+		<else>
+			<combatsupertype supertype="attack">
+				<combateffecttype effecttype="Magic" />
+				<else>
+					<negate />
+					<popup name="miss" source="target_entity" target="target_entity" />
+				</else>
+			</combatsupertype>
+		</else>
+	</onattackedpreimpact>
+	
+	<onattackingdamageevent>
+		<!-- Damage penalty -->
+		<setvalue name="damage_attempted" a="damage_attempted" b="0.75" op="mult" />
+	</onattackingdamageevent>
+	
+	<onframe />
+</state>

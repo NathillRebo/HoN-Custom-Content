@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Cardinal_Aura"
+	
+	icon="icon.tga"
+	passiveeffect="aura.effect"
+	
+	effecttype="StatusBuff"
+>
+	<modifier key="healthregen_aura" modpriority="3" exclusive="true"
+		healthregen="4"
+	/>
+</state>

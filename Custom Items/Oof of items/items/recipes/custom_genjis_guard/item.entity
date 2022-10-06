@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_GenjisGuard"
+
+	icon="icon.tga"
+	
+	cost="1200"
+	components="Item_Custom_SpellboundKusari Item_MagicArmor2"
+
+	actiontype="passive"
+	cooldowntime="300"
+	cooldowntype="genjisguard"
+	
+	magicarmor="20"
+	strength="3"
+	agility="3"
+	intelligence="3"
+	manaregen="1.5"
+	healthregen="12.5"
+	stunneddurationmultiplier="-0.15"
+	debuffdurationmultiplier="-0.15"
+>
+	<onattackeddamageevent>
+		<isready>
+			<applystate name="State_Custom_GenjisGuard" target="source_entity" duration="2520" />
+			<startcooldown />
+		</isready>
+	</onattackeddamageevent>
+</item>

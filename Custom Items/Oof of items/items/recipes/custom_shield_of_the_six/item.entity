@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_ShieldOfTheSix"
+
+	statuseffecttooltip="State_Custom_ShieldOfTheSix"
+	
+	icon="icon.tga"
+	
+	cost="860"
+	components="Item_ShieldOfTheFive Item_Custom_HoodOfCunning Item_MajorTotem"
+	
+	armor="17"
+	strength="6"
+	agility="14"
+	intelligence="14"
+	
+	actiontype="self_position"
+	targetscheme="ally_units"
+	targetradius="600"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="60000"
+	cooldowntype="shieldofthefive"
+	manacost="10"
+	
+	responsetype="Item_NonInterrupting"
+>
+	<onimpact>
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="ally_units_and_structures"
+			effecttype=""
+			ignoreinvulnerable="true"
+		>
+			<cantarget targetscheme="no_Overhead_Visuals" ignoreinvulnerable="true" />
+			<else>
+				<applystate name="State_Custom_ShieldOfTheSix" duration="30000" />
+			</else>
+		</areaofeffect>
+	</onimpact>
+	
+	<onaction>
+		<playeffect effect="cast.effect" />
+	</onaction>
+</item>

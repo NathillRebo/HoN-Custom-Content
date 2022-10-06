@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_TheSledge"
+
+	icon="icon.tga"
+	
+	cost="850"
+	components="Item_Custom_HeavyHammer Item_HeavyBlade"
+
+	actiontype="passive"
+	
+	strength="25"
+	damage="15"
+	maxhealth="250"
+>
+	<onattackedpredamage>
+		<chance threshold="0.1">
+			<applystate name="State_Custom_TheSledge" target="target_entity" duration="1625" />
+		</chance>
+	</onattackedpredamage>
+	
+</item>

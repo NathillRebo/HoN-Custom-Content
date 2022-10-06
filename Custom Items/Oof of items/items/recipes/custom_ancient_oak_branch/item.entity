@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Ancient_Oak_Branch"
+
+	icon="icon.tga"
+	
+	cost="695"
+	components="Item_Astrolabe Item_Intelligence5 Item_Custom_LostArtifact"
+
+	actiontype="self_position"
+	targetscheme="ally_units"
+	targetradius="600"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="45000"
+	cooldowntype="astrolabe"
+	casteffecttype="SuperiorMagic"
+	manacost="100"
+	casteffect="cast.effect"	
+
+	strength="9"
+	agility="6"
+	intelligence="10"
+	healthregen="2.5"
+	manaregen="1.5"
+	
+	modifierkey="alt_Astrolabe"
+	responsetype="Item_NonInterrupting"
+>
+	<aura state="State_Astrolabe_Aura" radius="900" targetscheme="ally_units" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+
+	<onimpact >
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="ally_units"
+			effecttype="Astrolabe"
+			ignoreinvulnerable="true"
+		>
+			<cantarget targetscheme="no_Overhead_Visuals" ignoreinvulnerable="true" />
+			<else>
+				<applystate name="State_Custom_Branch_Active" duration="25000" />
+			</else>
+		</areaofeffect>
+		
+		<!-- Art -->
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+	
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.07" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</item>

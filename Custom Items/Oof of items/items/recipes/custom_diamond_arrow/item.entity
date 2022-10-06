@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_DiamondArrow"
+
+	icon="icon.tga"
+	
+	cost="850"
+	components="Item_Custom_LightBlade Item_Moonspear"
+
+	actiontype="passive"
+	
+	attackspeed=".25"
+	damage="15"
+	agility="25"
+>
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="illusion" />
+			<else>               
+				<targettype type="mimic" />
+				<else> 
+					<targettype type="self" />
+					<else>
+						<targettype type="heropet" />
+						<else>
+							<givegold amount="30" target="source_entity" />
+							<applystate name="State_Custom_DiamondArrow" target="source_entity" duration="8000" />
+						</else>
+					</else>
+				</else>
+			</else>
+		</targettype>
+	</onkill>
+</item>

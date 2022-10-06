@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_BannerOfCommand"
+
+	icon="icon.tga"
+	
+	effecttype="StatusBuff"
+	
+	armor="5"
+	magicarmor="5"
+	attackspeed="0.3"
+>
+</state>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_GladiatorShield"
+
+	icon="icon.tga"
+	
+	cost="1100"
+	components="Item_Custom_SpikedShield Item_Custom_BlessedBracer Item_BlessedArmband"
+
+	actiontype="passive"
+	cooldowntime="32000"
+	cooldowntype="gladiatorshield"
+	
+	maxcharges="4"
+	
+	armor="3"
+	strength="18"
+	agility="8"
+	intelligence="8"
+	deflectionchance="0.50"
+	deflection="34"
+	attackspeed=".25"
+	evasion=".15"
+	
+	modifierkey="alt_IronBuckler"
+>
+	
+	<modifier key="buckler_melee" condition="melee" modpriority="34"
+		deflection="34"
+	>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="17"
+		deflection="17"
+	>
+	</modifier>
+	
+	<onattackeddamageevent>
+		<compare a="charges" b="1" op="ge">
+			<setvalue name="damage_attempted" a="damage_attempted" b="0" op="mult" />
+			<setcharges a="charges" b="1" op="sub" />
+		</compare>
+	</onattackeddamageevent>
+	
+	<onframe>
+		<targettype type="Courier" target="source_entity"/>
+		<else>
+			<isready>
+				<startcooldown />
+				<addcharges count="1" />
+			</isready>
+		</else>	
+	</onframe>
+</item>

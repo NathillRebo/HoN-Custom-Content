@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SpireOfGateway"
+
+	icon="icon.tga"
+	
+	cost="900"
+	components="Item_Custom_EmeraldTalisman Item_Confluence"
+
+	healthregen="3"
+	magicarmor="8"
+	maxhealth="250"
+	strength="12"
+	agility="12"
+	intelligence="12"
+	
+	actiontype="target_dual"
+	targetscheme="willing_teleport_targets"
+	allowoutofrangecast="true"
+	range="99999"
+	ignoreinvulnerable="true"
+	ischanneling="true"
+	safechannel="true"
+	casttime="0"
+	castactiontime="0"
+	channeltime="3750"
+	cooldowntime="100000"
+	cooldowntype="teleport"
+	manacost="0"
+	dontshowhovercast="true"
+	doubleactivate="true"
+>
+	<ondoubleactivate>
+		<pushentitysearch global="true" targetscheme="ally_well" ignoreinvulnerable="true" />
+		<compare a="stack_entity" b="0" op="ne">
+			<useitem source="this_entity" target="stack_entity" />
+		</compare>
+	</ondoubleactivate>
+
+	<onimpact effectdescription="true" />
+	
+	<onchannelstart>
+		<!-- Target selection logic -->
+		<!-- Directly target a unit -->
+		<compare a="target_entity" b="0" op="ne">
+			<setproxy entity="this_entity" target="target_entity" />
+		</compare>
+		<else>
+			<!-- Check for the closest ally building within 400 units -->
+			<pushentity searchfortarget="true" searchorigin="target_position" radius="400" targetscheme="ally_buildings_except_AntiTP" ignoreinvulnerable="true" />
+			<compare a="stack_entity" b="0" op="ne">
+				<setproxy entity="this_entity" target="stack_entity" />
+			</compare>
+			<!-- Otherwise, globally select a valid teleport target -->
+			<else>
+				<pushentity searchfortarget="true" searchorigin="target_position" radius="99999" targetscheme="willing_teleport_targets" ignoreinvulnerable="true" />
+				<setproxy entity="this_entity" target="stack_entity" />
+			</else>
+		</else>
+
+		<!-- Teleport location determination logic -->
+		<!-- Smaller distance buffer constraint if targeting ally well -->
+		<targettype type="Well" target="this_proxy_entity">
+			<setpos0 position="this_proxy_position" positionend="target_position" positionmodifier="minonline" positionvalue="200" />
+			<spawnunit name="Gadget_Item_PostHaste" count="1" target="pos0" pushentity="true" proxy="this_proxy_entity" />
+			<setproxy entity="this_entity" target="stack_entity" />
+			<!-- Put channeling affector stuff here -->
+			<spawnaffector name="Affector_PostHaste_Target" ischannel="true" proxy="source_entity" pushentity="true" target="this_proxy_position" />
+			<spawnaffector name="Affector_PostHaste_Target_Enemy" ischannel="true" proxy="source_entity" pushentity="true" target="this_proxy_position" />
+		</targettype>
+		<else>
+			<!-- Standard 400-unit distance buffer constraint for ally buildings -->
+			<targettype type="building" target="this_proxy_entity">
+				<setpos0 position="this_proxy_position" positionend="target_position" positionmodifier="minonline" positionvalue="400" />
+				<spawnunit name="Gadget_Item_PostHaste" count="1" target="pos0" pushentity="true" proxy="this_proxy_entity" />
+				<setproxy entity="this_entity" target="stack_entity" />
+				<!-- Put channeling affector stuff here -->
+				<spawnaffector name="Affector_PostHaste_Target" ischannel="true" proxy="source_entity" pushentity="true" target="this_proxy_position" />
+				<spawnaffector name="Affector_PostHaste_Target_Enemy" ischannel="true" proxy="source_entity" pushentity="true" target="this_proxy_position" />
+			</targettype>
+			<else>
+				<!-- No distance buffer constraint if it's a non-Well, non-Building target -->
+				<applystate name="State_PostHaste_Target_State" target="this_proxy_entity" ischannel="true" proxy="this_entity" stack="true" />
+
+				<spawnunit name="Gadget_PostHaste_Effect" count="1" target="this_proxy_entity" pushentity="true" />
+				<applystate name="State_PostHaste_Target" target="stack_entity" ischannel="true" proxy="this_entity" stack="true" />
+			</else>
+		</else>
+
+		<spawnunit name="Gadget_PostHaste_Effect" count="1" target="source_entity" pushentity="true" />
+		<applystate name="State_PostHaste_Source" target="stack_entity" ischannel="true" />
+
+		<spawnaffector name="Affector_PostHaste_Source_Enemy" ischannel="true" count="1" target="source_entity" pushentity="true" />
+
+		<ping name="teleport" position="this_proxy_entity" />
+		
+		<!-- Expire specific states -->
+		<expirestate name="State_Goldenveil_Ability2_Stealth" target="source_entity" />
+	</onchannelstart>
+	
+	<onchannelend>
+		<!-- this_proxy_entity can be 0 in some corner cases like when Circe's R copies a hero, this accounts for the corner cases -->
+		<compare a="this_proxy_entity" b="0" op="ne">
+
+			<applystate name="State_HomecomingStone_Teleport_Aftereffect" target="source_entity" duration="50" />
+			<teleport target="this_proxy_entity" />
+			<disjoint target="source_entity" />
+			<unbind target="source_entity" />
+		</compare>
+	</onchannelend>
+</item>

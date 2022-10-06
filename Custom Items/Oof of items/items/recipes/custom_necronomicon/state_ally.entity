@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dreamcatcher_Ally"
+	
+	icon="icon.tga"
+	passiveeffect="/items/recipes/soultrap/effects/heal.effect"
+	
+	incominghealmultiplier="0.5"
+	healthregenmultiplier="0.5"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onrefresh>
+		<setactivemodifierkey name="" />
+	</onrefresh>
+	
+	<onframe>
+		<heal a="30" b="frametime" op="mult" />
+	</onframe>
+	
+	<ondamaged priority="-10">		
+		<compare a="source_damage" b="0" op="gt">
+			<cantarget targetscheme="npc_LaneCreeps_deadalive" ignoreinvulnerable="true" />
+			<else>
+				<cantarget targetscheme="npc_nonboss_neutrals_deadalive" ignoreinvulnerable="true" />
+				<else>
+					<setactivemodifierkey name="Dreamcatcher_Damaged" />
+				</else>
+			</else>
+		</compare>
+	</ondamaged>
+	
+	<onexpired>
+		<playeffect effect="/items/recipes/soultrap/effects/expire_sound.effect" source="target_entity"/>
+	</onexpired>
+	
+	<modifier key="Dreamcatcher_Damaged" modpriority="100"
+		incominghealmultiplier="0.2"
+		healthregenmultiplier="0.2"
+	>
+		<onframe>
+			<heal a="12" b="frametime" op="mult" />
+		</onframe>
+		
+		<ondamaged />
+	</modifier>
+</state>

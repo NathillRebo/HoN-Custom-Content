@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_PostHaste_Modifier"
+
+	ishidden="true"
+	effecttype=""
+	impactinterval="3750"
+	modifierkey="gold_tp,silver_tp,goldenred_tp,8bit2_tp,con6_1_tp,con6_2_tp,con6_3_tp,con6_4_tp,con6_5_tp,songkran_tp,wc2018_tp,con7_1_tp,con7_2_tp,con7_3_tp,con7_4_tp,con7_5_tp,punk_tp,con8_1_tp,con8_2_tp,con8_3_tp,con8_4_tp,con8_5_tp,con9_1_tp,con9_2_tp,con9_3_tp,con9_4_tp,con9_5_tp,miku_tp"
+>
+	<onimpact>
+		<expire />
+	</onimpact>
+</state>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Silverlight"
+
+	icon="icon.tga"
+	
+	cost="850"
+	components="Item_Custom_AncientSword Item_Warpcleft"
+
+	actiontype="passive"
+	
+	damage="15"
+	attackspeed=".55"
+	magicarmor="8"
+>
+	<modifier key="custom_silverlight" modpriority="75" exclusive="true">
+		<onattack effectdescription="true">
+			<cantarget targetscheme="enemy_units">
+				<damage effecttype="Magic" amount="30"/>
+			</cantarget>
+		</onattack>
+	</modifier>
+</item>

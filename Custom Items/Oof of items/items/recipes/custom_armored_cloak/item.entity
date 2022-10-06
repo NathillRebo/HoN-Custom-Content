@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_ArmoredCloak"
+
+	icon="icon.tga"
+	
+	cost="225"
+	components="Item_MinorTotem Item_GuardianRing Item_MysticVestments"
+
+	actiontype="passive"
+	
+	armor="3"
+	strength="2"
+	agility="2"
+	intelligence="2"
+	magicarmor="6"
+>
+</item>

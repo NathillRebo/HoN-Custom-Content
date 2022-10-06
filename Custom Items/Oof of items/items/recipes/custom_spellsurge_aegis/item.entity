@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SpellsurgeAegis"
+
+	icon="icon.tga"
+	
+	cost="1250"
+	components="Item_Custom_WardedShield Item_BrainOfMaliken Item_Custom_TemporalBeads"
+
+	actiontype="passive"
+	
+	magicarmor="8"
+	strength="5"
+	maxmana="250"
+	
+	deflectionchance="0.50"
+	deflection="32"
+	
+	modifierkey="alt_IronBuckler"
+>
+	<onframe />
+	
+	<modifier key="buckler_melee" condition="melee" modpriority="100"
+		deflection="32"
+	>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="100"
+		deflection="16"
+	>
+	</modifier>
+	
+	<modifier key="ability_cooldown_reduction" modpriority="10" exclusive="true"
+		reducedabilitycooldowns="0.15"
+	>
+	</modifier>
+	
+	<onattackedpreimpact priority="0" propagatetoillusions="false" >
+		<combatsupertype supertype="spell">
+			<pushability source="this_owner_entity" slot="3" />
+			<reducecooldown entity="stack_entity" duration="2108" />
+		</combatsupertype>
+	</onattackedpreimpact>
+</item>

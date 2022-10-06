@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_RunicShield"
+	
+	icon="icon.tga"
+	
+	effecttype="StatusDebuff"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="0.85" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</state>

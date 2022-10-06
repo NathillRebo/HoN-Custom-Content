@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dreamcatcher_Enemy"
+	
+	icon="icon.tga"
+	passiveeffect="/items/recipes/soultrap/effects/damage.effect"
+	
+	incominghealmultiplier="-0.75"
+	deniable="true"
+	
+	allowtransfer="true"
+	effecttype="StatusDebuff"
+>
+	<onframe>
+		<damage effecttype="Magic DOT" target="this_owner_entity" amount="30" b="frametime" op="mult" />
+	</onframe>
+	
+	<onexpired>
+		<playeffect effect="/items/recipes/soultrap/effects/expire_sound.effect" source="target_entity"/>
+	</onexpired>
+</state>

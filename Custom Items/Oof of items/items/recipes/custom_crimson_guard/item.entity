@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_CrimsonGuard"
+
+	icon="icon.tga"
+	
+	cost="1100"
+	components="Item_Halberd Item_Warhammer Item_HungrySpirit"
+
+	actiontype="passive"
+	
+	damage="30"
+>
+	<modifier key="attack_lifesteal" modpriority="15" exclusive="true"
+		lifesteal="0.15"
+	>
+		<onattackimpact>
+			<cantarget targetscheme="enemy_units">
+				<compare a="combat_attackability" b="0" op="eq">
+					<playeffect effect="/shared/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+				</compare>
+			</cantarget>
+		</onattackimpact>
+	
+		<onattackpredamage>
+			<cantarget targetscheme="enemy_units">
+				<compare a="bounce_count" b="2" op="lt">
+					<compare a="combat_attackability" b="0" op="eq" />
+					<else>
+						<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.15" op="add" />
+					</else>
+				</compare>
+			</cantarget>
+			<else>
+				<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.15" op="add" />
+			</else>
+		</onattackpredamage>
+	</modifier>
+	<modifier key="savagemace" modpriority="75" exclusive="true">
+		<onattackpreimpact propagatetoillusions="true">
+			<chance threshold="0.30">
+				<targettype type="building" />
+				<else>
+					<issplitprojectile entity="inflictor_entity" />
+					<else>
+						<!-- Bonus Physical Damage -->
+						<setaccumulator value="75" />
+						<targettype type="illusion" source="this_owner_entity" target="this_owner_entity">
+							<!-- Works on illusions for 33% of strength -->
+							<changeaccumulator b="0.33" op="mult" />
+						</targettype>
+
+						<cantarget targetscheme="ally_units">
+							<damage effecttype="Physical" amount="0" b="accumulator" op="add" nonlethal="true" />
+						</cantarget>
+						<else>
+							<damage effecttype="Physical" amount="0" b="accumulator" op="add" />
+						</else>
+						<popup name="bonus_damage" a="75" source="target_entity" />
+					</else>
+				</else>
+			</chance>
+		</onattackpreimpact>
+	</modifier>
+	<onframe>
+		<setvar0 a="target_health" b="target_maxhealth" op="div" />
+		<compare a="var0" b="0.3" op="lt">
+			<applystate name="State_Custom_Crimsonguard" target="source_entity" duration="1000" />
+		</compare>
+	</onframe>
+</item>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_ShogunsKusari"
+
+	icon="icon.tga"
+	passiveeffect="aura.effect"
+	
+	effecttype="StatusBuff"
+>
+	<modifier key="manaregen_aura" modpriority="80" exclusive="true"
+		manaregen="1"
+	/>
+	
+	<modifier key="armor_aura" modpriority="1.25" exclusive="true"
+		armor="1.25"
+	/>
+	
+	<onframe>				
+		<!-- var1 is the Cooldown Reduction Rate converted to a pure time value -->
+		<!-- var1 = frametime * Cooldown_Reduction_Rate(x) * 1000 - 1000 -->		
+		<setvar0 a="1.08" /> <!-- Cooldown_Reduction_Rate(x) -->
+		
+		<setvar1 a="var0" b="1000" op="mult" />
+		<setvar1 a="var1" b="1000" op="sub" />
+		<setvar1 a="frametime" b="var1" op="mult" />
+		
+		<pushability source="target_entity" slot="0" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="target_entity" slot="1" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="target_entity" slot="2" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="target_entity" slot="3" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+	</onframe>
+</state>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_ThousandFoldBlade"
+
+	icon="icon.tga"
+	
+	cost="150"
+	components="Item_DuckBoots Item_Punchdagger Item_WindWhistle"
+
+	actiontype="passive"
+	
+	damage="10"
+	agility="4"
+	movespeed="20"
+>
+</item>

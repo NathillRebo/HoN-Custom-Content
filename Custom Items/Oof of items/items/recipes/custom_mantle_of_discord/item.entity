@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_MantleOfDiscord"
+	
+	statuseffecttooltip="State_Item3G"
+	icon="icon.tga"
+	
+	cost="1550"
+	components="Item_Stealth Item_Custom_ArmoredCloak"
+	
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="60000"
+	cooldowntype="stealth"
+	manacost="50"
+	casteffect="cast.effect"
+	targetradius="400"
+	hoverareacastrange="400"
+	
+	damage="35"
+	attackspeed="0.15"
+	
+	armor="4"
+	strength="3"
+	agility="3"
+	intelligence="3"
+	magicarmor="7"
+	
+	modifierkey="alt_Custom_MantleOfDiscord"
+	responsetype="Item_NonInterrupting"
+>
+	<onimpact>
+		<areaofeffect
+			radius="400"
+			targetselection="all"
+			targetscheme="ally_units"
+			effecttype="Magic"
+			ignoreinvulnerable="true"
+		>
+			<applystate name="State_Item3G" duration="11000" />
+			
+			<!-- Manual cooldown trigger for Genjuro -->
+			<foreachitem source="source_entity">
+				<entitytype type="Item_Sasuke" source="inflictor_entity" target="target_entity">
+					<startcooldown entity="target_entity" />
+				</entitytype>			
+			</foreachitem>
+		</areaofeffect>
+	</onimpact>
+</item>

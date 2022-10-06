@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_GemOfLightning"
+
+	radius="300"
+	
+	impactdelay="200"
+	maximpactsperinterval="1"
+	maximpactspertarget="1"
+	repeattargetimpacts="false"
+	targetscheme="visible_enemy_units"
+	targetselection="closest"
+	effecttype="Magic"
+	persist="true"
+	
+	impacteffect="/shared/effects/items/chain_lightning/chain_impact.effect"
+	bridgeeffect="/shared/effects/items/chain_lightning/chain_lightning_engine.effect"
+	linkeffect="/shared/effects/items/chain_lightning/chain_lightning_link.effect"
+>
+	<onimpact>
+		<compare a="param" b="1" op="eq">
+			<!-- Works on illusions for 33% of strength -->
+			<damage effecttype="Magic" amount="20"/>
+			<applystate name="State_GemOfLightningSlow" duration="267" pushentity="true" />
+		</compare>
+		<else>
+			<damage effecttype="Magic" amount="60"/>
+			<applystate name="State_GemOfLightningSlow" duration="800" pushentity="true" />
+		</else>
+		<chain count="2"/>
+	</onimpact>
+</affector>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_LerneanCry"
+	passiveeffect=""
+	icon="icon.tga"
+	propagatetoillusions="true"
+	
+	maxcharges="1"
+	
+>
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+	
+	<onrefresh />
+	
+	<onattack>
+		<cantarget targetscheme="enemy_units">
+			<addcritical chance="1" multiplier="1.55" />
+			<expire />
+		</cantarget>
+	</onattack>
+	
+	<onframe />
+</state>

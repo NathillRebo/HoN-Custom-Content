@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Sagestone"
+
+	icon="icon.tga"
+	
+	cost="455"
+	components="Item_Manatube Item_Intelligence5 Item_TrinketOfRestoration"
+
+	actiontype="passive"
+	
+	strength="4"
+	agility="4"
+	intelligence="8"
+	healthregen="2.5"
+	manaregen="2.5"
+	totalhealmultiplier="0.05"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.01" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</item>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_EaglesongStaff"
+
+	icon="icon.tga"
+	statuseffecttooltip="State_Stormspirit"
+	statuseffecttooltip2="State_Stormspirit_Perplex"
+	
+	cost="1450"
+	components="Item_Intelligence6 Item_Custom_TemporalBeads"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_and_willing_heroes"
+	casteffecttype="Magic"
+	range="600"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="30000"
+	cooldowntype="intelligence6"
+	manacost="75"
+	
+	intelligence="25"
+	manaregen="2.5"
+	movespeed="30"
+
+	doubleactivate="true"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	modifierkey="Prophet_Alt4_Birds"
+	modifierkey2="alt_StormSpirit"
+
+	targetpriorities="all_heroes"
+>
+	<modifier key="ability_cooldown_reduction" modpriority="10" exclusive="true"
+		reducedabilitycooldowns="0.15"
+	>
+	</modifier>
+<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.03" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onactivatestart>
+		<setproxy target="target_entity" />
+	</onactivatestart>
+	
+	<activatecost>
+		<hasmodifier name="Stormspirit_Cooldown" entity="this_proxy_entity">
+			<invalidate />
+		</hasmodifier>
+	</activatecost>
+	
+	<onimpact>
+		<unbind />
+		<spawnunit name="Gadget_Stormspirit" target="target_position" pushentity="true" />
+		<bind target="target_entity" entity="stack_entity" attachto="true" attachtoboneindex="1" vertical="true" verticaloverride="0" />
+		<applystate name="State_Stormspirit" duration="2500" proxy="stack_entity" />
+		<breakchannel entity="target_entity" />
+	</onimpact>
+	
+	<modifier key="Empath_Inside" modpriority="90">
+		<ondoubleactivate>
+			<areaofeffect
+				targetscheme="other_ally_heroes"
+				effecttype="Magic"
+				targetselection="closest"
+				radius="30"
+				maxtotalimpacts="1"
+			>
+				<useitem source="this_entity" target="target_entity" />
+			</areaofeffect>
+		</ondoubleactivate>
+	</modifier>
+</item>

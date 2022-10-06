@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="0">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.1">
+			
+		<!-- light columns -->
+				<billboard
+					expirelife="1000"
+					material="/shared/effects/materials/flare_rainbow.material"
+					startheight="3000"
+					midheight="3000"
+					endheight="100"
+					midheightpos=".75"
+					width="40"
+					lockup="1"
+					startcolor=".3"
+					endcolor="0 0 0"
+				/>
+				<billboard
+					expirelife="1000"
+					material="/shared/effects/materials/flare_rainbow.material"
+					startheight="3000"
+					midheight="3000"
+					endheight="100"
+					midheightpos=".75"
+					width="40"
+					lockup="1"
+					startcolor=".4"
+					endcolor="0 0 0"
+				/>
+				
+				<billboard
+					life="1000"
+					loop="1"
+					material="/shared/effects/materials/flare_rainbow.material"
+					height="3000"
+					startsize="40"
+					endsize="100"
+					lockup="1"
+					startcolor="0"
+					midcolor=".4"
+					endcolor="0 0 0"
+				/>
+				
+		
+		<!-- 	paint oil drop -->
+			<template name="color">
+				<!-- main column -->
+				<simpleemitter
+					delay="-200"
+					position="0 0 800"
+					minparticlelife="750"
+					maxparticlelife="1500"
+					spawnrate="20"
+					material="/shared/effects/materials/bubble_add2_white.material"
+					speed="10"
+					
+					drag="0.01"
+					gravity="20"
+					offsetsphere="16 16 300"
+					depthbias="-10"
+				>
+					<particle
+						turn="0"
+						minheightdistort=".25" maxheightdistort=".5"
+						minscale="1.5"
+						maxscale="3"
+						color="{color}"
+						startalpha="0" midalpha="1" endalpha="0"  midalphapos=".35"
+						lockup="true"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					delay="0"
+					position="0 0 300"
+					minparticlelife="750"
+					maxparticlelife="1500"
+					spawnrate="20"
+					material="/shared/effects/materials/bubble_add2_white.material"
+					speed="10"
+					
+					drag="0.01"
+					gravity="20"
+					offsetsphere="16 16 300"
+					depthbias="-10"
+				>
+					<particle
+						turn="0"
+						minheightdistort=".25" maxheightdistort=".5"
+						minscale="1.5"
+						maxscale="3"
+						color="{color}"
+						startalpha="0" midalpha="1" endalpha="0"  midalphapos=".35"
+						lockup="true"
+					/>
+				</simpleemitter>
+				
+			<!-- splash oil from column-->
+				<simpleemitter
+					minparticlelife="400"
+					maxparticlelife="600"
+					spawnrate="30"
+					material="/shared/effects/materials/blood_drop_white2.material"
+					speed="0"
+					gravity="30"
+					offsetsphere="30 30 500"
+				>
+					<particle
+						turn="false"
+						minheight="20" maxheight="50"
+						minwidth="10" maxwidth="20"
+						minscale="0.15"
+						maxscale="0.5"
+						color="{color}"
+						startalpha="0" midalpha="1" endalpha="0"  midalphapos=".65"
+						lockup="true"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					offset="0 0 500"
+					spawnrate="5"
+					gravity="20"
+					speed="60"
+					drag="0.05"
+					depthbias="-20"
+					particlelife="500"
+					material="/shared/effects/materials/water_spray_add.material"
+					offsetsphere="20 20 500"
+					direction="0 0 1"
+				>
+					<particle
+						minangle="0" maxangle="360"
+						minanglespeed="-50" maxanglespeed="50"
+						startcolor="{color}" midcolor="{color}" endcolor="0" midcolorpos=".25"
+						minstartsize="1" maxstartsize="10" minendsize="20" maxendsize="30" scale="1.9"
+						startalpha="1" midalpha="1" endalpha="0" midlpahpos=".9"
+						startframe="0" endframe="1" midframepos=".5"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					offset="0 0 500"
+					spawnrate="5"
+					gravity="20"
+					speed="60"
+					drag="0.05"
+					depthbias="-20"
+					particlelife="500"
+					material="/shared/effects/materials/water_splash_add.material"
+					offsetsphere="20 20 500"
+					direction="0 0 1"
+				>
+					<particle
+						minangle="0" maxangle="60"
+						minanglespeed="-50" maxanglespeed="50"
+						startcolor="{color}" midcolor="{color}" endcolor="0" midcolorpos=".25"
+						minstartsize="1" maxstartsize="10" minendsize="20" maxendsize="30" scale="1.0"
+						startalpha="1" midalpha="1" endalpha="0" midlpahpos=".9"
+						startframe="0" endframe="1" midframepos=".5"
+					/>
+				</simpleemitter>
+			
+				<simpleemitter
+					offset="0 0 500"
+					spawnrate="5"
+					gravity="20"
+					speed="60"
+					drag="0.05"
+					depthbias="-20"
+					particlelife="500"
+					material="/shared/effects/materials/splatter_add.material"
+					offsetsphere="20 20 500"
+					direction="0 0 1"
+				>
+					<particle
+						minangle="0" maxangle="60"
+						minanglespeed="-50" maxanglespeed="50"
+						startcolor="{color}" midcolor="{color}" endcolor="0" midcolorpos=".25"
+						minstartsize="1" maxstartsize="10" minendsize="20" maxendsize="30" scale=".75"
+						startalpha="1" midalpha=".5" endalpha="0" midlpahpos=".9"
+						startframe=".5" endframe="0" midframepos=".5"
+						maxheightdistort=".1" maxwidthdistort=".1"
+					/>
+				</simpleemitter>
+				
+			<!-- paint oil splash  -->	
+				<simpleemitter
+					depthbias="10"
+					minparticlelife="550"				
+					maxparticlelife="1000"
+					startspawnrate="10"
+					endspawnrate="0"
+					minspeed="70"
+					maxspeed="750"
+					gravity="65"
+					direction="0 0 1"
+					minangle="0"
+					maxangle="15"
+					drag="0.01"
+					material="/shared/effects/materials/beer_splash.material"
+					offsetsphere="20 20 5"
+					position="0 0 -40"
+					
+				>
+					<particle 
+						minangle="0"
+						maxangle="160"
+						minanglespeed="-10"
+						maxanglespeed="10"
+						startsize="2"
+						endsize="125"
+						color="{color}"			
+						startalpha="1"
+						midalpha="1"
+						endalpha="0"
+						minscale=".75"
+						maxscale="1"
+					/>
+				</simpleemitter>
+			
+				
+			<!-- on ground print -->	
+				<simpleemitter
+					delay="300"
+					spawnrate="3"
+					minparticlelife="300" maxparticlelife="700"
+					speed="0"
+					gravity="0"
+					direction="0 0 0"			
+					particledirectionalspace="local"
+					offsetsphere="80 80 0"
+					position="{position}"	
+				>
+					<particle> 
+						<groundsprite
+							minlife="700"
+							maxlife="1000"
+							material="/shared/effects/materials/splatter_blend.material"
+							scale=".3"
+							minyaw="-360"	
+							maxyaw="360"
+							minstartsize="30" maxstartsize="50"
+							minendsize="90" maxendsize="150"
+							life="2400"
+							position="0 0 0"
+							startcolor="{color}" midcolor="{color}" endcolor="0" midcolorpos=".25"
+							startalpha="0" midalpha="1" endalpha="0" midalphapos=".25"
+						/>						
+						<groundsprite
+							minlife="700"
+							maxlife="1000"
+							minyaw="-360"	
+							maxyaw="360"
+							material="/shared/effects/materials/goop_reveal_ground.material"
+							position="0 0 0"
+							color="{color}"
+							startalpha="1"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".35"
+							minstartscale=".1" maxstartscale=".3"
+							minendscale=".6" maxendscale="1"
+						/>	
+						<groundsprite
+							minlife="700"
+							maxlife="1000"
+							material="/shared/effects/materials/splatter_blend.material"
+							minscale=".2"
+							maxscale=".35"
+							minyaw="-360"
+							maxyaw="360"
+							minsize="40"
+							maxsize="60"
+							position="0 0 0"
+							color="{color}"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".25"
+						/>
+					</particle>
+				</simpleemitter>
+			
+			</template>
+			
+			<instance name="color" color="0 .8 .8" />
+			<instance name="color" color="0 .5 .8" />
+			<instance name="color" color="0 .8 0" />
+			<instance name="color" color=".8 .8 0" />
+			<instance name="color" color="1 1 .5" />
+			<instance name="color" color="1 .8 0" />
+			<instance name="color" color=".8 .5 0" />
+			<instance name="color" color="0 .5 .8" />
+			<instance name="color" color=".75 0 1" />
+	
+			
+		<!-- on ground sectors -->
+			<simpleemitter
+				spawnrate="2"
+				expirelife="200"
+				startparticlescale="1"
+				endparticlescale="0"
+				particlelife="1000"
+			>
+				<particle>
+					<groundsprite			
+						material="/shared/effects/materials/manaeye_graffiti.material"
+						startsize="20"
+						endsize="100"
+						startcolor="1"
+						endcolor="0 0 0"
+						life="1000"
+						yawspeed="-40"			
+					/>
+				</particle>
+			</simpleemitter>
+		
+			
+		<!-- star drop -->	
+			<simpleemitter
+				delay="300"
+				life="3000"
+				expirelife="10"
+				startparticlescale="1"
+				endparticlescale="0"
+				count="1"
+				spawnrate="222"
+				particlelife="1300"
+				direction="0 0 -1"
+				speed="2000"
+				minangle="0"
+				maxangle="0" 
+				position="0 0 600"
+			>
+				<particle>
+
+					<billboard
+						spawnrate="50"
+						particlelife="400"
+						life="4000"
+						material="/shared/effects/materials/flare2.material"
+						size="200"
+						midheightpos=".75"
+						width="40"
+						lockup="1"
+						color=".075 .06 .075"
+					/>
+					
+					<billboard
+						spawnrate="50"
+						particlelife="400"
+						life="4000"
+						material="/shared/effects/materials/blink.material"
+						size="150"
+						lockup="1"
+						color=".25 .3 .4"
+					/>
+
+					<billboard
+						spawnrate="50"
+						particlelife="400"
+						life="200"
+						material="/shared/effects/materials/flare2.material"
+						startheight="0"
+						endheight="500"
+						width="10"
+						roll="90"
+						midheightpos=".75"
+						lockup="1"
+						color=".25 .35 .75"
+					/>
+
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+	
+	</definitions>
+	
+	
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

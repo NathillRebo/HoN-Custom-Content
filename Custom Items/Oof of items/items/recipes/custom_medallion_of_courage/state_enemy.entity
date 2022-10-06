@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+    name="State_Custom_MedallionOfThePretender_Enemy"
+
+    icon="icon.tga"
+    passiveeffect="/items/recipes/lex_talionis/effects/state.effect"
+
+    effecttype="StatusDebuff"
+    allowtransfer="true"
+
+    armor="-5"
+	damage="-30"
+>
+	<modifier key="fadeAlt7LexTalionis"
+		passiveeffect="/heroes/fade/alt7/item_fx/lex_talionis/state.effect"
+	/>
+</state>

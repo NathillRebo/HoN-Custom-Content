@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Frostspire"
+
+	icon="icon.tga"
+	
+	cost="850"
+	components="Item_Beastheart Item_NeophytesBook Item_ApprenticesRobe"
+	
+	maxhealth="300,375"
+	intelligence="20,25"
+	actiontype="passive"
+	
+	maxcharges="2"
+	maxlevel="2"
+>
+	<oncreate>
+		<addcharges count="1" />
+	</oncreate>
+	
+	<onupgrade>
+		<addcharges count="1" />
+	</onupgrade>
+
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.03" op="mult" />
+			<applystate name="State_FrostspireSlow" duration="1600" pushentity="true" />
+		</else>
+	</onattackingdamageevent>
+</item>

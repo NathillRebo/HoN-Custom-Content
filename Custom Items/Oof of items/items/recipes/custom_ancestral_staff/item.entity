@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_AncestralStaff"
+
+	icon="icon.tga"
+	
+	cost="1555"
+	components="Item_Custom_Sagestone Item_HungrySpirit Item_Steamstaff"
+
+	actiontype="passive"
+	
+	strength="5"
+	agility="5"
+	intelligence="10"
+	healthregen="3"
+	manaregen="3"
+	totalhealmultiplier="0.1"
+	damage="15"
+	attackspeed=".15"
+>
+	<modifier key="attack_lifesteal" modpriority="15" exclusive="true">
+		<onattackingdamageevent>
+			<evaluate a="0.15" b="damage_attempted" op="mult" />
+			<heal a="result" target="source_entity"/>
+			<playeffect effect="effects/impact_heal.effect" />
+			<areaofeffect
+				radius="325"
+				targetselection="all"
+				targetscheme="ally_units"
+				ignoreinvulnerable="true"
+				ignore="source_entity"
+			>
+				<heal a="result" target="target_entity"/>
+				<playeffect effect="effects/impact_heal.effect" />
+			</areaofeffect>
+		</onattackingdamageevent>
+	</modifier>
+</item>

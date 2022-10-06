@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_FrostwolfInsignia"
+
+	icon="icon.tga"
+	
+	cost="875"
+	components="Item_Custom_EmeraldTalisman Item_PerpetualCogwheel"
+
+	actiontype="passive"
+	
+	healthregen="3"
+	magicarmor="8"
+	maxhealth="250"
+	manaregen="4"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<cantarget targetscheme="enemy_units" effecttype="Magic">
+				<damageeffecttype effecttype="Returned" />
+				<else>
+					<damageeffecttype effecttype="DOT" />
+					<else>			
+						<addcharges count="1" />
+						<compare a="charges" b="5" op="ge">
+							<setvar0 a="source_maxhealth" b="0.06" op="mult" />
+							<heal a="var0" target="source_entity"/>
+							<setcharges a="0" />
+						</compare>
+					</else>
+				</else>
+			</cantarget>
+		</else>
+	</onattackingdamageevent>
+</item>

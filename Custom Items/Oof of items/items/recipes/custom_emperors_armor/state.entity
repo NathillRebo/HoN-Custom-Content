@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_EmperorsArmor"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+
+	healthregen="5"
+	attackrange="100"
+	attackspeed=".25"
+>
+</state>

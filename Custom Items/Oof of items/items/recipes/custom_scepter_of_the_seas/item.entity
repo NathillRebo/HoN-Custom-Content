@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_ScepterOfTheSeas"
+
+	icon="icon.tga"
+	
+	cost="1375"
+	components="Item_Custom_TribalMask Item_Custom_CloakOfTheWanderer Item_Custom_TemporalBeads"
+
+	actiontype="passive"
+	
+	maxhealth="250"
+	maxmana="150"
+	strength="3"
+	agility="11"
+	intelligence="15"
+>
+	<modifier key="ability_cooldown_reduction" modpriority="10" exclusive="true"
+		reducedabilitycooldowns="0.15"
+	>
+	</modifier>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.08" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onabilityimpact>
+			<applystate name="State_Custom_ScepterOfTheSeas" target="source_entity" duration="2789" />
+	</onabilityimpact>
+</item>

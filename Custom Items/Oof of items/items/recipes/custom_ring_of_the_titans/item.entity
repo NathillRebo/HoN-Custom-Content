@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_RingOfTheTitans"
+
+	icon="icon.tga"
+	
+	cost="900"
+	components="Item_Custom_ImperialHelmet Item_AcolytesStaff"
+
+	actiontype="passive"
+	
+	armor="4"
+	intelligence="35"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.1" op="mult" />
+			<damageeffecttype effecttype="Returned" />
+			<else>
+				<damageeffecttype effecttype="DOT" />
+				<else>			
+					<chance threshold="0.20">
+						<setvar0 a="damage_attempted" b="5" op="mult"/>
+						<applystate name="State_Stunned" duration="var0" />
+					</chance>
+				</else>
+			</else>
+		</else>
+	</onattackingdamageevent>
+</item>

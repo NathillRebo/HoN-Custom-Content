@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_HeavyHammer"
+
+	icon="icon.tga"
+	
+	cost="400"
+	components="Item_CrushingClaws Item_Punchdagger Item_BloodRuby"
+
+	actiontype="passive"
+	
+	strength="4"
+	damage="12"
+	maxhealth="200"
+>
+</item>

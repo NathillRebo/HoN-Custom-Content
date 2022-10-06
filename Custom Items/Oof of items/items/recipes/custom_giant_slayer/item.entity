@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_GiantSlayer"
+
+	icon="icon.tga"
+	
+	cost="800"
+	components="Item_Custom_LightBlade Item_Warpcleft"
+
+	actiontype="passive"
+	
+	attackspeed=".80"
+	damage="15"
+	agility="5"
+>
+	<modifier key="custom_giantslayer" modpriority="38" exclusive="true">
+		<onattack effectdescription="true">
+			<cantarget targetscheme="enemy_units">
+				<setvar0 a="target_maxhealth" b="0.015" op="mult" />
+				<damage effecttype="Physical" amount="1" b="var0" op="mult"/>
+			</cantarget>
+		</onattack>
+	</modifier>
+</item>

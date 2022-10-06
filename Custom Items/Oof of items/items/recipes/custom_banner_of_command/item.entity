@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_BannerOfCommand"
+	
+	icon="icon.tga"
+	
+	cost="1000"
+	components="Item_Custom_ImperialHelmet Item_Custom_AmuletOfFortitude Item_AlacrityBand"
+	
+	actiontype="passive"
+	
+	intelligence="5"
+	armor="4"
+	healthregen="7"
+	attackspeed="0.4"
+	
+	responsetype="Item_NonInterrupting"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.07" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<aura name="Custom_BannerOfCommand_Aura" state="State_Custom_BannerOfCommand" radius="1000" targetscheme="npc_ally_creeps" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+</item>

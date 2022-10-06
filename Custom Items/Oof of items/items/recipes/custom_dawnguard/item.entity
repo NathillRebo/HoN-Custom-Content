@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Dawnguard"
+
+	icon="icon.tga"
+	
+	cost="1050"
+	components="Item_MagicArmor2 Item_Platemail"
+	
+	actiontype="passive"
+	cooldowntime="300"
+	cooldowntype="dawnguard"
+	
+	healthregen="12"
+	magicarmor="12"
+	stunneddurationmultiplier="-0.15"
+	debuffdurationmultiplier="-0.15"
+	armor="12"
+>
+	<onattackeddamageevent>
+		<isready>
+			<areaofeffect
+				radius="560"
+				targetselection="all"
+				targetscheme="ally_units"
+				ignoreinvulnerable="true"
+			>
+				<heal a="7" target="target_entity"/>
+			</areaofeffect>
+			<startcooldown />
+		</isready>
+	</onattackeddamageevent>
+</item>

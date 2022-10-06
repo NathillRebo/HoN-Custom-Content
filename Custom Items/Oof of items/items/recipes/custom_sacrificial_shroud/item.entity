@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SacrificialShroud"
+
+	icon="icon.tga"
+	
+	components="Item_Custom_VampiricShroud Item_BloodChalice Item_HelmOfTheVictim"
+	cost="1450"
+	
+	healthregen="7"
+	manaregen="4"
+	strength="4"
+	intelligence="4"
+	armor="6"
+	
+	actiontype="target_self"
+	casteffecttype="SuperiorMagic"
+	
+	casttime="0"
+	castactiontime="0"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	cooldowntime="25000"
+	cooldowntype="bloodchalice"
+
+	manacost="0"
+	maxcharges="1"
+>
+	<onframe />
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.06" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<modifier key="magic_lifesteal" modpriority="15" exclusive="true">
+		<ondamage>
+			<damageeffecttype effecttype="Magic SuperiorMagic">
+				<cantarget targetscheme="enemy_units">
+					<targettype type="hero">
+						<setvar0 a="damage_applied" b="0.15" op="mult" />
+						<heal source="this_owner_entity" target="this_owner_entity" a="var0" />
+					</targettype>
+					<else>
+						<setvar0 a="damage_applied" b="0.05" op="mult" />
+						<heal source="this_owner_entity" target="this_owner_entity" a="var0" />
+					</else>
+				</cantarget>
+			</damageeffecttype>
+		</ondamage>
+	</modifier>
+	<aura name="SacrificialShroud_Collector" state="State_SacrificialShroud_Collector" radius="1000" targetscheme="enemy_heroes" ignoreinvulnerable="true" notooltip="true" stack="true" proxy="this_entity" />
+
+	<onready>
+		<setactivemodifierkey name="" />
+	</onready>
+
+	<onimpact>
+		<playeffect effect="effects/impact.effect" source="source_entity" target="" />
+		<setvar0 a="-0.075" b="source_maxhealth" op="mult"/>
+		
+		<compare a="charges" b="1" op="eq">
+			<removecharge />
+		</compare>
+		<else>
+			<applystate name="State_SacrificialShroud" target="source_entity" duration="15000" />
+			<changehealth a="var0" />
+			<damage effecttype="" amount="0.000001" nonlethal="true" />
+		</else>
+		
+		<setactivemodifierkey name="sacrificialshroud_cooldown" />
+		<setvar1 a="var0" b="-0.5714" op="mult"/>
+		<pushability source="this_owner_entity" slot="0" />
+		<reducecooldown entity="stack_entity" duration="5938" />
+		<pushability source="this_owner_entity" slot="1" />
+		<reducecooldown entity="stack_entity" duration="5938" />
+		<pushability source="this_owner_entity" slot="2" />
+		<reducecooldown entity="stack_entity" duration="5938" />
+		<pushability source="this_owner_entity" slot="3" />
+		<reducecooldown entity="stack_entity" duration="5938" />
+		<givemana target="source_entity" amount="var1" />
+	</onimpact>
+	
+	<modifier key="sacrificialshroud_cooldown" modpriority="101">
+		<aura name="SacrificialShroud_Collector" state="State_SacrificialShroud_Collector" radius="1000" targetscheme="nothing" ignoreinvulnerable="true" notooltip="true" stack="true" proxy="this_entity"  />
+	</modifier>
+	
+	<modifier key="sacrificialshroud_charged" modpriority="100"
+		cooldowntime="3000"
+	>
+	</modifier>
+</item>

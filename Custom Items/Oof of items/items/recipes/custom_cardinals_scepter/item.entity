@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_CardinalsStaff"
+
+	icon="icon.tga"
+	
+	cost="750"
+	components="Item_LuminousPrism Item_Astrolabe"
+
+	actiontype="self_position"
+	targetscheme="ally_units"
+	targetradius="600"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="45000"
+	cooldowntype="astrolabe"
+	casteffecttype="SuperiorMagic"
+	manacost="100"
+	casteffect="cast.effect"
+	
+	strength="8"
+	agility="4"
+	intelligence="23"
+	healthregen="2.5"
+	modifierkey="alt_Astrolabe"
+	responsetype="Item_NonInterrupting"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.03" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<aura state="State_Cardinal_Aura" radius="900" targetscheme="ally_units" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+
+	<onimpact >
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="ally_units"
+			effecttype="Astrolabe"
+			ignoreinvulnerable="true"
+		>
+			<cantarget targetscheme="no_Overhead_Visuals" ignoreinvulnerable="true" />
+			<else>
+				<applystate name="State_Cardinal_Active" duration="25000" />
+			</else>
+		</areaofeffect>
+		
+		<!-- Art -->
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</item>

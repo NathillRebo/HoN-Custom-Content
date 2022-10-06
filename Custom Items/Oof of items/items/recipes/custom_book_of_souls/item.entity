@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_BookOfSouls"
+
+	icon="icon.tga"
+	
+	cost="315"
+	components="Item_EtherJewel Item_MarkOfTheNovice Item_Custom_Spellbook"
+
+	actiontype="passive"
+	
+	intelligence="4"
+	maxmana="125"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.05" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</item>

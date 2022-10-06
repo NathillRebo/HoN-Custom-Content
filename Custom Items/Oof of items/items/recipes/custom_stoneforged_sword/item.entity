@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_StoneforgedSword"
+
+	icon="icon.tga"
+	
+	cost="1300"
+	components="Item_Custom_ThousandFoldBlade Item_Custom_HoodOfCunning Item_Fleetfeet"
+
+	actiontype="passive"
+	cooldowntype="stoneforgedword"
+	
+	damage="15"
+	agility="23"
+	intelligence="8"
+	movespeed="25"
+	armor="10"
+	
+	cooldowntime="10000"
+>
+	<onattackpreimpact propagatetoillusions="true">
+		<isready>
+			<startcooldown />
+			<damage effecttype="Physical" amount="5" b="source_armor" op="mult" />
+		</isready>
+	</onattackpreimpact>
+</item>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="Custom_Negatron_Aura"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	effecttype="StatusBuff"
+>
+	<modifier key="manaregen_aura" modpriority="100" exclusive="true"
+		manaregen="1.25"
+	/>
+	
+	<modifier key="armor_aura" modpriority="1" exclusive="true"
+		armor="1.25"
+	/>
+</state>

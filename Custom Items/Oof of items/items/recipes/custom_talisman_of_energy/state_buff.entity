@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_TalismanOfEnergy_Buff"
+	
+	passiveeffect="state.effect"
+	icon="icon.tga"
+	
+	attackspeed="0.3"
+	movespeed="70"
+	stunneddurationmultiplier="-0.2"
+	debuffdurationmultiplier="-0.2"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+</state>

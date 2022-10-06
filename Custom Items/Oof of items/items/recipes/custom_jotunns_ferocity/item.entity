@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_JotunnsFerocity"
+
+	icon="icon.tga"
+	
+	cost="1600"
+	components="Item_Custom_HeavyMace Item_AxeOfTheMalphai"
+
+	actiontype="passive"
+	
+	damage="15"
+	strength="40"
+	agility="3"
+	intelligence="3"
+	strengthpercharge="1"
+	maxhealthpercharge="10"
+	maxcharges="15"
+>
+	<onkill propagatetoillusions="false" >
+		<targettype type="hero">
+			<targettype type="enemy">
+				<targettype type="illusion" />
+				<else>               
+					<targettype type="mimic" />
+					<else> 
+						<targettype type="self" />
+						<else>
+							<targettype type="heropet" />
+							<else>
+								<addcharges count="1" />
+							</else>
+						</else>
+					</else>
+				</else>
+			</targettype>
+		</targettype>
+	</onkill>
+</item>

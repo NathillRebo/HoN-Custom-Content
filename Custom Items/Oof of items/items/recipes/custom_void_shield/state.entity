@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_VoidShield"
+	
+	icon="icon.tga"
+	
+	armor="-3"
+	
+	effecttype="StatusDebuff"
+>
+</state>

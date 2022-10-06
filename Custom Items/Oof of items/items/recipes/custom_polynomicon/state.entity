@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_Polynomicon"
+	passiveeffect=""
+	icon="icon.tga"
+	propagatetoillusions="true"
+	
+	maxcharges="1"
+	
+>
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+	
+	<onrefresh />
+	
+	<onattackpreimpact>
+		<cantarget targetscheme="enemy_units">
+			<damage effecttype="Magic" amount=".05" b="source_maxmana" op="mult"/>
+			<expire />
+		</cantarget>
+	</onattackpreimpact>
+	
+	<onframe />
+</state>

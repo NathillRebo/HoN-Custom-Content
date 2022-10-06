@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_MagesClover"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	healthregen="4.0"
+	manaregen="2.0"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+
+</state>

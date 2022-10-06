@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_EmberstoneBracers"
+
+	icon="icon.tga"
+	
+	cost="1135"
+	components="Item_Custom_CloakOfTheWanderer Item_Soulscream Item_Custom_TemporalBeads"
+
+	actiontype="target_self"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="30000"
+	cooldowntype="emberstonebracers"
+	manacost="0"
+	
+	strength="4"
+	agility="18"
+	intelligence="14"
+	
+	modifierkey="alt_EmberstoneBracers"
+	responsetype="Item_NonInterrupting"
+>
+	<modifier key="ability_cooldown_reduction" modpriority="10" exclusive="true"
+		reducedabilitycooldowns="0.15"
+	>
+	</modifier>
+
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.08" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<onimpact>
+		<applystate name="State_EmberstoneBracers" duration="3199" />
+	</onimpact>
+</item>

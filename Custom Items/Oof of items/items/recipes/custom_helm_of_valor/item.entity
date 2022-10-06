@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_HelmOfValor"
+
+	icon="icon.tga"
+	
+	cost="450"
+	components="Item_Ringmail Item_Fleetfeet Item_BlessedArmband"
+
+	actiontype="passive"
+	
+	agility="8"
+	strength="8"
+	armor="5"
+>
+</item>

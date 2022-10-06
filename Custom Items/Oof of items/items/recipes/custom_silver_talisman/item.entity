@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_EmeraldTalisman"
+
+	icon="icon.tga"
+	
+	cost="400"
+	components="Item_MysticVestments Item_BloodRuby Item_TrinketOfRestoration"
+
+	actiontype="passive"
+	
+	healthregen="2.5"
+	magicarmor="6"
+	maxhealth="200"
+>
+</item>

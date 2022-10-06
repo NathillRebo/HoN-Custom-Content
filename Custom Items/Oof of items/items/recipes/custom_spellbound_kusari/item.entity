@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SpellboundKusari"
+
+	icon="icon.tga"
+	
+	cost="225"
+	components="Item_Scarab Item_MysticVestments Item_MinorTotem"
+
+	actiontype="passive"
+	
+	magicarmor="6"
+	strength="2"
+	agility="2"
+	intelligence="2"
+	manaregen="1.25"
+>
+</item>

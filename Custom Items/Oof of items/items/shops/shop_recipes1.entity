@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Recipes1"
+
+	style="recipes"
+	
+	icon="shop_recipes1.tga"
+	order="1"
+	slot="5"
+>
+	<item name="Item_Soulscream" /> 440
+	<item name="Item_Intelligence5" /> 465
+	<item name="Item_Strength5" /> 490
+	<item name="Item_IronShield" /> 525
+	<item name="Item_ManaRegen3" /> 550
+	
+	<item name="Item_BloodChalice" /> 625
+	<item name="Item_Custom_SpikedShield" /> 750
+	<item name="Item_Soultrap" /> 800
+	<item name="Item_MysticPotpourri" /> 850
+	<item name="Item_ShieldOfTheFive" /> 925
+	<item name="Item_Custom_ArmoredCloak" /> 950
+	
+	<item name="Item_Custom_ChargedBow" /> 950
+	<item name="Item_Custom_HeavyMace" /> 950
+	<item name="Item_Custom_SpellFocus" /> 950
+	<item name="Item_Custom_ThousandFoldBlade" /> 1000
+	
+	<item name="Item_Custom_SpellboundKusari" /> 1100
+	<item name="Item_Custom_WardedShield" /> 1100
+	<item name="Item_Custom_ImperialHelmet" /> 1150
+	<item name="Item_Custom_GlowingEmerald" /> 1200
+	<item name="Item_LexTalionis" /> 1200
+	
+	<item name="Item_Custom_SteelMail" /> 1200
+	<item name="Item_Custom_Morningstar" /> 1300
+	<item name="Item_Custom_AncientSword" /> 1350
+	<item name="Item_Custom_LostArtifact" /> 1350
+	
+	<item name="Item_Custom_TribalMask" /> 1400
+	<item name="Item_Replenish" /> 1415
+	<item name="Item_Custom_BookOfSouls" /> 1450
+	<item name="Item_Custom_LightBlade" /> 1550
+	<item name="Item_Custom_MagesClover" /> 1550
+	
+	<item name="Item_Weapon1" /> 1575
+	<item name="Item_Custom_HeavyHammer" /> 1600
+	<item name="Item_Custom_SorcerersStaff" /> 1600
+	<item name="Item_VoidTalisman" /> 1600
+	<item name="Item_Custom_BeltOfFrenzy" /> 1715
+	
+	<item name="Item_Custom_ConduitGem" /> 1800
+	<item name="Item_Custom_EmeraldTalisman" /> 1800
+	<item name="Item_Custom_HelmOfValor" /> 1800
+	<item name="Item_Custom_HoodOfCunning" /> 1800
+	<item name="Item_PushStaff" /> 1800
+	
+	<item name="Item_WhisperingHelm" /> 1800
+	<item name="Item_Regen" /> 1810
+	<item name="Item_Custom_CloakOfTheWanderer" /> 1850
+	<item name="Item_Custom_BumbasDagger" /> 1925
+	
+	<item name="Item_Custom_BluestonePendant" /> 1950
+	<item name="Item_Custom_FightersSigil" /> 1950
+	<item name="Item_MagicArmor2" /> 2050
+	<item name="Item_Custom_Sagestone" /> 2120
+	
+	<item name="Item_Custom_VampiricShroud" /> 2175
+	<item name="Item_Sicarius" /> 2200
+	<item name="Item_Strength6" /> 2200
+	<item name="Item_Lightbrand" /> 2200
+	
+	<item name="Item_Custom_BlessedBracer" /> 2235
+	<item name="Item_Shield2" /> 2500	
+	<item name="Item_Lightning1" /> 3000
+	<item name="Item_TwinBlades" /> 3100
+	<item name="Item_Stealth" /> 3200
+</shop>

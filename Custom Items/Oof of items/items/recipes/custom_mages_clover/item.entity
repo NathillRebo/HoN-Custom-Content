@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_MagesClover"
+
+	icon="icon.tga"
+	
+	cost="315"
+	components="Item_MysticVestments Item_NihilCrystal Item_Custom_Spellbook"
+
+	actiontype="passive"
+	cooldowntime="12500"
+	cooldowntype="nihilcrystal"
+	
+	manaregen="0.5"
+	magicarmor="6"
+>
+
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.05" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<onattackeddamageevent>
+		<isready>
+			<damageeffecttype effecttype="DOT" />
+			<else>
+				<combatsupertype supertype="attack" />
+				<else>
+					<compare a="damage_attempted" b="60" op="gt">
+						<startcooldown />
+						<applystate name="State_NihilCrystal" target="source_entity" duration="10000" />
+					</compare>		
+				</else>					
+			</else>
+		</isready>
+	</onattackeddamageevent>
+</item>

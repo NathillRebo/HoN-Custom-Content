@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_BlessedBracer"
+
+	icon="icon.tga"
+	
+	cost="485"
+	components="Item_PretendersCrown Item_SnakeBracelet Item_GlovesOfHaste"
+
+	actiontype="passive"
+	
+	strength="3"
+	agility="3"
+	intelligence="3"
+	attackspeed=".20"
+	evasion=".12"
+>
+</item>

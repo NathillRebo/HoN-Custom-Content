@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_RodOfAsclepius"
+
+	icon="icon.tga"
+	
+	cost="700"
+	components="Item_Custom_SorcerersStaff Item_Custom_AmuletOfFortitude Item_ApprenticesRobe"
+
+	actiontype="passive"
+	
+	intelligence="12"
+	maxhealth="320"
+	healthregen="7"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.07" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onheal priority="0" propagatetoillusions="false" >
+		<applystate name="State_Custom_RodOfAsclepius" target="target_entity" duration="5000" />
+	</onheal>
+</item>

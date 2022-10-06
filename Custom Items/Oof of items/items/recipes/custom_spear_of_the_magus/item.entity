@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SpearOfTheMagus"
+
+	icon="icon.tga"
+	
+	cost="1450"
+	components="Item_Custom_SpellFocus Item_TwinBlades"
+	
+	intelligence="20"
+	agility="3"
+	strength="3"
+	attackspeed="0.15"
+	manaregen="1.25"
+	damage="40"
+	
+	actiontype="passive"
+	cooldowntime="5000"
+	cooldowntype="twins"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.08" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<modifier key="spearofthemagus_melee" condition="melee" modpriority="100">
+		<onattackpreimpact>
+			<isready>
+				<cantarget targetscheme="enemy_units">
+					<issplitprojectile entity="inflictor_entity" />
+					<else>
+						<startcooldown />
+						<applystate name="State_TwinBlades_Strike" target="this_owner_entity" duration="100" proxy="target_entity" stack="true" />
+					</else>
+				</cantarget>
+			</isready>
+		</onattackpreimpact>
+	</modifier>
+	
+	<onabilityimpact>
+		<reducecooldown duration="1800" />
+	</onabilityimpact>
+</item>

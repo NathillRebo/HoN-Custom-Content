@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_GemOfLightning"
+
+	icon="icon.tga"
+	
+	cost="950"
+	components="Item_Voltstone Item_Weapon1 Item_Weapon1"
+
+	actiontype="passive"
+	
+	maxcharges="3"
+
+	cooldowntime="1000"
+	
+	attackspeed="0.25"
+	manaregen="2.5"
+	intelligence="15"
+	damage="30"
+	
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.02" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<ontimer>
+		<starttimer duration="5000" />
+	</ontimer>
+
+	<onattack />
+
+	<modifier key="chainlightningproc" modpriority="25" exclusive="true">
+		<ontimer>
+			<compare a="charges" b="0" op="le">
+			</compare>
+			<else>
+				<targettype type="hero">
+					<removecharge />
+				</targettype>
+				<compare a="charges" b="0" op="le">
+					<resettimer />
+				</compare>
+				<else>
+					<starttimer duration="5000" />
+				</else>
+			</else>
+		</ontimer>
+
+		<onattack>
+			<cantarget targetscheme="enemy_units">
+				<compare a="charges" b="0" op="le">
+					<isready>
+						<startcooldown />
+						<targettype type="illusion" source="this_owner_entity" target="this_owner_entity">
+							<!-- Works on illusions for 33% of strength -->
+							<spawnaffector name="Affector_GemOfLightning" param="1" />
+						</targettype>
+						<else>
+							<spawnaffector name="Affector_GemOfLightning" />
+						</else>
+						<setcharges a="3" />
+						<starttimer duration="5000" />
+					</isready>
+				</compare>
+				<else>
+					<removecharge />
+					<compare a="charges" b="0" op="eq">
+						<resettimer />
+					</compare>
+					<else>
+						<starttimer duration="5000" />
+					</else>
+				</else>
+			</cantarget>
+		</onattack>
+	</modifier>
+
+</item>

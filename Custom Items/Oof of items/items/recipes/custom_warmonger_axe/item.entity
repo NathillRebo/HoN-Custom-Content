@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_WarmongerAxe"
+
+	icon="icon.tga"
+	
+	cost="1050"
+	components="Item_HeavyBlade Item_Beastheart Item_Custom_FightersSigil"
+
+	actiontype="passive"
+	
+	strength="28"
+	maxhealth="550"
+	agility="8"
+>
+	<modifier key="custom_warmongersaxe" modpriority="31" exclusive="true">
+		<onattackimpact effectdescription="true">
+			<cantarget targetscheme="enemy_units">
+				<setvar0 a="source_maxhealth" b="0.0165" op="mult" />
+				<damage effecttype="Physical" amount="1" b="var0" op="mult" />
+			</cantarget>
+		</onattackimpact>
+	</modifier>
+</item>

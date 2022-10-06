@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_UrnOfTheFallenKing_Ally"
+	
+	icon="icon.tga"
+	passiveeffect="/items/recipes/soultrap/effects/heal.effect"
+	
+	incominghealmultiplier="0.6"
+	healthregenmultiplier="0.6"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onrefresh>
+		<setactivemodifierkey name="" />
+	</onrefresh>
+	
+	<onframe>
+		<heal a="36" b="frametime" op="mult" />
+	</onframe>
+	
+	<ondamaged priority="-10">		
+		<compare a="source_damage" b="0" op="gt">
+			<cantarget targetscheme="npc_LaneCreeps_deadalive" ignoreinvulnerable="true" />
+			<else>
+				<cantarget targetscheme="npc_nonboss_neutrals_deadalive" ignoreinvulnerable="true" />
+				<else>
+					<setactivemodifierkey name="Custom_UrnOfTheFallenKing_Damaged" />
+				</else>
+			</else>
+		</compare>
+	</ondamaged>
+	
+	<onexpired>
+		<playeffect effect="/items/recipes/soultrap/effects/expire_sound.effect" source="target_entity"/>
+	</onexpired>
+	
+	<modifier key="Custom_UrnOfTheFallenKing_Damaged" modpriority="100"
+		incominghealmultiplier="0.24"
+		healthregenmultiplier="0.24"
+	>
+		<onframe>
+			<heal a="14.4" b="frametime" op="mult" />
+		</onframe>
+		
+		<ondamaged />
+	</modifier>
+</state>

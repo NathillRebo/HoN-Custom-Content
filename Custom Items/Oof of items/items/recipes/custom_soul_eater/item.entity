@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SoulEater"
+	
+	icon="icon.tga"
+	impacteffect="effects/impact.effect"
+	
+	cost="1400"
+	components="Item_WhisperingHelm Item_SwordOfTheHigh"
+	
+	actiontype="target_entity"
+	targetscheme="enemy_nonboss_npc_units"
+	casteffecttype="Magic Dominate"
+	cooldowntime="720000"
+	cooldowntype="whisperinghelm"
+	manacost="25"
+	range="700"
+	casteffect="effects/cast.effect"
+
+	armor="6"
+	healthregen="4"
+	damage="80"
+	
+	damagepercharge="1"
+	maxcharges="75"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	modifierkey="alt_WhisperingHelm"
+>
+	<checkcost>
+		<targettype type="Courier" target="source_entity">
+			<invalidate />
+		</targettype>
+	</checkcost>
+
+	<onimpact>
+		<takecontrol />
+		<orderdisjoint target="target_entity" />
+		<lockbackpack entity="target_entity" />
+		<order command="stop" force="true" source="target_entity" target="target_entity" />
+		<playanim name="item_1" target="source_entity" />
+		<applystate name="State_WhisperingHelm_DamageBuff" continuous="true" target="target_entity" proxy="this_owner_entity" />
+		<applystate name="State_WhisperingHelm_SpeedBuff" continuous="true" target="target_entity" proxy="this_owner_entity" />
+	</onimpact>
+	
+	<modifier key="attack_lifesteal" modpriority="20" exclusive="true"
+		lifesteal="0.20"
+	>
+		<onattackimpact>
+			<cantarget targetscheme="enemy_units">
+				<compare a="combat_attackability" b="0" op="eq">
+					<playeffect effect="/shared/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+				</compare>
+			</cantarget>
+		</onattackimpact>
+		
+		<onattackpredamage>
+			<cantarget targetscheme="enemy_units">
+				<compare a="bounce_count" b="2" op="lt">
+					<compare a="combat_attackability" b="0" op="eq" />
+					<else>
+						<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.20" op="add" />
+					</else>
+				</compare>
+			</cantarget>
+			<else>
+				<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.20" op="add" />
+			</else>
+		</onattackpredamage>
+	</modifier>
+	
+	<!-- Disable this item on Circe's mimic -->
+	<modifier key="circe_iammimic" modpriority="100"
+		disabled="true"
+	>
+	</modifier>
+	
+	<onkill propagatetoillusions="true" >
+		<addcharges count="1" />
+	</onkill>
+	
+	<ondeath>
+		<setcharges a="0"/>
+	</ondeath>
+</item>

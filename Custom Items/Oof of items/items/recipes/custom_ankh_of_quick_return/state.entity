@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_AnkhOfQuickReturn"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	
+	movespeedmultiplier="0.6"
+	maxmovespeed="300"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+</state>

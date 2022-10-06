@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_MorgothsAxe"
+
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	
+	totaldamagemultiplier="0.4"
+	attackspeed="-1"
+>
+</state>

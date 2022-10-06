@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_BarbarianShield"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="10"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+
+	attackspeedpercharge="0.02"
+	armorpercharge="0.4"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+</state>

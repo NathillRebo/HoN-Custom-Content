@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SoulGem"
+
+	icon="icon.tga"
+	
+	components="Item_Custom_VampiricShroud Item_LuminousPrism"
+	cost="1275"
+	
+	actiontype="passive"
+	
+	casttime="0"
+	castactiontime="0"
+	noresponse="true"
+
+	cooldowntime="10000"
+	
+	healthregen="3"
+	manaregen="3"
+	intelligence="20"
+>
+	<onframe />
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.08" op="mult" />
+			<targettype type="stealth" />
+			<else>
+				<isstealthed entity="source_entity" />
+				<else>
+					<damageeffecttype effecttype="DOT" />
+					<else>
+						<damageeffecttype effecttype="Returned" />
+						<else>
+							<isready>
+								<startcooldown />
+								<!-- VFX -->
+								<playeffect effect="impact.effect" source="target_entity" target="" occlude="true" />
+								<areaofeffect
+									radius="220"
+									targetselection="all"
+									targetscheme="enemy_units"
+									effecttype="Magic"
+								>
+									<damage effecttype="Magic" amount="150" target="target_entity" />
+								</areaofeffect>
+							</isready>
+						</else>
+					</else>
+				</else>
+			</else>
+		</else>
+	</onattackingdamageevent>
+	
+	<modifier key="magic_lifesteal" modpriority="15" exclusive="true">
+		<ondamage>
+			<damageeffecttype effecttype="Magic SuperiorMagic">
+				<cantarget targetscheme="enemy_units">
+					<targettype type="hero">
+						<setvar0 a="damage_applied" b="0.15" op="mult" />
+						<heal source="this_owner_entity" target="this_owner_entity" a="var0" />
+					</targettype>
+					<else>
+						<setvar0 a="damage_applied" b="0.05" op="mult" />
+						<heal source="this_owner_entity" target="this_owner_entity" a="var0" />
+					</else>
+				</cantarget>
+			</damageeffecttype>
+		</ondamage>
+	</modifier>
+</item>

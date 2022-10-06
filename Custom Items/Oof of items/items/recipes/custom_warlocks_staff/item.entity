@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_WarlocksStaff"
+
+	icon="icon.tga"
+	
+	cost="750"
+	components="Item_Custom_SorcerersStaff Item_Glowstone Item_EtherJewel"
+
+	actiontype="passive"
+	
+	maxcharges="150"
+	
+	intelligence="5"
+	maxhealth="500"
+	maxmana="275"
+	maxhealthpercharge="1.2"
+	maxmanapercharge="1.3"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<evaluate a=".03" b="charges" op="mult" />
+			<setvar0 a="result" b="100" op="div"/>
+			<setvar1 a="result" b="1.07" op="add"/>
+			<setvalue name="damage_attempted" a="damage_attempted" b="var1" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<onkill propagatetoillusions="true" >
+		<addcharges count="1" />
+	</onkill>
+</item>

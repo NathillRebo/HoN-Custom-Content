@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="0">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.65">
+		<sound    
+                delay="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume="1" 
+				sample="/heroes/items/basic/homecoming_stone/sounds/start.wav"
+			/>
+						
+			<sound
+			    
+                soundloop="true"
+				fadein="250"
+				fadeout="1500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".4" 
+				sample="/items/basic/homecoming_stone/sounds/8bit_loop.wav"
+			/>
+		
+			<sound    
+			    delay="3000"
+			    life="5000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume="1" 
+				sample="/items/basic/homecoming_stone/sounds/8bit_land.wav"
+			/>
+
+			
+		<sound
+		        life="6000"
+				delay="3000"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".4"
+				sample="/shared/sounds/teleport.wav"
+			/>	
+		
+	<!-- stream of light -->
+		<billboard
+			expirelife="1000"
+			material="/shared/effects/materials/flare2.material"
+			startheight="3000"
+			midheight="3000"
+			endheight="100"
+			midheightpos=".75"
+			width="40"
+			lockup="1"
+			startcolor="0 .1 .1"
+			endcolor="0 0 0"
+		/>
+		<billboard
+			expirelife="1000"
+			material="/shared/effects/materials/flare2.material"
+			startheight="3000"
+			midheight="3000"
+			endheight="100"
+			midheightpos=".75"
+			width="40"
+			lockup="1"
+			startcolor="0 .2 .1"
+			endcolor="0 0 0"
+		/>
+		
+		<simpleemitter
+			expirelife="100"
+			spawnrate="10"
+			particlelife="1000"
+			direction="0 0 -1"
+			angle="0"
+			speed="500"
+			offsetsphere="20 20 0"
+			position="0 0 600"
+			material="/shared/effects/materials/flare_03.material"
+		>
+			<particle
+				startsize="0"
+				endsize="3000"
+				startwidth="0"
+				endwidth="20"
+				startcolor="0 .75 .5"
+				endcolor="0"
+				lockup="1"
+			/>
+		</simpleemitter>
+		
+		<!-- light shafts -->
+		<simpleemitter
+			delay="500"
+			spawnrate="100"
+			position="0 0 500"
+			offsetsphere="20 20 500"
+			direction="0 0 -1"
+			angle="0"
+			minspeed="100"
+			maxspeed="300"
+			minparticlelife="500"
+			maxparticlelife="700"
+			material="/shared/effects/materials/flare_01.material"
+		>
+			<particle
+				startsize="0"
+				midsize="5"
+				midsizepos=".15"
+				minendsize="100"
+				maxendsize="400"
+				lockup="1"
+				startwidth="0"
+				midwidth="3"
+				endwidth="3"
+				midwidthpos=".25"
+				color=".25 2 2"
+			/>
+		</simpleemitter>
+		
+		<simpleemitter
+			particlelife="750"
+			spawnrate="30"
+			offsetsphere="5 5 500"
+			position="0 0 250"
+			offsetradialangle="90"
+			offsetdirection="0 0 1"
+			material="/shared/effects/materials/whitesquare_03_reveal.material"
+			minspeed="150"
+			maxspeed="250"
+			drag="0"
+			direction="0 0 -1"
+			angle="0"
+			
+		>
+			<particle
+				startsize="20" 
+				minmidsize="20" maxmidsize="60"
+				endsize="0"
+				scale=".5"
+				color=".2 .1 .05"
+				gridsnap="20"
+				startframe=".5"
+				endframe="1"
+			>
+				<billboard
+					life="250"
+					material="/shared/effects/materials/whitesquare_02.material"
+					startcolor=".5 .25 .1"
+					endcolor="0"
+					startsize="0"
+					endsize="15"
+					midsizepos=".25"
+					scale="4"
+				/>
+			</particle>
+		</simpleemitter>
+		
+		<simpleemitter
+			delay="0"
+			spawnrate="20"
+			position="0 0 700"
+			minparticlelife="600"
+			maxparticlelife="1000"
+			material="/shared/effects/materials/whitesquare.material"
+			offsetsphere="25 25 70"
+			minspeed="500"
+			maxspeed="1000"
+			drag="0"
+			minangle="0"
+			maxangle="0" 
+			direction="0 0 -1"
+		>
+			<particle
+				startcolor="0 1 .2"
+				midcolor="0 1 .5"
+				endcolor="0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+				size="5"
+				framespeed="3"
+				minscale=".5"
+				maxscale="1.5"
+				lockup="ture"
+				maxheightdistort=".1"
+			/>
+			<particle
+				startcolor="0 1 .1"
+				midcolor="0 .5 1"
+				endcolor="0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+				size="5"
+				framespeed="3"
+				minscale=".5"
+				maxscale="1.5"
+				lockup="ture"
+				maxheightdistort=".1"
+			/>
+			<particle
+				startcolor="0 1 0"
+				midcolor="0 1 .5"
+				endcolor="0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+				size="5"
+				framespeed="3"
+				minscale=".5"
+				maxscale="1.5"
+				lockup="ture"
+				maxheightdistort=".1"
+			/>
+			<particle
+				startcolor="0 .5 1"
+				midcolor="0 1 1"
+				endcolor="0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+				size="5"
+				framespeed="3"
+				minscale=".5"
+				maxscale="1.5"
+				lockup="ture"
+				maxheightdistort=".1"
+			/>
+		</simpleemitter>
+		
+			<terrainemitter
+				spawnrate="60"
+				particlelife="1000"
+				direction="0 0 1"
+				minangle="90"
+				maxangle="90"
+				maxspeed="200"
+				drag=".02"
+				material="/shared/effects/materials/mana.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"
+					startcolor="0"
+					midcolor="0.0 0.4 0.2"
+					endcolor="0"
+					midcolorpos=".25"
+					startsize="30"
+					endsize="80"
+					depthbias="-10"
+				/>
+			</terrainemitter>
+		
+	
+	</particlesystem>
+
+
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	
+		<waitfordeath instance="instance0" />
+	
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

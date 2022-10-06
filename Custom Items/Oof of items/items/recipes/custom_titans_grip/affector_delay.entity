@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_TitansGrip_Delay"
+
+	radius=""
+	lifetime=""
+
+	impactdelay="100"
+>
+	<onimpact>
+		<unbind target="target_entity" />
+		<spawnaffector name="Affector_TitansGrip" target="target_entity" />
+		<cantarget targetscheme="enemy_units">
+			<applystate name="State_Stunned" duration="100" />
+		</cantarget>
+		<spawnunit name="Gadget_TitansGrip" target="target_entity" offset="0 500" pushentity="true" />
+		<spawnprojectile name="Projectile_TitansGrip" source="target_entity" target="stack_position" bind="target_entity" bindturn="true" bindstate="State_TitansGrip" />
+	</onimpact>
+</affector>

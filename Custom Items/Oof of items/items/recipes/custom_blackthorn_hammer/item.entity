@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_BlackthornHammer"
+
+	icon="icon.tga"
+	
+	cost="900"
+	components="Item_Custom_HeavyHammer Item_Lifetube Item_Custom_FightersSigil"
+
+	actiontype="passive"
+	
+	strength="13"
+	agility="8"
+	damage="15"
+	maxhealth="500"
+	healthregen="6"
+>
+	<aura state="State_Custom_BlackthornHammer" radius="1025" targetscheme="all_other_units" ignoreinvulnerable="true" />
+</item>

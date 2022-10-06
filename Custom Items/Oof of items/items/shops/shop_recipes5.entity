@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Recipes5"
+
+	style="recipes"
+	
+	icon="shop_recipes5.tga"
+	order="1"
+	slot="9"
+>
+	<item name="Item_ElderParasite" /> 2200
+	<item name="Item_Pierce" />	2600
+	<item name="Item_Critical1" /> 3125
+	
+	<item name="Item_ManaBurn1" /> 3300
+	<item name="Item_Custom_FlashfastBlade" /> 3900
+	<item name="Item_Custom_Silverlight" /> 4000
+	
+	<item name="Item_Custom_Junglespear" /> 4025
+	<item name="Item_Custom_Rumblehammer" /> 4025
+	<item name="Item_Custom_TheBlackArrow" /> 4050
+	<item name="Item_Custom_Polynomicon" /> 4075
+	<item name="Item_Custom_TranscendentsStar" /> 4100
+	
+	<item name="Item_Custom_Bloodthirster" /> 4150
+	<item name="Item_Custom_FrostboundHammer" /> 4150
+	<item name="Item_Custom_GiantSlayer" /> 4150
+	<item name="Item_Weapon3" /> 4200
+	<item name="Item_Custom_Demolisher" /> 4250
+	
+	<item name="Item_Custom_SacrificialBlade" /> 4325
+	<item name="Item_Brutalizer" />	4400
+	<item name="Item_StrengthAgility" /> 4400
+	
+	<item name="Item_Frozenlight" /> 4400
+	<item name="Item_Custom_NefarianBlade" /> 4400
+	<item name="Item_Custom_WraithKingsCrown" /> 4500
+	<item name="Item_Custom_StoneforgedSword" /> 4550
+	<item name="Item_Custom_CrimsonGuard" /> 4600
+	<item name="Item_Custom_DemonicGrasp" /> 4600
+	<item name="Item_Custom_LerneanCry" /> 4650
+	
+	<item name="Item_Custom_GemOfLightning" /> 4800
+	<item name="Item_Custom_MaskOfDeath" />	4950
+	<item name="Item_Splash" /> 4950
+	<item name="Item_HarkonsBlade" /> 5000
+	
+	<item name="Item_Freeze" />	5100
+	<item name="Item_Custom_GiantsCharge" /> 5150
+	<item name="Item_Custom_Beastmaster_Totem" /> 5300
+	<item name="Item_Custom_HeroicHalberd" /> 5325
+	<item name="Item_Custom_TelchinesRing" /> 5400
+	<item name="Item_Custom_AtalantasBow" /> 5500
+	<item name="Item_Custom_SpearOfTheMagus" /> 5500
+	<item name="Item_Custom_RagnarokCannon" /> 5525
+	
+	<item name="Item_Custom_Tiamat" /> 5550
+	<item name="Item_Custom_Bloodforge" /> 5600
+	<item name="Item_Custom_RageOfTheForge" /> 5600
+	<item name="Item_Custom_WarmongerAxe" /> 5600
+	<item name="Item_Custom_WarpSlicer" /> 5725
+	<item name="Item_Hypercrown" /> 5800
+	
+	<item name="Item_Custom_MorgothsAxe" /> 5800
+	<item name="Item_Custom_GoldenEdge" /> 6000
+	<item name="Item_LifeSteal4" /> 6000
+	<item name="Item_Dawnbringer" /> 6600
+	<item name="Item_Custom_SoulEater" /> 6600
+</shop>

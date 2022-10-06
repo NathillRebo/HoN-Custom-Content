@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Sovereignity"
+
+	icon="icon.tga"
+	
+	cost="900"
+	components="Item_Custom_SteelMail Item_Platemail Item_Lifetube"
+
+	armor="16"
+	healthregen="6"
+	maxhealth="250"
+	strength="5"
+	actiontype="passive"
+>
+	<aura name="Custom_Sovereignity_Aura" state="State_Custom_Sovereignity" radius="775" targetscheme="ally_units_and_structures" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+</item>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_StaffOfWizardry"
+
+	icon="icon.tga"
+	
+	cost="1460"
+	components="Item_Replenish Item_Custom_SorcerersStaff Item_Custom_TemporalBeads"
+	
+	actiontype="self_position"
+	targetscheme="ally_mana_units"
+	targetradius="600"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="33000"
+	cooldowntype="replenish"
+	manacost="0"
+	
+	strength="4"
+	agility="4"
+	intelligence="12"
+	maxmana="300"
+	maxhealth="250"
+	
+	responsetype="Item_NonInterrupting"
+>
+	<modifier key="ability_cooldown_reduction" modpriority="10" exclusive="true"
+		reducedabilitycooldowns="0.15"
+	>
+	</modifier>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.07" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onframe />
+	
+	<onimpact>
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="ally_mana_units"
+			ignoreinvulnerable="true"
+		>
+			<givemana amount="170" />
+			<pushability source="target_entity" slot="0" />
+			<reducecooldown entity="stack_entity" duration="2687" />
+			<pushability source="target_entity" slot="1" />
+			<reducecooldown entity="stack_entity" duration="2687" />
+			<pushability source="target_entity" slot="2" />
+			<reducecooldown entity="stack_entity" duration="2687" />
+			<pushability source="target_entity" slot="3" />
+			<reducecooldown entity="stack_entity" duration="2687" />
+		</areaofeffect>
+		
+		<!-- Art -->
+		<playeffect effect="cast.effect" source="source_position" target="" occlude="true" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+
+</item>

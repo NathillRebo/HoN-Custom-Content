@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_HeroicHalberd_Strike"
+
+	ishidden="true"
+
+	impactinterval="100"
+	
+	totaldamagemultiplier="-0.30"
+>
+	<oninflict>
+		<setaccumulator value="2" />
+	</oninflict>
+	
+	<onimpact>
+		<cantarget targetscheme="enemy_units" source="this_owner_entity" target="this_proxy_entity">
+			<setaccumulator value="1" />
+			<attack source="this_owner_entity" target="this_proxy_entity" startcooldown="false" />
+			<attack source="this_owner_entity" target="this_proxy_entity" startcooldown="false" />
+		</cantarget>
+	</onimpact>
+	
+	<onattack>
+		<compare a="accumulator" b="1" op="eq">
+			<addattackimpactactions>
+				<applystate name="State_Custom_HeroicHalberd_Slow" target="this_proxy_entity" duration="700" />
+			</addattackimpactactions>
+			<setaccumulator value="0" />
+		</compare>
+	</onattack>
+	
+	<onexpired>
+		<!-- Resets cooldown of Twin Blades if you don't get a chance to attempt your second autoattack -->
+		<compare a="accumulator" b="2" op="eq">
+			<foreachitem>
+				<entitytype type="Item_TwinBlades">
+					<resetcooldown entity="target_entity" />
+				</entitytype>
+				<entitytype type="Item_Custom_TelchinesRing">
+					<resetcooldown entity="target_entity" />
+				</entitytype>
+				<entitytype type="Item_Custom_SpearOfTheMagus">
+					<resetcooldown entity="target_entity" />
+				</entitytype>
+				<entitytype type="Item_Custom_HeroicHalberd">
+					<resetcooldown entity="target_entity" />
+				</entitytype>
+			</foreachitem>
+		</compare>
+	</onexpired>
+	
+	<!-- This may seem a bit complicated but it is necessary in case heroes attack 10 times per second or faster -->
+</state>

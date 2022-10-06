@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Fatalis"
+
+	icon="icon.tga"
+	
+	cost="1200"
+	components="Item_AlacrityBand Item_WindWhistle Item_Moonspear"
+
+	actiontype="passive"
+	
+	agility="20"
+	attackspeed=".4"
+	movespeed="20"
+	maxmovespeed="125"
+>
+	
+	
+</item>

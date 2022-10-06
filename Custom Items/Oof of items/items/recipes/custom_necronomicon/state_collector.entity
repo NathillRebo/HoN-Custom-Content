@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Dreamcatcher_Collector"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	serverentity="true"
+>
+	<onkilled>
+		<targettype type="illusion" target="source_entity" />
+		<else>
+			<targettype type="heropet" target="source_entity" />
+			<else>
+				<addcharges count="1" entity="this_spawner_entity" />
+				<compare a="result" b="3" op="ge">
+					<resettimer entity="this_spawner_entity" />
+				</compare>
+				
+				<play2dsound sample="/shared/sounds/items/item_soultrap_charge_%.wav" channel="111" volume="0.5" dampen="0.9" sourceonly="true" targetonly="false" />
+			</else>
+		</else>
+	</onkilled>
+</state>

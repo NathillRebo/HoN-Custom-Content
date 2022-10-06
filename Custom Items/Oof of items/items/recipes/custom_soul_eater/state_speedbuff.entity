@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_WhisperingHelm_SpeedBuff"
+	
+	ishidden="true"
+	
+	movespeedpercharge="1"
+>
+	<onframe>
+		<evaluate source="this_proxy_entity" a="source_movespeed" b="0.15" op="mult" />
+		<setcharges a="result" />		
+	</onframe>
+</state>

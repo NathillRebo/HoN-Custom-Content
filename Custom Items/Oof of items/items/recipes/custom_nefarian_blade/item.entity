@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_NefarianBlade"
+
+	icon="icon.tga"
+	
+	cost="1100"
+	components="Item_HeavyBlade Item_Warpcleft"
+
+	actiontype="passive"
+	
+	attackspeed=".6"
+	strength="20"
+>
+	<onattack effectdescription="true">
+		<cantarget targetscheme="enemy_units">
+			<applystate name="State_NefarianBlade" target="target_entity" duration="85000" />
+		</cantarget>
+	</onattack>
+	
+</item>

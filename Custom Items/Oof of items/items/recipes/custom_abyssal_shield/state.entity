@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_AbyssalShield"
+	
+	icon="icon.tga"
+	
+	basedamagemultiplier="0.20"
+	passiveeffect="state.effect"
+	
+	effecttype="StatusBuff"
+>
+	<onframe />
+	
+	<modifier key="vamp_melee" condition="melee" modpriority="100"
+		lifesteal="0.15"
+	>
+		<onattackimpact>
+			<targettype type="player_controlled" target="source_entity">
+				<cantarget targetscheme="enemy_units">
+					<playeffect effect="/shared/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+				</cantarget>
+			</targettype>
+		</onattackimpact>
+		
+		<onattackpredamage>
+			<cantarget targetscheme="enemy_units" />
+			<else>
+				<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.15" op="add" />
+			</else>
+		</onattackpredamage>
+	</modifier>
+	
+	<modifier key="manaregen_aura" modpriority="80" exclusive="true"
+		manaregen="1.25"
+	/>
+	
+	<modifier key="armor_aura" modpriority="3.5" exclusive="true"
+		armor="5"
+	/>
+	
+	<modifier key="buckler_melee" condition="melee" modpriority="100">
+		<onattackedpredamage>
+			<combateffecttype effecttype="Attack">
+				<chance threshold="0.70">
+					<setvalue name="combat_deflection" a="combat_deflection" b="40" op="max" />	
+				</chance>
+			</combateffecttype>
+		</onattackedpredamage>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="100">
+		<onattackedpredamage>
+			<combateffecttype effecttype="Attack">
+				<chance threshold="0.70">
+					<setvalue name="combat_deflection" a="combat_deflection" b="20" op="max" />	
+				</chance>
+			</combateffecttype>
+		</onattackedpredamage>
+	</modifier>
+</state>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_TalismanOfEnergy"
+
+	icon="icon.tga"
+	
+	cost="900"
+	components="Item_Custom_EmeraldTalisman Item_Energizer"
+	
+	healthregen="3"
+	magicarmor="8"
+	maxhealth="250"
+	strength="5"
+	agility="5"
+	intelligence="5"
+	movespeed="25"
+	manaregen="2"
+	
+	actiontype="self_position"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	casteffect=""
+	cooldowntime="30000"
+	cooldowntype="energizer"
+	
+	manacost="25"	
+	targetradius="600" 
+>
+	<onimpact>
+		<areaofeffect
+			center="this_owner_entity"
+			radius="600"
+			targetselection="all"
+			targetscheme="ally_units"
+			ignoreinvulnerable="true"
+		>
+			<cantarget targetscheme="no_Overhead_Visuals" ignoreinvulnerable="true" />
+			<else>
+				<cantarget targetscheme="player_controlled_ally_units">
+					<targettype type="hero">
+						<applystate name="State_Custom_TalismanOfEnergy_Buff" duration="6000" />
+					</targettype>
+					<else>
+						<applystate name="State_Custom_TalismanOfEnergy_Buff_Unitwalking" duration="6000" />
+					</else>
+				</cantarget>
+				<else>
+					<applystate name="State_Custom_TalismanOfEnergy_Buff" duration="6000" />
+				</else>
+			</else>
+		</areaofeffect>
+		
+		<!-- Art -->
+		<playeffect effect="cast.effect" source="source_position" target="" occlude="true" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</item>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_PostHaste_Source_Enemy"
+	
+	impactinterval="250"
+	maxintervals="25"
+	
+	effect="../../basic/homecoming_stone/effects/source.effect"
+	effectinheritsstart="true"
+		
+	visibility="enemies"
+>
+	<modifier key="goldenred_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/goldenred/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="golden_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+
+	<modifier key="golden_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/golden/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="golden_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="gold_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/gold/source.effect"	
+	>
+		<onspawn>
+			<activatemodifierkey name="gold_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="silver_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/silver/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="silver_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="8bit2_tp" modpriority="1"
+		effect="effects/8bit2/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="8bit2_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="restrict_teleport_effect" modpriority="10"
+		effect="../../basic/homecoming_stone/effects/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="restrict_teleport_effect" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="miku_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/miku/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="miku_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con6_1_tp" modpriority="1"
+		effect="effects/con6reward/1/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con6_1_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con6_2_tp" modpriority="1"
+		effect="effects/con6reward/2/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con6_2_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con6_3_tp" modpriority="1"
+		effect="effects/con6reward/2/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con6_3_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con6_4_tp" modpriority="1"
+		effect="effects/con6reward/4/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con6_4_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con6_5_tp" modpriority="1"
+		effect="effects/con6reward/5/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con6_5_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="songkran_tp" modpriority="1"
+		effect="effects/songkran/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="songkran_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="wc2018_tp" modpriority="1"
+		effect="effects/worldcup2018/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="wc2018_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con7_1_tp" modpriority="1"
+		effect="effects/con7reward/1/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con7_1_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con7_2_tp" modpriority="1"
+		effect="effects/con7reward/2/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con7_2_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con7_3_tp" modpriority="1"
+		effect="effects/con7reward/2/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con7_3_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con7_4_tp" modpriority="1"
+		effect="effects/con7reward/4/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con7_4_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con7_5_tp" modpriority="1"
+		effect="effects/con7reward/5/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con7_5_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="punk_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/punk/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="punk_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con8_1_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/con8reward/1/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con8_1_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con8_2_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/con8reward/2/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con8_2_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con8_3_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/con8reward/2/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con8_3_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con8_4_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/con8reward/4/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con8_4_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con8_5_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/con8reward/5/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con8_5_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con9_1_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/con9reward/1/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con9_1_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con9_2_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/con9reward/2/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con9_2_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con9_3_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/con9reward/2/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con9_3_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con9_4_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/con9reward/4/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con9_4_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con9_5_tp" modpriority="1"
+		effect="../../basic/homecoming_stone/effects/con9reward/5/source.effect"
+	>
+		<onspawn>
+			<activatemodifierkey name="con9_5_tp" entity="this_entity" />
+		</onspawn>
+	</modifier>
+	
+</affector>

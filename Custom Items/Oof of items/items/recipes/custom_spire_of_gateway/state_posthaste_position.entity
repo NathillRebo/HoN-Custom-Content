@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_PostHaste_Position"
+
+	icon="icon.tga"
+	passiveeffect="effects/source.effect"
+	
+	effecttype=""
+
+	dynamicprecache="effects/source_start.effect"
+>
+	<onspawn>
+		<setscriptvalue entity="this_entity" name="source_start_effect" value="effects/source_start.effect" />
+	</onspawn>
+	
+	<onchannelstart>
+		<spawnaffector name="Affector_HomecomingStone_Target" ischannel="true" proxy="this_owner_entity" pushentity="true" target="proxy_position" level="3" />
+		<getscriptvalue entity="this_entity" name="source_start_effect" destvar="str0" />
+		<playeffectdynamic effect="str0" source="source_position" target="" occlude="true" />
+	</onchannelstart>
+
+	<modifier key="goldenred_tp" modpriority="1"
+		passiveeffect="effects/goldenred/source.effect"	
+		dynamicprecache="effects/goldenred/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="effects/goldenred/source_start.effect" />
+		</onspawn>
+	</modifier>
+
+	<modifier key="golden_tp" modpriority="1"
+		passiveeffect="effects/golden/source.effect"	
+		dynamicprecache="effects/golden/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="effects/golden/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="gold_tp" modpriority="1"
+		passiveeffect="effects/gold/source.effect"
+		dynamicprecache="effects/gold/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="effects/gold/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="silver_tp" modpriority="1"
+		passiveeffect="effects/silver/source.effect"
+		dynamicprecache="effects/silver/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="effects/silver/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="8bit2_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/8bit2/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/8bit2/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/8bit2/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="miku_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/miku/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/miku/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="effects/miku/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con6_1_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con6reward/1/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con6reward/1/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con6reward/1/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con6_2_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con6reward/2/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con6reward/2/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con6reward/2/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con6_3_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con6reward/3/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con6reward/3/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con6reward/3/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con6_4_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con6reward/4/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con6reward/4/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con6reward/4/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con6_5_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con6reward/5/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con6reward/5/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con6reward/5/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="songkran_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/songkran/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/songkran/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/songkran/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="wc2018_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/worldcup2018/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/worldcup2018/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/worldcup2018/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con7_1_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con7reward/1/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con7reward/1/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con7reward/1/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con7_2_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con7reward/2/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con7reward/2/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con7reward/2/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con7_3_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con7reward/3/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con7reward/3/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con7reward/3/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con7_4_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con7reward/4/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con7reward/4/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con7reward/4/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con7_5_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con7reward/5/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con7reward/5/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con7reward/5/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="punk_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/punk/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/punk/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/punk/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	
+	<modifier key="con8_1_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con8reward/1/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con8reward/1/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con8reward/1/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con8_2_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con8reward/2/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con8reward/2/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con8reward/2/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con8_3_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con8reward/3/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con8reward/3/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con8reward/3/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con8_4_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con8reward/4/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con8reward/4/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con8reward/4/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con8_5_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con8reward/5/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con8reward/5/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con8reward/5/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con9_1_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con9reward/1/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con9reward/1/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con9reward/1/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con9_2_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con9reward/2/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con9reward/2/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con9reward/2/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con9_3_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con9reward/3/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con9reward/3/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con9reward/3/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con9_4_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con9reward/4/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con9reward/4/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con9reward/4/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+	<modifier key="con9_5_tp" modpriority="1"
+		passiveeffect="../../basic/homecoming_stone/effects/con9reward/5/source.effect"	
+		dynamicprecache="../../basic/homecoming_stone/effects/con9reward/5/source_start.effect"
+	>
+		<onspawn>
+			<setscriptvalue entity="this_entity" name="source_start_effect" value="../../basic/homecoming_stone/effects/con9reward/5/source_start.effect" />
+		</onspawn>
+	</modifier>
+	
+</state>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_NimbleRod"
+
+	icon="icon.tga"
+	
+	cost="800"
+	components="Item_Custom_LostArtifact Item_Custom_ConduitGem"
+	maxlevel="2"
+	actiontype="passive"
+	
+	manaregen="1.5,1.75"
+	intelligence="15,18"
+	agility="15,18"
+	castspeed="0.4,0.5"
+	maxcharges="2"
+>	
+	<oncreate>
+		<addcharges count="1" />
+	</oncreate>
+	
+	<onupgrade>
+		<addcharges count="1" />
+	</onupgrade>
+
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.08,1.10" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</item>

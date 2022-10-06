@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_BeltOfFrenzy"
+
+	icon="icon.tga"
+	
+	cost="560"
+	components="Item_PretendersCrown Item_Steamstaff Item_WindWhistle"
+
+	actiontype="passive"
+	
+	strength="3"
+	agility="3"
+	intelligence="3"
+	damage="15"
+	attackspeed="0.15"
+	movespeed="20"
+>
+</item>

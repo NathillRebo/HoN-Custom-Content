@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_TheElderScroll"
+
+	icon="icon.tga"
+	
+	cost="850"
+	components="Item_Custom_BookOfSouls Item_AcolytesStaff"
+
+	actiontype="passive"
+	
+	maxcharges="350"
+	
+	intelligence="35"
+	maxmana="150"
+	intelligencepercharge="0.1"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<evaluate a="charges" b="8000" op="div"/>
+			<evaluate a="result" b="1.10375" op="add"/>
+			<setvalue name="damage_attempted" a="damage_attempted" b="result" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onabilityimpact>
+		<addcharges count="1" />
+	</onabilityimpact>
+</item>

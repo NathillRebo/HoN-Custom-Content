@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SelenialStaff"
+
+	icon="icon.tga"
+	
+	cost="750"
+	components="Item_Custom_MagesClover Item_Custom_BluestonePendant Item_EtherJewel"
+
+	actiontype="passive"
+	cooldowntime="3000"
+	cooldowntype="nihilcrystal"
+	
+	manaregen="1"
+	magicarmor="8"
+	maxhealth="250"
+	intelligence="8"
+	strength="8"
+	maxmana="150"
+>
+
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.07" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<onattackeddamageevent>
+		<isready>
+			<damageeffecttype effecttype="DOT" />
+			<else>
+				<combatsupertype supertype="attack" />
+				<else>
+					<compare a="damage_attempted" b="60" op="gt">
+						<startcooldown />
+						<applystate name="State_SelenialStaff" target="source_entity" duration="10000" />
+					</compare>		
+				</else>					
+			</else>
+		</isready>
+	</onattackeddamageevent>
+</item>

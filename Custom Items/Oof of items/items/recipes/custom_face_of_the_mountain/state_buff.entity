@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_FaceOfTheMountain"
+	
+	icon="icon.tga"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	armor="17"
+>
+	<oninflict>
+		<setaccumulator entity="this_entity" value="500" />
+	</oninflict>
+	
+	<onframe />
+	
+	<onattackeddamageevent>
+			<compare a="accumulator" b="damage_attempted" op="le">
+				<setvalue name="damage_attempted" a="damage_attempted" b="accumulator" op="sub" />
+				<expire />
+				<setaccumulator value="0" />
+			</compare>
+			<else>
+				<evaluate a="accumulator" b="damage_attempted" op="sub" />
+				<setaccumulator value="result" />
+				<setvalue name="damage_attempted" a="0" />
+			</else>
+	</onattackeddamageevent>
+</state>
+

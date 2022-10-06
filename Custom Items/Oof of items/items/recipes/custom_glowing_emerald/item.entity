@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_GlowingEmerald"
+
+	icon="icon.tga"
+	
+	cost="300"
+	components="Item_BloodRuby Item_TrinketOfRestoration"
+
+	actiontype="passive"
+	
+	maxhealth="200"
+	healthregen="2.5"
+>
+</item>

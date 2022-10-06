@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SpikedShield"
+
+	icon="icon.tga"
+	
+	cost="200"
+	components="Item_GuardianRing Item_IronBuckler Item_CrushingClaws"
+
+	actiontype="passive"
+	
+	armor="3"
+	strength="4"
+	deflectionchance="0.50"
+	deflection="25"
+	
+	modifierkey="alt_IronBuckler"
+>
+	<onframe />
+	
+	<modifier key="buckler_melee" condition="melee" modpriority="100"
+		deflection="25"
+	>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="100"
+		deflection="12"
+	>
+	</modifier>
+</item>

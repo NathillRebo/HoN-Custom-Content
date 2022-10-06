@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SimurghHeart"
+	
+	icon="icon.tga"
+	
+	cost="500"
+	components="Item_AcolytesStaff Item_BrainOfMaliken"
+	
+	actiontype="passive"
+	noresponse="true"
+	
+	intelligence="35"
+	maxmana="300"
+>
+	<onimpact />
+	
+	<onframe />
+	
+	<modifier key="SimurghHeart" modpriority="100" exclusive="true"
+		manaregenpercent="0.005"
+	>
+		<onframe />
+	</modifier>
+	
+	
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.04" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</item>

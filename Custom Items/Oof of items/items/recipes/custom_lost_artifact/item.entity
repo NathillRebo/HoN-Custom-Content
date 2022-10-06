@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_LostArtifact"
+
+	icon="icon.tga"
+	
+	cost="340"
+	components="Item_MarkOfTheNovice Item_Scarab Item_Custom_Spellbook"
+
+	actiontype="passive"
+	
+	manaregen="1.25"
+	intelligence="4"
+>
+
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.05" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</item>

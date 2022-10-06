@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_FlashfastBlade"
+
+	icon="icon.tga"
+	
+	cost="1100"
+	components="Item_Custom_ThousandFoldBlade Item_Warpcleft"
+
+	actiontype="passive"
+	
+	attackspeed=".55,.65"
+	damage="15,20"
+	agility="5,6"
+	movespeed="25,30"
+	maxcharges="2"
+	maxlevel="2"
+>
+	<oncreate>
+		<addcharges count="1" />
+	</oncreate>
+	
+	<onupgrade>
+		<addcharges count="1" />
+	</onupgrade>
+	
+	<onattack effectdescription="true">
+		<cantarget targetscheme="enemy_units">
+			<applystate name="State_Custom_FlashfastBlade" target="target_entity" duration="30000" />
+		</cantarget>
+	</onattack>
+	
+</item>

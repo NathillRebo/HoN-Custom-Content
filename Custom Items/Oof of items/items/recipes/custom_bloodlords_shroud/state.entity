@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_BloodlordsShroud"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	healthregen="4.0"
+	manaregen="2.0"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<modifier key="magic_lifesteal" modpriority="22" exclusive="true">
+		<ondamage>
+			<damageeffecttype effecttype="Magic SuperiorMagic">
+				<cantarget targetscheme="enemy_units">
+					<targettype type="hero">
+						<setvar0 a="damage_applied" b="0.225" op="mult" />
+						<heal source="this_owner_entity" target="this_owner_entity" a="var0" />
+					</targettype>
+					<else>
+						<setvar0 a="damage_applied" b="0.075" op="mult" />
+						<heal source="this_owner_entity" target="this_owner_entity" a="var0" />
+					</else>
+				</cantarget>
+			</damageeffecttype>
+		</ondamage>
+	</modifier>
+</state>

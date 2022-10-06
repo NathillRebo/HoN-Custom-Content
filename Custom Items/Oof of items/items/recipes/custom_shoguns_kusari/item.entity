@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_ShogunsKusari"
+
+	icon="icon.tga"
+	
+	cost="785"
+	components="Item_Custom_SpellboundKusari Item_ManaRegen3 Item_Replenish"
+
+	magicarmor="8"
+	strength="6"
+	agility="6"
+	intelligence="10"
+	manaregen="1.5"
+	armor="3"
+	damage="6"
+	maxmana="300"
+	
+	modifierkey="alt_RingOfSorcery"
+	effectkey0="effect_RingOfSorcery"
+	
+	responsetype="Item_NonInterrupting"
+	
+	actiontype="self_position"
+	targetscheme="ally_mana_units"
+	targetradius="600"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="33000"
+	cooldowntype="replenish"
+	manacost="0"
+>
+	<aura name="Custom_ShogunsKusari_Aura" state="State_Custom_ShogunsKusari" radius="950" targetscheme="ally_units_and_structures" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.01" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onframe />
+	
+	<onimpact>
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="ally_mana_units"
+			ignoreinvulnerable="true"
+		>
+			<givemana amount="170" />
+		</areaofeffect>
+		
+		<!-- Art -->
+		<playeffect effect="cast.effect" source="source_position" target="" occlude="true" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</item>

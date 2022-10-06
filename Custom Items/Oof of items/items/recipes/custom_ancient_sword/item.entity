@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_AncientSword"
+
+	icon="icon.tga"
+	
+	cost="350"
+	components="Item_MysticVestments Item_Punchdagger"
+
+	actiontype="passive"
+	
+	damage="12"
+	magicarmor="6"
+>
+
+</item>

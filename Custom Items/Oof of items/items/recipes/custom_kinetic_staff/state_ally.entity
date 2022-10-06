@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_KineticStaff_Ally"
+
+	icon="icon.tga"
+	
+	movespeed="225"
+	maxmovespeed="400"
+	
+    effecttype="StatusBuff"
+    allowtransfer="true"
+>
+
+</state>

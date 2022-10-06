@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_SelenialStaff"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	healthregen="8.5"
+	manaregen="4.0"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+
+</state>

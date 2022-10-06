@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_CloakOfTheWanderer"
+
+	icon="icon.tga"
+	
+	cost="415"
+	components="Item_Custom_Spellbook Item_Fleetfeet Item_ApprenticesRobe"
+
+	actiontype="passive"
+	
+	agility="8"
+	intelligence="8"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.06" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</item>

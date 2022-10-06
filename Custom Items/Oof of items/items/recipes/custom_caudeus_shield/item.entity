@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_CaduceusShield"
+
+	icon="icon.tga"
+	
+	cost="980"
+	components="Item_Custom_WardedShield Item_Custom_Sagestone"
+
+	actiontype="passive"
+	
+	magicarmor="8"
+	strength="10"
+	deflectionchance="0.50"
+	deflection="32"
+	healthregen="3"
+	agility="5"
+	intelligence="10"
+	manaregen="3"
+	totalhealmultiplier="0.10"
+	
+	modifierkey="alt_IronBuckler"
+>
+	<onframe />
+	
+	<modifier key="buckler_melee" condition="melee" modpriority="100"
+		deflection="32"
+	>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="100"
+		deflection="16"
+	>
+	</modifier>
+	
+	<aura name="Custom_CaduceusShield_Aura" state="State_Custom_CaduceusShield" radius="800" targetscheme="ally_units_and_structures" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.01" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</item>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_MagisBlessing"
+
+	icon="icon.tga"
+	
+	cost="1600"
+	components="Item_Custom_ArmoredCloak Item_Custom_MagesClover Item_Custom_TemporalBeads"
+
+	actiontype="passive"
+	cooldowntime="12500"
+	cooldowntype="nihilcrystal"
+	
+	armor="4"
+	strength="3"
+	agility="3"
+	intelligence="3"
+	magicarmor="12"
+	manaregen="0.75"
+>
+	<modifier key="ability_cooldown_reduction" modpriority="10" exclusive="true"
+		reducedabilitycooldowns="0.15"
+	>
+	</modifier>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.06" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<onattackeddamageevent>
+		<isready>
+			<damageeffecttype effecttype="DOT" />
+			<else>
+				<combatsupertype supertype="attack" />
+				<else>
+					<compare a="damage_attempted" b="60" op="gt">
+						<startcooldown />
+						<applystate name="State_Custom_MagisBlessing" target="source_entity" duration="10000" />
+					</compare>		
+				</else>					
+			</else>
+		</isready>
+	</onattackeddamageevent>
+</item>

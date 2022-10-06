@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_WarpSlicer"
+	
+	icon="icon1.tga"
+	passiveeffect=""
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+
+	attackspeedpercharge="0.2"
+>
+	<oninflict>
+		<addcharges count="1"/>
+		<damage amount="4" b="charges" op="mult" target="source_entity"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+		<damage amount="4" b="charges" op="mult" target="source_entity"/>
+	</onrefresh>
+</state>

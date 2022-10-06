@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_LeviathanPearl"
+
+	icon="icon.tga"
+	
+	cost="1075"
+	components="Item_Custom_AmuletOfFortitude Item_Shield2"
+	
+	actiontype="passive"
+	
+	healthregen="25"
+	
+	modifierkey="alt_HelmOfTheBlackLegion"
+>
+	<modifier key="buckler_melee" condition="melee" modpriority="95"
+	>
+		<onattackedpredamage>
+			<combateffecttype effecttype="Attack">
+				<targettype type="gadget" />
+				<else>
+					<chance threshold="0.5">
+						<setvalue name="combat_deflection" a="combat_deflection" b="80" op="max" />
+					</chance>
+				</else>
+			</combateffecttype>
+		</onattackedpredamage>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="95"
+	>
+		<onattackedpredamage>
+			<combateffecttype effecttype="Attack">
+				<targettype type="gadget" />
+				<else>
+					<chance threshold="0.5">
+						<setvalue name="combat_deflection" a="combat_deflection" b="40" op="max" />
+					</chance>
+				</else>
+			</combateffecttype>
+		</onattackedpredamage>
+	</modifier>
+	
+	<onframe>
+		<compare a="accumulator" b="0" op="gt">
+			<setvar0 a="frametime" b="source_maxhealth" op="mult" />
+			<heal target="source_entity" a="var0" b="0.075" op="mult" />
+			<setvar1 a="accumulator" b="result" op="sub" />
+			<setaccumulator value="var1" />
+		</compare>
+	</onframe>
+	
+	<ondamaged priority="-1">
+		<chance threshold="0.25">
+			<setvar2 a="source_damage" b="1" op="mult" />
+			<setvar2 a="var2" b="accumulator" op="add" /> 
+			<setaccumulator value="var2" />
+		</chance>
+	</ondamaged>
+</item>

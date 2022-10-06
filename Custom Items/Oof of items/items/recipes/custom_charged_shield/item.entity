@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_ChargedShield"
+
+	icon="icon.tga"
+	
+	cost="875"
+	components="Item_Shield2 Item_BrainOfMaliken"
+	
+	actiontype="passive"
+	
+	maxmana="250"
+	healthregen="17"
+	
+	modifierkey="alt_HelmOfTheBlackLegion"
+>
+
+	
+	<modifier key="buckler_melee" condition="melee" modpriority="105"
+	>
+		<onattackedpredamage>
+			<combateffecttype effecttype="Attack">
+				<targettype type="gadget" />
+				<else>
+					<givemana amount="5" target="source_entity" />
+					<chance threshold="0.5">
+						<setvalue name="combat_deflection" a="combat_deflection" b="70" op="max" />
+					</chance>
+				</else>
+			</combateffecttype>
+		</onattackedpredamage>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="105"
+	>
+		<onattackedpredamage>
+			<combateffecttype effecttype="Attack">
+				<targettype type="gadget" />
+				<else>
+					<givemana amount="5" target="source_entity" />
+					<chance threshold="0.5">
+						<setvalue name="combat_deflection" a="combat_deflection" b="35" op="max" />
+					</chance>
+				</else>
+			</combateffecttype>
+		</onattackedpredamage>
+	</modifier>
+</item>

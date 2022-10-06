@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_JadeEmperorsCrown"
+	
+	icon="icon.tga"
+	
+	basedamagemultiplier="-0.15"
+	passiveeffect="state.effect"
+	
+	effecttype="StatusDebuff"
+>
+</state>

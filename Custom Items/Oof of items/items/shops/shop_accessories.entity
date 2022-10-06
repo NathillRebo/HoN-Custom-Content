@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Accessories"
+
+	style="accessories"
+	
+	icon="shop_accessories.tga"
+	order="1"
+	slot="0"
+>
+	<item name="Item_MinorTotem" /> 50
+	<item name="Item_CrushingClaws" /> 150
+	<item name="Item_DuckBoots" /> 150
+	<item name="Item_MarkOfTheNovice" /> 150
+	<item name="Item_PretendersCrown" /> 165
+	<item name="Item_BlessedArmband" /> 450
+	<item name="Item_Fleetfeet" /> 450
+	<item name="Item_ApprenticesRobe" /> 450
+	<item name="Item_MajorTotem" /> 540
+	<item name="Item_MightyBlade" /> 1000
+	<item name="Item_Quickblade" /> 1000
+	<item name="Item_NeophytesBook" /> 1000
+	<item name="Item_HeavyBlade" /> 1500
+	<item name="Item_Moonspear" /> 1500
+	<item name="Item_LuminousPrism" /> 1500
+	<item name="Item_Confluence" /> 2100
+</shop>

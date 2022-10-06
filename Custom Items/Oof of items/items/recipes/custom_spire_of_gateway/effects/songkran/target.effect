@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="0">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.65">
+		
+		<sound    
+			    life="5000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume="1" 
+				sample="/items/basic/homecoming_stone/sounds/songkran_cast.wav"
+			/>
+			
+			
+			<sound
+                soundloop="true"
+				fadein="250"
+				fadeout="1500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume="1" 
+				sample="/items/basic/homecoming_stone/sounds/songkran_loop.wav"
+			/>	
+			
+			<sound
+			    randomloop="true"
+                soundloop="true"
+				fadein="250"
+				fadeout="1500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume=".5" 
+				sample="/items/basic/homecoming_stone/sounds/songkran_mu.wav"
+			/>	
+			
+			<sound
+			    life="6000"
+			    delay="3000"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".65"
+				sample="/shared/sounds/teleport.wav"
+			/>
+			
+			<sound
+			    life="6000"
+			    delay="3000"
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2500"
+				volume=".65"
+				sample="/items/basic/homecoming_stone/sounds/songkran_end.wav"
+			/>
+			
+		<!-- water puddle -->
+			<groundsprite
+				life="250"
+				material="/shared/effects/materials/water_puddle_norefract_02.material"
+				size="200"
+				color=".03 .03 .06"
+				startalpha="0"
+				midalpha=".85"
+				endalpha=".0"
+			/>
+			<groundsprite
+				dealy="200"
+				
+				expirelife="500"
+				material="/shared/effects/materials/water_puddle_norefract_02.material"
+				size="200"
+				color=".03 .03 .06"
+				startalpha=".85"
+				midalpha=".85"
+				endalpha="0"
+				midalphapos=".85"
+			/>
+			
+		<!-- columns -->
+			<billboard
+				expirelife="500"
+				material="/shared/effects/materials/flare2.material"
+				startheight="3000"
+				midheight="3000"
+				endheight="100"
+				midheightpos=".75"
+				width="60"
+				lockup="1"
+				startcolor=".02 .05 .1"
+				endcolor="0 0 0"
+			/>
+			<billboard
+				expirelife="500"
+				material="/shared/effects/materials/flare2.material"
+				startheight="3000"
+				midheight="3000"
+				endheight="100"
+				midheightpos=".75"
+				width="60"
+				lockup="1"
+				startcolor=".05 .1 .2"
+				endcolor="0 0 0"
+			/>
+		
+		<!-- waterfall -->
+			<controller  position="0 0 750" scale="2.5" delay="-500">
+				<simpleemitter
+					spawnrate="10"
+					gravity="35"
+					speed="1"
+					drag="0.01"
+					depthbias="-50"
+					particlelife="2000"
+					offsetsphere="2 1 20"
+					angle="5"
+					direction="0 0 -1"
+				>
+					<particle yaw="0">
+						<model
+							startalpha="0" midalpha=".9" endalpha="0"
+							midalphapos=".15"
+							life="2000"
+							minscale="1" maxscale="1.9"
+							model="/items/basic/homecoming_stone/effects/songkran/waterfall/model.mdf"
+							color="1"
+							anim="idle"
+						/>
+					</particle>
+				</simpleemitter>
+				<simpleemitter
+					offset="0 0 100"
+					spawnrate="50"
+					gravity="20"
+					speed="60"
+					drag="0.15"
+					depthbias="-20"
+					particlelife="1500"
+					material="/shared/effects/materials/whitewater_02.material"
+					offsetsphere="0 0 20"
+					direction="0 0 1"
+				>
+					<particle
+						minangle="0" maxangle="360"
+						minanglespeed="-50" maxanglespeed="50"
+						startcolor=".3" midcolor=".3" endcolor="0" midcolorpos=".25"
+						minstartsize="1" maxstartsize="10" minendsize="20" maxendsize="30" scale="0.9"
+						startalpha=".5" midalpha=".2" endalpha="0" midlpahpos=".9"
+					/>
+				</simpleemitter>
+			</controller>
+			
+			<controller  position="0 0 500" scale="3" delay="-500" >
+				<simpleemitter
+					spawnrate="10"
+					gravity="35"
+					speed="1"
+					drag="0.01"
+					depthbias="-50"
+					particlelife="2000"
+					offsetsphere="0 0 30"
+					angle="5"
+					direction="0 0 -1"
+				>
+					<particle yaw="0">
+						<model
+							startalpha="0" midalpha=".9" endalpha="0"
+							midalphapos=".15"
+							life="2000"
+							minscale="1" maxscale="1.9"
+							model="/items/basic/homecoming_stone/effects/songkran/waterfall/model.mdf"
+							color="1"
+							anim="idle"
+						/>
+					</particle>
+				</simpleemitter>
+				<simpleemitter
+					offset="0 0 100"
+					spawnrate="10"
+					gravity="20"
+					minspeed="50" maxspeed="80"
+					drag="0.15"
+					depthbias="-20"
+					particlelife="1500"
+					material="/shared/effects/materials/whitewater_02.material"
+					offsetsphere="0 0 30"
+					direction="0 0 1"
+				>
+					<particle
+						minangle="0" maxangle="360"
+						minanglespeed="-50" maxanglespeed="50"
+						startcolor=".3" midcolor=".3" endcolor="0" midcolorpos=".25"
+						minstartsize="1" maxstartsize="10" minendsize="20" maxendsize="50" scale="0.75"
+						startalpha=".5" midalpha=".2" endalpha="0" midlpahpos=".9"
+					/>
+				</simpleemitter>
+			
+			</controller>
+			
+		<!-- water splash on ground -->	
+			<simpleemitter
+				spawnrate="30"
+				gravity="7"
+				minspeed="250" maxspeed="350"
+				drag="0.075"
+				depthbias="-20"
+				particlelife="1250"
+				material="/shared/effects/materials/whitewater_02.material"
+				offsetsphere="4 4 1"
+				direction="0 0 1"
+				position="0 0 20"
+			>
+				<particle
+					minangle="0" maxangle="360"
+					minanglespeed="-50" maxanglespeed="50"
+					startcolor=".3" midcolor=".3" endcolor="0" midcolorpos=".25"
+					minstartsize="6" maxstartsize="12" minmedsize="20" maxmedsize="30" endsize="0" 
+					scale="6"
+					startalpha=".5" midalpha=".2" endalpha="0" midlpahpos=".9"
+				/>
+			</simpleemitter>
+				
+			<simpleemitter
+				gravity="-1"
+				spawnrate="10"
+				minparticlelife="350"
+				maxparticlelife="500"
+				offsetsphere="45 45 0"
+				material="/shared/effects/materials/refract_outsplash.material"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"		
+					color="1 1 1"
+					param=".5"
+					size="5"
+					minstartscale="10"
+					maxstartscale="12"
+					maxendscale="35"
+					minendscale="40"
+					startalpha="0"
+					midalpha="1"
+					midalphapos="0.2"
+					endalpha="0"
+					startanchor="1"
+					endanchor="0"
+				/>
+			</simpleemitter>
+			
+		<!-- splashes  random -->
+			<terrainemitter
+				range="200"
+				spawnrate="35"
+				minparticlelife="800"
+				maxparticlelife="1000"
+				direction="0 0 1"
+				directionalspace="global"
+				angle="20"
+				minspeed="100"
+				maxspeed="140"
+				drag="0.01"
+				gravity="10"
+				material="/shared/effects/materials/water_spray_reveal_gradient_01.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					startsize="40"
+					endsize="120"
+					color=".3 .4 .5"
+					startscale=".75"
+					minendscale="1"
+					maxendscale="2.5"
+					startanchor="1"
+					endanchor=".8"
+					minstartframe=".6"
+					maxstartframe=".8"
+					minmidframe=".1"
+					maxmidframe=".4"
+					endframe="0"
+					param=".25"
+				/>
+			</terrainemitter>
+				
+		<!-- center water ripple and splash-->
+			<controller delay="100" >
+				<simpleemitter		
+					spawnrate="5"
+					particlelife="2500"	
+					position="10 10 0"		
+					speed="25"
+					drag="0"
+					offsetsphere="30 30 0"
+					acceleration="0"
+					material="/shared/effects/materials/refract_waterring.material"
+				>
+					<particle
+						color="1.0 1.0 1.0"
+						startalpha="0.2"
+						midalpha="0.05"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam=".5"
+						endparam="0.00"
+						startsize="45"
+						endsize="450"
+						depthbias="0"
+						position="0 0 1"
+						lockup="true"
+						pitch="90"
+						scale=".40"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter		
+					spawnrate="5"
+					particlelife="2500"	
+					position="-10 -10 0"		
+					speed="25"
+					drag="0"
+					offsetsphere="30 30 0"
+					acceleration="0"
+					material="/shared/effects/materials/refract_waterring.material"
+				>
+
+					<particle
+						color="1.0 1.0 1.0"
+						startalpha="0.2"
+						midalpha="0.5"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam=".05"
+						endparam="0.00"
+						startsize="45"
+						endsize="450"
+						depthbias="0"
+						position="0 0 1"
+						lockup="true"
+						pitch="90"
+						scale=".40"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter		
+					spawnrate="15"
+					particlelife="500"			
+					speed="15"
+					gravity="40"
+					offsetsphere="15 15 15"
+					acceleration="0"
+					position="0 0 470"
+					material="/shared/effects/materials/refract_stream.material"
+				>
+
+					<particle
+						color="1.0 1.0 1.0"
+						startalpha="0.8"
+						midalpha="0.7"
+						endalpha="0.0"
+						midalphapos="0.75"
+						startparam=".05"
+						endparam="0.00"
+						startsize="25"
+						endsize="45"
+						depthbias="0"
+						position="0 0 4"
+						lockup="true"
+					/>
+				</simpleemitter>
+			</controller>
+			
+		<!-- wake -->
+			<terrainemitter
+				spawnrate="10"
+				minparticlelife="1000"
+				maxparticlelife="1200"
+				material="/shared/effects/materials/ring_reveal_gradient_01.material"
+				depthbias="-15"
+				offsetsphere="30 30 0"
+			>
+				<particle
+					lockup="true"
+					lockright="true"
+					pitch="-90"
+					maxangle="360"
+					minsize="100"
+					maxsize="200"
+					minscale=".75"
+					maxscale="1.1"
+					startalpha="0"
+					midalpha=".4"
+					endalpha="0"
+					startframe="0"
+					endframe=".75"
+					minstartparam=".6"
+					maxstartparam=".8"
+					endparam=".4"
+					color="0 .75 1"
+					anchor="1"
+				/>
+			</terrainemitter>
+		
+			<template name="wave">
+				<controller
+					
+					yaw="{yaw}"
+					directionalspace="global"
+					scale=".2"
+				>
+					<twopointtrailemitter
+						position_a="275 -125 0"
+						position_b="275 125 0"
+						spawnrate="60"
+						particlelife="125"
+						material="/shared/effects/materials/water_wall_02_refract_reveal_gradient.material"
+						direction=".5 .125 1"
+						angle="0"
+						speed="4000"
+						gravity="1500"
+						mintexposscale=".3"
+						maxtexposscale=".4"
+						texpostime="250"
+						mintexstretchscale=".5"
+						maxtexstretchscale=".75"
+						attachtoemitter="true"
+					>
+						<particle
+							size="10"
+							startcolor="1"
+							midcolor=".8 .9 1"
+							endcolor="1"
+							midcolorpos=".2"
+							param=".1"
+							startframe="1"
+							midframe=".4"
+							endframe="0"
+							startalpha="1"
+							endalpha="1"
+						/>
+					</twopointtrailemitter>
+				</controller>
+			</template>
+			
+			<instance name="wave" yaw="0" />
+			<instance name="wave" yaw="36" />
+			<instance name="wave" yaw="72" />
+			<instance name="wave" yaw="108" />
+			<instance name="wave" yaw="144" />
+			
+			<instance name="wave" yaw="180" />
+			<instance name="wave" yaw="216" />
+			<instance name="wave" yaw="252" />
+			<instance name="wave" yaw="288" />
+			<instance name="wave" yaw="324" />
+			<instance name="wave" yaw="360" />
+		
+		
+	
+		</particlesystem>
+	
+	</definitions>
+	
+	
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

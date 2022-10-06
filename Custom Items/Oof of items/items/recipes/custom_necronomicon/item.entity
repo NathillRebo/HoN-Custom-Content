@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Necronomicon"
+
+	icon="icon.tga"
+	cost="950"
+	components="Item_Dreamcatcher Item_Custom_BookOfSouls"
+
+	actiontype="target_entity"
+	frontqueue="true"
+	targetscheme="all_heroes"
+	casteffecttype="Magic"
+	
+	casttime="0"
+	castactiontime="0"
+	responsetype="Order_NonInterrupting"
+	noresponse="true"
+	
+	cooldowntime="2000"
+	cooldowntype="soulstone"
+
+	manacost="0"
+	range="1000"
+	
+	strength="6"
+	agility="6"
+	intelligence="12"
+	maxhealth="300"
+	movespeed="25"
+	maxmana="150"
+	manaregenpercharge="2"
+
+	maxcharges="5"
+
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	doubleactivate="true"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<evaluate a=".8" b="charges" op="mult" />
+			<setvar0 a="result" b="100" op="div"/>
+			<setvar1 a="result" b="1.08" op="add"/>
+			<setvalue name="damage_attempted" a="damage_attempted" b="var1" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<aura name="Dreamcatcher_Collector" state="State_Dreamcatcher_Collector" radius="1000" targetscheme="enemy_heroes" ignoreinvulnerable="true" notooltip="true" stack="true" proxy="this_entity"  />
+	
+	<checkcost>
+		<compare a="charges" b="0" op="eq">
+			<invalidate />
+		</compare>
+	</checkcost>
+	
+	<oncreate>
+		<compare a="charges" b="5" op="lt">
+			<hasmodifier name="rapidfire" entity="target_entity" >
+				<starttimer duration="36000" />
+			</hasmodifier>
+			<else>
+				<starttimer duration="180000" />
+			</else>
+		</compare>
+		<else>
+			<setactivemodifierkey name="dreamcatcher_fullcharges" />
+		</else>
+	</oncreate>
+
+	<onframe />
+	
+	<ontimer>
+		<targettype type="Entity_Chest">
+			<starttimer duration="1000" />
+		</targettype>
+		<else>
+			<compare a="charges" b="4" op="lt">
+				<addcharges entity="this_entity" count="1" />
+				<hasmodifier name="rapidfire" >
+					<starttimer duration="36000" />
+				</hasmodifier>
+				<else>
+					<starttimer duration="180000" />
+				</else>
+			</compare>
+			<else>
+				<addcharges entity="this_entity" count="1" />
+			</else>
+		</else>
+	</ontimer>
+	
+	<onimpact>
+		<compare a="charges" b="5" op="ge">
+			<hasmodifier name="rapidfire" >
+				<starttimer duration="36000" />
+			</hasmodifier>
+			<else>
+				<starttimer duration="180000" />
+			</else>
+		</compare>
+		
+		<cantarget targetscheme="ally_heroes" ignoreinvulnerable="true">
+			<applystate name="State_Dreamcatcher_Ally" duration="10000" />
+		</cantarget>
+		<else>
+			<applystate name="State_Dreamcatcher_Enemy" duration="10000" />
+		</else>
+		<removecharge />
+	</onimpact>
+	
+	<modifier key="Empath_Inside" modpriority="90">
+		<ondoubleactivate>
+			<areaofeffect
+				targetscheme="other_ally_heroes"
+				effecttype="Magic"
+				targetselection="closest"
+				radius="30"
+				maxtotalimpacts="1"
+			>
+				<useitem source="this_entity" target="target_entity" />
+			</areaofeffect>
+		</ondoubleactivate>
+	</modifier>
+</item>

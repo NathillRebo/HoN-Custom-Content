@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_AtalantasBow"
+
+	icon="icon.tga"
+	
+	cost="1550"
+	components="Item_Lightning1 Item_Custom_ChargedBow"
+	
+	actiontype="passive"
+	
+	attackspeed=".75"
+	agility="8"
+	strength="3"
+	intelligence="3"
+
+	maxcharges="2"
+
+	cooldowntime="1000"
+	
+	modifierkey="alt_Thunderclaw"
+	modifierkey2="Prophet_Alt4_Birds"
+	
+	effectkey1="effect_lightning"
+>
+	<ontimer>
+		<starttimer duration="5000" />
+	</ontimer>
+	
+	<onattack />
+
+	<modifier key="chainlightningproc" modpriority="75" exclusive="true">
+		<ontimer>
+			<compare a="charges" b="0" op="le">
+			</compare>
+			<else>
+				<targettype type="hero">
+					<removecharge />
+				</targettype>
+				<compare a="charges" b="0" op="le">
+					<resettimer />
+				</compare>
+				<else>
+					<starttimer duration="5000" />
+				</else>
+			</else>
+		</ontimer>
+
+		<onattack effectdescription="true">
+			<cantarget targetscheme="enemy_units">
+				<compare a="charges" b="0" op="le">
+					<isready>
+						<startcooldown />
+						<setaccumulator value="120" /> <!-- Base Magic Damage -->
+						
+						<targettype type="illusion" source="this_owner_entity" target="this_owner_entity">
+							<!-- Works on illusions for 33% of strength -->
+							<changeaccumulator b="0.33" op="mult" />
+						</targettype>
+						<damage effecttype="Magic" amount="0" b="accumulator" op="add" />
+						
+						<areaofeffect
+							radius="275"
+							targetselection="all"
+							targetscheme="enemy_units"
+							effecttype="Magic"
+							source="source_entity"
+							center="target_position"
+						>
+							<damage effecttype="Magic" amount="0" b="accumulator" op="add" />
+						</areaofeffect>
+						<playeffect effect="effects/impact.effect" source="target_entity" target="" />
+
+						<setcharges a="2" />
+						<starttimer duration="5000" />
+					</isready>
+				</compare>
+				<else>
+					<removecharge />
+					<compare a="charges" b="0" op="eq">
+						<resettimer />
+					</compare>
+					<else>
+						<starttimer duration="5000" />
+					</else>
+				</else>
+			</cantarget>
+		</onattack>
+	</modifier>
+</item>

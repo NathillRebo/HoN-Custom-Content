@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_PhantomVeil"
+
+	icon="icon.tga"
+	
+	cost="1000"
+	components="Item_Custom_ArmoredCloak Item_Ringmail Item_VoidTalisman"
+	statuseffecttooltip="State_VoidTalismanPlus"
+	actiontype="target_self"
+	
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true" 
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="25000"
+	cooldowntype="VoidTalisman"
+	
+	manacost="0"
+	casteffect=""
+	
+	armor="9"
+	strength="9"
+	agility="9"
+	intelligence="9"
+	magicarmor="9"
+	
+	responsetype="Item_NonInterrupting"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.01" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<checkcost>
+		<hasmodifier entity="source_entity" name="activation_modifier">
+			<invalidate />
+		</hasmodifier>
+	</checkcost>
+	
+	<onimpact>
+		<playeffect effect="effects/cast.effect" source="source_entity" target="" />
+		<dispel type="Physical" />
+		<applystate name="State_VoidTalismanPlus" duration="4000" />
+	</onimpact>
+</item>

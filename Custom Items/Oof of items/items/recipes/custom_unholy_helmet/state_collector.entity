@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_UnholyHelmet_Collector"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	serverentity="true"
+>
+	<onkilled>
+		<targettype type="illusion" target="source_entity" />
+		<else>
+			<targettype type="heropet" target="source_entity" />
+			<else>
+				<targettype type="mimic" target="source_entity" />
+				<else>
+					<hasmodifier name="cantcollectchalice" entity="this_spawner_entity" />
+					<else>
+						<addcharges count="1" entity="this_spawner_entity" />
+					</else>
+				</else>
+			</else>
+		</else>
+	</onkilled>
+</state>

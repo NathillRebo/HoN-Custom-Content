@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="1" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="entity" scale="2.5">
+
+			<sound    
+			    life="5000"
+				pitchshift="true"
+				minpitch="1.0"
+				forcestereo="true"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume="1" 
+				sample="/items/basic/homecoming_stone/sounds/con_rune2.wav"
+			/>
+			
+			
+			<sound
+                soundloop="true"
+				fadein="250"
+				fadeout="1500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".8" 
+				sample="/items/basic/homecoming_stone/sounds/con_loop.wav"
+			/>	
+			
+			<sound
+                soundloop="true"
+				fadein="250"
+				fadeout="1500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="800"
+				volume=".8" 
+				sample="/items/basic/homecoming_stone/sounds/con_loop2.wav"
+			/>	
+			
+			
+		<!-- columns of light -->
+			<billboard
+				expirelife="500"
+				material="/shared/effects/materials/flare2.material"
+				startheight="3000"
+				midheight="3000"
+				endheight="100"
+				midheightpos=".75"
+				width="40"
+				lockup="1"
+				startcolor=".25 .15 0"
+				endcolor="0 0 0"
+			/>
+			<billboard
+				expirelife="500"
+				material="/shared/effects/materials/flare2.material"
+				startheight="3000"
+				midheight="3000"
+				endheight="100"
+				midheightpos=".75"
+				width="40"
+				lockup="1"
+				startcolor=".25 .2 0"
+				endcolor="0 0 0"
+			/>
+			
+			<simpleemitter
+				spawnrate="10"
+				minparticlelife="500" maxparticlelife="1500"
+				direction="0 0 -1"
+				angle="0"
+				speed="500"
+				offsetsphere="20 20 0"
+				position="0 0 600"
+				material="/shared/effects/materials/flare_03.material"
+			>
+				<particle
+					startsize="0"
+					endsize="3000"
+					startwidth="0"
+					minendwidth="10" maxendwidth="20"
+					startcolor="1 .75 .5"
+					endcolor="0"
+					lockup="1"
+				/>
+				
+				<particle
+					startsize="0"
+					endsize="3000"
+					startwidth="0"
+					minendwidth="10" maxendwidth="20"
+					startcolor="1 .5 .1"
+					endcolor="0"
+					lockup="1"
+				/>
+				<particle
+					startsize="0"
+					endsize="3000"
+					startwidth="0"
+					minendwidth="10" maxendwidth="20"
+					startcolor="1 .15 0" 
+					endcolor="0"
+					lockup="1"
+				/>
+			</simpleemitter>
+
+			<!--sparkles-->
+			<simpleemitter
+				life="5000"
+				delay="500"
+				spawnrate="33"
+				count="32"
+				particlelife="250"			
+				gravity="0"
+				speed="2"
+				drag="0"
+				acceleration="0"
+				position="0 0 180"
+				material="/shared/effects/materials/frost_flash_10.material"
+				offsetsphere="5 5 405"
+				minangle="360"
+				maxangle="180"
+				direction="0 0 1"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+			>
+				<particle 
+					minangle="135"
+					maxangle="210"
+					minanglespeed="-50"
+					maxanglespeed="-150"
+					color="2 2 2"
+					startframe="0"
+					endframe="1"
+					startsize="50"
+					midsize="15"
+					endsize=".1"
+					midsizepos=".5"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				life="5000"
+				delay="500"
+				spawnrate="20"
+				particlelife="250"
+				gravity="-5"
+				speed="2"
+				drag="0"
+				acceleration="0"
+				position="0 0 160"
+				material="/shared/effects/materials/frost_flash_10.material"
+				offsetsphere="50 50 405"
+				minangle="360"
+				maxangle="180"
+				direction="0 0 1"
+				offsetdirection="0 0 0"
+				offsetradial="0"
+				yawspeed="30"
+			>
+
+				<particle
+					minangle="135"
+					maxangle="210"
+					minanglespeed="-50"
+					maxanglespeed="-150"
+					color="2 1 1"
+					startframe="0"
+					endframe="1"
+					startsize="25"
+					midsize="25"
+					endsize=".1"
+					midsizepos=".4"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+
+				<particle 
+					minangle="135"
+					maxangle="210"
+					minanglespeed="-50"
+					maxanglespeed="-150"
+					color="2 .5 0"
+					startframe="0"
+					endframe="1"
+					startsize="25"
+					midsize="7.5"
+					endsize=".1"
+					midsizepos=".4"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+			
+			<!-- flaring spiked beams -->
+			<simpleemitter
+				spawnrate="40"
+				minparticlelife="700"
+				maxparticlelife="1000"
+				direction="0 0 1"
+				minangle="70"
+				maxangle="80"
+				speed=".1"
+				position="0 0 5"
+			>
+				<particle
+					axngle="360"
+				>
+					<controller
+						life="1000"
+						maxyaw="360"
+					>
+						<billboard
+							minlife="700"
+							maxlife="1000"
+							material="/shared/effects/materials/light_rays3.material"
+							flare="1"
+							minstartheight="20"
+							maxstartheight="40"
+							minendheight="80"
+							maxendheight="260"
+							minstartwidth="8"
+							maxstartwidth="14"
+							minendwidth="3"
+							maxendwidth="5"
+							lockup="true"
+							lockright="true"
+							minpitch="60"
+							maxpitch="85"
+							startcolor="1"
+							midcolor="1 .25 0"
+							endcolor="0"
+							directionalspace="local"
+						/>
+					</controller>
+				</particle>
+			</simpleemitter>
+		
+			<terrainemitter
+				spawnrate="60"
+				particlelife="1000"
+				direction="0 0 1"
+				minangle="90"
+				maxangle="90"
+				maxspeed="200"
+				drag=".02"
+				material="/shared/effects/materials/mana.material"
+			>
+				<particle
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"
+					startcolor="0"
+					midcolor=".35 0.1 0"
+					endcolor="0"
+					midcolorpos=".25"
+					startsize="30"
+					endsize="80"
+					depthbias="-10"
+				/>
+				<particle
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"
+					startcolor="0"
+					midcolor=".5 .2 0"
+					endcolor="0"
+					midcolorpos=".25"
+					startsize="30"
+					endsize="80"
+					depthbias="-10"
+				/>
+				<particle
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"
+					startcolor="0"
+					midcolor=".75 .2 0"
+					endcolor="0"
+					midcolorpos=".25"
+					startsize="30"
+					endsize="80"
+					depthbias="-10"
+				/>
+				<particle
+					maxangle="360"
+					minanglespeed="-200"
+					maxanglespeed="200"
+					startcolor="0"
+					midcolor=".55 .2 0"
+					endcolor="0"
+					midcolorpos=".25"
+					startsize="30"
+					endsize="80"
+					depthbias="-10"
+				/>
+			</terrainemitter>
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

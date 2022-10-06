@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_RuneforgedHammer"
+
+	icon="icon.tga"
+	
+	cost="790"
+	components="Item_Custom_HeavyHammer Item_Regen"
+
+	actiontype="passive"
+	
+	strength="5"
+	damage="15"
+	maxhealth="250"
+	healthregen="6"
+	manaregen="3"
+>
+	<aura name="Custom_RuneforgedHammer_Aura" state="State_Custom_RuneforgedHammer" radius="650" targetscheme="enemy_units_and_structures" effecttype="Debuff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+</item>

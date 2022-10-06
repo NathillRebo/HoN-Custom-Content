@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_DivineRuin"
+
+	icon="icon.tga"
+	
+	cost="1200"
+	components="Item_Custom_SpellFocus Item_LuminousPrism Item_Beastheart"
+
+	actiontype="passive"
+	
+	intelligence="25"
+	agility="3"
+	strength="3"
+	maxhealth="300"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.09" op="mult" />
+			<evaluate a="damage_attempted" b="0.35" op="mult" />
+			<takemana amount="result" />		
+		</else>
+	</onattackingdamageevent>
+</item>

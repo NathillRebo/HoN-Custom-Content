@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_SphereOfEndlessRage"
+	
+	statuseffecttooltip="State_Custom_SphereOfEndlessRage"
+	icon="icon.tga"
+	
+	cost="1050"
+	components="Item_HelmOfTheVictim Item_Steamstaff Item_Insanitarius"
+	
+	actiontype="toggle"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="5000"
+	toggleoffcooldowntime="0"
+	cooldowntype="insanitarius"
+	noninterrupting="true"
+	nobreakchannel="true"
+	noresponse="true"
+	
+	damage="25"
+	attackspeed="0.45"
+	armor="12"
+	healthregen="10"
+	
+	modifierkey="alt_Insanitarius"
+>
+	<onimpact />
+	
+	<ontoggleon>
+		<resetcooldown />
+		<startcooldown duration="500" />
+		<applystate name="State_Custom_SphereOfEndlessRage_Timer" duration="5000" target="source_entity" />
+		<starttimer duration="5000" />
+		
+		<!-- save old max health -->
+		<setvar0 a="source_maxhealth" /> 
+		
+		<applystate name="State_Custom_SphereOfEndlessRage" istoggle="true" pushentity="true" />
+		
+		<!-- max health bonus -->
+		<setvar1 a="source_maxhealth" b="var0" op="sub" /> 
+		
+		<!-- target health -->
+		<setvar2 a="source_health" b="var1" op="add" />
+		
+		<!-- current health adjusted for bonus -->
+		<setvar3 a="source_health" b="var0" op="div" />
+		<setvar3 a="var3" b="source_maxhealth" op="mult" />
+		
+		<!-- final adjustment to reach target health after the game rescales current health -->
+		<changehealth a="var2" b="var3" op="sub" />
+		
+		<!-- save bonus as the state's accumulator -->
+		<setaccumulator entity="stack_entity" value="var1" />
+	</ontoggleon>
+	
+	<modifier key="insanitarius_active" condition="toggle_active" modpriority="100"
+		icon="icon.tga"
+		modifierkey="insanitarius_on"
+	>
+		<onimpact />
+
+	</modifier>
+	
+	<modifier key="insanitarius_shopdescription" condition="insanitariusdesc" modpriority="101">
+		<onimpact />
+	</modifier>
+</item>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_MaskOfTwinSpirits"
+
+	icon="icon_off.tga"
+	
+	cost="960"
+	components="Item_Custom_TribalMask Item_Glowstone Item_MajorTotem"
+
+	actiontype="no_target"
+	frontqueue="true"
+	inheritmovement="true"
+	casttime="0"
+	castactiontime="0"
+	noninterrupting="true"
+	nobreakchannel="true"
+	noresponse="true"
+	nonaggressive="true"
+	
+	maxhealth="500"
+	maxmana="300"
+	strength="8"
+	agility="8"
+	intelligence="8"
+	defaultactivemodifierkey="custom_mots_off"
+>
+	<onpickup>
+		
+	</onpickup>
+	
+	<modifier key="custom_mots_off" modpriority="100"
+		icon="icon_off.tga"
+	>
+		<onframe/>
+		<onattackingdamageevent>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.12" op="mult" />
+		</onattackingdamageevent>
+		<ondamaged>
+			<scaledamage scale="1.12" />
+		</ondamaged>
+		<onimpact>
+			<setactivemodifierkey name="custom_mots_def" />
+		</onimpact>
+	</modifier>
+	<modifier key="custom_mots_def" modpriority="100"
+		icon="icon_def.tga"
+	>
+		<onframe/>
+		<onattackingdamageevent>
+			<setvalue name="damage_attempted" a="damage_attempted" b="0.88" op="mult" />
+		</onattackingdamageevent>
+		<ondamaged>
+			<scaledamage scale="0.88" />
+		</ondamaged>
+		<onimpact>
+			<setactivemodifierkey name="custom_mots_off" />
+		</onimpact>
+	</modifier>
+	
+	<modifier key="i_am_disabled" modpriority="100"
+		disabled="true"
+	>
+	</modifier>
+</item>

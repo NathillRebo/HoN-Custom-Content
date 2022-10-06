@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_MaskOfDeath"
+
+	icon="icon.tga"
+	passiveeffect="cast.effect"
+	
+	attackspeed="0.90"
+	lifesteal="0.2"
+	movespeedmultiplier="0.15"
+	incomingdamagemultiplier="0.15"
+	stunneddurationmultiplier="-0.3"
+	debuffdurationmultiplier="-0.3"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onattackpredamage>
+		<cantarget targetscheme="enemy_units" />
+		<else>
+			<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.2" op="add" />
+		</else>
+	</onattackpredamage>
+	
+	<onattackimpact>
+		<playeffect effect="state.effect" source="source_entity" target="target_entity"/>
+	</onattackimpact>
+</state>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Polynomicon"
+
+	icon="icon.tga"
+	
+	cost="825"
+	components="Item_Custom_BookOfSouls Item_Custom_ConduitGem"
+
+	actiontype="passive"
+	cooldown="1700"
+	cooldowntype="polynomicon"
+
+	intelligence="15"
+	agility="15"
+	maxmana="150"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.08" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onabilityimpact>
+		<isready>
+			<startcooldown />
+			<applystate name="State_Custom_Polynomicon" duration="5000" target="source_entity" pushentity="true" />
+		</isready>
+	</onabilityimpact>
+</item>

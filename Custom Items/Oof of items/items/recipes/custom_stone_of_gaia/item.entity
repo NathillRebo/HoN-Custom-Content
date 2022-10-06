@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_StoneOfGaia"
+
+	icon="icon.tga"
+	
+	cost="1450"
+	components="Item_Custom_TribalMask Item_Custom_AmuletOfFortitude Item_Lifetube"
+
+	actiontype="passive"
+	
+	maxhealth="320"
+	maxmana="150"
+	strength="3"
+	agility="3"
+	intelligence="3"
+	healthregen="13"
+	healthregenpercharge="0.225"
+>
+	<onframe>
+		<evaluate a="1" b="source_health_percent" op="sub" />
+		<evaluate a="100" b="result" op="mult" />
+		<setvar0 a="result" />
+		<setcharges a="var0" />
+	</onframe>
+</item>

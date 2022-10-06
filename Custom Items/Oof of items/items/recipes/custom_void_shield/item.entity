@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_VoidShield"
+
+	icon="icon.tga"
+	
+	cost="850"
+	components="Item_Custom_SpikedShield Item_Beastheart Item_Platemail"
+
+	actiontype="passive"
+	
+	armor="16"
+	strength="5"
+	maxhealth="300"
+	deflectionchance="0.50"
+	deflection="32"
+>
+	<onframe />
+	
+	<modifier key="buckler_melee" condition="melee" modpriority="32"
+		deflection="32"
+	>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="16"
+		deflection="16"
+	>
+	</modifier>
+	<aura name="Custom_VoidShield_Aura" state="State_Custom_VoidShield" radius="850" targetscheme="enemy_units_and_structures" effecttype="Debuff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+
+</item>

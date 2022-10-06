@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="0">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1.65">
+		<sound    
+				forcestereo="true"
+                delay="500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume=".2" 
+				sample="/items/basic/homecoming_stone/sounds/gold_tp_shine.wav"
+			/>
+			
+			<sound
+			    forcestereo="true"
+			    minpitch="1.1"
+			    maxpitch="1.1"
+                delay="1000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume=".4" 
+				sample="/items/basic/homecoming_stone/sounds/gold_tp_shine.wav"
+			/>
+			
+			<sound
+			    forcestereo="true"
+			    minpitch="1.3"
+			    maxpitch="1.3"
+                delay="1500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume=".6" 
+				sample="/items/basic/homecoming_stone/sounds/gold_tp_shine.wav"
+			/>
+			
+			<sound
+			    forcestereo="true"
+			    minpitch="1.4"
+			    maxpitch="1.4"
+                delay="2000"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume=".8" 
+				sample="/items/basic/homecoming_stone/sounds/gold_tp_shine.wav"
+			/>
+			
+			<sound
+			    forcestereo="true"
+			    minpitch="1.5"
+			    maxpitch="1.5"
+                delay="2500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1800"
+				volume="1" 
+				sample="/items/basic/homecoming_stone/sounds/gold_tp_shine.wav"
+			/>
+			
+
+			
+			<sound	
+                forcestereo="true"			
+			    life="7000"
+				linearfalloff="true" 
+				falloffstart="800"
+				falloffend="1800"
+				volume="1" 
+				sample="/items/basic/homecoming_stone/sounds/gold_tp_rise_3.wav"
+			/>
+			
+	<!-- stream of light -->
+		<billboard
+			expirelife="1000"
+			material="/shared/effects/materials/flare2.material"
+			startheight="3000"
+			midheight="3000"
+			endheight="100"
+			midheightpos=".75"
+			width="40"
+			lockup="1"
+			startcolor=".1"
+			endcolor="0 0 0"
+		/>
+		<billboard
+			expirelife="1000"
+			material="/shared/effects/materials/flare2.material"
+			startheight="3000"
+			midheight="3000"
+			endheight="100"
+			midheightpos=".75"
+			width="40"
+			lockup="1"
+			startcolor=".125 .15 .15"
+			endcolor="0 0 0"
+		/>
+		
+		<simpleemitter
+			expirelife="100"
+			spawnrate="10"
+			particlelife="1000"
+			direction="0 0 -1"
+			angle="0"
+			speed="500"
+			offsetsphere="20 20 0"
+			position="0 0 600"
+			material="/shared/effects/materials/flare_03.material"
+		>
+			<particle
+				startsize="0"
+				endsize="3000"
+				startwidth="0"
+				endwidth="20"
+				startcolor="1 .7 .85"
+				endcolor="0"
+				lockup="1"
+			/>
+			<particle
+				startsize="0"
+				endsize="3000"
+				startwidth="0"
+				endwidth="20"
+				startcolor=".7 .7 1"
+				endcolor="0"
+				lockup="1"
+			/>
+			<particle
+				startsize="0"
+				endsize="3000"
+				startwidth="0"
+				endwidth="20"
+				startcolor=".7 1 1"
+				endcolor="0"
+				lockup="1"
+			/>
+			<particle
+				startsize="0"
+				endsize="3000"
+				startwidth="0"
+				endwidth="20"
+				startcolor="1 .7 1"
+				endcolor="0"
+				lockup="1"
+			/>
+		</simpleemitter>
+		
+		<terrainemitter
+			spawnrate="60"
+			particlelife="1000"
+			direction="0 0 1"
+			minangle="90"
+			maxangle="90"
+			maxspeed="200"
+			drag=".02"
+			material="/shared/effects/materials/mana.material"
+		>
+			<particle
+				maxangle="360"
+				minanglespeed="-200"
+				maxanglespeed="200"
+				startcolor="0"
+				midcolor=".5 .35 .35"
+				endcolor="0"
+				midcolorpos=".25"
+				startsize="30"
+				endsize="80"
+				depthbias="-10"
+			/>
+			<particle
+				maxangle="360"
+				minanglespeed="-200"
+				maxanglespeed="200"
+				startcolor="0"
+				midcolor=".35 .5 .5"
+				endcolor="0"
+				midcolorpos=".25"
+				startsize="30"
+				endsize="80"
+				depthbias="-10"
+			/>
+			<particle
+				maxangle="360"
+				minanglespeed="-200"
+				maxanglespeed="200"
+				startcolor="0"
+				midcolor=".35 .35 .5"
+				endcolor="0"
+				midcolorpos=".25"
+				startsize="30"
+				endsize="80"
+				depthbias="-10"
+			/>
+			<particle
+				maxangle="360"
+				minanglespeed="-200"
+				maxanglespeed="200"
+				startcolor="0"
+				midcolor=".5 .35 .5"
+				endcolor="0"
+				midcolorpos=".25"
+				startsize="30"
+				endsize="80"
+				depthbias="-10"
+			/>
+		</terrainemitter>
+	</particlesystem>
+	
+	
+	
+	
+	
+	
+	<particlesystem name="system1" space="world" scale="2">
+	
+		<groundsprite
+			life="300"
+			startsize="0"
+			endsize="200"
+			color="0"
+			alpha=".25"
+			material="/shared/effects/materials/ground_whitedot.material"
+		/>
+		
+		<groundsprite
+			delay="300"
+			size="200"
+			expirelife="200"
+			startcolor="0"
+			endcolor="0"
+			alpha=".25"
+			material="/shared/effects/materials/ground_whitedot.material"
+		/>
+		
+	<!-- first circle -->		
+		<groundsprite
+			life="300"
+			startsize="0"
+			endsize="100"
+			color=".55"
+			yaw="180"
+			material="/shared/effects/materials/silver_rune.material"
+		/>
+		
+		<groundsprite
+			delay="300"
+			size="100"
+			expirelife="200"
+			startcolor=".55"
+			endcolor="0"
+			yaw="180"
+			material="/shared/effects/materials/silver_rune.material"
+		/>
+
+		<!-- timer -->
+		
+		<template name="timer" >
+			<controller delay="{delay}" yaw="{angle}" directionalspace="global" >
+				<groundsprite
+						directionalspace="local"
+						life="500"
+						position="0 70 0"
+						material="/shared/effects/materials/corona_08_ground.material"
+						startcolor="0"
+						enddcolor=".5 .7 1"
+						startsize="20"
+						endsize="0"
+					/>
+					
+				<groundsprite
+						directionalspace="local"
+						life="500"
+						position="0 70 0"
+						material="/shared/effects/materials/blink.material"
+						startcolor="0"
+						midcolor=".55 .75 .75"
+						endcolor="0"
+						midcolorpos=".9"
+						size="20"
+					/>
+					<groundsprite
+						directionalspace="local"
+						delay="400"
+						expirelife="500"
+						position="0 70 0"
+						material="/shared/effects/materials/blink.material"
+						startcolor=".55 .75 .75"
+						endcolor="0"
+						size="20"
+					/>
+				<!--
+					<billboard
+						delay="100"
+						life="450"
+						material="/shared/effects/materials/flare2.material"
+						startheight="0"
+						midheight="500"
+						endheight="500"
+						midheightpos=".75"
+						startwidth="30"
+						endwidth="0"
+						lockup="1"
+						startcolor=".35 .5 .5"
+						endcolor="0 0 0"
+						position="0 70 0"
+					/>
+				-->
+					<simpleemitter
+						count="1"
+						particlelife="500"
+						position="0 70 0"
+						direction="0 0 1"
+						angle="0"
+						speed="200"
+						material="/shared/effects/materials/corona_08.material"
+					>
+						<particle
+							lockup="1"
+							pitch="90"
+							startcolor=".4 .5 .55"
+							endcolor="0"
+							size="50"
+						/>
+					</simpleemitter>
+				</controller>
+			</template>
+			
+			<instance name="timer" delay="500" angle="325" />
+			<instance name="timer" delay="1000" angle="253" />
+			<instance name="timer" delay="1500" angle="181" />
+			<instance name="timer" delay="2000" angle="109" />
+			<instance name="timer" delay="2500" angle="37" />
+			
+			<!-- contracting and expanding circles timer -->
+			<controller>
+				<groundsprite
+					life="3000"
+					expirelife="500"
+					material="/shared/effects/materials/corona_07_ground.material"
+					startsize="105"
+					endsize="140"
+					startcolor="0"
+					midcolor=".35 .25 .35"
+					endcolor=".25"
+					midcolorpos=".8"
+					yawspeed="-12"
+				/>
+			</controller>
+
+			<controller>
+				<groundsprite
+					life="3000"
+					expirelife="500"
+					material="/shared/effects/materials/corona_07_ground.material"
+					startsize="175"
+					endsize="140"
+					startcolor="0"
+					midcolor=".25 .35 .35"
+					endcolor=".25"
+					midcolorpos=".8"
+					yawspeed="12"
+				/>
+			</controller>
+			
+			<template name="rings" >
+				<simpleemitter
+					count="1"
+					delay="2950"
+					direction="0 0 1"
+					speed="700"
+					drag=".01"
+					angle="0"
+					particlelife="{plife}"
+					position="{position}"
+					material="/shared/effects/materials/corona_07.material"
+				>
+					<particle
+						lockup="1"
+						pitch="90"
+						startcolor=".5 .4 .5"
+						midcolor=".4 .5 .5"
+						endcolor="0"
+						midcolorpos=".33"
+						size="250"
+					/>
+				</simpleemitter>
+			</template>
+			
+			<instance name="rings" plife="300" position="0 0 0" />
+				
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->

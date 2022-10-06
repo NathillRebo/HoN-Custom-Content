@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_MoonlitEssence"
+	
+	icon="icon.tga"
+	
+	cost="1080"
+	components="Item_Regen Item_Regen"
+	
+	actiontype="passive"
+	
+	healthregen="15"
+	manaregen="8"
+	
+	modifierkey="alt_Custom_Moonlit_Essence"
+>
+	<onheal priority="0" propagatetoillusions="false" >
+		<applystate name="State_Custom_MoonlitEssence" target="target_entity" duration="5000" />
+	</onheal>
+</item>

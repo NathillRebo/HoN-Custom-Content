@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_AethyrShield"
+
+	icon="icon.tga"
+	
+	cost="925"
+	components="Item_IronShield Item_Custom_MagesClover Item_Moonspear"
+	
+	actiontype="passive"
+	
+	agility="25"
+	manaregen="1"
+	magicarmor="7"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.06" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	<onattackeddamageevent>
+		<applystate name="State_AethyrShield" target="source_entity" duration="30000" />
+	</onattackeddamageevent>
+</item>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_DragonslayersShoulderpad"
+	
+	icon="icon.tga"
+	
+	cost="985"
+	components="Item_Custom_HelmOfValor Item_IronShield Item_Soulscream"
+	maxlevel="2"
+	
+	actiontype="passive"
+	
+	strength="14,18"
+	agility="28,35"
+	armor="6,8"
+	intelligence="4,5"
+	
+	maxcharges="2"
+>
+	<oncreate>
+		<addcharges count="1" />
+	</oncreate>
+	
+	<onupgrade>
+		<addcharges count="1" />
+	</onupgrade>
+	<onframe />
+	<modifier key="buckler_melee" condition="melee" modpriority="100">
+		<onattackedpredamage>
+			<combateffecttype effecttype="Attack">
+				<targettype type="hero">
+					<chance threshold="0.70">
+						<setvalue name="combat_deflection" a="combat_deflection" b="36,45" op="max" />
+					</chance>
+				</targettype>
+				<else>
+					<chance threshold="0.50">
+						<setvalue name="combat_deflection" a="combat_deflection" b="40,51" op="max" />	
+					</chance>
+				</else>
+			</combateffecttype>
+		</onattackedpredamage>
+	</modifier>
+
+	<modifier key="buckler_ranged" condition="ranged" modpriority="100">
+		<onattackedpredamage>
+			<combateffecttype effecttype="Attack">
+				<targettype type="hero">
+					<chance threshold="0.70">
+						<setvalue name="combat_deflection" a="combat_deflection" b="18,23" op="max" />
+					</chance>
+				</targettype>
+				<else>
+					<chance threshold="0.50">
+						<setvalue name="combat_deflection" a="combat_deflection" b="20,25" op="max" />	
+					</chance>
+				</else>
+			</combateffecttype>
+		</onattackedpredamage>
+	</modifier>
+	
+</item>

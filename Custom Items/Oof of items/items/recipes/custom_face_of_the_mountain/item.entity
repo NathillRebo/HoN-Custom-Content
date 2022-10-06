@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_FaceOfTheMountain"
+
+	icon="icon.tga"
+	cost="1600"
+	components="Item_Custom_ArmoredCloak Item_Platemail Item_Platemail"
+	statuseffecttooltip="State_Custom_FaceOfTheMountain"
+
+	actiontype="target_entity"
+	frontqueue="true"
+	targetscheme="ally_heroes"
+	casteffecttype="Magic"
+	
+	casttime="0"
+	castactiontime="0"
+	responsetype="Order_NonInterrupting"
+	noresponse="true"
+	
+	cooldowntime="30000"
+	cooldowntype="custom_faceofthemountain"
+
+	manacost="0"
+	range="1000"
+	
+	armor="30"
+	strength="3"
+	agility="3"
+	intelligence="3"
+	magicarmor="8"
+
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	doubleactivate="true"
+>
+	<onframe />
+	
+	<onimpact>
+		<applystate name="State_Custom_FaceOfTheMountain" duration="4000" />
+	</onimpact>
+	
+	<modifier key="Empath_Inside" modpriority="90">
+		<ondoubleactivate>
+			<areaofeffect
+				targetscheme="other_ally_heroes"
+				effecttype="Magic"
+				targetselection="closest"
+				radius="30"
+				maxtotalimpacts="1"
+			>
+				<useitem source="this_entity" target="target_entity" />
+			</areaofeffect>
+		</ondoubleactivate>
+	</modifier>
+</item>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_ImperialHelmet"
+
+	icon="icon.tga"
+	
+	cost="290"
+	components="Item_GuardianRing Item_Custom_Spellbook Item_MarkOfTheNovice"
+
+	actiontype="passive"
+	
+	armor="3"
+	intelligence="4"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.05" op="mult" />
+		</else>
+	</onattackingdamageevent>
+</item>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Demolisher"
+
+	icon="icon.tga"
+	
+	cost="960"
+	components="Item_Custom_HeavyMace Item_Warpcleft Item_MajorTotem"
+
+	actiontype="passive"
+	
+	damage="15"
+	strength="12"
+	agility="8"
+	intelligence="8"
+	attackspeed=".6"
+>
+	<onattack effectdescription="true">
+		<cantarget targetscheme="enemy_buildings">
+			<applystate name="State_Custom_Demolisher" target="target_entity" continuous="true" pushentity="true"  />
+			<addcharges entity="stack_entity" count="1" />
+		</cantarget>
+	</onattack>
+</item>

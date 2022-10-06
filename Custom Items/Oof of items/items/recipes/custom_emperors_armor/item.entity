@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_EmperorsArmor"
+
+	icon="icon.tga"
+	
+	cost="1100"
+	components="Item_Custom_SteelMail Item_HeavyBlade Item_Custom_BeltOfFrenzy"
+
+	maxhealth="250"
+	movespeed="20"
+	strength="28"
+	agility="3"
+	intelligence="3"
+	damage="15"
+	attackspeed=".15"
+	armor="6"
+	actiontype="passive"
+>
+	<aura name="Custom_EmperorsArmor_Aura" state="State_Custom_EmperorsArmor" radius="1050" targetscheme="ally_buildings" effecttype="Buff" propagatecondition="not_stealthed" ignoreinvulnerable="true" />
+</item>

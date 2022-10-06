@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_AmuletOfTheStronghold"
+
+	icon="icon.tga"
+	
+	cost="800"
+	components="Item_Custom_EmeraldTalisman Item_Platemail"
+
+	actiontype="target_entity"
+	targetscheme="ally_buildings"
+	
+	cooldowntime="60000"
+	cooldowntype="amuletofthestronghold"
+	range="1000"
+	
+	healthregen="3"
+	magicarmor="8"
+	maxhealth="250"
+	armor="12"
+>
+	<onimpact>
+		<applystate name="State_Custom_AmuletOfTheStronghold" target="target_entity" proxy="source_entity" duration="6000" pushentity="true" />
+	</onimpact>
+</item>

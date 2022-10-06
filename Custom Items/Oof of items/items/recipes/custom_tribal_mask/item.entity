@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_TribalMask"
+
+	icon="icon.tga"
+	
+	cost="350"
+	components="Item_MinorTotem Item_BloodRuby Item_EtherJewel"
+
+	actiontype="passive"
+	
+	maxhealth="200"
+	maxmana="125"
+	strength="2"
+	agility="2"
+	intelligence="2"
+>
+</item>

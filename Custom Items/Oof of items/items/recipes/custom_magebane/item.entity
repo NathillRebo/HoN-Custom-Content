@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_MageBane"
+
+	icon="icon.tga"
+	statuseffecttooltip="State_MageBane"
+	
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	
+	cost="860"
+	components="Item_Custom_AncientSword Item_MightyBlade Item_Strength5"
+	
+	targetradius="450"
+	hoverareacastrange="450"
+	
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	casttime="0"
+	castactiontime="0"
+	cooldowntime="30000"
+	cooldowntype="custom_magebane"
+	
+	strength="20,24"
+	agility="5,7"
+	intelligence="5,7"
+	damage="15,18"
+	magicarmor="8,10"
+	
+	maxlevel="2"
+	maxcharges="2"
+	
+	modifierkey="alt_Custom_MageBane"
+	responsetype="Item_NonInterrupting"
+>
+
+	<oncreate>
+		<addcharges count="1" />
+	</oncreate>
+	
+	<onupgrade>
+		<addcharges count="1" />
+	</onupgrade>
+	
+	<onimpact>
+		<spawnaffector name="Custom_Affector_MageBane" target="source_entity" />
+	</onimpact>
+
+</item>

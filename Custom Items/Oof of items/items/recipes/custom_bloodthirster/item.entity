@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_Bloodthirster"
+
+	icon="icon.tga"
+	
+	cost="1050"
+	components="Item_Custom_ThousandFoldBlade Item_HungrySpirit Item_Broadsword"
+
+	actiontype="passive"
+	
+	damage="40"
+	agility="5"
+	movespeed="25"
+>
+	<modifier key="attack_lifesteal" modpriority="10" exclusive="true"
+		lifesteal="0.15"
+	>
+		<onattackimpact>
+			<cantarget targetscheme="enemy_units">
+				<compare a="combat_attackability" b="0" op="eq">
+					<playeffect effect="/shared/effects/lifesteal.effect" source="source_entity" target="target_entity" />
+				</compare>
+			</cantarget>
+		</onattackimpact>
+	
+		<onattackpredamage>
+			<cantarget targetscheme="enemy_units">
+				<compare a="bounce_count" b="2" op="lt">
+					<compare a="combat_attackability" b="0" op="eq" />
+					<else>
+						<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.15" op="add" />
+					</else>
+				</compare>
+			</cantarget>
+			<else>
+				<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.15" op="add" />
+			</else>
+		</onattackpredamage>
+	</modifier>
+	<onattack effectdescription="true">
+		<heal a="20" target="source_entity" />
+	</onattack>
+</item>

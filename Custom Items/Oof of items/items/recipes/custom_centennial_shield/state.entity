@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_CentennialShield"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	movespeedmultiplier="0.20"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+
+</state>

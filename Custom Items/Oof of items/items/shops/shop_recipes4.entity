@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shop
+	name="Shop_Recipes4"
+
+	style="recipes"
+	
+	icon="shop_recipes4.tga"
+	order="1"
+	slot="8"
+>
+	<item name="Item_Gloves3" /> 1950
+	<item name="Item_SpellShards" /> 2000
+	<item name="Item_Nuke" /> 2540
+	<item name="Item_Insanitarius" /> 2750
+	
+	<item name="Item_Custom_DiamondArrow" /> 3900
+	<item name="Item_Custom_Sunderer" /> 3950
+	
+	<item name="Item_Custom_TheSledge" /> 3950
+	<item name="Item_Custom_WarlocksStaff" /> 4000
+	<item name="Item_Custom_Masamune" /> 4050
+	
+	<item name="Item_Custom_Fatalis" /> 4100
+	<item name="Item_Custom_MaskOfTwinSpirits" /> 4100
+	<item name="Item_Madfreds_BrassKnuckles" /> 4150
+	<item name="Item_Custom_Heartseeker" /> 4175
+	
+	<item name="Item_Custom_AncientManuscript" /> 4250
+	<item name="Item_Custom_SerpentsEye" /> 4250
+	<item name="Item_SpikedBola" /> 4375
+	<item name="Item_Custom_Wrecker" />	4500
+	<item name="Item_Custom_EmberstoneBracers" />	4525
+	
+	<item name="Item_Custom_Hexdrinker" /> 4600
+	<item name="Item_Custom_RingOfTheTitans" /> 4650
+	<item name="Item_Silence" /> 4725
+	
+	<item name="Item_Damage10" /> 4750
+	<item name="Item_Custom_DivineRuin" /> 4750
+	<item name="Item_Custom_StaffOfCalamity" /> 4800
+	<item name="Item_Custom_SpearOfDesolation" /> 4850
+	
+	<item name="Item_Custom_TheElderScroll" /> 4900
+	<item name="Item_Custom_SoulGem" /> 4950
+	<item name="Item_BloodborneMaul" /> 5000
+	<item name="Item_Custom_Foeslayer" /> 5100
+	
+	<item name="Item_Custom_ChronalPendant" /> 5150
+	<item name="Item_ManaBurn2" />  5200
+	<item name="Item_GrimoireOfPower" /> 5200
+	<item name="Item_Custom_Apex" /> 5250
+	
+	<item name="Item_Custom_SpellslingerStaff" /> 5250
+	<item name="Item_Custom_DoomOrb" /> 5350
+	<item name="Item_Custom_Ghostblade" /> 5400
+	
+	<item name="Item_Custom_TheDominator" /> 5450
+	<item name="Item_Custom_SphereOfEndlessRage" /> 5500
+	<item name="Item_Custom_GloriousExecutionersAxe" /> 5550
+	
+	<item name="Item_Damage9" /> 5600
+	<item name="Item_Custom_Negatron" /> 5650
+	<item name="Item_Custom_ScepterOfTheSeas" /> 5725
+	<item name="Item_Custom_JotunnsFerocity" /> 5750
+	<item name="Item_Custom_NetherBlade" /> 6200
+	<item name="Item_Custom_TitansGrip" /> 6400
+	
+</shop>

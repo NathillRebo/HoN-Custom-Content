@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="" deferred="1" useentityeffectscale="1">
+
+<definitions>
+	<particlesystem name="system0" space="world" scale="1.65">
+		
+		<sound
+		    soundloop="true"
+			fadein="500"
+			fadeout="1000"
+			linearfalloff="true" 
+			falloffstart="0"
+			falloffend="1300"
+			volume=".65"
+			sample="/items/basic/homecoming_stone/sounds/8bit_loop2.wav"
+		/>
+		
+		<sound    
+		        life="7000"
+                delay="1500"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="1300"
+				volume="1" 
+				sample="/items/basic/homecoming_stone/sounds/8bit_end.wav"
+			/>
+			
+			
+	<!-- UBER HACK!!!! -->
+		<simpleemitter
+			spawnrate="1000"
+			count="1"
+		>
+			<particle>
+			<!-- light column -->
+				<billboard
+					life="1000"
+					loop="1"
+					material="/shared/effects/materials/flare2.material"
+					height="3000"
+					startsize="40"
+					endsize="100"
+					lockup="1"
+					startcolor="0"
+					midcolor="0 .3 .2"
+					endcolor="0 0 0"
+				/>
+			</particle>
+		</simpleemitter>
+		
+		<!-- light shafts -->
+		<simpleemitter
+			delay="500"
+			spawnrate="100"
+			position="0 0 100"
+			offsetsphere="50 50 100"
+			direction="0 0 1"
+			gravity="-20"
+			angle="0"
+			minspeed="300"
+			maxspeed="500"
+			minparticlelife="500"
+			maxparticlelife="700"
+			material="/shared/effects/materials/flare_01.material"
+		>
+			<particle
+				startsize="0"
+				midsize="5"
+				midsizepos=".15"
+				minendsize="200"
+				maxendsize="800"
+				lockup="1"
+				startwidth="0"
+				midwidth="3"
+				endwidth="3"
+				midwidthpos=".25"
+				color="0 2 .5"
+			/>
+		</simpleemitter>
+		
+		<simpleemitter
+			delay="0"
+			startspawnrate="100"
+			endspawnrate="40"
+			position="0 0 0"
+			minparticlelife="600"
+			maxparticlelife="1000"
+			material="/shared/effects/materials/whitesquare.material"
+			offsetsphere="30 30 70"
+			minspeed="800"
+			maxspeed="1500"
+			drag="0"
+			minangle="0"
+			maxangle="0" 
+		>
+			<particle
+				startcolor="0 1 .2"
+				midcolor="0 1 .5"
+				endcolor="0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+				size="5"
+				framespeed="3"
+				minscale=".5"
+				maxscale="1.5"
+				lockup="ture"
+				minheight="10"
+				maxheight="50"
+			/>
+			<particle
+				startcolor="0 1 .1"
+				midcolor="0 .5 1"
+				endcolor="0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+				size="5"
+				framespeed="3"
+				minscale=".5"
+				maxscale="1.5"
+				lockup="ture"
+				minheight="10"
+				maxheight="50"
+			/>
+			<particle
+				startcolor="0 1 0"
+				midcolor="0 1 .5"
+				endcolor="0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+				size="5"
+				framespeed="3"
+				minscale=".5"
+				maxscale="1.5"
+				lockup="ture"
+				minheight="10"
+				maxheight="50"
+			/>
+			<particle
+				startcolor="0 .5 1"
+				midcolor="0 1 1"
+				endcolor="0"
+				startalpha="0"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".5"
+				size="5"
+				framespeed="3"
+				minscale=".5"
+				maxscale="1.5"
+				lockup="ture"
+				minheight="10"
+				maxheight="50"
+			/>
+		</simpleemitter>
+	
+	</particlesystem>
+	
+	
+	<particlesystem name="system1" space="world" scale="2.75">
+          
+		
+		<controller life="1500" loop="1" startscale="1.15" midscale=".95" endscale="1.15" >
+		
+			<!-- <groundsprite
+				delay="500"
+				expirelife="500"
+				color=".7"
+				size="60"
+				endcolor="0"
+				yaw="159"
+				yawspeed="100"
+				material="/shared/effects/materials/miku_rune_b_reveal.material"
+				startframe="0" medframe="1" endframe="0"
+				life="200" loop="1"
+			/> -->
+		
+			<simpleemitter
+				spawnrate="4"
+				particlelife="700"
+				material="/shared/effects/materials/corona_07.material"
+				offsetsphere="0"
+				position="0 0 5"
+				depthbias="0"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".0 .4 .4"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					startsize="40"
+					endsize="125"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startframe=".3"
+					endframe="1"
+					rollspeed="100"
+					scale=".75"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				spawnrate="4"
+				particlelife="730"
+				material="/shared/effects/materials/corona_07.material"
+				offsetsphere="0"
+				position="0 0 0"
+				depthbias="0"
+				gravity="-6"
+			>
+				<particle
+					startcolor="0"
+					midcolor=".3 .5 .6"
+					endcolor="0"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+					maxangle="90"
+					size="115"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+					startframe=".3"
+					endframe="1"
+					rollspeed="100"
+					scale=".75"
+				/>
+			</simpleemitter>
+		
+		<!-- squares  screw up -->
+			<orbiteremitter
+				spawnrate="10"
+				minparticlelife="1000"
+				maxparticlelife="1850"
+				origin="0 0 45"
+				orbit="4 60 0"
+				direction="0 0 1"
+				offset="5"
+				position="0 0 0"
+				cylindrical="true"
+				material="/shared/effects/materials/whitesquare.material"
+				gravity="-10"
+				angle="0"
+				speed="2"
+				scale=".1"
+			>
+				<particle
+					turn="false"
+					startsize="25"	
+					endsize="5"								
+					depthbias="-100"
+					startcolor=".3 1 .5"
+					midcolor=".5 1 .4"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					minscale=".5"
+					maxscale=".5"
+				/>
+				<particle
+					turn="false"
+					startsize="25"	
+					endsize="1"								
+					depthbias="-100"
+					startcolor="1 .75 .25"
+					midcolor="1 .75 .5"
+					endcolor="0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".25"
+					minscale=".5"
+					maxscale=".5"
+				/>
+			</orbiteremitter>
+			
+			<simpleemitter
+				particlelife="750"
+				spawnrate="55"
+				offsetsphere="20 20 500"
+				position="0 0 250"
+				offsetradialangle="90"
+				offsetdirection="0 0 1"
+				material="/shared/effects/materials/whitesquare_03_reveal.material"
+				minspeed="150"
+				maxspeed="250"
+				drag="0"
+				direction="0 0 1"
+				angle="0"
+				
+			>
+				<particle
+					startsize="0" 
+					minmidsize="10" maxmidsize="20"
+					endsize="0"
+					scale=".5"
+					color=".2 .1 .05"
+					gridsnap="20"
+					startframe=".5"
+					endframe="1"
+				>
+					<billboard
+						life="250"
+						material="/shared/effects/materials/whitesquare_02.material"
+						startcolor=".5 .25 .1"
+						endcolor="0"
+						startsize="0"
+						endsize="10"
+						midsizepos=".25"
+						scale="4"
+					/>
+				</particle>
+			</simpleemitter>
+		
+			
+			<!-- spiraling light -->
+			<!-- <template name="spiral">
+				<controller delay="400" yaw="{angle}" yawspeed="150" expirelife="500" startscale=".75" endscale="0" >
+				
+					<twopointtrailemitter
+						position_a="70 50 -15"
+						position_b="-70 50 -15"
+						spawnrate="50"
+						direction="0 0 1"
+						speed="400"
+						angle="0"
+						particlelife="200"
+						texpostime="200"
+						texposscale="1"
+						texstretchscale="1"
+						material="/shared/effects/materials/light_trail.material"
+						life="50" loop="1"
+					>
+						<particle
+							startcolor="1"
+							midcolor=".1 1 .65"
+							midcolorpos="0"
+							endcolor="0"
+						/>
+					</twopointtrailemitter>
+		
+				</controller>
+			</template>
+			
+			<instance name="spiral" angle="0" />
+			<instance name="spiral" angle="45" />
+			<instance name="spiral" angle="90" />
+			<instance name="spiral" angle="135" />
+			<instance name="spiral" angle="180" />
+			<instance name="spiral" angle="225" />
+			<instance name="spiral" angle="270" />
+			<instance name="spiral" angle="315" /> -->
+		</controller>
+		
+	</particlesystem>
+</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnparticlesystem instance="instance1" particlesystem="system1" />
+	<waitfordeath instance="instance0" />
+	<waitfordeath instance="instance1" />
+	<!-- <die /> -->
+</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

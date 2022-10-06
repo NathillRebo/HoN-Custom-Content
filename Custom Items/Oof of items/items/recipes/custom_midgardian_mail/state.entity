@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Custom_MidgardianMail"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="10"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	attackspeedpercharge="-0.03"
+	movespeedslowpercharge="0.03"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+</state>

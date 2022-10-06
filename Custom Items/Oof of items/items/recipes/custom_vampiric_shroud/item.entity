@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_VampiricShroud"
+
+	icon="icon.tga"
+	
+	components="Item_Custom_Spellbook Item_Manatube Item_TrinketOfRestoration"
+	cost="440"
+	
+	actiontype="passive"
+	
+	healthregen="2.5"
+	manaregen="2.5"
+>
+	<onframe />
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.05" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<modifier key="magic_lifesteal" modpriority="7" exclusive="true">
+		<ondamage>
+			<damageeffecttype effecttype="Magic SuperiorMagic">
+				<cantarget targetscheme="enemy_units">
+					<targettype type="hero">
+						<setvar0 a="damage_applied" b="0.075" op="mult" />
+						<heal source="this_owner_entity" target="this_owner_entity" a="var0" />
+					</targettype>
+					<else>
+						<setvar0 a="damage_applied" b="0.025" op="mult" />
+						<heal source="this_owner_entity" target="this_owner_entity" a="var0" />
+					</else>
+				</cantarget>
+			</damageeffecttype>
+		</ondamage>
+	</modifier>
+</item>
