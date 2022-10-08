@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_DemonicGrasp"
+
+	icon="icon.tga"
+	
+	cost="1000"
+	components="Item_Quickblade Item_NeophytesBook Item_Warpcleft"
+	
+	agility="12"
+	intelligence="12"
+	attackspeed=".55"
+	actiontype="passive"
+>
+	<modifier key="custom_demonicgrasp" modpriority="30" exclusive="true">
+		<onattackpreimpact propagatetoillusions="true">
+			<pushability source="this_owner_entity" slot="0" />
+			<reducecooldown entity="stack_entity" duration="300" />
+			<pushability source="this_owner_entity" slot="1" />
+			<reducecooldown entity="stack_entity" duration="300" />
+			<pushability source="this_owner_entity" slot="2" />
+			<reducecooldown entity="stack_entity" duration="300" />
+			<pushability source="this_owner_entity" slot="3" />
+			<reducecooldown entity="stack_entity" duration="300" />
+		</onattackpreimpact>
+	</modifier>	
+</item>

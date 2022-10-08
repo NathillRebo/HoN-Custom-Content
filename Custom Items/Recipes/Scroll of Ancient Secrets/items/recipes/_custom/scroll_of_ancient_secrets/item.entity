@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item
+	name="Item_Custom_ScrollOfAncientSecrets"
+
+	icon="icon.tga"
+	
+	cost="1250"
+	components="Item_Custom_Spellbook Item_LuminousPrism Item_AcolytesStaff"
+	actiontype="passive"
+	
+	intelligence="50"
+>
+	<onframe>
+		<evaluate a="source_intelligence" b="0.1" op="mult"/>
+		<evaluate a="result" b="25" op="min"/>
+		<setcharges a="result" b="1" op="mult"/>
+	</onframe>
+	
+	<modifier key="custom_scrollofancientsecrets" modpriority="10" exclusive="true">
+		<onattackingdamageevent>
+			<combatsupertype supertype="attack" />
+			<else>
+				<evaluate a="charges" b="100" op="div"/>
+				<evaluate a="result" b="1" op="add"/>
+				<setvalue name="damage_attempted" a="damage_attempted" b="result" op="mult" />
+			</else>
+		</onattackingdamageevent>
+	</modifier>
+</item>

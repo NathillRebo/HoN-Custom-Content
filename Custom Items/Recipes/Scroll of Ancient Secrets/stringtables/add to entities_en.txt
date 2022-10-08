@@ -1,0 +1,8 @@
+
+// Item_Custom_ScrollOfAncientSecrets
+Item_Custom_ScrollOfAncientSecrets_name							Scroll of Ancient Secrets
+Item_Custom_ScrollOfAncientSecrets_description					Your Spell Damage Bonus increases by 10% of your Intelligence, up to 25%. Number of charges shows current Spell Damage Bonus.
+Item_Custom_ScrollOfAncientSecrets_description_simple			Intelligence grants spell damage bonus
+Item_Custom_ScrollOfAncientSecrets_search_terms					soas,scroll,of,ancient,secrets,ap,ability,power,spellpower,abilitypower,amplifying,magic,magicpower,intelligence
+Item_Custom_ScrollOfAncientSecrets_shop_flavor					Holds secrets of the times none remembers, in a language none understands, holds power none should wield.
+Item_Custom_ScrollOfAncientSecrets_shop_categories				Filter_Intelligence,Filter_Modifier

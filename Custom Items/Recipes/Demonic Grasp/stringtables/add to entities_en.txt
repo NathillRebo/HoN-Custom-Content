@@ -1,0 +1,6 @@
+// Item_Custom_DemonicGrasp
+Item_Custom_DemonicGrasp_name									Demonic Grasp
+Item_Custom_DemonicGrasp_description							Your attacks reduce the remaining cooldown of spells by 0.3 seconds.
+Item_Custom_DemonicGrasp_description_simple						Attacks reduce cooldowns.
+Item_Custom_DemonicGrasp_search_terms							dg,demonic,grasp,cooldown,refresh,speed,reduction,intelligence,agility,attack,speed,as
+Item_Custom_DemonicGrasp_shop_categories						Filter_Intelligence,Filter_Agility,Filter_Modifier
