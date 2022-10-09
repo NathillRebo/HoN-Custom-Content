@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_zzz_Hydromancer3"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	displaylevel="true"
+>
+	<onattackingdamageevent>
+		<combatsupertype supertype="attack" />
+		<else>
+			<setvalue name="damage_attempted" a="damage_attempted" b="1.05,1.07,1.09,1.11" op="mult" />
+		</else>
+	</onattackingdamageevent>
+	
+	<onframe/>
+</state>

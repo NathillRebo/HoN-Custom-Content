@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_zzz_Hydromancer2"
+	
+	icon="icon.tga"
+	
+	statuseffecttooltip="State_zzz_Hydromancer2"
+	
+	anim="ability_2"
+	casttime="0"
+	castactiontime="0"
+	inheritmovement="true"
+	frontqueue="true"
+	nonaggressive="true"
+	
+	casteffect="effects/cast.effect"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_self"
+	casteffecttype="Magic"
+	
+	manacost="90,100,110,120"
+	cooldowntime="9000"
+	
+	targetradius="175"
+>
+	<onimpact>
+		<applystate name="State_zzz_Hydromancer2" duration="6000" />
+	</onimpact>
+</ability>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="savage_quick_attack_1">
+
+	<definitions>
+		<particlesystem name="system0" space="local" scale="1">
+		
+		
+			<template name="water" >
+				<controller bone="{bone}" particledirectionspace="local" lock="1" >
+				<!-- 	<simpleemitter
+						bone="{bone}"
+						minparticlelife="400"
+						maxparticlelife="600"
+						minspawnrate="1" maxspawnrate="9"
+						material="/shared/effects/materials/refract_gush.material"
+						offsetcube="20 0 0"
+						depthbias="-10"
+					>
+						<particle
+							startsize="0"
+							endsize="100"
+							startalpha="1"
+							endalpha="0"
+							param=".005"
+							maxangle="360"
+							anchor="1"
+							startcolor="1"
+							endcolor="1"
+						>
+							<billboard
+								life="400"
+								startcolor=".75"
+								endcolor="0"
+								startsize="0"
+								minendsize="1" maxendsize="5"
+								material="/shared/effects/materials/whitedot.material"
+							/>
+						</particle>
+					</simpleemitter> -->
+					
+					<simpleemitter
+						owner="source"
+						minparticlelife="400"
+						maxparticlelife="600"
+						minspawnrate="3" maxspawnrate="10"
+						material="/shared/effects/materials/whitewater_02.material"
+						offsetcube="20 5 5"
+						depthbias="-10"
+						anchor="1"
+					>
+						<particle
+							minangle="-180"
+							maxangle="180"		
+							startcolor="0 0 0"
+							midcolor=".3 .4 .5"
+							endcolor="0 0 0"
+							minstartscale="1"
+							maxstartscale="5"
+							maxendscale="30"
+							minendscale="15"
+							startalpha="0"
+							midalpha="0.25"
+							midalphapos="0.2"
+							endalpha="0"
+							anchor="1"
+						>
+							<billboard
+								minlife="50" maxlife="200"
+								minstartcolor=".05" maxstartcolor=".1" endcolor="0"
+								startsize="0"
+								minendsize="1" maxendsize="3"
+								material="/shared/effects/materials/whitedot.material"
+								anchor="1"
+							/>
+						</particle>
+					</simpleemitter>
+				
+					<simpleemitter
+						bone="{bone}"
+						minparticlelife="400"
+						maxparticlelife="600"
+						minspawnrate="3" maxspawnrate="10"
+						material="/shared/effects/materials/refract_outsplash.material"
+						offsetcube="20 5 5"
+						depthbias="-10"
+						anchor="1"
+					>
+						<particle
+							minangle="-180"
+							maxangle="180"		
+							color="1 1 1"
+							param=".5"
+							size="3"
+							minstartscale="1"
+							maxstartscale="5"
+							maxendscale="35"
+							minendscale="50"
+							startalpha="0"
+							midalpha=".35"
+							midalphapos="0.2"
+							endalpha="0"
+							anchor="1"
+						>
+							
+						</particle>
+					</simpleemitter>
+				</controller>	
+			</template>	
+			
+			<instance name="water" bone="Bone006" />
+			<instance name="water" bone="Bone007" />
+			<instance name="water" bone="Bone008" />
+			<instance name="water" bone="Bone009" />
+			<instance name="water" bone="Bone010" />
+			
+			<instance name="water" bone="Bone013" />
+			<instance name="water" bone="Bone014" />
+			<instance name="water" bone="Bone015" />
+			<instance name="water" bone="Bone016" />
+			<instance name="water" bone="Bone002" />
+			
+			<instance name="water" bone="Bone018" />
+			<instance name="water" bone="Bone019" />
+			<instance name="water" bone="Bone020" />
+			<instance name="water" bone="Bone021" />
+			<instance name="water" bone="Bone022" />
+			
+			<instance name="water" bone="Bone025" />
+			<instance name="water" bone="Bone026" />
+			<instance name="water" bone="Bone027" />
+			<instance name="water" bone="Bone028" />
+			<instance name="water" bone="Bone029" />
+			
+		</particlesystem>
+	
+	
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

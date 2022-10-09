@@ -1,7 +1,7 @@
 
 // Hero_zzz_Kali
 Hero_zzz_Kali_name												Kali
-Hero_zzz_Kali_description										Kali is a spellcaster who can take a lot of beating thanks to her passive spell lifesteal, but requires careful positioning as to not take too much at once. Her Rage and Frenzy allow her to control enemy positions, while Destruction allows her to effectively enter the fray or reposition.
+Hero_zzz_Kali_role												Kali is a spellcaster who can take a lot of beating thanks to her passive spell lifesteal, but requires careful positioning as to not take too much at once. Her Rage and Frenzy allow her to control enemy positions, while Destruction allows her to effectively enter the fray or reposition.
 
 // Ability_Kali1
 Ability_Kali1_name												Rage

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_zzz_Hydromancer3"
+	
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	radius="1100"
+	actiontype="passive"
+>
+	<aura name="hydromanceraura" state="State_zzz_Hydromancer3" radius="1100" targetscheme="ally_heroes" ignoreinvulnerable="true" />
+
+	<!-- Make the aura stack and not work with illusions -->
+	<modifier key="krosmode" modpriority="101"
+	>
+		<aura name="hydromanceraura" state="State_zzz_Hydromancer3" radius="1100" targetscheme="ally_heroes" propagatecondition="not_illusion" ignoreinvulnerable="true" stack="true" />
+	</modifier>
+	
+</ability>

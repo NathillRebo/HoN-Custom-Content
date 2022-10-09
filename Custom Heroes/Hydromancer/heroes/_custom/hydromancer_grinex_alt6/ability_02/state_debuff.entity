@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_zzz_Hydromancer2_Debuff"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_debuff.effect"
+	magicarmorpercharge="-2,-3,-4,-5"
+	movespeedslowpercharge="0.1,0.15,0.2,0.25"
+	maxcharges="2"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+	<oninflict>
+		<addcharges/>
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges/>
+	</onrefresh>
+	
+	<modifier key="nobossarmor" modpriority="100" condition="boss" notooltooltip="true"
+		magicarmor="0"
+	/>
+</state>

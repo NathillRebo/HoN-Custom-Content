@@ -1,7 +1,7 @@
 
 // Hero_zzz_Praetor
 Hero_zzz_Praetor_name											Praetor
-Hero_zzz_Praetor_description									Praetor is a hero capable of taking down Kongor pretty fast, for a mage, thanks to her Mind Flay. Most efficient against enemies with low mana, she quickly burns their resources down in order to increase the damage they take from her.
+Hero_zzz_Praetor_role											Praetor is a hero capable of taking down Kongor pretty fast, for a mage, thanks to her Mind Flay. Most efficient against enemies with low mana, she quickly burns their resources down in order to increase the damage they take from her.
 
 // Ability_Praetor1
 Ability_Praetor1_name											Mind Flay

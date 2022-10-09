@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_zzz_Hydromancer4"
+
+	healthregen="30,40,50"
+	manaregen="30,40,50"
+	movespeedmultiplier="0.3,0.4,0.5"
+	
+	passiveeffect="effects/state.effect"
+>
+	<onframe />
+</state>

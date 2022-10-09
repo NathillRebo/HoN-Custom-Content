@@ -1,7 +1,7 @@
 
 // Hero_zzz_Nova
 Hero_zzz_Nova_name												Nova
-Hero_zzz_Nova_description										Nova is an elusive hero, who is most dangerous when grouped up, as she both gains tremendous amount of Agility and is slippery enough to avoid most dangers effectively, but also suffers in 1v1 skirmishes, where her ultimate doesn't grant that much.
+Hero_zzz_Nova_role												Nova is an elusive hero, who is most dangerous when grouped up, as she both gains tremendous amount of Agility and is slippery enough to avoid most dangers effectively, but also suffers in 1v1 skirmishes, where her ultimate doesn't grant that much.
 
 // Ability_Nova1
 Ability_Nova1_name												Galactic Storm

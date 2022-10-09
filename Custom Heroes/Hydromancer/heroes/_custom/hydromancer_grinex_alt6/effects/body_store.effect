@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="savage_quick_attack_1">
+
+	<definitions>
+		<particlesystem name="system0" space="local" scale="1">
+			<sound
+				dampen="0.5"
+				channelid="storeaud"
+				sound2d="true"
+				volume=".5"
+				sample="../sounds/store_audio.wav"
+			/>	
+				
+			<sound
+				dampen="0.5"
+				channelid="storeaudv"
+				sound2d="true"
+				volume=".7"
+				sample="../sounds/voice/move_2.wav"
+			/>	
+				
+				
+			<controller bone="Bip01 R Hand" delay="1500" >
+				<simpleemitter
+					spawnrate="55" 
+					count="50"
+					particlelife="2500"
+					gravity="2"
+					speed="50"
+					drag=".01"
+					acceleration="0"
+					position="0 0 0"
+					material="/shared/effects/materials/flower_thai.material"
+					offsetsphere="15"
+					minangle="0"
+					maxangle="90"
+				>
+					<particle
+						minangle="0"
+						maxangle="360"
+						minanglespeed="0"
+						maxanglespeed="360"
+						startcolor="1"
+						midcolor="1.5"
+						endcolor="0 0 0"
+						minstartsize="8"
+						maxstartsize="5"
+						midsize="15"
+						endsize="3"
+						midsizepos=".25"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".5"
+						turn="true"
+					/>
+				</simpleemitter>
+			</controller>
+		
+			<template name="water" >
+				<controller bone="{bone}" particledirectionspace="local" lock="1" >
+					<simpleemitter
+						owner="source"
+						minparticlelife="400"
+						maxparticlelife="600"
+						minspawnrate="3" maxspawnrate="10"
+						material="/shared/effects/materials/whitewater_02.material"
+						offsetcube="20 5 5"
+						depthbias="-10"
+						anchor="1"
+					>
+						<particle
+							minangle="-180"
+							maxangle="180"		
+							startcolor="0 0 0"
+							midcolor=".3 .4 .5"
+							endcolor="0 0 0"
+							minstartscale="1"
+							maxstartscale="5"
+							maxendscale="30"
+							minendscale="15"
+							startalpha="0"
+							midalpha="0.25"
+							midalphapos="0.2"
+							endalpha="0"
+							anchor="1"
+						>
+							<billboard
+								minlife="50" maxlife="200"
+								minstartcolor=".05" maxstartcolor=".1" endcolor="0"
+								startsize="0"
+								minendsize="1" maxendsize="3"
+								material="/shared/effects/materials/whitedot.material"
+								anchor="1"
+							/>
+						</particle>
+					</simpleemitter>
+				
+					<simpleemitter
+						bone="{bone}"
+						minparticlelife="400"
+						maxparticlelife="600"
+						minspawnrate="3" maxspawnrate="10"
+						material="/shared/effects/materials/refract_outsplash.material"
+						offsetcube="20 5 5"
+						depthbias="-10"
+						anchor="1"
+					>
+						<particle
+							minangle="-180"
+							maxangle="180"		
+							color="1 1 1"
+							param=".5"
+							size="3"
+							minstartscale="1"
+							maxstartscale="5"
+							maxendscale="35"
+							minendscale="50"
+							startalpha="0"
+							midalpha=".35"
+							midalphapos="0.2"
+							endalpha="0"
+							anchor="1"
+						>
+							
+						</particle>
+					</simpleemitter>
+				</controller>	
+			</template>	
+			
+			<instance name="water" bone="Bone006" />
+			<instance name="water" bone="Bone007" />
+			<instance name="water" bone="Bone008" />
+			<instance name="water" bone="Bone009" />
+			<instance name="water" bone="Bone010" />
+			
+			<instance name="water" bone="Bone013" />
+			<instance name="water" bone="Bone014" />
+			<instance name="water" bone="Bone015" />
+			<instance name="water" bone="Bone016" />
+			<instance name="water" bone="Bone002" />
+			
+			<instance name="water" bone="Bone018" />
+			<instance name="water" bone="Bone019" />
+			<instance name="water" bone="Bone020" />
+			<instance name="water" bone="Bone021" />
+			<instance name="water" bone="Bone022" />
+			
+			<instance name="water" bone="Bone025" />
+			<instance name="water" bone="Bone026" />
+			<instance name="water" bone="Bone027" />
+			<instance name="water" bone="Bone028" />
+			<instance name="water" bone="Bone029" />
+			
+		</particlesystem>
+	
+	
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

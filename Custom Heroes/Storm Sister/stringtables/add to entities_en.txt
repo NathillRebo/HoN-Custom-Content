@@ -1,7 +1,7 @@
 
 // Hero_zzz_StormSister											
 Hero_zzz_StormSister_name										Storm Sister
-Hero_zzz_StormSister_description								Storm Sister is a carry, who excels in dealing damage, both area of effect and single target. Her ultimate grants her a massive spike of power at the cost of damaging herself, thus items with life drain or health regen are good on her. Can be played as a suicider, killing as many enemies as she can before dying.
+Hero_zzz_StormSister_role										Storm Sister is a carry, who excels in dealing damage, both area of effect and single target. Her ultimate grants her a massive spike of power at the cost of damaging herself, thus items with life drain or health regen are good on her. Can be played as a suicider, killing as many enemies as she can before dying.
 
 // Ability_StormSister1
 Ability_StormSister1_name										Lightning Strike

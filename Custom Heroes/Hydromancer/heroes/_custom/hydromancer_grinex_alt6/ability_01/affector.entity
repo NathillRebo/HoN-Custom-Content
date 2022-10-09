@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_zzz_Hydromancer1"
+
+	radius="200"
+	
+	lifetime="-1"
+	destroytrees="true"
+>
+	<onimpact />
+</affector>

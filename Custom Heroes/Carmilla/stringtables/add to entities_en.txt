@@ -1,7 +1,7 @@
 
 // Hero_zzz_Carmilla
 Hero_zzz_Carmilla_name											Carmilla
-Hero_zzz_Carmilla_description									Though melee, Carmilla deals great amount of Magic Damage through Hemoplague, which is her main source of damage. Her other abilities allow her to land Hemoplague more often, easier, an further amplify the damage it will take. 
+Hero_zzz_Carmilla_role											Though melee, Carmilla deals great amount of Magic Damage through Hemoplague, which is her main source of damage. Her other abilities allow her to land Hemoplague more often, easier, an further amplify the damage it will take. 
 
 // Ability_Carmilla1
 Ability_Carmilla1_name											Hemoplague

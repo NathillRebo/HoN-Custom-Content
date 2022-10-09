@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_zzz_Hydromancer1"
+
+	icon="icon.tga"
+	
+	anim="ability_3"
+	casttime="200"
+	castactiontime="100"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_position"
+	targetscheme="enemy_units"
+	
+	casteffecttype="Magic"
+	casteffect="effects/cast.effect"
+	
+	manacost="110,120,130,140"
+	cooldowntime="12000"
+	range="1200"
+	targetradius="200"
+
+	forcerange="1000"
+	allowoutofboundscast="true"
+	
+	showlinecast="true"
+	linecastrange="1200"
+	linecastwidth="200"
+	
+	showrangeandradiusintooltip="true"
+>
+	<onimpact>
+		<spawnprojectile name="Projectile_zzz_Hydromancer1" target="target_position" param="0" pushentity="true" offset="0 125 0" />
+		<spawnaffector name="Affector_zzz_Hydromancer1" target="stack_entity" />
+	</onimpact>
+</ability>

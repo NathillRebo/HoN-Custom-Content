@@ -1,6 +1,7 @@
 
 // Hero_zzz_Valor
 Hero_zzz_Valor_name												Valor
+Hero_zzz_Valor_role												Durable initiator, exceling at initiating fights. Her Feint allows her to farm efficiently without taking too much damage, while her Decimate and Confound can be used to deal solid are damage to multiple enemies. Using Call to Arms, she initiates from far away, buffs her whole team to deal massive damage with attacks, or allows her team to catch off those who escape.
 
 // Ability_Valor1
 Ability_Valor1_name												Decimate

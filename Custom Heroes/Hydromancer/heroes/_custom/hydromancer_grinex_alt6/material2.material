@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+	<parameters vDiffuseColor="0 0.2 0.3" fSpecularLevel="100.0000" fGlossiness="100" fOpacity="0.3" fReflect="3.0000" >
+		<vec2 name="vUVScale" value="1 1" />
+		<vec2 name="vUVScroll" value=".1 -.03" />
+		<vec2 name="vUVScale2" value="2 .2" />
+		<vec2 name="vUVScroll2" value=".07 -.07" />
+		<vec3 name="vReflectColor" value="0 .2 .4" />
+		<float name="fNormalScale" value="3" />
+		<float name="fRefractScale" value="10" />
+	</parameters>
+	<phase
+		name="color"
+		vs="mesh_color_water"
+		ps="mesh_color_water_norefract"
+		srcblend="BLEND_SRC_ALPHA"
+		dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
+		cull="CULL_BACK"
+		translucent="true"
+		depthwrite="true"
+		depthbias="1"
+		depthslopebias="true"
+		alphawrite="true"
+		refractive="false"
+	>
+		<sampler
+			name="diffuse"
+			texture="$white"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+		<sampler
+			name="normalmap"
+			texture="/shared/textures/water_normal2.tga"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+		<samplercube
+			name="cube"
+			texture="/world/sky/deadlock/1.tga"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+	</phase>
+	<phase
+		name="refract"
+		vs="mesh_color_water"
+		ps="mesh_color_water"
+		srcblend="BLEND_SRC_ALPHA"
+		dstblend="BLEND_ONE_MINUS_SRC_ALPHA"
+		cull="CULL_BACK"
+		translucent="true"
+		depthwrite="true"
+		depthbias="1"
+		depthslopebias="true"
+		alphawrite="true"
+		refractive="true"
+	>
+		<sampler
+			name="diffuse"
+			texture="$white"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+		<sampler
+			name="normalmap"
+			texture="/shared/textures/water_normal2.tga"
+			repeat_u="true"
+			repeat_v="true"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+		<samplercube
+			name="cube"
+			texture="/world/sky/deadlock/1.tga"
+			mipmaps="true"
+			fullquality="false"
+			nocompress="false"
+			filtering="true"
+		/>
+	</phase>
+</material>

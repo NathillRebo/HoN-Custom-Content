@@ -1,0 +1,45 @@
+
+// Hero_zzz_Hydromancer
+Hero_zzz_Hydromancer_name										Hydromancer
+Hero_zzz_Hydromancer_role										Ganker, support and initiator, she makes sure her enemies die fast, both with burst damage, crowd control, and increased spellcasting potency of allies through passive spellpower bonus and active cooldown refresh speed and mana restoration. Most effective with carries that depend on ability damage.
+
+// Ability_zzz_Hydromancer1
+Ability_zzz_Hydromancer1_name									Hazardous Tide
+Ability_zzz_Hydromancer1_description							Hydromancer sends forth a wave of water, which damages enemies and pushes them back.
+Ability_zzz_Hydromancer1_description_simple						Hydromancer sends forth a wave of water, which deals ^o{60,70,80,90} Magic Damage, plus {15,25,35,45} per enemy hit^* and pushes them back.
+Ability_zzz_Hydromancer1_tooltip_flavor							Wave goodbye!
+Ability_zzz_Hydromancer1_IMPACT_effect							Enemies hit are dealt ^o{60,70,80,90} Magic Damage, plus {15,25,35,45} per enemy hit^* and are pushed back.
+
+// Ability_zzz_Hydromancer2
+Ability_zzz_Hydromancer2_name									Splash
+Ability_zzz_Hydromancer2_description							Hydromancer empowers her attacks with water for 6 seconds or until she attacks two times.
+Ability_zzz_Hydromancer2_description_simple						Hydromancer causes her next two attacks to have a bonus of ^o+{90,100,110,120} to Attack Speed^* and deal an additional ^o{45,85,125,165} Magic Damage in a small area on hit^*. Enemies hit have their ^oMagic Armor reduced by {2,3,4,5}^* and their ^oMovement Speed slowed by {10,15,20,25}% for 3 seconds, both effects stacking up to twice^*.
+Ability_zzz_Hydromancer2_tooltip_flavor							Your last glass of water?
+Ability_zzz_Hydromancer2_IMPACT_effect							^o+{90,100,110,120} to Attack Speed^* and deal an additional ^o{45,85,125,165} Magic Damage in a small area on hit^*. Enemies hit have their ^oMagic Armor reduced by {2,3,4,5}^* and their ^oMovement Speed slowed by {10,15,20,25}% for 3 seconds, both effects stacking up to twice^*.
+
+//State_zzz_Hydromancer2
+State_zzz_Hydromancer2_name										Splash
+State_zzz_Hydromancer2_description								Your attacks deal an additional {45,85,125,165} Magic Damage in a small radius and reduce Movement Speed by {10,15,20,25}% and Magic Armor by {2,3,4,5}, both lasting for 3 seconds and stacking up to 2 times.
+
+// State_zzz_Hydromancer2_Debuff
+State_zzz_Hydromancer2_Debuff_name								Splashed
+
+// Ability_zzz_Hydromancer3
+Ability_zzz_Hydromancer3_name									Churning Waters
+Ability_zzz_Hydromancer3_description							The sound of the sea allows allied spellcasters to focus on their spells, increasing their spell damage.
+Ability_zzz_Hydromancer3_description_simple						Hydromancer provides an aura, which increases ^oSpell Damage by {5,7,9,11}%^*.
+Ability_zzz_Hydromancer3_tooltip_flavor							Close your eyes and listen to the sond of the sea.
+
+// State_zzz_Hydromancer3
+State_zzz_Hydromancer3_name										Churning Waters
+State_zzz_Hydromancer3_FRAME_effect								+{5,7,9,11}% Spell Damage
+
+// Ability_zzz_Hydromancer4
+Ability_zzz_Hydromancer4_name									Replenishment
+Ability_zzz_Hydromancer4_description							Hydromancer surges her allies, restoring mana and reducing remaining cooldowns of abilities.
+Ability_zzz_Hydromancer4_description_simple						Hydromancer surges her allies, causing them to ^oregain {130,215,300} Mana^* and ^oreduce their remaining cooldowns by {3,4,5} seconds^*. Hydromancer herself doesn't regain mana and reduces cooldowns oon basic abilities only, but also gains ^o{30,40,50} Health Regen and Mana Regen and {30,40,50}% Movement Speed Bonus for {3,4,5} seconds^*.
+Ability_zzz_Hydromancer4_tooltip_flavor							Round two, start!
+Ability_zzz_Hydromancer4_IMPACT_effect							Hydromancer surges her allies, causing them to ^oregain {130,215,300} Mana^* and ^oreduce their remaining cooldowns by {3,4,5} seconds^*. Hydromancer herself doesn't regain mana and reduces cooldowns oon basic abilities only, but also gains ^o{30,40,50} Health Regen and Mana Regen and {30,40,50}% Movement Speed Bonus for {3,4,5} seconds^*.
+
+// State_zzz_Hydromancer4
+State_zzz_Hydromancer4_name										Hydrosurge

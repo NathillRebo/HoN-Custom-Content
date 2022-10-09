@@ -1,6 +1,7 @@
 
 // Hero_zzz_Nereid
 Hero_zzz_Nereid_name											Nereid
+Hero_zzz_Nereid_role											Ranged strength semicarry - doesn't scale as effectively as other carries, but offers a nice suite of control and defense. Skilled players can put enemies into very unfavorable positions with her Crushing Wave and Pin combo for prolonged amounts of time.
 
 // Ability_Nereid1
 Ability_Nereid1_name											Pin

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+
+		<particlesystem name="system1" space="entity" scale="1.25">
+		
+
+		
+		
+			<simpleemitter
+			bone="_bone_fx_01"
+				spawnrate="20"
+				minparticlelife="150"
+				maxparticlelife="300"
+				gravity="0"
+				speed="0"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/black_energy.material"
+				direction="0 0 0"
+				offsetsphere="5"
+				depthbias="0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-360"
+					maxanglespeed="360"
+					startcolor="1 1 1"
+					midcolor="1 0 0"
+					endcolor="1 0 .5"
+					startframe="0"
+					endframe="1"
+					startwidth="1"
+					endwidth="50"
+					height="60"
+					framespeed="3"
+					anchor="1"
+				/>
+			</simpleemitter>
+
+		
+		
+
+			<billboard
+			bone="_bone_fx_01"
+				material="/shared/effects/materials/whitedot.material"
+				color=".5 .5 .5"
+				size="20"
+				depthbias="-50"
+			/>
+
+			<billboard
+			bone="_bone_fx_01"
+				material="/shared/effects/materials/whitedot.material"
+				color=".75 0 0"
+				size="50"
+			/>
+			
+			<simpleemitter
+			bone="_bone_fx_01"
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="40"
+				particlelife="100"
+			>
+				<particle
+					color=".25 0 0"
+					startsize="16"
+					endsize="4"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+			bone="_bone_fx_01"
+				material="/shared/effects/materials/whitedot.material"
+				spawnrate="300"
+				particlelife="400"
+				gravity="7"
+				speed="30"
+				inheritvelocity="0.21"
+				offsetsphere="10 10 10"
+				drag="0.1"
+			>
+				<particle
+					heightdistort="0.01"
+					turn="1"
+					startcolor="1 0 0"
+					endcolor="0 0 0"
+					startsize="3"
+					endsize="0"
+					anchor="1"
+				/>
+			</simpleemitter>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<!--
+			<template name="whiteDot">
+				<billboard
+					delay="200"
+					life="1000"
+					bone="{bone}"
+					startcolor="0 0 0"
+					endcolor="0 0 0"
+					position="0 0 0"
+					material="/shared/effects/materials/black_spot.material"
+					scale=".75"
+					depthbias="25"
+					startalpha=".35"
+					midalpha="1"
+					endalpha=".35"
+					loop="true"
+				/>
+			</template>
+			
+			<instance name="whiteDot" bone="Bip01 L Hand"/>
+			<instance name="whiteDot" bone="Bip01 R Hand"/>
+-->
+			
+
+			<model 
+				parentskeleton="true"
+				startalpha="1"
+				endalpha="0"
+				model="blade/model.mdf"
+				anim="idle"
+				startcolor=".5 0 0"
+				endcolor="0 0 0"
+				expirelife="500"
+				position="0 0 0"
+				scale="1.01"
+			/>
+			
+			<model 
+				parentskeleton="true"
+				startalpha="1"
+				endalpha="0"
+				model="blade/model.mdf"
+				material="/shared/effects/materials/shell4.material"
+				anim="idle"
+				startcolor="1 0 0"
+				endcolor="0 0 0"
+				expirelife="500"
+				position="0 0 0"
+				scale="1.01"
+			/>
+			
+			
+			
+			
+			
+			
+			<simpleemitter
+			bone="_bone_fx_01"
+				spawnrate="15"
+				minspeed="25"
+				maxspeed="50"
+				minparticlelife="500"
+				maxparticlelife="1000"
+				offsetsphere="25 25 10"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity="-0.1"
+				directionalspace="local"
+				direction="0 0 -1"
+				gravity="5"
+				depthbias="-20"
+			>
+				<particle 
+					minangle="-180"
+					maxangle="180"
+					color="0"
+					minsize="50"
+					maxsize="70"
+					endsize="90"
+					startalpha="0"
+					midalpha=".65"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+			
+
+		</particlesystem>
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />	
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+
+
+
+
+
+

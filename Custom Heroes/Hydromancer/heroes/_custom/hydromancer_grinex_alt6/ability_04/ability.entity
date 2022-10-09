@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_zzz_Hydromancer4"
+
+	icon="icon.tga"
+	
+	anim=""
+	casteffect=""
+
+	casttime="0"
+	castactiontime="0"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="false"
+	nonaggressive="true"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	targetradius="1100"
+	
+	actiontype="target_self"
+	casteffecttype="SuperiorMagic"
+	targetscheme="ally_heroes"
+	
+	manacost="375"
+	cooldowntime="120000"
+>
+	
+	<onimpact>
+		<areaofeffect
+			targetselection="all"
+			targetscheme="other_ally_heroes"
+			radius="1100"
+			effecttype=""
+			ignoreinvulnerable="true"
+		>
+			<givemana amount="130,215,300" />
+			
+			<pushability source="target_entity" slot="0" />
+			<reducecooldown entity="stack_entity" duration="3000,4000,5000" />
+			<pushability source="target_entity" slot="1" />
+			<reducecooldown entity="stack_entity" duration="3000,4000,5000" />
+			<pushability source="target_entity" slot="2" />
+			<reducecooldown entity="stack_entity" duration="3000,4000,5000" />
+			<pushability source="target_entity" slot="3" />
+			<reducecooldown entity="stack_entity" duration="3000,4000,5000" />
+			
+			<playeffect effect="effects/impact_ally.effect" source="target_entity" target="" />
+		</areaofeffect>
+		<pushability source="source_entity" slot="0" />
+		<reducecooldown entity="stack_entity" duration="3000,4000,5000" />
+		<pushability source="source_entity" slot="1" />
+		<reducecooldown entity="stack_entity" duration="3000,4000,5000" />
+		<applystate name="State_zzz_Hydromancer4" target="source_entity" duration="3000,4000,5000" pushentity="true" />
+		<playeffect effect="effects/impact_ally.effect" source="source_entity"/>
+	</onimpact>
+</ability>

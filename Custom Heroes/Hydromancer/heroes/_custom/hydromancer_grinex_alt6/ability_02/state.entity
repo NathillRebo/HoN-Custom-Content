@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_zzz_Hydromancer2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state_self.effect"
+	
+	attackspeed="0.9,1,1.1,1.2"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<modifier key="iamsheeped" modpriority="100"
+		passiveeffect=""
+	/>
+	
+	<oninflict>
+		<addcharges count="2" />
+	</oninflict>
+	
+	<onattackimpact>
+		<cantarget targetscheme="enemy_buildings" >
+			<removecharge />
+			<spawnaffector name="Affector_zzz_Hydromancer2" target="target_entity" ignore="target_entity" />
+			
+			<playeffect effect="effects/impact.effect" source="target_entity" target="" />
+		</cantarget>
+		
+		<cantarget targetscheme="enemy_units" >
+			<removecharge />
+			<spawnaffector name="Affector_zzz_Hydromancer2" target="target_position" />
+			<playeffect effect="effects/impact.effect" source="target_entity" target="" />
+		</cantarget>
+		
+		<compare a="charges" b="0" op="eq" >
+			<expire />
+		</compare>
+	</onattackimpact>
+
+	<onframe>
+		<hasmodifier entity="this_owner_entity" name="iamsheeped">
+			<setactivemodifierkey entity="this_entity" name="iamsheeped" />
+		</hasmodifier>
+		<else>
+			<setactivemodifierkey entity="this_entity" name="" />
+		</else>
+	</onframe>
+
+</state>
