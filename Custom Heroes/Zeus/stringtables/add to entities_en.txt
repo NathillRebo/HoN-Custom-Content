@@ -1,0 +1,38 @@
+
+// Hero_zzz_Zeus
+Hero_zzz_Zeus_name												Zeus
+Hero_zzz_Zeus_role												Zeus is a self-sustaining hero, who both regenerates and spends big amounts of mana. Effective at dealing area damage and reducing damage taken, both with increased armors and reducing enemy attack damage, Zeus is best suited with teams that deal Magic Damage, as his Stormwrath reduces Magic Armor considerably, considered that he can pay that much mana.
+
+// Ability_Zeus1
+Ability_Zeus1_name												Lightning Blast
+Ability_Zeus1_description										Zeus blasts an enemy, dealing it magic damage, that splashes onto nearby enemies and restores himself. This skill is more effective when low on mana.
+Ability_Zeus1_description_simple								Zeus blasts an enemy, dealing it ^o{15,65,115,165} Magic Damage and 4% of his max Mana as Area Magic Damage^* and regaining ^o{8,12,16,20}% of his missing Mana^*. This ability has cooldown reduced by up to 50%, depending on your missing Mana.
+Ability_Zeus1_tooltip_flavor									My power is unlimited!
+Ability_Zeus1_IMPACT_effect										Zeus blasts an enemy, dealing it ^o{15,65,115,165} Magic Damage and 4% of his max Mana as Area Magic Damage^* and regaining ^o{8,12,16,20}% of his missing Mana^*. This ability has cooldown reduced by up to 50%, depending on your missing Mana.
+
+// Ability_Zeus2
+Ability_Zeus2_name												Thunderfury
+Ability_Zeus2_description										Zeus surges himself with electricity, increasing his own Armor, Magic Armor, Movement Speed and damaging enemies that attack him at the cost of tremendous amounts of mana.
+Ability_Zeus2_description_simple								^tCosts {30,50,70,90} Mana per second^*\nZeus surges himself with electricity, increasing ^oArmor and Magic Armor by {2,4,6,8}, Movement Speed by {15,25,35,45}%^* and causing attackers to take ^o{15,25,35,45} Magic Damage^* for as long as the ability is toggled on.
+Ability_Zeus2_tooltip_flavor									Blessed Blade of the Windseeker
+Ability_Zeus2_IMPACT_effect										^tCosts {30,50,70,90} Mana per second^*\nZeus surges himself with electricity, increasing ^oArmor and Magic Armor by {2,4,6,8}, Movement Speed by {15,25,35,45}%^* and causing attackers to take ^o{15,25,35,45} Magic Damage^* for as long as the ability is toggled on.
+
+// State_Zeus2
+State_Zeus2_name												Thunderfury
+State_Zeus2_FRAME_effect										Attackers take {15,25,35,45} Magic Damage
+
+// Ability_Zeus3
+Ability_Zeus3_name												Electrifying Power
+Ability_Zeus3_description										Zeus causes his attacks to deal an additional Area Magic Damage equal to 4% of his max Mana and regain 8% max Mana every time he kills an unit. Also, this ability passively increases his max Mana by {125,250,375,500}.
+Ability_Zeus3_description_simple								Zeus causes his attacks to deal an additional Area Magic Damage equal to 4% of his max Mana and regain 8% max Mana every time he kills an unit. Also, this ability passively increases his max Mana by {125,250,375,500}.
+Ability_Zeus3_tooltip_flavor									LIGHTNING! (before it was nerfed)
+
+// Ability_Zeus4
+Ability_Zeus4_name												Stormwrath
+Ability_Zeus4_description										Zeus strikes nearby enemies with demonic lightning storm, dealing minor damage, and weakening them. Can be used multiple times in a quick succession to stack the effect.
+Ability_Zeus4_description_simple								Zeus strikes nearby enemies with demonic lightning storm, dealing ^o{25,50,75} Superior Magic Damage^* to enemies hit, while also lowering their ^oMagic Armor by {0.5,0.75,1} and Base Attack Damage by {3,4.5,6}% for 7 seconds, stacking up to 100 times^*.
+Ability_Zeus4_tooltip_flavor									Let the heavens rage!
+Ability_Zeus4_IMPACT_effect										Zeus strikes nearby enemies with demonic lightning storm, dealing ^o{25,50,75} Superior Magic Damage^* to enemies hit, while also lowering their ^oMagic Armor by {0.5,0.75,1} and Base Attack Damage by {3,4.5,6}% for 7 seconds, stacking up to 100 times^*.
+
+// State_Zeus4
+State_Zeus4_name												Storm Wrath

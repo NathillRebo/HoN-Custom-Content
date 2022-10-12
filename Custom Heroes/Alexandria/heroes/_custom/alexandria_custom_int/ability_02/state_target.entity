@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Alexandria2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	attackspeed=".25,.35,.45,.55"
+	movespeedmultiplier=".15,.17,.19,.21"
+>
+	<onframe>
+		<compare a="time" b="0" op="gt">
+			<evaluate a="3.5,5,6.5,8" b="frametime" op="mult" />
+			<giveexperience amount="result"/>
+		</compare>
+	</onframe>
+</state>

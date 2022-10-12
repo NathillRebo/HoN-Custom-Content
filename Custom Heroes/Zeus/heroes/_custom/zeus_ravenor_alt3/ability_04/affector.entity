@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Zeus4"
+
+	radius="1000"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype="Superior Magic"
+>
+	<onimpact>
+		<damage effecttype="Magic" amount="25,50,75" />
+		<applystate name="State_Zeus4" duration="7000" />
+		<playeffect effect="effects/impact.effect" target="source_entity" source="target_entity"/>
+	</onimpact>
+</affector>

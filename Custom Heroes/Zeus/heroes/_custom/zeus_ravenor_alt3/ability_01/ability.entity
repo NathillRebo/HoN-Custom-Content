@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Zeus1"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	anim="ability_1"
+	casttime="1000"
+	castactiontime="300"
+	casteffect="effects/chain_lightning_cast.effect"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="target_entity"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+	
+	manacost="0"
+	cooldowntime="20000,18000,16000,14000"
+	
+	range="600"
+	bridgeeffect="effects/chain_lightning_engine.effect"
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+>
+	<onimpact>
+		<evaluate a="0.04" b="source_maxmana" op="mult"/>
+		<evaluate a="15,65,115,165" b="result" op="add"/>
+		<damage effecttype="Magic" amount="1" b="result" op="mult" />
+		<areaofeffect
+			radius="175"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			center="target_position"
+			ignore="target_entity"
+		>
+			<damage effecttype="Magic" amount="0.04" b="source_maxmana" op="mult" />
+			<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity" />
+		</areaofeffect>
+		<evaluate a="source_maxmana" b="source_mana" op="sub"/>
+		<evaluate a="0.08,0.012,0.016,0.2" b="result" op="mult"/>
+		<givemana target="source_entity" amount="result" />
+		<evaluate a="source_mana" b="source_maxmana" op="div"/>
+		<evaluate a="1" b="result" op="sub"/>
+		<evaluate a="10000,9000,8000,7000" b="result" op="mult"/>
+		<reducecooldown duration="result" />
+	</onimpact>
+	
+	<modifier key="iamsheeped" modpriority="100"
+		passiveeffect=""
+	>
+	</modifier>
+</ability>

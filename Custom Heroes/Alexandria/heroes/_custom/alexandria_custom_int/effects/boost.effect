@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="false">
+	<definitions>
+		<particlesystem name="system0" space="world" scale=".75">
+			
+			<trackeremitter
+				timenudge="500"
+				targetposition="0 0 50"
+				tracktype="angular"
+				trackspeed="2"
+				spawnrate="15"
+				offsetsphere="10 10 0"
+				direction="0 0 1"
+				minangle="40"
+				maxangle="70"
+				particlelife="1000"
+				minspeed="200"
+				maxspeed="400"
+				drag="0.01"
+				gravity="-5"
+				inheritvelocity="1"
+				limitinheritvelocity="500"
+				bone="Bip01"
+				position="0 0 -50"
+			>
+				<particle>
+					<trailemitter
+						minlife="600"
+						maxlife="800"
+						spawnrate="20"
+						particlelife="300"
+						offsetsphere="1"
+						material="/shared/effects/materials/arrow_trail_blend.material"
+						startparticlealpha="0"
+						minmidparticlealpha=".1"
+						maxmidparticlealpha="1"
+						endparticlealpha="0"
+						minparticlescale=".5"
+						maxparticlescale="4"
+						texposscale="0"
+						texstretchscale="1"
+					>
+						<particle
+							color=".15 .05 .15"
+							minscale="1"
+							maxscale="1"
+							size="3"
+						/>
+						<particle
+							color=".3 .5 .3"
+							minscale="1"
+							maxscale="1"
+							size="3"
+						/>
+					</trailemitter>
+				</particle>
+			</trackeremitter>
+			
+		</particlesystem>
+		
+		<particlesystem name="system1" space="entity" scale=".65">
+			
+			<simpleemitter
+				timenudge="500"
+				spawnrate="30"
+				direction="0 0 1"
+				offsetsphere="10 10 0"
+				angle="90"
+				particlelife="500"
+				speed="1"
+				depthbias="-50"
+				bone="Bip01"
+				position="0 0 -50"
+			>
+				<particle maxyaw="360">
+					<billboard
+						life="500"
+						startcolor="0"
+						midcolor=".25 .2 .1"
+						endcolor="0"
+						material="/shared/effects/materials/light_rays.material"
+						directionalspace="local"
+						lockup="true"
+						lockright="true"
+						minpitch="20"
+						maxpitch="50"
+						maxyaw="360"
+						flare="1"
+						minheight="10"
+						maxheight="20"
+						minwidth="4"
+						maxwidth="10"
+						minscale="4"
+						maxscale="8"
+					/>
+				</particle>
+			</simpleemitter>
+			
+			<template name="spinning_cross">
+				<controller bone="_bone_center" directionalspace="global" yaw="{yaw}" yawspeed="200">
+					<model
+						model="/heroes/martyr/ability_01/effects/cross_projectile/model.mdf"
+						position="0 50 0"
+						scale=".75"
+						material="/shared/effects/materials/shell3.material"
+						alpha=".01"
+						color="3 2.5 .5"
+						anim="idle"
+						pitch="90"
+					/>
+				</controller>
+			</template>
+			<instance name="spinning_cross" yaw="0" />
+			<instance name="spinning_cross" yaw="90" />
+			<instance name="spinning_cross" yaw="180" />
+			<instance name="spinning_cross" yaw="270" />
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnparticlesystem instance="instance1" particlesystem="system1" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>

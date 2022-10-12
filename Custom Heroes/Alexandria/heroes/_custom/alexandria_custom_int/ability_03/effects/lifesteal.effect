@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="tracker" persistent="true" scale="2">
+	<definitions>
+
+		<particlesystem name="system0" space="world" >
+
+			<sound
+				linearfalloff="true"
+				falloffstart="0"
+				falloffend="2200"
+				volume=".7"
+				sample="/shared/sounds/items/item_lifesteal4_impact.wav"
+			/>
+
+			<trackeremitter
+				spawnrate="500"
+				count="20"
+				bone="_bone_centerofchest"
+				owner="target"
+				targetbone="_bone_centerofchest"
+				targetowner="source"
+				tracktype="angular"
+				trackspeed="8.0"
+				drag="0"
+				particlelife="3000"
+				gravity="0"
+				offsetsphere="5 5 5"
+				minspeed="10.0"
+				maxspeed="220.0"
+				acceleration="30.0"
+				direction="0"
+				inheritvelocity="0.0"
+				distancelife="true"
+			>
+				<particle>
+				
+					<billboard
+						life="1000"
+						material="/shared/effects/materials/whitedot.material"
+						color=".3 0 0"								
+						startsize="60"
+						endsize="20"
+						depthbias="-20"
+						position="0 0 0"
+					/>
+					
+					<billboard
+						life="1000"
+						material="/shared/effects/materials/whitedot.material"
+						color=".5 .3 .3"								
+						startsize="20"
+						endsize="1"
+						depthbias="-20"
+						position="0 0 0"
+					/>
+				
+					<trailemitter
+						spawnrate="50"
+						particlelife="600"
+						texpostime="500"
+						texposscale="0.0"
+						texstretchscale=".4"
+						material="/shared/effects/materials/light_trail.material"
+						life="1000"
+					>
+						<particle
+							startcolor=".3 .1 .1"
+							endcolor="0"
+							startsize="5"
+							midsize="7"
+							endsize="0"
+							midsizepos="0.2"
+					 />
+					</trailemitter>
+					
+				</particle>
+					
+			</trackeremitter>
+			
+			<billboard
+				owner="target"
+				bone="_bone_centerofchest"
+				life="1000"
+				material="/shared/effects/materials/whitedot.material"
+				color="0 .5 .2"								
+				startsize="150"
+				endsize="1"
+				depthbias="-20"
+				position="0 0 0"
+			/>
+
+		</particlesystem>
+	</definitions>
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>
+

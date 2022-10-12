@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Alexandria4"
+	
+	statuseffecttooltip="State_Voodoo_Ability3"
+	icon="icon.tga"
+	
+	anim="ability_4"
+	casttime="700"
+	castactiontime="300"
+
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_position"
+	targetscheme="enemy_units"
+	
+	casteffecttype="Superior Magic"
+	
+	manacost="350,525,700"
+	cooldowntime="105000,90000,75000"
+	targetradius="400"
+	targetmaterial="/shared/materials/area_cast_indicator.material"
+	range="1000"
+	impacteffect=""
+	
+	showareacast="true"
+	areacastmaterial="/shared/materials/area_cast_indicator_spokes.material"
+	
+	showrangeandradiusintooltip="true"
+>	
+	<onimpact>
+		<areaofeffect
+			radius="400"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Superior Magic"
+			center="target_position"
+		>
+			<setvar0 a="source_experience" b="target_experience" op="sub"/>
+			<compare a="var0" b="0" op="gt">
+				<evaluate a="var0" b="0.665" op="pow"/>
+				<evaluate a="result" b="2" op="mult"/>
+				<evaluate a="result" b="1000" op="add"/>
+				<applystate name="State_Stunned" target="target_entity" duration="result" />
+				<evaluate a="var0" b="0.483,0.532,0.564" op="pow"/>
+				<evaluate a="result" b="2" op="mult"/>
+				<evaluate a="result" b="150,250,350" op="add"/>
+				<damage effecttype="Magic" target="target_entity" amount="1" b="result" op="mult"/>
+			</compare>
+			<else>
+				<applystate name="State_Stunned" target="target_entity" duration="1000" />
+			<damage effecttype="Magic" target="target_entity" amount="150,250,350" />
+			</else>
+		</areaofeffect>
+		<playeffect effect="effects/impact.effect" source="target_position" target="" occlude="true"/>
+	</onimpact>
+</ability>

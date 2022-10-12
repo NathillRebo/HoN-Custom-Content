@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="5.1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="1000"
+				falloffend="2000"
+				volume="0.7" 
+				sample="/heroes/voodoo/ability_03/sounds/ability_03.wav"
+			/>
+
+			<groundsprite
+				delay="175"
+				life="800"
+				material="/shared/effects/materials/luna_aura_01.material"
+				size="75"
+				midsizepos=".5"
+				startcolor="..95 .65 0.05"
+				midcolor="1.65 1.35 .25"
+				endcolor="0 0 0"
+				midcolorpos=".2"
+			/>
+			
+			<simpleemitter
+				delay="175"
+				count="70"
+				spawnrate="500"			
+				life="800"
+				particlelife="800"	
+				material="/shared/effects/materials/flare2.material"
+				offsetsphere="5"
+				minangle="-90"
+				maxangle="-90"
+				direction="0 0 -1"
+				offsetradial="60"
+				position="0 0 30"
+				depthbias="-30"
+			>
+				<particle
+					startcolor="1.35 .55 .45"
+					endcolor="0 0 0"
+					midcolorpos="0.0"
+					height="100"
+					width="20"
+					startsize="36"
+					midsize="30"
+					endsize="87"
+					midsizepos=".3"
+					lockup="1"
+				/>
+
+			</simpleemitter>
+
+			<simpleemitter
+				delay="175"
+				count="50"
+				spawnrate="500"	
+				life="800"
+				particlelife="1200"	
+				material="/shared/effects/materials/smokering.material"
+				minangle="-90"
+				maxangle="-90"
+				direction="0 0 -1"
+				offsetradial="60"
+				depthbias="-30"
+			>
+				<particle
+					startcolor="1.75 0.95 .65"
+					endcolor="0 0 0"
+					midcolorpos="0.0"
+					startsize="16"
+					endsize="87"
+				/>
+
+			</simpleemitter>
+
+			<billboard
+				delay="175"
+				life="800"
+				position="0 0 20"
+				material="/shared/effects/materials/corona_06.material"
+				startcolor="1.55 1.45 .45"
+				endcolor="0 0 0"
+				size="130"
+				lockup="1"
+				pitch="90"
+			/>
+
+			<sound
+				sample="/heroes/kunas/ability_02/sounds/ability_02.wav"
+				volume="1"
+				linearfalloff="true"
+				falloffstart="1500"
+				falloffend="2500"
+			/>
+			
+			<beam
+				life="350"
+				position_a="0 0 540"
+				position_b="0 0 0"
+				size="40"
+				color="1.1 .8 .4"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+
+			/>
+
+			<beam
+				life="350"
+				position_a="0 0 540"
+				position_b="0 0 0"
+				size="40"
+				color="1.25 1.45 1.05"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+
+			/>
+			<beam
+				life="350"
+				position_b="0 0 0"
+				position_a="0 0 440"
+				size="60"
+				color=".85 .95 .55"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+			/>
+
+			<beam
+				life="350"
+				position_b="0 0 0"
+				position_a="0 0 440"
+				size="60"
+				color=".85 .95 .55"
+				alpha="1.0"
+				material="/shared/effects/materials/femme_lightning_10.material"
+				framespeed="1.75"
+			/>
+
+			<billboard
+				life="200"
+				startcolor="0 0 0"
+				midcolor="0.75 .55 .25"
+				endcolor="0 0 0"
+				startalpha="1.0"
+				midalpha="1.0"
+				endalpha="0.0"
+				midalphapos="0.75"
+				startparam="0.05"
+				endparam="0.0"
+				startsize="400"
+				midsize="400"
+				endsize="400"
+				midsizepos=".4"
+				depthbias="-100"
+				position="0 0 20"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="true"
+				pitch="90"
+			/>
+			
+			<simpleemitter
+				spawnrate="150"
+				count="25"
+				particlelife="200"
+				gravity="0"
+				speed="70"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				material="/shared/effects/materials/lightning_02.material"
+				offsetsphere="1 1 1"
+				minangle="360"
+				maxangle="180"
+				direction="1 0 0"
+				offsetdirection="0 0 0"
+				offsetradial="0 0 0"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="50"
+					maxanglespeed="150"
+					startcolor=".95 1.45 1.05"
+					midcolor=".85 95 .55"
+					endcolor="0 0 0"
+					midcolorpos=".8"
+					startframe="0"
+					endframe="1"
+					startsize="1"
+					midsize="29"
+					endsize="49"
+					startalpha="0"
+					midalpha=".3"
+					endalpha="0"
+					midalphapos=".5"
+					startstickiness="0"
+					endstickiness="0"
+				/>
+			</simpleemitter>
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

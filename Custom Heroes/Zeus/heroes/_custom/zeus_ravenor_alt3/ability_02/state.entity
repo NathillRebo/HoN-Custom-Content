@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Zeus2"
+	
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype=""
+	allowtransfer=""
+	impactinterval="1000"
+	movespeedmultiplier="0.15,0.25,0.35,0.45"
+	armor="2,4,6,8"
+	magicarmor="2,4,6,8"
+	
+	modifierkey="Zeusmana2"
+>
+	<onframe>
+		<setvar0 a="30,50,70,90" b="frametime" op="mult" />
+		<compare a="source_mana" b="var0" op="le" >
+			<expire />
+		</compare>
+		<else>
+			<takemana target="this_owner_entity" amount="var0" triggeractionscript="false" costovertime="true" />
+		</else>
+	</onframe>
+	
+	<onexpired>
+		<toggleoff name="Ability_Zeus2" />
+	</onexpired>
+	<onattackedpreimpact>
+		<combatsupertype supertype="attack">
+			<damage effecttype="Magic" amount="15,25,35,45" />
+		</combatsupertype>
+	</onattackedpreimpact>
+	
+</state>

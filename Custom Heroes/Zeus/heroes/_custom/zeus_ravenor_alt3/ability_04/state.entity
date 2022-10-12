@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Zeus4"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="100"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	magicarmorpercharge="-0.5,-0.75,-1"
+	basedamagemultiplierpercharge="-0.03,-0.045,-0.06"
+>
+	<onframe />
+
+	<oninflict>
+		<addcharges count="1"/>
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1"/>
+	</onrefresh>
+</state>

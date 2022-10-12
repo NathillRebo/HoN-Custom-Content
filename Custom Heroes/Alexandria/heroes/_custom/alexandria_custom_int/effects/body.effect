@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+		<controller bone="_bone_altweaponattach" >
+			<billboard
+				position="0 0 10"
+				expirelife="250"
+				startcolor=".25 .125 0"
+				endcolor="0 0 0"
+				size="15"
+
+				depthbias="-10"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				material="/shared/effects/materials/blink.material"
+				startcolor="0 .1 .05"
+				endcolor="0"
+				maxroll="360"
+				size="100"
+				depthbias="-25"
+				expirelife="250"
+				directionalspace="local"
+				position="0 0 10"
+			/>
+		</controller>
+			<billboard
+				bone="_bone_weaponattach"
+				delay="200"
+				position="0 0 0"
+				expirelife="250"
+				startcolor=".25 .125 0"
+				endcolor="0 0 0"
+				size="25"
+
+				depthbias="-25"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+			
+			<billboard
+				expirelife="500"
+				bone="_bone_weaponattach"
+				delay="200"
+				position="0 0 0"
+				startcolor="0 .25 .125"
+				endcolor="0 0 0"
+				size="135"
+
+				depthbias="-25"
+				material="/shared/effects/materials/flare_01.material"
+			/>
+<!--
+			<simpleemitter
+				delay="0"
+				bone="_bone_fx_13"
+				position="0 0 0" 
+				spawnrate="50"
+				minparticlelife="50"
+				maxparticlelife="350"
+				gravity="0.0"
+				offsetsphere="0 10 0"
+				speed="75"
+				drag="0"
+				acceleration="0"
+				material="/shared/effects/materials/phantom_smoke_04.material"
+				minangle="0"
+				maxangle="5"
+				direction="0 -1 0"
+			>
+				<particle 
+					startcolor="0 0 0"
+					midcolor=".5 .325 .1"
+					endcolor="0 0 0"
+					midcolorpos=".1"
+					minangle="0"
+					maxangle="360"
+					startsize="35"
+					endsize="20"
+					minanglespeed="-90"
+					maxanglespeed="90"
+					lockright="true"
+					lockup="true"
+					pitch="90"
+					directionalspace="local"
+				/>
+			</simpleemitter>
+
+
+			<simpleemitter
+				delay="0"
+				bone="_bone_fx_13"
+				position="0 0 0" 
+				spawnrate="100"
+				particlelife="250"
+				gravity="0.0"
+				offsetsphere="0"
+				speed="75"
+				drag="0"
+				acceleration="0"
+				material="/shared/effects/materials/flare_01.material"
+				minangle="0"
+				maxangle="5"
+				direction="0 -1 0"
+			>
+				<particle 
+					startcolor="0 0 0"
+					midcolor=".25 .125 .05"
+					endcolor="0 0 0"
+					midcolorpos=".5"
+					minangle="0"
+					maxangle="360"
+					startsize="30"
+					endsize="15"
+					minanglespeed="-90"
+					maxanglespeed="90"
+					lockright="true"
+					lockup="true"
+					pitch="90"
+					directionalspace="local"
+				/>
+			</simpleemitter>
+-->
+<!--
+			<simpleemitter
+				bone="_bone_fx_01"
+				position="0 0 0" 
+				spawnrate="50"
+				particlelife="250"
+				gravity="0.0"
+				offsetsphere="5 5 5"
+				speed="150"
+				drag="0"
+				acceleration="0"
+				minangle="-5"
+				maxangle="5"
+				direction="0 -1 0"
+			>
+				<particle
+					turn="true"
+				>
+					<billboard
+						size="3"
+						bone="_bone_fx_01"
+						spawnrate="500"
+						minlife="100"
+						maxlife="250"
+						position="0 0 0"
+						material="/shared/effects/materials/light_rays.material"
+						directionalspace="local"
+						yaw="180"
+						roll="180"
+						lockup="true"
+						lockright="true"
+						pitch="90"
+						startcolor="1 .5 0"
+						midcolor=".5 .25 .1"
+						endcolor="0 0 0"
+						minheight="25"
+						maxheight="35"
+					>
+					</billboard>
+				</particle>
+			</simpleemitter>
+-->
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

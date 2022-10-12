@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Zeus2"
+
+	icon="icon.tga"
+	
+	anim="ability_2"
+	casttime="0"
+	castactiontime="0"
+	casteffect=""
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	casteffecttype="Magic"
+	actiontype="toggle"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	manacost="0"
+	activemanacost="0"
+	toggleoffmanacost="0"
+	cooldowntime="750"
+	targetradius="300"
+	noresponse="false"
+	
+>
+	<checkcost>
+		<evaluate a="source_maxmana" b="0.04" op="mult" />
+		<compare a="source_mana" b="result" op="le">
+			<invalidate />
+		</compare>
+	</checkcost>
+	
+	<ontoggleon>
+		<applystate name="State_Zeus2" continuous="true" istoggle="true" />
+	</ontoggleon>
+	
+	<ontoggleoff>
+		<expirestate name="State_Zeus2" target="source_entity" />
+		<startcooldown duration="750" />
+	</ontoggleoff>
+	
+	<onimpact/>
+	
+	<modifier key="manabatteryoogie" condition="toggle_active" modpriority="100"
+		noresponse="true"
+	>
+	</modifier>
+	
+	<modifier key="Zeusmana2" modpriority="99"
+	>
+		<activatecost/>
+		
+		<ontoggleoff>
+			<expirestate name="State_Zeus2" target="source_entity" />
+			<startcooldown duration="750" />
+		</ontoggleoff>
+	</modifier>
+</ability>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Alexandria1"
+
+	speed="1600"
+	gravity="0"
+
+	modelscale="2"
+	model="effects/cross_projectile/model.mdf"
+	traileffect="effects/trail.effect"
+	effectscale="1.0"
+	impacteffect="effects/impact.effect"
+>
+</projectile>
