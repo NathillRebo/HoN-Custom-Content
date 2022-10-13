@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Haka1"
+
+	icon="icon.tga"
+
+	armorpercharge="-1,-2,-3,-4"
+	passiveeffect="passive.effect"
+
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+>
+
+	<modifier key="nobossarmor" modpriority="100" condition="boss" notooltooltip="true"
+		armorpercharge="-0.4,-0.8,-1.2,-1.6"
+	/>
+	
+	<oninflict>
+		<addcharges count="1" timed="true" />
+	</oninflict>
+
+	<onrefresh>
+		<addcharges count="1" timed="true" />
+	</onrefresh>
+</state>

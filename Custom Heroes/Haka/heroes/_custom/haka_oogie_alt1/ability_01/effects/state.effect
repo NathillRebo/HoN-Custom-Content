@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="true">
+	<definitions>
+		<particlesystem name="system0" space="world">
+			<orbiteremitter
+				life="330"
+				spawnrate="33"
+				particlelife="625"
+				origin="0 0 -310" 
+				orbit="-3 70 60" 
+				direction="0 0 1" 
+				offset="70 70 70"
+				cylindrical="true" 
+				material="/shared/effects/materials/lightning_02.material"
+			>
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="-2060"
+					maxanglespeed="3420"
+					startcolor="0 .8 .8"
+					midcolor="1 .5 0"
+					endcolor=".5 1 1"
+					midcolorpos=".5"
+					startframe="0"
+					endframe="1"
+					minsize="22"
+					maxsize="32"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+				/>
+			</orbiteremitter>
+			<orbiteremitter
+				life="330"
+				spawnrate="33"
+				particlelife="625"
+				origin="0 0 -310" 
+				orbit="-3 70 60" 
+				direction="0 0 1" 
+				offset="70 70 70"
+				cylindrical="true" 
+				material="/shared/effects/materials/electric_impact_01.material"
+			>
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="-2060"
+					maxanglespeed="3420"
+					startcolor="0 .8 .8"
+					midcolor="1 .5 0"
+					endcolor=".5 1 1"
+					midcolorpos=".5"
+					startframe="0"
+					endframe="1"
+					minsize="22"
+					maxsize="32"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+				/>
+			</orbiteremitter>
+			
+			<orbiteremitter
+				life="330"
+				spawnrate="33"
+				particlelife="625"
+				origin="0 0 -310" 
+				orbit="-3 70 60" 
+				direction="0 0 1" 
+				offset="70 70 70"
+				cylindrical="true" 
+				material="/shared/effects/materials/whitedot.material"
+			>
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="-2060"
+					maxanglespeed="3420"
+					startcolor="0 .8 .8"
+					midcolor="1 .5 0"
+					endcolor=".5 1 1"
+					midcolorpos=".5"
+					startframe="0"
+					endframe="1"
+					minsize="22"
+					maxsize="32"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+				/>
+			</orbiteremitter>
+			<orbiteremitter
+				life="330"
+				spawnrate="33"
+				particlelife="625"
+				origin="0 0 -310" 
+				orbit="-3 70 60" 
+				direction="0 0 1" 
+				offset="70 70 70"
+				cylindrical="true" 
+				material="/shared/effects/materials/lightning_10.material"
+			>
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="-2060"
+					maxanglespeed="3420"
+					startcolor="0 .8 .8"
+					midcolor="1 .5 0"
+					endcolor=".5 1 1"
+					midcolorpos=".5"
+					startframe="0"
+					endframe="1"
+					minsize="22"
+					maxsize="32"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+				/>
+			</orbiteremitter>
+			<orbiteremitter
+				life="330"
+				spawnrate="33"
+				particlelife="625"
+				origin="0 0 -310" 
+				orbit="-3 70 60" 
+				direction="0 0 1" 
+				offset="70 70 70"
+				cylindrical="true" 
+				material="/shared/effects/materials/lightning_02.material"
+			>
+				<particle 
+					minangle="0"
+					maxangle="0"
+					minanglespeed="-2060"
+					maxanglespeed="3420"
+					startcolor="0 .8 .8"
+					midcolor="1 .5 0"
+					endcolor=".5 1 1"
+					midcolorpos=".5"
+					startframe="0"
+					endframe="1"
+					minsize="22"
+					maxsize="32"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".5"
+				/>
+			</orbiteremitter>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][pos] -->
+

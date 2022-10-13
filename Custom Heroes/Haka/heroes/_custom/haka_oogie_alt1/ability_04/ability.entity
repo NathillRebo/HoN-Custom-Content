@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Haka4"
+
+	icon="icon.tga"
+	
+	anim="item_1"
+	casttime="0"
+	castactiontime="0"
+	casteffect=""
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	
+	actiontype="self_position"
+	frontqueue="true"
+	inheritmovement="true"
+	noninterrupting="true"
+	nobreakchannel="true"
+	nonaggressive="true"
+	
+	targetradius="1200"
+	
+	manacost="175,250,325"
+	cooldowntime="100000,90000,80000"
+>
+	<onimpact>
+		<areaofeffect
+			center="this_owner_entity"
+			radius="1200"
+			targetselection="all"
+			targetscheme="ally_units"
+			ignoreinvulnerable="true"
+		>
+			<applystate name="State_Haka4" duration="6000" />
+		</areaofeffect>
+		
+		<!-- Art -->
+		<playeffect effect="effects/cast.effect" source="source_position" target="" occlude="true" />
+		<playanim name="item_1" target="source_entity" />
+	</onimpact>
+</ability>

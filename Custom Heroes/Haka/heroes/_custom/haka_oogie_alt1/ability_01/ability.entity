@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Haka1"
+	
+	icon="icon.tga"
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+>
+	<onattackimpact>
+		<canactivate>
+			<cantarget targetscheme="enemy_units" effecttype="Physical">
+				<chance threshold="0.17">
+					<spawnaffector name="Affector_Haka1" target="source_position" />
+					<playanim name="ability_3" speed="source_attackspeed" target="source_entity" />
+				</chance>
+			</cantarget>
+		</canactivate>
+	</onattackimpact>
+</ability>

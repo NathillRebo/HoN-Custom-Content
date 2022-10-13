@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<affector
+	name="Affector_Haka1"
+
+	radius="300"
+	
+	targetselection="all"
+	targetscheme="enemy_units"
+	effecttype=""
+	persist="true"
+	
+	effect=""
+	impacteffect="effects/impact.effect"
+>
+	<onimpact>
+		<applystate name="State_Haka1" duration="3500" target="target_entity" />
+		<damage effecttype="Physical" amount="40,50,60,70" b="1" op="mult" />
+	</onimpact>
+</affector>

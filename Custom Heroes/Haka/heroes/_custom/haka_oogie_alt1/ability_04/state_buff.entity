@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Haka4"
+	
+	passiveeffect="effects/state.effect"
+	icon="icon.tga"
+	
+	attackspeed="0.4,0.5,0.6"
+	movespeedmultiplier="0.2,0.25,0.3"
+	lifesteal="0.15,0.2,0.25"
+	
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onattackpredamage>
+		<cantarget targetscheme="enemy_units" />
+		<else>
+			<setvalue name="combat_lifesteal" a="combat_lifesteal" b="-0.15,-0.2,-0.25" op="add" />
+		</else>
+	</onattackpredamage>
+</state>

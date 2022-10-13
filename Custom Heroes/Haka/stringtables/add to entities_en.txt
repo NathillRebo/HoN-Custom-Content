@@ -1,0 +1,45 @@
+
+// Hero_zzz_Haka
+Hero_zzz_Haka_name												Haka
+Hero_zzz_Haka_role												This shamanistic warrior specializes in the powers of the air, increasing both mobility and damage of allies and self. Capable of dealing potent damage himself and moving quickly between lanes, he is best played as a ganker semi-carry, making sure that one of hard-carries is able to attack enemies with Wind Surge.
+
+// Ability_Haka1
+Ability_Haka1_name												Wind Shear
+Ability_Haka1_description										Haka strikes with fury and cuts with wind, rending enemies around him.
+Ability_Haka1_description_simple								Haka's attacks have a 17% chance to cull through nearby enemies, dealing them ^o{40,50,60,70} Physical Damage^* and reducing their ^oArmor by {1,2,3,4} for 3.5 seconds^*. The Armor reduction stacks, but each stack has a separate timer.
+Ability_Haka1_tooltip_flavor									Too fast for you!
+Ability_Haka1_IMPACT_effect										Haka's attacks have a 17% chance to cull through nearby enemies, dealing them ^o{40,50,60,70} Physical Damage^* and reducing their ^oArmor by {1,2,3,4} for 3.5 seconds^*. The Armor reduction stacks, but each stack has a separate timer.
+
+// State_Haka1
+State_Haka1_name												Wind Shear
+
+// Ability_Haka2
+Ability_Haka2_name												Lightning Shield
+Ability_Haka2_description										Surrounds target ally with lightning, causing it to deal damage to surrounding enemies.
+Ability_Haka2_description_simple								Surrounds target ally with lightning for ^o20 seconds^*, causing it to deal ^o{18,32,46,60} Magic Damage per second^* to nearby enemies.
+Ability_Haka2_tooltip_flavor									Best defense is good offense!
+Ability_Haka2_IMPACT_effect										Surrounds target ally with lightning for ^o20 seconds^*, causing it to deal ^o{18,32,46,60} Magic Damage per second^* to nearby enemies.
+
+// State_Haka2
+State_Haka2_name												Lightning Shield
+State_Haka2_FRAME_effect										Deals {18,32,46,60} Magic Damage per second to nearby enemies.
+
+// Ability_Haka3
+Ability_Haka3_name												Wind Surge
+Ability_Haka3_description										Haka increases the target's speed tremendously for a short time.
+Ability_Haka3_description_simple								Haka increases target's ^oMovement speed to Max Movement Speed^* and causes it to be ^oimmune to slows^*. Lasts ^o{3.2,3.8,4.4,5} seconds^*.
+Ability_Haka3_tooltip_flavor									Faster than light!
+Ability_Haka3_IMPACT_effect										Haka increases target's ^oMovement speed to Max Movement Speed^* and causes it to be ^oimmune to slows^*. Lasts ^o{3.2,3.8,4.4,5} seconds^*.
+
+// State_Haka3
+State_Haka3_name												Wind Surge
+
+// Ability_Haka4
+Ability_Haka4_name												Bloodlust
+Ability_Haka4_description										Haka empowers allies and turns them into blood-crazed killing machines.
+Ability_Haka4_description_simple								Haka empowers nearby allies, granting them ^o{40,50,60} Attack Speed, {20,25,30}% Movement Speed and {15,20,25}% Lifesteal for 6 seconds^*.
+Ability_Haka4_tooltip_flavor									Just before the boss becomes berserk!
+Ability_Haka4_IMPACT_effect										Haka empowers nearby allies, granting them ^o{40,50,60} Attack Speed, {20,25,30}% Movement Speed and {15,20,25}% Lifesteal for 6 seconds^*.
+
+// State_Haka4
+State_Haka4_name												Bloodlust

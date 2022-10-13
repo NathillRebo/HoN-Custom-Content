@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Haka3"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype="StatusBuff"
+	allowtransfer="true"
+	
+	movespeedmultiplier="100"
+	slowresistance="1.0"
+>
+</state>

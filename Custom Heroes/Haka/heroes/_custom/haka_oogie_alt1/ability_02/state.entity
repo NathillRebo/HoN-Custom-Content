@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Haka2"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	effecttype="StatusBuff"
+	allowtransfer="true"
+>
+	<onframe>
+		<areaofeffect
+			radius="275"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Magic"
+			center="this_owner_entity"
+		>
+			<damage effecttype="Magic" source="this_owner_entity" target="target_entity" amount="18,32,46,60" b="frametime" op="mult"/>
+		</areaofeffect>
+	</onframe>
+</state>
