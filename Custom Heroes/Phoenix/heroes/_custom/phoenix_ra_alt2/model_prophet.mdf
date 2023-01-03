@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rig.max" file="high.model" type="K2" high="high.model" med="med.model" low="low.model">
+
+	<anim name="idle" clip="clips/default_1.clip" fps="45" loop="1"/>
+	
+	<anim name="attack_1" clip="clips/attack_1.clip" fps="40" loop="false" blendtime="250">
+		<frameevent frame="6" cmd="PlaySoundLinear /heroes/zephyr/sounds/attack_%.wav 400 2000 .65"/>
+	</anim>
+	
+	<anim name="ability_1" clip="clips/ability_1.clip" fps="50" startframe="10" numframes="30" />
+	
+
+	<anim name="ability_2"  clip="clips/ability_1.clip" fps="50" startframe="10" numframes="30"  />
+
+	
+	<anim name="ability_3" clip="clips/attack_1.clip" fps="40" startframe="10" numframes="30"  />
+	
+	<anim name="ability_4"  clip="clips/ability_1.clip" fps="50" startframe="10" numframes="30" />
+	
+	
+</model>

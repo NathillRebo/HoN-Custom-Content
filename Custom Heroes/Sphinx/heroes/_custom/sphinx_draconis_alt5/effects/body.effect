@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1.75">
+
+			<sound
+				soundloop="true"
+				fadein="300"
+				fadeout="300"
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2000"
+				volume=".4" 
+				sample="../sounds/state.wav"
+			/>
+
+<!--			<template name="beam">
+				<beam
+					expirelife="1000"
+					bone_a="{a}"
+					bone_b="{b}"
+					size="{size}"
+					color=".5 .65 0"
+					startalpha="1"
+					endalpha="0"
+					position="0 0 0"
+					position_b="0 0 0"
+					material="/shared/effects/materials/goo.material"
+					startframe="{frame}"
+					framespeed="5"
+				/>
+			</template>
+
+			<instance name="beam" a="Box020" b="Box007" size="10" frame=".6"/>
+			<instance name="beam" a="Box024" b="Box007" size="5" frame="5"/>
+			<instance name="beam" a="Box011" b="Box028" size="15" frame="5"/>
+			<instance name="beam" a="Box011" b="Box015" size="5" frame="1"/>
+			<instance name="beam" a="Box019" b="Box014" size="15" frame="1"/>
+			<instance name="beam" a="Box020" b="Box015" size="16" frame="5"/>
+			-->
+
+
+<!--			<billboard
+				bone="_bone_head"
+				expirelife="1500"
+				startcolor=".05 .1 0"
+				endcolor="0 0 0"
+				size="100"
+				position="0 0 0"
+				material="/shared/effects/materials/whitedot.material"
+				directionalspace="local"
+				depthbias="-100"
+			/>
+
+			<simpleemitter
+				particlelife="3000"
+				spawnrate="5"
+				speed="0"
+				gravity="0"
+				direction="0 0 0"
+				offsetsphere="30 30 0"
+				position="0 0 0"
+			>
+				<particle> 
+					<groundsprite
+						minlife="500"
+						maxlife="1000"
+						material="/shared/effects/materials/goop_overlay.material"
+						minyaw="-360"
+						maxyaw="360"
+						position="0 0 0"
+						startcolor=".2 .5 .1"
+						endcolor=".6 .3 .1"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						midalphapos=".2"
+						minstartscale=".3"
+						maxstartscale=".4"
+						minendscale=".5"
+						maxendscale=".55"
+					/>
+				
+					<groundsprite
+						minlife="500"
+						maxlife="1000"
+						material="/shared/effects/materials/goop_blend_ground.material"
+						minyaw="-360"
+						maxyaw="360"
+						position="0 0 0"
+						color=".4 .5 0"
+						startalpha="0"
+						midalpha=".25"
+						endalpha="0"
+						midalphapos=".35"
+						startscale=".75"
+						endscale="1"
+					/>
+				</particle>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="35"
+				minparticlelife="250"
+				maxparticlelife="500"			
+				gravity="-10"
+				material="/shared/effects/materials/spore_01.material"
+				offsetsphere="15 15 0"
+				direction="0 0 1"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					color=".75 1 0"
+					startsize="20"
+					endsize="20"
+					turn="true"
+					startalpha="0"
+					midalpha="0"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+				spawnrate="25"
+				minparticlelife="600"
+				maxparticlelife="1050"			
+				gravity="-1"
+				minspeed="50"
+				maxspeed="150"
+				drag=".01"
+				material="/shared/effects/materials/whitedot_blend.material"
+				offsetsphere="35 60 10"
+				position="0 -25 0"
+				minangle="-25"
+				maxangle="25"
+				direction="0 0 1"
+				directionalspace="global"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-360"
+					maxanglespeed="360"
+					startcolor="0 0 0"
+					midcolor=".34 .2 0"
+					endcolor="0 0 0"
+					minsize="70"
+					maxsize="100"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".25"
+				/>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-360"
+					maxanglespeed="360"
+					startcolor="0 0 0"
+					midcolor=".25 .25 0"
+					endcolor="0 0 0"
+					minsize="70"
+					maxsize="100"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".25"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+			position="0 0 15"
+				spawnrate="50"
+				minparticlelife="200"
+				maxparticlelife="600"			
+				gravity="0"
+				material="/shared/effects/materials/blood_white.material"
+				offsetsphere="25 25 0"
+				direction="0 0 1"
+				depthbias="0"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					color="0 1 0"
+					startsize="50"
+					endsize="25"
+					turn="true"
+					startalpha=".5"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".2"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				position="0 0 20"
+				spawnrate="45"											
+				particlelife="1600"	
+				material="/shared/effects/materials/smoke_17.material"
+				offsetsphere="5 5 5"
+				inheritvelocity=".4"
+				gravity="15"
+				collide="1"
+				depthbias="-30"
+				offsetradial="30"
+				minangle="-90"
+				maxangle="90"
+				speed="50"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minanglespeed="-100"
+					maxanglespeed="100"
+					color=".1 .65 .1"
+					startsize="85"
+					endsize="110"
+					startalpha="0"
+					midalpha=".1"
+					endalpha="0"
+					startanchor=".2"
+					endanchor="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+			position="0 0 25"
+				spawnrate="35"
+				minparticlelife="250"
+				maxparticlelife="750"
+				speed="100"				
+				gravity="-2"
+				material="/shared/effects/materials/fly.material"
+				offsetsphere="25 25 0"
+				direction="0 0 1"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					color=".35 .7 .35"
+					midcolorpos="0.5"
+					startalpha="0"
+					midalpha="1"
+					endalpha="0"
+					startsize="8"
+					endsize="8"
+					turn="true"
+					frame="0"
+					framespeed="8"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+			position="0 0 15"
+				spawnrate="65"
+				minparticlelife="250"
+				maxparticlelife="500"
+				minspeed="0"				
+				maxspeed="100"				
+				gravity="-2"
+				material="/shared/effects/materials/flare_03.material"
+				offsetsphere="12 12 0"
+				direction="0 0 1"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					startcolor=".25 .5 .25"
+					endcolor="0 0 0"
+					startsize="18"
+					endsize="9"
+					turn="true"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+			position="0 0 15"
+				spawnrate="65"
+				minparticlelife="250"
+				maxparticlelife="500"
+				minspeed="0"				
+				maxspeed="100"				
+				gravity="-2"
+				material="/shared/effects/materials/spark_10.material"
+				offsetsphere="12 12 0"
+				direction="0 0 1"
+				depthbias="-25"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					startcolor=".25 1 0"
+					endcolor="0 0 0"
+					startsize="18"
+					endsize="9"
+					turn="true"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+			</simpleemitter>
+-->
+      </particlesystem>
+   </definitions>
+   <thread>
+   <!--   <spawnparticlesystem instance="instance0" particlesystem="system0" />
+      <waitfordeath instance="instance0" />
+      <!-- <die /> -->
+   </thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

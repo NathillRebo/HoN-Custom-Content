@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Phoenix4"
+
+	icon="icon.tga"
+	passiveeffect="effects/state.effect"
+	
+	effecttype="StatusBuff"
+	allowtransfer="false"
+	
+	stunneddurationmultiplier="-1"
+	debuffdurationmultiplier="-1"
+	stunned="true"
+
+	impactinterval="1500"
+>
+	<onframe />
+	
+	<ondamaged priority="100">
+		<scaledamage scale="0.0" />
+	</ondamaged>
+	
+	<onimpact>
+		<pushability source="source_entity" slot="0" />
+		<getlevel entity="stack_entity" />
+		<setvar0 a="result" />
+		
+		<getlevel entity="this_entity" />
+		<setvar1 a="result"/>
+		
+		<compare a="var1" b="1" op="eq">
+			<areaofeffect
+				center="this_owner_entity"
+				radius="600"
+				targetselection="all"
+				targetscheme="enemy_units"
+				effecttype="Physical"
+			>
+				<spawnprojectile name="Projectile_Phoenix1" target="target_entity" level="var0"/>
+				<applystate name="State_Stunned" target="target_entity" duration="300" />
+			</areaofeffect>		
+		</compare>
+		<else>
+			<compare a="var1" b="2" op="eq">
+				<areaofeffect
+					center="this_owner_entity"
+					radius="600"
+					targetselection="all"
+					targetscheme="enemy_units"
+					effecttype="Physical"
+				>
+					<spawnprojectile name="Projectile_Phoenix1" target="target_entity" level="var0"/>
+					<spawnprojectile name="Projectile_Phoenix1" target="target_entity" level="var0"/>
+					<applystate name="State_Stunned" target="target_entity" duration="600" />
+				</areaofeffect>		
+			</compare>
+			<else>
+				<compare a="var1" b="3" op="eq">
+					<areaofeffect
+						center="this_owner_entity"
+						radius="600"
+						targetselection="all"
+						targetscheme="enemy_units"
+						effecttype="Physical"
+					>
+						<spawnprojectile name="Projectile_Phoenix1" target="target_entity" level="var0"/>
+						<spawnprojectile name="Projectile_Phoenix1" target="target_entity" level="var0"/>
+						<spawnprojectile name="Projectile_Phoenix1" target="target_entity" level="var0"/>
+						<applystate name="State_Stunned" target="target_entity" duration="900" />
+					</areaofeffect>		
+				</compare>
+			</else>
+		</else>
+				
+		<playeffect effect="effects/impact.effect" source="this_owner_position" target="" />
+		<playanim name="default_1" target="source_entity"/>
+		<changehealth a="source_maxhealth"/>
+		<changemana a="source_maxmana"/>
+	
+	</onimpact>
+	
+</state>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Phoenix3"
+
+	speed="1000"
+	gravity="0"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+	<onimpact>
+		<combatevent effecttype="AbilityBasedProjectile">
+			<onimpact>
+				<evaluate a="source_attackdamage" b="0.1" op="mult"/>
+				<damage effecttype="Physical" amount="1" b="result" op="mult" />
+			</onimpact>
+		</combatevent>
+	</onimpact>
+</projectile>

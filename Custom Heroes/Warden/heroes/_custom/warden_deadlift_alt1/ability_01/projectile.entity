@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Warden1"
+
+	speed="1500"
+	
+	modelscale="1.0"
+	model="/shared/models/invis.mdf"
+	
+	effectscale="1.0"
+	traileffect=""
+	
+	canturn="false"
+	flying="true"
+	flyheight="10"
+	
+	touchradius="250"
+	touchtargetscheme="enemy_units"
+	toucheffecttype="Magic"
+	
+	maxtouchespertarget="1"
+>
+	<ontouch>
+		<cantarget effecttype="Push">
+			<push force="605" duration="250" />
+		</cantarget>
+		<cantarget effecttype="Magic">
+			<damage effecttype="Magic" amount="65,125,185,245" />
+			<applystate name="State_Stunned" duration="150" />
+		</cantarget>
+	</ontouch>
+</projectile>

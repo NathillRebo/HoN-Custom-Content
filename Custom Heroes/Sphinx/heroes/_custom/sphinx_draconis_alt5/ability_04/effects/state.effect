@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1" >
+		
+	<definitions>
+
+		<modifier
+			name="modifier0"
+			startcolor="1 1 3"
+			endcolor="1"
+			expirelife="1000"
+		/>	
+		
+		<particlesystem name="system0" space="world" scale="1">
+			<simpleemitter
+				spawnrate="10"
+				particlelife="2000"
+				gravity="-.2"
+				speed="10"
+				drag="0.07"
+				acceleration="0.0"		
+				mintimenudge="0"
+				maxtimenudge="1000"
+				position="0 0 30"
+				material="/shared/effects/materials/smoke_particle.material"
+				offsetsphere="55 55 15"
+				inheritvelocity=".5"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-30"
+					color=".1 .3 .3"
+					maxanglespeed="30"
+					startsize="50"
+					endsize="70"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"					
+				 />			
+
+				<particle 
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-50"
+					color=".26 .77 .77"
+					maxanglespeed="50"
+					startsize="50"
+					endsize="70"
+					startalpha="0"
+					midalpha=".8"
+					endalpha="0"
+					midalphapos=".2"
+					startanchor="0"
+					endanchor="0"
+					
+				 />					 
+			</simpleemitter>	
+			<simpleemitter
+				life="2000"
+			
+				position="0 0 0"
+				offsetsphere="0 0 0"
+				spawnrate="3"
+				minparticlelife="800" maxparticlelife="1000"
+				material="/shared/effects/materials/vortex_white.material"
+			>
+				<particle
+					maxangle="360"
+					frame="1"
+					startsize="600" midsize="250" endsize="50" scale="1"
+					alpha=".83"
+					anglespeed="80"
+					startcolor="0" midcolor="0 0 .9" endcolor="0" midcolorpos=".7"
+					lockup="true" lockright="true"
+					pitch="-90"
+					anchor="1"
+				/>
+			</simpleemitter>
+			<simpleemitter
+				life="2000"
+				position="0 0 0"
+				offsetsphere="0 0 0"
+				spawnrate="5"
+				minparticlelife="800" maxparticlelife="1000"
+				material="/shared/effects/materials/twirl_13.material"
+			>
+				<particle
+					maxangle="360"
+					frame="1"
+					startsize="600" midsize="180" endsize="70" scale="1"
+					alpha=""
+					anglespeed="30"
+					startcolor=".26 .26 1.28" midcolor=".43 .43 1.44" endcolor="0" midcolorpos=".6"
+					lockup="true" lockright="true"
+					pitch="-90"
+					anchor="1"
+				/>
+			</simpleemitter>
+			
+			<controller life="2000" owner="target" yawspeed="90" startscale="1.7" midscale="1.1" endscale="0.4">
+				<orbiteremitter
+					life="2000"
+					owner="target"
+					position="0 0 5"
+					offsetsphere="0 0 10"
+					startspawnrate="20"
+					endspawnrate="220"
+					minparticlelife="300" maxparticlelife="400"
+					direction="0 0 1"
+					origin="0 0 100"
+					offset="3.14 0 0"
+					orbit="0 0 -1"
+					angle="0"
+					minspeed="80" maxspeed="100" drag=".05"
+					material="/shared/effects/materials/spark_10.material"
+					cylindrical="true"
+					particlealpha=".65"
+					depthbias="0"
+				>
+					<particle
+						minangle="0" maxangle="360"
+						minpitchspeed="-180" maxpitchspeed="180" 
+						startalpha="1" endalpha="0"
+						startcolor="0 0 .8" midcolor="0 0 .8" endcolor=".66 .66 1.68" midcolorpos=".3"
+						minstartsize="3" maxstartsize="8" endsize="0" scale="5"
+						anchor="1"
+					>
+						<billboard
+							life="150" loop="true" scale="1.4"
+							startsize="0" midsize="7" endsize="0"
+							color=".13 .13 1.14"						
+							material="/shared/effects/materials/star_03.material"
+						/>
+					</particle>
+					<particle
+						minangle="0" maxangle="360"
+						minpitchspeed="-180" maxpitchspeed="180" 
+						startalpha="1" endalpha="0"
+						startcolor="0 0 .8" midcolor="0 0 .8" endcolor=".66 .66 1.68" midcolorpos=".3"
+						minstartsize="3" maxstartsize="8" endsize="0" scale="5"
+						anchor="1"
+					>
+						<billboard
+							life="150" loop="true" scale="1.4"
+							startsize="0" midsize="6" endsize="0"
+							color=".2 .2 1.2"						
+							material="/shared/effects/materials/star_03.material"
+						/>
+					</particle>
+				</orbiteremitter>
+			</controller>	
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" modifier="modifier0"/> 
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Sphinx4"
+
+	icon="icon.tga"
+	
+	passiveeffect="effects/state.effect"
+	effecttype=""
+>
+	<oninflict>
+		<setaccumulator value="0" />
+	</oninflict>
+	
+	<onframe>
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Superior Magic"
+		>
+			<applystate name="State_Sphinx4_Taunt" duration="2000" />
+		</areaofeffect>
+	</onframe>
+	
+	<ondamaged>
+		<evaluate a="damage_attempted" b="0.4,0.425,0.45" op="mult"/>
+		<evaluate a="result" b="accumulator" op="add" /> 
+		<setaccumulator value="result" />
+		<setvalue name="damage_attempted" a="damage_attempted" b="0.60,0.575,0.55" op="mult" />
+	</ondamaged>
+	
+	<onexpired>
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="enemy_units"
+			effecttype="Superior Magic"
+		>
+			<expirestate name="State_Sphinx4_Taunt"/>
+			<damage effecttype="Superior Magic" amount="540,770,1000" b="accumulator" op="min"/>
+		</areaofeffect>
+		<playeffect effect="effects/impact.effect" target="target_entity" source="target_entity" />
+	</onexpired>
+</state>

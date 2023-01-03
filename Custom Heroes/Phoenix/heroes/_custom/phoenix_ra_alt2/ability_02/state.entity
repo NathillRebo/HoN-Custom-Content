@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Phoenix2"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+	effecttype=""
+>
+	<oninflict>
+		<condition test="hasstate State_Phoenix1">
+			<expirestate name="State_Phoenix1"/>
+		</condition>
+	</oninflict>
+</state>

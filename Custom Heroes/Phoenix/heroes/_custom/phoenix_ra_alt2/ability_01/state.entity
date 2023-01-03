@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Phoenix1"
+	
+	icon="icon.tga"
+	passiveeffect="state.effect"
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+	maxcharges="8"
+	armorpercharge="-0.5,-1,-1.5,-2"
+>
+	<oninflict>
+		<addcharges count="1" />
+	</oninflict>
+	
+	<onrefresh>
+		<addcharges count="1" />
+	</onrefresh>
+	
+	<onexpired>
+		<condition test="hasstate State_Phoenix2">
+			<evaluate a="0.33" b="charges" op="mult"/>
+			<evaluate a="result" b="source_attackdamage" op="mult" source="this_inflictor_entity"/>
+			
+			<damage effecttype="Physical" amount="1" b="result" op="mult"/>
+			<playeffect effect="effects/impact.effect" source="target_entity" target="" />
+		</condition>
+	</onexpired>
+	
+	<modifier key="armadon_nobossarmor" modpriority="100" condition="boss" notooltooltip="true"
+		armorpercharge="-0.2,-0.4,-0.6,-0.8"
+	/>
+</state>

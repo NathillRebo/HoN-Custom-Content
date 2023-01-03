@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+
+	<particlesystem name="system0" space="world" scale="1">
+		
+		<template name="flames" >
+			
+			<twopointemitter
+				bone_a="{bonea}"
+				bone_b="{boneb}"
+				spawnrate="20"
+				gravity="-0"
+				minparticlelife="500"
+				maxparticlelife="750"
+				position_a="0 0 {height1}"
+				position_b="0 0 {height2}"
+				material="/shared/effects/materials/flames_03.material"
+			>
+				<particle
+					startsize="60"
+					endsize="20"
+					startcolor="0 0 .33"
+					endcolor="0"
+					startalpha=".5"
+					midalpha=".5"
+					endalpha="0"
+					anchor="1"
+					maxangle="360"
+					scale="{scale}"
+				/>
+			</twopointemitter>
+			
+			<twopointemitter
+				bone_a="{bonea}"
+				bone_b="{boneb}"
+				spawnrate="40"
+				gravity="-15"
+				minparticlelife="500"
+				maxparticlelife="750"
+				position_a="0 0 {height1}"
+				position_b="0 0 {height2}"
+				material="/shared/effects/materials/soul_projectile_blue.material"
+			>
+				<particle
+					startsize="30"
+					endsize="7"
+					startcolor="0"
+					midcolor=".25 .5 1"
+					midcolorpos=".25"
+					endcolor="-.5"
+					anchor="1"
+					maxangle="360"
+					scale="{scale}"
+				/>
+			</twopointemitter>
+			
+			
+		</template>
+		
+		<instance name="flames" scale=".5" height1="10" height2="10" bonea="Bip01 Head" boneb="Bip01 Neck"  />
+		<instance name="flames" scale=".75" height1="20" height2="30" bonea="Bip01 Neck" boneb="Bip01 Spine1" />
+		<instance name="flames" scale="1" height1="30" height2="30" bonea="Bip01 Spine1" boneb="Bip01 Spine" />
+		<instance name="flames" scale="1.25" height1="30" height2="30" bonea="Bip01 Spine" boneb="Bip01 Pelvis" />
+		<instance name="flames" scale="1" height1="20" height2="20" bonea="Bip01 Pelvis" boneb="Bone003" />
+		<instance name="flames" scale="1" height1="20" height2="20" bonea="Bone003" boneb="Bone004" />
+		<instance name="flames" scale=".75" height1="15" height2="15" bonea="Bone004" boneb="Bone005" />
+		<instance name="flames" scale=".5" height1="10" height2="10" bonea="Bone005" boneb="Bone006" />
+		<instance name="flames" scale=".25" height1="10" height2="5" bonea="Bone006" boneb="Bone007" />
+		<instance name="flames" scale=".25" height1="10" height2="5" bonea="Bone007" boneb="Bone008" />
+		
+		
+		<template name="trail">	
+			<controller bone="{bone}" >
+				<trailemitter
+					directionalspace="local"
+					position="{position}"
+					spawnrate="44"
+					particlelife="400"
+					texpostime="700"
+					texposscale="0.0"
+					texstretchscale=".9"
+					material="/shared/effects/materials/soul_projectile_blue.material"
+					subframepos="true"
+				>
+					<particle
+						startcolor="0 .3 .6"
+						midcolor="0 0 .3"
+						endcolor="0 0 0" 
+						size="40"
+					/>
+				</trailemitter>
+			</controller>
+		</template>
+		
+		<instance name="trail" bone="Bone002" position="100 0 0"/>
+		<instance name="trail" bone="Bone001" position="100 0 0"/>
+		
+
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>

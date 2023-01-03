@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect useentityeffectscale="true">
+	<definitions>
+	
+		<modifier
+			life="400"
+			startcolor="-0.5"
+			endcolor="1"
+		/>
+		
+		<particlesystem name="system0" space="world" scale="1.0">
+		
+		<sound
+		        pitchshift="true"
+				minpitch="0.8"
+				maxpitch="1.3"
+				sample="/heroes/calamity/ability_03/sounds/imp_%.wav"
+				linearfalloff="true"
+				falloffstart="250" 
+				falloffend="1300" 
+				volume="1"
+			/>
+			
+			<simpleemitter
+				count="1"
+				particlelife="2000"
+			>
+				<particle>
+					<groundsprite
+						maxyaw="360"
+						life="1500"
+						material="/shared/effects/materials/crack_5_ground.material"
+						minsize="60"
+						maxsize="80"
+						startcolor="1 .7 .5"
+						midcolor="1 .7 .5"
+						endcolor="0"
+						midcolorpos=".2"
+					/>
+					<!--
+					<groundsprite
+						maxyaw="360"
+						life="1500"
+						material="/shared/effects/materials/earth_cracks_add_purple.material"
+						minsize="140"
+						maxsize="180"
+						startframe="1"
+						midframe="0"
+						endframe="0"
+						midframepos=".1"
+						startcolor="1 1 .75"
+						midcolor="1 1 .75"
+						endcolor="0"
+						midcolorpos=".25"
+					/>
+					-->
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				position="0 0 10"
+				count="60"
+				minparticlelife="200"
+				maxparticlelife="800"
+				direction="0 0 1"
+				angle="30"
+				offsetsphere="80 80 10"
+				minspeed="150"
+				maxspeed="600"
+				gravity="-20"
+				drag="0.02"
+				material="/shared/effects/materials/phantom_white_reveal.material"
+			>
+				<particle
+					maxangle="360"
+					minsize="20"
+					maxsize="30"
+					startscale="1"
+					minendscale="1"
+					maxendscale="4"
+					startframe="1"
+					midframe="0"
+					endframe="1"
+					midframepos=".1"
+					startcolor="1.2 .8 .1"
+					midcolor=".5 .1 .3"
+					endcolor="-1"
+					midcolorpos=".4"
+				/>
+			</simpleemitter>
+		</particlesystem>
+		
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<spawnmodifier instance="instance1" />
+		<camerashake2 scale="2" frequency="10" radius="2000" duration="75" />
+		<waitfordeath instance="instance0" />
+		<waitfordeath instance="instance1" />
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

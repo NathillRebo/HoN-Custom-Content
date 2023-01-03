@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+	<definitions>
+	
+		<particlesystem name="system0" space="world" scale="1">
+		
+			
+			<model
+				timenudge="1"
+				model="arms/stage1/model.mdf"
+				material="../material.material"
+				parentskeleton="true"
+				inheritparentmodifiers="true"
+				parentalpha="true"
+				parentteamcolor="true"
+			/>
+			
+			<simpleemitter
+				delay="2500"
+				count="20"
+				spawnrate="100"
+				offsetradial="70"
+				minparticlelife="2000"
+				maxparticlelife="3000"
+			>
+				<particle
+				>
+					<simpleemitter
+						mincount="1"
+						maxcount="5"
+						spawnrate="30"
+						offsetsphere="10 10 0"
+					>
+						<particle						
+						>
+							<model
+								minyaw="-180"
+								maxyaw="180"
+								minlife="2000"
+								maxlife="3000"
+								position="0 0 0"
+								minscale="1"
+								maxscale="1.5"
+								model="/heroes/deadlift/alt/ability_03/effects/shrooms/model.mdf"
+								material="../material.material"
+								color="1"
+								anim="spawn"
+								startalpha="1"
+								midalpha="1"
+								endalpha="0"
+								midalphapos=".8"
+							>
+							</model>
+						</particle>
+					</simpleemitter>
+				</particle>
+			</simpleemitter>
+			
+			<controller scale="1.5">
+				<simpleemitter
+					offsetradial="10"
+					count="200"
+					life="200"
+					particlelife="2000"
+					gravity="2"
+					speed="100"
+					drag=".1"
+					direction="0 0 1"
+					material="/shared/effects/materials/dust_smoke_05.material"
+					position="0 0 50"
+				>
+					<particle
+						startalpha="0"
+						midalpha=".1"
+						endalpha="0"
+						midalphapos=".3"
+						startcolor=".957 .880 .545"
+						endcolor=".396 .263 .043"
+						maxangle="90"
+						startsize="20"
+						minendsize="30"
+						maxendsize="50"
+					/>
+				</simpleemitter>
+				
+				<simpleemitter
+					count="200"
+					life="200"
+					position="0 0 50"
+					particlelife="5000"
+					gravity="2"
+					speed="200"
+					drag=".1"
+					direction="0 0 1"
+					material="/shared/effects/materials/sparks_reveal.material"
+				>
+					<particle
+						startcolor=".957 .580 .145"
+						endcolor=".957 .580 .145"
+						startalpha="0"
+						midalpha=".8"
+						endalpha="0"
+						midalphapos=".5"
+						maxangle="90"
+						startsize="20"
+						minendsize="5"
+						maxendsize="10"
+						lockup="1"
+						lockright="1"
+						pitch="90"
+						startframe=".3"
+						endframe="1"
+					/>
+				</simpleemitter>
+			</controller>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath  instance="instance0"/>
+	</thread>
+</effect>

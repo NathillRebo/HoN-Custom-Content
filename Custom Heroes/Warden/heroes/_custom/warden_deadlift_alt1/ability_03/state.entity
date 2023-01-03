@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Warden3"
+	
+	icon="icon.tga"
+	passiveeffect=""
+
+	maxcharges="1000"
+	
+	effecttype="StatusBuff"
+	
+	impactinterval="50"
+	
+	healthregenpercharge="0.026,0.028,0.030,0.032"
+	intelligencepercharge="0.012,0.024,0.036,0.048"
+>
+	<onframe />
+	
+	<onimpact>
+		<removecharge />
+	</onimpact>
+	
+	<onattackeddamageevent>
+		<setvar1 a="damage_attempted" b="2" op="div"/>
+		<addcharges entity="this_entity" count="var1" />
+	</onattackeddamageevent>
+</state>

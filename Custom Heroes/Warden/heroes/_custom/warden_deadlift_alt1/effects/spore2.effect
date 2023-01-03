@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">			
+			<template name="spores">
+				<controller bone="{bone}" scale="{scale}">
+					<trackeremitter
+						delay="{delay}"
+						life="700"
+						count="20"
+						spawnrate="500"
+						position="{position}"
+						targetbone="_bone_origin"
+						targetposition="0 20 0"
+						tracktype="gravity"
+						minangle="-180"
+						maxangle="180"
+						trackspeed=".5" 
+						particlelife="1000"
+						offsetsphere="0"
+						offsetradial="10"
+						speed="30"
+						drag=".05"
+						loop="true"
+						direction="0 0 1"
+						material="/shared/effects/materials/bad_heal_smoke_06.material"
+						directionalspace="local"
+					>
+						<particle 
+							startsize="1"
+							midsize="15"
+							endsize="25"
+							midsizepos=".4"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".1"
+							angle="90"
+							minscale="1"
+							maxscale="3"
+							color=".518 .620 0"					
+							turn="true"
+						/>
+					</trackeremitter>
+				</controller>
+				
+				<controller bone="{bone}" scale="1.4">
+					<simpleemitter
+						life="700"
+						position="{position_2}"
+						spawnrate="10"
+						particlelife="1000"
+						material="/shared/effects/materials/sparks_reveal.material"
+						directionalspace="local"
+					>
+						<particle
+							maxangle="360"
+							startcolor="0"
+							midcolor="1"
+							endcolor=".5 0 1"
+							midcolorpos=".25"
+							startsize="10"
+							minendsize="20"
+							maxendsize="30"
+							anchor="1"
+							startframe=".3"
+							endframe="1"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						life="700"
+						spawnrate="10"
+						position="{position_2}"
+						particlelife="1000"
+						material="/shared/effects/materials/sparks_reveal.material"
+						directionalspace="local"
+					>
+						<particle
+							maxangle="360"
+							startcolor="0"
+							midcolor="1"
+							endcolor=".5 0 1"
+							midcolorpos=".25"
+							minsize="10"
+							maxsize="15"
+							anchor=".5"
+							startframe=".3"
+							endframe="1"
+						/>
+					</simpleemitter>
+				</controller>
+			</template>
+			
+			<instance name="spores" bone="Bip01 R Clavicle" scale=".5" position="40 -10 -45" position_2="11 -5 -15" delay="0"/>
+			
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

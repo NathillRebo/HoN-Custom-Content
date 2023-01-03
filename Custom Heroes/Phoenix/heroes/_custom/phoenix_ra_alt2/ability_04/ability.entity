@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Phoenix4"
+
+	icon="icon.tga"
+	
+	anim="death_1"
+	casttime="0"
+	castactiontime="0"
+
+	frontqueue="true"
+	inheritmovement="true"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+	passiveeffect=""
+	
+	actiontype="self_position"
+	targetscheme="enemy_units"
+	casteffecttype="Magic"
+
+	manacost="150,200,250"
+	cooldowntime="120000"
+	
+	targetradius="600"
+>
+
+	<onimpact>
+		<playanim name="death_1" target="source_entity" length="1500" overridewalkanimation="true"/>
+		<applystate name="State_Phoenix4" target="source_entity" duration="1500" />
+	</onimpact>
+	
+</ability>

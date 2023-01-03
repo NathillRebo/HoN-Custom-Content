@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Warden4"
+
+	icon="icon.tga"
+
+	effecttype=""
+	
+	passiveeffect="effects/state.effect"
+>
+	<oninflict>
+		<setaccumulator value="750" />
+	</oninflict>
+	
+	<onframe>
+		<distance />
+		<compare a="result" b="accumulator" op="gt">
+			<expire />
+			
+			<!-- expire state from prisoner if this is the last link -->
+			<areaofeffect
+				center="this_inflictor_entity"
+				radius="accumulator"
+				targetselection="all"
+				targetscheme="enemy_heroes"
+				effecttype="Magic"
+			/>
+			<compare a="result" b="0" op="le" >
+				<expirestate name="State_Warden4_Self" target="this_inflictor_entity" />
+			</compare>
+		</compare>
+		<distance />
+		<compare a="result" b="150" op="gt">
+			<cantarget effecttype="Push">
+				<push force="-200,-213,-226" frame="true" source="source_entity" />
+			</cantarget>
+		</compare>
+		
+		<setvar1 a="550,650,750" b="frametime" op="mult"/>
+		<pushability source="this_inflictor_entity" slot="0" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+		<pushability source="this_inflictor_entity" slot="1" />
+		<reducecooldown entity="stack_entity" duration="var1" />
+	</onframe>
+	
+</state>

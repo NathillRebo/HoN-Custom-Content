@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Warden3"
+	
+	icon="icon.tga"
+	
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+	
+	actiontype="passive"
+>
+	<aura name="regrowth" state="State_Warden3" radius="1" targetscheme="self" ignoreinvulnerable="true" />
+</ability>

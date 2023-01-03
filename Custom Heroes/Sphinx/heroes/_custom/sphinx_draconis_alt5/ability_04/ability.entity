@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Sphinx4"
+
+	statuseffecttooltip="State_Sphinx4"
+	icon="icon.tga"
+	passiveeffect=""
+	impacteffect=""
+	
+	anim="ability_4"
+	casttime="500"
+	castactiontime="0"
+	channeltime="2000"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="target_self"
+	ischanneling="true"
+	manacost="200,300,400"
+	cooldowntime="150000,135000,120000"
+	casteffecttype="Superior Magic"
+	targetradius="600"
+>
+	<onimpact />
+
+	<onchannelstart>
+		<disjoint target="source_entity" />		
+		<applystate name="State_Sphinx4" ischannel="true" />
+	</onchannelstart>
+</ability>

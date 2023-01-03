@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Sphinx3"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	
+
+	maxlevel="4"
+	requiredlevel="1,3,5,7"
+
+	actiontype="passive"
+	
+	maxcharges="15,32,49,66"
+>
+	<onlearn>
+		<setcharges a="0" />
+		<setaccumulator value="0" />
+	</onlearn>
+	
+	<onframe>
+		<addcharges />
+		<setaccumulator value="charges" />
+	</onframe>
+	
+	<ondamaged priority="0">
+		<setvar0 a="source_damage" b="1" op="mult" />
+		<compare a="var0" b="accumulator" op="ge">
+			<evaluate a="var0" b="accumulator" op="sub" />
+			<changedamage b="result" op="min" />
+			<setcharges a="0" />
+			<setaccumulator value="0" />
+		</compare>
+		<else>
+			<changedamage b="0" op="mult" />
+			<setvar1 a="accumulator" b="var0" op="sub" />
+			<setaccumulator value="var1" />
+			<setcharges a="var1" />
+		</else>
+	</ondamaged>
+	
+	<modifier key="iamsheeped" modpriority="100"
+		passiveeffect=""
+	>
+	</modifier>
+</ability>

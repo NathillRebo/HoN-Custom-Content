@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Warden4_Self"
+	icon="icon.tga"
+	effecttype=""
+	modifierkey="prisoner_bound"
+	passiveeffect="effects/state_self.effect"
+>
+</state>

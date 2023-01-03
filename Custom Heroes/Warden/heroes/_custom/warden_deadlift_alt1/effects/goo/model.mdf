@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="lavapuddleDeath01.max" file="model.model" type="K2" >
+	<anim name="idle" clip="melt.clip" fps="50"/>
+</model>

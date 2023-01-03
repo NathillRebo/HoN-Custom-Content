@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="1">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<terrainemitter
+				life="7500"
+				timenudge="1000"
+				position="0 50 0"
+				material="/shared/effects/materials/grass.material"
+				spawnrate="35"
+				range="75"
+				direction="0 0 1"
+				minangle="-30"
+				maxangle="30"
+				particlelife="3000"
+			>
+				<particle
+					minyaw="0"
+					maxyaw="360"
+					lockright="0"
+					lockup="0"
+					color=".5 1 .5"
+					startsize="0"
+					midsize="25"
+					minendsize="50"
+					maxendsize="75"
+					midsizepos=".11"
+					flare="true"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+			</terrainemitter>
+
+
+			
+			<simpleemitter
+				spawnrate="15"
+				particlelife="3850"
+
+				
+			>
+				<particle>
+
+									
+					<simpleemitter					
+						count="3"										
+						particlelife="2600"	
+						material="/shared/effects/materials/smoke_01.material"
+						offsetsphere="50 50 0"
+						minangle="0"
+						maxangle="360"
+						gravity="-2"
+						speed="10"
+						depthbias="-60"	
+						collide="1"				
+					>
+
+						<particle 
+							minangle="0"
+							maxangle="0"
+							minanglespeed="-30"	
+							maxanglespeed="40"
+							color=".4 .95 .35"							
+							startsize="150"						
+							endsize="180"								
+							startalpha=".2"
+							midalpha=".14"
+							endalpha="0"
+							midalphpos=".01"							
+
+							
+						/>
+					</simpleemitter>				
+					
+				</particle>
+			</simpleemitter>
+
+
+		</particlesystem>
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+
+</effect>

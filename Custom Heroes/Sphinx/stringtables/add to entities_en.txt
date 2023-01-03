@@ -1,0 +1,36 @@
+
+// Hero_zzz_Sphinx
+Hero_zzz_Sphinx_name											Sphinx
+Hero_zzz_Sphinx_role											Sphinx's relative fragility at the beginning makes him unique among other strength heroes, but his regenerative shield allows him to sustain a lot of poking in the early game. Later in the game, he becomes a very durable hero, who retains his shield, but also deals potent burst damage and retains a solid damage per second with his attacks, making him one of the best hero in one-on-one fights.
+
+// Ability_Sphinx1
+Ability_Sphinx1_name											Desert's Grasp
+Ability_Sphinx1_description										Sphinx breathes at the target, stealing it's speed.
+Ability_Sphinx1_description_simple								Sphinx breathes at the target, reducing it's ^oMovement Speed by {21,23,25,27}%^* and ^oAttack Speed by {40,50,60,70}^* for ^o6 seconds^*, while increasing own ^oMovement Speed^* and ^oAttacks Speed^* by the same amount for the same time^*.
+Ability_Sphinx1_tooltip_flavor									It's the evening of your life!
+Ability_Sphinx1_IMPACT_effect									Reduces enemy's Movement Speed by {21,23,25,27}% and Attack Speed by {40,50,60,70} for 6 seconds, while increasing own Movement Speed by {21,23,25,27}% and Attack Speed by {40,50,60,70} for 6 seconds.
+
+// State_Sphinx1_Buff
+State_Sphinx1_Buff_name											Desert's Grasp
+
+// State_Sphinx1_Debuff
+State_Sphinx1_Debuff_name										Desert's Grasp
+
+// Ability_Sphinx2
+Ability_Sphinx2_name											Enigma of Woes
+Ability_Sphinx2_description										Sphinx blasts target enemy, with damage increased as he takes damage.
+Ability_Sphinx2_description_simple								Passively gains a charge everytime you are dealt 100 or more total damage. On use, spend all charges to blast an enemy, dealing it ^o20 Magic Damage, increased by 75 for each charge expended^*. Stores up to ^o{3,4,5,6} charges^*.
+Ability_Sphinx2_tooltip_flavor									This will leave you pondering on the sense of life!
+Ability_Sphinx2_IMPACT_effect									Passively gains a charge everytime you are dealt 100 or more total damage. On use, spend all charges to blast an enemy, dealing it ^o20 Magic Damage, increased by 75 for each charge expended^*. Stores up to ^o{3,4,5,6} charges^*.
+
+// Ability_Sphinx3
+Ability_Sphinx3_name											Citadel Scales
+Ability_Sphinx3_description										Sphinx deflects inferior attacks with ease, for as long as his regenerative carapace holds.
+Ability_Sphinx3_description_simple								Sphinx passively generates a shield, which absorbs damage, ^oat a pace of 20 health per second^*. The shield holds a maximum of ^o{50,105,170,210} Health^*.\n\nTaking damage turns off shield regeneration for 8 seconds.
+
+// Ability_Sphinx4
+Ability_Sphinx4_name											Bastion Razer
+Ability_Sphinx4_description										Sphinx channels a powerful spell, taunting nearby enemies, exploding upon completion.
+Ability_Sphinx4_description_simple								Sphinx channels for up to 2 seconds, ^otaunting all nearby enemies^* for the channel time and ^oreducing damage taken by {40,42.5,45}%^*. When the channel ends, deals ^oSuperior Magic Damage equal to the damage reduced, up to {540,770,1000}^*.
+Ability_Sphinx4_tooltip_flavor									Tactical nuke incoming!
+Ability_Sphinx4_IMPACT_effect									Sphinx channels for up to 2 seconds, ^otaunting all nearby enemies^* for the channel time and ^oreducing damage taken by {40,42.5,45}%^*. When the channel ends, deals ^oSuperior Magic Damage equal to the damage reduced, up to {540,770,1000}^*.

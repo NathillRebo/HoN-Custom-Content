@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Phoenix1"
+
+	speed="1400"
+	gravity="400"
+
+	modelscale="1"
+	model="/shared/models/invis.mdf"
+	impacteffect="effects/impact.effect"
+	traileffect="effects/trail.effect"
+>
+	<onimpact>
+		<applystate name="State_Phoenix1" duration="5000" />
+		<damage effecttype="Physical" amount="80,120,160,200" />
+	</onimpact>
+</projectile>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Warden2_Warp"
+	
+	icon="icon.tga"
+	passiveeffect=""
+	ishidden="true"
+
+	stunned="true"
+	stunneddurationunmodifiable="true"
+>
+</state>

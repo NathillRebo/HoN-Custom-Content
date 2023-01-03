@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale=".75">
+
+			<sound
+				volume=".5"
+				sample="/heroes/flamedragon/sounds/impacts_%.wav"
+				linearfalloff="true"
+				falloffstart="50"
+				falloffend="1300"
+			/>
+
+			<simpleemitter
+				bone="_bone_centerofchest"
+				count="10"
+				minparticlelife="250"
+				maxparticlelife="500"
+				spawnrate="100"
+				minspeed="145"
+				maxspeed="180"
+				gravity="20"
+				direction="0 0 1"
+				minangle="-15"
+				maxangle="15"
+				particledirectionalspace="local"
+				material="/shared/effects/materials/dust_smoke_02.material"
+				offsetsphere="25 25 25"
+			>
+				<particle 
+					minangle="-360"
+					maxangle="360"
+					minspeed="-45"
+					maxspeed="45"
+					color="0 0 0"
+					minstartsize="50"
+					maxstartsize="75"
+					minendsize="100"
+					maxendsize="150"
+					startalpha="0"
+					midalpha=".75"
+					endalpha="0"
+				/>
+			</simpleemitter>
+
+			<billboard
+				bone="_bone_centerofchest"
+				life="1000"
+				startcolor=".35 0 0"
+				endcolor="0"
+				startsize="250"
+				endsize="0"
+				depthbias="-35"
+				material="/shared/effects/materials/whitedot.material"
+			/>
+
+			<simpleemitter
+				count="35"
+				life="500"
+				bone="_bone_centerofchest"
+				spawnrate="600"
+				minparticlelife="250"
+				maxparticlelife="500"
+				gravity="-5"
+				position="0 0 0"
+				offsetsphere="50 50 50"
+				material="/shared/effects/materials/soul_projectile2.material"
+				depthbias="25"
+			>
+				<particle
+					minangle="0"
+					maxangle="360"
+					minanglespeed="-6"
+					maxanglespeed="6"
+					startcolor=".75 .3 .1"
+					midcolor=".75 .3 .1"
+					endcolor="0 0 0"
+					startsize="0"
+					endsize="75"
+					startanchor="1"
+					endanchor="0"
+				/>
+			</simpleemitter>
+
+			<simpleemitter
+			bone="_bone_centerofchest"
+			count="65"
+				spawnrate="1000"
+				minparticlelife="250"
+				maxparticlelife="550"
+				offsetsphere="40 40 8"
+				minspeed="50"
+				maxspeed="200"
+				direction="0 0 1"
+				material="/shared/effects/materials/spark_10.material"
+			>
+				<particle
+					maxangle="359"
+					maxanglespeed="30"
+					minanglespeed="-30"
+					minstartscale="5"
+					maxstartscale="15"
+					minendscale="5"
+					maxendscale="10"
+					startcolor="1 1 1"
+					midcolor=".75 .3 .1"
+					endcolor="0 0 0"
+					midcolorpos=".75"
+				/>
+			</simpleemitter> 
+
+	</particlesystem>
+</definitions>
+
+<thread>
+	<spawnparticlesystem instance="instance0" particlesystem="system0" />
+	<spawnmodifier instance="instance1" modifier="modifier0"/>  
+	<waitfordeath instance="instance0" />
+</thread>
+</effect>

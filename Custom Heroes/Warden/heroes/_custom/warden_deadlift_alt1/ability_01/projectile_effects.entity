@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile
+	name="Projectile_Warden1_Effects"
+
+	speed="4000"
+	
+	modelscale="1.0"
+	model="/shared/models/invis.mdf"
+	
+	effectscale="1.0"
+	traileffect="effects/ability_04.effect"
+	
+	canturn="false"
+	flying="true"
+	flyheight="100"
+>
+	<altavatar key="Hero_Tundra.Alt2" modpriority="1"
+		traileffect="/heroes/tundra/alt2/ability_04/effects/ability_04.effect"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_Tundra.Alt3" modpriority="1"
+		traileffect="/heroes/tundra/alt3/ability_04/effects/ability_04.effect"
+	>	
+	</altavatar>
+	
+	<altavatar key="Hero_Tundra.Alt4" modpriority="1"
+		traileffect="/heroes/tundra/alt4/ability_04/effects/ability_04.effect"
+	>	
+	</altavatar>
+
+	<altavatar key="Hero_Tundra.Alt5" modpriority="1"
+		traileffect="/heroes/tundra/alt5/ability_04/effects/ability_04.effect"
+	>	
+	</altavatar>
+</projectile>

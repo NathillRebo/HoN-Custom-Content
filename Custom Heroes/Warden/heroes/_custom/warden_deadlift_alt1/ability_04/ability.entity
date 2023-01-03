@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ability
+	name="Ability_Warden4"
+
+	statuseffecttooltip="State_Warden4"
+	icon="icon.tga"
+	
+	casttime="400"
+	castactiontime="0"
+	anim="ability_4"
+	
+	maxlevel="3"
+	requiredlevel="6,11,16"
+
+	actiontype="self_position"
+	casteffecttype="Magic"
+	casteffect="effects/affector.effect"
+	
+	inheritmovement="true"
+	noninterrupting="true"
+	frontqueue="true"
+	nonaggressive="true"
+	
+	manacost="150,200,250"
+	cooldowntime="120000,110000,100000"
+	
+	targetradius="600"
+	
+	novoiceresponse="true"
+	
+	modifierkey=""
+	modifierkey2=""
+	
+	dynamicprecache="effects/first_cast.effect,effects/cast.effect"
+>
+	<onlearn>
+		<setscriptvalue name="firstcast_effect" value="effects/first_cast.effect" entity="this_entity" />
+		<setscriptvalue name="cast_effect" value="effects/cast.effect" entity="this_entity" />
+	</onlearn>
+	
+	<onimpact>
+		<areaofeffect
+			radius="600"
+			targetselection="all"
+			targetscheme="enemy_heroes"
+			effecttype="Magic"
+		>
+			<applystate name="State_Warden4" proxy="this_owner_entity" duration="5000" />
+			<damage effecttype="Magic" amount="150,225,300" />
+		</areaofeffect>
+		<compare a="result" b="0" op="gt" >
+			<applystate name="State_Warden4_Refresher" target="source_entity" duration="5000" />
+			<applystate name="State_Warden4_Self" target="source_entity" duration="5000" />
+		</compare>
+	</onimpact>
+
+	<ondeath>
+		<areaofeffect
+			radius="800"
+			targetselection="all"
+			targetscheme="enemy_heroes"
+			effecttype=""
+		>
+			<expirestate name="State_Warden4" />
+		</areaofeffect>
+	</ondeath>
+	
+	<modifier key="prisoner_refresher" modpriority="103" 
+		disabled="true"
+	/>
+	
+</ability>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero
+	name="Hero_zzz_Warden"
+	
+	team="Legion"
+	icon="icon.tga"
+	portrait="icon.tga"
+	model="model.mdf"
+	skin=""
+	
+	portraitcampos="-4 0 20"
+
+	passiveeffect="effects/body.effect"
+	spawneffect=""
+	respawneffect="/shared/effects/respawn.effect"
+	selectedsound="sounds/voice/select_%.wav"
+	selectedflavorsound="sounds/voice/select_flavour_%.wav"
+	confirmmovesound="sounds/voice/move_%.wav"
+	confirmattacksound="sounds/voice/attack_%.wav"
+	nomanasound="sounds/voice/no_mana.wav"
+	cooldownsound="sounds/voice/cooldown.wav"
+	announcersound="sounds/voice/hero_select.wav"
+	tauntedsound="sounds/voice/taunt_prior.wav"
+	tauntkillsound="sounds/voice/taunt_after.wav"
+	
+	preglobalscale="1.1"
+	modelscale="1.6"
+	effectscale="1.1"
+	boundsheight="112"
+	boundsradius="24"
+	selectionradius="48"
+	targetoffset="0 0 92"
+
+	infoheight="220"
+
+	category="Pusher"
+	difficulty="3"
+
+	solorating="2"
+	junglerating="0"
+	carryrating="0"
+	supportrating="3"
+	initiatorrating="0"
+	gankerrating="2"
+	pusherrating="4"
+	rangedrating="0"
+	meleerating="5"
+	
+	movespeed="280"
+	turnrate="640"
+	turnsmoothing="0.1"
+
+	maxhealth="150"
+	healthregen="1.0"
+	maxmana="0"
+	manaregen="0.01"
+
+	armor="2.52"
+	magicarmor="5.0"
+
+	inventory0="Ability_Warden1"
+	inventory1="Ability_Warden2"
+	inventory2="Ability_Warden3"
+	inventory3="Ability_Warden4"
+	inventory4="Ability_AttributeBoost"
+	inventory5=""
+	inventory6=""
+	inventory7=""
+	inventory8="Ability_Taunt"
+	inventory9=""
+	inventory10=""
+	inventory11="Ability_Dance"
+	inventory12="Ability_AutomatedCourier"
+
+	attackduration="1000"
+	attackactiontime="450"
+	attackcooldown="1700"
+	attackdamagemin="30"
+	attackdamagemax="39"
+	attacknumanims="3"
+	attackoffset="0 50 105"
+	attackrange="150"
+	attackstarteffect=""
+	attackactioneffect=""
+	attackimpacteffect="effects/impact.effect"
+	attacktype="melee"
+	combattype="Hero"
+	unittype="masters_legacy_valid"
+
+	aggrorange="800"
+	sightrangeday="1800"
+	sightrangenight="800"
+	wanderrange="250"
+
+	primaryattribute="Intelligence"
+	strength="19"
+	strengthperlevel="2.3"
+	agility="12"
+	agilityperlevel="1.1"
+	intelligence="22"
+	intelligenceperlevel="3.1"
+	
+	previewmodel="preview.mdf"
+	previewpos="0 0 -50"
+	previewangles="0 0 0"
+	previewscale="1.6"
+	previewpassiveeffect="effects/body_store.effect"
+	
+	storemodel="preview.mdf"
+	storepos="0 0 -20"
+	storeangles="0 0 0"
+	storescale="1.6"
+	storepassiveeffect="effects/body_store.effect"
+
+	corpsetime="2500"
+	corpsefadetime="5500"
+	corpsefadeeffect="/shared/effects/corpse_sink.effect"
+>
+	<recommendeditem name="Item_ManaPotion" />
+	<recommendeditem name="Item_MinorTotem" />
+	<recommendeditem name="Item_RunesOfTheBlight" />
+	<recommendeditem name="Item_HealthPotion" />
+	<recommendeditem name="Item_HomecomingStone" />
+	
+	<recommendeditem name="Item_FlamingEye" />	
+	<recommendeditem name="Item_Strength5" />
+	<recommendeditem name="Item_Striders" />
+	<recommendeditem name="Item_PortalKey" />
+	<recommendeditem name="Item_Astrolabe" />
+	<recommendeditem name="Item_Immunity" />
+	<recommendeditem name="Item_Intelligence7" />
+	
+	<onframe>
+		<compare a="source_movespeed" b="350" op="gt" >
+			<activatemodifierkey entity="this_entity" name="Deadlift_Movespeed"/>
+		</compare>
+		<else>
+			<deactivatemodifierkey name="Deadlift_Movespeed"/>
+		</else>
+	</onframe>
+</hero>

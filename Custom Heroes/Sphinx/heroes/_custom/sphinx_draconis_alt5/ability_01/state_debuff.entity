@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<state
+	name="State_Sphinx1_Debuff"
+	
+	icon="icon.tga"
+	passiveeffect="debuff.effect"
+	
+	effecttype="StatusDebuff"
+	allowtransfer="true"
+
+	movespeedslow="0.21,0.23,0.25,0.27"
+	attackspeed="-0.4,-0.5,-0.6,-0.7"
+>
+</state>

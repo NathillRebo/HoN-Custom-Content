@@ -1,0 +1,35 @@
+
+// Hero_zzz_Phoenix
+Hero_zzz_Phoenix_name											Phoenix
+Hero_zzz_Phoenix_role											Phoenix is a strength carry scales very well with attack damage. With Phoenix Fire, she deals constant damage to nearby enemies, and with Rebirth she is able to withstand more than other carries.
+
+// Ability_Phoenix1
+Ability_Phoenix1_name											Meltdown
+Ability_Phoenix1_description									Phoenix slowly burns the target's armor to prepare a powerful attack.
+Ability_Phoenix1_description_simple								Phoenix blasts target enemy, dealing it ^o{80,120,160,200} Physical Damage^* and reducing the target's ^oArmor by {0.5,1,1.5,2} for 5 seconds, stacking up to 8 times^*.
+Ability_Phoenix1_tooltip_flavor									And that's why you should always buy more damage!
+Ability_Phoenix1_IMPACT_effect									Phoenix blasts target enemy, dealing it ^o{80,120,160,200} Physical Damage^* and reducing the target's ^oArmor by {0.5,1,1.5,2} for 5 seconds, stacking up to 8 times^*.
+
+// State_Phoenix1
+State_Phoenix1_name												Meltdown
+
+// Ability_Phoenix2
+Ability_Phoenix2_name											Incinerate
+Ability_Phoenix2_description									Phoenix causes enemies around her to explode, depending on how much they have melted. Passively increases Attack Damage by {10,20,30,40}.
+Ability_Phoenix2_description_simple								Passively increases Phoenix's ^oAttack Damage by {10,20,30,40}^*. Use to ^oremove all stacks of Meltdown^* from nearby enemies and deal them ^o33% of your Attack Damage as Physical Damage^* per charge consumed.
+Ability_Phoenix2_tooltip_flavor									Burminate. Burminate.
+Ability_Phoenix2_IMPACT_effect									On use, removes all stacks of Meltdown from nearby enemies. For each stack removed this way, Phoenix deals ^o33% of her Attack Damage as Physical Damage^* to the target.
+
+// Ability_Phoenix3
+Ability_Phoenix3_name											Phoenix Fire
+Ability_Phoenix3_description									Phoenix burns so brightly that it deals damage to nearby enemies.
+Ability_Phoenix3_description_simple								Once every ^o{0.75,0.58,0.42,0.25} seconds^*, deals ^oPhysical Damage equal to 10% of your Attack Damage^* to a random enemy within range.
+Ability_Phoenix3_tooltip_flavor									Burn, babe, burn!
+Ability_Phoenix3_FRAME_effect									Once every 0.5 seconds, deals ^oMagic Damage equal to {10}% of your Attack Damage^* to a random enemy within range.
+
+//Ability_Phoenix4
+Ability_Phoenix4_name											Rebirth
+Ability_Phoenix4_description									Phoenix sacrifices her life to reincarnate in a fiery explosion.
+Ability_Phoenix4_description_simple								Phoenix sacrifices her life to reincarnate ^o1.5 seconds later^*, restoring herself to full health and mana in the process. Upon reincarnating, ^ostuns enemies around for {0.3,0.6,0.9} seconds^* and ^osends {1,2,3} Meltdowns^* at them. Phoenix is invulnerable and immune to debuffs and crowd control while rebirthing.
+Ability_Phoenix4_IMPACT_effect									Phoenix sacrifices her life to reincarnate ^o1.5 seconds later^*, restoring herself to full health and mana in the process. Upon reincarnating, ^ostuns enemies around for {0.3,0.6,0.9} seconds^* and ^osends {1,2,3} Meltdowns^* at them. Phoenix is invulnerable and immune to debuffs and crowd control while rebirthing.
+Ability_Phoenix4_tooltip_flavor									Reincarnation!

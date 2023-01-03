@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true" useentityeffectscale="1">
+	<definitions>
+		<particlesystem name="system0" space="world" scale="1">
+			<model
+				timenudge="1"
+				model="arms/stage1/model.mdf"
+				material="../material.material"
+				parentskeleton="true"
+				inheritparentmodifiers="true"
+				parentalpha="true"
+				parentteamcolor="true"
+			/>
+
+			<simpleemitter
+				directionalspace="local"
+				spawnrate="1"
+				expirelife="200"
+				bone="_bone_origin"
+				speed="1"
+				direction="0 -1 0"
+				position="20 40 0"
+				angle="0"
+				offsetsphere="20 20 0"
+				particlelife="1000"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						minyaw="-250"
+						maxyaw="90"
+						life="1000"
+						model="goo/model.mdf"
+						anim="idle"
+						minscale=".1"
+						maxscale=".5"
+						color="2 1 1"
+						material="goo/material.material"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+					>
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<simpleemitter
+				directionalspace="local"
+				spawnrate="1"
+				expirelife="200"
+				bone="_bone_origin"
+				speed="1"
+				direction="0 -1 0"
+				position="-40 -30 0"
+				angle="0"
+				offsetsphere="20 20 0"
+				particlelife="1000"
+			>
+				<particle
+					turn="true"
+				>
+					<model
+						minyaw="-250"
+						maxyaw="90"
+						life="1000"
+						model="goo/model.mdf"
+						anim="idle"
+						minscale=".1"
+						maxscale=".5"
+						color="2 1 1"
+						material="goo/material.material"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".1"
+					>
+						
+					</model>
+				</particle>
+			</simpleemitter>
+			
+			<template name="sap">
+				<controller bone="{bone}" scale="{scale}">
+					<simpleemitter
+						bone="{bone}"
+						spawnrate="4"
+						particlelife="500"
+						speed="5"
+						gravity="10"
+						angle="0"
+						drag=".01"
+						acceleration="10"
+						offsetsphere="12 10 0"
+						direction="0 0 -1"
+						position="{pos}"
+						material="/shared/effects/materials/blood_drop_white.material"
+						
+					>
+						<particle
+							startcolor="{startcolor}"
+							midcolor="{midcolor}"
+							endcolor="0"
+							minstartsize="2"
+							maxstartsize="3"
+							minstartheight="1"
+							maxstartheight="10"
+							minendheight="10"
+							maxendheight="20"
+							startwidth="2"
+							endwidth="6"
+							endsize="15"
+							startalpha="0"
+							minmidalpha=".5"
+							maxmidalpha="1"
+							endalpha="0"
+							
+						/>
+					</simpleemitter>
+				</controller>
+			</template>
+			
+			<instance name="sap" bone="Bip01 R Hand" scale="1.5" pos="0 0 0" startcolor="1 .6 0" midcolor="1 .6 0"/> 
+			<instance name="sap" bone="Bip01 L Hand" scale="1.5" pos="0 0 0" startcolor="1 .6 0" midcolor="1 .6 0"/> 
+			
+			<template name="spores">
+				<controller bone="{bone}" scale="{scale}">
+					<trackeremitter
+						delay="{delay}"
+						life="700"
+						startspawnrate="0"
+						midspawnrate="10"
+						endspawnrate="0"
+						position="{position}"
+						targetbone="_bone_origin"
+						targetposition="0 20 0"
+						tracktype="gravity"
+						minangle="-180"
+						maxangle="180"
+						trackspeed=".5" 
+						particlelife="1000"
+						offsetsphere="0"
+						offsetradial="10"
+						speed="30"
+						drag=".05"
+						loop="true"
+						direction="0 0 1"
+						material="/shared/effects/materials/bad_heal_smoke_06.material"
+						directionalspace="local"
+					>
+						<particle 
+							startsize="1"
+							midsize="15"
+							endsize="25"
+							midsizepos=".4"
+							startalpha="0"
+							midalpha="1"
+							endalpha="0"
+							midalphapos=".1"
+							angle="90"
+							minscale="1"
+							maxscale="3"
+							color=".518 .620 0"					
+							turn="true"
+						/>
+					</trackeremitter>
+				</controller>
+				
+				<controller bone="{bone}" scale="1.4">
+					<simpleemitter
+						life="700"
+						position="{position_2}"
+						startspawnrate="0"
+						midspawnrate="10"
+						endspawnrate="0"
+						particlelife="1000"
+						material="/shared/effects/materials/sparks_reveal.material"
+						directionalspace="local"
+						loop="true"
+					>
+						<particle
+							maxangle="360"
+							startcolor="0"
+							midcolor="1"
+							endcolor=".5 0 1"
+							midcolorpos=".25"
+							startsize="10"
+							minendsize="20"
+							maxendsize="30"
+							anchor="1"
+							startframe=".3"
+							endframe="1"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						life="700"
+						startspawnrate="0"
+						midspawnrate="10"
+						endspawnrate="0"
+						position="{position_2}"
+						particlelife="1000"
+						material="/shared/effects/materials/sparks_reveal.material"
+						directionalspace="local"
+						loop="true"
+					>
+						<particle
+							maxangle="360"
+							startcolor="0"
+							midcolor="1"
+							endcolor=".5 0 1"
+							midcolorpos=".25"
+							minsize="10"
+							maxsize="15"
+							anchor=".5"
+							startframe=".3"
+							endframe="1"
+						/>
+					</simpleemitter>
+				</controller>
+			</template>
+			
+			<instance name="spores" bone="Bip01 L Clavicle" scale=".5" position="25 0 25" position_2="12 0 7" delay="0"/>
+			<instance name="spores" bone="Bip01 R Clavicle" scale=".5" position="20 -10 -35" position_2="5 -5 -7" delay="0"/>
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+	</thread>
+</effect>

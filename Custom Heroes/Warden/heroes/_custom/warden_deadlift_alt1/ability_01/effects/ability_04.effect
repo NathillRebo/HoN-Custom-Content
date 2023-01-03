@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect name="dragon_slave" persistent="true" useentityeffectscale="true">
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+			<sound
+				linearfalloff="true" 
+				falloffstart="0"
+				falloffend="2500"
+				volume="1"
+				sample="../sounds/impact.wav"
+			/>
+
+			<light
+				life="1150"			
+				startcolor="1 5.5 2.5"			
+				endcolor="0 0 0"
+				midcolorpos=".2"
+				falloffstart="130"
+				falloffend="255"
+				position="0 0 50"	
+			/>		
+			
+			<simpleemitter
+				count="1"
+				spawnrate="50"
+				particlelife="750"
+				acceleration="0.0"
+				minangle="0"
+				maxangle="0"
+				direction="0 1 0"
+				position="0 250 0"
+			>
+				<particle
+					turn="1"
+					lockup="true"
+				>
+					
+					<groundsprite
+						life="2500"
+						material="/shared/effects/materials/ground_smash_overlay.material"
+						size="150"
+						color="1 1 1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".02"
+						position="0 -150 0"
+					/>
+					
+					<groundsprite
+						life="2500"
+						material="/shared/effects/materials/ground_smash_overlay.material"
+						size="150"
+						color="1 1 1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".02"
+						position="0 150 0"
+					/>
+					
+					<groundsprite
+						life="2500"
+						material="/shared/effects/materials/ground_smash_overlay.material"
+						size="150"
+						color="1 1 1"
+						startalpha="0"
+						midalpha="1"
+						endalpha="0"
+						midalphapos=".02"
+						position="0 0 0"
+					/>
+					
+					<groundsprite
+						life="2500"
+						position="0 150 0"
+						material="/shared/effects/materials/earth_cracks_overlay.material"
+						minsize="175"
+						maxsize="250"
+						maxyaw="360"
+						startalpha=".5"
+						midalpha=".5"
+						endalpha="0"
+					/>
+					
+					<groundsprite
+						life="2500"
+						position="0 0 0"
+						material="/shared/effects/materials/earth_cracks_overlay.material"
+						minsize="175"
+						maxsize="250"
+						maxyaw="360"
+						startalpha=".5"
+						midalpha=".5"
+						endalpha="0"
+					/>
+					
+					<groundsprite
+						life="2500"
+						position="0 -150 0"
+						material="/shared/effects/materials/earth_cracks_overlay.material"
+						minsize="175"
+						maxsize="250"
+						maxyaw="360"
+						startalpha=".5"
+						midalpha=".5"
+						endalpha="0"
+					/>
+
+					<!--lightrays-->
+					<simpleemitter
+						delay="50"
+						count="20"
+						spawnrate="165"
+						particlelife="850"
+						gravity="0"
+						speed="0"
+						drag="0"
+						acceleration="0"
+						position="-50 -100 0"
+						offsetsphere="0 250 0"
+					>
+						<particle>
+
+							<simpleemitter
+								offsetsphere="75 75 0"
+								spawnrate="500"
+								count="1"
+								minparticlelife="1250"
+								maxparticlelife="1750"
+								acceleration="0"
+								position="0 0 150"
+								direction="0 0 0"
+								material="/shared/effects/materials/light_rays.material"
+							>
+								<particle
+									startcolor="0 .065 .025"
+									midcolor="0 0 0"
+									endcolor="0 0 0"
+									width="270"
+									startheight="250"
+									endheight="25"
+									anchor="1"
+									lockup="1"
+									lockright="false"
+								/>
+							</simpleemitter>	
+							
+							<simpleemitter
+								offsetsphere="75 75 0"
+								spawnrate="500"
+								count="1"
+								minparticlelife="1250"
+								maxparticlelife="1750"
+								acceleration="0"
+								position="0 0 150"
+								direction="0 0 0"
+								material="/shared/effects/materials/light_rays.material"
+							>
+								<particle
+									startcolor="0 .45 .2"
+									midcolor="0 0 0"
+									endcolor="0 0 0"
+									width="20"
+									startheight="350"
+									endheight="25"
+									anchor="1"
+									lockup="1"
+									lockright="false"
+								/>
+							</simpleemitter>					
+
+							<simpleemitter
+								offsetsphere="75 75 0"
+								spawnrate="500"
+								count="1"
+								minparticlelife="1250"
+								maxparticlelife="1750"
+								acceleration="0"
+								position="0 0 150"
+								direction="0 0 0"
+								material="/shared/effects/materials/light_rays.material"
+							>
+								<particle
+									startcolor="0 .45 .2"
+									midcolor="0 0 0"
+									endcolor="0 0 0"
+									width="70"
+									startheight="350"
+									endheight="25"
+									anchor="1"
+									lockup="1"
+									lockright="false"
+								/>
+							</simpleemitter>
+							
+
+
+							<simpleemitter	
+								offsetsphere="60 60 0"
+								spawnrate="500"
+								count="5"
+								particlelife="12bn00"
+								gravity="-3"
+								drag=".05"
+								acceleration="0"
+								speed="250"
+								position="0 0 35"
+								direction="0 0 0"
+								material="/shared/effects/materials/phantom_smoke_04.material"
+							>
+								<particle
+									minangle="-360"
+									maxangle="360"
+									startcolor="0 0 0"
+									midcolor="0 .55 .25"
+									endcolor="0 0 0"
+									minstartsize="10"
+									maxstartsize="30"
+									minendsize="75"
+									maxendsize="100"
+									minanglespeed="-30"
+									maxanglespeed="33"
+									anchor="1"
+									lockup="0"
+									lockright="false"
+									turn="false"
+								/>
+							</simpleemitter>
+
+							<simpleemitter
+								offsetsphere="100 100 0"
+								spawnrate="20"
+								count="26"
+								particlelife="1000"
+								gravity="-.5"
+								acceleration="0"
+								speed="10"
+								position="0 0 50"
+								material="/shared/effects/materials/pyroclast_01.material"
+								inheritvelocity="0"
+							>
+								<particle
+										minangle="-360"
+										maxangle="360"
+										color=".2 .5 .2"
+										minstartsize="10"
+										maxstartsize="50"
+										minendsize="100"
+										maxendsize="200"
+										minanglespeed="-30"
+										maxanglespeed="33"
+										startalpha="0"
+										midalpha=".15"
+										endalpha="0"
+										midalphapos=".15"
+										frame="1"
+										framespeed="1"
+										startanchor="0"
+										endanchor=".15"
+										lockup="0"
+										lockright="false"
+										turn="false"
+								/>
+							</simpleemitter>
+						</particle>
+					</simpleemitter>
+					
+					<!--splashes of light-->
+					<simpleemitter
+						delay="50"
+						count="6"
+						spawnrate="75"
+						particlelife="3000"
+						gravity="0"
+						speed="0"
+						drag="0"
+						acceleration="0"
+						position="-0 -0 0"
+						offsetsphere="35 250 0"
+					>
+						<particle>
+						
+							<billboard
+								life="1000"
+								startcolor="0 .75 .25"
+								midcolor="0 .75 .25"
+								midcolorpos="0.3"
+								endcolor="0"
+								startsize="175"
+								endsize="0"
+								depthbias="0"
+								material="/shared/effects/materials/whitedot.material"
+								position="0 0 5"
+							/>
+							
+							<billboard
+								position="0 0 5"
+								delay="0"
+								life="350"
+								param="0.1"	
+								startsize="50"
+								endsize="150"
+								startalpha="0"
+								midalpha=".4"
+								endalpha="0"				
+								depthbias="0"
+								material="/shared/effects/materials/refract_swell.material"
+								lockup="1"
+								lockright="1"
+								pitch="90"
+							/>
+							
+							<billboard
+								position="0 0 5"
+								delay="175"
+								life="350"
+								param="0.1"	
+								startsize="50"
+								endsize="150"
+								startalpha="0"
+								midalpha=".4"
+								endalpha="0"				
+								depthbias="0"
+								material="/shared/effects/materials/refract_swell.material"
+								lockup="1"
+								lockright="1"
+								pitch="90"
+							/>
+							
+						</particle>
+					</simpleemitter>
+
+				</particle>
+			</simpleemitter>
+
+		</particlesystem>
+	</definitions>
+	<thread>
+		<spawnparticlesystem instance="instance0" particlesystem="system0" />
+		<waitfordeath instance="instance0" />
+		<!-- <die /> -->
+	</thread>
+</effect>
+
+<!-- [min|max][start|mid|end]property[speed][position] -->
+

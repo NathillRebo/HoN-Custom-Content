@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effect deferred="true">
+
+	<definitions>
+
+		<particlesystem name="system0" space="world" scale="1">
+
+			<sound
+				linearfalloff="true" 
+				falloffstart="100"
+				falloffend="2500"
+				volume="1"
+				sample="../sounds/death_explosion.wav"
+			/>
+
+			<model
+				life="1500"
+				model="/heroes/ra/effects/coals/model.mdf"
+				anim="idle"
+				startcolor="2 1 .5"
+				endcolor=".25 .25 .25"
+				midcolorpos=".2"
+				expirelife="500"
+				startalpha="1"
+				midalpha="1"
+				endalpha="0"
+				midalphapos=".75"
+				scale=".6"
+			>
+
+				<groundsprite
+					life="1500"
+					material="/shared/effects/materials/ground_scorch.material"
+					scale=".1"
+					minyaw="-360"
+					maxyaw="360"
+					size="2000"
+					position="0 0 0"
+					color=".3 0 0"
+					startalpha="1"
+					midalpha="1"
+					endalpha="0"
+					midalphapos=".75"
+				/>
+				
+				<simpleemitter
+					life="250"
+					minparticlelife="650"				
+					maxparticlelife="1000"				
+					spawnrate="50"
+					minspeed="35"
+					maxspeed="75"
+					gravity="-1"
+					minangle="0"
+					maxangle="30"
+					material="/shared/effects/materials/soul_projectile2.material"
+					offsetsphere="35 35 0"
+					position="0 0 100"
+					depthbias="-25"
+				>
+					<particle 
+						minanglespeed="-100"
+						maxanglespeed="100"
+						minangle="-360"
+						maxangle="360"
+						startcolor="0 0 0"
+						midcolor="1 .5 0"
+						endcolor="0 0 0"
+						startsize="20"			
+						endsize="45"
+					/>
+				</simpleemitter>
+
+				<simpleemitter
+					life="650"
+					minparticlelife="650"				
+					maxparticlelife="1000"				
+					spawnrate="50"
+					minspeed="35"
+					maxspeed="75"
+					gravity="-1"
+					minangle="0"
+					maxangle="30"
+					material="/shared/effects/materials/soul_projectile2.material"
+					offsetsphere="35 35 0"
+					position="0 0 0"
+					depthbias="-25"
+				>
+					<particle 
+						minanglespeed="-100"
+						maxanglespeed="100"
+						minangle="-360"
+						maxangle="360"
+						startcolor="0 0 0"
+						midcolor="1 .5 0"
+						endcolor="0 0 0"
+						startsize="20"			
+						endsize="45"
+					/>
+				</simpleemitter>
+				
+				<template name="fire">
+					<simpleemitter
+						delay="250"
+						bone="{bone}"
+						life="500"
+						minparticlelife="650"				
+						maxparticlelife="1000"				
+						spawnrate="15"
+						minspeed="35"
+						maxspeed="75"
+						gravity="-1"
+						minangle="0"
+						maxangle="30"
+						material="/shared/effects/materials/soul_projectile2.material"
+						offsetsphere="10 10 0"
+						position="0 0 0"
+						depthbias="-25"
+					>
+						<particle 
+							minanglespeed="-100"
+							maxanglespeed="100"
+							minangle="-360"
+							maxangle="360"
+							startcolor="0 0 0"
+							midcolor="1 .5 0"
+							endcolor="0 0 0"
+							startsize="10"			
+							endsize="25"
+						/>
+					</simpleemitter>
+					
+					<simpleemitter
+						delay="250"
+						bone="{bone}"
+						life="350"
+						minparticlelife="650"				
+						maxparticlelife="1500"				
+						spawnrate="10"
+						minspeed="35"
+						maxspeed="75"
+						gravity="-5"
+						minangle="0"
+						maxangle="30"
+						material="/shared/effects/materials/pyroclast_03.material"
+						offsetsphere="10 10 10"
+						position="0 0 15"
+					>
+						<particle 
+							minanglespeed="-100"
+							maxanglespeed="100"
+							minangle="-360"
+							maxangle="360"
+							startcolor="0 0 0"
+							midcolor="0 0 0"
+							endcolor="0 0 0"
+							startsize="50"			
+							endsize="50"
+							startalpha="0"
+							midalpha=".5"
+							endalpha="0"
+						/>
+					</simpleemitter>
+				</template>
+				
+				<instance name="fire" bone="_bone_debris024"/>
+				<instance name="fire" bone="_bone_debris012"/>
+				<instance name="fire" bone="_bone_debris022"/>
+				<instance name="fire" bone="_bone_debris019"/>
+				<instance name="fire" bone="_bone_debris033"/>
+				<instance name="fire" bone="_bone_debris006"/>
+				<instance name="fire" bone="_bone_debris028"/>
+				<instance name="fire" bone="_bone_debris017"/>
+				<instance name="fire" bone="_bone_debris014"/>
+				<instance name="fire" bone="_bone_debris027"/>
+			</model>
+
+			<simpleemitter
+				life="1500"
+				offsetsphere="36 36 100"
+				spawnrate="25"
+				count="10"
+				gravity="50"
+				particlelife="1000"
+				acceleration="0"
+				position="0 0 100"
+				direction="0 0 0"
+				material="/shared/effects/materials/light_rays.material"
+			>
+				<particle
+					startcolor="0 0 0"
+					midcolor=".5 .25 0"
+					endcolor="0 0 0"
+					midcolorpos=".2"
+					startwidth="40"
+					endwidth="20"
+					minstartheight="250"
+					maxstartheight="350"
+					endheight="25"
+					anchor="1"
+					lockup="1"
+					lockright="false"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="1500"
+				count="25"
+				minparticlelife="650"
+				maxparticlelife="1200"
+				spawnrate="50"
+				minspeed="400"
+				maxspeed="500"
+				mingravity="50"
+				maxgravity="80"
+				direction="0 0 1"
+				minangle="0"
+				maxangle="1"
+				drag="0.01"
+				material="/shared/effects/materials/pyroclast_03.material"
+				offsetsphere="20 20 10"
+				position="0 0 50"
+			>
+				<particle
+					depthbias="-100"
+					startcolor=".5 .485 .445"
+					endcolor="-.5 -.5 -.5"
+					midcolorpos=".2"
+					startscale="50"
+					endscale="35"
+					startalpha="0"
+					midalpha=".5"
+					endalpha="0"
+					midalphapos=".2"
+					lockup="1"
+					lockright="1"
+					minyaw="0"
+					maxyaw="360"
+					yawspeed="-35"
+				/>
+			</simpleemitter>
+			
+			<simpleemitter
+				life="1400"
+				spawnrate="5"
+				minparticlelife="750"
+				maxparticlelife="1250"
+				gravity="1"
+				speed="5"
+				drag="0"
+				acceleration="0"
+				position="0 0 0"
+				offsetsphere="65 65 0"
+				material="/shared/effects/materials/heathaze.material"
+				inheritvelocity=".1"
+				depthbias="-35"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					startparam="0"
+					midparam=".1"
+					endparam="0"
+					startcolor="1 1 1"
+					frame=".1"
+					startalpha="0"
+					midalpha=".25"
+					endalpha="0"
+					midalphapos=".2"
+					startsize="100" 
+					endsize="150"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				position="0 0 25"
+				life="1000"
+				startcolor="1 .25 0"
+				midcolor=".5 0 0"
+				midcolorpos="0.3"
+				endcolor="0"
+				startsize="200"
+				endsize="0"
+				depthbias="-35"
+				material="/shared/effects/materials/whitedot.material"
+				lockup="1"
+				lockright="1"
+				pitch="90"
+				
+			/>
+			
+			<simpleemitter
+			delay="350"
+				life="1500"
+				spawnrate="50"
+				minparticlelife="750"
+				maxparticlelife="1500"
+				mingravity="-3"
+				maxgravity="-6"
+				position="0 0 25"
+				offsetsphere="45 45 20"
+				material="/shared/effects/materials/pyroclast_02.material"
+				inheritvelocity=".1"
+				depthbias="-35"
+			>
+				<particle 
+					minangle="0"
+					maxangle="360"
+					color="0 0 0"
+					startalpha="0"
+					midalpha=".35"
+					endalpha="0"
+					startsize="25" 
+					endsize="100"
+					lockup="1"
+					lockright="1"
+					pitch="90"
+				/>
+			</simpleemitter>
+			
+			<billboard
+				life="300"
+				color="1 1 1"
+				startalpha="0"
+				midalpha=".5"
+				endalpha="0"
+				midalphapos="0.75"
+				startparam=".8"
+				endparam=".2"
+				startsize="250"
+				endsize="100"
+				position="0 0 25"
+				material="/shared/effects/materials/refract_ring.material"
+				lockright="true"
+				lockup="true"
+				pitch="90"
+			/>
+			
+
+		</particlesystem>
+
+
+	</definitions>
+
+	<thread>
+		<spawnparticlesystem instance="instance1" particlesystem="system0" />
+		<spawnmodifier instance="instance0"/>
+		<waitfordeath  instance="instance0"/>
+		<waitfordeath  instance="instance1"/>
+	</thread>
+
+</effect>
